@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "eXSpyWaZbwq5mkQBJSmWS98HaC9R9bLS1sYm9EC56Jo=",
+  "Source": "FinalProjectMvc",
+  "BasePath": "_content/FinalProjectMvc",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FinalProjectMvc\\wwwroot",
+      "Source": "FinalProjectMvc",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FinalProjectMvc.styles.css",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "FinalProjectMvc#[.{fingerprint}]?.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "2kjegbkxwd",
+      "Integrity": "fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FinalProjectMvc.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FinalProjectMvc.bundle.scp.css",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "FinalProjectMvc#[.{fingerprint}]!.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "2kjegbkxwd",
+      "Integrity": "fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FinalProjectMvc.bundle.scp.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "FinalProjectMvc.2kjegbkxwd.bundle.scp.css",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FinalProjectMvc.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1133"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 18:32:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2kjegbkxwd"
+        },
+        {
+          "Name": "label",
+          "Value": "FinalProjectMvc.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE="
+        }
+      ]
+    },
+    {
+      "Route": "FinalProjectMvc.2kjegbkxwd.styles.css",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FinalProjectMvc.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1133"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 18:32:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2kjegbkxwd"
+        },
+        {
+          "Name": "label",
+          "Value": "FinalProjectMvc.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE="
+        }
+      ]
+    },
+    {
+      "Route": "FinalProjectMvc.bundle.scp.css",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\FinalProjectMvc.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1133"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 18:32:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE="
+        }
+      ]
+    },
+    {
+      "Route": "FinalProjectMvc.styles.css",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\obj\\Debug\\net8.0\\scopedcss\\bundle\\FinalProjectMvc.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1133"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 18:32:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE="
+        }
+      ]
+    }
+  ]
+}

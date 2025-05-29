@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "ManifestType": "Build",
+  "Endpoints": [
+    {
+      "Route": "FinalProjectMvc.2kjegbkxwd.styles.css",
+      "AssetFile": "FinalProjectMvc.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1133"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 18:32:40 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2kjegbkxwd"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE="
+        },
+        {
+          "Name": "label",
+          "Value": "FinalProjectMvc.styles.css"
+        }
+      ]
+    },
+    {
+      "Route": "FinalProjectMvc.styles.css",
+      "AssetFile": "FinalProjectMvc.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1133"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 29 May 2025 18:32:40 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE="
+        }
+      ]
+    }
+  ]
+}
