@@ -1,3 +1,7 @@
+using FinalProjectMvc.Data;
+using FinalProjectMvc.Models;
+using FinalProjectMvc.Services.Interfaces;
+using FinalProjectMvc.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -37,6 +41,10 @@ builder.Services.Configure<IdentityOptions>(options =>
     //"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
     options.User.RequireUniqueEmail = true;
 });
+
+builder.Services.AddScoped<ISliderService, SliderService>();
+
+
 
 var app = builder.Build();
 

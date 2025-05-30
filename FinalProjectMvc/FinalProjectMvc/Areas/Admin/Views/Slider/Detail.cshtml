@@ -1,0 +1,22 @@
+﻿@model SliderDetailVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border text-center">
+                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Slider Details</h2>
+
+                <img src="~/img/@Model.Img" alt="Slider Image" class="img-fluid rounded mb-4" style="max-width: 100%; height: auto; max-height: 300px;" />
+
+                <div class="text-start">
+                    <p><strong>Title:</strong> @Model.Title</p>
+                    <p><strong>Subtitle:</strong> @Model.Subtitle</p>
+                    <p><strong>Description:</strong></p>
+                    <p class="text-muted">@Model.Description</p>
+                </div>
+
+                <a asp-action="Index" class="btn btn-outline-secondary mt-3">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
