@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Not Found Page";
+}
+
+
+
+@section css {
+    <link rel="stylesheet" href="~/assets/css/404/404.css">
+}
+
+
+<!--Main start-->
+<main>
+    <!-- Page Header Start -->
+    <section id="page-header">
+        <div class="page-header parallaxie" style="background-image: url('./assets/images/common/hero-bg.jpg');">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <div class="page-header-box">
+                            <h1 class="text-anime-style-3" data-cursor="-opaque">page not found</h1>
+                            <nav class="wow fadeInUp">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">404 error page</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page Header End -->
+    <!-- Scrolling Ticker Section Start -->
+    <section id="scrolling">
+        <div class="our-scrolling-ticker">
+            <div class="scrolling-ticker-box">
+                <div class="scrolling-content">
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Espresso</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Americano</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Latte</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cappuccino</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Mocha</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Macchiato</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cold Brew</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Espresso</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Americano</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Latte</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cappuccino</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Mocha</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Macchiato</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cold Brew</span>
+                </div>
+
+                <div class="scrolling-content">
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Espresso</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Americano</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Latte</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cappuccino</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Mocha</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Macchiato</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cold Brew</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Espresso</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Americano</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Latte</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cappuccino</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Mocha</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Macchiato</span>
+                    <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cold Brew</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Scrolling Ticker Section End -->
+    <!-- error section start -->
+    <section id="error-404">
+        <div class="error-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="error-page-image wow fadeInUp">
+                            <img src="~/assets/images/common/404.png" alt="">
+                        </div>
+                        <div class="error-page-content">
+                            <div class="section-title">
+                                <h2 class="text-anime-style-3" data-cursor="-opaque">Oops! page not found!</h2>
+                            </div>
+                            <div class="error-page-content-body">
+                                <p class="wow fadeInUp" data-wow-delay="0.25s">
+                                    We've searched far and wide but
+                                    couldn't find your coffee fix.Let us brew a path to help you discover something
+                                    delightful.
+                                </p>
+                                <a class="btn-default wow fadeInUp" data-wow-delay="0.5s" asp-controller="Home" asp-action="Index"><span>back to home</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- error section end -->
+</main>
+<!--Main end-->
+@section scripts {
+    <script src="~/assets/js/404/404.js"></script>
+}
