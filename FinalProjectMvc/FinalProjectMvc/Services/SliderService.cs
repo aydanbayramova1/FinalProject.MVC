@@ -4,7 +4,6 @@ using FinalProjectMvc.Models;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Slider;
 using Microsoft.EntityFrameworkCore;
-using Org.BouncyCastle.Crypto;
 
 namespace FinalProjectMvc.Services
 {
@@ -23,7 +22,10 @@ namespace FinalProjectMvc.Services
 
         public async Task<IEnumerable<Slider>> GetAllAsync()
         {
-            return await _context.Sliders.AsNoTracking().OrderByDescending(s => s.Id).ToListAsync();
+            return await _context.Sliders
+                .AsNoTracking()
+                .OrderByDescending(s => s.Id)
+                .ToListAsync();
         }
 
         public async Task<Slider> GetByIdAsync(int id)
@@ -38,8 +40,12 @@ namespace FinalProjectMvc.Services
             if (model.Image == null || model.Image.Length == 0)
                 throw new ArgumentNullException("Image", "Şəkil seçilməyib!");
 
+            string folderPath = Path.Combine(_env.WebRootPath, "uploads", "sliders");
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+
             string fileName = $"{Guid.NewGuid()}_{model.Image.FileName}";
-            string path = Path.Combine(_env.WebRootPath, "uploads/sliders", fileName);
+            string path = Path.Combine(folderPath, fileName);
 
             using (var stream = new FileStream(path, FileMode.Create))
             {
@@ -64,12 +70,16 @@ namespace FinalProjectMvc.Services
 
             if (model.Photo != null && model.Photo.Length > 0)
             {
-                string oldPath = Path.Combine(_env.WebRootPath, "uploads/sliders", slider.Img);
+                string folderPath = Path.Combine(_env.WebRootPath, "uploads", "sliders");
+                if (!Directory.Exists(folderPath))
+                    Directory.CreateDirectory(folderPath);
+
+                string oldPath = Path.Combine(folderPath, slider.Img);
                 if (File.Exists(oldPath))
                     File.Delete(oldPath);
 
                 string newFileName = $"{Guid.NewGuid()}_{model.Photo.FileName}";
-                string newPath = Path.Combine(_env.WebRootPath, "uploads/sliders", newFileName);
+                string newPath = Path.Combine(folderPath, newFileName);
 
                 using (var stream = new FileStream(newPath, FileMode.Create))
                 {
@@ -85,7 +95,7 @@ namespace FinalProjectMvc.Services
 
         public async Task DeleteAsync(Slider slider)
         {
-            string path = Path.Combine(_env.WebRootPath, "uploads/sliders", slider.Img);
+            string path = Path.Combine(_env.WebRootPath, "uploads", "sliders", slider.Img);
             if (File.Exists(path))
                 File.Delete(path);
 

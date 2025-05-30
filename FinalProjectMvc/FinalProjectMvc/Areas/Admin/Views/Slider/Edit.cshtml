@@ -1,21 +1,54 @@
-﻿@model SliderDetailVM
+﻿@model SliderEditVM
 
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
-            <div class="bg-white p-4 rounded shadow-sm border text-center">
-                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Slider Details</h2>
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Edit Slider</h2>
 
-                <img src="~/img/@Model.Img" alt="Slider Image" class="img-fluid rounded mb-4" style="max-width: 100%; height: auto; max-height: 300px;" />
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
 
-                <div class="text-start">
-                    <p><strong>Title:</strong> @Model.Title</p>
-                    <p><strong>Subtitle:</strong> @Model.Subtitle</p>
-                    <p><strong>Description:</strong></p>
-                    <p class="text-muted">@Model.Description</p>
-                </div>
+                    <div class="form-group mb-3">
+                        <label>Current Image:</label><br />
+                        <img src="~/uploads/sliders/@Model.Img" alt="Current Image" class="img-thumbnail mb-2" style="max-width: 150px; height: auto;" />
+                    </div>
 
-                <a asp-action="Index" class="btn btn-outline-secondary mt-3">Back to List</a>
+                    <div class="form-group mb-3">
+                        <label asp-for="Photo">New Image (optional)</label>
+                        <input asp-for="Photo" type="file" class="form-control" style="padding: 9px 18px;" />
+                        <span asp-validation-for="Photo" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Title">Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Enter title" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Subtitle">Subtitle</label>
+                        <input asp-for="Subtitle" class="form-control" placeholder="Enter subtitle" />
+                        <span asp-validation-for="Subtitle" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label asp-for="Description">Description</label>
+                        <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter description..."></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit"
+                                class="btn"
+                                style="color: #5c3d2e; border: 1px solid #5c3d2e; background-color: white;"
+                                onmouseover="this.style.backgroundColor='#5c3d2e'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
+                            Update
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -44,7 +44,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 builder.Services.AddScoped<ISliderService, SliderService>();
 
-
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 

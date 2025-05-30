@@ -801,6 +801,10 @@
       "PackagePath": "staticwebassets\\assets\\videos\\videoframe_3275.png"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\sliders\\5f6f29b0-ab13-4ff6-9c26-3670ff9967ac_inek - Copy.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sliders\\5f6f29b0-ab13-4ff6-9c26-3670ff9967ac_inek - Copy.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FinalProjectMvc.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

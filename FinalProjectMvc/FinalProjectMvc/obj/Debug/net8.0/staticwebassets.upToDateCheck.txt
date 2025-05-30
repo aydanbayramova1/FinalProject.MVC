@@ -197,3 +197,4 @@ wwwroot\assets\videos\latte.jpg
 wwwroot\assets\videos\videoframe_3275.png
 wwwroot\assets\videos\WhatsApp Video 2025-05-20 at 06.56.31.mp4
 wwwroot\assets\videos\WhatsApp Video 2025-05-21 at 06.26.16.mp4
+wwwroot\uploads\sliders\5f6f29b0-ab13-4ff6-9c26-3670ff9967ac_inek - Copy.jpg

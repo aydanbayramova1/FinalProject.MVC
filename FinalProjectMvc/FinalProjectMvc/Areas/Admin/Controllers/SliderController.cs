@@ -25,7 +25,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Detail(int id)
         {
             var slider = await _sliderService.GetByIdAsync(id);
             var sliderDetail = _mapper.Map<SliderDetailVM>(slider);
@@ -78,16 +78,9 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Delete(int id)
-        {
-            var slider = await _sliderService.GetByIdAsync(id);
-            var sliderDetail = _mapper.Map<SliderDetailVM>(slider);
-            return View(sliderDetail);
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var slider = await _sliderService.GetByIdAsync(id);
             await _sliderService.DeleteAsync(slider);
