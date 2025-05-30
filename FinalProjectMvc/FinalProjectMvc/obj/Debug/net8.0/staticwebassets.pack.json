@@ -5,6 +5,802 @@
       "PackagePath": "staticwebassets\\FinalProjectMvc.2kjegbkxwd.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\404\\404.css",
+      "PackagePath": "staticwebassets\\assets\\css\\404\\404.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\about\\about.css",
+      "PackagePath": "staticwebassets\\assets\\css\\about\\about.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\blog\\blog.css",
+      "PackagePath": "staticwebassets\\assets\\css\\blog\\blog.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\blogdetail\\blogdetail.css",
+      "PackagePath": "staticwebassets\\assets\\css\\blogdetail\\blogdetail.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\common\\animate.css",
+      "PackagePath": "staticwebassets\\assets\\css\\common\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\common\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\common\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\common\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\assets\\css\\common\\magnific-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\common\\mousecursor.css",
+      "PackagePath": "staticwebassets\\assets\\css\\common\\mousecursor.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\common\\slicknav.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\common\\slicknav.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\common\\swiper-bundle.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\common\\swiper-bundle.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\contact\\contact.css",
+      "PackagePath": "staticwebassets\\assets\\css\\contact\\contact.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\faqs\\faqs.css",
+      "PackagePath": "staticwebassets\\assets\\css\\faqs\\faqs.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\home\\home.css",
+      "PackagePath": "staticwebassets\\assets\\css\\home\\home.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\menu\\menu.css",
+      "PackagePath": "staticwebassets\\assets\\css\\menu\\menu.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\reservation\\reservation.css",
+      "PackagePath": "staticwebassets\\assets\\css\\reservation\\reservation.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\team\\team.css",
+      "PackagePath": "staticwebassets\\assets\\css\\team\\team.css"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\404.png",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\404.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\AYDAN.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\AYDAN.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Caprese Sandwich.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Caprese Sandwich.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Cold Brew.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Cold Brew.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Gelato.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Gelato.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Giorgio Milos.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Giorgio Milos.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Iced Americano.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Iced Americano.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Iced Caramel Macchiato.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Iced Caramel Macchiato.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Iced Mocha.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Iced Mocha.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\MANAGER3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\MANAGER3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Macchiato.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Macchiato.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Mocha.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Mocha.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Quiche.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Quiche.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Ricotta Cheesecake.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Ricotta Cheesecake.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\SDRFTY.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\SDRFTY.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Screenshot 2025-05-19 081741.png",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Screenshot 2025-05-19 081741.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Tisane.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Tisane.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Waffle.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Waffle.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\Zabaglione.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\Zabaglione.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\a1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\a1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\a2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\a2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\a3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\a3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\a33.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\a33.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\a4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\a4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\a5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\a5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\a55.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\a55.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\a6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\a6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\aaa.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\aaa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\adam.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\adam.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\adam2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\adam2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\adam3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\adam3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\adam4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\adam4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\address.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\address.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\americano.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\americano.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\asdfghjk.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\asdfghjk.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\assa.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\assa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\asterisk-icon.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\asterisk-icon.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\avacado.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\avacado.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\background  necese.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\background  necese.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\backgrounddd.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\backgrounddd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\backkkk.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\backkkk.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\bdc4dcd1-78ce-4edf-991c-2ebef52b9937.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\bdc4dcd1-78ce-4edf-991c-2ebef52b9937.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\blue.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\blue.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\bruschetta.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\bruschetta.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\celebrate.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\celebrate.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\chef.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\chef.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\chefss.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\chefss.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\clock.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\clock.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\club sandwiche.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\club sandwiche.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\club.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\club.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\clubbb.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\clubbb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\coffee deneleri.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\coffee deneleri.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\coffeshop.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\coffeshop.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\coffeshop1234.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\coffeshop1234.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\d9d51af4fbf8f0e78bbca1a7fbb860f1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\d9d51af4fbf8f0e78bbca1a7fbb860f1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\dadaas.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\dadaas.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\dd.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\dd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\ddd.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\ddd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\deneler.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\deneler.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\dessert.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\dessert.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\espresso.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\espresso.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\f.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\favicon-16x16.png",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\favicon-16x16.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\fet.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\fet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\ff.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\ff.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\footer-bg-image.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\footer-bg-image.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\footer.looggoooo.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\footer.looggoooo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\frees.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\frees.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\g.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\g.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\gf.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\gf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\h.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\h.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\header-sidebar-btn.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\header-sidebar-btn.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\helloo.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\helloo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\hero-bg-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\hero-bg-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\hero-bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\hero-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\hetttetetete.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\hetttetetete.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\hhh.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\hhh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\hhhhhhhhhhh.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\hhhhhhhhhhh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\hk.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\hk.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\hot coffee back.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\hot coffee back.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\hottt.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\hottt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\hotttttttt.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\hotttttttt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\howww.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\howww.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\icead latte.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\icead latte.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\iceddd.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\iceddd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\icon-location-accent.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\icon-location-accent.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\icon-location.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\icon-location.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\icon-mail-accent (1).svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\icon-mail-accent (1).svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\icon-mail-accent.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\icon-mail-accent.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\icon-mail.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\icon-mail.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\icon-phone-accent.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\icon-phone-accent.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\icon-phone.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\icon-phone.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\icon-story-1.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\icon-story-1.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\icon-story-2.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\icon-story-2.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\icon-story-3.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\icon-story-3.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\image.png",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\image.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\interactive-process-image-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\interactive-process-image-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\interactive-process-image-4 (1).jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\interactive-process-image-4 (1).jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\intro 4.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\intro 4.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\intro1.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\intro1.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\intro2.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\intro2.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\italian chefs.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\italian chefs.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\j.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\j.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\ji.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\ji.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\jj.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\jj.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\kk.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\kk.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\kofe.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\kofe.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\kofee.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\kofee.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\krivetka.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\krivetka.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\lalal.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\lalal.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\latte.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\latte.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\lemonad.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\lemonad.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\ll.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\ll.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\loader (1).svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\loader (1).svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\logo.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\manager.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\manager.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\manager2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\manager2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\managerr.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\managerr.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\milkshake.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\milkshake.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\nenene.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\nenene.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\phone.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\phone.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\qqqq.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\qqqq.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\qr.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\qr.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\rrrrrrrrrrrrr.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\rrrrrrrrrrrrr.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\salam.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\salam.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\salamamamamama.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\salamamamamama.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\salammm.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\salammm.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\salamqwertyuiop.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\salamqwertyuiop.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\sandwich.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\sandwich.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\sasa.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\sasa.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\sfegdrft.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\sfegdrft.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\ssss.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\ssss.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\sssssss.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\sssssss.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\tiramisu.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\tiramisu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\tomatoo.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\tomatoo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\common\\uiuiuiu.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\common\\uiuiuiu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\all menyu.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\all menyu.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\all.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\all.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\customer.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\customer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\customer2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\customer2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\favicon-32x32.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\icon-about-body-item-1.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\icon-about-body-item-1.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\icon-about-body-item-2.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\icon-about-body-item-2.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\icon-sub-heading.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\icon-sub-heading.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\icon-why-choose-2.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\icon-why-choose-2.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\sadada.png",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\sadada.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\why 2.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\why 2.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\why 3.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\why 3.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\why 4.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\why 4.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\why 5.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\why 5.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\images\\home\\why 6.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\home\\why 6.svg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\404\\404.js",
+      "PackagePath": "staticwebassets\\assets\\js\\404\\404.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\about\\about.js",
+      "PackagePath": "staticwebassets\\assets\\js\\about\\about.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\blog\\blog.js",
+      "PackagePath": "staticwebassets\\assets\\js\\blog\\blog.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\blogdetail\\blogdetail.js",
+      "PackagePath": "staticwebassets\\assets\\js\\blogdetail\\blogdetail.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\ScrollTrigger.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\ScrollTrigger.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\SmoothScroll.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\SmoothScroll.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\SplitText.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\SplitText.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\gsap.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\gsap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\isotope.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\isotope.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\jquery-3.7.1.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\jquery-3.7.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\jquery.counterup.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\jquery.counterup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\jquery.magnific-popup.min copy.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\jquery.magnific-popup.min copy.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\jquery.mb.YTPlayer.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\jquery.mb.YTPlayer.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\jquery.slicknav.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\jquery.slicknav.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\jquery.waypoints.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\jquery.waypoints.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\magiccursor.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\magiccursor.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\parallaxie.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\parallaxie.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\swiper-bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\swiper-bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\validator.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\validator.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\common\\wow.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\common\\wow.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\contact\\contact.js",
+      "PackagePath": "staticwebassets\\assets\\js\\contact\\contact.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\faqs\\faq.js",
+      "PackagePath": "staticwebassets\\assets\\js\\faqs\\faq.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\home\\home.js",
+      "PackagePath": "staticwebassets\\assets\\js\\home\\home.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\menu\\menu.js",
+      "PackagePath": "staticwebassets\\assets\\js\\menu\\menu.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\reservation\\reservation.js",
+      "PackagePath": "staticwebassets\\assets\\js\\reservation\\reservation.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\team\\team.js",
+      "PackagePath": "staticwebassets\\assets\\js\\team\\team.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\videos\\WhatsApp Video 2025-05-20 at 06.56.31.mp4",
+      "PackagePath": "staticwebassets\\assets\\videos\\WhatsApp Video 2025-05-20 at 06.56.31.mp4"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\videos\\WhatsApp Video 2025-05-21 at 06.26.16.mp4",
+      "PackagePath": "staticwebassets\\assets\\videos\\WhatsApp Video 2025-05-21 at 06.26.16.mp4"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\videos\\latte.jpg",
+      "PackagePath": "staticwebassets\\assets\\videos\\latte.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\videos\\videoframe_3275.png",
+      "PackagePath": "staticwebassets\\assets\\videos\\videoframe_3275.png"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FinalProjectMvc.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

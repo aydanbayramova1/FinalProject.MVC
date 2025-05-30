@@ -1,49 +1,292 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - FinalProjectMvc</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/FinalProjectMvc.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Caffè Luna – Un sorso alla luce della luna"</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/assets/images/home/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="~/assets/css/common/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="~/assets/css/common/slicknav.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/css/common/animate.css">
+    <link rel="stylesheet" href="~/assets/css/common/mousecursor.css">
+    <link rel="stylesheet" href="~/assets/css/common/magnific-popup.css">
+    <link rel="stylesheet" href="~/assets/css/common/swiper-bundle.min.css">
+    <!-- FontAwesome CDN (gərəkli versiya!) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Bunu <head> daxilinə əlavə et -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    @RenderSection("css", required: false)
 </head>
 <body>
+    <!-- Esas Header Start -->
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FinalProjectMvc</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+        <!-- Preloader Start -->
+        <section id="preloader-section">
+            <div class="preloader">
+                <div class="loading-container">
+                    <div class="loading"></div>
+                    <div id="loading-icon"><img src="~/assets/images/common/loader (1).svg" alt="" /></div>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        </section>
+        <!-- Preloader End -->
+        <!-- Topbar Section Start -->
+        <section id="topbar-section">
+            <div class="topbar">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-9">
+                            <div class="topbar-contact-info">
+                                <ul>
+                                    <li>
+                                        <a href="mailto:caffeluna67@gmail.com">
+                                            <img src="~/assets/images/common/icon-mail.svg" alt="" />caffeluna67@gmail.com
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <img src="~/assets/images/common/icon-location.svg" alt="" />Marchesi 1824
+                                        ViaMontenapoleone 9, 20121 Milano Lombardia, Italy
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="topbar-social-links">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.instagram.com/_caffe.luna_?igsh=MThmeGtkajQ1cTJ4eQ==">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li><a href="https://www.facebook.com/share/16auhXoD7x/?mibextid=wwXIfr"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li>
+                                        <a href="https://wa.me/994513153684?text=Hello!%20Welcome%20to%20our%20Coffee%20Shop%20%E2%98%95%20How%20can%20we%20help%20you%3F" target="_blank">
+                                            <i class="fa-brands fa-whatsapp"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Topbar Section End -->
+        <!-- Header Start -->
+        <section id="header-section">
+            <div class="header-sticky">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <a class="navbar-brand" href="home.html">
+                            <img style="width: 230px; height: auto;" src="~/assets/images/common/logo.jpg" alt="Logo">
+                        </a>
+                        <div style=" margin-right: 10pc;" class="collapse navbar-collapse main-menu">
+                            <div class="nav-menu-wrapper">
+                                <ul class="navbar-nav mr-auto" id="menu">
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" asp-controller="About" asp-action="Index">About</a></li>
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Blog" asp-action="Index">Blog</a></li>
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Menu" asp-action="Index">Menu</a></li>
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Team" asp-action="Index">Team</a></li>
+                                    <li class="nav-item"><a class="nav-link" asp-controller="FAQs" asp-action="Index">FAQs</a></li>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - FinalProjectMvc - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+
+
+                                    <li class="nav-item"><a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                                    <li class="nav-item highlighted-menu">
+                                        <a class="nav-link"
+                                           asp-controller="FAQs" asp-action="Index">Book A Table</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="header-button-box">
+
+                                <div class="header-btn">
+                                    <a href="reservation.html" class="btn-default btn-highlighted">Book a table</a>
+                                </div>
+
+                                <div class="user-account-dropdown" style=" margin-right: -2pc;">
+                                    <a href="#" class="user-icon-btn">
+                                        <i class="fas fa-user"></i>
+                                    </a>
+                                    <div class="dropdown-menu" style="margin-right: -5pc;">
+                                        <a href="login.html" class="dropdown-item">
+                                            <i class="fas fa-sign-in-alt"></i> Login
+                                        </a>
+                                        <a href="register.html" class="dropdown-item">
+                                            <i class="fas fa-user-plus"></i> Register
+                                        </a>
+                                    </div>
+                                    <!-- <div style="width: 120px;color: bisque;" class="col-auto d-none d-xl-block">
+                                        <div class="header2-search">
+                                            <form action="#">
+                                                <input type="text" placeholder="Search...">
+                                                <button class="btn"><i class="fas fa-search"></i></button>
+                                            </form>
+                                        </div>
+                                    </div> -->
+
+                                </div>
+
+                                @{
+                                    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+                                    var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+                                }
+
+                                @if ((currentController == "Home" && currentAction == "Index") ||
+                                (currentController == "Menu" && currentAction == "Index")) 
+                                {
+                                    @await Html.PartialAsync("_SearchPartial")
+                                }
+                            </div>
+                            <div class="responsive-menu">
+                                <div class="slicknav_menu">
+                                    <i class="fa-solid fa-bars"></i>
+                                    <ul id="menu">
+                                        <li><a href="home.html">Home</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="menu.html">Menu</a></li>
+                                        <li><a href="team.html">Team</a></li>
+                                        <li><a href="faqs.html">FAQs</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="reservation.html">Book A Table</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </nav>
+
+            </div>
+        </section>
+        <!-- Header End-->
+    </header>
+    <!-- Esas Header End -->
+            @RenderBody()
+    <!--  Footer Section Start -->
+    <footer>
+        <section id="footer-section">
+            <div class="footer" style=" background: url(./assets/images/common/footer-bg-image.jpg) no-repeat; ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div style=" font-family: 'Ancizar Serif', serif;" class="footer-contact-list">
+                                <div class="footer-contact-item">
+                                    <div class="icon-box">
+                                        <img src="~/assets/images/common/phone.svg" alt="">
+                                    </div>
+                                    <div class="footer-contact-detail">
+                                        <h3>contact us</h3>
+                                        <p>T. <a href="https://wa.me/994513153684" target="_blank">+994 51 315 36 84</a></p>
+                                        <p>M. <a href="mailto:caffeluna67@gmail.com">caffeluna67@gmail.com</a></p>
+                                    </div>
+                                    <div class="footer-contact-button">
+                                        <a href="contact.html" class="btn-default btn-highlighted">contact us</a>
+                                    </div>
+                                </div>
+
+                                <div class="footer-contact-item">
+                                    <div class="icon-box">
+                                        <img src="~/assets/images/common/address.svg" alt="">
+                                    </div>
+                                    <div class="footer-contact-detail">
+                                        <h3>address</h3>
+                                        <p>Marchesi 1824 Via Montenapoleone 9, 20121 Milano Lombardia, Italy</p>
+                                    </div>
+                                    <div class="footer-contact-button">
+                                        <a href="contact.html" class="btn-default btn-highlighted">get direction</a>
+                                    </div>
+                                </div>
+
+                                <div class="footer-contact-item">
+                                    <div class="icon-box">
+                                        <img src="~/assets/images/common/clock.svg" alt="">
+                                    </div>
+                                    <div class="footer-contact-detail">
+                                        <h3>opening hours</h3>
+                                        <p>Everyday: From 09.30 To 21.00</p>
+                                        <p>Kitchen Closes At 20.00</p>
+                                    </div>
+                                    <div class="footer-contact-button">
+                                        <a href="reservation.html" class="btn-default btn-highlighted">
+                                            reserve a
+                                            table
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="footer-copyright">
+                                <div class="footer-copyright-text order-md-1 order-3">
+                                    <p>Copyright © 2025 Caffe Luna by Aydan.</p>
+                                </div>
+
+                                <div class="footer-logo order-md-2 order-1">
+                                    <img src="~/assets/images/common/footer.looggoooo.jpg" alt="">
+                                </div>
+
+                                <div class="footer-social-links order-md-3 order-2">
+                                    <ul>
+                                        <li>
+                                            <a href="https://www.instagram.com/_caffe.luna_?igsh=MThmeGtkajQ1cTJ4eQ==">
+                                                <i class="fa-brands fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.facebook.com/share/16auhXoD7x/?mibextid=wwXIfr">
+                                                <i class="fa-brands fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://wa.me/994513153684?text=Hello!%20Welcome%20to%20our%20Coffee%20Shop%20%E2%98%95%20How%20can%20we%20help%20you%3F"
+                                               target="_blank">
+                                                <i class="fa-brands fa-whatsapp"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <!--  Footer Section End -->
+
+    <script src="~/assets/js/common/jquery-3.7.1.min.js"></script>
+    <script src="~/assets/js/common/validator.min.js"></script>
+    <script src="~/assets/js/common/jquery.slicknav.js"></script>
+    <script src="~/assets/js/common/swiper-bundle.min.js"></script>
+    <script src="~/assets/js/common/jquery.waypoints.min.js"></script>
+    <script src="~/assets/js/common/jquery.counterup.min.js"></script>
+    <script src="~/assets/js/common/isotope.min.js"></script>
+    <script src="~/assets/js/common/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/js/common/SmoothScroll.js"></script>
+    <script src="~/assets/js/common/parallaxie.js"></script>
+    <script src="~/assets/js/common/gsap.min.js"></script>
+    <script src="~/assets/js/common/magiccursor.js"></script>
+    <script src="~/assets/js/common/SplitText.js"></script>
+    <script src="~/assets/js/common/ScrollTrigger.min.js"></script>
+    <script src="~/assets/js/common/jquery.mb.YTPlayer.min.js"></script>
+    <script src="~/assets/js/common/wow.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>
+
+
+
