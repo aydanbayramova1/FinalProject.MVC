@@ -3,8 +3,220 @@
   "WorkspaceRootPath": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\reservation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\reservation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\reservation\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\reservation\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\reservationbanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\reservationbanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\reservation\\reservationviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\reservation\\reservationviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\reservation\\reservationbannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\reservation\\reservationbannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\menu\\menubannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\menu\\menubannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\googlemap\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\googlemap\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\contact\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\contact\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\contactbanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\contactbanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\contact\\googlemapviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\contact\\googlemapviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\contact\\contactviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\contact\\contactviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\contact\\contactbannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\contact\\contactbannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\header\\headerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\header\\headerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\faqs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\faqs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\faqs\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\faqs\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\faqs\\faqsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\faqs\\faqsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\faqs\\faqsbannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\faqs\\faqsbannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\faqsbanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\faqsbanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\blogdetail\\blogdetailviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\blogdetail\\blogdetailviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\blogdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\blogdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\blogdetail\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\blogdetail\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\blogdetailbanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\blogdetailbanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\blogdetail\\blogdetailbannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\blogdetail\\blogdetailbannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\team\\teambannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\team\\teambannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\team\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\team\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\team\\teamsectionviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\team\\teamsectionviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\teamsection\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\teamsection\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\aboutpage\\teamviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\aboutpage\\teamviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\about\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\about\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\blog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\blog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\teambanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\teambanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\menu\\menuviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\menu\\menuviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\menu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\menu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\menu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\menu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\menubanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\menubanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\home\\aboutviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\home\\aboutviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\blogstory\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\blogstory\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\blog\\blogstoryviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\blog\\blogstoryviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\blog\\blogbannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\blog\\blogbannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\blogbanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\blogbanner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\story\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\story\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\aboutpage\\approachviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\aboutpage\\approachviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\aboutpage\\storyviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\aboutpage\\storyviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\team\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\team\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\aboutpage\\bannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\aboutpage\\bannerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\approach\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\approach\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\banner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\banner\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\restaurant\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -35,10 +247,6 @@
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\interactive\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\home\\aboutviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\home\\aboutviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\pricing\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\pricing\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -63,20 +271,8 @@
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\home\\whyviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\about\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\about\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\home\\sliderviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\home\\sliderviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\team\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\team\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\scrolling\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -89,10 +285,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\slider\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\shared\\components\\slider\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\viewcomponents\\header\\headerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\viewcomponents\\header\\headerviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\shared\\components\\header\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -119,10 +311,6 @@
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\controllers\\notfoundcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\blog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\blog\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\areas\\admin\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -133,10 +321,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\areas\\admin\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -159,14 +343,6 @@
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\blogdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\blogdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -179,14 +355,6 @@
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\controllers\\blogdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\menu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\menu\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\reservation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\reservation\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\controllers\\reservationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -197,10 +365,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\views\\faqs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|solutionrelative:finalprojectmvc\\views\\faqs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8786AF5B-F1C2-4FAE-8346-4B0A20023DF4}|FinalProjectMvc\\FinalProjectMvc.csproj|c:\\users\\acer\\desktop\\finalprojectmvc\\finalprojectmvc\\finalprojectmvc\\controllers\\faqscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -238,284 +402,284 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Models\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Models\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Models\\BaseEntity.cs*",
+              "RelativeToolTip": "FinalProjectMvc\\Models\\BaseEntity.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T16:25:33.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Restaurant\\Default.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Restaurant\\Default.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Restaurant\\Default.cshtml*",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Restaurant\\Default.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T15:07:35.77Z",
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Data\\AppDbContext.cs*",
+              "RelativeToolTip": "FinalProjectMvc\\Data\\AppDbContext.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T16:23:39.356Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "RestaurantViewComponent.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\RestaurantViewComponent.cs",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\RestaurantViewComponent.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\RestaurantViewComponent.cs*",
-              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\RestaurantViewComponent.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T15:06:23.149Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Offer\\Default.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Offer\\Default.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Offer\\Default.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Offer\\Default.cshtml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAwwG4AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T15:05:04.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OfferViewComponent.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\OfferViewComponent.cs",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\OfferViewComponent.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\OfferViewComponent.cs",
-              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\OfferViewComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T15:04:34.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ScrollingViewComponent.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\ScrollingViewComponent.cs",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\ScrollingViewComponent.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\ScrollingViewComponent.cs",
-              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\ScrollingViewComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T14:45:01.894Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Home\\Index.cshtml*",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Home\\Index.cshtml*",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACgAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T06:05:36.245Z",
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\appsettings.Development.json*",
+              "RelativeToolTip": "FinalProjectMvc\\appsettings.Development.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-30T16:18:14.213Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "InteractiveViewComponent.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\InteractiveViewComponent.cs",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\InteractiveViewComponent.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\InteractiveViewComponent.cs",
-              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\InteractiveViewComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T15:02:16.685Z",
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Reservation\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Reservation\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Reservation\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Reservation\\Default.cshtml",
+              "ViewState": "AgIAAIUCAAAAAAAAAAAwwLECAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T16:05:04.656Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Interactive\\Default.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Interactive\\Default.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Interactive\\Default.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Interactive\\Default.cshtml",
-              "ViewState": "AgIAABYAAAAAAAAAAAAwwEIAAAAKAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\ReservationBanner\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\ReservationBanner\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\ReservationBanner\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\ReservationBanner\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T15:02:52.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Pricing\\Default.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Pricing\\Default.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Pricing\\Default.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Pricing\\Default.cshtml",
-              "ViewState": "AgIAAFQDAAAAAAAAAAAwwIADAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T15:01:14.051Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PricingViewComponent.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\PricingViewComponent.cs",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\PricingViewComponent.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\PricingViewComponent.cs",
-              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\PricingViewComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T15:00:47.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IntroViewComponent.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\IntroViewComponent.cs",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\IntroViewComponent.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\IntroViewComponent.cs",
-              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\IntroViewComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T14:58:56.773Z",
+              "WhenOpened": "2025-05-30T16:04:26.927Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "AboutViewComponent.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\AboutViewComponent.cs",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\AboutViewComponent.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\AboutViewComponent.cs",
-              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\AboutViewComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Title": "ReservationViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Reservation\\ReservationViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Reservation\\ReservationViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Reservation\\ReservationViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Reservation\\ReservationViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T14:51:43.797Z",
+              "WhenOpened": "2025-05-30T16:03:56.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Program.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Program.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Program.cs*",
+              "RelativeToolTip": "FinalProjectMvc\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T07:55:32.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ReservationBannerViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Reservation\\ReservationBannerViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Reservation\\ReservationBannerViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Reservation\\ReservationBannerViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Reservation\\ReservationBannerViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T16:03:21.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T06:05:36.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Reservation\\Index.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Reservation\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Reservation\\Index.cshtml*",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Reservation\\Index.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T09:46:26.789Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Intro\\Default.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Intro\\Default.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Intro\\Default.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Intro\\Default.cshtml",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwEwAAAAKAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\GoogleMap\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\GoogleMap\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\GoogleMap\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\GoogleMap\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T14:59:25.153Z",
+              "WhenOpened": "2025-05-30T16:00:47.781Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Why\\Default.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Why\\Default.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Why\\Default.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Why\\Default.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAAKAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Contact\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Contact\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Contact\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Contact\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T14:57:31.662Z",
+              "WhenOpened": "2025-05-30T16:00:04.016Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "WhyViewComponent.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\WhyViewComponent.cs",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\WhyViewComponent.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\WhyViewComponent.cs",
-              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\WhyViewComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\ContactBanner\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\ContactBanner\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\ContactBanner\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\ContactBanner\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:59:41.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Contact\\Index.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Contact\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Contact\\Index.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Contact\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T09:22:11.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MenuBannerViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Menu\\MenuBannerViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Menu\\MenuBannerViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Menu\\MenuBannerViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Menu\\MenuBannerViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T14:55:48.006Z",
+              "WhenOpened": "2025-05-30T15:34:12.271Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\About\\Default.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\About\\Default.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\About\\Default.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\About\\Default.cshtml",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAwwFsAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T14:52:35.976Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Scrolling\\Default.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Scrolling\\Default.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Scrolling\\Default.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Scrolling\\Default.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T14:45:47.958Z",
+              "Title": "GoogleMapViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Contact\\GoogleMapViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Contact\\GoogleMapViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Contact\\GoogleMapViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Contact\\GoogleMapViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:59:20.647Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "SliderViewComponent.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\SliderViewComponent.cs",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\SliderViewComponent.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\SliderViewComponent.cs",
-              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\SliderViewComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Title": "ContactViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Contact\\ContactViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Contact\\ContactViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Contact\\ContactViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Contact\\ContactViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T14:39:57.275Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Slider\\Default.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Slider\\Default.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Slider\\Default.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Slider\\Default.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T14:43:12.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Team\\Index.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Team\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Team\\Index.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Team\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T08:54:56.022Z",
+              "WhenOpened": "2025-05-30T15:58:58.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\About\\Index.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\About\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\About\\Index.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\About\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJgCAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T08:14:08.898Z",
+              "Title": "ContactBannerViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Contact\\ContactBannerViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Contact\\ContactBannerViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Contact\\ContactBannerViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Contact\\ContactBannerViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:58:28.327Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 20,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Faqs\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Faqs\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Faqs\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Faqs\\Default.cshtml",
+              "ViewState": "AgIAAAYBAAAAAAAAAAAwwDIBAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:56:35.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FaqsViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Faqs\\FaqsViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Faqs\\FaqsViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Faqs\\FaqsViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Faqs\\FaqsViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:56:04.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Faqs\\Index.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Faqs\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Faqs\\Index.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Faqs\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T08:59:05.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "HeaderViewComponent.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Header\\HeaderViewComponent.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Header\\HeaderViewComponent.cs",
@@ -528,7 +692,631 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "FaqsBannerViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Faqs\\FaqsBannerViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Faqs\\FaqsBannerViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Faqs\\FaqsBannerViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Faqs\\FaqsBannerViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:53:46.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 23,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\FaqsBanner\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\FaqsBanner\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\FaqsBanner\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\FaqsBanner\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:54:50.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "BlogDetailViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\BlogDetail\\BlogDetailViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\BlogDetail\\BlogDetailViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\BlogDetail\\BlogDetailViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\BlogDetail\\BlogDetailViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:51:26.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\BlogDetail\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\BlogDetail\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\BlogDetail\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\BlogDetail\\Default.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAwwC4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:52:03.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\BlogDetailBanner\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\BlogDetailBanner\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\BlogDetailBanner\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\BlogDetailBanner\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:50:21.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "BlogDetailBannerViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\BlogDetail\\BlogDetailBannerViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\BlogDetail\\BlogDetailBannerViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\BlogDetail\\BlogDetailBannerViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\BlogDetail\\BlogDetailBannerViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:49:45.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\BlogDetail\\Index.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\BlogDetail\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\BlogDetail\\Index.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\BlogDetail\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T10:09:45.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "TeamBannerViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Team\\TeamBannerViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Team\\TeamBannerViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Team\\TeamBannerViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Team\\TeamBannerViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:39:57.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Team\\Index.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Team\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Team\\Index.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Team\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T08:54:56.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "TeamSectionViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Team\\TeamSectionViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Team\\TeamSectionViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Team\\TeamSectionViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Team\\TeamSectionViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:43:07.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\TeamSection\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\TeamSection\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\TeamSection\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\TeamSection\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:43:39.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\About\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\About\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\About\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\About\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T14:52:35.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Blog\\Index.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Blog\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Blog\\Index.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Blog\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T07:40:51.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\TeamBanner\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\TeamBanner\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\TeamBanner\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\TeamBanner\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:40:39.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "TeamViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\AboutPage\\TeamViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\AboutPage\\TeamViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\AboutPage\\TeamViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\AboutPage\\TeamViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:23:30.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\About\\Index.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\About\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\About\\Index.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\About\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T08:14:08.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "MenuViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Menu\\MenuViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Menu\\MenuViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Menu\\MenuViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Menu\\MenuViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:36:55.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Menu\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Menu\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Menu\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Menu\\Default.cshtml",
+              "ViewState": "AgIAAIABAAAAAAAAAAAwwKwBAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:37:26.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\MenuBanner\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\MenuBanner\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\MenuBanner\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\MenuBanner\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:34:44.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "AboutViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\AboutViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\AboutViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\AboutViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\AboutViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T14:51:43.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Menu\\Index.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Menu\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Menu\\Index.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Menu\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T08:57:25.256Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\BlogStory\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\BlogStory\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\BlogStory\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\BlogStory\\Default.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAwwD8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:32:31.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "BlogStoryViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Blog\\BlogStoryViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Blog\\BlogStoryViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Blog\\BlogStoryViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Blog\\BlogStoryViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:31:55.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "BlogBannerViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Blog\\BlogBannerViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Blog\\BlogBannerViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Blog\\BlogBannerViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Blog\\BlogBannerViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:29:50.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\BlogBanner\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\BlogBanner\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\BlogBanner\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\BlogBanner\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:30:28.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Story\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Story\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Story\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Story\\Default.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwEwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:27:08.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ApproachViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\AboutPage\\ApproachViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\AboutPage\\ApproachViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\AboutPage\\ApproachViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\AboutPage\\ApproachViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:19:31.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "StoryViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\AboutPage\\StoryViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\AboutPage\\StoryViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\AboutPage\\StoryViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\AboutPage\\StoryViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:26:32.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Team\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Team\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Team\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Team\\Default.cshtml",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAwwFoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:24:56.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Approach\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Approach\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Approach\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Approach\\Default.cshtml",
+              "ViewState": "AgIAABYAAAAAAAAAAAAwwEIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:20:06.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "BannerViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\AboutPage\\BannerViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\AboutPage\\BannerViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\AboutPage\\BannerViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\AboutPage\\BannerViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:13:43.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Banner\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Banner\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Banner\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Banner\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:14:17.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "OfferViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\OfferViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\OfferViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\OfferViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\OfferViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:04:34.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "ScrollingViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\ScrollingViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\ScrollingViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\ScrollingViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\ScrollingViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T14:45:01.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Offer\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Offer\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Offer\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Offer\\Default.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAwwG4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:05:04.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "RestaurantViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\RestaurantViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\RestaurantViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\RestaurantViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\RestaurantViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:06:23.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Restaurant\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Restaurant\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Restaurant\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Restaurant\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:07:35.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "InteractiveViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\InteractiveViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\InteractiveViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\InteractiveViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\InteractiveViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:02:16.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Interactive\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Interactive\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Interactive\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Interactive\\Default.cshtml",
+              "ViewState": "AgIAABYAAAAAAAAAAAAwwEIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:02:52.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Pricing\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Pricing\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Pricing\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Pricing\\Default.cshtml",
+              "ViewState": "AgIAAFQDAAAAAAAAAAAwwIADAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T15:01:14.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "PricingViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\PricingViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\PricingViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\PricingViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\PricingViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T15:00:47.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "IntroViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\IntroViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\IntroViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\IntroViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\IntroViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T14:58:56.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Intro\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Intro\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Intro\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Intro\\Default.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwEwAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T14:59:25.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Why\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Why\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Why\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Why\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T14:57:31.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "WhyViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\WhyViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\WhyViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\WhyViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\WhyViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T14:55:48.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Scrolling\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Scrolling\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Scrolling\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Scrolling\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T14:45:47.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "SliderViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\SliderViewComponent.cs",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Home\\SliderViewComponent.cs",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Home\\SliderViewComponent.cs",
+              "RelativeToolTip": "FinalProjectMvc\\ViewComponents\\Home\\SliderViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T14:39:57.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Slider\\Default.cshtml",
+              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Slider\\Default.cshtml",
+              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Slider\\Default.cshtml",
+              "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\Components\\Slider\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T14:43:12.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
               "Title": "Default.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Header\\Default.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Header\\Default.cshtml",
@@ -541,7 +1329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 69,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\_Layout.cshtml",
@@ -554,7 +1342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 72,
               "Title": "FooterViewComponent.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\ViewComponents\\Footer\\FooterViewComponent.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\ViewComponents\\Footer\\FooterViewComponent.cs",
@@ -567,7 +1355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 73,
               "Title": "Default.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\Components\\Footer\\Default.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\Components\\Footer\\Default.cshtml",
@@ -580,20 +1368,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 74,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\NotFound\\Index.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\NotFound\\Index.cshtml",
               "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\NotFound\\Index.cshtml",
               "RelativeToolTip": "FinalProjectMvc\\Views\\NotFound\\Index.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAGQAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAIBJwGQAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-30T13:38:01.33Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 78,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Areas\\Admin\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Areas\\Admin\\Views\\_ViewStart.cshtml",
@@ -601,11 +1389,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Areas\\Admin\\Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T13:02:02.473Z"
+              "WhenOpened": "2025-05-30T13:02:02.473Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 77,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
@@ -613,23 +1402,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Areas\\Admin\\Views\\Dashboard\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T12:10:10.848Z"
+              "WhenOpened": "2025-05-30T12:10:10.848Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Blog\\Index.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Blog\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Blog\\Index.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Blog\\Index.cshtml",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAAAJAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T07:40:51.953Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 75,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Areas\\Admin\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Areas\\Admin\\Views\\_ViewImports.cshtml",
@@ -637,11 +1415,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Areas\\Admin\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T13:02:10.719Z"
+              "WhenOpened": "2025-05-30T13:02:10.719Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 80,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Areas\\Admin\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Areas\\Admin\\Controllers\\DashboardController.cs",
@@ -649,11 +1428,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Areas\\Admin\\Controllers\\DashboardController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T12:09:44.888Z"
+              "WhenOpened": "2025-05-30T12:09:44.888Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 76,
               "Title": "NotFoundController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Controllers\\NotFoundController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Controllers\\NotFoundController.cs",
@@ -661,11 +1441,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Controllers\\NotFoundController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T13:37:52.738Z"
+              "WhenOpened": "2025-05-30T13:37:52.738Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 79,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\_ViewImports.cshtml",
@@ -673,11 +1454,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-29T18:32:34.226Z"
+              "WhenOpened": "2025-05-29T18:32:34.226Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 81,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\appsettings.json",
               "RelativeDocumentMoniker": "FinalProjectMvc\\appsettings.json",
@@ -685,11 +1467,12 @@
               "RelativeToolTip": "FinalProjectMvc\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-30T12:38:11.28Z"
+              "WhenOpened": "2025-05-30T12:38:11.28Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 83,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Account\\Register.cshtml",
@@ -697,11 +1480,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Views\\Account\\Register.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T11:15:28.832Z"
+              "WhenOpened": "2025-05-30T11:15:28.832Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 82,
               "Title": "AboutController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Controllers\\AboutController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Controllers\\AboutController.cs",
@@ -709,35 +1493,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Controllers\\AboutController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T08:14:02.503Z"
+              "WhenOpened": "2025-05-30T08:14:02.503Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Program.cs",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Program.cs",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Program.cs",
-              "RelativeToolTip": "FinalProjectMvc\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T07:55:32.669Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\BlogDetail\\Index.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\BlogDetail\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\BlogDetail\\Index.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\BlogDetail\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T10:09:45.344Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 86,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Controllers\\AccountController.cs",
@@ -745,23 +1506,25 @@
               "RelativeToolTip": "FinalProjectMvc\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T11:14:16.258Z"
+              "WhenOpened": "2025-05-30T11:14:16.258Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 84,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Account\\Login.cshtml",
               "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "FinalProjectMvc\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAADMBAAAAAAAAAAAAACMAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAkBAAAAAAAAAEBVwCMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T11:15:41.826Z"
+              "WhenOpened": "2025-05-30T11:15:41.826Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 85,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\_ViewStart.cshtml",
@@ -769,23 +1532,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T11:20:13.109Z"
+              "WhenOpened": "2025-05-30T11:20:13.109Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Contact\\Index.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Contact\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Contact\\Index.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Contact\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T09:22:11.251Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 87,
               "Title": "BlogDetailController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Controllers\\BlogDetailController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Controllers\\BlogDetailController.cs",
@@ -793,35 +1545,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Controllers\\BlogDetailController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T10:09:39.3Z"
+              "WhenOpened": "2025-05-30T10:09:39.3Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Menu\\Index.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Menu\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Menu\\Index.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Menu\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T08:57:25.256Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Reservation\\Index.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Reservation\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Reservation\\Index.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Reservation\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T09:46:26.789Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 88,
               "Title": "ReservationController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Controllers\\ReservationController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Controllers\\ReservationController.cs",
@@ -829,11 +1558,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Controllers\\ReservationController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T09:46:21.341Z"
+              "WhenOpened": "2025-05-30T09:46:21.341Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 89,
               "Title": "MenuController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Controllers\\MenuController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Controllers\\MenuController.cs",
@@ -841,11 +1571,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Controllers\\MenuController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T08:34:28.477Z"
+              "WhenOpened": "2025-05-30T08:34:28.477Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 90,
               "Title": "ContactController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Controllers\\ContactController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Controllers\\ContactController.cs",
@@ -853,23 +1584,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Controllers\\ContactController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T09:19:45.578Z"
+              "WhenOpened": "2025-05-30T09:19:45.578Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Faqs\\Index.cshtml",
-              "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Faqs\\Index.cshtml",
-              "ToolTip": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Faqs\\Index.cshtml",
-              "RelativeToolTip": "FinalProjectMvc\\Views\\Faqs\\Index.cshtml",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAAIQBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T08:59:05.477Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 91,
               "Title": "FaqsController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Controllers\\FaqsController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Controllers\\FaqsController.cs",
@@ -877,11 +1597,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Controllers\\FaqsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T08:59:00.893Z"
+              "WhenOpened": "2025-05-30T08:59:00.893Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 92,
               "Title": "TeamController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Controllers\\TeamController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Controllers\\TeamController.cs",
@@ -889,11 +1610,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Controllers\\TeamController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T08:54:51.033Z"
+              "WhenOpened": "2025-05-30T08:54:51.033Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 93,
               "Title": "blog.js",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\blog\\blog.js",
               "RelativeDocumentMoniker": "FinalProjectMvc\\wwwroot\\assets\\js\\blog\\blog.js",
@@ -901,11 +1623,12 @@
               "RelativeToolTip": "FinalProjectMvc\\wwwroot\\assets\\js\\blog\\blog.js",
               "ViewState": "AgIAABEFAAAAAAAAAAAmwN0FAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-30T07:46:43.116Z"
+              "WhenOpened": "2025-05-30T07:46:43.116Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 94,
               "Title": "BlogController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Controllers\\BlogController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Controllers\\BlogController.cs",
@@ -913,11 +1636,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Controllers\\BlogController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T07:40:45.514Z"
+              "WhenOpened": "2025-05-30T07:40:45.514Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 96,
               "Title": "_SearchPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Views\\Shared\\_SearchPartial.cshtml",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Views\\Shared\\_SearchPartial.cshtml",
@@ -925,11 +1649,12 @@
               "RelativeToolTip": "FinalProjectMvc\\Views\\Shared\\_SearchPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T06:17:24.505Z"
+              "WhenOpened": "2025-05-30T06:17:24.505Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 97,
               "Title": "home.css",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\home\\home.css",
               "RelativeDocumentMoniker": "FinalProjectMvc\\wwwroot\\assets\\css\\home\\home.css",
@@ -937,11 +1662,12 @@
               "RelativeToolTip": "FinalProjectMvc\\wwwroot\\assets\\css\\home\\home.css",
               "ViewState": "AgIAAFkAAAAAAAAAAAAUwJYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-30T06:51:21.981Z"
+              "WhenOpened": "2025-05-30T06:51:21.981Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 95,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "FinalProjectMvc\\Controllers\\HomeController.cs",
@@ -949,7 +1675,8 @@
               "RelativeToolTip": "FinalProjectMvc\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T18:30:32.729Z"
+              "WhenOpened": "2025-05-29T18:30:32.729Z",
+              "EditorCaption": ""
             }
           ]
         }

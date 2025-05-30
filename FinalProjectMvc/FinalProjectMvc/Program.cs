@@ -1,7 +1,42 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
+var conString = builder.Configuration.GetConnectionString("Default") ??
+    throw new InvalidOperationException("Connection string 'Default' not found.");
+
+// Configure DbContext
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(conString));
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
+                                           .AddDefaultTokenProviders();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    // Password settings.
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequiredLength = 6;
+    options.Password.RequiredUniqueChars = 1;
+
+    // Lockout settings.
+    //options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    //options.Lockout.MaxFailedAccessAttempts = 5;
+    //options.Lockout.AllowedForNewUsers = true;
+
+    // User settings.
+    //options.User.AllowedUserNameCharacters =
+    //"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+    options.User.RequireUniqueEmail = true;
+});
 
 var app = builder.Build();
 
@@ -17,7 +52,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseStaticFiles();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

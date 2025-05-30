@@ -92,8 +92,52 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWJvdXRcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Approach/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQXBwcm9hY2hcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Banner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmFubmVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/BlogBanner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmxvZ0Jhbm5lclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/BlogDetailBanner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmxvZ0RldGFpbEJhbm5lclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/BlogDetail/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmxvZ0RldGFpbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/BlogStory/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmxvZ1N0b3J5XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/ContactBanner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29udGFjdEJhbm5lclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Contact/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29udGFjdFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/FaqsBanner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRmFxc0Jhbm5lclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Faqs/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRmFxc1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Footer/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/GoogleMap/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR29vZ2xlTWFwXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Header/Default.cshtml]
@@ -108,12 +152,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSW50cm9cRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/MenuBanner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudUJhbm5lclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Menu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Offer/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcT2ZmZXJcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Pricing/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJpY2luZ1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/ReservationBanner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUmVzZXJ2YXRpb25CYW5uZXJcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Reservation/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUmVzZXJ2YXRpb25cRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Restaurant/Default.cshtml]
@@ -126,6 +186,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Slider/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2xpZGVyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Story/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU3RvcnlcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/TeamBanner/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGVhbUJhbm5lclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/TeamSection/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGVhbVNlY3Rpb25cRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Team/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGVhbVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Views/Shared/Components/Why/Default.cshtml]
