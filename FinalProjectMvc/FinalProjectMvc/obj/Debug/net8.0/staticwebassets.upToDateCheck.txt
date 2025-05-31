@@ -9,6 +9,7 @@ wwwroot\assets\css\common\mousecursor.css
 wwwroot\assets\css\common\slicknav.min.css
 wwwroot\assets\css\common\swiper-bundle.min.css
 wwwroot\assets\css\contact\contact.css
+wwwroot\assets\css\dasboard\dasboard.css
 wwwroot\assets\css\faqs\faqs.css
 wwwroot\assets\css\home\home.css
 wwwroot\assets\css\menu\menu.css
@@ -208,5 +209,12 @@ wwwroot\uploads\scrollings\9144186e-04f7-4d6f-b704-8ec43be068b2_asterisk-icon.sv
 wwwroot\uploads\scrollings\a5ebadd4-cfc9-410a-acf6-a6043e9ae7f8_asterisk-icon.svg
 wwwroot\uploads\scrollings\aaea2fa5-f8ba-4869-95d2-30ff9230289d_asterisk-icon.svg
 wwwroot\uploads\scrollings\c8facefb-8df0-42a0-acb5-7a6606eb3b27_asterisk-icon.svg
+wwwroot\uploads\services\0cba0787-94b5-4cd4-92ed-af33002ba3f6.svg
+wwwroot\uploads\services\43995c39-12dc-481c-81ac-f6b5bd3afdcf.svg
+wwwroot\uploads\services\4c32357e-dce5-4d2f-bf9b-1734db7237e5.jpg
+wwwroot\uploads\services\7f74ccdc-6ece-423e-9a39-6ee65d444274.svg
+wwwroot\uploads\services\f55051b8-26d7-4dc0-a48a-a3a36e28df75.svg
+wwwroot\uploads\services\fa2b5ce9-f199-4c84-804b-2beb49900c8b.svg
+wwwroot\uploads\services\fa859e1a-7885-4b53-b673-fa482007a2c8.svg
 wwwroot\uploads\sliders\2a7abdaa-c53c-4a87-a256-515b49444452_hero-bg-2.jpg
 wwwroot\uploads\sliders\5b0abc10-1912-43ac-ac48-5b0b35eb5ccb_hero-bg.jpg

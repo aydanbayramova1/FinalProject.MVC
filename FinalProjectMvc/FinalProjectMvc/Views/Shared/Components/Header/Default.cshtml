@@ -1,4 +1,5 @@
-﻿<header>
+﻿
+<header>
     <!-- Preloader Start -->
     <section id="preloader-section">
         <div class="preloader">
@@ -10,6 +11,7 @@
     </section>
     <!-- Preloader End -->
     <!-- Topbar Section Start -->
+    @model List<TopbarVM>
     <section id="topbar-section">
         <div class="topbar">
             <div class="container">
@@ -17,15 +19,19 @@
                     <div class="col-md-9">
                         <div class="topbar-contact-info">
                             <ul>
-                                <li>
-                                    <a href="mailto:caffeluna67@gmail.com">
-                                        <img src="~/assets/images/common/icon-mail.svg" alt="" />caffeluna67@gmail.com
-                                    </a>
-                                </li>
-                                <li>
-                                    <img src="~/assets/images/common/icon-location.svg" alt="" />Marchesi 1824
-                                    ViaMontenapoleone 9, 20121 Milano Lombardia, Italy
-                                </li>
+                                @foreach (var item in Model)
+                                {
+                                    <li>
+                                        <a href="mailto:@item.Email">
+                                            <img src="~/assets/images/common/icon-mail.svg" alt="" />
+                                            @item.Email
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <img src="~/assets/images/common/icon-location.svg" alt="" />
+                                        @item.Address
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </div>
@@ -50,6 +56,7 @@
             </div>
         </div>
     </section>
+
     <!-- Topbar Section End -->
     <!-- Header Start -->
     <section id="header-section">

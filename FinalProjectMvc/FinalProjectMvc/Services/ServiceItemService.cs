@@ -33,10 +33,17 @@ namespace FinalProjectMvc.Services
 
         public async Task CreateAsync(ServiceItemCreateVM model)
         {
-            string fileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
-            string path = Path.Combine(_env.WebRootPath, "uploads/services", fileName);
+            string uploadsFolder = Path.Combine(_env.WebRootPath, "uploads", "services");
 
-            using (var stream = new FileStream(path, FileMode.Create))
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+
+            string fileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
+            string filePath = Path.Combine(uploadsFolder, fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
             {
                 await model.Image.CopyToAsync(stream);
             }
@@ -47,6 +54,7 @@ namespace FinalProjectMvc.Services
             await _context.ServiceItems.AddAsync(entity);
             await _context.SaveChangesAsync();
         }
+
 
         public async Task EditAsync(ServiceItemEditVM model)
         {
@@ -90,6 +98,13 @@ namespace FinalProjectMvc.Services
 
             _context.ServiceItems.Remove(entity);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<ServiceItem> GetByIdWithServiceAsync(int id)
+        {
+            return await _context.ServiceItems
+                .Include(x => x.Service)
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

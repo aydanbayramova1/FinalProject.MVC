@@ -1,4 +1,6 @@
-﻿<section id="why-section">
+﻿@model IEnumerable<FinalProjectMvc.Models.ServiceItem>
+
+<section id="why-section">
     <div class="why-choose-us light-bg-section">
         <div class="container">
             <div class="row">
@@ -7,99 +9,32 @@
                         <div class="section-title">
                             <h3 class="wow fadeInUp">Why choose us</h3>
                             <h2 class="text-anime-style-3" data-cursor="-opaque">
-                                Where flavor meets comfort and
-                                services
+                                Where flavor meets comfort and services
                             </h2>
                         </div>
                         <div class="why-choose-btn wow fadeInUp" data-wow-delay="0.2s">
-                            <a style="box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);" asp-controller="Contact" asp-action="Index"
-                               class="btn-default">Contact us</a>
+                            <a asp-controller="Contact" asp-action="Index" class="btn-default">
+                                Contact us
+                            </a>
                         </div>
                     </div>
                 </div>
 
-
                 <div class="col-lg-6">
                     <div class="why-choose-list wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="why-choose-item">
-                            <div class="icon-box">
-                                <img src="~/assets/images/home/icon-about-body-item-2.svg" alt="">
+                        @foreach (var item in Model)
+                        {
+                            <div class="why-choose-item">
+                                <div class="icon-box">
+                                    <img src="~/uploads/services/@item.Img" alt="">
+                                </div>
+                                <div class="why-choose-item-content">
+                                    <h3>@item.Title</h3>
+                                    <p>@item.Subtitle</p>
+                                </div>
                             </div>
-                            <div class="why-choose-item-content">
-                                <h3>Aromatic Mornings</h3>
-                                <p>
-                                    Start your day with flavor
-                                    Wake up to the rich aroma of freshly brewed coffee. Your perfect morning
-                                    begins right here with us.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="why-choose-item">
-                            <div class="icon-box">
-                                <img src="~/assets/images/home/why 2.svg" alt="">
-                            </div>
-                            <div class="why-choose-item-content">
-                                <h3>Fresh Ingredients</h3>
-                                <p>
-                                    Our coffees and desserts are made daily with fresh and natural ingredients.
-                                    Taste it once — you’ll feel the difference!
-                                </p>
-                            </div>
-                        </div>
-                        <div class="why-choose-item">
-                            <div class="icon-box">
-                                <img src="~/assets/images/home/why 3.svg" alt="">
-                            </div>
-                            <div class="why-choose-item-content">
-                                <h3>Exclusive Chefs</h3>
-                                <p>
-                                    Our skilled baristas and chefs turn every cup and bite into a true
-                                    masterpiece. Quality you can taste in every sip.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="why-choose-item">
-                            <div class="icon-box">
-                                <img src="~/assets/images/home/why 4.svg" alt="">
-                            </div>
-                            <div class="why-choose-item-content">
-                                <h3>Fast Service</h3>
-                                <p>
-                                    No more waiting! We serve your orders quickly while maintaining top-notch
-                                    quality and care.
-
-                                </p>
-                            </div>
-                        </div>
-                        <div class="why-choose-item">
-                            <div class="icon-box">
-                                <img src="~/assets/images/home/why 5.svg" alt="">
-                            </div>
-                            <div class="why-choose-item-content">
-                                <h3>Friendly Atmosphere</h3>
-                                <p>
-                                    Our cozy environment is perfect for hanging out with friends, reading a book,
-                                    or simply relaxing with a warm cup of coffee.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="why-choose-item">
-                            <div class="icon-box">
-                                <img src="~/assets/images/home/why 6.svg" alt="">
-                            </div>
-                            <div class="why-choose-item-content">
-                                <h3>Free Wi-Fi</h3>
-                                <p>
-                                    Stay connected anytime! Whether you’re working, studying, or just browsing,
-                                    enjoy our free and fast Wi-Fi service.
-
-                                </p>
-                            </div>
-                        </div>
-
+                        }
                     </div>
-
                 </div>
             </div>
         </div>

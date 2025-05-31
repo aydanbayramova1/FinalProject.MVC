@@ -5,6 +5,7 @@ using FinalProjectMvc.ViewModels.Admin.Scrolling;
 using FinalProjectMvc.ViewModels.Admin.Service;
 using FinalProjectMvc.ViewModels.Admin.ServiceItem;
 using FinalProjectMvc.ViewModels.Admin.Slider;
+using FinalProjectMvc.ViewModels.Admin.Topbar;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FinalProjectMvc.Helpers
@@ -16,7 +17,6 @@ namespace FinalProjectMvc.Helpers
             CreateMap<SliderCreateVM, Slider>();
             CreateMap<Slider, SliderVM>();
             CreateMap<Slider, SliderDetailVM>();
-
 
             CreateMap<Scrolling, ScrollingVM>().ReverseMap();
             CreateMap<Scrolling, ScrollingDetailVM>().ReverseMap();
@@ -37,9 +37,20 @@ namespace FinalProjectMvc.Helpers
             CreateMap<Service, ServiceEditVM>();
             CreateMap<Service, ServiceDetailVM>();
 
+            CreateMap<ServiceItem, ServiceItemVM>()
+            .ForMember(dest => dest.ServiceTitle, opt => opt.MapFrom(src => src.Service.Title));
+            CreateMap<ServiceItem, ServiceItemEditVM>().ReverseMap();
+            CreateMap<ServiceItem, ServiceItemDetailVM>()
+           .ForMember(dest => dest.ServiceTitle, opt => opt.MapFrom(src => src.Service.Title));
+
+
             CreateMap<ServiceItemCreateVM, ServiceItem>();
-            CreateMap<ServiceItem, ServiceItemEditVM>();
-            CreateMap<ServiceItem, ServiceItemDetailVM>();
+
+            CreateMap<Topbar, TopbarVM>();
+            CreateMap<TopbarCreateVM, Topbar>();
+            CreateMap<Topbar, TopbarDetailVM>(); 
+            CreateMap<Topbar, TopbarEditVM>();
+            CreateMap<TopbarEditVM, Topbar>();
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ofZXoQ8OUT/YlHS3bjDTc/pIYZBGmWL3JM3QTJ2Hd+g=",
+  "Hash": "DSDPfoPxfEREg/RA3YjTuQ7/eDsD4XXkq6SaNICoKwo=",
   "Source": "FinalProjectMvc",
   "BasePath": "_content/FinalProjectMvc",
   "Mode": "Default",
@@ -288,6 +288,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\contact\\contact.css"
+    },
+    {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\dasboard\\dasboard.css",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "assets/css/dasboard/dasboard#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ber4t65pm3",
+      "Integrity": "swis+20NzlRCZJR25Ehm4nyw/0enuvERv00z7A8al+0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\dasboard\\dasboard.css"
     },
     {
       "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\faqs\\faqs.css",
@@ -4469,6 +4490,153 @@
       "OriginalItemSpec": "wwwroot\\uploads\\scrollings\\c8facefb-8df0-42a0-acb5-7a6606eb3b27_asterisk-icon.svg"
     },
     {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\0cba0787-94b5-4cd4-92ed-af33002ba3f6.svg",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "uploads/services/0cba0787-94b5-4cd4-92ed-af33002ba3f6#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "aw02yluqvk",
+      "Integrity": "CqcNJ/dQswJl3aXrBceLjV6lmGYDYXbZrBIcDtt/vWY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\services\\0cba0787-94b5-4cd4-92ed-af33002ba3f6.svg"
+    },
+    {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\43995c39-12dc-481c-81ac-f6b5bd3afdcf.svg",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "uploads/services/43995c39-12dc-481c-81ac-f6b5bd3afdcf#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fde0coqz5u",
+      "Integrity": "PWtluSEej6nGTdjbFcD7cbenQlnokhkOxn2M2ESjsw0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\services\\43995c39-12dc-481c-81ac-f6b5bd3afdcf.svg"
+    },
+    {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\4c32357e-dce5-4d2f-bf9b-1734db7237e5.jpg",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "uploads/services/4c32357e-dce5-4d2f-bf9b-1734db7237e5#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "torpwr9cjq",
+      "Integrity": "k6u8RJ6AT67UIl0oWbtCqBZJLqdZ8VvVU1HdeR+8zcU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\services\\4c32357e-dce5-4d2f-bf9b-1734db7237e5.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\7f74ccdc-6ece-423e-9a39-6ee65d444274.svg",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "uploads/services/7f74ccdc-6ece-423e-9a39-6ee65d444274#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "p76s1aj07z",
+      "Integrity": "dUcpd/nvx3gEDPlcmP7HNArkDpnfWk6C7Ixq663aevU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\services\\7f74ccdc-6ece-423e-9a39-6ee65d444274.svg"
+    },
+    {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\f55051b8-26d7-4dc0-a48a-a3a36e28df75.svg",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "uploads/services/f55051b8-26d7-4dc0-a48a-a3a36e28df75#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fde0coqz5u",
+      "Integrity": "PWtluSEej6nGTdjbFcD7cbenQlnokhkOxn2M2ESjsw0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\services\\f55051b8-26d7-4dc0-a48a-a3a36e28df75.svg"
+    },
+    {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\fa2b5ce9-f199-4c84-804b-2beb49900c8b.svg",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "uploads/services/fa2b5ce9-f199-4c84-804b-2beb49900c8b#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "q1qq4hy2gk",
+      "Integrity": "ovHERuD1+ziQ76M++V1f5uXFo94OfGUgwC7NBD9XN9w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\services\\fa2b5ce9-f199-4c84-804b-2beb49900c8b.svg"
+    },
+    {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\fa859e1a-7885-4b53-b673-fa482007a2c8.svg",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "uploads/services/fa859e1a-7885-4b53-b673-fa482007a2c8#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s40s5fw6s1",
+      "Integrity": "VM/k/t6RiTapyjyfCeFau19ZFTb1JAKHc1hI+Jhgf0s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\services\\fa859e1a-7885-4b53-b673-fa482007a2c8.svg"
+    },
+    {
       "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\sliders\\2a7abdaa-c53c-4a87-a256-515b49444452_hero-bg-2.jpg",
       "SourceId": "FinalProjectMvc",
       "SourceType": "Discovered",
@@ -5411,6 +5579,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-rNk0E2hu15MtVCL4EKvwQkqZVl8FigwBi6sr4b+TOac="
+        }
+      ]
+    },
+    {
+      "Route": "assets/css/dasboard/dasboard.ber4t65pm3.css",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\dasboard\\dasboard.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5099"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"swis+20NzlRCZJR25Ehm4nyw/0enuvERv00z7A8al+0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 20:07:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ber4t65pm3"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/css/dasboard/dasboard.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-swis+20NzlRCZJR25Ehm4nyw/0enuvERv00z7A8al+0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/css/dasboard/dasboard.css",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\dasboard\\dasboard.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5099"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"swis+20NzlRCZJR25Ehm4nyw/0enuvERv00z7A8al+0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 20:07:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-swis+20NzlRCZJR25Ehm4nyw/0enuvERv00z7A8al+0="
         }
       ]
     },
@@ -21893,6 +22143,580 @@
         {
           "Name": "integrity",
           "Value": "sha256-HKj7DTP6AIm+FQjocrpWQdN7ilRko7bLWE6QDMAN2bE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/0cba0787-94b5-4cd4-92ed-af33002ba3f6.aw02yluqvk.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\0cba0787-94b5-4cd4-92ed-af33002ba3f6.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6165"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CqcNJ/dQswJl3aXrBceLjV6lmGYDYXbZrBIcDtt/vWY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:45:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "aw02yluqvk"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/services/0cba0787-94b5-4cd4-92ed-af33002ba3f6.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CqcNJ/dQswJl3aXrBceLjV6lmGYDYXbZrBIcDtt/vWY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/0cba0787-94b5-4cd4-92ed-af33002ba3f6.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\0cba0787-94b5-4cd4-92ed-af33002ba3f6.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6165"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CqcNJ/dQswJl3aXrBceLjV6lmGYDYXbZrBIcDtt/vWY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:45:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CqcNJ/dQswJl3aXrBceLjV6lmGYDYXbZrBIcDtt/vWY="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/43995c39-12dc-481c-81ac-f6b5bd3afdcf.fde0coqz5u.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\43995c39-12dc-481c-81ac-f6b5bd3afdcf.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1829"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PWtluSEej6nGTdjbFcD7cbenQlnokhkOxn2M2ESjsw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:46:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fde0coqz5u"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/services/43995c39-12dc-481c-81ac-f6b5bd3afdcf.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PWtluSEej6nGTdjbFcD7cbenQlnokhkOxn2M2ESjsw0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/43995c39-12dc-481c-81ac-f6b5bd3afdcf.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\43995c39-12dc-481c-81ac-f6b5bd3afdcf.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1829"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PWtluSEej6nGTdjbFcD7cbenQlnokhkOxn2M2ESjsw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:46:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PWtluSEej6nGTdjbFcD7cbenQlnokhkOxn2M2ESjsw0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/4c32357e-dce5-4d2f-bf9b-1734db7237e5.jpg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\4c32357e-dce5-4d2f-bf9b-1734db7237e5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68243"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"k6u8RJ6AT67UIl0oWbtCqBZJLqdZ8VvVU1HdeR+8zcU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:01:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-k6u8RJ6AT67UIl0oWbtCqBZJLqdZ8VvVU1HdeR+8zcU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/4c32357e-dce5-4d2f-bf9b-1734db7237e5.torpwr9cjq.jpg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\4c32357e-dce5-4d2f-bf9b-1734db7237e5.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68243"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"k6u8RJ6AT67UIl0oWbtCqBZJLqdZ8VvVU1HdeR+8zcU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:01:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "torpwr9cjq"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/services/4c32357e-dce5-4d2f-bf9b-1734db7237e5.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-k6u8RJ6AT67UIl0oWbtCqBZJLqdZ8VvVU1HdeR+8zcU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/7f74ccdc-6ece-423e-9a39-6ee65d444274.p76s1aj07z.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\7f74ccdc-6ece-423e-9a39-6ee65d444274.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4059"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dUcpd/nvx3gEDPlcmP7HNArkDpnfWk6C7Ixq663aevU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:44:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "p76s1aj07z"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/services/7f74ccdc-6ece-423e-9a39-6ee65d444274.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dUcpd/nvx3gEDPlcmP7HNArkDpnfWk6C7Ixq663aevU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/7f74ccdc-6ece-423e-9a39-6ee65d444274.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\7f74ccdc-6ece-423e-9a39-6ee65d444274.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4059"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dUcpd/nvx3gEDPlcmP7HNArkDpnfWk6C7Ixq663aevU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:44:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dUcpd/nvx3gEDPlcmP7HNArkDpnfWk6C7Ixq663aevU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/f55051b8-26d7-4dc0-a48a-a3a36e28df75.fde0coqz5u.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\f55051b8-26d7-4dc0-a48a-a3a36e28df75.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1829"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PWtluSEej6nGTdjbFcD7cbenQlnokhkOxn2M2ESjsw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:47:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fde0coqz5u"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/services/f55051b8-26d7-4dc0-a48a-a3a36e28df75.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PWtluSEej6nGTdjbFcD7cbenQlnokhkOxn2M2ESjsw0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/f55051b8-26d7-4dc0-a48a-a3a36e28df75.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\f55051b8-26d7-4dc0-a48a-a3a36e28df75.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1829"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PWtluSEej6nGTdjbFcD7cbenQlnokhkOxn2M2ESjsw0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:47:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PWtluSEej6nGTdjbFcD7cbenQlnokhkOxn2M2ESjsw0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/fa2b5ce9-f199-4c84-804b-2beb49900c8b.q1qq4hy2gk.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\fa2b5ce9-f199-4c84-804b-2beb49900c8b.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3666"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ovHERuD1+ziQ76M++V1f5uXFo94OfGUgwC7NBD9XN9w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:47:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "q1qq4hy2gk"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/services/fa2b5ce9-f199-4c84-804b-2beb49900c8b.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ovHERuD1+ziQ76M++V1f5uXFo94OfGUgwC7NBD9XN9w="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/fa2b5ce9-f199-4c84-804b-2beb49900c8b.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\fa2b5ce9-f199-4c84-804b-2beb49900c8b.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3666"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ovHERuD1+ziQ76M++V1f5uXFo94OfGUgwC7NBD9XN9w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:47:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ovHERuD1+ziQ76M++V1f5uXFo94OfGUgwC7NBD9XN9w="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/fa859e1a-7885-4b53-b673-fa482007a2c8.s40s5fw6s1.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\fa859e1a-7885-4b53-b673-fa482007a2c8.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2743"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VM/k/t6RiTapyjyfCeFau19ZFTb1JAKHc1hI+Jhgf0s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:43:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s40s5fw6s1"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/services/fa859e1a-7885-4b53-b673-fa482007a2c8.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VM/k/t6RiTapyjyfCeFau19ZFTb1JAKHc1hI+Jhgf0s="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/services/fa859e1a-7885-4b53-b673-fa482007a2c8.svg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\services\\fa859e1a-7885-4b53-b673-fa482007a2c8.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2743"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VM/k/t6RiTapyjyfCeFau19ZFTb1JAKHc1hI+Jhgf0s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 18:43:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VM/k/t6RiTapyjyfCeFau19ZFTb1JAKHc1hI+Jhgf0s="
         }
       ]
     },

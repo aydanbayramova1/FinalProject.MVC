@@ -10,5 +10,6 @@ namespace FinalProjectMvc.Services.Interfaces
         Task CreateAsync(ServiceItemCreateVM model);
         Task EditAsync(ServiceItemEditVM model);
         Task DeleteAsync(int id);
+        Task<ServiceItem> GetByIdWithServiceAsync(int id);
     }
 }

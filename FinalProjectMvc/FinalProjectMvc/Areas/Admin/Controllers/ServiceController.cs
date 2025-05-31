@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Service;
+using FinalProjectMvc.ViewModels.Admin.ServiceItem;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -28,13 +29,15 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         public async Task<IActionResult> Create()
         {
-            var existing = await _serviceService.GetAsync();
-            if (existing != null)
-            {
-                return RedirectToAction("Index");
-            }
+            var service = await _serviceService.GetAsync(); 
+            if (service == null) return NotFound();
 
-            return View();
+            var vm = new ServiceItemCreateVM
+            {
+                ServiceId = service.Id
+            };
+
+            return View(vm);
         }
 
         [HttpPost]
@@ -70,6 +73,20 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
             var vm = _mapper.Map<ServiceDetailVM>(service);
             return View(vm);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                await _serviceService.DeleteAsync(id);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }

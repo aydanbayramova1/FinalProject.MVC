@@ -9,11 +9,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
     public class ServiceItemController : Controller
     {
         private readonly IServiceItemService _serviceItemService;
+        private readonly IServiceService _serviceService;
         private readonly IMapper _mapper;
 
-        public ServiceItemController(IServiceItemService serviceItemService, IMapper mapper)
+        public ServiceItemController(IServiceItemService serviceItemService, IServiceService serviceService, IMapper mapper)
         {
             _serviceItemService = serviceItemService;
+            _serviceService = serviceService;
             _mapper = mapper;
         }
 
@@ -23,15 +25,36 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             var vms = _mapper.Map<List<ServiceItemVM>>(items);
             return View(vms);
         }
-        public IActionResult Create()
+
+        public async Task<IActionResult> Create()
         {
-            return View();
+            var service = await _serviceService.GetAsync();
+
+            if (service == null)
+            {
+                TempData["Error"] = "The main Service must be created first.";
+                return RedirectToAction("Index", "Service");
+            }
+
+            var vm = new ServiceItemCreateVM
+            {
+                ServiceId = service.Id
+            };
+
+            return View(vm);
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(ServiceItemCreateVM vm)
         {
-            if (!ModelState.IsValid) return View(vm);
+            if (!ModelState.IsValid)
+            {
+               
+                var service = await _serviceService.GetAsync();
+                if (service != null) vm.ServiceId = service.Id;
+
+                return View(vm);
+            }
 
             await _serviceItemService.CreateAsync(vm);
             return RedirectToAction("Index");
@@ -57,17 +80,24 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         public async Task<IActionResult> Detail(int id)
         {
-            var entity = await _serviceItemService.GetByIdAsync(id);
+            var entity = await _serviceItemService.GetByIdWithServiceAsync(id);
             if (entity == null) return NotFound();
 
             var vm = _mapper.Map<ServiceItemDetailVM>(entity);
             return View(vm);
         }
-
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            await _serviceItemService.DeleteAsync(id);
+            try
+            {
+                await _serviceItemService.DeleteAsync(id);
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = ex.Message;
+            }
+
             return RedirectToAction("Index");
         }
     }

@@ -46,6 +46,8 @@ builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IScrollingService, ScrollingService>();
 builder.Services.AddScoped<ICatalogService, CatalogService>();
 builder.Services.AddScoped<IServiceService, ServiceService>();
+builder.Services.AddScoped<IServiceItemService, ServiceItemService>();
+builder.Services.AddScoped<ITopbarService, TopbarService>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 
