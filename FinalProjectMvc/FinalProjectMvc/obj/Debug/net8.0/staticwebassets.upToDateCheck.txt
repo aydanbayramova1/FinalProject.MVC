@@ -197,12 +197,10 @@ wwwroot\assets\videos\latte.jpg
 wwwroot\assets\videos\videoframe_3275.png
 wwwroot\assets\videos\WhatsApp Video 2025-05-20 at 06.56.31.mp4
 wwwroot\assets\videos\WhatsApp Video 2025-05-21 at 06.26.16.mp4
-wwwroot\uploads\catalogs\02cccd85-41d3-4a19-a4b0-590b54998255.jpg
-wwwroot\uploads\catalogs\3e382000-b58b-40d6-bbde-a3990e7513ce.jpg
-wwwroot\uploads\catalogs\419f777b-8b42-4385-8103-0b884f9ac8c7.jpg
-wwwroot\uploads\catalogs\60156949-76af-42a5-be8f-3dca6e56438e.jpg
-wwwroot\uploads\catalogs\62add8c4-7aeb-4073-901a-8fdb4e7ea91d.png
-wwwroot\uploads\catalogs\721356ae-c67d-4a28-b883-c46fbf5cd87b.jpg
+wwwroot\uploads\catalogs\21838310-1f1c-4cd3-88ba-93872e6eff03.jpg
+wwwroot\uploads\catalogs\3b0dfe5d-c604-456a-83bc-30ed52ceccd4.jpg
+wwwroot\uploads\catalogs\74eaeb4c-ecbc-428f-94da-4ec7c10706bb.jpg
+wwwroot\uploads\catalogs\a3819336-9791-4bfd-b357-6c9ea63e5ed3.jpg
 wwwroot\uploads\scrollings\0d2cb485-a685-4f12-bb5e-0e63cc4a0b95_asterisk-icon.svg
 wwwroot\uploads\scrollings\41c4dd1e-b25b-4c86-82fd-51f29fe94be6_asterisk-icon.svg
 wwwroot\uploads\scrollings\7000cfe5-ddc1-480d-8f1e-1047711a2a7a_asterisk-icon.svg

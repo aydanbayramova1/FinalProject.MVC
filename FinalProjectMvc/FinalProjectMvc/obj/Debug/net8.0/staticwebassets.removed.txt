@@ -1,6 +1,0 @@
-C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\wwwroot\uploads\catalogs\02cccd85-41d3-4a19-a4b0-590b54998255.jpg
-C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\wwwroot\uploads\catalogs\3e382000-b58b-40d6-bbde-a3990e7513ce.jpg
-C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\wwwroot\uploads\catalogs\419f777b-8b42-4385-8103-0b884f9ac8c7.jpg
-C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\wwwroot\uploads\catalogs\60156949-76af-42a5-be8f-3dca6e56438e.jpg
-C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\wwwroot\uploads\catalogs\62add8c4-7aeb-4073-901a-8fdb4e7ea91d.png
-C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\wwwroot\uploads\catalogs\721356ae-c67d-4a28-b883-c46fbf5cd87b.jpg

@@ -10,5 +10,7 @@ namespace FinalProjectMvc.Data
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Scrolling> Scrollings { get; set; }
         public DbSet<Catalog> Catalogs { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<ServiceItem> ServiceItems { get; set; }
     }
 }

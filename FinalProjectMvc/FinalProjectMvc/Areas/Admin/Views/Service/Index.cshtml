@@ -1,0 +1,64 @@
+﻿@model ServiceVM
+
+<div style="position: relative;">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="bg-light border rounded shadow-sm p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">🛠 Service</h2>
+
+                        @if (Model == null)
+                        {
+                            <a asp-action="Create" class="btn btn-outline-brown">
+                                <i class="fa fa-plus mr-1"></i> Add New Service
+                            </a>
+                        }
+                    </div>
+
+                    @if (Model != null)
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-bordered text-center align-middle bg-white">
+                                <thead style="background-color: #5c3d2e; color: white;">
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Subtitle</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>@Model.Title</td>
+                                        <td>@Model.Subtitle</td>
+                                        <td>
+                                            <div class="d-flex justify-content-center gap-2">
+                                                <a asp-action="Detail" asp-route-id="@Model.Id" class="btn btn-info btn-sm" title="View">
+                                                    <i class="fa-solid fa-circle-info"></i>
+                                                </a>
+                                                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-dark btn-sm" title="Edit">
+                                                    <i class="fa-solid fa-pencil"></i>
+                                                </a>
+                                                <form asp-action="Delete" asp-route-id="@Model.Id" method="post" onsubmit="return confirm('Are you sure?');" class="d-inline">
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning text-center mt-4" role="alert">
+                            No service has been added yet.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
