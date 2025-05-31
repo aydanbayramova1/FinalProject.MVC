@@ -13,5 +13,6 @@ namespace FinalProjectMvc.Data
         public DbSet<Service> Services { get; set; }
         public DbSet<ServiceItem> ServiceItems { get; set; }
         public DbSet<Topbar> Topbars { get; set; }
+        public DbSet<AboutBanner> AboutBanners { get; set; }
     }
 }

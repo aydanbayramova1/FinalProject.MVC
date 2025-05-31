@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Models;
+using FinalProjectMvc.ViewModels.Admin.AboutBanner;
 using FinalProjectMvc.ViewModels.Admin.Catalog;
 using FinalProjectMvc.ViewModels.Admin.Scrolling;
 using FinalProjectMvc.ViewModels.Admin.Service;
@@ -51,6 +52,16 @@ namespace FinalProjectMvc.Helpers
             CreateMap<Topbar, TopbarDetailVM>(); 
             CreateMap<Topbar, TopbarEditVM>();
             CreateMap<TopbarEditVM, Topbar>();
+
+
+            CreateMap<AboutBannerCreateVM, AboutBanner>()
+            .ForMember(dest => dest.Img, opt => opt.Ignore()); 
+
+            
+            CreateMap<AboutBanner, AboutBannerEditVM>().ReverseMap()
+                .ForMember(dest => dest.Img, opt => opt.Ignore());       
+            CreateMap<AboutBanner, AboutBannerDetailVM>();
+            CreateMap<AboutBanner, AboutBannerVM>();
         }
     }
 }

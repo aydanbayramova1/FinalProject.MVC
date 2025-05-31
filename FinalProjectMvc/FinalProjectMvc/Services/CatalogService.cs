@@ -50,7 +50,8 @@ namespace FinalProjectMvc.Services
         public async Task EditAsync(CatalogEditVM model)
         {
             var entity = await _context.Catalogs.FindAsync(model.Id);
-            if (entity == null) throw new Exception("Catalog not found");
+            if (entity == null)
+                throw new KeyNotFoundException("Catalog not found");
 
             entity.Title = model.Title;
             entity.Description = model.Description;
@@ -60,22 +61,19 @@ namespace FinalProjectMvc.Services
                 string newFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.Photo.FileName);
                 string newPath = Path.Combine(_env.WebRootPath, "uploads/catalogs", newFileName);
 
-                using (var stream = new FileStream(newPath, FileMode.Create))
-                {
-                    await model.Photo.CopyToAsync(stream);
-                }
+                using var stream = new FileStream(newPath, FileMode.Create);
+                await model.Photo.CopyToAsync(stream);
 
                 string oldPath = Path.Combine(_env.WebRootPath, "uploads/catalogs", entity.Img);
                 if (System.IO.File.Exists(oldPath))
-                {
                     System.IO.File.Delete(oldPath);
-                }
 
                 entity.Img = newFileName;
             }
 
             await _context.SaveChangesAsync();
         }
+
 
         public async Task DeleteAsync(int id)
         {

@@ -27,9 +27,14 @@ namespace FinalProjectMvc.Services
 
         public async Task<Service> GetByIdAsync(int id)
         {
-            return await _context.Services
+            var entity = await _context.Services
                 .Include(s => s.Items)
                 .FirstOrDefaultAsync(s => s.Id == id);
+
+            if (entity == null)
+                throw new KeyNotFoundException("Service not found");
+
+            return entity;
         }
 
         public async Task CreateAsync(ServiceCreateVM model)
@@ -42,7 +47,8 @@ namespace FinalProjectMvc.Services
         public async Task EditAsync(ServiceEditVM model)
         {
             var entity = await _context.Services.FindAsync(model.Id);
-            if (entity == null) throw new Exception("Service not found");
+            if (entity == null)
+                throw new KeyNotFoundException("Service not found");
 
             entity.Title = model.Title;
             entity.Subtitle = model.Subtitle;
@@ -53,7 +59,8 @@ namespace FinalProjectMvc.Services
         public async Task DeleteAsync(int id)
         {
             var service = await _context.Services.FindAsync(id);
-            if (service == null) throw new Exception("Service not found");
+            if (service == null)
+                throw new KeyNotFoundException("Service not found");
 
             _context.Services.Remove(service);
             await _context.SaveChangesAsync();

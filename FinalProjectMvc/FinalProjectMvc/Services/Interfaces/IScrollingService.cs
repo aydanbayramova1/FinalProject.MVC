@@ -9,6 +9,6 @@ namespace FinalProjectMvc.Services.Interfaces
         Task<Scrolling> GetByIdAsync(int id);
         Task CreateAsync(ScrollingCreateVM model);
         Task EditAsync(ScrollingEditVM model);
-        Task DeleteAsync(Scrolling scrolling);
+        Task DeleteAsync(int id);
     }
 }

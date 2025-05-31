@@ -9,7 +9,6 @@ namespace FinalProjectMvc.Services
 {
     public class ServiceItemService : IServiceItemService
     {
-
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
@@ -28,17 +27,17 @@ namespace FinalProjectMvc.Services
 
         public async Task<ServiceItem> GetByIdAsync(int id)
         {
-            return await _context.ServiceItems.FindAsync(id);
+            var entity = await _context.ServiceItems.FindAsync(id);
+            if (entity == null)
+                throw new KeyNotFoundException("ServiceItem not found");
+            return entity;
         }
 
         public async Task CreateAsync(ServiceItemCreateVM model)
         {
             string uploadsFolder = Path.Combine(_env.WebRootPath, "uploads", "services");
-
             if (!Directory.Exists(uploadsFolder))
-            {
                 Directory.CreateDirectory(uploadsFolder);
-            }
 
             string fileName = Guid.NewGuid() + Path.GetExtension(model.Image.FileName);
             string filePath = Path.Combine(uploadsFolder, fileName);
@@ -55,19 +54,21 @@ namespace FinalProjectMvc.Services
             await _context.SaveChangesAsync();
         }
 
-
         public async Task EditAsync(ServiceItemEditVM model)
         {
-            var entity = await _context.ServiceItems.FindAsync(model.Id);
-            if (entity == null) throw new Exception("ServiceItem not found");
+            var entity = await GetByIdAsync(model.Id); 
 
             entity.Title = model.Title;
             entity.Subtitle = model.Subtitle;
 
             if (model.Photo != null)
             {
+                string uploadsFolder = Path.Combine(_env.WebRootPath, "uploads", "services");
+                if (!Directory.Exists(uploadsFolder))
+                    Directory.CreateDirectory(uploadsFolder);
+
                 string fileName = Guid.NewGuid() + Path.GetExtension(model.Photo.FileName);
-                string path = Path.Combine(_env.WebRootPath, "uploads/services", fileName);
+                string path = Path.Combine(uploadsFolder, fileName);
 
                 using (var stream = new FileStream(path, FileMode.Create))
                 {
@@ -76,7 +77,7 @@ namespace FinalProjectMvc.Services
 
                 if (!string.IsNullOrEmpty(entity.Img))
                 {
-                    string oldPath = Path.Combine(_env.WebRootPath, "uploads/services", entity.Img);
+                    string oldPath = Path.Combine(uploadsFolder, entity.Img);
                     if (System.IO.File.Exists(oldPath))
                         System.IO.File.Delete(oldPath);
                 }
@@ -89,10 +90,9 @@ namespace FinalProjectMvc.Services
 
         public async Task DeleteAsync(int id)
         {
-            var entity = await _context.ServiceItems.FindAsync(id);
-            if (entity == null) throw new Exception("ServiceItem not found");
+            var entity = await GetByIdAsync(id); 
 
-            string path = Path.Combine(_env.WebRootPath, "uploads/services", entity.Img);
+            string path = Path.Combine(_env.WebRootPath, "uploads", "services", entity.Img);
             if (System.IO.File.Exists(path))
                 System.IO.File.Delete(path);
 
@@ -102,9 +102,14 @@ namespace FinalProjectMvc.Services
 
         public async Task<ServiceItem> GetByIdWithServiceAsync(int id)
         {
-            return await _context.ServiceItems
+            var entity = await _context.ServiceItems
                 .Include(x => x.Service)
                 .FirstOrDefaultAsync(x => x.Id == id);
+
+            if (entity == null)
+                throw new KeyNotFoundException("ServiceItem not found");
+
+            return entity;
         }
     }
 }

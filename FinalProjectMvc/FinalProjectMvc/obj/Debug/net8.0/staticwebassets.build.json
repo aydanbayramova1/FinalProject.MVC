@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DSDPfoPxfEREg/RA3YjTuQ7/eDsD4XXkq6SaNICoKwo=",
+  "Hash": "kDmFQC0Emd6rdmOcJZN3nDB0rGEGdMcJsTemer72IFI=",
   "Source": "FinalProjectMvc",
   "BasePath": "_content/FinalProjectMvc",
   "Mode": "Default",
@@ -4257,6 +4257,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\videos\\WhatsApp Video 2025-05-21 at 06.26.16.mp4"
+    },
+    {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\aboutbanner\\ccf155fd-b6ef-448b-ab65-caeb71159766.png",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "uploads/aboutbanner/ccf155fd-b6ef-448b-ab65-caeb71159766#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2vw8mwwah9",
+      "Integrity": "Xi5ku4WmURk0XFLEp86h0k9X4lceMmUyQnzwBWPUMZc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\aboutbanner\\ccf155fd-b6ef-448b-ab65-caeb71159766.png"
     },
     {
       "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\catalogs\\21838310-1f1c-4cd3-88ba-93872e6eff03.jpg",
@@ -21241,6 +21262,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-fgkPRdvqkXKyygLR9PzU8Kaq1sUP0eNYvLaMbVL9DaE="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/aboutbanner/ccf155fd-b6ef-448b-ab65-caeb71159766.2vw8mwwah9.png",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\aboutbanner\\ccf155fd-b6ef-448b-ab65-caeb71159766.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1524634"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xi5ku4WmURk0XFLEp86h0k9X4lceMmUyQnzwBWPUMZc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 21:52:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2vw8mwwah9"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/aboutbanner/ccf155fd-b6ef-448b-ab65-caeb71159766.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xi5ku4WmURk0XFLEp86h0k9X4lceMmUyQnzwBWPUMZc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/aboutbanner/ccf155fd-b6ef-448b-ab65-caeb71159766.png",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\aboutbanner\\ccf155fd-b6ef-448b-ab65-caeb71159766.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1524634"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Xi5ku4WmURk0XFLEp86h0k9X4lceMmUyQnzwBWPUMZc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 31 May 2025 21:52:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Xi5ku4WmURk0XFLEp86h0k9X4lceMmUyQnzwBWPUMZc="
         }
       ]
     },

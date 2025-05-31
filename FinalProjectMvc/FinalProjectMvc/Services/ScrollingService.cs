@@ -24,14 +24,6 @@ namespace FinalProjectMvc.Services
         {
             return await _context.Scrollings.AsNoTracking().OrderByDescending(s => s.Id).ToListAsync();
         }
-
-        public async Task<Scrolling> GetByIdAsync(int id)
-        {
-            var scrolling = await _context.Scrollings.FindAsync(id);
-            if (scrolling == null) throw new KeyNotFoundException("Scrolling item not found!");
-            return scrolling;
-        }
-
         public async Task CreateAsync(ScrollingCreateVM model)
         {
             string folder = Path.Combine(_env.WebRootPath, "uploads", "scrollings");
@@ -51,6 +43,13 @@ namespace FinalProjectMvc.Services
             await _context.SaveChangesAsync();
         }
 
+        public async Task<Scrolling> GetByIdAsync(int id)
+        {
+            var scrolling = await _context.Scrollings.FindAsync(id);
+            if (scrolling == null)
+                throw new KeyNotFoundException("Scrolling item not found!");
+            return scrolling;
+        }
 
         public async Task EditAsync(ScrollingEditVM model)
         {
@@ -69,10 +68,8 @@ namespace FinalProjectMvc.Services
                 string newFileName = $"{Guid.NewGuid()}_{model.Photo.FileName}";
                 string newPath = Path.Combine(folder, newFileName);
 
-                using (var stream = new FileStream(newPath, FileMode.Create))
-                {
-                    await model.Photo.CopyToAsync(stream);
-                }
+                using var stream = new FileStream(newPath, FileMode.Create);
+                await model.Photo.CopyToAsync(stream);
 
                 scrolling.Img = newFileName;
             }
@@ -81,13 +78,16 @@ namespace FinalProjectMvc.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Scrolling scrolling)
+        public async Task DeleteAsync(int id)
         {
+            var scrolling = await GetByIdAsync(id);  
+
             string path = Path.Combine(_env.WebRootPath, "uploads", "scrollings", scrolling.Img);
             if (File.Exists(path)) File.Delete(path);
 
             _context.Scrollings.Remove(scrolling);
             await _context.SaveChangesAsync();
         }
+
     }
 }

@@ -71,8 +71,14 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var scrolling = await _scrollingService.GetByIdAsync(id);
-            await _scrollingService.DeleteAsync(scrolling);
+            if (scrolling == null)
+            {
+                return NotFound(); 
+            }
+
+            await _scrollingService.DeleteAsync(scrolling.Id);
             return RedirectToAction(nameof(Index));
         }
+
     }
 }

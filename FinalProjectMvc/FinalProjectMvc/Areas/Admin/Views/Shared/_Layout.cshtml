@@ -47,11 +47,10 @@
 
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button"
-                                       onclick="toggleDropdown('productsDropdown')" aria-haspopup="true" aria-expanded="false">
-                                        Products
-                                    </a>
+                                       onclick="toggleDropdown('productsDropdown', event)">About</a>
+
                                     <div style="color: #4a1f15;" class="dropdown-menu" aria-labelledby="productsDropdown">
-                                        <a class="dropdown-item" href="#">All Products</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="AboutBanner" asp-action="Index">About Banner</a>
                                         <a class="dropdown-item" href="#">Add Product</a>
                                         <a class="dropdown-item" href="#">Categories</a>
                                         <a class="dropdown-item" href="#">Inventory</a>
@@ -59,12 +58,10 @@
                                     </div>
                                 </li>
 
-                                <!-- Accounts Dropdown -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="accountsDropdown" role="button"
-                                       onclick="toggleDropdown('accountsDropdown')" aria-haspopup="true" aria-expanded="false">
-                                        Accounts
-                                    </a>
+                                       onclick="toggleDropdown('accountsDropdown', event)">Accounts</a>
+                                    
                                     <div style="color: #4a1f15;" class="dropdown-menu" aria-labelledby="accountsDropdown">
                                         <a class="dropdown-item" href="#">User Management</a>
                                         <a class="dropdown-item" href="#">Permissions</a>
