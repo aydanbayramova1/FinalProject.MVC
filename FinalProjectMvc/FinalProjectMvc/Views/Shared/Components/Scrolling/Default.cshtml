@@ -1,40 +1,28 @@
-﻿<section id="scrolling">
+﻿@using FinalProjectMvc.Models
+@model IEnumerable<Scrolling>
+
+<section id="scrolling">
     <div class="our-scrolling-ticker">
         <div class="scrolling-ticker-box">
             <div class="scrolling-content">
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Espresso</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Americano</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Latte</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cappuccino</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Mocha</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Macchiato</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cold Brew</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Espresso</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Americano</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Latte</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cappuccino</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Mocha</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Macchiato</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cold Brew</span>
+                @foreach (var item in Model)
+                {
+                    <span>
+                        <img src="~/uploads/scrollings/@item.Img" alt="">
+                        @item.Name
+                    </span>
+                }
             </div>
 
             <div class="scrolling-content">
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Espresso</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Americano</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Latte</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cappuccino</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Mocha</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Macchiato</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cold Brew</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Espresso</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Americano</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Latte</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cappuccino</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Mocha</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Macchiato</span>
-                <span><img src="~/assets/images/common/asterisk-icon.svg" alt="">Cold Brew</span>
+                @foreach (var item in Model)
+                {
+                    <span>
+                        <img src="~/uploads/scrollings/@item.Img" alt="">
+                        @item.Name
+                    </span>
+                }
             </div>
         </div>
-
     </div>
 </section>

@@ -26,27 +26,24 @@
 
                         <div style="color: #4a1f15;" class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
-                                <!-- Dashboard - sadə link -->
                                 <li class="nav-item">
-                                    <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Caffe <span class="sr-only">(current)</span></a>
                                 </li>
 
-                                <!-- Reports Dropdown -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="reportsDropdown" role="button"
                                        onclick="toggleDropdown('reportsDropdown')" aria-haspopup="true" aria-expanded="false">
                                         Home
                                     </a>
                                     <div style="color: #4a1f15;" class="dropdown-menu" aria-labelledby="reportsDropdown">
-                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Slider" asp-action="Index">Slider</a>
-                                        <a class="dropdown-item" href="#">Weekly Report</a>
-                                        <a class="dropdown-item" href="#">Monthly Report</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Slider" asp-action="Index">Sliders</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Scrolling" asp-action="Index">Scrollings</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Catalog" asp-action="Index">Catalogs</a>
                                         <a class="dropdown-item" href="#">Yearly Report</a>
                                         <a class="dropdown-item" href="#">Custom Reports</a>
                                     </div>
                                 </li>
 
-                                <!-- Products Dropdown -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button"
                                        onclick="toggleDropdown('productsDropdown')" aria-haspopup="true" aria-expanded="false">
@@ -905,5 +902,105 @@
         padding: 8px 12px;
     }
 
+    .dropdown-menu {
+        z-index: 1050 !important; /* Bootstrap modal üçün standart z-index */
+        position: absolute !important; /* Əmin olun ki, menyular yerində çıxır */
+    }
+
+    .navbar {
+        position: relative;
+        z-index: 2000;
+    }
+
+    .dropdown-menu {
+        z-index: 3000 !important;
+        position: absolute;
+    }
+
+
+    main, section, header {
+        position: relative;
+        z-index: 1000;
+    }
+
+
+    .navbar {
+        position: relative;
+        z-index: 2000;
+    }
+
+    .dropdown-menu {
+        z-index: 3000 !important;
+        position: absolute;
+    }
+
+    main, section, header {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .container, .row, .col-12 {
+        overflow: visible !important;
+    }
+
+
+    .dropdown-menu {
+        z-index: 9999 !important;
+        position: absolute !important;
+        display: block;
+        visibility: visible;
+    }
+
+    .container, .row, .navbar {
+        overflow: visible !important;
+        position: relative !important;
+        z-index: 1;
+    }
+
+
+    .dropdown-menu {
+        z-index: 1050 !important;
+        position: absolute !important;
+    }
+
+    /* Aşağıdakı ağ paneli üstə çıxmaması üçün */
+    .card, .panel, .content-wrapper {
+        z-index: 1 !important;
+        position: relative !important;
+    }
+
+    .dropdown-menu {
+        z-index: 9999 !important;
+        position: absolute !important;
+    }
+
+    /* Sənin slider list card-ı dropdown-un altında qalsın */
+    .container .bg-light {
+        position: relative;
+        z-index: 1 !important;
+    }
+
+
+    /* Dropdown menyunu həmişə üstdə saxla */
+    .dropdown-menu {
+        position: absolute !important;
+        z-index: 1050 !important; /* Bootstrap modal z-index'indən aşağı */
+        display: block;
+    }
+
+    /* Dropdown açılmasında override üçün: */
+    .navbar-nav .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+
+    /* Slider list konteynerinin dropdown-un önünə çıxmasının qarşısını al */
+    .bg-light {
+        position: relative;
+        z-index: 1 !important;
+    }
+
+    /* Dropdown menyulara kölgə də əlavə edə bilərsən görünməsi üçün */
+    .dropdown-menu {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 </style>

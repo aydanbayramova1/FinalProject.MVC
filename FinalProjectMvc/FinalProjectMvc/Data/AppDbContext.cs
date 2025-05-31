@@ -8,5 +8,7 @@ namespace FinalProjectMvc.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Scrolling> Scrollings { get; set; }
+        public DbSet<Catalog> Catalogs { get; set; }
     }
 }

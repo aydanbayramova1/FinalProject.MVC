@@ -1570,3 +1570,16 @@ for (let sheet of document.styleSheets) {
         console.warn("Can't access stylesheet:", sheet.href);
     }
 }
+
+
+
+
+for (let sheet of document.styleSheets) {
+    try {
+        let rules = sheet.cssRules;
+        // rules il? i?l?m?k
+    } catch (e) {
+        // Xarici stylesheet-l?ri atlayaq
+        continue;
+    }
+}

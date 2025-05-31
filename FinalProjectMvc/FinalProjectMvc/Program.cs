@@ -43,6 +43,8 @@ builder.Services.Configure<IdentityOptions>(options =>
 });
 
 builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<IScrollingService, ScrollingService>();
+builder.Services.AddScoped<ICatalogService, CatalogService>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 

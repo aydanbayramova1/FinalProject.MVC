@@ -1,0 +1,28 @@
+﻿@model ScrollingDetailVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border text-center">
+                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Scrolling Item Details</h2>
+
+                <img src="~/uploads/scrollings/@Model.Img" alt="Scrolling Image"
+                     class="img-fluid rounded mb-4"
+                     style="max-width: 100%; height: auto; max-height: 300px;" />
+
+                <div class="text-start">
+                    <p><strong>Name:</strong> @Model.Name</p>
+                </div>
+
+                <a asp-action="Index"
+                   class="btn mt-3"
+                   style="color: #5c3d2e; border: 1px solid #5c3d2e; background-color: white;"
+                   onmouseover="this.style.backgroundColor='#5c3d2e'; this.style.color='white';"
+                   onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
+                    Back to List
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
