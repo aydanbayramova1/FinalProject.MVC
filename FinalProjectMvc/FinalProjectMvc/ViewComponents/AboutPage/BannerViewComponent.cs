@@ -1,5 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace FinalProjectMvc.ViewComponents.AboutPage
 {
@@ -14,8 +15,14 @@ namespace FinalProjectMvc.ViewComponents.AboutPage
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var banners = await _aboutBannerService.GetAllAsync();
-            return View(banners);
+            var banner = (await _aboutBannerService.GetAllAsync()).FirstOrDefault();
+
+            if (banner == null || string.IsNullOrEmpty(banner.Img) || string.IsNullOrEmpty(banner.Title))
+            {
+                return Content("");
+            }
+
+            return View(banner);
         }
     }
 }
