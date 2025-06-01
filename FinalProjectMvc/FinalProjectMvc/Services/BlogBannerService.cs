@@ -23,7 +23,6 @@ namespace FinalProjectMvc.Services
         public async Task CreateAsync(BlogBannerCreateVM model)
         {
             string fileName = await model.Photo.SaveFileAsync(_env.WebRootPath, "uploads/blogbanner");
-
             var entity = new BlogBanner
             {
                 Title = model.Title,

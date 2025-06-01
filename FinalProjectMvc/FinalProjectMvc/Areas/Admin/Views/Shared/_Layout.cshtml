@@ -60,10 +60,10 @@
 
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="accountsDropdown" role="button"
-                                       onclick="toggleDropdown('accountsDropdown', event)">Accounts</a>
+                                       onclick="toggleDropdown('accountsDropdown', event)">Blog</a>
                                     
                                     <div style="color: #4a1f15;" class="dropdown-menu" aria-labelledby="accountsDropdown">
-                                        <a class="dropdown-item" href="#">User Management</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="BlogBanner" asp-action="Index">Blog Banner</a>
                                         <a class="dropdown-item" href="#">Permissions</a>
                                         <a class="dropdown-item" href="#">Account Settings</a>
                                         <a class="dropdown-item" href="#">Billing Info</a>
@@ -71,14 +71,11 @@
                                     </div>
                                 </li>
 
-                                <!-- Analytics Dropdown -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="analyticsDropdown" role="button"
-                                       onclick="toggleDropdown('analyticsDropdown')" aria-haspopup="true" aria-expanded="false">
-                                        Analytics
-                                    </a>
+                                       onclick="toggleDropdown('analyticsDropdown', event)">Menu </a>
                                     <div style="color: #4a1f15;" class="dropdown-menu" aria-labelledby="analyticsDropdown">
-                                        <a class="dropdown-item" href="#">Sales Analytics</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="MenuBanner" asp-action="Index">Menu Banner</a>
                                         <a class="dropdown-item" href="#">User Analytics</a>
                                         <a class="dropdown-item" href="#">Performance Metrics</a>
                                         <a class="dropdown-item" href="#">Revenue Reports</a>
@@ -86,14 +83,12 @@
                                     </div>
                                 </li>
 
-                                <!-- Orders Dropdown -->
+                            
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="ordersDropdown" role="button"
-                                       onclick="toggleDropdown('ordersDropdown')" aria-haspopup="true" aria-expanded="false">
-                                        Orders
-                                    </a>
+                                       onclick="toggleDropdown('ordersDropdown', event)">Team </a>
                                     <div style="color: #4a1f15;" class="dropdown-menu" aria-labelledby="ordersDropdown">
-                                        <a class="dropdown-item" href="#">All Orders</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="TeamBanner" asp-action="Index">Team Banner</a>
                                         <a class="dropdown-item" href="#">Pending Orders</a>
                                         <a class="dropdown-item" href="#">Completed Orders</a>
                                         <a class="dropdown-item" href="#">Cancelled Orders</a>
@@ -104,11 +99,9 @@
                                 <!-- Customers Dropdown -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="customersDropdown" role="button"
-                                       onclick="toggleDropdown('customersDropdown')" aria-haspopup="true" aria-expanded="false">
-                                        Customers
-                                    </a>
+                                       onclick="toggleDropdown('customersDropdown', event)">Faqs </a>
                                     <div style="color: #4a1f15;" class="dropdown-menu" aria-labelledby="customersDropdown">
-                                        <a class="dropdown-item" href="#">Customer List</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="FaqsBanner" asp-action="Index">Faqs Banner</a>
                                         <a class="dropdown-item" href="#">Customer Groups</a>
                                         <a class="dropdown-item" href="#">Customer Analytics</a>
                                         <a class="dropdown-item" href="#">Support Tickets</a>
@@ -119,11 +112,9 @@
                                 <!-- Marketing Dropdown -->
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="marketingDropdown" role="button"
-                                       onclick="toggleDropdown('marketingDropdown')" aria-haspopup="true" aria-expanded="false">
-                                        Marketing
-                                    </a>
+                                       onclick="toggleDropdown('marketingDropdown', event)">Contact </a>
                                     <div style="color: #4a1f15;" class="dropdown-menu" aria-labelledby="marketingDropdown">
-                                        <a class="dropdown-item" href="#">Campaigns</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="ContactBanner" asp-action="Index">Contact Banner</a>
                                         <a class="dropdown-item" href="#">Email Marketing</a>
                                         <a class="dropdown-item" href="#">Social Media</a>
                                         <a class="dropdown-item" href="#">Promotions</a>

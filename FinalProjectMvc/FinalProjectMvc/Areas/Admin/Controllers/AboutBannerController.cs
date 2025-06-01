@@ -2,6 +2,7 @@
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.AboutBanner;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
 {
@@ -14,7 +15,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         {
             _aboutBannerService = aboutBannerService;
         }
-
 
         public async Task<IActionResult> Index()
         {
@@ -31,14 +31,11 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vmList);
         }
 
-
-
         public IActionResult Create()
         {
             return View();
         }
 
-    
         [HttpPost]
         public async Task<IActionResult> Create(AboutBannerCreateVM model)
         {
@@ -51,7 +48,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var banner = await _aboutBannerService.GetByIdAsync(id);
-            if (banner == null) return NotFound();
+            if (banner == null)
+                throw new KeyNotFoundException($"AboutBanner with ID {id} not found.");
 
             var vm = new AboutBannerEditVM
             {
@@ -75,7 +73,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Detail(int id)
         {
             var banner = await _aboutBannerService.GetByIdAsync(id);
-            if (banner == null) return NotFound();
+            if (banner == null)
+                throw new KeyNotFoundException($"AboutBanner with ID {id} not found.");
 
             var vm = new AboutBannerDetailVM
             {

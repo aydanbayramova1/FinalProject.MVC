@@ -15,5 +15,9 @@ namespace FinalProjectMvc.Data
         public DbSet<Topbar> Topbars { get; set; }
         public DbSet<AboutBanner> AboutBanners { get; set; }
         public DbSet<BlogBanner> BlogBanners { get; set; }
+        public DbSet<MenuBanner> MenuBanners { get; set; }
+        public DbSet<TeamBanner> TeamBanners { get; set; }
+        public DbSet<FaqsBanner> FaqsBanners { get; set; }
+        public DbSet<ContactBanner> ContactBanners { get; set; }
     }
 }

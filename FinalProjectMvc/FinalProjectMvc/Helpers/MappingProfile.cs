@@ -3,6 +3,7 @@ using FinalProjectMvc.Models;
 using FinalProjectMvc.ViewModels.Admin.AboutBanner;
 using FinalProjectMvc.ViewModels.Admin.BlogBanner;
 using FinalProjectMvc.ViewModels.Admin.Catalog;
+using FinalProjectMvc.ViewModels.Admin.MenuBanner;
 using FinalProjectMvc.ViewModels.Admin.Scrolling;
 using FinalProjectMvc.ViewModels.Admin.Service;
 using FinalProjectMvc.ViewModels.Admin.ServiceItem;
@@ -72,6 +73,13 @@ namespace FinalProjectMvc.Helpers
                .ForMember(dest => dest.Img, opt => opt.Ignore());
             CreateMap<BlogBanner, BlogBannerDetailVM>();
             CreateMap<BlogBanner, BlogBannerVM>();
+
+
+            CreateMap<MenuBanner, MenuBannerEditVM>().ReverseMap()
+           .ForMember(dest => dest.Img, opt => opt.Ignore());
+
+            CreateMap<MenuBanner, MenuBannerDetailVM>();
+            CreateMap<MenuBanner, MenuBannerVM>();
         }
     }
 }

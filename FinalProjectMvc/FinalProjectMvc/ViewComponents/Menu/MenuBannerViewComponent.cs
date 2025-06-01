@@ -1,12 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinalProjectMvc.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
-namespace FinalProjectMvc.ViewComponents.Menu
+public class MenuBannerViewComponent : ViewComponent
 {
-    public class MenuBannerViewComponent : ViewComponent
+    private readonly IMenuBannerService _menuBannerService;
+
+    public MenuBannerViewComponent(IMenuBannerService menuBannerService)
     {
-        public async Task<IViewComponentResult> InvokeAsync()
+        _menuBannerService = menuBannerService;
+    }
+
+    public async Task<IViewComponentResult> InvokeAsync()
+    {
+        var banner = (await _menuBannerService.GetAllAsync()).FirstOrDefault();
+
+        if (banner == null || string.IsNullOrEmpty(banner.Img) || string.IsNullOrEmpty(banner.Title))
         {
-            return await Task.FromResult(View());
+            return Content("");
         }
+
+        return View(banner);
     }
 }

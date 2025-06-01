@@ -43,6 +43,11 @@ builder.Services.AddScoped<IServiceService, ServiceService>();
 builder.Services.AddScoped<IServiceItemService, ServiceItemService>();
 builder.Services.AddScoped<ITopbarService, TopbarService>();
 builder.Services.AddScoped<IAboutBannerService, AboutBannerService>();
+builder.Services.AddScoped<IBlogBannerService, BlogBannerService>();
+builder.Services.AddScoped<IMenuBannerService, MenuBannerService>();
+builder.Services.AddScoped<ITeamBannerService, TeamBannerService>();
+builder.Services.AddScoped<IFaqsBannerService, FaqsBannerService>();
+builder.Services.AddScoped<IContactBannerService, ContactBannerService>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 
