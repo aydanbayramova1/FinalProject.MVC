@@ -48,6 +48,8 @@ builder.Services.AddScoped<IMenuBannerService, MenuBannerService>();
 builder.Services.AddScoped<ITeamBannerService, TeamBannerService>();
 builder.Services.AddScoped<IFaqsBannerService, FaqsBannerService>();
 builder.Services.AddScoped<IContactBannerService, ContactBannerService>();
+builder.Services.AddScoped<IBlogDetailBannerService, BlogDetailBannerService>();
+builder.Services.AddScoped<IReservationBannerService, ReservationBannerService>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 

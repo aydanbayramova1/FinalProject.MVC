@@ -48,7 +48,7 @@ namespace FinalProjectMvc.Services
         public async Task EditAsync(ContactBannerEditVM model)
         {
             var entity = await _context.ContactBanners.FindAsync(model.Id);
-            if (entity == null) throw new Exception("Contact banner not found");
+            if (entity == null) throw new KeyNotFoundException("Contact banner not found");
 
             entity.Title = model.Title;
 
@@ -65,7 +65,7 @@ namespace FinalProjectMvc.Services
         public async Task DeleteAsync(int id)
         {
             var entity = await _context.ContactBanners.FindAsync(id);
-            if (entity == null) throw new Exception("Contact banner not found");
+            if (entity == null) throw new KeyNotFoundException("Contact banner not found");
 
             entity.Img.DeleteFile(_env.WebRootPath, "uploads/contactbanner");
             _context.ContactBanners.Remove(entity);

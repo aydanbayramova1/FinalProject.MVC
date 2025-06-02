@@ -28,14 +28,14 @@ namespace FinalProjectMvc.Services
         public async Task<TopbarEditVM> GetEditAsync(int id)
         {
             var topbar = await _context.Topbars.FindAsync(id);
-            if (topbar == null) throw new Exception("Topbar not found");
+            if (topbar == null) throw new KeyNotFoundException("Topbar not found");
             return _mapper.Map<TopbarEditVM>(topbar);
         }
 
         public async Task EditAsync(TopbarEditVM vm)
         {
             var topbar = await _context.Topbars.FindAsync(vm.Id);
-            if (topbar == null) throw new Exception("Topbar not found");
+            if (topbar == null) throw new KeyNotFoundException("Topbar not found");
 
             _mapper.Map(vm, topbar);
             _context.Topbars.Update(topbar);
@@ -45,14 +45,14 @@ namespace FinalProjectMvc.Services
         public async Task<TopbarDetailVM> GetDetailAsync(int id)
         {
             var topbar = await _context.Topbars.FindAsync(id);
-            if (topbar == null) throw new Exception("Topbar not found");
+            if (topbar == null) throw new KeyNotFoundException("Topbar not found");
             return _mapper.Map<TopbarDetailVM>(topbar);
         }
 
         public async Task DeleteAsync(int id)
         {
             var topbar = await _context.Topbars.FindAsync(id);
-            if (topbar == null) throw new Exception("Topbar not found");
+            if (topbar == null) throw new KeyNotFoundException("Topbar not found");
             _context.Topbars.Remove(topbar);
             await _context.SaveChangesAsync();
         }

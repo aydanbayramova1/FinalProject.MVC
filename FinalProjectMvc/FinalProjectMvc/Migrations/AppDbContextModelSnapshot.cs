@@ -139,6 +139,30 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("BlogBanners");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.BlogDetailBanner", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Img")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BlogDetailBanners");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.Catalog", b =>
                 {
                     b.Property<int>("Id")
@@ -237,6 +261,30 @@ namespace FinalProjectMvc.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MenuBanners");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.ReservationBanner", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Img")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ReservationBanners");
                 });
 
             modelBuilder.Entity("FinalProjectMvc.Models.Scrolling", b =>

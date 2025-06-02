@@ -60,6 +60,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ0Jhbm5lclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/BlogDetailBanner/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ0RldGFpbEJhbm5lclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/BlogDetailBanner/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ0RldGFpbEJhbm5lclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/BlogDetailBanner/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ0RldGFpbEJhbm5lclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/BlogDetailBanner/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ0RldGFpbEJhbm5lclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/Catalog/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0YWxvZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -126,6 +142,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/MenuBanner/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudUJhbm5lclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/ReservationBanner/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVzZXJ2YXRpb25CYW5uZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/ReservationBanner/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVzZXJ2YXRpb25CYW5uZXJcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/ReservationBanner/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVzZXJ2YXRpb25CYW5uZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/ReservationBanner/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVzZXJ2YXRpb25CYW5uZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/Scrolling/Create.cshtml]

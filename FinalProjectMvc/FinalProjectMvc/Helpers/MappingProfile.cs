@@ -2,12 +2,17 @@
 using FinalProjectMvc.Models;
 using FinalProjectMvc.ViewModels.Admin.AboutBanner;
 using FinalProjectMvc.ViewModels.Admin.BlogBanner;
+using FinalProjectMvc.ViewModels.Admin.BlogDetailBanner;
 using FinalProjectMvc.ViewModels.Admin.Catalog;
+using FinalProjectMvc.ViewModels.Admin.ContactBanner;
+using FinalProjectMvc.ViewModels.Admin.FaqsBanner;
 using FinalProjectMvc.ViewModels.Admin.MenuBanner;
+using FinalProjectMvc.ViewModels.Admin.ReservationBanner;
 using FinalProjectMvc.ViewModels.Admin.Scrolling;
 using FinalProjectMvc.ViewModels.Admin.Service;
 using FinalProjectMvc.ViewModels.Admin.ServiceItem;
 using FinalProjectMvc.ViewModels.Admin.Slider;
+using FinalProjectMvc.ViewModels.Admin.TeamBanner;
 using FinalProjectMvc.ViewModels.Admin.Topbar;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -80,6 +85,34 @@ namespace FinalProjectMvc.Helpers
 
             CreateMap<MenuBanner, MenuBannerDetailVM>();
             CreateMap<MenuBanner, MenuBannerVM>();
+
+            CreateMap<TeamBanner, TeamBannerEditVM>().ReverseMap()
+           .ForMember(dest => dest.Img, opt => opt.Ignore());
+            CreateMap<TeamBanner, TeamBannerDetailVM>();
+            CreateMap<TeamBanner, TeamBannerVM>();
+
+
+            CreateMap<FaqsBanner, FaqsBannerEditVM>().ReverseMap()
+          .ForMember(dest => dest.Img, opt => opt.Ignore());
+            CreateMap<FaqsBanner, FaqsBannerDetailVM>();
+            CreateMap<FaqsBanner, FaqsBannerVM>();
+
+            CreateMap<ContactBanner, ContactBannerEditVM>().ReverseMap()
+          .ForMember(dest => dest.Img, opt => opt.Ignore());
+            CreateMap<ContactBanner, ContactBannerDetailVM>();
+            CreateMap<ContactBanner, ContactBannerVM>();
+
+
+            CreateMap<BlogDetailBanner, BlogDetailBannerEditVM>().ReverseMap()
+       .ForMember(dest => dest.Img, opt => opt.Ignore());
+            CreateMap<BlogDetailBanner, BlogDetailBannerDetailVM>();
+            CreateMap<BlogDetailBanner, BlogDetailBannerVM>();
+
+
+            CreateMap<ReservationBanner, ReservationBannerEditVM>().ReverseMap()
+      .ForMember(dest => dest.Img, opt => opt.Ignore());
+            CreateMap<ReservationBanner, ReservationBannerDetailVM>();
+            CreateMap<ReservationBanner, ReservationBannerVM>();
         }
     }
 }

@@ -6,9 +6,11 @@ namespace FinalProjectMvc.ViewModels.Admin.Catalog
     {
         [Required]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Title is required.")]
+        [RegularExpression("^[A-Za-z ]+$", ErrorMessage = "Title must contain only letters and spaces, no digits or symbols.")]
         public string Title { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Description is required.")]
+        [RegularExpression("^[A-Za-z ]+$", ErrorMessage = "Description must contain only letters and spaces, no digits or symbols.")]
         public string Description { get; set; }
         public string? Img { get; set; }
         public IFormFile? Photo { get; set; }

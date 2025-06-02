@@ -1,4 +1,4 @@
-﻿
+﻿   @model List<TopbarVM>
 <header>
     <!-- Preloader Start -->
     <section id="preloader-section">
@@ -11,7 +11,7 @@
     </section>
     <!-- Preloader End -->
     <!-- Topbar Section Start -->
-    @model List<TopbarVM>
+ 
     <section id="topbar-section">
         <div class="topbar">
             <div class="container">
@@ -64,9 +64,9 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <a class="navbar-brand" href="home.html">
-                        <img style="width: 230px; height: auto;" src="~/assets/images/common/logo.jpg" alt="Logo">
+                        <img style="width: 230px; height: auto;" src="assets/images/common/logo.jpg" alt="Logo">
                     </a>
-                    <div style=" margin-right: 10pc;" class="collapse navbar-collapse main-menu">
+                    <div style="margin-right: 11pc;" class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
                                 <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
@@ -76,71 +76,60 @@
                                 <li class="nav-item"><a class="nav-link" asp-controller="Team" asp-action="Index">Team</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="FAQs" asp-action="Index">FAQs</a></li>
                                 <li class="nav-item"><a class="nav-link" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                                <li class="nav-item highlighted-menu"><a class="nav-link" asp-controller="Reservation" asp-action="Index">Book A Table</a></li>
                             </ul>
                         </div>
 
                         <div class="header-button-box">
-
                             <div class="header-btn">
                                 <a asp-controller="Reservation" asp-action="Index" class="btn-default btn-highlighted">Book a table</a>
                             </div>
 
-                            <div class="user-account-dropdown" style=" margin-right: -2pc;">
-                                <a href="#" class="user-icon-btn">
+                            <div class="user-account-dropdown">
+                                <a href="#" class="user-icon-btn" id="userAccountBtn">
                                     <i class="fas fa-user"></i>
                                 </a>
-                                <div class="dropdown-menu" style="margin-right: -5pc;">
+                                <div class="dropdown-menu" id="userDropdown" style="margin-right: -5pc;">
                                     <a asp-controller="Account" asp-action="Login" class="dropdown-item">
                                         <i class="fas fa-sign-in-alt"></i> Login
                                     </a>
-                                    <a asp-controller="Account" asp-action="Register" class="dropdown-item">
+                                    <a asp-controller="Account" asp-action="Register"  class="dropdown-item">
                                         <i class="fas fa-user-plus"></i> Register
                                     </a>
                                 </div>
-                                <!-- <div style="width: 120px;color: bisque;" class="col-auto d-none d-xl-block">
-                                    <div class="header2-search">
-                                        <form action="#">
-                                            <input type="text" placeholder="Search...">
-                                            <button class="btn"><i class="fas fa-search"></i></button>
-                                        </form>
-                                    </div>
-                                </div> -->
-
                             </div>
 
-                            @{
-                                var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
-                                var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
-                            }
-
-                            @if ((currentController == "Home" && currentAction == "Index") ||
-                            (currentController == "Menu" && currentAction == "Index"))
-                            {
-                                @await Html.PartialAsync("_SearchPartial")
-                            }
-                        </div>
-                        <div class="responsive-menu">
-                            <div class="slicknav_menu">
-                                <i class="fa-solid fa-bars" id="burger-menu"></i>
-                                <ul id="menu">
-                                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                                    <li><a asp-controller="About" asp-action="Index">About</a></li>
-                                    <li><a asp-controller="Blog" asp-action="Index">Blog</a></li>
-                                    <li><a asp-controller="Menu" asp-action="Index">Menu</a></li>
-                                    <li><a asp-controller="Team" asp-action="Index">Team</a></li>
-                                    <li><a asp-controller="Faqs" asp-action="Index">FAQs</a></li>
-                                    <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
-                                    <li><a asp-controller="Reservation" asp-action="Index">Book A Table</a></li>
-                                </ul>
+                            <div style="width: 86px;margin-left: -81px;" class="col-auto d-none d-xl-block">
+                                <div style="margin-left: 112px;" class="header2-search">
+                                    <form action="#">
+                                        <input type="text" placeholder="Search...">
+                                        <button class="btn"><i class="fas fa-search"></i></button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
+                    <div class="responsive-menu">
+                        <div class="slicknav-menu" onclick="toggleMobileMenu()">
+                            <i class="fa-solid fa-bars"></i>
+                            <ul id="mobileMenu">
+                                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><a asp-controller="About" asp-action="Index">About</a></li>
+                                <li><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+                                <li><a asp-controller="Menu" asp-action="Index">Menu</a></li>
+                                <li><a asp-controller="Team" asp-action="Index">Team</a></li>
+                                <li><a asp-controller="FAQs" asp-action="Index">FAQs</a></li>
+                                <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                                <li><a asp-controller="Reservation" asp-action="Index">Book A Table</a></li>
+                                <li class="user-menu-item"><a asp-controller="Account" asp-action="Login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                                <li class="user-menu-item"><a asp-controller="Account" asp-action="Register"><i class="fas fa-user-plus"></i> Register</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
             </nav>
-
         </div>
     </section>
-    <!-- Header End-->
+    <!-- Header End -->
 </header>

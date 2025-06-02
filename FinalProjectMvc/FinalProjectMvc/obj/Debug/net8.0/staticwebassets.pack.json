@@ -813,6 +813,10 @@
       "PackagePath": "staticwebassets\\uploads\\blogbanner\\c5d35e69-89c1-41d0-87dd-5cb6a06b9c30.jpg"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\blogdetailbanner\\7b2c9276-e7a5-480b-af64-631199b977e8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\blogdetailbanner\\7b2c9276-e7a5-480b-af64-631199b977e8.jpg"
+    },
+    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\catalogs\\21838310-1f1c-4cd3-88ba-93872e6eff03.jpg",
       "PackagePath": "staticwebassets\\uploads\\catalogs\\21838310-1f1c-4cd3-88ba-93872e6eff03.jpg"
     },
@@ -829,12 +833,20 @@
       "PackagePath": "staticwebassets\\uploads\\catalogs\\a3819336-9791-4bfd-b357-6c9ea63e5ed3.jpg"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\contactbanner\\6c5f6ab4-4f1b-4028-aa59-353063815489.jpg",
+      "PackagePath": "staticwebassets\\uploads\\contactbanner\\6c5f6ab4-4f1b-4028-aa59-353063815489.jpg"
+    },
+    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\faqsbanner\\f310b1f7-774b-49ec-a9ac-748929306aff.jpg",
       "PackagePath": "staticwebassets\\uploads\\faqsbanner\\f310b1f7-774b-49ec-a9ac-748929306aff.jpg"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\menubanner\\d5bedaad-cb67-43e0-b48d-04d46098ab0a.jpg",
       "PackagePath": "staticwebassets\\uploads\\menubanner\\d5bedaad-cb67-43e0-b48d-04d46098ab0a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\reservationbanner\\b31c9b34-ee97-46c3-848f-1b364970a1e8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\reservationbanner\\b31c9b34-ee97-46c3-848f-1b364970a1e8.jpg"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\scrollings\\0d2cb485-a685-4f12-bb5e-0e63cc4a0b95_asterisk-icon.svg",
@@ -901,8 +913,8 @@
       "PackagePath": "staticwebassets\\uploads\\sliders\\5b0abc10-1912-43ac-ac48-5b0b35eb5ccb_hero-bg.jpg"
     },
     {
-      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\teambanner\\04c88a5a-b70e-43b6-a0bb-78202efcd424.jpg",
-      "PackagePath": "staticwebassets\\uploads\\teambanner\\04c88a5a-b70e-43b6-a0bb-78202efcd424.jpg"
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\teambanner\\aa49c543-f508-4053-b140-85ac37ece226.jpg",
+      "PackagePath": "staticwebassets\\uploads\\teambanner\\aa49c543-f508-4053-b140-85ac37ece226.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FinalProjectMvc.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

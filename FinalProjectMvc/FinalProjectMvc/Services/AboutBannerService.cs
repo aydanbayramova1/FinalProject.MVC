@@ -48,7 +48,7 @@ namespace FinalProjectMvc.Services
         public async Task EditAsync(AboutBannerEditVM model)
         {
             var entity = await _context.AboutBanners.FindAsync(model.Id);
-            if (entity == null) throw new Exception("Banner not found");
+            if (entity == null) throw new KeyNotFoundException("Banner not found");
 
             entity.Title = model.Title;
 
@@ -65,7 +65,7 @@ namespace FinalProjectMvc.Services
         public async Task DeleteAsync(int id)
         {
             var entity = await _context.AboutBanners.FindAsync(id);
-            if (entity == null) throw new Exception("Banner not found");
+            if (entity == null) throw new KeyNotFoundException("Banner not found");
 
             entity.Img.DeleteFile(_env.WebRootPath, "uploads/aboutbanner");
             _context.AboutBanners.Remove(entity);

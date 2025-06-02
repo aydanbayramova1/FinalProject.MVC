@@ -78,7 +78,7 @@ namespace FinalProjectMvc.Services
         public async Task DeleteAsync(int id)
         {
             var entity = await _context.Catalogs.FindAsync(id);
-            if (entity == null) throw new Exception("Catalog not found");
+            if (entity == null) throw new KeyNotFoundException("Catalog not found");
 
             string path = Path.Combine(_env.WebRootPath, "uploads/catalogs", entity.Img);
             if (System.IO.File.Exists(path))

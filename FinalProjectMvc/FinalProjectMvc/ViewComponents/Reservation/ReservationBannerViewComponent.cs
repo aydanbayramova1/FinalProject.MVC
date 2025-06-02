@@ -1,12 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinalProjectMvc.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace FinalProjectMvc.ViewComponents.Reservation
+public class ReservationBannerViewComponent : ViewComponent
 {
-    public class ReservationBannerViewComponent : ViewComponent
+    private readonly IReservationBannerService _reservationBannerService;
+
+    public ReservationBannerViewComponent(IReservationBannerService reservationBannerService)
     {
-        public async Task<IViewComponentResult> InvokeAsync()
+        _reservationBannerService = reservationBannerService;
+    }
+
+    public async Task<IViewComponentResult> InvokeAsync()
+    {
+        var banner = (await _reservationBannerService.GetAllAsync()).FirstOrDefault();
+
+        if (banner == null || string.IsNullOrEmpty(banner.Img) || string.IsNullOrEmpty(banner.Title))
         {
-            return await Task.FromResult(View());
+            return Content("");
         }
+
+        return View(banner);
     }
 }

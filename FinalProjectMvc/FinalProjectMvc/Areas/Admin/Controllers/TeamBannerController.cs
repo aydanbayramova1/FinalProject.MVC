@@ -16,16 +16,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var banners = await _teamBannerService.GetAllAsync();
-            var vmList = banners.Select(b => new TeamBannerVM
-            {
-                Id = b.Id,
-                Title = b.Title,
-                Img = b.Img
-            }).ToList();
-
+            var vmList = await _teamBannerService.GetAllAsync();
             ViewBag.CanCreate = vmList.Count == 0;
-
             return View(vmList);
         }
 
@@ -46,8 +38,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var banner = await _teamBannerService.GetByIdAsync(id);
-            if (banner == null)
-                throw new KeyNotFoundException($"TeamBanner with ID {id} not found.");
+            if (banner == null) return NotFound();
 
             var vm = new TeamBannerEditVM
             {
@@ -71,8 +62,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Detail(int id)
         {
             var banner = await _teamBannerService.GetByIdAsync(id);
-            if (banner == null)
-                throw new KeyNotFoundException($"TeamBanner with ID {id} not found.");
+            if (banner == null) return NotFound();
 
             var vm = new TeamBannerDetailVM
             {

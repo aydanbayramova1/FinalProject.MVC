@@ -1,10 +1,16 @@
-﻿<section id="page-header">
-    <div class="page-header parallaxie" style="background-image: url('./assets/images/common/hero-bg.jpg');">
+﻿@model ReservationBannerVM
+@{
+    var img = Model?.Img ?? "default.jpg";
+    var title = Model?.Title ?? "ReservationBanner";
+}
+
+<section id="blog-banner">
+    <div class="page-header parallaxie" style="background-image: url('/uploads/reservationbanner/@img');">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="page-header-box">
-                        <h1 class="text-anime-style-3" data-cursor="-opaque">Reservation</h1>
+                        <h1 class="text-anime-style-3" data-cursor="-opaque">@title</h1>
                         <nav class="wow fadeInUp">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">home</a></li>

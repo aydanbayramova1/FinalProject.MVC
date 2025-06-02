@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Data;
+using FinalProjectMvc.Helpers.Extensions;
 using FinalProjectMvc.Models;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.TeamBanner;
-using FinalProjectMvc.Helpers.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinalProjectMvc.Services
@@ -21,9 +21,10 @@ namespace FinalProjectMvc.Services
             _mapper = mapper;
         }
 
-        public async Task<List<TeamBanner>> GetAllAsync()
+        public async Task<List<TeamBannerVM>> GetAllAsync()
         {
-            return await _context.TeamBanners.ToListAsync();
+            var banners = await _context.TeamBanners.ToListAsync();
+            return _mapper.Map<List<TeamBannerVM>>(banners);
         }
 
         public async Task<TeamBanner> GetByIdAsync(int id)
@@ -48,7 +49,7 @@ namespace FinalProjectMvc.Services
         public async Task EditAsync(TeamBannerEditVM model)
         {
             var entity = await _context.TeamBanners.FindAsync(model.Id);
-            if (entity == null) throw new Exception("Team banner not found");
+            if (entity == null) throw new KeyNotFoundException("Team banner not found");
 
             entity.Title = model.Title;
 
@@ -65,7 +66,7 @@ namespace FinalProjectMvc.Services
         public async Task DeleteAsync(int id)
         {
             var entity = await _context.TeamBanners.FindAsync(id);
-            if (entity == null) throw new Exception("Team banner not found");
+            if (entity == null) throw new KeyNotFoundException("Team banner not found");
 
             entity.Img.DeleteFile(_env.WebRootPath, "uploads/teambanner");
             _context.TeamBanners.Remove(entity);

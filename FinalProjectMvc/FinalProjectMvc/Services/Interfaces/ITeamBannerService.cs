@@ -5,7 +5,7 @@ namespace FinalProjectMvc.Services.Interfaces
 {
     public interface ITeamBannerService
     {
-        Task<List<TeamBanner>> GetAllAsync();
+        Task<List<TeamBannerVM>> GetAllAsync();
         Task<TeamBanner> GetByIdAsync(int id);
         Task CreateAsync(TeamBannerCreateVM model);
         Task EditAsync(TeamBannerEditVM model);

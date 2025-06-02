@@ -4,7 +4,8 @@ namespace FinalProjectMvc.ViewModels.Admin.TeamBanner
 {
     public class TeamBannerCreateVM
     {
-        [Required]
+        [Required(ErrorMessage = "Title is required.")]
+        [RegularExpression("^[A-Za-z ]+$", ErrorMessage = "Title must contain only letters and spaces, no digits or symbols.")]
         public string Title { get; set; }
 
         [Required]
