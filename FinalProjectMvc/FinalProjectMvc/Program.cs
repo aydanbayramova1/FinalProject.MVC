@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using FinalProjectMvc.Services.Implementations;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,10 +55,20 @@ builder.Services.AddScoped<IBlogDetailBannerService, BlogDetailBannerService>();
 builder.Services.AddScoped<IReservationBannerService, ReservationBannerService>();
 builder.Services.AddScoped<ITeamMemberService, TeamMemberService>();
 builder.Services.AddScoped<IBlogService, BlogService>();
+builder.Services.AddScoped<IAboutRestaurantService, AboutRestaurantService>();
 
-
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.Console()
+    .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
+    // .WriteTo.Seq("http://localhost:5341") 
+    .Enrich.FromLogContext()
+    .CreateLogger();
 
 builder.Services.AddAutoMapper(typeof(Program));
+
+builder.Host.UseSerilog();
+
 
 var app = builder.Build();
 
@@ -73,7 +84,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseAuthentication();
 app.UseAuthorization();
 

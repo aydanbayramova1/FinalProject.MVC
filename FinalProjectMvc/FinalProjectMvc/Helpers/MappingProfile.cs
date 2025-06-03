@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Models;
 using FinalProjectMvc.ViewModels.Admin.AboutBanner;
+using FinalProjectMvc.ViewModels.Admin.AboutRestaurant;
 using FinalProjectMvc.ViewModels.Admin.Blog;
 using FinalProjectMvc.ViewModels.Admin.BlogBanner;
 using FinalProjectMvc.ViewModels.Admin.BlogDetailBanner;
@@ -127,16 +128,24 @@ namespace FinalProjectMvc.Helpers
 
             CreateMap<Blog, BlogVM>();
             CreateMap<BlogCreateVM, Blog>()
-     .ForMember(dest => dest.Img, opt => opt.Ignore())
-     .ForMember(dest => dest.CreateDate, opt => opt.MapFrom(src => src.Date));
+            .ForMember(dest => dest.Img, opt => opt.Ignore())
+            .ForMember(dest => dest.CreateDate, opt => opt.MapFrom(src => src.Date));
             CreateMap<BlogEditVM, Blog>()
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
                 .ForMember(dest => dest.CreateDate, opt => opt.Ignore());
-
             CreateMap<Blog, BlogDetailVM>();
-            
 
-           
+            CreateMap<AboutRestaurantCreateVM, AboutRestaurant>()
+            .ForMember(dest => dest.Image, opt => opt.Ignore());
+
+            CreateMap<AboutRestaurant, AboutRestaurantEditVM>()
+                .ForMember(dest => dest.ImageFile, opt => opt.Ignore());
+
+            CreateMap<AboutRestaurantEditVM, AboutRestaurant>()
+                .ForMember(dest => dest.Image, opt => opt.Ignore());
+            CreateMap<AboutRestaurant, AboutRestaurantDetailVM>();
+            CreateMap<AboutRestaurant, AboutRestaurantVM>();
+
 
         }
     }

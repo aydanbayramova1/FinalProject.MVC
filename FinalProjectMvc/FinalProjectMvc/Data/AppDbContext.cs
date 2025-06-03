@@ -23,5 +23,6 @@ namespace FinalProjectMvc.Data
         public DbSet<ReservationBanner> ReservationBanners { get; set; }
         public DbSet<TeamMember> TeamMembers { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<AboutRestaurant> AboutRestaurants { get; set; }
     }
 }

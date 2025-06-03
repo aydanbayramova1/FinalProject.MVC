@@ -1,0 +1,114 @@
+﻿@model AboutRestaurantEditVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Edit About Restaurant</h2>
+
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="Image" />
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Title" class="form-label">Title</label>
+                            <input asp-for="Title" class="form-control" />
+                            <span class="text-danger" asp-validation-for="Title"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="SubTitle" class="form-label">SubTitle</label>
+                            <input asp-for="SubTitle" class="form-control" />
+                            <span class="text-danger" asp-validation-for="SubTitle"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="ExperienceDescription" class="form-label">Experience Description</label>
+                            <textarea asp-for="ExperienceDescription" class="form-control"></textarea>
+                            <span class="text-danger" asp-validation-for="ExperienceDescription"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="QualityMessage" class="form-label">Quality Message</label>
+                            <textarea asp-for="QualityMessage" class="form-control"></textarea>
+                            <span class="text-danger" asp-validation-for="QualityMessage"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="AtmosphereNote" class="form-label">Atmosphere Note</label>
+                            <textarea asp-for="AtmosphereNote" class="form-control"></textarea>
+                            <span class="text-danger" asp-validation-for="AtmosphereNote"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="HeadBaristaName" class="form-label">Head Barista Name</label>
+                            <input asp-for="HeadBaristaName" class="form-control" />
+                            <span class="text-danger" asp-validation-for="HeadBaristaName"></span>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="TimingTitle" class="form-label">Timing Title</label>
+                            <input asp-for="TimingTitle" class="form-control" />
+                            <span class="text-danger" asp-validation-for="TimingTitle"></span>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="TimingSubtitle" class="form-label">Timing Subtitle</label>
+                            <input asp-for="TimingSubtitle" class="form-control" />
+                            <span class="text-danger" asp-validation-for="TimingSubtitle"></span>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="TimingDescription" class="form-label">Timing Description</label>
+                            <input asp-for="TimingDescription" class="form-control" />
+                            <span class="text-danger" asp-validation-for="TimingDescription"></span>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="WeekdayTime" class="form-label">Weekday Time</label>
+                            <input asp-for="WeekdayTime" class="form-control" />
+                            <span class="text-danger" asp-validation-for="WeekdayTime"></span>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="WeekendTime" class="form-label">Weekend Time</label>
+                            <input asp-for="WeekendTime" class="form-control" />
+                            <span class="text-danger" asp-validation-for="WeekendTime"></span>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label asp-for="HappyHour" class="form-label">Happy Hour</label>
+                            <input asp-for="HappyHour" class="form-control" />
+                            <span class="text-danger" asp-validation-for="HappyHour"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="HolidayStatus" class="form-label">Holiday Status</label>
+                            <input asp-for="HolidayStatus" class="form-control" />
+                            <span class="text-danger" asp-validation-for="HolidayStatus"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="HolidayNote" class="form-label">Holiday Note</label>
+                            <textarea asp-for="HolidayNote" class="form-control"></textarea>
+                            <span class="text-danger" asp-validation-for="HolidayNote"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Current Image</label><br />
+                            <img src="~/img/@Model.Image" alt="Current Image" class="img-thumbnail mb-2" style="max-height: 200px;" />
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <label asp-for="ImageFile" class="form-label">New Image (optional)</label>
+                            <input asp-for="ImageFile" type="file" class="form-control" />
+                            <span class="text-danger" asp-validation-for="ImageFile"></span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit"
+                                class="btn btn-outline-primary"
+                                style="color:brown; border: 1px solid brown; background-color: white;"
+                                onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+                            Save Changes
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -274,3 +274,13 @@ C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\obj\Debug\
 C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\obj\Debug\net8.0\FinalProjectMvc.pdb
 C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\obj\Debug\net8.0\FinalProjectMvc.genruntimeconfig.cache
 C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\obj\Debug\net8.0\ref\FinalProjectMvc.dll
+C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\bin\Debug\net8.0\Serilog.dll
+C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\bin\Debug\net8.0\Serilog.Sinks.Seq.dll
