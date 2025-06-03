@@ -13,6 +13,7 @@ using FinalProjectMvc.ViewModels.Admin.Service;
 using FinalProjectMvc.ViewModels.Admin.ServiceItem;
 using FinalProjectMvc.ViewModels.Admin.Slider;
 using FinalProjectMvc.ViewModels.Admin.TeamBanner;
+using FinalProjectMvc.ViewModels.Admin.TeamMember;
 using FinalProjectMvc.ViewModels.Admin.Topbar;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -104,15 +105,24 @@ namespace FinalProjectMvc.Helpers
 
 
             CreateMap<BlogDetailBanner, BlogDetailBannerEditVM>().ReverseMap()
-       .ForMember(dest => dest.Img, opt => opt.Ignore());
+           .ForMember(dest => dest.Img, opt => opt.Ignore());
             CreateMap<BlogDetailBanner, BlogDetailBannerDetailVM>();
             CreateMap<BlogDetailBanner, BlogDetailBannerVM>();
 
 
             CreateMap<ReservationBanner, ReservationBannerEditVM>().ReverseMap()
-      .ForMember(dest => dest.Img, opt => opt.Ignore());
+            .ForMember(dest => dest.Img, opt => opt.Ignore());
             CreateMap<ReservationBanner, ReservationBannerDetailVM>();
             CreateMap<ReservationBanner, ReservationBannerVM>();
+
+
+            CreateMap<TeamMember, TeamMemberCreateVM>().ReverseMap();
+            CreateMap<TeamMember, TeamMemberEditVM>().ReverseMap();
+            CreateMap<TeamMember, TeamMemberDetailVM>();
+            CreateMap<TeamMember, TeamMemberVM>()
+           .ForMember(dest => dest.Desc, opt => opt.MapFrom(src => src.Description))
+           .ForMember(dest => dest.ImgUrl, opt => opt.MapFrom(src => src.Img));
+
         }
     }
 }

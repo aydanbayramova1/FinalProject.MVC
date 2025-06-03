@@ -51,12 +51,6 @@ $(document).ready(function () {
 
 
 
-$(document).ready(function () {
-
-    initMobileMenu('#menu', '.responsive-menu');
-});
-
-
 function counterUp(elementsSelector, delay, duration) {
     const elements = document.querySelectorAll(elementsSelector);
 
@@ -1439,7 +1433,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 
-    console.log(" Header user account functionality initialized!")
 })
 
 window.checkUserLogin = () => {

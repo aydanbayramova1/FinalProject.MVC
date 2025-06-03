@@ -1,7 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.FaqsBanner;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
 {
@@ -17,16 +16,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var banners = await _faqsBannerService.GetAllAsync();
-            var vmList = banners.Select(b => new FaqsBannerVM
-            {
-                Id = b.Id,
-                Title = b.Title,
-                Img = b.Img
-            }).ToList();
-
+            var vmList = await _faqsBannerService.GetAllAsync();
             ViewBag.CanCreate = vmList.Count == 0;
-
             return View(vmList);
         }
 
@@ -47,8 +38,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var banner = await _faqsBannerService.GetByIdAsync(id);
-            if (banner == null)
-                throw new KeyNotFoundException($"FaqsBanner with ID {id} not found.");
+            if (banner == null) return NotFound();
 
             var vm = new FaqsBannerEditVM
             {
@@ -72,8 +62,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Detail(int id)
         {
             var banner = await _faqsBannerService.GetByIdAsync(id);
-            if (banner == null)
-                throw new KeyNotFoundException($"FaqsBanner with ID {id} not found.");
+            if (banner == null) return NotFound();
 
             var vm = new FaqsBannerDetailVM
             {

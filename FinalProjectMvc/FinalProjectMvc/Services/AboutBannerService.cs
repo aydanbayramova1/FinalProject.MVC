@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Data;
+using FinalProjectMvc.Helpers.Extensions;
 using FinalProjectMvc.Models;
+using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.AboutBanner;
 using Microsoft.EntityFrameworkCore;
-using FinalProjectMvc.Helpers.Extensions;
-using FinalProjectMvc.Services.Interfaces;
 
 namespace FinalProjectMvc.Services
 {
@@ -21,9 +21,10 @@ namespace FinalProjectMvc.Services
             _mapper = mapper;
         }
 
-        public async Task<List<AboutBanner>> GetAllAsync()
+        public async Task<List<AboutBannerVM>> GetAllAsync()
         {
-            return await _context.AboutBanners.ToListAsync();
+            var banners = await _context.AboutBanners.ToListAsync();
+            return _mapper.Map<List<AboutBannerVM>>(banners);
         }
 
         public async Task<AboutBanner> GetByIdAsync(int id)
@@ -48,7 +49,7 @@ namespace FinalProjectMvc.Services
         public async Task EditAsync(AboutBannerEditVM model)
         {
             var entity = await _context.AboutBanners.FindAsync(model.Id);
-            if (entity == null) throw new KeyNotFoundException("Banner not found");
+            if (entity == null) throw new KeyNotFoundException("About banner not found");
 
             entity.Title = model.Title;
 
@@ -65,7 +66,7 @@ namespace FinalProjectMvc.Services
         public async Task DeleteAsync(int id)
         {
             var entity = await _context.AboutBanners.FindAsync(id);
-            if (entity == null) throw new KeyNotFoundException("Banner not found");
+            if (entity == null) throw new KeyNotFoundException("About banner not found");
 
             entity.Img.DeleteFile(_env.WebRootPath, "uploads/aboutbanner");
             _context.AboutBanners.Remove(entity);

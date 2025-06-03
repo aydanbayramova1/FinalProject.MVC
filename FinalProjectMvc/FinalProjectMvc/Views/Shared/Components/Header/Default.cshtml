@@ -99,16 +99,19 @@
                                 </div>
                             </div>
 
-                            <div style="width: 86px;margin-left: -81px;" class="col-auto d-none d-xl-block">
-                                <div style="margin-left: 112px;" class="header2-search">
-                                    <form action="#">
-                                        <input type="text" placeholder="Search...">
-                                        <button class="btn"><i class="fas fa-search"></i></button>
-                                    </form>
-                                </div>
-                            </div>
+                            @{
+                                var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+                                var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
+                            }
+
+                            @if ((currentController == "Home" && currentAction == "Index") ||
+                            (currentController == "Menu" && currentAction == "Index"))
+                            {
+                                @await Html.PartialAsync("_SearchPartial")
+                            }
                         </div>
                     </div>
+
 
                     <div class="responsive-menu">
                         <div class="slicknav-menu" onclick="toggleMobileMenu()">

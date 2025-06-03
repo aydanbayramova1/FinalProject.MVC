@@ -1,6 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
+using FinalProjectMvc.ViewModels.Admin.ContactBanner;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace FinalProjectMvc.ViewComponents
@@ -16,12 +16,9 @@ namespace FinalProjectMvc.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var banner = (await _contactBannerService.GetAllAsync()).FirstOrDefault();
-
-            if (banner == null || string.IsNullOrEmpty(banner.Img) || string.IsNullOrEmpty(banner.Title))
-            {
-                return Content("");
-            }
+            var banners = await _contactBannerService.GetAllAsync();
+            var banner = banners.FirstOrDefault();
+            if (banner == null) return View();
 
             return View(banner);
         }

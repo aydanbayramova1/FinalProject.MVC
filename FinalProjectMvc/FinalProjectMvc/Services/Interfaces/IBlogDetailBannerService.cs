@@ -6,7 +6,7 @@ namespace FinalProjectMvc.Services.Interfaces
 {
     public interface IBlogDetailBannerService
     {
-        Task<List<BlogDetailBanner>> GetAllAsync();
+        Task<List<BlogDetailBannerVM>> GetAllAsync();
         Task<BlogDetailBanner> GetByIdAsync(int id);
         Task CreateAsync(BlogDetailBannerCreateVM model);
         Task EditAsync(BlogDetailBannerEditVM model);

@@ -225,4 +225,10 @@ wwwroot\uploads\services\fa2b5ce9-f199-4c84-804b-2beb49900c8b.svg
 wwwroot\uploads\services\fa859e1a-7885-4b53-b673-fa482007a2c8.svg
 wwwroot\uploads\sliders\2a7abdaa-c53c-4a87-a256-515b49444452_hero-bg-2.jpg
 wwwroot\uploads\sliders\5b0abc10-1912-43ac-ac48-5b0b35eb5ccb_hero-bg.jpg
-wwwroot\uploads\teambanner\aa49c543-f508-4053-b140-85ac37ece226.jpg
+wwwroot\uploads\team\06f7f2d1-d89c-43bc-a21a-804a5739ae8a.jpg
+wwwroot\uploads\team\2b3c12c1-38c5-4656-9fed-f9ed9d6672ae.jpg
+wwwroot\uploads\team\51c5619a-2a28-41fb-bd0d-f841ecd1e9dd.jpg
+wwwroot\uploads\team\6526cc8b-820c-46d2-b065-30c046d73623.jpg
+wwwroot\uploads\team\8f4ae753-5419-477b-8868-85ed453aa88f.jpg
+wwwroot\uploads\team\dd832474-9694-4164-99c5-42d07cc9cd30.jpg
+wwwroot\uploads\teambanner\67f6cf19-4a0d-4228-bd93-648f016b542d.jpg

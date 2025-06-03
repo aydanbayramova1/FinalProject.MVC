@@ -1,9 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.MenuBanner;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
 {
@@ -19,16 +16,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var banners = await _menuBannerService.GetAllAsync();
-            var vmList = banners.Select(b => new MenuBannerVM
-            {
-                Id = b.Id,
-                Title = b.Title,
-                Img = b.Img
-            }).ToList();
-
+            var vmList = await _menuBannerService.GetAllAsync();
             ViewBag.CanCreate = vmList.Count == 0;
-
             return View(vmList);
         }
 
@@ -49,7 +38,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var banner = await _menuBannerService.GetByIdAsync(id);
-            if (banner == null)throw new KeyNotFoundException($"MenuBanner with ID {id} not found.");
+            if (banner == null) return NotFound();
 
             var vm = new MenuBannerEditVM
             {
@@ -73,7 +62,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Detail(int id)
         {
             var banner = await _menuBannerService.GetByIdAsync(id);
-            if (banner == null)throw new KeyNotFoundException($"MenuBanner with ID {id} not found.");
+            if (banner == null) return NotFound();
 
             var vm = new MenuBannerDetailVM
             {

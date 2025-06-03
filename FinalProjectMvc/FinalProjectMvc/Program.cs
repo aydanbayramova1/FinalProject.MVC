@@ -5,6 +5,7 @@ using FinalProjectMvc.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
+using FinalProjectMvc.Services.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +51,7 @@ builder.Services.AddScoped<IFaqsBannerService, FaqsBannerService>();
 builder.Services.AddScoped<IContactBannerService, ContactBannerService>();
 builder.Services.AddScoped<IBlogDetailBannerService, BlogDetailBannerService>();
 builder.Services.AddScoped<IReservationBannerService, ReservationBannerService>();
+builder.Services.AddScoped<ITeamMemberService, TeamMemberService>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 

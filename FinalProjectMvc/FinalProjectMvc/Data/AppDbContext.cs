@@ -21,5 +21,6 @@ namespace FinalProjectMvc.Data
         public DbSet<ContactBanner> ContactBanners { get; set; }
         public DbSet<BlogDetailBanner> BlogDetailBanners { get; set; }
         public DbSet<ReservationBanner> ReservationBanners { get; set; }
+        public DbSet<TeamMember> TeamMembers { get; set; }
     }
 }

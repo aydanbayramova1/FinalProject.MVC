@@ -21,9 +21,10 @@ namespace FinalProjectMvc.Services
             _mapper = mapper;
         }
 
-        public async Task<List<MenuBanner>> GetAllAsync()
+        public async Task<List<MenuBannerVM>> GetAllAsync()
         {
-            return await _context.MenuBanners.ToListAsync();
+            var banners = await _context.MenuBanners.ToListAsync();
+            return _mapper.Map<List<MenuBannerVM>>(banners);
         }
 
         public async Task<MenuBanner> GetByIdAsync(int id)
@@ -48,7 +49,7 @@ namespace FinalProjectMvc.Services
         public async Task EditAsync(MenuBannerEditVM model)
         {
             var entity = await _context.MenuBanners.FindAsync(model.Id);
-            if (entity == null) throw new KeyNotFoundException("MenuBanner not found");
+            if (entity == null) throw new KeyNotFoundException("Menu banner not found");
 
             entity.Title = model.Title;
 
@@ -65,7 +66,7 @@ namespace FinalProjectMvc.Services
         public async Task DeleteAsync(int id)
         {
             var entity = await _context.MenuBanners.FindAsync(id);
-            if (entity == null) throw new KeyNotFoundException("MenuBanner not found");
+            if (entity == null) throw new KeyNotFoundException("Menu banner not found");
 
             entity.Img.DeleteFile(_env.WebRootPath, "uploads/menubanner");
             _context.MenuBanners.Remove(entity);
@@ -73,7 +74,3 @@ namespace FinalProjectMvc.Services
         }
     }
 }
-
-
-
-

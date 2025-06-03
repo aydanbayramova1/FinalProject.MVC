@@ -20,9 +20,22 @@ namespace FinalProjectMvc.Services
             _env = env;
             _mapper = mapper;
         }
+
+        public async Task<List<BlogBannerVM>> GetAllAsync()
+        {
+            var banners = await _context.BlogBanners.ToListAsync();
+            return _mapper.Map<List<BlogBannerVM>>(banners);
+        }
+
+        public async Task<BlogBanner> GetByIdAsync(int id)
+        {
+            return await _context.BlogBanners.FindAsync(id);
+        }
+
         public async Task CreateAsync(BlogBannerCreateVM model)
         {
             string fileName = await model.Photo.SaveFileAsync(_env.WebRootPath, "uploads/blogbanner");
+
             var entity = new BlogBanner
             {
                 Title = model.Title,
@@ -33,20 +46,10 @@ namespace FinalProjectMvc.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
-        {
-            var entity = await _context.BlogBanners.FindAsync(id);
-            if (entity == null) throw new KeyNotFoundException("Banner not found");
-
-            entity.Img.DeleteFile(_env.WebRootPath, "uploads/blogbanner");
-            _context.BlogBanners.Remove(entity);
-            await _context.SaveChangesAsync();
-        }
-
         public async Task EditAsync(BlogBannerEditVM model)
         {
             var entity = await _context.BlogBanners.FindAsync(model.Id);
-            if (entity == null) throw new KeyNotFoundException("Banner not found");
+            if (entity == null) throw new KeyNotFoundException("Blog banner not found");
 
             entity.Title = model.Title;
 
@@ -60,14 +63,14 @@ namespace FinalProjectMvc.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<List<BlogBanner>> GetAllAsync()
+        public async Task DeleteAsync(int id)
         {
-            return await _context.BlogBanners.ToListAsync();
-        }
+            var entity = await _context.BlogBanners.FindAsync(id);
+            if (entity == null) throw new KeyNotFoundException("Blog banner not found");
 
-        public async Task<BlogBanner> GetByIdAsync(int id)
-        {
-            return await _context.BlogBanners.FindAsync(id);
+            entity.Img.DeleteFile(_env.WebRootPath, "uploads/blogbanner");
+            _context.BlogBanners.Remove(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }

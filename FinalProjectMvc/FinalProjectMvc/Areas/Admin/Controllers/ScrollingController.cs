@@ -48,7 +48,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             var scrolling = await _scrollingService.GetByIdAsync(id);
             var vm = new ScrollingEditVM
             {
-                Id = scrolling.Id,
                 Name = scrolling.Name,
                 Img = scrolling.Img
             };

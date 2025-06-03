@@ -4,10 +4,9 @@ namespace FinalProjectMvc.ViewModels.Admin.Slider
 {
     public class SliderEditVM
     {
-        [Required]
         public int Id { get; set; }
-
-        [Required]
+        [Required(ErrorMessage = "Title is required.")]
+        [RegularExpression("^[A-Za-z ]+$", ErrorMessage = "Title must contain only letters and spaces, no digits or symbols.")]
         public string Title { get; set; }
 
         [Required]

@@ -1,9 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.ContactBanner;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
 {
@@ -19,16 +16,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var banners = await _contactBannerService.GetAllAsync();
-            var vmList = banners.Select(b => new ContactBannerVM
-            {
-                Id = b.Id,
-                Title = b.Title,
-                Img = b.Img
-            }).ToList();
-
+            var vmList = await _contactBannerService.GetAllAsync();
             ViewBag.CanCreate = vmList.Count == 0;
-
             return View(vmList);
         }
 
@@ -49,8 +38,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var banner = await _contactBannerService.GetByIdAsync(id);
-            if (banner == null)
-                throw new KeyNotFoundException($"ContactBanner with ID {id} not found.");
+            if (banner == null) return NotFound();
 
             var vm = new ContactBannerEditVM
             {
@@ -74,17 +62,18 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Detail(int id)
         {
             var banner = await _contactBannerService.GetByIdAsync(id);
-            if (banner == null)
-                throw new KeyNotFoundException($"ContactBanner with ID {id} not found.");
+            if (banner == null) return NotFound();
 
-            var vm = new ContactBannerDetailVM
+            var vm = new ContactBannerVM
             {
+                Id = banner.Id,
                 Title = banner.Title,
                 Img = banner.Img
             };
 
-            return View(vm);
+            return View(vm); 
         }
+
 
         [HttpPost]
         public async Task<IActionResult> Delete(int id)

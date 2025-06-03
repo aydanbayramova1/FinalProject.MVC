@@ -50,17 +50,8 @@ $(document).ready(function () {
 });
 
 
-function initMobileMenu(menuSelector, targetSelector, labelText = '') {
-    $(menuSelector).slicknav({
-        label: labelText,
-        prependTo: targetSelector
-    });
-}
 
-$(document).ready(function () {
 
-    initMobileMenu('#menu', '.responsive-menu');
-});
 
 
 function counterUp(elementsSelector, delay, duration) {
@@ -1134,166 +1125,166 @@ tabButtons.forEach(btn => {
         }, 200);
     });
 });
-document.addEventListener('DOMContentLoaded', function () {
-    const contactForm = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const submitText = document.getElementById('submitText');
-    const successMsg = document.getElementById('msgSubmit');
-    const errorMsg = document.getElementById('msgError');
+// document.addEventListener('DOMContentLoaded', function() {
+//     const contactForm = document.getElementById('contactForm');
+//     const submitBtn = document.getElementById('submitBtn');
+//     const submitText = document.getElementById('submitText');
+//     const successMsg = document.getElementById('msgSubmit');
+//     const errorMsg = document.getElementById('msgError');
 
-    function validateAzerbaijaniPhone(phone) {
-        const phoneRegex = /^(\+994|0)(50|51|55|70|77|99|10|12|18)\d{7}$/;
-        const cleanPhone = phone.replace(/[\s\-()]/g, '');
-        return phoneRegex.test(cleanPhone);
-    }
+//     function validateAzerbaijaniPhone(phone) {
+//         const phoneRegex = /^(\+994|0)(50|51|55|70|77|99|10|12|18)\d{7}$/;
+//         const cleanPhone = phone.replace(/[\s\-()]/g, '');
+//         return phoneRegex.test(cleanPhone);
+//     }
 
-    function validateEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
+//     function validateEmail(email) {
+//         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//         return emailRegex.test(email);
+//     }
 
-    async function sendContactEmail(formData) {
-        await new Promise(resolve => setTimeout(resolve, 2000));
+//     async function sendContactEmail(formData) {
+//         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        console.log(' Sending contact email to admin...');
-        console.log('Form Data:', formData);
+//         console.log(' Sending contact email to admin...');
+//         console.log('Form Data:', formData);
 
-        const emailContent = `
-        ═══════════════════════════════════════
-         NEW CONTACT FORM SUBMISSION
-        ═══════════════════════════════════════
-        
-        Customer Information:
-        Name: ${formData.firstName} ${formData.lastName}
-        Email: ${formData.email}
-        Phone: ${formData.phone}
-        
-        Message:
-        ${formData.message}
-        
-         Submitted: ${new Date().toLocaleString()}
-         Source: Caffe Luna Website
-        
-        ═══════════════════════════════════════
-        `;
+//         const emailContent = `
+//         ═══════════════════════════════════════
+//          NEW CONTACT FORM SUBMISSION
+//         ═══════════════════════════════════════
 
-        console.log(emailContent);
+//         Customer Information:
+//         Name: ${formData.firstName} ${formData.lastName}
+//         Email: ${formData.email}
+//         Phone: ${formData.phone}
 
-        const success = Math.random() > 0.1;
+//         Message:
+//         ${formData.message}
 
-        if (success) {
-            sendAutoReply(formData);
-            return { success: true };
-        } else {
-            throw new Error('Email sending failed');
-        }
-    }
+//          Submitted: ${new Date().toLocaleString()}
+//          Source: Caffe Luna Website
 
+//         ═══════════════════════════════════════
+//         `;
 
-    function sendAutoReply(formData) {
-        const autoReplyContent = `
-        ═══════════════════════════════════════
-        AUTO-REPLY TO CUSTOMER: ${formData.email}
-        ═══════════════════════════════════════
-        
-        Dear ${formData.firstName},
-        
-        Thank you for contacting Caffe Luna! 
-        
-        We have received your message and will respond within 24 hours.
-        
-        Your message:
-        "${formData.message}"
-        
-        Best regards,
-        Caffe Luna Team
-        
-         +994 12 345 67 89
-         info@caffeluna.com
-         Nizami küçəsi 123, Bakı
-        
-        ═══════════════════════════════════════
-        `;
+//         console.log(emailContent);
 
-        console.log(autoReplyContent);
-    }
+//         const success = Math.random() > 0.1;
 
-    contactForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        successMsg.style.display = 'none';
-        errorMsg.style.display = 'none';
-
-        const formData = {
-            firstName: document.getElementById('fname').value.trim(),
-            lastName: document.getElementById('lname').value.trim(),
-            email: document.getElementById('email').value.trim(),
-            phone: document.getElementById('phone').value.trim(),
-            message: document.getElementById('message').value.trim()
-        };
-
-        if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.message) {
-            errorMsg.textContent = 'Please fill in all required fields.';
-            errorMsg.style.display = 'block';
-            return;
-        }
-
-        if (!validateEmail(formData.email)) {
-            errorMsg.textContent = ' Please enter a valid email address.';
-            errorMsg.style.display = 'block';
-            return;
-        }
-
-        if (!validateAzerbaijaniPhone(formData.phone)) {
-            errorMsg.textContent = ' Please enter a valid Azerbaijani phone number (+994 XX XXX XX XX).';
-            errorMsg.style.display = 'block';
-            return;
-        }
-
-        submitBtn.disabled = true;
-        submitText.innerHTML = '<span class="loading-spinner"></span>Sending...';
-
-        try {
-
-            await sendContactEmail(formData);
+//         if (success) {
+//             sendAutoReply(formData);
+//             return { success: true };
+//         } else {
+//             throw new Error('Email sending failed');
+//         }
+//     }
 
 
-            successMsg.style.display = 'block';
-            contactForm.reset();
+//     function sendAutoReply(formData) {
+//         const autoReplyContent = `
+//         ═══════════════════════════════════════
+//         AUTO-REPLY TO CUSTOMER: ${formData.email}
+//         ═══════════════════════════════════════
 
-            setTimeout(() => {
-                submitBtn.disabled = false;
-                submitText.textContent = 'submit message';
-                successMsg.style.display = 'none';
-            }, 5000);
+//         Dear ${formData.firstName},
 
-        } catch (error) {
-            console.error('Error sending email:', error);
+//         Thank you for contacting Caffe Luna! 
+
+//         We have received your message and will respond within 24 hours.
+
+//         Your message:
+//         "${formData.message}"
+
+//         Best regards,
+//         Caffe Luna Team
+
+//          +994 12 345 67 89
+//          info@caffeluna.com
+//          Nizami küçəsi 123, Bakı
+
+//         ═══════════════════════════════════════
+//         `;
+
+//         console.log(autoReplyContent);
+//     }
+
+//     contactForm.addEventListener('submit', async function(e) {
+//         e.preventDefault();
+
+//         successMsg.style.display = 'none';
+//         errorMsg.style.display = 'none';
+
+//         const formData = {
+//             firstName: document.getElementById('fname').value.trim(),
+//             lastName: document.getElementById('lname').value.trim(),
+//             email: document.getElementById('email').value.trim(),
+//             phone: document.getElementById('phone').value.trim(),
+//             message: document.getElementById('message').value.trim()
+//         };
+
+//         if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.message) {
+//             errorMsg.textContent = 'Please fill in all required fields.';
+//             errorMsg.style.display = 'block';
+//             return;
+//         }
+
+//         if (!validateEmail(formData.email)) {
+//             errorMsg.textContent = ' Please enter a valid email address.';
+//             errorMsg.style.display = 'block';
+//             return;
+//         }
+
+//         if (!validateAzerbaijaniPhone(formData.phone)) {
+//             errorMsg.textContent = ' Please enter a valid Azerbaijani phone number (+994 XX XXX XX XX).';
+//             errorMsg.style.display = 'block';
+//             return;
+//         }
+
+//         submitBtn.disabled = true;
+//         submitText.innerHTML = '<span class="loading-spinner"></span>Sending...';
+
+//         try {
+
+//             await sendContactEmail(formData);
 
 
-            errorMsg.style.display = 'block';
+//             successMsg.style.display = 'block';
+//             contactForm.reset();
+
+//             setTimeout(() => {
+//                 submitBtn.disabled = false;
+//                 submitText.textContent = 'submit message';
+//                 successMsg.style.display = 'none';
+//             }, 5000);
+
+//         } catch (error) {
+//             console.error('Error sending email:', error);
 
 
-            submitBtn.disabled = false;
-            submitText.textContent = 'submit message';
-        }
-    });
+//             errorMsg.style.display = 'block';
 
-    document.getElementById('phone').addEventListener('input', function (e) {
-        let value = e.target.value.replace(/\D/g, '');
 
-        if (value.startsWith('994')) {
-            value = '+' + value;
-        } else if (value.startsWith('0')) {
-        } else if (value.length > 0) {
-            value = '+994' + value;
-        }
+//             submitBtn.disabled = false;
+//             submitText.textContent = 'submit message';
+//         }
+//     });
 
-        e.target.value = value;
-    });
+//     document.getElementById('phone').addEventListener('input', function(e) {
+//         let value = e.target.value.replace(/\D/g, '');
 
-    console.log('Contact form initialized successfully!');
-});
+//         if (value.startsWith('994')) {
+//             value = '+' + value;
+//         } else if (value.startsWith('0')) {
+//         } else if (value.length > 0) {
+//             value = '+994' + value;
+//         }
+
+//         e.target.value = value;
+//     });
+
+
+// });
 
 document.addEventListener("DOMContentLoaded", () => {
     const userIconBtn = document.querySelector(".user-icon-btn")

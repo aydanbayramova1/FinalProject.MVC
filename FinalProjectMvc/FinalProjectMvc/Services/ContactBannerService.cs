@@ -21,9 +21,10 @@ namespace FinalProjectMvc.Services
             _mapper = mapper;
         }
 
-        public async Task<List<ContactBanner>> GetAllAsync()
+        public async Task<List<ContactBannerVM>> GetAllAsync()
         {
-            return await _context.ContactBanners.ToListAsync();
+            var data = await _context.ContactBanners.ToListAsync();
+            return _mapper.Map<List<ContactBannerVM>>(data);
         }
 
         public async Task<ContactBanner> GetByIdAsync(int id)

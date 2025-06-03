@@ -5,7 +5,7 @@ namespace FinalProjectMvc.Services.Interfaces
 {
     public interface IContactBannerService
     {
-        Task<List<ContactBanner>> GetAllAsync();
+        Task<List<ContactBannerVM>> GetAllAsync();
         Task<ContactBanner> GetByIdAsync(int id);
         Task CreateAsync(ContactBannerCreateVM model);
         Task EditAsync(ContactBannerEditVM model);

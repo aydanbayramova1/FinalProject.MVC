@@ -5,7 +5,7 @@ namespace FinalProjectMvc.Services.Interfaces
 {
     public interface IMenuBannerService
     {
-        Task<List<MenuBanner>> GetAllAsync();
+        Task<List<MenuBannerVM>> GetAllAsync();
         Task<MenuBanner> GetByIdAsync(int id);
         Task CreateAsync(MenuBannerCreateVM model);
         Task EditAsync(MenuBannerEditVM model);
