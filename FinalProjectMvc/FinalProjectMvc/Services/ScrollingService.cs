@@ -46,17 +46,14 @@ namespace FinalProjectMvc.Services
         public async Task<Scrolling> GetByIdAsync(int id)
         {
             var scrolling = await _context.Scrollings.FindAsync(id);
-            if (scrolling == null)
-                throw new KeyNotFoundException("Scrolling item not found!");
+            if (scrolling == null)throw new KeyNotFoundException("Scrolling item not found!");
             return scrolling;
         }
 
         public async Task EditAsync(ScrollingEditVM model)
         {
             var scrolling = await GetByIdAsync(model.Id);
-
             scrolling.Name = model.Name;
-
             if (model.Photo != null)
             {
                 string folder = Path.Combine(_env.WebRootPath, "uploads", "scrollings");

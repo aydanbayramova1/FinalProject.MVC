@@ -37,6 +37,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = true;
 });
 
+
 builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IScrollingService, ScrollingService>();
 builder.Services.AddScoped<ICatalogService, CatalogService>();
@@ -52,6 +53,9 @@ builder.Services.AddScoped<IContactBannerService, ContactBannerService>();
 builder.Services.AddScoped<IBlogDetailBannerService, BlogDetailBannerService>();
 builder.Services.AddScoped<IReservationBannerService, ReservationBannerService>();
 builder.Services.AddScoped<ITeamMemberService, TeamMemberService>();
+builder.Services.AddScoped<IBlogService, BlogService>();
+
+
 
 builder.Services.AddAutoMapper(typeof(Program));
 

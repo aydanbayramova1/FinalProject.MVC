@@ -1,12 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinalProjectMvc.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
-namespace FinalProjectMvc.Controllers
+public class BlogController : Controller
 {
-    public class BlogController : Controller
+    private readonly IBlogService _blogService;
+
+    public BlogController(IBlogService blogService)
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        _blogService = blogService;
     }
+
+    public async Task<IActionResult> Index()
+    {
+        return View();
+    }
+
+
 }

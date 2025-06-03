@@ -189,6 +189,7 @@ wwwroot\assets\js\common\swiper-bundle.min.js
 wwwroot\assets\js\common\validator.min.js
 wwwroot\assets\js\common\wow.min.js
 wwwroot\assets\js\contact\contact.js
+wwwroot\assets\js\customer.js
 wwwroot\assets\js\faqs\faq.js
 wwwroot\assets\js\home\home.js
 wwwroot\assets\js\menu\menu.js
@@ -201,6 +202,17 @@ wwwroot\assets\videos\WhatsApp Video 2025-05-21 at 06.26.16.mp4
 wwwroot\uploads\aboutbanner\bdcafb61-5c6e-4b0b-bf03-d52885aa61dd.jpg
 wwwroot\uploads\blogbanner\c5d35e69-89c1-41d0-87dd-5cb6a06b9c30.jpg
 wwwroot\uploads\blogdetailbanner\7b2c9276-e7a5-480b-af64-631199b977e8.jpg
+wwwroot\uploads\blogs\0c7eba94-6742-461d-90b6-06f6e3d6d7af.jpg
+wwwroot\uploads\blogs\34d1ae6b-eabc-4175-b631-32ece3358c5f.jpg
+wwwroot\uploads\blogs\36d22742-1f74-4b58-ac64-8c0e6d89007c.jpg
+wwwroot\uploads\blogs\45eb6ede-e10d-447b-97a6-faa6c4061d3c.jpg
+wwwroot\uploads\blogs\4d1db5e2-aa84-4fe1-98e1-bd352fbfd5a2.jpg
+wwwroot\uploads\blogs\60a9067f-880c-40ac-8332-3190e9d683db.jpg
+wwwroot\uploads\blogs\a4bc3d88-274c-406a-86a9-2db69ee41434.jpg
+wwwroot\uploads\blogs\b486ab84-ec95-42ef-a1fd-e370c047caea.jpg
+wwwroot\uploads\blogs\c1e15834-db12-421a-bf2b-1ba54e6f6d4a.jpg
+wwwroot\uploads\blogs\cc317938-8c20-433c-84d1-19f8d147f83e.jpg
+wwwroot\uploads\blogs\f298ee2c-6df0-4f19-a179-2f9eb6525520.jpg
 wwwroot\uploads\catalogs\21838310-1f1c-4cd3-88ba-93872e6eff03.jpg
 wwwroot\uploads\catalogs\3b0dfe5d-c604-456a-83bc-30ed52ceccd4.jpg
 wwwroot\uploads\catalogs\74eaeb4c-ecbc-428f-94da-4ec7c10706bb.jpg

@@ -73,7 +73,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(ServiceItemEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
-
             await _serviceItemService.EditAsync(vm);
             return RedirectToAction("Index");
         }

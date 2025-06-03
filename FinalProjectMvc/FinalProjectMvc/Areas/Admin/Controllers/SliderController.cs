@@ -42,9 +42,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(SliderCreateVM model)
         {
-            if (!ModelState.IsValid)
-                return View(model);
-
+            if (!ModelState.IsValid)return View(model);
             await _sliderService.CreateAsync(model);
             return RedirectToAction(nameof(Index));
         }

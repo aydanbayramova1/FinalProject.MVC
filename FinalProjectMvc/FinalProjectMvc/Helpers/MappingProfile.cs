@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Models;
 using FinalProjectMvc.ViewModels.Admin.AboutBanner;
+using FinalProjectMvc.ViewModels.Admin.Blog;
 using FinalProjectMvc.ViewModels.Admin.BlogBanner;
 using FinalProjectMvc.ViewModels.Admin.BlogDetailBanner;
 using FinalProjectMvc.ViewModels.Admin.Catalog;
@@ -122,6 +123,20 @@ namespace FinalProjectMvc.Helpers
             CreateMap<TeamMember, TeamMemberVM>()
            .ForMember(dest => dest.Desc, opt => opt.MapFrom(src => src.Description))
            .ForMember(dest => dest.ImgUrl, opt => opt.MapFrom(src => src.Img));
+
+
+            CreateMap<Blog, BlogVM>();
+            CreateMap<BlogCreateVM, Blog>()
+     .ForMember(dest => dest.Img, opt => opt.Ignore())
+     .ForMember(dest => dest.CreateDate, opt => opt.MapFrom(src => src.Date));
+            CreateMap<BlogEditVM, Blog>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.CreateDate, opt => opt.Ignore());
+
+            CreateMap<Blog, BlogDetailVM>();
+            
+
+           
 
         }
     }
