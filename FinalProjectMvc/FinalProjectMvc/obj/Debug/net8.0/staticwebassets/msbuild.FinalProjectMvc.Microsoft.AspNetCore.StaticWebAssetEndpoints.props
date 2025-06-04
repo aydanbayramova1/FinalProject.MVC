@@ -2064,17 +2064,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"n3pxu4kjqm"},{"Name":"integrity","Value":"sha256-U2sR0sdSxOY/vKtgsBv1JbCo8M42ay\u002BkE7Oo\u002BA6epXw="},{"Name":"label","Value":"_content/FinalProjectMvc/assets/js/blog/blog.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"46086"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022U2sR0sdSxOY/vKtgsBv1JbCo8M42ay\u002BkE7Oo\u002BA6epXw=\u0022"},{"Name":"Last-Modified","Value":"Mon, 02 Jun 2025 19:36:59 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/FinalProjectMvc/assets/js/blogdetail/blogdetail.7wrmm8godh.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\js\blogdetail\blogdetail.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"7wrmm8godh"},{"Name":"integrity","Value":"sha256-SdP\u002BYn62ngTTUa2ETVdiiPnlkAWOhSBpb1Z215XAbZI="},{"Name":"label","Value":"_content/FinalProjectMvc/assets/js/blogdetail/blogdetail.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"46217"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022SdP\u002BYn62ngTTUa2ETVdiiPnlkAWOhSBpb1Z215XAbZI=\u0022"},{"Name":"Last-Modified","Value":"Mon, 02 Jun 2025 19:36:59 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/FinalProjectMvc/assets/js/blogdetail/blogdetail.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\js\blogdetail\blogdetail.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-SdP\u002BYn62ngTTUa2ETVdiiPnlkAWOhSBpb1Z215XAbZI="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"46217"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022SdP\u002BYn62ngTTUa2ETVdiiPnlkAWOhSBpb1Z215XAbZI=\u0022"},{"Name":"Last-Modified","Value":"Mon, 02 Jun 2025 19:36:59 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-gXapbGF9k6MtNBOgZo4Vekdal6d0zwpzMq5wGO7pw/M="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"43085"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022gXapbGF9k6MtNBOgZo4Vekdal6d0zwpzMq5wGO7pw/M=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Jun 2025 13:23:00 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/FinalProjectMvc/assets/js/blogdetail/blogdetail.l3woyvsjud.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\js\blogdetail\blogdetail.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"l3woyvsjud"},{"Name":"integrity","Value":"sha256-gXapbGF9k6MtNBOgZo4Vekdal6d0zwpzMq5wGO7pw/M="},{"Name":"label","Value":"_content/FinalProjectMvc/assets/js/blogdetail/blogdetail.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"43085"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022gXapbGF9k6MtNBOgZo4Vekdal6d0zwpzMq5wGO7pw/M=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Jun 2025 13:23:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/FinalProjectMvc/assets/js/common/gsap.min.6d3oulfrn2.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\js\common\gsap.min.js'))</AssetFile>

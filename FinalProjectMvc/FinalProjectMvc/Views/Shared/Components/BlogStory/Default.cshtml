@@ -11,16 +11,19 @@
                     <div class="story-info">
                         <p class="date">@blog.Date.ToString("MMMM dd, yyyy")</p>
                         <h3>@blog.Title</h3>
-                        <p>@(blog.Description.Length > 100 ? blog.Description.Substring(0, 100) + "..." : blog.Description)</p>
-                        <a asp-controller="Blog" asp-action="Detail" asp-route-id="@blog.Id">Read More</a>
+                        <p>
+                            @(blog.Description.Length > 100
+                                ? blog.Description.Substring(0, 100) + "..."
+                                : blog.Description)
+                        </p>
+                        <a asp-controller="BlogDetail" asp-action="Index" asp-route-id="@blog.Id">Read More</a>
                     </div>
                 </div>
             }
         </div>
     </div>
 </section>
-       <div class="more-posts text-center">
+
+<div class="more-posts text-center">
     <button id="loadMore" class="btn btn-outline-dark" data-skip="3">SHOW MORE</button>
 </div>
-    </div>
-</section>

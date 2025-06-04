@@ -3108,8 +3108,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>7wrmm8godh</Fingerprint>
-      <Integrity>SdP+Yn62ngTTUa2ETVdiiPnlkAWOhSBpb1Z215XAbZI=</Integrity>
+      <Fingerprint>l3woyvsjud</Fingerprint>
+      <Integrity>gXapbGF9k6MtNBOgZo4Vekdal6d0zwpzMq5wGO7pw/M=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\assets\js\blogdetail\blogdetail.js'))</OriginalItemSpec>
