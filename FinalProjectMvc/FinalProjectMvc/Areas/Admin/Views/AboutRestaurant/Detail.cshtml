@@ -1,58 +1,108 @@
 ﻿@model AboutRestaurantDetailVM
 
+<style>
+    .text-brown {
+        color: #6b4f3b;
+    }
+
+    .section-title {
+        font-family: 'Georgia', serif;
+        border-bottom: 1px solid #d3c0b0;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        color: #5c3d2e;
+        text-align: center;
+    }
+
+    .detail-label {
+        font-weight: 600;
+        color: #4a362c;
+    }
+
+    .detail-value {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    .img-center {
+        display: block;
+        margin: 0 auto 30px auto;
+        max-height: 300px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .info-card {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #e0d4ca;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        height: 100%;
+    }
+
+        .info-card div {
+            margin-bottom: 10px;
+        }
+</style>
+
 <div class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-xl-11">
+        <div class="col-xl-10">
             <div class="bg-light border rounded shadow-sm p-4">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ About Restaurant Details</h2>
-                    <a asp-action="Edit" class="btn btn-outline-dark">
-                        <i class="fa fa-edit mr-1"></i> Edit
-                    </a>
+                <h2 class="section-title mb-4">☕ About Restaurant Details</h2>
+
+                <!-- Image Centered -->
+                <div class="text-center">
+                    <img src="~/img/@Model.Image" alt="About Restaurant Image" class="img-fluid img-center" />
                 </div>
 
-                <div class="row">
-                    <div class="col-md-4 text-center mb-4">
-                        <img src="~/img/@Model.Image" alt="About Restaurant Image" class="img-fluid rounded shadow-sm" style="max-height: 300px;" />
+                <!-- Info Cards -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <div class="info-card">
+                            <h5 class="text-brown mb-2">@Model.Title</h5>
+                            <h6 class="text-muted mb-3">@Model.SubTitle</h6>
 
+                            <div><span class="detail-label">Experience:</span><span class="detail-value">@Model.ExperienceDescription</span></div>
+                            <div><span class="detail-label">Quality Message:</span><span class="detail-value">@Model.QualityMessage</span></div>
+                            <div><span class="detail-label">Atmosphere Note:</span><span class="detail-value">@Model.AtmosphereNote</span></div>
+                            <div><span class="detail-label">Head Barista:</span><span class="detail-value">@Model.HeadBaristaName</span></div>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <h4 class="text-brown mb-2">@Model.Title</h4>
-                        <h5 class="text-muted mb-3">@Model.SubTitle</h5>
 
-                        <p><strong>Experience:</strong> @Model.ExperienceDescription</p>
-                        <p><strong>Quality Message:</strong> @Model.QualityMessage</p>
-                        <p><strong>Atmosphere Note:</strong> @Model.AtmosphereNote</p>
+                    <div class="col-md-6">
+                        <div class="info-card">
+                            <h5 class="text-brown mb-3">⏰ Timing Information</h5>
+                            <div><span class="detail-label">Timing Title:</span><span class="detail-value">@Model.TimingTitle</span></div>
+                            <div><span class="detail-label">Subtitle:</span><span class="detail-value">@Model.TimingSubtitle</span></div>
+                            <div><span class="detail-label">Description:</span><span class="detail-value">@Model.TimingDescription</span></div>
+                            <div><span class="detail-label">Happy Hour:</span><span class="detail-value">@Model.HappyHour</span></div>
+                        </div>
+                    </div>
 
-                        <hr />
+                    <div class="col-md-6">
+                        <div class="info-card">
+                            <h5 class="text-brown mb-3">🕒 Working Hours</h5>
+                            <div><span class="detail-label">Weekdays:</span><span class="detail-value">@Model.WeekdayTime</span></div>
+                            <div><span class="detail-label">Weekends:</span><span class="detail-value">@Model.WeekendTime</span></div>
+                        </div>
+                    </div>
 
-                        <p><strong>Head Barista:</strong> @Model.HeadBaristaName</p>
-
-                        <h5 class="mt-4 mb-2 text-brown">🕒 Timing Info</h5>
-                        <p><strong>Timing Title:</strong> @Model.TimingTitle</p>
-                        <p><strong>Subtitle:</strong> @Model.TimingSubtitle</p>
-                        <p><strong>Description:</strong> @Model.TimingDescription</p>
-                        <p><strong>Weekdays:</strong> @Model.WeekdayTime</p>
-                        <p><strong>Weekends:</strong> @Model.WeekendTime</p>
-                        <p><strong>Happy Hour:</strong> @Model.HappyHour</p>
-
-                        <hr />
-
-                        <p><strong>Holiday Status:</strong> @Model.HolidayStatus</p>
-                        <p><strong>Holiday Note:</strong> @Model.HolidayNote</p>
+                    <div class="col-md-6">
+                        <div class="info-card">
+                            <h5 class="text-brown mb-3">🎉 Holiday Info</h5>
+                            <div><span class="detail-label">Holiday Status:</span><span class="detail-value">@Model.HolidayStatus</span></div>
+                            <div><span class="detail-label">Holiday Note:</span><span class="detail-value">@Model.HolidayNote</span></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="mt-4 d-flex justify-content-end">
+                <!-- Action -->
+                <div class="d-flex justify-content-between mt-4">
                     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<style>
-    .text-brown {
-        color: #6b4f3b;
-    }
-</style>

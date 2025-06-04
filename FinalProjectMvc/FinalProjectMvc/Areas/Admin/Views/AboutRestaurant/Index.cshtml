@@ -1,6 +1,5 @@
 ﻿@model List<AboutRestaurantVM>
 
-
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-xl-10">
@@ -22,19 +21,9 @@
                             <tr>
                                 <th style="background-color: #5c3d2e; color: #fff;">Image</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Title</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">SubTitle</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Experience</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Quality</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Atmosphere</th>
+                                <th style="background-color: #5c3d2e; color: #fff;">Subtitle</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Barista</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Timing Title</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Timing Subtitle</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Timing Description</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Weekday</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Weekend</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Happy Hour</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Holiday Status</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Holiday Note</th>
+                                <th style="background-color: #5c3d2e; color: #fff;">Timing</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
                             </tr>
                         </thead>
@@ -43,32 +32,22 @@
                             {
                                 <tr>
                                     <td>
-                                        <img src="~/img/@item.Image" alt="about image" class="img-thumbnail" style="max-width: 120px; border-radius: 8px;" /> 
+                                        <img src="~/img/@item.Image" alt="about image" class="img-thumbnail" style="max-width: 100px; border-radius: 8px;" />
                                     </td>
                                     <td>@item.Title</td>
                                     <td>@item.SubTitle</td>
-                                    <td>@item.ExperienceDescription</td>
-                                    <td>@item.QualityMessage</td>
-                                    <td>@item.AtmosphereNote</td>
                                     <td>@item.HeadBaristaName</td>
                                     <td>@item.TimingTitle</td>
-                                    <td>@item.TimingSubtitle</td>
-                                    <td>@item.TimingDescription</td>
-                                    <td>@item.WeekdayTime</td>
-                                    <td>@item.WeekendTime</td>
-                                    <td>@item.HappyHour</td>
-                                    <td>@item.HolidayStatus</td>
-                                    <td>@item.HolidayNote</td>
                                     <td>
                                         <div class="d-flex justify-content-center gap-2">
-                                            <a asp-action="Detail" asp-route-id="@item.Id" title="View Details" class="btn btn-info btn-sm">
+                                            <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-info btn-sm" title="View Details">
                                                 <i class="fa-solid fa-circle-info"></i>
                                             </a>
-                                            <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-dark btn-sm">
+                                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-dark btn-sm" title="Edit">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>
-                                            <form class="d-inline" asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Are you sure you want to delete this info?');">
-                                                <button type="submit" class="btn btn-danger btn-sm">
+                                            <form asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Are you sure you want to delete this info?');" class="d-inline">
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </form>

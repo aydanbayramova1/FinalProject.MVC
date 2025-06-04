@@ -6,11 +6,11 @@ namespace FinalProjectMvc.ViewModels.Admin.AboutRestaurant
     {
         public int Id { get; set; }
 
-        [Required, MaxLength(100)]
+        [Required]
         [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Only letters allowed.")]
         public string Title { get; set; }
 
-        [Required, MaxLength(100)]
+        [Required]
         [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Only letters allowed.")]
         public string SubTitle { get; set; }
 

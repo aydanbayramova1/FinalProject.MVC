@@ -199,7 +199,7 @@ wwwroot\assets\videos\latte.jpg
 wwwroot\assets\videos\videoframe_3275.png
 wwwroot\assets\videos\WhatsApp Video 2025-05-20 at 06.56.31.mp4
 wwwroot\assets\videos\WhatsApp Video 2025-05-21 at 06.26.16.mp4
-wwwroot\img\3797eed1-a2c7-401e-883f-f47c8bfb5406.png
+wwwroot\img\c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg
 wwwroot\uploads\aboutbanner\bdcafb61-5c6e-4b0b-bf03-d52885aa61dd.jpg
 wwwroot\uploads\blogbanner\c5d35e69-89c1-41d0-87dd-5cb6a06b9c30.jpg
 wwwroot\uploads\blogdetailbanner\7b2c9276-e7a5-480b-af64-631199b977e8.jpg

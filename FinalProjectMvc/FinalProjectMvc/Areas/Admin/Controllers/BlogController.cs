@@ -74,7 +74,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             await _blogService.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> LoadMoreTours(int skip)
+        {
+            var blogs = await _blogService.GetAllAsync();
+            var nextBlogs = blogs.Skip(skip).Take(3).ToList();
 
-       
+            return Json(nextBlogs);
+        }
+
     }
 }
