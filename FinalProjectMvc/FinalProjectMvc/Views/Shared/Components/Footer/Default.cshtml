@@ -1,85 +1,118 @@
-﻿<footer>
+﻿@model Dictionary<string, string>
+
+@{
+    var footerBg = Model.ContainsKey("FooterBg") && !string.IsNullOrEmpty(Model["FooterBg"])
+        ? Model["FooterBg"]
+        : "footer-bg-image.jpg";
+
+    var phone = Model.ContainsKey("Phone") && !string.IsNullOrEmpty(Model["Phone"])
+        ? Model["Phone"]
+        : "+994 51 315 36 84";
+
+    var email = Model.ContainsKey("Email") && !string.IsNullOrEmpty(Model["Email"])
+        ? Model["Email"]
+        : "caffeluna67@gmail.com";
+
+    var address = Model.ContainsKey("Address") && !string.IsNullOrEmpty(Model["Address"])
+        ? Model["Address"]
+        : "Marchesi 1824 Via Montenapoleone 9, 20121 Milano Lombardia, Italy";
+
+    var workHours = Model.ContainsKey("WorkHours") && !string.IsNullOrEmpty(Model["WorkHours"])
+        ? Model["WorkHours"]
+        : "Everyday: From 09:30 To 21:00";
+
+    var kitchenClose = Model.ContainsKey("KitchenClose") && !string.IsNullOrEmpty(Model["KitchenClose"])
+        ? Model["KitchenClose"]
+        : "Kitchen closes at 20:00";
+
+    var footerLogo = Model.ContainsKey("FooterLogo") && !string.IsNullOrEmpty(Model["FooterLogo"])
+        ? Model["FooterLogo"]
+        : "footer-default-logo.jpg";
+}
+
+<footer>
     <section id="footer-section">
-        <div class="footer" style=" background: url(./assets/images/common/footer-bg-image.jpg) no-repeat; ">
+        <div class="footer" style="background: url('@Url.Content($"~/assets/images/common/{footerBg}")') no-repeat; background-size: cover;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div style=" font-family: 'Ancizar Serif', serif;padding-top:6pc;" class="footer-contact-list">
+                        <div class="footer-contact-list" style="font-family: 'Ancizar Serif', serif; padding-top: 6pc;">
+
+                            <!-- Contact -->
                             <div class="footer-contact-item">
                                 <div class="icon-box">
                                     <img src="~/assets/images/common/phone.svg" alt="">
                                 </div>
                                 <div class="footer-contact-detail">
-                                    <h3>contact us</h3>
-                                    <p>T. <a href="https://wa.me/994513153684" target="_blank">+994 51 315 36 84</a></p>
-                                    <p>M. <a href="mailto:caffeluna67@gmail.com">caffeluna67@gmail.com</a></p>
+                                    <h3>Contact Us</h3>
+                                    <p>T. <a href="@($"https://wa.me/{phone}")" target="_blank">@phone</a></p>
+                                    <p>M. <a href="mailto:@email">@email</a></p>
                                 </div>
                                 <div class="footer-contact-button">
-                                    <a href="contact.html" class="btn-default btn-highlighted">contact us</a>
+                                    <a href="/contact" class="btn-default btn-highlighted">Contact Us</a>
                                 </div>
                             </div>
 
+                            <!-- Address -->
                             <div class="footer-contact-item">
                                 <div class="icon-box">
                                     <img src="~/assets/images/common/address.svg" alt="">
                                 </div>
                                 <div class="footer-contact-detail">
-                                    <h3>address</h3>
-                                    <p>Marchesi 1824 Via Montenapoleone 9, 20121 Milano Lombardia, Italy</p>
+                                    <h3>Address</h3>
+                                    <p>@address</p>
                                 </div>
                                 <div class="footer-contact-button">
-                                    <a href="contact.html" class="btn-default btn-highlighted">get direction</a>
+                                    <a href="/contact" class="btn-default btn-highlighted">Get Direction</a>
                                 </div>
                             </div>
 
+                            <!-- Opening Hours -->
                             <div class="footer-contact-item">
                                 <div class="icon-box">
                                     <img src="~/assets/images/common/clock.svg" alt="">
                                 </div>
                                 <div class="footer-contact-detail">
-                                    <h3>opening hours</h3>
-                                    <p>Everyday: From 09.30 To 21.00</p>
-                                    <p>Kitchen Closes At 20.00</p>
+                                    <h3>Opening Hours</h3>
+                                    <p>@workHours</p>
+                                    <p>@kitchenClose</p>
                                 </div>
                                 <div class="footer-contact-button">
-                                    <a href="reservation.html" class="btn-default btn-highlighted">
-                                        reserve a
-                                        table
-                                    </a>
+                                    <a href="/reservation" class="btn-default btn-highlighted">Reserve a Table</a>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
                     <div class="col-lg-12">
                         <div class="footer-copyright">
-                            <div class="footer-copyright-text order-md-1 order-3">
-                                <p>Copyright © 2025 Caffe Luna by Aydan.</p>
-                            </div>
-
                             <div class="footer-logo order-md-2 order-1">
-                                <img src="~/assets/images/common/footer.looggoooo.jpg" alt="">
+                                <img src="@Url.Content($"~/assets/images/common/{footerLogo}")" alt="Footer Logo" />
                             </div>
 
                             <div class="footer-social-links order-md-3 order-2">
                                 <ul>
                                     <li>
-                                        <a href="https://www.instagram.com/_caffe.luna_?igsh=MThmeGtkajQ1cTJ4eQ==">
+                                        <a href="https://www.instagram.com/_caffe.luna_?igsh=MThmeGtkajQ1cTJ4eQ==" target="_blank">
                                             <i class="fa-brands fa-instagram"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.facebook.com/share/16auhXoD7x/?mibextid=wwXIfr">
+                                        <a href="https://www.facebook.com/share/16auhXoD7x/?mibextid=wwXIfr" target="_blank">
                                             <i class="fa-brands fa-facebook-f"></i>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://wa.me/994513153684?text=Hello!%20Welcome%20to%20our%20Coffee%20Shop%20%E2%98%95%20How%20can%20we%20help%20you%3F"
-                                           target="_blank">
+                                        <a href="@($"https://wa.me/{phone}?text=Hello!%20Welcome%20to%20our%20Coffee%20Shop%20☕%20How%20can%20we%20help%20you%3F")" target="_blank">
                                             <i class="fa-brands fa-whatsapp"></i>
                                         </a>
                                     </li>
                                 </ul>
+                            </div>
+
+                            <div class="footer-copyright-text">
+                                <p>Copyright © 2025 Caffe Luna by Aydan.</p>
                             </div>
                         </div>
                     </div>

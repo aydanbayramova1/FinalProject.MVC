@@ -24,5 +24,8 @@ namespace FinalProjectMvc.Data
         public DbSet<TeamMember> TeamMembers { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<AboutRestaurant> AboutRestaurants { get; set; }
+        public DbSet<Setting> Settings { get; set; }
+        public DbSet<Approach> Approaches { get; set; }
+        public DbSet<ApproachItem> ApproachItems { get; set; }
     }
 }

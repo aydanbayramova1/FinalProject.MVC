@@ -2,6 +2,8 @@
 using FinalProjectMvc.Models;
 using FinalProjectMvc.ViewModels.Admin.AboutBanner;
 using FinalProjectMvc.ViewModels.Admin.AboutRestaurant;
+using FinalProjectMvc.ViewModels.Admin.Approach;
+using FinalProjectMvc.ViewModels.Admin.ApproachItem;
 using FinalProjectMvc.ViewModels.Admin.Blog;
 using FinalProjectMvc.ViewModels.Admin.BlogBanner;
 using FinalProjectMvc.ViewModels.Admin.BlogDetailBanner;
@@ -117,7 +119,6 @@ namespace FinalProjectMvc.Helpers
             CreateMap<ReservationBanner, ReservationBannerDetailVM>();
             CreateMap<ReservationBanner, ReservationBannerVM>();
 
-
             CreateMap<TeamMember, TeamMemberCreateVM>().ReverseMap();
             CreateMap<TeamMember, TeamMemberEditVM>().ReverseMap();
             CreateMap<TeamMember, TeamMemberDetailVM>();
@@ -145,6 +146,20 @@ namespace FinalProjectMvc.Helpers
                 .ForMember(dest => dest.Image, opt => opt.Ignore());
             CreateMap<AboutRestaurant, AboutRestaurantDetailVM>();
             CreateMap<AboutRestaurant, AboutRestaurantVM>();
+
+            CreateMap<Approach, ApproachVM>();
+            CreateMap<Approach, ApproachDetailVM>();
+            CreateMap<ApproachCreateVM, Approach>()
+                .ForMember(dest => dest.Image, opt => opt.Ignore());
+            CreateMap<ApproachEditVM, Approach>()
+                .ForMember(dest => dest.Image, opt => opt.Ignore());
+
+            CreateMap<ApproachItem, ApproachItemVM>();
+            CreateMap<ApproachItem, ApproachItemDetailVM>();
+            CreateMap<ApproachItemCreateVM, ApproachItem>()
+                .ForMember(dest => dest.IconPath, opt => opt.Ignore());
+            CreateMap<ApproachItemEditVM, ApproachItem>()
+                .ForMember(dest => dest.IconPath, opt => opt.Ignore());
 
 
         }

@@ -1,0 +1,47 @@
+﻿@model ApproachItemEditVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Edit Approach Item</h2>
+
+                <form asp-action="Edit" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="ApproachId" />
+
+                    <!-- Title -->
+                    <div class="form-group mb-3">
+                        <label asp-for="Title" class="form-label">Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Enter title" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="form-group mb-3">
+                        <label asp-for="Description" class="form-label">Description</label>
+                        <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter description"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <!-- Icon Path -->
+                    <div class="form-group mb-4">
+                        <label asp-for="IconPath" class="form-label">Icon Path (optional)</label>
+                        <input asp-for="IconPath" class="form-control" placeholder="e.g., fa-solid fa-heart" />
+                        <span asp-validation-for="IconPath" class="text-danger"></span>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex justify-content-between">
+                        <button type="submit"
+                                class="btn btn-outline-primary"
+                                style="color:brown; border: 1px solid brown; background-color: white;"
+                                onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+                            Save Changes
+                        </button>
+                        <a asp-controller="Approach" asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div

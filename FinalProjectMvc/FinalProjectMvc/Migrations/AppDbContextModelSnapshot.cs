@@ -191,6 +191,67 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.Approach", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Approaches");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.ApproachItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ApproachId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IconPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApproachId");
+
+                    b.ToTable("ApproachItems");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.Blog", b =>
                 {
                     b.Property<int>("Id")
@@ -472,6 +533,30 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("ServiceItems");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.Setting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.Slider", b =>
                 {
                     b.Property<int>("Id")
@@ -720,6 +805,17 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.ApproachItem", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.Approach", "Approach")
+                        .WithMany("Items")
+                        .HasForeignKey("ApproachId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Approach");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.ServiceItem", b =>
                 {
                     b.HasOne("FinalProjectMvc.Models.Service", "Service")
@@ -780,6 +876,11 @@ namespace FinalProjectMvc.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.Approach", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("FinalProjectMvc.Models.Service", b =>

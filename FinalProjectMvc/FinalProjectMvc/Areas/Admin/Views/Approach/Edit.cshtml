@@ -1,0 +1,61 @@
+﻿@model ApproachEditVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Edit Approach</h2>
+
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
+
+                    <!-- Title Input -->
+                    <div class="form-group mb-3">
+                        <label asp-for="Title" class="form-label">Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Enter approach title" />
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+
+                    <!-- Subtitle Input -->
+                    <div class="form-group mb-3">
+                        <label asp-for="SubTitle" class="form-label">Subtitle</label>
+                        <input asp-for="SubTitle" class="form-control" placeholder="Enter approach subtitle" />
+                        <span class="text-danger" asp-validation-for="SubTitle"></span>
+                    </div>
+
+                    <!-- Current Image Display -->
+                    <div class="form-group mb-3">
+                        <label class="form-label">Current Image</label><br />
+                        @if (!string.IsNullOrEmpty(Model.Image))
+                        {
+                            <img src="~/uploads/approach/@Model.Image" alt="Current Image" class="img-thumbnail mb-2" style="max-height: 200px;" />
+                        }
+                        else
+                        {
+                            <p>No image available</p>
+                        }
+                    </div>
+
+                    <!-- New Image Input -->
+                    <div class="form-group mb-4">
+                        <label asp-for="ImageFile" class="form-label">New Image (optional)</label>
+                        <input asp-for="ImageFile" type="file" class="form-control" />
+                        <span class="text-danger" asp-validation-for="ImageFile"></span>
+                    </div>
+
+                    <!-- Submit and Cancel Buttons -->
+                    <div class="d-flex justify-content-between">
+                        <button type="submit"
+                                class="btn btn-outline-primary"
+                                style="color:brown; border: 1px solid brown; background-color: white;"
+                                onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+                            Save Changes
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

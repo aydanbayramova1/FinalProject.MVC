@@ -1,0 +1,25 @@
+﻿@model ApproachItemDetailVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border text-center">
+                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Item Details</h2>
+
+                <i class="@Model.IconPath fa-3x mb-3"></i>
+
+                <div class="text-start">
+                    <p><strong>Title:</strong> @Model.Title</p>
+                    <p><strong>Description:</strong> @Model.Description</p>
+                </div>
+
+                <a asp-controller="Approach" asp-action="Index" class="btn mt-3"
+                   style="color: #5c3d2e; border: 1px solid #5c3d2e;"
+                   onmouseover="this.style.backgroundColor='#5c3d2e'; this.style.color='white';"
+                   onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
+                    Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -56,6 +56,10 @@ builder.Services.AddScoped<IReservationBannerService, ReservationBannerService>(
 builder.Services.AddScoped<ITeamMemberService, TeamMemberService>();
 builder.Services.AddScoped<IBlogService, BlogService>();
 builder.Services.AddScoped<IAboutRestaurantService, AboutRestaurantService>();
+builder.Services.AddScoped<ILayoutService, LayoutService>();
+builder.Services.AddScoped<IApproachService, ApproachService>();
+builder.Services.AddScoped<IApproachItemService, ApproachItemService>();
+
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()

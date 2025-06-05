@@ -201,6 +201,7 @@ wwwroot\assets\videos\WhatsApp Video 2025-05-20 at 06.56.31.mp4
 wwwroot\assets\videos\WhatsApp Video 2025-05-21 at 06.26.16.mp4
 wwwroot\img\c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg
 wwwroot\uploads\aboutbanner\bdcafb61-5c6e-4b0b-bf03-d52885aa61dd.jpg
+wwwroot\uploads\approach\3f09a091-5f0f-4917-81a4-c5159c15bf55.jpg
 wwwroot\uploads\blogbanner\c5d35e69-89c1-41d0-87dd-5cb6a06b9c30.jpg
 wwwroot\uploads\blogdetailbanner\7b2c9276-e7a5-480b-af64-631199b977e8.jpg
 wwwroot\uploads\blogs\0c7eba94-6742-461d-90b6-06f6e3d6d7af.jpg
