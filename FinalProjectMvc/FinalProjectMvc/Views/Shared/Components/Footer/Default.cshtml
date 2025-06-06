@@ -3,45 +3,46 @@
 @{
     var footerBg = Model.ContainsKey("FooterBg") && !string.IsNullOrEmpty(Model["FooterBg"])
         ? Model["FooterBg"]
-        : "footer-bg-image.jpg";
+        : "/assets/images/common/footer-bg-image.jpg";
 
     var phone = Model.ContainsKey("Phone") && !string.IsNullOrEmpty(Model["Phone"])
         ? Model["Phone"]
-        : "+994 51 315 36 84";
+        : "0000000000";
 
     var email = Model.ContainsKey("Email") && !string.IsNullOrEmpty(Model["Email"])
         ? Model["Email"]
-        : "caffeluna67@gmail.com";
+        : "info@example.com";
 
     var address = Model.ContainsKey("Address") && !string.IsNullOrEmpty(Model["Address"])
         ? Model["Address"]
-        : "Marchesi 1824 Via Montenapoleone 9, 20121 Milano Lombardia, Italy";
+        : "No address provided";
 
-    var workHours = Model.ContainsKey("WorkHours") && !string.IsNullOrEmpty(Model["WorkHours"])
-        ? Model["WorkHours"]
-        : "Everyday: From 09:30 To 21:00";
+    var workHours = Model.ContainsKey("EverydayWorkingHours") && !string.IsNullOrEmpty(Model["EverydayWorkingHours"])
+        ? Model["EverydayWorkingHours"]
+        : "Working hours not set";
 
-    var kitchenClose = Model.ContainsKey("KitchenClose") && !string.IsNullOrEmpty(Model["KitchenClose"])
-        ? Model["KitchenClose"]
-        : "Kitchen closes at 20:00";
+    var kitchenClose = Model.ContainsKey("KitchenCloseTime") && !string.IsNullOrEmpty(Model["KitchenCloseTime"])
+        ? Model["KitchenCloseTime"]
+        : "";
 
     var footerLogo = Model.ContainsKey("FooterLogo") && !string.IsNullOrEmpty(Model["FooterLogo"])
         ? Model["FooterLogo"]
-        : "footer-default-logo.jpg";
+        : "default-footer-logo.png";
+
+   
 }
 
 <footer>
     <section id="footer-section">
-        <div class="footer" style="background: url('@Url.Content($"~/assets/images/common/{footerBg}")') no-repeat; background-size: cover;">
+        <div class="footer" style="background: url('@Url.Content(footerBg)') no-repeat; background-size: cover;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="footer-contact-list" style="font-family: 'Ancizar Serif', serif; padding-top: 6pc;">
-
                             <!-- Contact -->
                             <div class="footer-contact-item">
                                 <div class="icon-box">
-                                    <img src="~/assets/images/common/phone.svg" alt="">
+                                    <img src="~/assets/images/common/phone.svg" alt="Phone Icon" />
                                 </div>
                                 <div class="footer-contact-detail">
                                     <h3>Contact Us</h3>
@@ -56,7 +57,7 @@
                             <!-- Address -->
                             <div class="footer-contact-item">
                                 <div class="icon-box">
-                                    <img src="~/assets/images/common/address.svg" alt="">
+                                    <img src="~/assets/images/common/address.svg" alt="Address Icon" />
                                 </div>
                                 <div class="footer-contact-detail">
                                     <h3>Address</h3>
@@ -70,7 +71,7 @@
                             <!-- Opening Hours -->
                             <div class="footer-contact-item">
                                 <div class="icon-box">
-                                    <img src="~/assets/images/common/clock.svg" alt="">
+                                    <img src="~/assets/images/common/clock.svg" alt="Clock Icon" />
                                 </div>
                                 <div class="footer-contact-detail">
                                     <h3>Opening Hours</h3>
@@ -88,7 +89,7 @@
                     <div class="col-lg-12">
                         <div class="footer-copyright">
                             <div class="footer-logo order-md-2 order-1">
-                                <img src="@Url.Content($"~/assets/images/common/{footerLogo}")" alt="Footer Logo" />
+                                <img src="@Model["FooterLogo"]" alt="Footer Logo" />
                             </div>
 
                             <div class="footer-social-links order-md-3 order-2">

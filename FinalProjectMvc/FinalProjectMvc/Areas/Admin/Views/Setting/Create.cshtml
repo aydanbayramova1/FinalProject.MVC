@@ -1,0 +1,84 @@
+﻿@model SettingCreateVM
+@{
+    bool settingExists = ViewData["SettingExists"] != null && (bool)ViewData["SettingExists"];
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Add New Setting</h2>
+
+                @if (!settingExists)
+                {
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div class="form-group mb-3">
+                            <label asp-for="HeaderLogo" class="form-label">Header Logo</label>
+                            <input asp-for="HeaderLogo" type="file" class="form-control" />
+                            <span asp-validation-for="HeaderLogo" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="FooterLogo" class="form-label">Footer Logo</label>
+                            <input asp-for="FooterLogo" type="file" class="form-control" />
+                            <span asp-validation-for="FooterLogo" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="BackgroundImage" class="form-label">Background Image</label>
+                            <input asp-for="BackgroundImage" type="file" class="form-control" />
+                            <span asp-validation-for="BackgroundImage" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Address" class="form-label">Address</label>
+                            <input asp-for="Address" class="form-control" placeholder="Enter address" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Email" class="form-label">Email</label>
+                            <input asp-for="Email" class="form-control" placeholder="Enter email address" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Phone" class="form-label">Phone</label>
+                            <input asp-for="Phone" class="form-control" placeholder="Enter phone number" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="EverydayWorkingHours" class="form-label">Everyday Working Hours</label>
+                            <input asp-for="EverydayWorkingHours" class="form-control" placeholder="Enter working hours" />
+                            <span asp-validation-for="EverydayWorkingHours" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="KitchenCloseTime" class="form-label">Kitchen Close Time</label>
+                            <input asp-for="KitchenCloseTime" class="form-control" placeholder="Enter kitchen closing time" />
+                            <span asp-validation-for="KitchenCloseTime" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <button type="submit"
+                                    class="btn btn-outline-primary"
+                                    style="color:brown; border: 1px solid brown; background-color: white;"
+                                    onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+                                    onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+                                Submit
+                            </button>
+                            <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+                    </form>
+                }
+                else
+                {
+                    <div class="alert alert-warning text-center">
+                        A setting already exists. You can only delete it first before adding a new one.
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -2554,3 +2554,1223 @@ System.NullReferenceException: Item not found
 2025-06-05 04:52:34.665 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.2495ms
 2025-06-05 04:53:00.746 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
 2025-06-05 04:53:00.768 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 20.9865ms
+2025-06-05 12:50:29.019 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 12:50:29.360 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-05 12:50:29.364 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-05 12:50:29.411 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 12:50:29.413 -08:00 [INF] Hosting environment: Development
+2025-06-05 12:50:29.416 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-05 12:50:30.077 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-05 12:50:30.400 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 12:50:30.457 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-05 12:50:30.519 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 12:50:32.957 -08:00 [INF] Executed DbCommand (74ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 12:50:33.060 -08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 12:50:33.348 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-05 12:50:33.712 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-05 12:50:33.977 -08:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-05 12:50:34.149 -08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-05 12:50:34.223 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:50:34.365 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:50:34.518 -08:00 [INF] Executed ViewResult - view Index executed in 4014.9619ms.
+2025-06-05 12:50:34.543 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 4063.1299ms
+2025-06-05 12:50:34.563 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 12:50:34.599 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/css/home/home.css - null null
+2025-06-05 12:50:34.609 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 4534.4994ms
+2025-06-05 12:50:34.629 -08:00 [INF] The file /assets/css/home/home.css was not modified
+2025-06-05 12:50:34.650 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/css/home/home.css - 304 null text/css 51.3051ms
+2025-06-05 12:50:34.695 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 12:50:34.697 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - null null
+2025-06-05 12:50:34.739 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 43.1077ms
+2025-06-05 12:50:34.750 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/js/home/home.js - null null
+2025-06-05 12:50:34.751 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - 404 0 null 54.5174ms
+2025-06-05 12:50:34.771 -08:00 [INF] The file /assets/js/home/home.js was not modified
+2025-06-05 12:50:34.784 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/default-logo.png, Response status code: 404
+2025-06-05 12:50:34.789 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/js/home/home.js - 304 null text/javascript 37.5231ms
+2025-06-05 12:50:34.802 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/Zabaglione.jpg - null null
+2025-06-05 12:50:34.802 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/Gelato.jpg - null null
+2025-06-05 12:50:34.802 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/ssss.jpg - null null
+2025-06-05 12:50:34.802 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/Waffle.jpg - null null
+2025-06-05 12:50:34.805 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/Ricotta Cheesecake.jpg - null null
+2025-06-05 12:50:34.808 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/gf.jpg - null null
+2025-06-05 12:50:34.810 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/frees.jpg - null null
+2025-06-05 12:50:34.811 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/Caprese Sandwich.jpg - null null
+2025-06-05 12:50:34.812 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/avacado.jpg - null null
+2025-06-05 12:50:34.814 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/Quiche.jpg - null null
+2025-06-05 12:50:34.815 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/tomatoo.jpg - null null
+2025-06-05 12:50:34.815 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/Tisane.jpg - null null
+2025-06-05 12:50:34.815 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/SDRFTY.jpg - null null
+2025-06-05 12:50:34.826 -08:00 [INF] The file /assets/images/common/Zabaglione.jpg was not modified
+2025-06-05 12:50:34.835 -08:00 [INF] The file /assets/images/common/Gelato.jpg was not modified
+2025-06-05 12:50:34.850 -08:00 [INF] The file /assets/images/common/ssss.jpg was not modified
+2025-06-05 12:50:34.865 -08:00 [INF] The file /assets/images/common/Waffle.jpg was not modified
+2025-06-05 12:50:34.875 -08:00 [INF] The file /assets/images/common/Ricotta Cheesecake.jpg was not modified
+2025-06-05 12:50:34.882 -08:00 [INF] The file /assets/images/common/gf.jpg was not modified
+2025-06-05 12:50:34.894 -08:00 [INF] The file /assets/images/common/frees.jpg was not modified
+2025-06-05 12:50:34.901 -08:00 [INF] The file /assets/images/common/Caprese Sandwich.jpg was not modified
+2025-06-05 12:50:34.912 -08:00 [INF] The file /assets/images/common/avacado.jpg was not modified
+2025-06-05 12:50:34.918 -08:00 [INF] The file /assets/images/common/Quiche.jpg was not modified
+2025-06-05 12:50:34.926 -08:00 [INF] The file /assets/images/common/tomatoo.jpg was not modified
+2025-06-05 12:50:34.938 -08:00 [INF] The file /assets/images/common/Tisane.jpg was not modified
+2025-06-05 12:50:34.944 -08:00 [INF] The file /assets/images/common/SDRFTY.jpg was not modified
+2025-06-05 12:50:34.947 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/Zabaglione.jpg - 304 null image/jpeg 145.1543ms
+2025-06-05 12:50:34.950 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/Gelato.jpg - 304 null image/jpeg 148.318ms
+2025-06-05 12:50:34.956 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/ssss.jpg - 304 null image/jpeg 153.0038ms
+2025-06-05 12:50:34.960 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/Waffle.jpg - 304 null image/jpeg 157.578ms
+2025-06-05 12:50:34.963 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/Ricotta Cheesecake.jpg - 304 null image/jpeg 158.3492ms
+2025-06-05 12:50:34.966 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/gf.jpg - 304 null image/jpeg 158.0695ms
+2025-06-05 12:50:34.969 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/frees.jpg - 304 null image/jpeg 159.3186ms
+2025-06-05 12:50:34.973 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/Caprese Sandwich.jpg - 304 null image/jpeg 161.9168ms
+2025-06-05 12:50:34.976 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/avacado.jpg - 304 null image/jpeg 163.2593ms
+2025-06-05 12:50:34.978 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/Quiche.jpg - 304 null image/jpeg 164.7182ms
+2025-06-05 12:50:34.981 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/tomatoo.jpg - 304 null image/jpeg 166.2947ms
+2025-06-05 12:50:34.983 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/Tisane.jpg - 304 null image/jpeg 168.6979ms
+2025-06-05 12:50:34.986 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/SDRFTY.jpg - 304 null image/jpeg 170.5788ms
+2025-06-05 12:50:34.995 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/aaa.jpg - null null
+2025-06-05 12:50:35.001 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.jpg - null null
+2025-06-05 12:50:35.011 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/ddd.jpg - null null
+2025-06-05 12:50:35.020 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/img/c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg - null null
+2025-06-05 12:50:35.029 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - null null
+2025-06-05 12:50:35.040 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 12:50:35.051 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/kofe.svg - null null
+2025-06-05 12:50:35.065 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - null null
+2025-06-05 12:50:35.146 -08:00 [INF] The file /assets/images/common/aaa.jpg was not modified
+2025-06-05 12:50:35.159 -08:00 [INF] The file /assets/images/common/rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.jpg was not modified
+2025-06-05 12:50:35.172 -08:00 [INF] The file /assets/images/common/ddd.jpg was not modified
+2025-06-05 12:50:35.184 -08:00 [INF] The file /img/c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg was not modified
+2025-06-05 12:50:35.201 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - 404 0 null 171.3564ms
+2025-06-05 12:50:35.220 -08:00 [INF] The file /assets/images/common/kofe.svg was not modified
+2025-06-05 12:50:35.235 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - 404 0 null 169.5474ms
+2025-06-05 12:50:35.240 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/aaa.jpg - 304 null image/jpeg 244.8626ms
+2025-06-05 12:50:35.245 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.jpg - 304 null image/jpeg 243.2423ms
+2025-06-05 12:50:35.249 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/ddd.jpg - 304 null image/jpeg 238.4561ms
+2025-06-05 12:50:35.254 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/img/c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg - 304 null image/jpeg 234.3648ms
+2025-06-05 12:50:35.264 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common/footer-default-logo.jpg, Response status code: 404
+2025-06-05 12:50:35.268 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/kofe.svg - 304 null image/svg+xml 216.7705ms
+2025-06-05 12:50:35.280 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg, Response status code: 404
+2025-06-05 12:50:35.295 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 255.0295ms
+2025-06-05 12:50:51.807 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 12:50:51.980 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-05 12:50:51.984 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-05 12:50:52.018 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 12:50:52.022 -08:00 [INF] Hosting environment: Development
+2025-06-05 12:50:52.024 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-05 12:50:52.544 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-05 12:50:52.683 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 12:50:52.713 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-05 12:50:52.732 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 12:50:53.091 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-05 12:50:53.111 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 12:50:53.117 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-05 12:50:53.123 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 12:50:54.589 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-05 12:50:54.621 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 12:50:54.629 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-05 12:50:54.642 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 12:50:54.699 -08:00 [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 12:50:54.699 -08:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 12:50:54.746 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 12:50:54.775 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 12:50:54.775 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 12:50:54.783 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 12:50:54.912 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-05 12:50:54.912 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-05 12:50:54.914 -08:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-05 12:50:55.096 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-05 12:50:55.096 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-05 12:50:55.096 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-05 12:50:55.168 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-05 12:50:55.168 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-05 12:50:55.171 -08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-05 12:50:55.309 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-05 12:50:55.309 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-05 12:50:55.309 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-05 12:50:55.356 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:50:55.357 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:50:55.358 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:50:55.427 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:50:55.429 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:50:55.431 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:50:55.478 -08:00 [INF] Executed ViewResult - view Index executed in 2351.6251ms.
+2025-06-05 12:50:55.478 -08:00 [INF] Executed ViewResult - view Index executed in 2752.6034ms.
+2025-06-05 12:50:55.490 -08:00 [INF] Executed ViewResult - view Index executed in 848.2646ms.
+2025-06-05 12:50:55.493 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 2371.439ms
+2025-06-05 12:50:55.495 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 2777.3981ms
+2025-06-05 12:50:55.504 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 862.1033ms
+2025-06-05 12:50:55.516 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 12:50:55.522 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 12:50:55.532 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 12:50:55.575 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 2482.4061ms
+2025-06-05 12:50:55.575 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 985.0122ms
+2025-06-05 12:50:55.575 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 3032.9354ms
+2025-06-05 12:50:56.060 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 12:50:56.060 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - null null
+2025-06-05 12:50:56.060 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - null null
+2025-06-05 12:50:56.068 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 12:50:56.088 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 28.4778ms
+2025-06-05 12:50:56.100 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - 404 0 null 40.1195ms
+2025-06-05 12:50:56.109 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - 404 0 null 48.4733ms
+2025-06-05 12:50:56.147 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/default-logo.png, Response status code: 404
+2025-06-05 12:50:56.160 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common/footer-default-logo.jpg, Response status code: 404
+2025-06-05 12:50:56.173 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - null null
+2025-06-05 12:50:56.181 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 112.7737ms
+2025-06-05 12:50:56.189 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - 404 0 null 16.2417ms
+2025-06-05 12:50:56.208 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg, Response status code: 404
+2025-06-05 12:50:56.504 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/home/favicon-32x32.png - null null
+2025-06-05 12:50:56.522 -08:00 [INF] The file /assets/images/home/favicon-32x32.png was not modified
+2025-06-05 12:50:56.528 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/home/favicon-32x32.png - 304 null image/png 24.3209ms
+2025-06-05 12:51:01.604 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/admin/dashboard - null null
+2025-06-05 12:51:01.625 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-05 12:51:01.638 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-05 12:51:01.653 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 12:51:01.757 -08:00 [INF] Executed ViewResult - view Index executed in 109.3024ms.
+2025-06-05 12:51:01.763 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 116.5954ms
+2025-06-05 12:51:01.769 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-05 12:51:01.775 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/admin/dashboard - 200 null text/html; charset=utf-8 170.0998ms
+2025-06-05 12:51:01.814 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 12:51:01.815 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 12:51:01.826 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 11.1459ms
+2025-06-05 12:51:01.863 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.7234ms
+2025-06-05 12:51:02.248 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/favicon.ico - null null
+2025-06-05 12:51:02.264 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/favicon.ico - 404 0 null 15.9849ms
+2025-06-05 12:51:02.283 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/favicon.ico, Response status code: 404
+2025-06-05 12:51:04.772 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting - null null
+2025-06-05 12:51:04.807 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 12:51:04.831 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 12:51:04.855 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc) in 8.536ms
+2025-06-05 12:51:04.866 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 12:51:04.888 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'FinalProjectMvc.Services.Interfaces.ISettingService' while attempting to activate 'FinalProjectMvc.Areas.Admin.Controllers.SettingController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method874(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-05 12:51:05.059 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting - 500 null text/html; charset=utf-8 286.4475ms
+2025-06-05 12:51:05.121 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 12:51:05.126 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 12:51:05.146 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.0608ms
+2025-06-05 12:51:05.150 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 23.6557ms
+2025-06-05 12:52:01.391 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 12:52:01.629 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-05 12:52:01.632 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-05 12:52:01.680 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 12:52:01.684 -08:00 [INF] Hosting environment: Development
+2025-06-05 12:52:01.692 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-05 12:52:01.814 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting - null null
+2025-06-05 12:52:01.957 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 12:52:01.994 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 12:52:03.785 -08:00 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:52:03.866 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 12:52:03.903 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc) in 1883.85ms
+2025-06-05 12:52:03.917 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 12:52:03.932 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'System.Collections.Generic.List`1[FinalProjectMvc.Models.Setting]', but this ViewDataDictionary instance requires a model item of type 'System.Collections.Generic.IEnumerable`1[FinalProjectMvc.ViewModels.Admin.Setting.SettingVM]'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at lambda_method43(Closure, ViewDataDictionary)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-05 12:52:04.049 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting - 500 null text/html; charset=utf-8 2237.8379ms
+2025-06-05 12:52:04.083 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 12:52:04.083 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 12:52:04.119 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 35.9613ms
+2025-06-05 12:52:04.157 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 74.257ms
+2025-06-05 12:53:50.815 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 12:53:51.107 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-05 12:53:51.112 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-05 12:53:51.157 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 12:53:51.164 -08:00 [INF] Hosting environment: Development
+2025-06-05 12:53:51.170 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-05 12:53:51.259 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting - null null
+2025-06-05 12:53:51.416 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 12:53:51.445 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Setting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 12:53:52.922 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc) in 1461.9542ms
+2025-06-05 12:53:52.930 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 12:53:52.939 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+AsyncStateMachineBox`1 -> IEnumerable`1
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[System.Collections.Generic.List`1[[FinalProjectMvc.Models.Setting, FinalProjectMvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[FinalProjectMvc.Services.SettingService+<GetAllAsync>d__2, FinalProjectMvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IEnumerable`1[[FinalProjectMvc.ViewModels.Admin.Setting.SettingVM, FinalProjectMvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+   at lambda_method32(Closure, Object, IEnumerable`1, ResolutionContext)
+   at FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index() in C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\Areas\Admin\Controllers\SettingController.cs:line 25
+   at lambda_method1(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-05 12:53:53.189 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting - 500 null text/html; charset=utf-8 1931.2896ms
+2025-06-05 12:53:53.216 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 12:53:53.220 -08:00 [ERR] Failed executing DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:53:53.223 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 12:53:53.276 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 52.7336ms
+2025-06-05 12:53:53.290 -08:00 [ERR] An exception occurred while iterating over the results of a query for context type 'FinalProjectMvc.Data.AppDbContext'.
+System.InvalidOperationException: BeginExecuteReader requires an open and available Connection. The connection's current state is closed.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: BeginExecuteReader requires an open and available Connection. The connection's current state is closed.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-06-05 12:53:53.307 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 90.7878ms
+2025-06-05 12:54:38.930 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 12:54:39.124 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-05 12:54:39.129 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-05 12:54:39.171 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 12:54:39.179 -08:00 [INF] Hosting environment: Development
+2025-06-05 12:54:39.189 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-05 12:54:39.242 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting - null null
+2025-06-05 12:54:39.378 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 12:54:39.416 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 12:54:41.231 -08:00 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:54:41.298 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 12:54:41.409 -08:00 [INF] Executed ViewResult - view Index executed in 110.7754ms.
+2025-06-05 12:54:41.436 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc) in 2012.8135ms
+2025-06-05 12:54:41.448 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 12:54:41.450 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 12:54:41.450 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 12:54:41.474 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting - 200 null text/html; charset=utf-8 2232.7754ms
+2025-06-05 12:54:41.479 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 29.1997ms
+2025-06-05 12:54:41.534 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 83.9435ms
+2025-06-05 12:54:44.540 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting/Create - null null
+2025-06-05 12:54:44.591 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 12:54:44.605 -08:00 [INF] Route matched with {area = "Admin", action = "Create", controller = "Setting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 12:54:44.629 -08:00 [INF] Executing ViewResult, running view Create.
+2025-06-05 12:54:44.722 -08:00 [INF] Executed ViewResult - view Create executed in 98.0148ms.
+2025-06-05 12:54:44.735 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc) in 115.4407ms
+2025-06-05 12:54:44.744 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 12:54:44.751 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting/Create - 200 null text/html; charset=utf-8 210.9187ms
+2025-06-05 12:54:44.783 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 12:54:44.801 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 12:54:44.836 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 35.7016ms
+2025-06-05 12:54:44.872 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 87.8378ms
+2025-06-05 12:56:19.898 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-05 12:56:19.951 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 12:56:19.963 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-05 12:56:19.980 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 12:56:20.310 -08:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 12:56:20.420 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 12:56:20.744 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-05 12:56:21.160 -08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-05 12:56:21.283 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-05 12:56:21.455 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-05 12:56:21.514 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:56:21.605 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 12:56:21.650 -08:00 [INF] Executed ViewResult - view Index executed in 1674.3537ms.
+2025-06-05 12:56:21.656 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 1680.8453ms
+2025-06-05 12:56:21.662 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 12:56:21.668 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 1770.2398ms
+2025-06-05 12:56:21.725 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - null null
+2025-06-05 12:56:21.725 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 12:56:21.740 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - 404 0 null 15.0322ms
+2025-06-05 12:56:21.747 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 22.3132ms
+2025-06-05 12:56:21.756 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/default-logo.png, Response status code: 404
+2025-06-05 12:56:21.765 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - null null
+2025-06-05 12:56:21.765 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - null null
+2025-06-05 12:56:21.766 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 12:56:21.782 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - 404 0 null 16.8715ms
+2025-06-05 12:56:21.791 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - 404 0 null 25.5734ms
+2025-06-05 12:56:21.814 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common/footer-default-logo.jpg, Response status code: 404
+2025-06-05 12:56:21.814 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.4451ms
+2025-06-05 12:56:21.826 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg, Response status code: 404
+2025-06-05 13:22:23.090 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 13:22:23.590 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-05 13:22:23.595 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-05 13:22:23.633 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 13:22:23.636 -08:00 [INF] Hosting environment: Development
+2025-06-05 13:22:23.638 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-05 13:22:24.113 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-05 13:22:24.332 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 13:22:24.359 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-05 13:22:24.380 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:22:26.461 -08:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 13:22:26.559 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 13:22:26.741 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-05 13:22:26.926 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-05 13:22:27.007 -08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-05 13:22:27.099 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-05 13:22:27.152 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:22:27.226 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:22:27.288 -08:00 [INF] Executed ViewResult - view Index executed in 2910.9537ms.
+2025-06-05 13:22:27.301 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 2931.2157ms
+2025-06-05 13:22:27.316 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 13:22:27.351 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - null null
+2025-06-05 13:22:27.354 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 3246.5382ms
+2025-06-05 13:22:27.364 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:22:27.385 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - 404 0 null 34.4226ms
+2025-06-05 13:22:27.428 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 64.0841ms
+2025-06-05 13:22:27.439 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - null null
+2025-06-05 13:22:27.439 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:22:27.440 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/default-logo.png, Response status code: 404
+2025-06-05 13:22:27.466 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - null null
+2025-06-05 13:22:27.476 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - 404 0 null 37.8668ms
+2025-06-05 13:22:27.493 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - 404 0 null 26.9376ms
+2025-06-05 13:22:27.500 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common/footer-default-logo.jpg, Response status code: 404
+2025-06-05 13:22:27.510 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg, Response status code: 404
+2025-06-05 13:22:27.513 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 74.7472ms
+2025-06-05 13:22:53.528 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/admin/dashboard - null null
+2025-06-05 13:22:53.567 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-05 13:22:53.586 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-05 13:22:53.607 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:22:53.703 -08:00 [INF] Executed ViewResult - view Index executed in 99.7729ms.
+2025-06-05 13:22:53.711 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 110.8463ms
+2025-06-05 13:22:53.720 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-05 13:22:53.727 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/admin/dashboard - 200 null text/html; charset=utf-8 198.4257ms
+2025-06-05 13:22:53.757 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:22:53.757 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:22:53.777 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 20.0398ms
+2025-06-05 13:22:53.821 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 63.9151ms
+2025-06-05 13:22:56.432 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting - null null
+2025-06-05 13:22:56.476 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:22:56.492 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:22:56.583 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:22:56.604 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:22:56.617 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc) in 116.5574ms
+2025-06-05 13:22:56.623 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:22:56.634 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'FinalProjectMvc.ViewModels.Admin.Setting.SettingVM', but this ViewDataDictionary instance requires a model item of type 'System.Collections.Generic.IEnumerable`1[FinalProjectMvc.ViewModels.Admin.Setting.SettingVM]'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at lambda_method418(Closure, ViewDataDictionary)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-05 13:22:56.748 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting - 500 null text/html; charset=utf-8 316.1936ms
+2025-06-05 13:22:56.788 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:22:56.790 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:22:56.808 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 17.9772ms
+2025-06-05 13:22:56.810 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.3519ms
+2025-06-05 13:27:18.327 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 13:27:18.494 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-05 13:27:18.498 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-05 13:27:18.534 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 13:27:18.539 -08:00 [INF] Hosting environment: Development
+2025-06-05 13:27:18.542 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-05 13:27:18.998 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-05 13:27:19.160 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 13:27:19.191 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-05 13:27:19.214 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:27:20.998 -08:00 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 13:27:21.090 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 13:27:21.241 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-05 13:27:21.436 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-05 13:27:21.507 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-05 13:27:21.591 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-05 13:27:21.625 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:27:21.670 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:27:21.726 -08:00 [INF] Executed ViewResult - view Index executed in 2517.9329ms.
+2025-06-05 13:27:21.760 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 2560.7851ms
+2025-06-05 13:27:21.777 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 13:27:21.803 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 2807.1845ms
+2025-06-05 13:27:21.848 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - null null
+2025-06-05 13:27:21.883 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - 404 0 null 35.6984ms
+2025-06-05 13:27:21.890 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:27:21.910 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/default-logo.png, Response status code: 404
+2025-06-05 13:27:21.932 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - null null
+2025-06-05 13:27:21.934 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:27:21.944 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 54.6894ms
+2025-06-05 13:27:21.975 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - 404 0 null 43.0075ms
+2025-06-05 13:27:22.020 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - null null
+2025-06-05 13:27:22.028 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common/footer-default-logo.jpg, Response status code: 404
+2025-06-05 13:27:22.044 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - 404 0 null 23.3963ms
+2025-06-05 13:27:22.068 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg, Response status code: 404
+2025-06-05 13:27:22.069 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 135.3793ms
+2025-06-05 13:27:31.378 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/admin/dashboard - null null
+2025-06-05 13:27:31.413 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-05 13:27:31.431 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-05 13:27:31.454 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:27:31.578 -08:00 [INF] Executed ViewResult - view Index executed in 129.2216ms.
+2025-06-05 13:27:31.588 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 142.2484ms
+2025-06-05 13:27:31.599 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-05 13:27:31.607 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/admin/dashboard - 200 null text/html; charset=utf-8 228.1763ms
+2025-06-05 13:27:31.658 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:27:31.659 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:27:31.677 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 18.8182ms
+2025-06-05 13:27:31.727 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 68.1056ms
+2025-06-05 13:27:33.911 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting - null null
+2025-06-05 13:27:33.946 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:27:33.966 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:27:34.037 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:27:34.061 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:27:34.076 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc) in 99.992ms
+2025-06-05 13:27:34.086 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:27:34.099 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'System.Collections.Generic.List`1[FinalProjectMvc.ViewModels.Admin.Setting.SettingVM]', but this ViewDataDictionary instance requires a model item of type 'FinalProjectMvc.ViewModels.Admin.Setting.SettingVM'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at lambda_method418(Closure, ViewDataDictionary)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-05 13:27:34.222 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting - 500 null text/html; charset=utf-8 311.2524ms
+2025-06-05 13:27:34.277 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:27:34.279 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:27:34.304 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.3273ms
+2025-06-05 13:27:34.304 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 25.0035ms
+2025-06-05 13:29:25.038 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 13:29:25.226 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-05 13:29:25.233 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-05 13:29:25.300 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 13:29:25.305 -08:00 [INF] Hosting environment: Development
+2025-06-05 13:29:25.311 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-05 13:29:25.412 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting - null null
+2025-06-05 13:29:25.578 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:29:25.611 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:29:27.467 -08:00 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:29:27.521 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:29:27.636 -08:00 [INF] Executed ViewResult - view Index executed in 112.244ms.
+2025-06-05 13:29:27.653 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc) in 2027.2721ms
+2025-06-05 13:29:27.660 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:29:27.671 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:29:27.671 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:29:27.678 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting - 200 null text/html; charset=utf-8 2267.9488ms
+2025-06-05 13:29:27.699 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 27.558ms
+2025-06-05 13:29:27.727 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.4116ms
+2025-06-05 13:29:33.169 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting/Create - null null
+2025-06-05 13:29:33.240 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 13:29:33.261 -08:00 [INF] Route matched with {area = "Admin", action = "Create", controller = "Setting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:29:33.293 -08:00 [INF] Executing ViewResult, running view Create.
+2025-06-05 13:29:33.478 -08:00 [INF] Executed ViewResult - view Create executed in 188.6984ms.
+2025-06-05 13:29:33.487 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc) in 208.4141ms
+2025-06-05 13:29:33.495 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 13:29:33.501 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting/Create - 200 null text/html; charset=utf-8 332.1646ms
+2025-06-05 13:29:33.519 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:29:33.526 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:29:33.561 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.5815ms
+2025-06-05 13:29:33.566 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 40.2791ms
+2025-06-05 13:29:57.009 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:29:57.027 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 18.2972ms
+2025-06-05 13:30:03.644 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting/Edit - null null
+2025-06-05 13:30:03.696 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Edit (FinalProjectMvc)'
+2025-06-05 13:30:03.761 -08:00 [INF] Route matched with {area = "Admin", action = "Edit", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Edit(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:30:04.263 -08:00 [INF] Executed DbCommand (44ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+WHERE [s].[Id] = @__p_0
+2025-06-05 13:30:04.282 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Edit (FinalProjectMvc) in 501.2135ms
+2025-06-05 13:30:04.288 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Edit (FinalProjectMvc)'
+2025-06-05 13:30:04.302 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Collections.Generic.KeyNotFoundException: Setting not found
+   at FinalProjectMvc.Services.SettingService.GetByIdAsync(Int32 id) in C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\Services\SettingService.cs:line 30
+   at FinalProjectMvc.Areas.Admin.Controllers.SettingController.Edit(Int32 id) in C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\Areas\Admin\Controllers\SettingController.cs:line 61
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-05 13:30:04.642 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting/Edit - 500 null text/html; charset=utf-8 998.1747ms
+2025-06-05 13:30:04.693 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:30:04.700 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:30:04.721 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 19.7942ms
+2025-06-05 13:30:04.749 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 55.0665ms
+2025-06-05 13:30:06.340 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:30:06.354 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 13.3ms
+2025-06-05 13:39:28.243 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 13:39:28.417 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-05 13:39:28.422 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-05 13:39:28.455 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 13:39:28.461 -08:00 [INF] Hosting environment: Development
+2025-06-05 13:39:28.468 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-05 13:39:28.722 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting - null null
+2025-06-05 13:39:28.898 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:39:28.980 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:39:30.853 -08:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:39:30.889 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:39:30.971 -08:00 [INF] Executed ViewResult - view Index executed in 83.0177ms.
+2025-06-05 13:39:31.010 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc) in 2015.6331ms
+2025-06-05 13:39:31.016 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:39:31.036 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:39:31.036 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:39:31.045 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting - 200 null text/html; charset=utf-8 2325.4727ms
+2025-06-05 13:39:31.063 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 27.3399ms
+2025-06-05 13:39:31.110 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 74.4386ms
+2025-06-05 13:43:57.935 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 13:44:03.325 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 13:44:03.535 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-05 13:44:03.538 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-05 13:44:03.603 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 13:44:03.608 -08:00 [INF] Hosting environment: Development
+2025-06-05 13:44:03.612 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-05 13:44:04.413 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-05 13:44:04.585 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 13:44:04.628 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-05 13:44:04.647 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:44:06.672 -08:00 [INF] Executed DbCommand (72ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 13:44:06.781 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 13:44:06.944 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-05 13:44:07.153 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-05 13:44:07.237 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-05 13:44:07.339 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-05 13:44:07.387 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:44:07.454 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:44:07.539 -08:00 [INF] Executed ViewResult - view Index executed in 2892.9452ms.
+2025-06-05 13:44:07.550 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 2913.6052ms
+2025-06-05 13:44:07.558 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 13:44:07.584 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 3174.0039ms
+2025-06-05 13:44:07.594 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:44:07.594 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - null null
+2025-06-05 13:44:07.624 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - null null
+2025-06-05 13:44:07.624 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:44:07.625 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 31.1033ms
+2025-06-05 13:44:07.640 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - 404 0 null 45.5759ms
+2025-06-05 13:44:07.649 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - 404 0 null 25.2473ms
+2025-06-05 13:44:07.678 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/default-logo.png, Response status code: 404
+2025-06-05 13:44:07.687 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common/footer-default-logo.jpg, Response status code: 404
+2025-06-05 13:44:07.694 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 69.4462ms
+2025-06-05 13:44:08.040 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - null null
+2025-06-05 13:44:08.063 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - 404 0 null 22.9257ms
+2025-06-05 13:44:08.078 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg, Response status code: 404
+2025-06-05 13:44:22.924 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/admin/dashboard - null null
+2025-06-05 13:44:22.951 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-05 13:44:22.964 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-05 13:44:22.995 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:44:23.107 -08:00 [INF] Executed ViewResult - view Index executed in 115.4165ms.
+2025-06-05 13:44:23.115 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 127.9577ms
+2025-06-05 13:44:23.123 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-05 13:44:23.129 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/admin/dashboard - 200 null text/html; charset=utf-8 205.642ms
+2025-06-05 13:44:23.196 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:44:23.196 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:44:23.209 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 12.6302ms
+2025-06-05 13:44:23.251 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.1173ms
+2025-06-05 13:44:25.896 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting - null null
+2025-06-05 13:44:25.929 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:44:25.947 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:44:26.013 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:44:26.037 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:44:26.065 -08:00 [INF] Executed ViewResult - view Index executed in 30.6454ms.
+2025-06-05 13:44:26.074 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc) in 115.4835ms
+2025-06-05 13:44:26.080 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:44:26.089 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting - 200 null text/html; charset=utf-8 193.2524ms
+2025-06-05 13:44:26.143 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:44:26.150 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:44:26.170 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.7659ms
+2025-06-05 13:44:26.176 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 25.6904ms
+2025-06-05 13:44:28.534 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting/Create - null null
+2025-06-05 13:44:28.562 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 13:44:28.575 -08:00 [INF] Route matched with {area = "Admin", action = "Create", controller = "Setting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:44:28.592 -08:00 [INF] Executing ViewResult, running view Create.
+2025-06-05 13:44:28.726 -08:00 [INF] Executed ViewResult - view Create executed in 136.4453ms.
+2025-06-05 13:44:28.731 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc) in 144.0569ms
+2025-06-05 13:44:28.739 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 13:44:28.743 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting/Create - 200 null text/html; charset=utf-8 209.2422ms
+2025-06-05 13:44:28.758 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:44:28.763 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:44:28.776 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.9682ms
+2025-06-05 13:44:28.779 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 16.0706ms
+2025-06-05 13:47:55.737 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/Setting/Create - multipart/form-data; boundary=----WebKitFormBoundary7lKjiMAI8Ddjbxtv 382494
+2025-06-05 13:47:55.763 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 13:47:55.787 -08:00 [INF] Route matched with {area = "Admin", action = "Create", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(FinalProjectMvc.ViewModels.Admin.Setting.SettingCreateVM) on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:47:56.136 -08:00 [INF] Executed DbCommand (100ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Settings] ([CreateDate], [Key], [Value])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2);
+2025-06-05 13:47:56.191 -08:00 [ERR] An exception occurred in the database while saving changes for context type 'FinalProjectMvc.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Key', table 'CaffeLunaDB.dbo.Settings'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:cf68c3d0-b313-4d2a-9e4e-b21b1aa0324a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Key', table 'CaffeLunaDB.dbo.Settings'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:cf68c3d0-b313-4d2a-9e4e-b21b1aa0324a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-05 13:47:56.238 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc) in 440.5159ms
+2025-06-05 13:47:56.247 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 13:47:56.257 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Key', table 'CaffeLunaDB.dbo.Settings'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:cf68c3d0-b313-4d2a-9e4e-b21b1aa0324a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at FinalProjectMvc.Services.SettingService.CreateAsync(SettingCreateVM vm) in C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\Services\SettingService.cs:line 52
+   at FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create(SettingCreateVM model) in C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\Areas\Admin\Controllers\SettingController.cs:line 55
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-05 13:47:56.520 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/Setting/Create - 500 null text/html; charset=utf-8 782.8521ms
+2025-06-05 13:47:56.577 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:47:56.585 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:47:56.602 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.8087ms
+2025-06-05 13:47:56.607 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 21.0212ms
+2025-06-05 13:53:46.588 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-05 13:53:46.766 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-05 13:53:46.769 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-05 13:53:46.799 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-05 13:53:46.802 -08:00 [INF] Hosting environment: Development
+2025-06-05 13:53:46.807 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-05 13:53:47.545 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-05 13:53:47.715 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 13:53:47.740 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-05 13:53:47.751 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:53:49.573 -08:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 13:53:49.670 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-05 13:53:49.853 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-05 13:53:50.006 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-05 13:53:50.073 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-05 13:53:50.181 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-05 13:53:50.222 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:53:50.281 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:53:50.348 -08:00 [INF] Executed ViewResult - view Index executed in 2596.8795ms.
+2025-06-05 13:53:50.363 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 2616.6645ms
+2025-06-05 13:53:50.376 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-05 13:53:50.392 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - null null
+2025-06-05 13:53:50.418 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 2877.1825ms
+2025-06-05 13:53:50.418 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:53:50.426 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/default-logo.png - 404 0 null 33.8414ms
+2025-06-05 13:53:50.482 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 64.0462ms
+2025-06-05 13:53:50.487 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/default-logo.png, Response status code: 404
+2025-06-05 13:53:50.515 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - null null
+2025-06-05 13:53:50.515 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:53:50.520 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - null null
+2025-06-05 13:53:50.534 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/footer-default-logo.jpg - 404 0 null 18.7811ms
+2025-06-05 13:53:50.546 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg - 404 0 null 25.7843ms
+2025-06-05 13:53:50.553 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common/footer-default-logo.jpg, Response status code: 404
+2025-06-05 13:53:50.562 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/assets/images/common//assets/images/common/footer-bg-image.jpg, Response status code: 404
+2025-06-05 13:53:50.575 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.081ms
+2025-06-05 13:53:55.511 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/admin/dashboard - null null
+2025-06-05 13:53:55.547 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-05 13:53:55.567 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-05 13:53:55.585 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:53:55.689 -08:00 [INF] Executed ViewResult - view Index executed in 107.6258ms.
+2025-06-05 13:53:55.697 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 118.3993ms
+2025-06-05 13:53:55.704 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-05 13:53:55.713 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/admin/dashboard - 200 null text/html; charset=utf-8 202.8039ms
+2025-06-05 13:53:55.762 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:53:55.762 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:53:55.777 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 14.7782ms
+2025-06-05 13:53:55.818 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.7228ms
+2025-06-05 13:53:58.598 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting - null null
+2025-06-05 13:53:58.644 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:53:58.666 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:53:58.746 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-05 13:53:58.770 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-05 13:53:58.798 -08:00 [INF] Executed ViewResult - view Index executed in 31.2583ms.
+2025-06-05 13:53:58.804 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc) in 126.4733ms
+2025-06-05 13:53:58.810 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Index (FinalProjectMvc)'
+2025-06-05 13:53:58.815 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting - 200 null text/html; charset=utf-8 216.9697ms
+2025-06-05 13:53:58.862 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:53:58.868 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:53:58.882 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 13.6404ms
+2025-06-05 13:53:58.883 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.155ms
+2025-06-05 13:54:00.501 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Setting/Create - null null
+2025-06-05 13:54:00.521 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 13:54:00.534 -08:00 [INF] Route matched with {area = "Admin", action = "Create", controller = "Setting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:54:00.548 -08:00 [INF] Executing ViewResult, running view Create.
+2025-06-05 13:54:00.682 -08:00 [INF] Executed ViewResult - view Create executed in 135.3764ms.
+2025-06-05 13:54:00.689 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc) in 145.4598ms
+2025-06-05 13:54:00.695 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 13:54:00.700 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Setting/Create - 200 null text/html; charset=utf-8 199.5383ms
+2025-06-05 13:54:00.723 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:54:00.739 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:54:00.745 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.4791ms
+2025-06-05 13:54:00.751 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 11.1543ms
+2025-06-05 13:54:37.707 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/Setting/Create - multipart/form-data; boundary=----WebKitFormBoundaryXjbq7lZ34hKgVFBX 382493
+2025-06-05 13:54:37.734 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 13:54:37.781 -08:00 [INF] Route matched with {area = "Admin", action = "Create", controller = "Setting"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(FinalProjectMvc.ViewModels.Admin.Setting.SettingCreateVM) on controller FinalProjectMvc.Areas.Admin.Controllers.SettingController (FinalProjectMvc).
+2025-06-05 13:54:38.462 -08:00 [INF] Executed DbCommand (50ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Settings] ([CreateDate], [Key], [Value])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2);
+2025-06-05 13:54:38.558 -08:00 [ERR] An exception occurred in the database while saving changes for context type 'FinalProjectMvc.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Key', table 'CaffeLunaDB.dbo.Settings'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:19cbf8e0-ab62-465f-ad0e-91db95b4c14a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Key', table 'CaffeLunaDB.dbo.Settings'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:19cbf8e0-ab62-465f-ad0e-91db95b4c14a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-05 13:54:38.609 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc) in 814.3324ms
+2025-06-05 13:54:38.618 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create (FinalProjectMvc)'
+2025-06-05 13:54:38.630 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Key', table 'CaffeLunaDB.dbo.Settings'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:19cbf8e0-ab62-465f-ad0e-91db95b4c14a
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at FinalProjectMvc.Services.SettingService.CreateAsync(SettingCreateVM model) in C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\Services\SettingService.cs:line 46
+   at FinalProjectMvc.Areas.Admin.Controllers.SettingController.Create(SettingCreateVM model) in C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc\Areas\Admin\Controllers\SettingController.cs:line 55
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-05 13:54:38.967 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/Setting/Create - 500 null text/html; charset=utf-8 1259.5634ms
+2025-06-05 13:54:39.031 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-05 13:54:39.042 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-05 13:54:39.061 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.0731ms
+2025-06-05 13:54:39.063 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 20.9231ms

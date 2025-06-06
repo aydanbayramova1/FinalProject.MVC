@@ -28,15 +28,14 @@ namespace FinalProjectMvc.ViewComponents
 
             var settings = await _layoutService.GetAllSettingsAsync();
 
-            if (!settings.ContainsKey("HeaderLogo") || string.IsNullOrEmpty(settings["HeaderLogo"]))
-            {
-                settings["HeaderLogo"] = "/assets/images/default-logo.png";
-            }
+            string defaultHeaderLogo = "/assets/images/default-logo.png";
 
             var headerVM = new HeaderVM
             {
                 Settings = settings,
-                Topbars = topbarVMs
+                Topbars = topbarVMs,
+                HeaderLogo = settings.ContainsKey("HeaderLogo") && !string.IsNullOrEmpty(settings["HeaderLogo"]) ? settings["HeaderLogo"] : defaultHeaderLogo,
+              
             };
 
             return View(headerVM);

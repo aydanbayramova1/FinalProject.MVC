@@ -1,5 +1,4 @@
 ﻿@model HeaderVM
-
 <header>
     <!-- Preloader Start -->
     <section id="preloader-section">
@@ -12,6 +11,7 @@
     </section>
     <!-- Preloader End -->
     <!-- Topbar Section Start -->
+ 
     <section id="topbar-section">
         <div class="topbar">
             <div class="container">
@@ -38,9 +38,17 @@
                     <div class="col-md-3">
                         <div class="topbar-social-links">
                             <ul>
-                                <li><a href="https://www.instagram.com/_caffe.luna_?igsh=MThmeGtkajQ1cTJ4eQ==" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="https://www.facebook.com/share/16auhXoD7x/?mibextid=wwXIfr" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="https://wa.me/994513153684?text=Hello!%20Welcome%20to%20our%20Coffee%20Shop%20%E2%98%95%20How%20can%20we%20help%20you%3F" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                <li>
+                                    <a href="https://www.instagram.com/_caffe.luna_?igsh=MThmeGtkajQ1cTJ4eQ==">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li><a href="https://www.facebook.com/share/16auhXoD7x/?mibextid=wwXIfr"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li>
+                                    <a href="https://wa.me/994513153684?text=Hello!%20Welcome%20to%20our%20Coffee%20Shop%20%E2%98%95%20How%20can%20we%20help%20you%3F" target="_blank">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -48,17 +56,16 @@
             </div>
         </div>
     </section>
+
     <!-- Topbar Section End -->
     <!-- Header Start -->
     <section id="header-section">
         <div class="header-sticky">
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <img src="@(Url.Content($"~/assets/images/common/{Model.Settings["HeaderLogo"]}"))" alt="Logo" style="width: 230px; height: auto;" />
-
-
-
-
+                    <a class="navbar-brand" href="home.html">
+                        <img src="@Model.HeaderLogo" alt="Logo" style="width: 230px; height: auto;" />
+                    </a>
                     <div style="margin-right: 11pc;" class="collapse navbar-collapse main-menu">
                         <div class="nav-menu-wrapper">
                             <ul class="navbar-nav mr-auto" id="menu">
@@ -86,7 +93,7 @@
                                     <a asp-controller="Account" asp-action="Login" class="dropdown-item">
                                         <i class="fas fa-sign-in-alt"></i> Login
                                     </a>
-                                    <a asp-controller="Account" asp-action="Register" class="dropdown-item">
+                                    <a asp-controller="Account" asp-action="Register"  class="dropdown-item">
                                         <i class="fas fa-user-plus"></i> Register
                                     </a>
                                 </div>
@@ -104,6 +111,7 @@
                             }
                         </div>
                     </div>
+
 
                     <div class="responsive-menu">
                         <div class="slicknav-menu" onclick="toggleMobileMenu()">

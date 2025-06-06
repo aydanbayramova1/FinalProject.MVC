@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 public class ApproachService : IApproachService
 {
     private readonly AppDbContext _context;
-    private readonly IMapper _mapper;
+    private readonly IMapper _mapper; // AutoMapper istifadə olunur deyə varsayıram
 
     public ApproachService(AppDbContext context, IMapper mapper)
     {
@@ -18,50 +18,60 @@ public class ApproachService : IApproachService
 
     public async Task<IEnumerable<ApproachVM>> GetAsync()
     {
-        // Fetch all approaches, including their associated items
-        var approaches = await _context.Approaches.Include(x => x.Items).ToListAsync();
-
-        // Map the result to a list of ApproachVMs
+        var approaches = await _context.Approaches.Include(a => a.Items).ToListAsync();
         return _mapper.Map<IEnumerable<ApproachVM>>(approaches);
     }
 
-
-    public async Task<ApproachVM> GetByIdAsync(int id) 
+    public async Task<ApproachVM> GetByIdAsync(int id)
     {
-        var approach = await _context.Approaches.Include(x => x.Items)
-            .FirstOrDefaultAsync(x => x.Id == id);
-
-        if (approach == null) throw new NullReferenceException("Approach not found");
+        var approach = await _context.Approaches.Include(a => a.Items)
+                            .FirstOrDefaultAsync(a => a.Id == id);
+        if (approach == null)
+            return null;
 
         return _mapper.Map<ApproachVM>(approach);
     }
 
     public async Task CreateAsync(ApproachCreateVM vm)
     {
-        if (await _context.Approaches.AnyAsync())
-            throw new InvalidOperationException("An Approach already exists.");
+        var approach = _mapper.Map<Approach>(vm);
 
-        var model = _mapper.Map<Approach>(vm);
-        await _context.Approaches.AddAsync(model);
+        // ImageFile-ni serverə yükləmə kodunu buraya əlavə etməlisən
+        // Məsələn: approach.Image = await _imageService.UploadAsync(vm.ImageFile);
+
+        _context.Approaches.Add(approach);
         await _context.SaveChangesAsync();
     }
 
     public async Task UpdateAsync(int id, ApproachEditVM vm)
     {
-        var model = await _context.Approaches.Include(x => x.Items).FirstOrDefaultAsync(x => x.Id == id);
-        if (model == null) throw new NullReferenceException("Approach not found");
+        var approach = await _context.Approaches.FindAsync(id);
+        if (approach == null) throw new Exception("Approach not found");
 
-        _mapper.Map(vm, model);
-        _context.Approaches.Update(model);
+        // Update sahələr
+        approach.Title = vm.Title;
+        approach.SubTitle = vm.SubTitle;
+
+        if (vm.ImageFile != null)
+        {
+            // Serverə yeni şəkil yüklə və köhnəsini sil (əgər varsa)
+            // approach.Image = await _imageService.UploadAsync(vm.ImageFile);
+        }
+
+        _context.Approaches.Update(approach);
         await _context.SaveChangesAsync();
     }
 
     public async Task DeleteAsync(int id)
     {
-        var model = await _context.Approaches.FindAsync(id);
-        if (model == null) throw new NullReferenceException("Approach not found");
+        var approach = await _context.Approaches.FindAsync(id);
+        if (approach == null) throw new Exception("Approach not found");
 
-        _context.Approaches.Remove(model);
+        _context.Approaches.Remove(approach);
         await _context.SaveChangesAsync();
+    }
+    public async Task<bool> HasAnyAsync()
+    {
+        return await _context.Approaches.AnyAsync();
     }
 }

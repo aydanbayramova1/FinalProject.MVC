@@ -1,0 +1,35 @@
+﻿@model FinalProjectMvc.ViewModels.Admin.Setting.SettingDetailVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">Setting Details</h2>
+
+                <div class="text-start">
+                    <div class="setting-detail-item">
+                        <strong>Header Logo:</strong><br />
+                        <img src="@Url.Content("~/assets/images/settings/" + Model.HeaderLogo)" width="100" onerror="this.onerror=null; this.src='@Url.Content("~/assets/images/default-logo.png")'" />
+                    </div>
+                    <div class="setting-detail-item">
+                        <strong>Footer Logo:</strong><br />
+                        <img src="@Url.Content("~/assets/images/settings/" + Model.FooterLogo)" width="100" onerror="this.onerror=null; this.src='@Url.Content("~/assets/images/default-logo.png")'" />
+                    </div>
+                    <div class="setting-detail-item">
+                        <strong>Background Image:</strong><br />
+                        <img src="@Url.Content("~/assets/images/settings/" + Model.BackgroundImage)" width="100" onerror="this.onerror=null; this.src='@Url.Content("~/assets/images/default-background.png")'" />
+                    </div>
+                    <p><strong>Address:</strong> @Model.Address</p>
+                    <p><strong>Email:</strong> @Model.Email</p>
+                    <p><strong>Phone:</strong> @Model.Phone</p>
+                    <p><strong>Everyday Working Hours:</strong> @Model.EverydayWorkingHours</p>
+                    <p><strong>Kitchen Close Time:</strong> @Model.KitchenCloseTime</p>
+                </div>
+
+                <a asp-action="Index" class="btn btn-back mt-3">
+                    Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

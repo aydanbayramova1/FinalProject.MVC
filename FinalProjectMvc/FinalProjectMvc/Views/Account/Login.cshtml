@@ -1,4 +1,6 @@
-﻿@{
+﻿@model LoginVM
+
+@{
     Layout = "";
 }
 
@@ -271,21 +273,24 @@
         <h1 class="modal-title">Welcome!</h1>
         <p class="modal-desc">Fuel your day with warmth and flavor.</p>
 
-        <div class="input-block">
-          <label for="emailorusername" class="input-label">Email Or UserName</label>
-          <input type="text" id="emailorusername" placeholder="Email Or UserName">
-        </div>
+                <form asp-action="Login" asp-controller="Account" method="post">
+                    <div class="input-block">
+                        <label for="emailorusername" class="input-label">Email Or UserName</label>
+                        <input type="text" id="emailorusername" name="UserNameOrEmail" placeholder="Email Or UserName" />
+                    </div>
 
-        <div class="input-block">
-          <label for="password" class="input-label">Password</label>
-          <input type="password" id="password" placeholder="Password">
-          <span class="toggle-password" id="togglePassword"><i class="fas fa-eye"></i></span>
-        </div>
+                    <div class="input-block">
+                        <label for="password" class="input-label">Password</label>
+                        <input type="password" id="password" name="Password" placeholder="Password" />
+                        <span class="toggle-password" id="togglePassword"><i class="fas fa-eye"></i></span>
+                    </div>
 
-        <div class="modal-buttons">
-          <a href="#" onclick="openForgotPassword()">Forgot your password?</a>
-          <button class="input-button">Login</button>
-        </div>
+                    <div class="modal-buttons">
+                        <a href="#" onclick="openForgotPassword()">Forgot your password?</a>
+                        <button type="submit" class="input-button">Login</button>
+                    </div>
+                </form>
+
 
         <p class="sign-up">Don't have an account? <a href="register.html">Sign up now</a></p>
       </div>
@@ -496,6 +501,50 @@
         }, 300);
       }, 3000);
     }
+
+            function resetPassword() {
+          const newPassword = document.getElementById('newPassword').value;
+          const confirmPassword = document.getElementById('confirmPassword').value;
+          const passwordError = document.getElementById('passwordError');
+          const passwordResetSuccess = document.getElementById('passwordResetSuccess');
+
+          // Hide previous error/success messages
+          passwordError.style.display = 'none';
+          passwordResetSuccess.style.display = 'none';
+
+          // Check if fields are empty
+          if (!newPassword || !confirmPassword) {
+            passwordError.textContent = 'Please fill in both password fields.';
+            passwordError.style.display = 'block';
+            return;
+          }
+
+          // Check password length
+          if (newPassword.length < 6) {
+            passwordError.textContent = 'Password must be at least 6 characters.';
+            passwordError.style.display = 'block';
+            return;
+          }
+
+          // Check if passwords match
+          if (newPassword !== confirmPassword) {
+            passwordError.textContent = 'Passwords do not match!';
+            passwordError.style.display = 'block';
+            return;
+          }
+
+          // Success message
+          passwordResetSuccess.style.display = 'block';
+
+          // Optionally clear fields after delay
+          setTimeout(() => {
+            document.getElementById('newPassword').value = '';
+            document.getElementById('confirmPassword').value = '';
+            passwordResetSuccess.style.display = 'none';
+            closeResetPassword();
+          }, 2500);
+        }
+
   </script>
 
 </body>

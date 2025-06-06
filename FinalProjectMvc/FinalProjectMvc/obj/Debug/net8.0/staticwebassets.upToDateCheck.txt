@@ -200,6 +200,9 @@ wwwroot\assets\videos\videoframe_3275.png
 wwwroot\assets\videos\WhatsApp Video 2025-05-20 at 06.56.31.mp4
 wwwroot\assets\videos\WhatsApp Video 2025-05-21 at 06.26.16.mp4
 wwwroot\img\c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg
+wwwroot\uploads\213a5ce1-333d-44f0-a506-be7bd7fadf24.jpg
+wwwroot\uploads\83a2be91-790f-42c7-90b5-167ec85af9e3.jpg
+wwwroot\uploads\8ad13502-1cc2-4347-a40a-015c830e956f.jpg
 wwwroot\uploads\aboutbanner\bdcafb61-5c6e-4b0b-bf03-d52885aa61dd.jpg
 wwwroot\uploads\approach\3f09a091-5f0f-4917-81a4-c5159c15bf55.jpg
 wwwroot\uploads\blogbanner\c5d35e69-89c1-41d0-87dd-5cb6a06b9c30.jpg
@@ -237,6 +240,9 @@ wwwroot\uploads\services\7f74ccdc-6ece-423e-9a39-6ee65d444274.svg
 wwwroot\uploads\services\f55051b8-26d7-4dc0-a48a-a3a36e28df75.svg
 wwwroot\uploads\services\fa2b5ce9-f199-4c84-804b-2beb49900c8b.svg
 wwwroot\uploads\services\fa859e1a-7885-4b53-b673-fa482007a2c8.svg
+wwwroot\uploads\settings\45ec2092-45a9-482d-9dc2-95d6b9af214a.jpg
+wwwroot\uploads\settings\86304c8b-48fe-435f-a00d-032f404c2717.jpg
+wwwroot\uploads\settings\cd260176-ebc4-4792-8605-a0db591f58d4.jpg
 wwwroot\uploads\sliders\2a7abdaa-c53c-4a87-a256-515b49444452_hero-bg-2.jpg
 wwwroot\uploads\sliders\5b0abc10-1912-43ac-ac48-5b0b35eb5ccb_hero-bg.jpg
 wwwroot\uploads\team\06f7f2d1-d89c-43bc-a21a-804a5739ae8a.jpg

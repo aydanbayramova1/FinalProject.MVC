@@ -9,5 +9,6 @@ namespace FinalProjectMvc.Services.Interfaces
         Task CreateAsync(ApproachCreateVM vm);
         Task UpdateAsync(int id, ApproachEditVM vm);
         Task DeleteAsync(int id);
+        Task<bool> HasAnyAsync();
     }
 }

@@ -15,6 +15,7 @@ using FinalProjectMvc.ViewModels.Admin.ReservationBanner;
 using FinalProjectMvc.ViewModels.Admin.Scrolling;
 using FinalProjectMvc.ViewModels.Admin.Service;
 using FinalProjectMvc.ViewModels.Admin.ServiceItem;
+using FinalProjectMvc.ViewModels.Admin.Setting;
 using FinalProjectMvc.ViewModels.Admin.Slider;
 using FinalProjectMvc.ViewModels.Admin.TeamBanner;
 using FinalProjectMvc.ViewModels.Admin.TeamMember;
@@ -160,6 +161,11 @@ namespace FinalProjectMvc.Helpers
                 .ForMember(dest => dest.IconPath, opt => opt.Ignore());
             CreateMap<ApproachItemEditVM, ApproachItem>()
                 .ForMember(dest => dest.IconPath, opt => opt.Ignore());
+
+            CreateMap<SettingCreateVM, Setting>();
+            CreateMap<SettingEditVM, Setting>();
+            CreateMap<Setting, SettingEditVM>();
+            CreateMap<Setting, SettingCreateVM>();
 
 
         }

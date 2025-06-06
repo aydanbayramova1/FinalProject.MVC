@@ -59,6 +59,7 @@ builder.Services.AddScoped<IAboutRestaurantService, AboutRestaurantService>();
 builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<IApproachService, ApproachService>();
 builder.Services.AddScoped<IApproachItemService, ApproachItemService>();
+builder.Services.AddScoped<ISettingService, SettingService>();
 
 
 Log.Logger = new LoggerConfiguration()
