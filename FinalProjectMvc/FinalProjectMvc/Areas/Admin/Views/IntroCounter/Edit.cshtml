@@ -1,0 +1,63 @@
+﻿@model IntroCounterEditVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Edit Counter</h2>
+
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="ExistingIconPath" />
+                    <input type="hidden" asp-for="IntroVideoId" />
+
+                    @if (!string.IsNullOrEmpty(Model.ExistingIconPath))
+                    {
+                        <div class="form-group mb-3">
+                            <label class="form-label">Current Icon</label><br />
+                            <img src="~/@Model.ExistingIconPath"
+                                 alt="Current Icon"
+                                 class="img-thumbnail mb-2"
+                                 style="max-height: 150px;" />
+                        </div>
+                    }
+
+                    <div class="form-group mb-3">
+                        <label asp-for="NewIconFile" class="form-label">New Icon (optional)</label>
+                        <input asp-for="NewIconFile" type="file" class="form-control" />
+                        <span class="text-danger" asp-validation-for="NewIconFile"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Count" class="form-label">Count</label>
+                        <input asp-for="Count" class="form-control" placeholder="Enter count" />
+                        <span class="text-danger" asp-validation-for="Count"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Suffix" class="form-label">Suffix</label>
+                        <input asp-for="Suffix" class="form-control" placeholder="e.g. +" />
+                        <span class="text-danger" asp-validation-for="Suffix"></span>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label asp-for="Description" class="form-label">Description</label>
+                        <textarea asp-for="Description" class="form-control" placeholder="Enter description"></textarea>
+                        <span class="text-danger" asp-validation-for="Description"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit"
+                                class="btn btn-outline-primary"
+                                style="color:brown; border: 1px solid brown; background-color: white;"
+                                onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+                            Save Changes
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

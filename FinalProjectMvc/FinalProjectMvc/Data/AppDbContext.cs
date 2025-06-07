@@ -31,6 +31,8 @@ namespace FinalProjectMvc.Data
         public DbSet<ContactMessage> ContactMessages { get; set; }
         public DbSet<OurStory> OurStories { get; set; }
         public DbSet<StoryItem> StoryItems { get; set; }
+        public DbSet<IntroVideo> IntroVideos { get; set; }
+        public DbSet<IntroCounter> IntroCounters { get; set; }
 
 
 
@@ -54,6 +56,12 @@ namespace FinalProjectMvc.Data
                 .WithOne(i => i.OurStory)
                 .HasForeignKey(i => i.OurStoryId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<IntroCounter>()
+           .HasOne(c => c.IntroVideo)
+           .WithMany(v => v.Counters)
+           .HasForeignKey(c => c.IntroVideoId)
+          .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

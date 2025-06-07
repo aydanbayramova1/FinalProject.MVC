@@ -1,0 +1,69 @@
+﻿@model FinalProjectMvc.ViewModels.Admin.IntroVideo.IntroVideoEditVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Edit Intro Video</h2>
+
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Title" class="form-label">Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Enter title" />
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Subtitle" class="form-label">Subtitle</label>
+                        <input asp-for="Subtitle" class="form-control" placeholder="Enter subtitle" />
+                        <span class="text-danger" asp-validation-for="Subtitle"></span>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.ExistingImgPath))
+                    {
+                        <div class="mb-3">
+                            <label class="form-label">Current Background Image:</label><br />
+                            <img src="~/uploads/images/@Model.ExistingImgPath" class="img-fluid rounded shadow-sm" style="max-height: 200px;" />
+                        </div>
+                    }
+
+                    <div class="form-group mb-3">
+                        <label asp-for="NewImgFile" class="form-label">Change Background Image</label>
+                        <input asp-for="NewImgFile" class="form-control" type="file" />
+                        <span class="text-danger" asp-validation-for="NewImgFile"></span>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.ExistingVideoUrl))
+                    {
+                        <div class="mb-3">
+                            <label class="form-label">Current Video:</label><br />
+                            <video width="100%" controls>
+                                <source src="~/uploads/videos/@Model.ExistingVideoUrl" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    }
+
+                    <div class="form-group mb-3">
+                        <label asp-for="NewVideoFile" class="form-label">Change Video</label>
+                        <input asp-for="NewVideoFile" class="form-control" type="file" />
+                        <span class="text-danger" asp-validation-for="NewVideoFile"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit"
+                                class="btn btn-outline-primary"
+                                style="color:brown; border: 1px solid brown; background-color: white;"
+                                onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+                            Save Changes
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

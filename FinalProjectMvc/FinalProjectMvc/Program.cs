@@ -74,6 +74,8 @@ builder.Services.AddScoped<IContactUsService, ContactUsService>();
 builder.Services.AddScoped<IContactMessageService, ContactMessageService>();
 builder.Services.AddScoped<IOurStoryService, OurStoryService>();
 builder.Services.AddScoped<IStoryItemService, StoryItemService>();
+builder.Services.AddScoped<IIntroVideoService, IntroVideoService>();
+builder.Services.AddScoped<IIntroCounterService, IntroCounterService>();
 
 
 // AutoMapper

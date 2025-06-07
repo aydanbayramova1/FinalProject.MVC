@@ -476,6 +476,74 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("FaqsBanners");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.IntroCounter", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IconPath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IntroVideoId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Suffix")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IntroVideoId");
+
+                    b.ToTable("IntroCounters");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.IntroVideo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Img")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subtitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VideoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("IntroVideos");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.MenuBanner", b =>
                 {
                     b.Property<int>("Id")
@@ -953,6 +1021,17 @@ namespace FinalProjectMvc.Migrations
                     b.Navigation("Approach");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.IntroCounter", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.IntroVideo", "IntroVideo")
+                        .WithMany("Counters")
+                        .HasForeignKey("IntroVideoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("IntroVideo");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.ServiceItem", b =>
                 {
                     b.HasOne("FinalProjectMvc.Models.Service", "Service")
@@ -1029,6 +1108,11 @@ namespace FinalProjectMvc.Migrations
             modelBuilder.Entity("FinalProjectMvc.Models.Approach", b =>
                 {
                     b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.IntroVideo", b =>
+                {
+                    b.Navigation("Counters");
                 });
 
             modelBuilder.Entity("FinalProjectMvc.Models.OurStory", b =>

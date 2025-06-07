@@ -1,0 +1,87 @@
+﻿@model FinalProjectMvc.ViewModels.Admin.IntroVideo.IntroVideoDetailVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="bg-white p-5 rounded-4 shadow-lg border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #5c3d2e;">
+                    ☕ Intro Video Details
+                </h2>
+
+                <div class="mb-4 text-center">
+                    <h5 class="text-muted">Title</h5>
+                    <h4>@Model.Title</h4>
+
+                    <h5 class="text-muted mt-3">Subtitle</h5>
+                    <h5>@Model.Subtitle</h5>
+                </div>
+
+                <div class="row justify-content-center mb-5">
+                    @if (!string.IsNullOrEmpty(Model.Img))
+                    {
+                        <div class="col-md-6 text-center mb-3">
+                            <p class="text-muted">Background Image</p>
+                            <img src="~/uploads/images/@Model.Img"
+                                 alt="Background"
+                                 class="img-fluid rounded-3 shadow"
+                                 style="max-height: 250px; object-fit: contain;" />
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(Model.VideoUrl))
+                    {
+                        <div class="col-md-6 text-center mb-3">
+                            <p class="text-muted">Intro Video</p>
+                            <div class="rounded-3 overflow-hidden shadow-sm" style="max-height: 250px;">
+                                <video controls style="max-height: 250px; width: 100%; object-fit: contain;">
+                                    <source src="~/uploads/videos/@Model.VideoUrl" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="mb-4">
+                    <h4 class="mb-3" style="color: #5c3d2e;">📊 Counters</h4>
+                    @if (Model.Counters != null && Model.Counters.Any())
+                    {
+                        <div class="row">
+                            @foreach (var counter in Model.Counters)
+                            {
+                                <div class="col-sm-6 col-lg-3 mb-4">
+                                    <div class="card border-0 shadow-sm h-100 text-center">
+                                        <div class="card-body">
+                                            <img src="~/@counter.IconPath"
+                                                 alt="Icon"
+                                                 class="mb-2"
+                                                 style="height: 40px;" />
+                                            <h5 class="fw-bold">@counter.Count@counter.Suffix</h5>
+                                            <p class="text-muted small">@counter.Description</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning text-center">
+                            No counters available.
+                        </div>
+                    }
+                </div>
+
+                <div class="text-center mt-4">
+                    <a asp-action="Index"
+                       class="btn"
+                       style="color: #5c3d2e; border: 1px solid #5c3d2e; background-color: white; padding: 8px 20px; border-radius: 8px;"
+                       onmouseover="this.style.backgroundColor='#5c3d2e'; this.style.color='white';"
+                       onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
+                        ← Back to List
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

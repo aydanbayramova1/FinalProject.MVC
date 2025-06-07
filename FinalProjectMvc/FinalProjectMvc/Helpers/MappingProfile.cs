@@ -12,6 +12,7 @@ using FinalProjectMvc.ViewModels.Admin.ContactBanner;
 using FinalProjectMvc.ViewModels.Admin.ContactMessage;
 using FinalProjectMvc.ViewModels.Admin.ContactUs;
 using FinalProjectMvc.ViewModels.Admin.FaqsBanner;
+using FinalProjectMvc.ViewModels.Admin.IntroCounter;
 using FinalProjectMvc.ViewModels.Admin.MenuBanner;
 using FinalProjectMvc.ViewModels.Admin.OurStory;
 using FinalProjectMvc.ViewModels.Admin.ReservationBanner;
@@ -213,6 +214,15 @@ namespace FinalProjectMvc.Helpers
                 .ForMember(dest => dest.IconImg, opt => opt.Ignore());
 
             CreateMap<StoryItem, StoryItemEditVM>();
+
+            CreateMap<IntroCounter, IntroCounterVM>();
+            CreateMap<IntroCounterVM, IntroCounter>();
+
+            CreateMap<IntroCounterCreateVM, IntroCounter>();
+            CreateMap<IntroCounter, IntroCounterCreateVM>();
+
+            CreateMap<IntroCounter, IntroCounterEditVM>();
+            CreateMap<IntroCounterEditVM, IntroCounter>();
         }
     }
 }

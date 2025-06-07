@@ -212,6 +212,38 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRmFxc0Jhbm5lclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/IntroCounter/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW50cm9Db3VudGVyXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/IntroCounter/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW50cm9Db3VudGVyXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/IntroCounter/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW50cm9Db3VudGVyXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/IntroCounter/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW50cm9Db3VudGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/IntroVideo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW50cm9WaWRlb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/IntroVideo/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW50cm9WaWRlb1xEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/IntroVideo/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW50cm9WaWRlb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/IntroVideo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSW50cm9WaWRlb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ACER/Desktop/FinalProjectMvc/FinalProjectMvc/FinalProjectMvc/Areas/Admin/Views/MenuBanner/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudUJhbm5lclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
