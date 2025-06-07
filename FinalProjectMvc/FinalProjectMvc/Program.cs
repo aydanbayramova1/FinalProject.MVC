@@ -19,7 +19,7 @@ builder.Services.AddControllersWithViews();
 // File upload limits (for IFormFile)
 builder.Services.Configure<FormOptions>(options =>
 {
-    options.MultipartBodyLengthLimit = 104857600; // 100 MB
+    options.MultipartBodyLengthLimit = 104857600; 
 });
 
 // Database connection
@@ -72,6 +72,9 @@ builder.Services.AddScoped<IApproachItemService, ApproachItemService>();
 builder.Services.AddScoped<ISettingService, SettingService>();
 builder.Services.AddScoped<IContactUsService, ContactUsService>();
 builder.Services.AddScoped<IContactMessageService, ContactMessageService>();
+builder.Services.AddScoped<IOurStoryService, OurStoryService>();
+builder.Services.AddScoped<IStoryItemService, StoryItemService>();
+
 
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));

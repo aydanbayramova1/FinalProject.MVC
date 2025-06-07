@@ -15,5 +15,6 @@ namespace FinalProjectMvc.ViewModels.Admin.ApproachItem
         public IFormFile IconFile { get; set; }
 
         public int ApproachId { get; set; }
+
     }
 }

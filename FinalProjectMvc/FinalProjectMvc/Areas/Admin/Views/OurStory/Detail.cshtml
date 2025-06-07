@@ -1,0 +1,52 @@
+﻿@model OurStoryDetailVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border text-center">
+                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Our Story Details</h2>
+
+                <img src="~/@Model.Image" alt="Our Story Image"
+                     class="img-fluid rounded mb-4"
+                     style="max-width: 100%; height: auto; max-height: 300px;" />
+
+                <div class="text-start">
+                    <p><strong>Section Title:</strong> @Model.SectionTitle</p>
+                    <p><strong>Section Subtitle:</strong> @Model.SectionSubtitle</p>
+                    <p><strong>Description:</strong> @Model.SectionDescription</p>
+                </div>
+
+                <hr />
+
+                <h4 class="text-start mt-4" style="color: #6b4f3b;">Story Items</h4>
+                @if (Model.StoryItems != null && Model.StoryItems.Any())
+                {
+                    <div class="text-start">
+                        @foreach (var item in Model.StoryItems)
+                        {
+                            <div class="border p-3 mb-3 rounded bg-light">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="~/uploads/storyicons/@item.IconImg" alt="@item.Title" style="width: 40px; height: 40px; object-fit: contain; margin-right: 10px;" />
+                                    <strong>@item.Title</strong>
+                                </div>
+                                <p>@item.Description</p>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted">No story items found.</p>
+                }
+
+                <a asp-action="Index"
+                   class="btn mt-4"
+                   style="color: #5c3d2e; border: 1px solid #5c3d2e; background-color: white;"
+                   onmouseover="this.style.backgroundColor='#5c3d2e'; this.style.color='white';"
+                   onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
+                    Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,11 +5,12 @@ namespace FinalProjectMvc.Services.Interfaces
 {
     public interface IApproachService
     {
-        Task<List<ApproachVM>> GetAllAsync();
-        Task<ApproachDetailVM> GetByIdAsync(int id);
-        Task CreateAsync(ApproachCreateVM model);
-        Task UpdateAsync(ApproachEditVM model);
+        Task<Approach> GetFirstAsync();
+        Task<Approach> GetAsync();
+        Task<Approach> GetByIdAsync(int id);
+        Task CreateAsync(Approach ourStory);
+        Task UpdateAsync(Approach ourStory);
         Task DeleteAsync(int id);
-        Task<bool> IsExistsAsync();
+        Task<bool> ExistsAsync();
     }
 }

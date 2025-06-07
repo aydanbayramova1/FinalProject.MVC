@@ -1,0 +1,48 @@
+﻿@model OurStoryCreateVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Add Our Story</h2>
+
+                <form asp-action="Create" method="post" enctype="multipart/form-data">
+                    <div class="form-group mb-3">
+                        <label asp-for="SectionTitle" class="form-label">Section Title</label>
+                        <input asp-for="SectionTitle" class="form-control" placeholder="Enter section title" />
+                        <span class="text-danger" asp-validation-for="SectionTitle"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="SectionSubtitle" class="form-label">Section Subtitle</label>
+                        <input asp-for="SectionSubtitle" class="form-control" placeholder="Enter section subtitle" />
+                        <span class="text-danger" asp-validation-for="SectionSubtitle"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="SectionDescription" class="form-label">Section Description</label>
+                        <textarea asp-for="SectionDescription" class="form-control" rows="4" placeholder="Enter description"></textarea>
+                        <span class="text-danger" asp-validation-for="SectionDescription"></span>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label asp-for="ImageFile" class="form-label">Image</label>
+                        <input asp-for="ImageFile" type="file" class="form-control" style="padding: 9px 18px;" />
+                        <span class="text-danger" asp-validation-for="ImageFile"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit"
+                                class="btn btn-outline-primary"
+                                style="color:brown; border: 1px solid brown; background-color: white;"
+                                onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+                            Submit
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

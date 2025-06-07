@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.ApproachItem;
+using FinalProjectMvc.ViewModels.Admin.StoryItem;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -8,69 +9,82 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
     [Area("Admin")]
     public class ApproachItemController : Controller
     {
-        private readonly IApproachItemService _itemService;
-        private readonly IMapper _mapper;
-
-        public ApproachItemController(IApproachItemService itemService, IMapper mapper)
+        private readonly IApproachItemService _approachItemService;
+        private readonly IApproachService _approachService;
+        public ApproachItemController(IApproachItemService approachItemService, IApproachService approachService)
         {
-            _itemService = itemService;
-            _mapper = mapper;
+            _approachItemService = approachItemService;
+            _approachService = approachService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var items = await _itemService.GetAllAsync();
-
-            // Əgər service'dən ApproachItemDetailVM gəlirsə, bura map lazımdır
-            var result = _mapper.Map<IEnumerable<ApproachItemVM>>(items);
-            return View(result);
+            var items = await _approachItemService.GetAllAsync();
+            return View(items);
         }
+
 
         public IActionResult Create()
         {
-            return View();
+            var approach = _approachService.GetFirstAsync();
+
+            if (approach == null)
+            {
+                return RedirectToAction("Index", "Approach");
+            }
+
+            var vm = new ApproachItemCreateVM
+            {
+                ApproachId = approach.Id
+            };
+
+            return View(vm);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Create(ApproachItemCreateVM model)
-        {
-            if (!ModelState.IsValid) return View(model);
 
-            await _itemService.CreateAsync(model);
+        [HttpPost]
+        public async Task<IActionResult> Create(ApproachItemCreateVM vm)
+        {
+            if (!ModelState.IsValid) return View(vm);
+
+            await _approachItemService.CreateAsync(vm);
             return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Edit(int id)
         {
-            var detail = await _itemService.GetByIdAsync(id);
-            if (detail == null) return NotFound();
-
-            var model = _mapper.Map<ApproachItemEditVM>(detail);
-            return View(model);
+            var vm = await _approachItemService.GetEditAsync(id);
+            return View(vm);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(ApproachItemEditVM model)
+        public async Task<IActionResult> Edit(ApproachItemEditVM vm)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) return View(vm);
 
-            await _itemService.UpdateAsync(model);
-            return RedirectToAction(nameof(Index));
-        }
-
-        public async Task<IActionResult> Delete(int id)
-        {
-            await _itemService.DeleteAsync(id);
+            await _approachItemService.EditAsync(vm);
             return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Detail(int id)
         {
-            var detail = await _itemService.GetByIdAsync(id);
-            if (detail == null) return NotFound();
+            var item = await _approachItemService.GetDetailAsync(id);
 
-            var result = _mapper.Map<ApproachItemDetailVM>(detail);
-            return View(result);
+            if (item == null)
+            {
+
+                return NotFound();
+
+            }
+
+            return View(item);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _approachItemService.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

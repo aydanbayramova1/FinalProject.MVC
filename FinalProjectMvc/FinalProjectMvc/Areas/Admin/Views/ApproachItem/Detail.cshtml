@@ -4,20 +4,26 @@
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="bg-white p-4 rounded shadow-sm border text-center">
-                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Item Details</h2>
+                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">
+                    ☕ Approach Item Details
+                </h2>
 
-                <i class="@Model.IconPath fa-3x mb-3"></i>
+                <img src="~/uploads/approachicons/@Model.IconImg"
+                     alt="Approach Icon"
+                     class="img-fluid rounded mb-4 border"
+                     style="max-width: 100%; height: auto; max-height: 300px;" />
 
-                <div class="text-start">
-                    <p><strong>Title:</strong> @Model.Title</p>
-                    <p><strong>Description:</strong> @Model.Description</p>
+                <div class="text-start px-3">
+                    <p class="mb-2"><strong> Title:</strong> @Model.Title</p>
+                    <p class="mb-0"><strong> Description:</strong> @Model.Description</p>
                 </div>
 
-                <a asp-controller="Approach" asp-action="Index" class="btn mt-3"
-                   style="color: #5c3d2e; border: 1px solid #5c3d2e;"
+                <a asp-action="Index"
+                   class="btn mt-4"
+                   style="color: #5c3d2e; border: 1px solid #5c3d2e; background-color: white;"
                    onmouseover="this.style.backgroundColor='#5c3d2e'; this.style.color='white';"
                    onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
-                    Back to List
+                    ⬅ Back to List
                 </a>
             </div>
         </div>

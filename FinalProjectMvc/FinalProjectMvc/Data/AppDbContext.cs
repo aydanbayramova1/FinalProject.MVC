@@ -31,5 +31,29 @@ namespace FinalProjectMvc.Data
         public DbSet<ContactMessage> ContactMessages { get; set; }
         public DbSet<OurStory> OurStories { get; set; }
         public DbSet<StoryItem> StoryItems { get; set; }
+
+
+
+
+
+
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Approach>()
+            .HasMany(a => a.Items)
+            .WithOne(i => i.Approach)
+            .HasForeignKey(i => i.ApproachId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<OurStory>()
+                .HasMany(s => s.StoryItems)
+                .WithOne(i => i.OurStory)
+                .HasForeignKey(i => i.OurStoryId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }

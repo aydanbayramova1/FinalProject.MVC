@@ -1,11 +1,13 @@
-﻿<section id="our-story">
+﻿@model OurStoryVM
+
+<section id="our-story">
     <div class="our-story" style="margin-top: -6pc;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="our-story-image">
                         <figure class="image-anime">
-                            <img src="~/assets/images/common/dadaas.jpg" alt="">
+                            <img src="~/@Model.Image" alt="Our Story Image" />
                         </figure>
                     </div>
                 </div>
@@ -14,60 +16,27 @@
                     <div class="our-story-content">
                         <div class="section-title">
                             <h3 class="wow fadeInUp">our story</h3>
-                            <h2 class="text-anime-style-3" data-cursor="-opaque">
-                                How we craft every cup of coffee to
-                                perfection
-                            </h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">
-                                Experience the journey of coffee, from
-                                carefully sourced beans to expertly roasted blends, crafted with passion and
-                                precision to deliver every perfect sip that awakens your senses.
-                            </p>
+                            <h2 class="text-anime-style-3" data-cursor="-opaque">@Model.SectionTitle</h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">@Model.SectionDescription</p>
                         </div>
 
                         <div class="story-list">
-                            <div class="story-item wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="icon-box">
-                                    <img src="~/assets/images/common/icon-story-1.svg" alt="">
+                            @foreach (var item in Model.StoryItems.TakeLast(3))
+                            {
+                                <div class="story-item wow fadeInUp" data-wow-delay="0.4s">
+                                    <div class="icon-box">
+                                        <img src="~/uploads/storyicons/@item.IconImg" alt="@item.Title" />
+                                    </div>
+                                    <div class="story-item-content">
+                                        <h3>@item.Title</h3>
+                                        <p>@item.Description</p>
+                                    </div>
                                 </div>
-                                <div class="story-item-content">
-                                    <h3>organic coffee seed</h3>
-                                    <p>
-                                        Grown naturally without chemicals, our organic coffee seeds ensure pure and
-                                        rich flavors in every cup.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="story-item wow fadeInUp" data-wow-delay="0.6s">
-                                <div class="icon-box">
-                                    <img src="~/assets/images/common/icon-story-2.svg" alt="">
-                                </div>
-                                <div class="story-item-content">
-                                    <h3>italy modern machine</h3>
-                                    <p>
-                                        Crafted with precision, our Italy modern machines deliver authentic and
-                                        consistent coffee perfection.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="story-item wow fadeInUp" data-wow-delay="0.8s">
-                                <div class="icon-box">
-                                    <img src="~/assets/images/common/icon-story-3.svg" alt="">
-                                </div>
-                                <div class="story-item-content">
-                                    <h3>best traditional flavors</h3>
-                                    <p>
-                                        Relish the timeless charm of coffee with our best traditional flavors,
-                                        crafted to perfection.
-                                    </p>
-                                </div>
-                            </div>
+                            }
                         </div>
 
                         <div class="our-story-btn wow fadeInUp" data-wow-delay="1s">
-                            <a style="box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);" href="reservation.html" class="btn-default">book a table</a>
+                            <a style="box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);" href="/reservation" class="btn-default">book a table</a>
                         </div>
                     </div>
                 </div>

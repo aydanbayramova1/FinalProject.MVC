@@ -1,11 +1,11 @@
-﻿@model IEnumerable<FinalProjectMvc.ViewModels.Admin.ApproachItem.ApproachItemVM>
+﻿@model IEnumerable<ApproachItemVM>
 
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-xl-10">
             <div class="bg-light border rounded shadow-sm p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">🧩 Approach Item List</h2>
+                    <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Approach Items</h2>
                     <a asp-action="Create" class="btn btn-outline-brown">
                         <i class="fa fa-plus mr-1"></i> Add New Approach Item
                     </a>
@@ -15,7 +15,7 @@
                     <table class="table table-bordered text-center align-middle bg-white">
                         <thead class="thead-dark">
                             <tr>
-                                <th style="background-color: #5c3d2e; color: #fff;">Icon</th>
+                                <th style="background-color: #5c3d2e; color: #fff;">Image</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Title</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Description</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
@@ -26,20 +26,22 @@
                             {
                                 <tr>
                                     <td>
-                                        <img src="~/uploads/approach/@item.IconPath" alt="icon" class="img-thumbnail" style="max-width: 80px; border-radius: 8px;" />
+                                        <img src="~/uploads/approachicons/@item.IconImg" alt="Approach icon"
+                                             class="img-thumbnail" style="max-width: 120px; border-radius: 8px;" />
                                     </td>
                                     <td>@item.Title</td>
                                     <td>@item.Description</td>
                                     <td>
                                         <div class="d-flex justify-content-center gap-2">
-                                            <a asp-action="Detail" asp-route-id="@item.Id" title="View Details" class="btn btn-info btn-sm">
+                                            <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-info btn-sm" title="View">
                                                 <i class="fa-solid fa-circle-info"></i>
                                             </a>
-                                            <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-dark btn-sm">
+                                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-dark btn-sm" title="Edit">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>
-                                            <form class="d-inline" asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Are you sure you want to delete this item?');">
-                                                <button type="submit" class="btn btn-danger btn-sm">
+                                            <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="d-inline"
+                                                  onsubmit="return confirm('Are you sure you want to delete this approach item?');">
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </form>

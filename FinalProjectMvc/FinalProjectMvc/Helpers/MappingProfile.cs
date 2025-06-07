@@ -13,12 +13,14 @@ using FinalProjectMvc.ViewModels.Admin.ContactMessage;
 using FinalProjectMvc.ViewModels.Admin.ContactUs;
 using FinalProjectMvc.ViewModels.Admin.FaqsBanner;
 using FinalProjectMvc.ViewModels.Admin.MenuBanner;
+using FinalProjectMvc.ViewModels.Admin.OurStory;
 using FinalProjectMvc.ViewModels.Admin.ReservationBanner;
 using FinalProjectMvc.ViewModels.Admin.Scrolling;
 using FinalProjectMvc.ViewModels.Admin.Service;
 using FinalProjectMvc.ViewModels.Admin.ServiceItem;
 using FinalProjectMvc.ViewModels.Admin.Setting;
 using FinalProjectMvc.ViewModels.Admin.Slider;
+using FinalProjectMvc.ViewModels.Admin.StoryItem;
 using FinalProjectMvc.ViewModels.Admin.TeamBanner;
 using FinalProjectMvc.ViewModels.Admin.TeamMember;
 using FinalProjectMvc.ViewModels.Admin.Topbar;
@@ -157,12 +159,20 @@ namespace FinalProjectMvc.Helpers
             CreateMap<ApproachCreateVM, Approach>()
             .ForMember(dest => dest.Image, opt => opt.Ignore());
 
-            CreateMap<ApproachItem, ApproachItemVM>();
-            CreateMap<ApproachItem, ApproachItemDetailVM>();
             CreateMap<ApproachItemCreateVM, ApproachItem>()
-                .ForMember(dest => dest.IconPath, opt => opt.Ignore());
+                .ForMember(dest => dest.IconPath, opt => opt.Ignore()); 
+
+            CreateMap<ApproachItem, ApproachItemVM>()
+                .ForMember(dest => dest.IconImg, opt => opt.MapFrom(src => src.IconPath));
+
+            CreateMap<ApproachItem, ApproachItemDetailVM>()
+                .ForMember(dest => dest.IconImg, opt => opt.MapFrom(src => src.IconPath));
+
+            CreateMap<ApproachItem, ApproachItemEditVM>()
+                .ForMember(dest => dest.IconImg, opt => opt.MapFrom(src => src.IconPath));
             CreateMap<ApproachItemEditVM, ApproachItem>()
-                .ForMember(dest => dest.IconPath, opt => opt.Ignore());
+                .ForMember(dest => dest.IconPath, opt => opt.Ignore()) 
+                .ForMember(dest => dest.Approach, opt => opt.Ignore()); 
 
             CreateMap<SettingCreateVM, Setting>();
             CreateMap<SettingEditVM, Setting>();
@@ -182,6 +192,27 @@ namespace FinalProjectMvc.Helpers
 
             CreateMap<ContactMessage, ContactMessageVM>()
                 .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreateDate));
+
+
+            CreateMap<OurStory, OurStoryVM>();
+            CreateMap<OurStory, OurStoryDetailVM>();
+            CreateMap<OurStoryCreateVM, OurStory>()
+                .ForMember(dest => dest.Image, opt => opt.Ignore());
+            CreateMap<OurStoryEditVM, OurStory>()
+                .ForMember(dest => dest.Image, opt => opt.Ignore());
+            CreateMap<OurStory, OurStoryEditVM>();
+
+
+            CreateMap<StoryItem, StoryItemVM>();
+            CreateMap<StoryItem, StoryItemDetailVM>();
+
+            CreateMap<StoryItemCreateVM, StoryItem>()
+                .ForMember(dest => dest.IconImg, opt => opt.Ignore()); 
+
+            CreateMap<StoryItemEditVM, StoryItem>()
+                .ForMember(dest => dest.IconImg, opt => opt.Ignore());
+
+            CreateMap<StoryItem, StoryItemEditVM>();
         }
     }
 }

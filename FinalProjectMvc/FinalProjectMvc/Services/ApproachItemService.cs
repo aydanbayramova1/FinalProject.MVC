@@ -1,95 +1,91 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Data;
+using FinalProjectMvc.Helpers.Extensions;
 using FinalProjectMvc.Models;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.ApproachItem;
+using FinalProjectMvc.ViewModels.Admin.StoryItem;
 using Microsoft.EntityFrameworkCore;
 
 public class ApproachItemService :IApproachItemService
 {
     private readonly AppDbContext _context;
     private readonly IMapper _mapper;
+    private readonly IWebHostEnvironment _env;
 
-    public ApproachItemService(AppDbContext context, IMapper mapper)
+    public ApproachItemService(AppDbContext context, IMapper mapper, IWebHostEnvironment env)
     {
         _context = context;
         _mapper = mapper;
+        _env = env;
     }
 
-    public async Task<List<ApproachItemDetailVM>> GetAllAsync()
+    public async Task<List<ApproachItemVM>> GetAllAsync()
     {
-        var data = await _context.ApproachItems.Include(x => x.Approach).ToListAsync();
-        return _mapper.Map<List<ApproachItemDetailVM>>(data);
+        var items = await _context.ApproachItems.Include(s => s.Approach).ToListAsync();
+        return _mapper.Map<List<ApproachItemVM>>(items);
     }
 
-    public async Task<List<ApproachItemDetailVM>> GetByApproachIdAsync(int approachId)
+    public async Task<ApproachItemDetailVM?> GetDetailAsync(int id)
     {
-        var data = await _context.ApproachItems
-            .Where(x => x.ApproachId == approachId)
-            .Include(x => x.Approach)
-            .ToListAsync();
-
-        return _mapper.Map<List<ApproachItemDetailVM>>(data);
-    }
-
-    public async Task<ApproachItemDetailVM> GetByIdAsync(int id)
-    {
-        var entity = await _context.ApproachItems
-            .Include(x => x.Approach)
+        var item = await _context.ApproachItems
+            .AsNoTracking()
             .FirstOrDefaultAsync(x => x.Id == id);
 
-        return _mapper.Map<ApproachItemDetailVM>(entity);
+        if (item == null)
+            return null;
+
+        return _mapper.Map<ApproachItemDetailVM>(item);
     }
 
-    public async Task CreateAsync(ApproachItemCreateVM model)
+    public async Task CreateAsync(ApproachItemCreateVM vm)
     {
-        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(model.IconFile.FileName);
-        string folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "approachItems");
-        string fullPath = Path.Combine(folderPath, fileName);
+        var ourStory = await _context.Approaches.FirstOrDefaultAsync();
+        if (ourStory == null) throw new KeyNotFoundException("Approach must exist before creating a story item");
 
-        if (!Directory.Exists(folderPath))
+        var item = _mapper.Map<ApproachItem>(vm);
+        item.ApproachId = ourStory.Id;
+
+        if (vm.IconFile != null)
         {
-            Directory.CreateDirectory(folderPath);
+            string fileName = await vm.IconFile.SaveFileAsync(_env.WebRootPath, "uploads/approachicons");
+            item.IconPath = fileName;
         }
 
-        using (var stream = new FileStream(fullPath, FileMode.Create))
-        {
-            await model.IconFile.CopyToAsync(stream);
-        }
-
-        var entity = new ApproachItem
-        {
-            Title = model.Title,
-            Description = model.Description,
-            IconPath = Path.Combine("uploads", "approachItems", fileName),
-            ApproachId = model.ApproachId
-        };
-
-        await _context.ApproachItems.AddAsync(entity);
+        await _context.ApproachItems.AddAsync(item);
         await _context.SaveChangesAsync();
     }
 
-
-    public async Task UpdateAsync(ApproachItemEditVM model)
+    public async Task<ApproachItemEditVM> GetEditAsync(int id)
     {
-        var entity = await _context.ApproachItems.FindAsync(model.Id);
-        if (entity == null) return;
+        var item = await _context.ApproachItems.FindAsync(id);
+        if (item == null) throw new KeyNotFoundException("Approach item not found");
 
-        entity.Title = model.Title;
-        entity.Description = model.Description;
-        entity.IconPath = model.IconPath;
-        entity.ApproachId = model.ApproachId;
+        return _mapper.Map<ApproachItemEditVM>(item);
+    }
 
-        _context.ApproachItems.Update(entity);
+    public async Task EditAsync(ApproachItemEditVM vm)
+    {
+        var item = await _context.ApproachItems.FindAsync(vm.Id);
+        if (item == null) throw new KeyNotFoundException("Approach item not found");
+
+        _mapper.Map(vm, item);
+
+        if (vm.IconFile != null)
+        {
+            string fileName = await vm.IconFile.SaveFileAsync(_env.WebRootPath, "uploads/approachicons");
+            item.IconPath = fileName;
+        }
+
         await _context.SaveChangesAsync();
     }
 
     public async Task DeleteAsync(int id)
     {
-        var entity = await _context.ApproachItems.FindAsync(id);
-        if (entity == null) return;
+        var item = await _context.ApproachItems.FindAsync(id);
+        if (item == null) throw new KeyNotFoundException("Approach item not found");
 
-        _context.ApproachItems.Remove(entity);
+        _context.ApproachItems.Remove(item);
         await _context.SaveChangesAsync();
     }
 }

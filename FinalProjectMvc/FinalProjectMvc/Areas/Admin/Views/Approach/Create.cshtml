@@ -4,38 +4,34 @@
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="bg-white p-4 rounded shadow-sm border">
-                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Create New Approach</h2>
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕Add Approach</h2>
 
                 <form asp-action="Create" method="post" enctype="multipart/form-data">
-                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
-
-                    <!-- Title -->
                     <div class="form-group mb-3">
                         <label asp-for="Title" class="form-label">Title</label>
-                        <input asp-for="Title" class="form-control" placeholder="Enter approach title" />
+                        <input asp-for="Title" class="form-control" placeholder="Enter title" />
                         <span class="text-danger" asp-validation-for="Title"></span>
                     </div>
 
-                    <!-- Subtitle -->
                     <div class="form-group mb-3">
                         <label asp-for="SubTitle" class="form-label">Subtitle</label>
-                        <input asp-for="SubTitle" class="form-control" placeholder="Enter approach subtitle" />
+                        <input asp-for="SubTitle" class="form-control" placeholder="Enter subtitle" />
                         <span class="text-danger" asp-validation-for="SubTitle"></span>
                     </div>
 
-                    <!-- Image -->
                     <div class="form-group mb-4">
                         <label asp-for="ImageFile" class="form-label">Image</label>
-                        <input asp-for="ImageFile" type="file" class="form-control" />
+                        <input asp-for="ImageFile" type="file" class="form-control" style="padding: 9px 18px;" />
                         <span class="text-danger" asp-validation-for="ImageFile"></span>
                     </div>
 
-                    <!-- Buttons -->
                     <div class="d-flex justify-content-between">
-                        <button type="submit" class="btn btn-outline-primary" style="color:brown; border:1px solid brown; background:white;"
-                                onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
-                                onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
-                            Create
+                        <button type="submit"
+                                class="btn btn-outline-primary"
+                                style="color: #6b4f3b; border: 1px solid #6b4f3b; background-color: white;"
+                                onmouseover="this.style.backgroundColor='#6b4f3b'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.color='#6b4f3b';">
+                            Submit
                         </button>
                         <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
                     </div>

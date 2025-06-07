@@ -13,6 +13,6 @@ public class ApproachEditVM
     [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Subtitle can only contain letters.")]
     public string SubTitle { get; set; }
 
-    public string Image { get; set; }
+    public string? Image { get; set; }
     public IFormFile? ImageFile { get; set; }  
 }

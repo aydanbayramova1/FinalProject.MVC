@@ -1,55 +1,37 @@
-﻿<section id="our-approach">
+﻿@using FinalProjectMvc.ViewModels.Admin.ApproachItem
+@model ApproachVM
+
+<section id="our-approach">
     <div class="our-approach">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="our-approach-content">
                         <div class="section-title">
-                            <h3 class="wow fadeInUp">our approach</h3>
+                            <h3 class="wow fadeInUp">@Model.Title</h3>
                             <h2 class="text-anime-style-3" data-cursor="-opaque">
-                                Crafting the perfect coffee
-                                experience
+                                @Model.SubTitle
                             </h2>
                         </div>
                         <div class="mission-vision-list">
-                            <div class="mission-vision-item wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="icon-box">
-                                    <img src="~/assets/images/common/qr.svg" alt="">
-                                </div>
-                                <div class="mission-vision-content">
-                                    <h3>our mission</h3>
-                                    <p>
-                                        Our mission is to deliver exceptional coffee crafted with the finest beans
-                                        care, providing a rich experience that celebrates quality.
-                                    </p>
-                                </div>
-                            </div>
+                            @{
+                                var itemsToShow = Model.Items?.TakeLast(3).ToList() ?? new List<ApproachItemVM>();
+                                int delay = 2;
+                            }
 
-                            <div class="mission-vision-item wow fadeInUp" data-wow-delay="0.4s">
-                                <div class="icon-box">
-                                    <img src="~/assets/images/common/qqqq.svg" alt="">
+                            @foreach (var item in itemsToShow)
+                            {
+                                <div class="mission-vision-item wow fadeInUp" data-wow-delay="@($"0.{delay}s")">
+                                    <div class="icon-box">
+                                        <img src="~/uploads/approachicons/@item.IconImg" alt="@item.Title">
+                                    </div>
+                                    <div class="mission-vision-content">
+                                        <h3>@item.Title</h3>
+                                        <p>@item.Description</p>
+                                    </div>
                                 </div>
-                                <div class="mission-vision-content">
-                                    <h3>our vision</h3>
-                                    <p>
-                                        Our vision is to inspire a love for coffee by crafting rich, high-quality
-                                        experiences that bring people together.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="mission-vision-item wow fadeInUp" data-wow-delay="0.6s">
-                                <div class="icon-box">
-                                    <img src="~/assets/images/common/sasa.svg" alt="">
-                                </div>
-                                <div class="mission-vision-content">
-                                    <h3>our value</h3>
-                                    <p>
-                                        Our values are inspired by the rich coffee traditions of Italy, using its
-                                        most renowned beans to craft every cup with quality, and ethical care.
-                                    </p>
-                                </div>
-                            </div>
+                                delay += 2;
+                            }
                         </div>
                     </div>
                 </div>
@@ -57,7 +39,7 @@
                 <div class="col-lg-6">
                     <div style="opacity: 0.5 !important;" class="our-approach-image">
                         <figure class="image-anime">
-                            <img src="~/assets/images/common/salamqwertyuiop.jpg" alt="">
+                            <img src="~/@Model.Image" alt="">
                         </figure>
                     </div>
                 </div>
