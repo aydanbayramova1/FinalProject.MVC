@@ -27,5 +27,9 @@ namespace FinalProjectMvc.Data
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Approach> Approaches { get; set; }
         public DbSet<ApproachItem> ApproachItems { get; set; }
+        public DbSet<ContactUs> ContactUses { get; set; }
+        public DbSet<ContactMessage> ContactMessages { get; set; }
+        public DbSet<OurStory> OurStories { get; set; }
+        public DbSet<StoryItem> StoryItems { get; set; }
     }
 }

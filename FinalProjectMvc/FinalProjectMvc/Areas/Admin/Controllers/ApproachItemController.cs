@@ -1,4 +1,5 @@
-﻿using FinalProjectMvc.Services.Interfaces;
+﻿using AutoMapper;
+using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.ApproachItem;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,72 +8,69 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
     [Area("Admin")]
     public class ApproachItemController : Controller
     {
-        private readonly IApproachItemService _service;
+        private readonly IApproachItemService _itemService;
+        private readonly IMapper _mapper;
 
-        public ApproachItemController(IApproachItemService service)
+        public ApproachItemController(IApproachItemService itemService, IMapper mapper)
         {
-            _service = service;
+            _itemService = itemService;
+            _mapper = mapper;
         }
 
-        public async Task<IActionResult> Index(int approachId)
+        public async Task<IActionResult> Index()
         {
-            var items = await _service.GetByIdAsync(approachId);
-            ViewBag.ApproachId = approachId;
-            return View(items);
+            var items = await _itemService.GetAllAsync();
+
+            // Əgər service'dən ApproachItemDetailVM gəlirsə, bura map lazımdır
+            var result = _mapper.Map<IEnumerable<ApproachItemVM>>(items);
+            return View(result);
         }
 
-        public async Task<IActionResult> Details(int id)
+        public IActionResult Create()
         {
-            var model = await _service.GetByIdAsync(id);
-            if (model == null) return NotFound();
-
-            return View(model);
-        }
-
-        public IActionResult Create(int approachId)
-        {
-            return View(new ApproachItemCreateVM { ApproachId = approachId });
+            return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(ApproachItemCreateVM vm)
+        public async Task<IActionResult> Create(ApproachItemCreateVM model)
         {
-            if (!ModelState.IsValid) return View(vm);
+            if (!ModelState.IsValid) return View(model);
 
-            await _service.CreateAsync(vm);
-            return RedirectToAction("Index", "Approach");
+            await _itemService.CreateAsync(model);
+            return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Edit(int id)
         {
-            var model = await _service.GetByIdAsync(id);
-            if (model == null) return NotFound();
+            var detail = await _itemService.GetByIdAsync(id);
+            if (detail == null) return NotFound();
 
-            var editVM = new ApproachItemEditVM
-            {
-                Id = model.Id,
-                Title = model.Title,
-                Description = model.Description,
-                IconPath = model.IconPath,
-            };
-
-            return View(editVM);
+            var model = _mapper.Map<ApproachItemEditVM>(detail);
+            return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, ApproachItemEditVM vm)
+        public async Task<IActionResult> Edit(ApproachItemEditVM model)
         {
-            if (!ModelState.IsValid) return View(vm);
+            if (!ModelState.IsValid) return View(model);
 
-            await _service.UpdateAsync(id, vm);
-            return RedirectToAction("Index", "Approach");
+            await _itemService.UpdateAsync(model);
+            return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            await _service.DeleteAsync(id);
-            return RedirectToAction("Index", "Approach");
+            await _itemService.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Detail(int id)
+        {
+            var detail = await _itemService.GetByIdAsync(id);
+            if (detail == null) return NotFound();
+
+            var result = _mapper.Map<ApproachItemDetailVM>(detail);
+            return View(result);
         }
     }
 }
-

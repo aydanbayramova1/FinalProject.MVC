@@ -89,15 +89,32 @@
                                 <a href="#" class="user-icon-btn" id="userAccountBtn">
                                     <i class="fas fa-user"></i>
                                 </a>
+
                                 <div class="dropdown-menu" id="userDropdown" style="margin-right: -5pc;">
-                                    <a asp-controller="Account" asp-action="Login" class="dropdown-item">
-                                        <i class="fas fa-sign-in-alt"></i> Login
-                                    </a>
-                                    <a asp-controller="Account" asp-action="Register"  class="dropdown-item">
-                                        <i class="fas fa-user-plus"></i> Register
-                                    </a>
+
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <span class="dropdown-item" style="color: white; font-weight: 500;">Hello, @User.Identity.Name!</span>
+
+
+                                        <a asp-controller="Account" asp-action="Logout" class="dropdown-item">
+                                            <i class="fas fa-sign-out-alt"></i> Logout
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-controller="Account" asp-action="Login" class="dropdown-item">
+                                            <i class="fas fa-sign-in-alt"></i> Login
+                                        </a>
+
+                                        <a asp-controller="Account" asp-action="Register" class="dropdown-item">
+                                            <i class="fas fa-user-plus"></i> Register
+                                        </a>
+                                    }
+
                                 </div>
                             </div>
+
 
                             @{
                                 var currentController = ViewContext.RouteData.Values["controller"]?.ToString();

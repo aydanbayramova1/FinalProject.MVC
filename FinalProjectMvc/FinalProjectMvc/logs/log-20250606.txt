@@ -7785,3 +7785,1211 @@ WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
 2025-06-06 07:42:49.884 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
 2025-06-06 07:42:49.892 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 7.4974ms
 2025-06-06 07:42:49.892 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.0259ms
+2025-06-06 07:57:23.660 -08:00 [INF] Executed DbCommand (31ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 07:57:23.714 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 07:57:23.808 -08:00 [INF] Executed DbCommand (18ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-06 07:57:23.840 -08:00 [INF] Executed DbCommand (20ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 07:57:23.848 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 07:57:23.857 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-06 07:57:23.863 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 07:57:23.870 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 07:57:23.873 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-06 07:57:23.937 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 07:57:24.001 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-06 07:57:24.004 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-06 07:57:24.026 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 07:57:24.027 -08:00 [INF] Hosting environment: Development
+2025-06-06 07:57:24.028 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-06 07:57:24.435 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 07:57:24.533 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 07:57:24.542 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 07:57:24.556 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 07:57:24.728 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 07:57:24.762 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 07:57:24.849 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 07:57:24.913 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 07:57:24.949 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 07:57:24.996 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 07:57:25.019 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 07:57:25.051 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 07:57:25.078 -08:00 [INF] Executed ViewResult - view Index executed in 523.2861ms.
+2025-06-06 07:57:25.084 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 534.9278ms
+2025-06-06 07:57:25.088 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 07:57:25.094 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 660.7401ms
+2025-06-06 07:57:25.127 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg - null null
+2025-06-06 07:57:25.142 -08:00 [INF] The file /uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg was not modified
+2025-06-06 07:57:25.146 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg - 304 null image/jpeg 18.2563ms
+2025-06-06 07:57:25.150 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 07:57:25.170 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 20.0175ms
+2025-06-06 07:57:25.202 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg - null null
+2025-06-06 07:57:25.202 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 07:57:25.207 -08:00 [INF] The file /uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg was not modified
+2025-06-06 07:57:25.216 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg - 304 null image/jpeg 13.7228ms
+2025-06-06 07:57:25.246 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.7473ms
+2025-06-06 07:57:28.723 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 07:57:28.738 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 07:57:28.742 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 07:57:28.753 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 07:57:28.783 -08:00 [INF] Executed ViewResult - view Register executed in 30.4682ms.
+2025-06-06 07:57:28.788 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 42.7976ms
+2025-06-06 07:57:28.790 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 07:57:28.792 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 69.434ms
+2025-06-06 07:57:28.814 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 07:57:28.818 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 4.7588ms
+2025-06-06 07:57:28.822 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 07:57:28.830 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 7.8452ms
+2025-06-06 07:57:59.872 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 297
+2025-06-06 07:57:59.887 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 07:57:59.896 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 07:58:00.009 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-06 07:58:00.031 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-06 07:58:00.067 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 07:58:00.072 -08:00 [INF] Executed ViewResult - view Register executed in 4.5638ms.
+2025-06-06 07:58:00.076 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 174.7022ms
+2025-06-06 07:58:00.080 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 07:58:00.083 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 210.6595ms
+2025-06-06 07:58:00.095 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 07:58:00.102 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 07:58:00.109 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.8909ms
+2025-06-06 07:58:00.110 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 7.7806ms
+2025-06-06 07:58:01.765 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 279
+2025-06-06 07:58:01.786 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 07:58:01.795 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 07:58:01.828 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 07:58:01.837 -08:00 [INF] Executed ViewResult - view Register executed in 8.8076ms.
+2025-06-06 07:58:01.841 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 34.4566ms
+2025-06-06 07:58:01.844 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 07:58:01.846 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 80.666ms
+2025-06-06 07:58:01.857 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 07:58:01.860 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 07:58:01.867 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 6.1932ms
+2025-06-06 07:58:01.868 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.0018ms
+2025-06-06 08:01:38.588 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 279
+2025-06-06 08:01:38.610 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:38.614 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:01:38.625 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:01:38.629 -08:00 [INF] Executed ViewResult - view Register executed in 4.1561ms.
+2025-06-06 08:01:38.639 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 15.3245ms
+2025-06-06 08:01:38.647 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:38.654 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 67.0388ms
+2025-06-06 08:01:38.694 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:01:38.694 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:01:38.704 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 10.225ms
+2025-06-06 08:01:38.703 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.4493ms
+2025-06-06 08:01:39.640 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 279
+2025-06-06 08:01:39.656 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:39.662 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:01:39.670 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:01:39.677 -08:00 [INF] Executed ViewResult - view Register executed in 6.3871ms.
+2025-06-06 08:01:39.679 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 10.4026ms
+2025-06-06 08:01:39.686 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:39.692 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 51.6448ms
+2025-06-06 08:01:39.712 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:01:39.723 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:01:39.726 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.3408ms
+2025-06-06 08:01:39.728 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 5.7109ms
+2025-06-06 08:01:39.874 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 279
+2025-06-06 08:01:39.891 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:39.898 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:01:39.905 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:01:39.908 -08:00 [INF] Executed ViewResult - view Register executed in 2.9449ms.
+2025-06-06 08:01:39.914 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 8.9434ms
+2025-06-06 08:01:39.923 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:39.929 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 54.8199ms
+2025-06-06 08:01:39.957 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:01:39.957 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:01:39.966 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 9.3903ms
+2025-06-06 08:01:39.979 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.8183ms
+2025-06-06 08:01:40.272 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 279
+2025-06-06 08:01:40.279 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:40.282 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:01:40.288 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:01:40.293 -08:00 [INF] Executed ViewResult - view Register executed in 4.3359ms.
+2025-06-06 08:01:40.298 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 10.6664ms
+2025-06-06 08:01:40.303 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:40.308 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 35.0128ms
+2025-06-06 08:01:40.331 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:01:40.341 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:01:40.342 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.381ms
+2025-06-06 08:01:40.349 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 7.5973ms
+2025-06-06 08:01:40.456 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 279
+2025-06-06 08:01:40.461 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:40.464 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:01:40.471 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:01:40.474 -08:00 [INF] Executed ViewResult - view Register executed in 3.7878ms.
+2025-06-06 08:01:40.480 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 10.5166ms
+2025-06-06 08:01:40.486 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:40.489 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 33.2865ms
+2025-06-06 08:01:40.511 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:01:40.518 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:01:40.522 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.302ms
+2025-06-06 08:01:40.524 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 5.7199ms
+2025-06-06 08:01:40.688 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 279
+2025-06-06 08:01:40.693 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:40.696 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:01:40.700 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:01:40.702 -08:00 [INF] Executed ViewResult - view Register executed in 2.9067ms.
+2025-06-06 08:01:40.705 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 6.2034ms
+2025-06-06 08:01:40.707 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:40.709 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 20.914ms
+2025-06-06 08:01:40.724 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:01:40.728 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:01:40.736 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.6334ms
+2025-06-06 08:01:40.736 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 8.0588ms
+2025-06-06 08:01:40.909 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 279
+2025-06-06 08:01:40.928 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:40.935 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:01:40.943 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:01:40.952 -08:00 [INF] Executed ViewResult - view Register executed in 8.345ms.
+2025-06-06 08:01:40.961 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 18.4761ms
+2025-06-06 08:01:40.967 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:01:40.973 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 63.7116ms
+2025-06-06 08:01:41.001 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:01:41.002 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:01:41.018 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.4473ms
+2025-06-06 08:01:41.020 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 17.9276ms
+2025-06-06 08:01:50.865 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:01:50.879 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:01:50.883 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:01:50.889 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:01:50.907 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:01:50.921 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:01:50.940 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:01:50.955 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:01:50.969 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:01:50.982 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:01:50.988 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:01:50.999 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:01:51.005 -08:00 [INF] Executed ViewResult - view Index executed in 115.7405ms.
+2025-06-06 08:01:51.010 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 120.5831ms
+2025-06-06 08:01:51.013 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:01:51.015 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 150.1677ms
+2025-06-06 08:01:51.042 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:01:51.047 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 4.2416ms
+2025-06-06 08:01:51.060 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:01:51.067 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 6.9327ms
+2025-06-06 08:02:12.701 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:02:12.713 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:02:12.719 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:02:12.731 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:02:12.740 -08:00 [INF] Executed ViewResult - view Register executed in 8.9116ms.
+2025-06-06 08:02:12.747 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 19.4433ms
+2025-06-06 08:02:12.754 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:02:12.761 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 59.3186ms
+2025-06-06 08:02:12.792 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:02:12.792 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:02:12.802 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 10.2894ms
+2025-06-06 08:02:12.822 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.3192ms
+2025-06-06 08:02:15.735 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:02:15.741 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 5.2333ms
+2025-06-06 08:23:22.439 -08:00 [INF] Executed DbCommand (41ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:23:22.516 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:23:22.522 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:23:22.596 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 08:23:22.657 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-06 08:23:22.660 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-06 08:23:22.680 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 08:23:22.683 -08:00 [INF] Hosting environment: Development
+2025-06-06 08:23:22.686 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-06 08:23:22.716 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:23:22.786 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:23:22.793 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:23:22.800 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:23:22.918 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:23:22.942 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:23:23.005 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:23:23.070 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:23:23.102 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:23:23.150 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:23:23.173 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:23:23.199 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:23:23.221 -08:00 [INF] Executed ViewResult - view Index executed in 421.4902ms.
+2025-06-06 08:23:23.225 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 428.0015ms
+2025-06-06 08:23:23.228 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:23:23.237 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 521.3706ms
+2025-06-06 08:23:23.249 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:23:23.249 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg - null null
+2025-06-06 08:23:23.257 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 7.2036ms
+2025-06-06 08:23:23.261 -08:00 [INF] The file /uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg was not modified
+2025-06-06 08:23:23.267 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg - 304 null image/jpeg 17.4544ms
+2025-06-06 08:23:23.270 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg - null null
+2025-06-06 08:23:23.272 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:23:23.277 -08:00 [INF] The file /uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg was not modified
+2025-06-06 08:23:23.283 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg - 304 null image/jpeg 13.473ms
+2025-06-06 08:23:23.303 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.2791ms
+2025-06-06 08:25:07.536 -08:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:25:07.614 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:25:07.621 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:25:07.690 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 08:25:07.762 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-06 08:25:07.765 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-06 08:25:07.784 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 08:25:07.787 -08:00 [INF] Hosting environment: Development
+2025-06-06 08:25:07.789 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-06 08:25:07.951 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:25:08.029 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:25:08.036 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:25:08.046 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:25:08.230 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:25:08.260 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:25:08.337 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:25:08.402 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:25:08.432 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:25:08.471 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:25:08.490 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:25:08.517 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:25:08.543 -08:00 [INF] Executed ViewResult - view Index executed in 498.2511ms.
+2025-06-06 08:25:08.549 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 508.5101ms
+2025-06-06 08:25:08.552 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:25:08.558 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 607.9746ms
+2025-06-06 08:25:08.585 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:25:08.585 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:25:08.606 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 20.426ms
+2025-06-06 08:25:08.657 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 71.5237ms
+2025-06-06 08:26:08.497 -08:00 [INF] Executed DbCommand (43ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:26:08.578 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:26:08.585 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:26:08.667 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 08:26:08.738 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-06 08:26:08.741 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-06 08:26:08.762 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 08:26:08.764 -08:00 [INF] Hosting environment: Development
+2025-06-06 08:26:08.766 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-06 08:26:08.929 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:26:09.009 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:26:09.017 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:26:09.038 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:26:09.189 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:26:09.224 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:26:09.302 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:26:09.380 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:26:09.423 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:26:09.471 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:26:09.495 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:26:09.530 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:26:09.564 -08:00 [INF] Executed ViewResult - view Index executed in 533.4658ms.
+2025-06-06 08:26:09.572 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 547.7242ms
+2025-06-06 08:26:09.575 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:26:09.584 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 655.533ms
+2025-06-06 08:26:09.591 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:26:09.591 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:26:09.625 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 33.3153ms
+2025-06-06 08:26:09.662 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 70.4048ms
+2025-06-06 08:27:41.349 -08:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:27:41.420 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:27:41.425 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:27:41.490 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 08:27:41.550 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-06 08:27:41.553 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-06 08:27:41.571 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 08:27:41.574 -08:00 [INF] Hosting environment: Development
+2025-06-06 08:27:41.576 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-06 08:27:42.206 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:27:42.274 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:27:42.283 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:27:42.290 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:27:42.418 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:27:42.456 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:27:42.525 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:27:42.591 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:27:42.621 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:27:42.661 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:27:42.681 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:27:42.707 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:27:42.731 -08:00 [INF] Executed ViewResult - view Index executed in 441.8559ms.
+2025-06-06 08:27:42.737 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 451.5658ms
+2025-06-06 08:27:42.741 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:27:42.750 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 544.0245ms
+2025-06-06 08:27:42.767 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:27:42.779 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 12.4823ms
+2025-06-06 08:27:42.781 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:27:42.815 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.364ms
+2025-06-06 08:27:46.493 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:27:46.520 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:27:46.531 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:27:46.548 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:27:46.593 -08:00 [INF] Executed ViewResult - view Register executed in 45.9395ms.
+2025-06-06 08:27:46.599 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 60.9898ms
+2025-06-06 08:27:46.603 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:27:46.610 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 116.4479ms
+2025-06-06 08:27:46.648 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:27:46.655 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 7.5383ms
+2025-06-06 08:27:46.662 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:27:46.684 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.669ms
+2025-06-06 08:29:25.406 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 298
+2025-06-06 08:29:25.442 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:29:25.472 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:29:25.792 -08:00 [INF] Executed DbCommand (29ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-06 08:29:25.834 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-06 08:29:25.923 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:29:25.936 -08:00 [INF] Executed ViewResult - view Register executed in 12.8729ms.
+2025-06-06 08:29:25.940 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 458.6614ms
+2025-06-06 08:29:25.946 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:29:25.951 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 544.789ms
+2025-06-06 08:29:25.985 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:29:25.985 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:29:25.990 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 4.8132ms
+2025-06-06 08:29:26.013 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.7123ms
+2025-06-06 08:29:31.055 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:29:31.074 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:29:31.081 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:29:31.130 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:29:31.141 -08:00 [INF] Executed ViewResult - view Register executed in 10.8057ms.
+2025-06-06 08:29:31.148 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 55.622ms
+2025-06-06 08:29:31.153 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:29:31.157 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 101.197ms
+2025-06-06 08:29:31.173 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:29:31.180 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 6.2336ms
+2025-06-06 08:29:34.420 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:29:34.424 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 4.4302ms
+2025-06-06 08:36:15.277 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:36:15.295 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:36:15.298 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:36:15.303 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:36:15.311 -08:00 [INF] Executed ViewResult - view Register executed in 8.2861ms.
+2025-06-06 08:36:15.316 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 13.6797ms
+2025-06-06 08:36:15.318 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:36:15.321 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 43.5553ms
+2025-06-06 08:36:15.349 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:36:15.354 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 5.5598ms
+2025-06-06 08:36:15.358 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:36:15.375 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.2901ms
+2025-06-06 08:37:14.292 -08:00 [INF] Executed DbCommand (43ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:37:14.375 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:37:14.388 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:37:14.463 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 08:37:14.538 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-06 08:37:14.541 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-06 08:37:14.563 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 08:37:14.567 -08:00 [INF] Hosting environment: Development
+2025-06-06 08:37:14.568 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-06 08:37:14.717 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:37:14.789 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:37:14.796 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:37:14.809 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:37:14.865 -08:00 [INF] Executed ViewResult - view Register executed in 57.4584ms.
+2025-06-06 08:37:14.870 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 69.3954ms
+2025-06-06 08:37:14.873 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:37:14.876 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 160.3459ms
+2025-06-06 08:37:14.886 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:37:14.897 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:37:14.905 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 7.2583ms
+2025-06-06 08:37:14.915 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.3323ms
+2025-06-06 08:40:05.264 -08:00 [INF] Executed DbCommand (47ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:40:05.334 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:40:05.341 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:40:05.424 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 08:40:05.502 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-06 08:40:05.504 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-06 08:40:05.522 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 08:40:05.525 -08:00 [INF] Hosting environment: Development
+2025-06-06 08:40:05.526 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-06 08:40:05.619 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:40:05.707 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:40:05.716 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FinalProjectMvc.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:40:05.726 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:40:05.771 -08:00 [INF] Executed ViewResult - view Register executed in 45.542ms.
+2025-06-06 08:40:05.777 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc) in 57.2084ms
+2025-06-06 08:40:05.779 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:40:05.785 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 166.6222ms
+2025-06-06 08:40:05.786 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:40:05.786 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:40:05.793 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 7.2472ms
+2025-06-06 08:40:05.809 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.1743ms
+2025-06-06 08:44:09.606 -08:00 [INF] Executed DbCommand (45ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:44:09.676 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:44:09.681 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:44:09.742 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 08:44:09.803 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-06 08:44:09.805 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-06 08:44:09.823 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 08:44:09.826 -08:00 [INF] Hosting environment: Development
+2025-06-06 08:44:09.827 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-06 08:44:10.230 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:44:10.320 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:44:10.330 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:44:10.350 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:44:10.417 -08:00 [INF] Executed ViewResult - view Register executed in 68.7449ms.
+2025-06-06 08:44:10.427 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 94.1831ms
+2025-06-06 08:44:10.430 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:44:10.435 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 205.8533ms
+2025-06-06 08:44:10.441 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:44:10.441 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:44:10.450 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 8.9118ms
+2025-06-06 08:44:10.475 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.8884ms
+2025-06-06 08:44:11.543 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:44:11.556 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:44:11.560 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:44:11.566 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:44:11.574 -08:00 [INF] Executed ViewResult - view Register executed in 7.5203ms.
+2025-06-06 08:44:11.577 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 13.5817ms
+2025-06-06 08:44:11.581 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:44:11.584 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 41.647ms
+2025-06-06 08:44:11.599 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:44:11.611 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.6678ms
+2025-06-06 08:44:11.614 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:44:11.622 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 8.2961ms
+2025-06-06 08:44:26.107 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:44:26.120 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:44:26.127 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:44:26.137 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:44:26.662 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:44:26.729 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:44:26.897 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:44:27.196 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:44:27.305 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:44:27.435 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:44:27.489 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:44:27.585 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:44:27.633 -08:00 [INF] Executed ViewResult - view Index executed in 1499.3756ms.
+2025-06-06 08:44:27.639 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 1506.8746ms
+2025-06-06 08:44:27.644 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:44:27.652 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 1544.6422ms
+2025-06-06 08:44:27.692 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:44:27.692 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg - null null
+2025-06-06 08:44:27.698 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 6.2288ms
+2025-06-06 08:44:27.710 -08:00 [INF] The file /uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg was not modified
+2025-06-06 08:44:27.715 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg - 304 null image/jpeg 22.7358ms
+2025-06-06 08:44:27.727 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg - null null
+2025-06-06 08:44:27.727 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:44:27.732 -08:00 [INF] The file /uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg was not modified
+2025-06-06 08:44:27.737 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg - 304 null image/jpeg 9.8855ms
+2025-06-06 08:44:27.741 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.4957ms
+2025-06-06 08:44:32.771 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/admin/dashboard - null null
+2025-06-06 08:44:32.786 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-06 08:44:32.801 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-06 08:44:32.813 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:44:32.897 -08:00 [INF] Executed ViewResult - view Index executed in 88.0526ms.
+2025-06-06 08:44:32.901 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 93.0856ms
+2025-06-06 08:44:32.904 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-06 08:44:32.906 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/admin/dashboard - 200 null text/html; charset=utf-8 134.9932ms
+2025-06-06 08:44:32.923 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:44:32.923 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:44:32.929 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 6.2957ms
+2025-06-06 08:44:32.938 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.7418ms
+2025-06-06 08:44:33.241 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/favicon.ico - null null
+2025-06-06 08:44:33.249 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/favicon.ico - 404 0 null 8.2748ms
+2025-06-06 08:44:33.256 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/favicon.ico, Response status code: 404
+2025-06-06 08:44:36.251 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:44:36.267 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:44:36.272 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:44:36.281 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:44:36.322 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:44:36.336 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:44:36.348 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:44:36.365 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:44:36.373 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:44:36.390 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:44:36.400 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:44:36.412 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:44:36.422 -08:00 [INF] Executed ViewResult - view Index executed in 141.1453ms.
+2025-06-06 08:44:36.427 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 146.5426ms
+2025-06-06 08:44:36.431 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:44:36.434 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 182.9095ms
+2025-06-06 08:44:36.469 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:44:36.476 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 7.435ms
+2025-06-06 08:44:36.488 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:44:36.497 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.4672ms
+2025-06-06 08:44:39.805 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:44:39.822 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:44:39.829 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:44:39.874 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:44:39.898 -08:00 [INF] Executed ViewResult - view Register executed in 24.427ms.
+2025-06-06 08:44:39.908 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 69.8836ms
+2025-06-06 08:44:39.918 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:44:39.925 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 119.4324ms
+2025-06-06 08:44:39.959 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:44:39.970 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:44:39.972 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 12.5364ms
+2025-06-06 08:44:39.985 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.1ms
+2025-06-06 08:45:30.547 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 297
+2025-06-06 08:45:30.565 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:45:30.605 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:45:30.869 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-06 08:45:30.966 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-06 08:45:30.982 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:45:30.992 -08:00 [INF] Executed ViewResult - view Register executed in 9.7603ms.
+2025-06-06 08:45:30.997 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 385.1619ms
+2025-06-06 08:45:31.002 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:45:31.008 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 460.8943ms
+2025-06-06 08:45:31.044 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:45:31.048 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:45:31.065 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.2344ms
+2025-06-06 08:45:31.070 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 21ms
+2025-06-06 08:48:09.528 -08:00 [INF] Executed DbCommand (51ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:48:09.664 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:48:09.673 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:48:09.774 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 08:48:09.871 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-06 08:48:09.873 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-06 08:48:09.894 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 08:48:09.896 -08:00 [INF] Hosting environment: Development
+2025-06-06 08:48:09.898 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-06 08:48:10.608 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:48:10.763 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:48:10.772 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:48:10.784 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:48:10.959 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:48:10.994 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:48:11.086 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:48:11.158 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:48:11.192 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:48:11.237 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:48:11.260 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:48:11.299 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:48:11.333 -08:00 [INF] Executed ViewResult - view Index executed in 551.9362ms.
+2025-06-06 08:48:11.340 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 563.2359ms
+2025-06-06 08:48:11.344 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:48:11.357 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 751.2671ms
+2025-06-06 08:48:11.367 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:48:11.375 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 8.0189ms
+2025-06-06 08:48:11.401 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:48:11.456 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.2314ms
+2025-06-06 08:48:15.780 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:48:15.795 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:48:15.799 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:48:15.809 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:48:15.860 -08:00 [INF] Executed ViewResult - view Register executed in 53.4936ms.
+2025-06-06 08:48:15.865 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 62.8222ms
+2025-06-06 08:48:15.868 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:48:15.871 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 91.8367ms
+2025-06-06 08:48:15.898 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:48:15.902 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 3.9836ms
+2025-06-06 08:48:15.905 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:48:15.914 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.1643ms
+2025-06-06 08:48:16.310 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/favicon.ico - null null
+2025-06-06 08:48:16.324 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/favicon.ico - 404 0 null 13.4349ms
+2025-06-06 08:48:16.333 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/favicon.ico, Response status code: 404
+2025-06-06 08:48:50.514 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 293
+2025-06-06 08:48:50.539 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:48:50.582 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:48:50.878 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-06 08:48:50.911 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-06 08:48:51.172 -08:00 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2025-06-06 08:48:51.207 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:48:51.238 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-06-06 08:48:51.285 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-06-06 08:48:51.296 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-06-06 08:48:51.325 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-06 08:48:51.344 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-06 08:48:51.483 -08:00 [INF] Executed DbCommand (72ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p17='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p18='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FullName] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [NormalizedEmail] = @p9, [NormalizedUserName] = @p10, [PasswordHash] = @p11, [PhoneNumber] = @p12, [PhoneNumberConfirmed] = @p13, [SecurityStamp] = @p14, [TwoFactorEnabled] = @p15, [UserName] = @p16
+OUTPUT 1
+WHERE [Id] = @p17 AND [ConcurrencyStamp] = @p18;
+2025-06-06 08:48:51.554 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-06-06 08:48:51.608 -08:00 [INF] Executed DbCommand (22ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-06 08:48:51.625 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:48:51.649 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-06-06 08:48:51.666 -08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-06-06 08:48:51.677 -08:00 [INF] Executing RedirectResult, redirecting to /.
+2025-06-06 08:48:51.682 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 1091.5229ms
+2025-06-06 08:48:51.687 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:48:51.690 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 302 0 null 1175.4845ms
+2025-06-06 08:48:51.694 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:48:51.709 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:48:51.712 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:48:51.715 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:48:51.725 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:48:51.737 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:48:51.751 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:48:51.766 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:48:51.780 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:48:51.797 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:48:51.807 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:48:51.817 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:48:51.828 -08:00 [INF] Executed ViewResult - view Index executed in 113.5503ms.
+2025-06-06 08:48:51.831 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 116.09ms
+2025-06-06 08:48:51.832 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:48:51.835 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 140.5556ms
+2025-06-06 08:48:51.861 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:48:51.865 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 3.9284ms
+2025-06-06 08:48:51.881 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:48:51.891 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.3473ms
+2025-06-06 08:51:27.744 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:51:27.764 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:51:27.767 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:51:27.777 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:51:27.787 -08:00 [INF] Executed ViewResult - view Register executed in 9.7616ms.
+2025-06-06 08:51:27.789 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 16.889ms
+2025-06-06 08:51:27.792 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:51:27.795 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 50.6476ms
+2025-06-06 08:51:27.813 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:51:27.817 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 4.0595ms
+2025-06-06 08:51:27.822 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:51:27.831 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.1555ms
+2025-06-06 08:52:53.091 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 335
+2025-06-06 08:52:53.136 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:52:53.141 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:52:53.154 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:52:53.168 -08:00 [INF] Executed ViewResult - view Register executed in 13.9864ms.
+2025-06-06 08:52:53.177 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 31.7556ms
+2025-06-06 08:52:53.186 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:52:53.192 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 100.4518ms
+2025-06-06 08:52:53.222 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:52:53.226 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:52:53.238 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 12.1869ms
+2025-06-06 08:52:53.239 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.4592ms
+2025-06-06 08:57:17.466 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:57:17.484 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:57:17.488 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:57:17.492 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:57:17.518 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:57:17.536 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:57:17.563 -08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:57:17.579 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:57:17.592 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:57:17.606 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:57:17.618 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:57:17.625 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:57:17.632 -08:00 [INF] Executed ViewResult - view Index executed in 139.5863ms.
+2025-06-06 08:57:17.634 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 142.2765ms
+2025-06-06 08:57:17.636 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:57:17.638 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 171.4731ms
+2025-06-06 08:57:17.672 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:57:17.683 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 11.0622ms
+2025-06-06 08:57:17.701 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:57:17.710 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.2421ms
+2025-06-06 08:57:22.130 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-06 08:57:22.700 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:57:22.702 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:57:22.705 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-06 08:57:22.713 -08:00 [INF] Executed ViewResult - view Register executed in 7.8513ms.
+2025-06-06 08:57:22.715 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 10.5162ms
+2025-06-06 08:57:22.717 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:57:22.719 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 588.9344ms
+2025-06-06 08:57:22.742 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:57:22.746 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 3.4792ms
+2025-06-06 08:57:22.749 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:57:22.759 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 9.9842ms
+2025-06-06 08:58:26.335 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Register - application/x-www-form-urlencoded 332
+2025-06-06 08:58:26.341 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:58:26.344 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(FinalProjectMvc.ViewModels.UI.RegisterVM) on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-06 08:58:26.491 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-06 08:58:26.502 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-06 08:58:26.516 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);
+2025-06-06 08:58:26.530 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:58:26.538 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-06-06 08:58:26.550 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-06-06 08:58:26.556 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-06-06 08:58:26.570 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-06 08:58:26.582 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-06 08:58:26.603 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p17='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p18='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FullName] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [NormalizedEmail] = @p9, [NormalizedUserName] = @p10, [PasswordHash] = @p11, [PhoneNumber] = @p12, [PhoneNumberConfirmed] = @p13, [SecurityStamp] = @p14, [TwoFactorEnabled] = @p15, [UserName] = @p16
+OUTPUT 1
+WHERE [Id] = @p17 AND [ConcurrencyStamp] = @p18;
+2025-06-06 08:58:26.618 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-06-06 08:58:26.631 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-06 08:58:26.639 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-06 08:58:26.650 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-06-06 08:58:26.658 -08:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-06-06 08:58:26.661 -08:00 [INF] Executing RedirectResult, redirecting to /.
+2025-06-06 08:58:26.663 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 315.5393ms
+2025-06-06 08:58:26.666 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-06 08:58:26.670 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Register - 302 0 null 334.9472ms
+2025-06-06 08:58:26.673 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:58:26.685 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:58:26.688 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:58:26.694 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:58:26.701 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:58:26.711 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:58:26.724 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:58:26.735 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:58:26.744 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:58:26.751 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:58:26.761 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:58:26.770 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:58:26.778 -08:00 [INF] Executed ViewResult - view Index executed in 84.605ms.
+2025-06-06 08:58:26.781 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 87.625ms
+2025-06-06 08:58:26.783 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:58:26.785 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 112.2888ms
+2025-06-06 08:58:26.814 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:58:26.817 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 3.3248ms
+2025-06-06 08:58:26.832 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:58:26.839 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 6.8316ms
+2025-06-06 08:59:49.675 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/admin/dashboard - null null
+2025-06-06 08:59:49.686 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-06 08:59:49.694 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-06 08:59:49.700 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:59:49.765 -08:00 [INF] Executed ViewResult - view Index executed in 66.7555ms.
+2025-06-06 08:59:49.772 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 74.311ms
+2025-06-06 08:59:49.778 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-06 08:59:49.782 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/admin/dashboard - 200 null text/html; charset=utf-8 106.1624ms
+2025-06-06 08:59:49.806 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:59:49.812 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:59:49.817 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 10.3713ms
+2025-06-06 08:59:49.830 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.2313ms
+2025-06-06 08:59:56.845 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-06 08:59:56.864 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:59:56.876 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-06 08:59:56.889 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-06 08:59:56.908 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:59:56.933 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-06 08:59:56.959 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-06 08:59:56.976 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-06 08:59:56.990 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-06 08:59:57.005 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-06 08:59:57.013 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:59:57.024 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-06 08:59:57.036 -08:00 [INF] Executed ViewResult - view Index executed in 147.776ms.
+2025-06-06 08:59:57.041 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 153.1746ms
+2025-06-06 08:59:57.046 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-06 08:59:57.048 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 203.6205ms
+2025-06-06 08:59:57.074 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 08:59:57.080 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 5.5659ms
+2025-06-06 08:59:57.093 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-06 08:59:57.101 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 8.0015ms

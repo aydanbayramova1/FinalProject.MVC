@@ -2,10 +2,13 @@ using FinalProjectMvc.Data;
 using FinalProjectMvc.Models;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.Services;
+using FinalProjectMvc.Services.Implementations;
+using FinalProjectMvc.Helpers.Seeders;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using FinalProjectMvc.Services.Implementations;
+using Microsoft.AspNetCore.Http.Features;
+
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,20 +16,27 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// File upload limits (for IFormFile)
+builder.Services.Configure<FormOptions>(options =>
+{
+    options.MultipartBodyLengthLimit = 104857600; // 100 MB
+});
+
+// Database connection
 var conString = builder.Configuration.GetConnectionString("Default") ??
     throw new InvalidOperationException("Connection string 'Default' not found.");
 
-// Configure DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(conString));
 
+// Identity configuration
 builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
-    // Password settings.
+    // Password settings
     options.Password.RequireDigit = true;
     options.Password.RequireLowercase = true;
     options.Password.RequireNonAlphanumeric = true;
@@ -34,11 +44,11 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredLength = 6;
     options.Password.RequiredUniqueChars = 1;
 
-    // User settings.
+    // User settings
     options.User.RequireUniqueEmail = true;
 });
 
-
+// Dependency Injection
 builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IScrollingService, ScrollingService>();
 builder.Services.AddScoped<ICatalogService, CatalogService>();
@@ -60,26 +70,33 @@ builder.Services.AddScoped<ILayoutService, LayoutService>();
 builder.Services.AddScoped<IApproachService, ApproachService>();
 builder.Services.AddScoped<IApproachItemService, ApproachItemService>();
 builder.Services.AddScoped<ISettingService, SettingService>();
+builder.Services.AddScoped<IContactUsService, ContactUsService>();
+builder.Services.AddScoped<IContactMessageService, ContactMessageService>();
 
+// AutoMapper
+builder.Services.AddAutoMapper(typeof(Program));
 
+// Serilog
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .WriteTo.Console()
     .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
-    // .WriteTo.Seq("http://localhost:5341") 
+    //.WriteTo.Seq("http://localhost:5341")
     .Enrich.FromLogContext()
     .CreateLogger();
 
-builder.Services.AddAutoMapper(typeof(Program));
-
 builder.Host.UseSerilog();
-
 
 var app = builder.Build();
 
-// Global Exception Middleware ?lav? olunur
-//app.UseMiddleware<FinalProjectMvc.Middlewares.GlobalExceptionHandlerMiddleware>();
+// Role seeding
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    await RoleSeeder.SeedAsync(roleManager);
+}
 
+// Middleware
 if (!app.Environment.IsDevelopment())
 {
     app.UseHsts();
@@ -92,10 +109,10 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Routes
 app.MapControllerRoute(
    name: "areas",
-   pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
-);
+   pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

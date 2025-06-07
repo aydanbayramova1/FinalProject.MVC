@@ -205,6 +205,11 @@ wwwroot\uploads\83a2be91-790f-42c7-90b5-167ec85af9e3.jpg
 wwwroot\uploads\8ad13502-1cc2-4347-a40a-015c830e956f.jpg
 wwwroot\uploads\aboutbanner\bdcafb61-5c6e-4b0b-bf03-d52885aa61dd.jpg
 wwwroot\uploads\approach\3f09a091-5f0f-4917-81a4-c5159c15bf55.jpg
+wwwroot\uploads\approach\inek - Copy_505ff5f7-9f61-4c42-a4e7-2c4804ceeeef.jpg
+wwwroot\uploads\approach\inek - Copy_90d2e2b8-59bd-4b68-83ea-76dc1dd92411.jpg
+wwwroot\uploads\approach\inek_0ef2f937-b3e3-42b2-a163-c90f10585e72.jpg
+wwwroot\uploads\approach\inek_7554efbb-26ee-4f72-ac3b-05a229013638.jpg
+wwwroot\uploads\approach\inek_ac13f120-5ce5-4053-8501-bc4c25367aca.jpg
 wwwroot\uploads\blogbanner\c5d35e69-89c1-41d0-87dd-5cb6a06b9c30.jpg
 wwwroot\uploads\blogdetailbanner\7b2c9276-e7a5-480b-af64-631199b977e8.jpg
 wwwroot\uploads\blogs\0c7eba94-6742-461d-90b6-06f6e3d6d7af.jpg
@@ -223,6 +228,7 @@ wwwroot\uploads\catalogs\3b0dfe5d-c604-456a-83bc-30ed52ceccd4.jpg
 wwwroot\uploads\catalogs\74eaeb4c-ecbc-428f-94da-4ec7c10706bb.jpg
 wwwroot\uploads\catalogs\a3819336-9791-4bfd-b357-6c9ea63e5ed3.jpg
 wwwroot\uploads\contactbanner\6c5f6ab4-4f1b-4028-aa59-353063815489.jpg
+wwwroot\uploads\e69faf72-8317-46bc-ab1d-09dbd0fd5b7a.jpg
 wwwroot\uploads\faqsbanner\f310b1f7-774b-49ec-a9ac-748929306aff.jpg
 wwwroot\uploads\menubanner\d5bedaad-cb67-43e0-b48d-04d46098ab0a.jpg
 wwwroot\uploads\reservationbanner\b31c9b34-ee97-46c3-848f-1b364970a1e8.jpg

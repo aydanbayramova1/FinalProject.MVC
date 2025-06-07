@@ -15,6 +15,4 @@ public class ApproachEditVM
 
     public string Image { get; set; }
     public IFormFile? ImageFile { get; set; }  
-
-    public List<ApproachItemEditVM> Items { get; set; }
 }

@@ -9,6 +9,8 @@ using FinalProjectMvc.ViewModels.Admin.BlogBanner;
 using FinalProjectMvc.ViewModels.Admin.BlogDetailBanner;
 using FinalProjectMvc.ViewModels.Admin.Catalog;
 using FinalProjectMvc.ViewModels.Admin.ContactBanner;
+using FinalProjectMvc.ViewModels.Admin.ContactMessage;
+using FinalProjectMvc.ViewModels.Admin.ContactUs;
 using FinalProjectMvc.ViewModels.Admin.FaqsBanner;
 using FinalProjectMvc.ViewModels.Admin.MenuBanner;
 using FinalProjectMvc.ViewModels.Admin.ReservationBanner;
@@ -148,12 +150,12 @@ namespace FinalProjectMvc.Helpers
             CreateMap<AboutRestaurant, AboutRestaurantDetailVM>();
             CreateMap<AboutRestaurant, AboutRestaurantVM>();
 
-            CreateMap<Approach, ApproachVM>();
-            CreateMap<Approach, ApproachDetailVM>();
+            CreateMap<Approach, ApproachVM>().ReverseMap();
+            CreateMap<Approach, ApproachCreateVM>().ReverseMap();
+            CreateMap<Approach, ApproachEditVM>().ReverseMap();
+            CreateMap<Approach, ApproachDetailVM>().ReverseMap();
             CreateMap<ApproachCreateVM, Approach>()
-                .ForMember(dest => dest.Image, opt => opt.Ignore());
-            CreateMap<ApproachEditVM, Approach>()
-                .ForMember(dest => dest.Image, opt => opt.Ignore());
+            .ForMember(dest => dest.Image, opt => opt.Ignore());
 
             CreateMap<ApproachItem, ApproachItemVM>();
             CreateMap<ApproachItem, ApproachItemDetailVM>();
@@ -168,6 +170,18 @@ namespace FinalProjectMvc.Helpers
             CreateMap<Setting, SettingCreateVM>();
 
 
+
+            CreateMap<ContactUs, ContactUsVM>().ReverseMap();
+            CreateMap<ContactUs, ContactUsCreateVM>().ReverseMap();
+            CreateMap<ContactUs, ContactUsEditVM>().ReverseMap();
+            CreateMap<ContactUs, ContactUsDetailVM>().ReverseMap();
+
+
+            CreateMap<ContactMessageCreateVM, ContactMessage>()
+                        .ForMember(dest => dest.CreateDate, opt => opt.Ignore());
+
+            CreateMap<ContactMessage, ContactMessageVM>()
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => src.CreateDate));
         }
     }
 }

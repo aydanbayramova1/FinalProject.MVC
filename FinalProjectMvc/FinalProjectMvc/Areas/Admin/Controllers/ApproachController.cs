@@ -1,116 +1,96 @@
 ﻿using AutoMapper;
+using FinalProjectMvc.Models;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Approach;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
-public class ApproachController : Controller
+namespace FinalProjectMvc.Areas.Admin.Controllers
 {
-    private readonly IApproachService _approachService;
-    private readonly IApproachItemService _approachItemService;
-    private readonly IMapper _mapper;
-
-    public ApproachController(IApproachService approachService, IApproachItemService approachItemService, IMapper mapper)
+    [Area("Admin")]
+    public class ApproachController : Controller
     {
-        _approachService = approachService;
-        _approachItemService = approachItemService;
-        _mapper = mapper;
-    }
+        private readonly IApproachService _approachService;
 
-    // GET: Approach/Index
-    public async Task<IActionResult> Index()
-    {
-        var approaches = await _approachService.GetAsync();
-        return View(approaches);
-    }
+        public ApproachController(IApproachService approachService)
+        {
+            _approachService = approachService;
+        }
 
-    // GET: Approach/Details/5
-    //public async Task<IActionResult> Details(int id)
-    //{
-    //    var approach = await _approachService.GetByIdAsync(id);
-    //    if (approach == null) return NotFound();
+        public async Task<IActionResult> Index()
+        {
+            var data = await _approachService.GetAllAsync();
+            ViewBag.IsApproachExists = data.Any(); // Yalnız bir dənə varsa view-ə xəbər ver
+            return View(data);
+        }
 
-    //    var items = await _approachItemService.GetByIdAsync(id);
-    //    var vm = new ApproachDetailsVM
-    //    {
-    //        Id = approach.Id,
-    //        Title = approach.Title,
-    //        SubTitle = approach.SubTitle,
-    //        Image = approach.Image,
-    //        Items = items.ToList()
-    //    };
+        public async Task<IActionResult> Create()
+        {
+            var exists = await _approachService.IsExistsAsync();
+            if (exists)
+            {
+                TempData["Error"] = "Only one approach is allowed.";
+                return RedirectToAction(nameof(Index));
+            }
 
-    //    return View(vm);
-    //}
+            return View();
+        }
 
-    // GET: Approach/Create
-    public async Task<IActionResult> Create()
-    {
-        bool hasApproach = await _approachService.HasAnyAsync();
-        if (hasApproach)
+        [HttpPost]
+        public async Task<IActionResult> Create(ApproachCreateVM model)
+        {
+            var exists = await _approachService.IsExistsAsync();
+            if (exists)
+            {
+                TempData["Error"] = "Only one approach is allowed.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            if (!ModelState.IsValid)
+                return View(model);
+
+            await _approachService.CreateAsync(model);
             return RedirectToAction(nameof(Index));
-
-        return View();
-    }
-
-    // POST: Approach/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(ApproachCreateVM vm)
-    {
-        if (!ModelState.IsValid)
-            return View(vm);
-
-        await _approachService.CreateAsync(vm);
-        return RedirectToAction(nameof(Index));
-    }
-
-    // GET: Approach/Edit/5
-    public async Task<IActionResult> Edit(int id)
-    {
-        var approach = await _approachService.GetByIdAsync(id);
-        if (approach == null) return NotFound();
-
-        var editVm = _mapper.Map<ApproachEditVM>(approach);
-        return View(editVm);
-    }
-
-    // POST: Approach/Edit/5
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, ApproachEditVM vm)
-    {
-        if (id != vm.Id)
-            return BadRequest();
-
-        if (!ModelState.IsValid)
-            return View(vm);
-
-        try
-        {
-            await _approachService.UpdateAsync(id, vm);
-        }
-        catch (Exception ex)
-        {
-            ModelState.AddModelError("", ex.Message);
-            return View(vm);
         }
 
-        return RedirectToAction(nameof(Index));
-    }
+        public async Task<IActionResult> Edit(int id)
+        {
+            var detail = await _approachService.GetByIdAsync(id);
+            if (detail == null) return NotFound();
 
-    // POST: Approach/Delete/5
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Delete(int id)
-    {
-        try
+            var model = new ApproachEditVM
+            {
+                Id = detail.Id,
+                Title = detail.Title,
+                SubTitle = detail.SubTitle,
+                Image = detail.Image
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(ApproachEditVM model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            await _approachService.UpdateAsync(model);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Delete(int id)
         {
             await _approachService.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
         }
-        catch (Exception ex)
+
+        public async Task<IActionResult> Detail(int id)
         {
-            return BadRequest(ex.Message);
+            var detail = await _approachService.GetByIdAsync(id);
+            if (detail == null) return NotFound();
+
+            return View(detail);
         }
-        return RedirectToAction(nameof(Index));
     }
 }

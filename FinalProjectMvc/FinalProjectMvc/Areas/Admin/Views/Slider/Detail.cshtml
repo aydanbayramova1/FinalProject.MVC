@@ -1,20 +1,41 @@
-﻿@model SliderDetailVM
+﻿@model ApproachDetailVM
 
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="bg-white p-4 rounded shadow-sm border text-center">
-                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Slider Details</h2>
-
-                <img src="~/uploads/sliders/@Model.Img" alt="Slider Image" class="img-fluid rounded mb-4" style="max-width: 100%; height: auto; max-height: 300px;" />
-
+                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Approach Details</h2>
+              
+                <img src="~/uploads/approach/@Model.Image" alt="Approach Image" class="img-fluid rounded mb-4" style="max-width: 100%; height: auto; max-height: 300px;" />
                 <div class="text-start">
+             
                     <p><strong>Title:</strong> @Model.Title</p>
-                    <p><strong>Subtitle:</strong> @Model.Subtitle</p>
+                 
+                    <p><strong>Subtitle:</strong> @Model.SubTitle</p>
+               
                     <p><strong>Description:</strong></p>
-                    <p class="text-muted">@Model.Description</p>
+                    <p class="text-muted">@Model.SubTitle</p>
+
+                   
+                    @if (Model.Items != null && Model.Items.Any())
+                    {
+                        <p><strong>Items:</strong></p>
+                        <ul class="list-group">
+                            @foreach (var item in Model.Items)
+                            {
+                                <li class="list-group-item">
+                                    <strong>@item.Title</strong> - @item.Description
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No items found for this approach.</p>
+                    }
                 </div>
 
+           
                 <a asp-action="Index"
                    class="btn mt-3"
                    style="color: #5c3d2e; border: 1px solid #5c3d2e; background-color: white;"
@@ -22,7 +43,6 @@
                    onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
                     Back to List
                 </a>
-
             </div>
         </div>
     </div>
