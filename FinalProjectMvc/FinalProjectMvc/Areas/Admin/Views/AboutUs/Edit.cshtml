@@ -1,0 +1,82 @@
+﻿@using FinalProjectMvc.ViewModels.Admin.AboutUs
+@model AboutUsEditVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">📖 Edit About Us</h2>
+
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Title" class="form-label">Title</label>
+                        <input asp-for="Title" class="form-control" placeholder="Enter title" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Subtitle" class="form-label">Subtitle</label>
+                        <input asp-for="Subtitle" class="form-control" placeholder="Enter subtitle" />
+                        <span asp-validation-for="Subtitle" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Description" class="form-label">Description</label>
+                        <textarea asp-for="Description" class="form-control" rows="5" placeholder="Enter description"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                    {
+                        <div class="mb-3">
+                            <label class="form-label">Current Image:</label><br />
+                            <img src="~/uploads/images/@Model.ImageUrl" class="img-fluid rounded shadow-sm" style="max-height: 200px;" />
+                        </div>
+                    }
+
+                    <div class="form-group mb-3">
+                        <label asp-for="ImageFile" class="form-label">Change Image</label>
+                        <input asp-for="ImageFile" type="file" class="form-control" />
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model.VideoUrl))
+                    {
+                        <div class="mb-3">
+                            <label class="form-label">Current Video:</label><br />
+                            <video width="100%" controls>
+                                <source src="~/uploads/videos/@Model.VideoUrl" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    }
+
+                    <div class="form-group mb-3">
+                        <label asp-for="VideoFile" class="form-label">Change Video</label>
+                        <input asp-for="VideoFile" type="file" class="form-control" />
+                        <span asp-validation-for="VideoFile" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="OpeningTimeTitle" class="form-label">Opening Time Title</label>
+                        <input asp-for="OpeningTimeTitle" class="form-control" placeholder="Enter opening time title" />
+                        <span asp-validation-for="OpeningTimeTitle" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit"
+                                class="btn btn-outline-primary"
+                                style="color:brown; border: 1px solid brown; background-color: white;"
+                                onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+                            Save Changes
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

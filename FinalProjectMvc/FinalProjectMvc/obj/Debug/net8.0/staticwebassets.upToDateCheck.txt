@@ -195,8 +195,8 @@ wwwroot\assets\js\home\home.js
 wwwroot\assets\js\menu\menu.js
 wwwroot\assets\js\reservation\reservation.js
 wwwroot\assets\js\team\team.js
-wwwroot\assets\videos\latte.jpg
-wwwroot\assets\videos\videoframe_3275.png
+wwwroot\assets\videos\25df5c63-d092-4e37-929a-c42d880b4ca7.mp4
+wwwroot\assets\videos\778abbdd-b55e-4356-9d63-df8ad2a27cf2.mp4
 wwwroot\assets\videos\WhatsApp Video 2025-05-20 at 06.56.31.mp4
 wwwroot\assets\videos\WhatsApp Video 2025-05-21 at 06.26.16.mp4
 wwwroot\img\c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg
@@ -247,8 +247,20 @@ wwwroot\uploads\catalogs\a3819336-9791-4bfd-b357-6c9ea63e5ed3.jpg
 wwwroot\uploads\contactbanner\6c5f6ab4-4f1b-4028-aa59-353063815489.jpg
 wwwroot\uploads\e69faf72-8317-46bc-ab1d-09dbd0fd5b7a.jpg
 wwwroot\uploads\faqsbanner\f310b1f7-774b-49ec-a9ac-748929306aff.jpg
+wwwroot\uploads\icons\22776c08-aeaa-486d-9150-a9a77ce96746.svg
+wwwroot\uploads\icons\465ab206-4ab5-4c01-9d8b-3a9f4259e576.svg
+wwwroot\uploads\icons\8601aa5a-2f00-4631-8be5-dccbb7200764.jpg
+wwwroot\uploads\icons\93fd0a91-b177-47e3-a215-10e742aa76a6.jpg
+wwwroot\uploads\icons\a698f090-534a-4298-ac0e-feaf42300e64.png
+wwwroot\uploads\icons\afebf54d-083e-4598-b9fc-74304b453306.jpg
+wwwroot\uploads\icons\d72cc12a-c55f-43e0-8bea-9e0ae5d1b417.png
+wwwroot\uploads\icons\de7a8636-050a-4358-9c0c-ca623cdd4b3c.jpg
+wwwroot\uploads\images\3407ff80-21b3-4d02-b89c-9cbe1d794ee5.png
+wwwroot\uploads\images\47b3e8db-7fc2-4725-a039-497dd7456768.png
 wwwroot\uploads\images\544ff8b6-c87f-4761-9d8c-164f48e63147.jpg
+wwwroot\uploads\images\9b999d31-b013-4a86-b507-8c25e6530bef.jpg
 wwwroot\uploads\images\a54d98ca-27d2-4704-ad7a-4b01a39852df.jpg
+wwwroot\uploads\images\caaf9149-b034-48c9-b8fb-8e9e0c7ecf40.jpg
 wwwroot\uploads\images\ea867771-9e34-4c09-83b3-8fe9009c37ad.jpg
 wwwroot\uploads\intro\35d8a377-505e-4dc0-a2e5-b1438eea13d6.svg
 wwwroot\uploads\intro\615ea50a-db6f-4595-a04f-5dbcd6e744bf.svg
@@ -294,6 +306,10 @@ wwwroot\uploads\team\6526cc8b-820c-46d2-b065-30c046d73623.jpg
 wwwroot\uploads\team\8f4ae753-5419-477b-8868-85ed453aa88f.jpg
 wwwroot\uploads\team\dd832474-9694-4164-99c5-42d07cc9cd30.jpg
 wwwroot\uploads\teambanner\67f6cf19-4a0d-4228-bd93-648f016b542d.jpg
+wwwroot\uploads\videos\2bc6df63-6cd4-4455-8d54-918ba4d663b9.mp4
 wwwroot\uploads\videos\31ed6183-666f-49b1-842c-7bce09c85b92.mp4
 wwwroot\uploads\videos\850c872f-7c5e-4f55-8248-663abf041123.mp4
 wwwroot\uploads\videos\ab35374d-866b-41b0-8274-8af10e6de174.mp4
+wwwroot\uploads\videos\b2946900-0b7c-41dd-9c15-69e4b5bef4cc.mp4
+wwwroot\uploads\videos\b3bda5b3-f6ce-4280-bf22-83836456a2d6.mp4
+wwwroot\uploads\videos\e5c27db0-3d2a-45af-83fd-a7867439ab53.mp4

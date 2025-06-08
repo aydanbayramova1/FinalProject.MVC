@@ -122,6 +122,79 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("AboutRestaurants");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.AboutUs", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OpeningTimeTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subtitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("VideoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AboutUses");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.AboutUsItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AboutUsId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IconUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AboutUsId");
+
+                    b.ToTable("AboutUsItems");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.AppUser", b =>
                 {
                     b.Property<string>("Id")
@@ -568,6 +641,35 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("MenuBanners");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.OpeningHour", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AboutUsId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DayRange")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TimeRange")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AboutUsId");
+
+                    b.ToTable("OpeningHours");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.OurStory", b =>
                 {
                     b.Property<int>("Id")
@@ -1010,6 +1112,17 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.AboutUsItem", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.AboutUs", "AboutUs")
+                        .WithMany("AboutUsItems")
+                        .HasForeignKey("AboutUsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AboutUs");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.ApproachItem", b =>
                 {
                     b.HasOne("FinalProjectMvc.Models.Approach", "Approach")
@@ -1030,6 +1143,17 @@ namespace FinalProjectMvc.Migrations
                         .IsRequired();
 
                     b.Navigation("IntroVideo");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.OpeningHour", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.AboutUs", "AboutUs")
+                        .WithMany("OpeningHours")
+                        .HasForeignKey("AboutUsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AboutUs");
                 });
 
             modelBuilder.Entity("FinalProjectMvc.Models.ServiceItem", b =>
@@ -1103,6 +1227,13 @@ namespace FinalProjectMvc.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.AboutUs", b =>
+                {
+                    b.Navigation("AboutUsItems");
+
+                    b.Navigation("OpeningHours");
                 });
 
             modelBuilder.Entity("FinalProjectMvc.Models.Approach", b =>

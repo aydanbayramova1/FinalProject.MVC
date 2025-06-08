@@ -76,6 +76,9 @@ builder.Services.AddScoped<IOurStoryService, OurStoryService>();
 builder.Services.AddScoped<IStoryItemService, StoryItemService>();
 builder.Services.AddScoped<IIntroVideoService, IntroVideoService>();
 builder.Services.AddScoped<IIntroCounterService, IntroCounterService>();
+builder.Services.AddScoped<IAboutUsService, AboutUsService>();
+builder.Services.AddScoped<IAboutUsItemService, AboutUsItemService>();
+builder.Services.AddScoped<IOpeningHourService, OpeningHourService>();
 
 
 // AutoMapper

@@ -1,7 +1,7 @@
 ﻿<div style="width: 86px; margin-left: -31px;" class="col-auto d-none d-xl-block">
     <div style="margin-left: 112px;" class="header2-search">
-        <form action="#">
-            <input type="text" placeholder="Search...">
+        <form asp-controller="Meals" asp-action="Search" method="get">
+            <input type="text" name="query" placeholder="Search..." />
             <button class="btn"><i class="fas fa-search"></i></button>
         </form>
     </div>

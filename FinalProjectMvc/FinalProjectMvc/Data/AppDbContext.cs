@@ -33,6 +33,9 @@ namespace FinalProjectMvc.Data
         public DbSet<StoryItem> StoryItems { get; set; }
         public DbSet<IntroVideo> IntroVideos { get; set; }
         public DbSet<IntroCounter> IntroCounters { get; set; }
+        public DbSet<AboutUs> AboutUses { get; set; }
+        public DbSet<AboutUsItem> AboutUsItems { get; set; }
+        public DbSet<OpeningHour> OpeningHours { get; set; }
 
 
 
@@ -62,6 +65,28 @@ namespace FinalProjectMvc.Data
            .WithMany(v => v.Counters)
            .HasForeignKey(c => c.IntroVideoId)
           .OnDelete(DeleteBehavior.Cascade);
+
+
+
+
+            modelBuilder.Entity<AboutUs>()
+           .HasMany(a => a.AboutUsItems)
+           .WithOne(i => i.AboutUs)
+           .HasForeignKey(i => i.AboutUsId)
+           .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<AboutUs>()
+                .HasMany(a => a.OpeningHours)
+                .WithOne(o => o.AboutUs)
+                .HasForeignKey(o => o.AboutUsId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
+            modelBuilder.Entity<OpeningHour>()
+       .HasOne(o => o.AboutUs)
+       .WithMany(a => a.OpeningHours)
+       .HasForeignKey(o => o.AboutUsId)
+       .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

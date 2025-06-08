@@ -1,0 +1,73 @@
+﻿@model IEnumerable<FinalProjectMvc.ViewModels.Admin.OpeningHour.OpeningHourVM>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="bg-light border rounded shadow-sm p-4">
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">⏰ Opening Hour</h2>
+
+                    @if (!Model.Any())
+                    {
+                        <a asp-action="Create" class="btn btn-outline-brown">
+                            <i class="fa fa-plus mr-1"></i> Add Opening Hour
+                        </a>
+                    }
+                </div>
+
+                @if (TempData["AboutUsMissing"] != null)
+                {
+                    <div class="alert alert-danger text-center">
+                        @TempData["AboutUsMissing"]
+                    </div>
+                }
+
+                @if (!Model.Any())
+                {
+                    <div class="alert alert-warning text-center mt-4" role="alert">
+                        No Opening Hour has been added yet.
+                    </div>
+                }
+                else
+                {
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center align-middle bg-white">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th style="background-color: #5c3d2e; color: #fff;">Day Range</th>
+                                    <th style="background-color: #5c3d2e; color: #fff;">Time Range</th>
+                                    <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.DayRange</td>
+                                        <td>@item.TimeRange</td>
+                                        <td>
+                                            <div class="d-flex justify-content-center gap-2">
+                                                <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-info btn-sm" title="View">
+                                                    <i class="fa-solid fa-circle-info"></i>
+                                                </a>
+                                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-dark btn-sm" title="Edit">
+                                                    <i class="fa-solid fa-pencil"></i>
+                                                </a>
+                                                <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this opening hour?');">
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

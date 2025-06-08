@@ -2,6 +2,8 @@
 using FinalProjectMvc.Models;
 using FinalProjectMvc.ViewModels.Admin.AboutBanner;
 using FinalProjectMvc.ViewModels.Admin.AboutRestaurant;
+using FinalProjectMvc.ViewModels.Admin.AboutUs;
+using FinalProjectMvc.ViewModels.Admin.AboutUsItem;
 using FinalProjectMvc.ViewModels.Admin.Approach;
 using FinalProjectMvc.ViewModels.Admin.ApproachItem;
 using FinalProjectMvc.ViewModels.Admin.Blog;
@@ -14,6 +16,7 @@ using FinalProjectMvc.ViewModels.Admin.ContactUs;
 using FinalProjectMvc.ViewModels.Admin.FaqsBanner;
 using FinalProjectMvc.ViewModels.Admin.IntroCounter;
 using FinalProjectMvc.ViewModels.Admin.MenuBanner;
+using FinalProjectMvc.ViewModels.Admin.OpeningHour;
 using FinalProjectMvc.ViewModels.Admin.OurStory;
 using FinalProjectMvc.ViewModels.Admin.ReservationBanner;
 using FinalProjectMvc.ViewModels.Admin.Scrolling;
@@ -223,6 +226,39 @@ namespace FinalProjectMvc.Helpers
 
             CreateMap<IntroCounter, IntroCounterEditVM>();
             CreateMap<IntroCounterEditVM, IntroCounter>();
+
+
+            CreateMap<AboutUs, AboutUsVM>().ReverseMap();
+            CreateMap<AboutUs, AboutUsCreateVM>().ReverseMap();
+            CreateMap<AboutUs, AboutUsEditVM>().ReverseMap();
+            CreateMap<AboutUs, AboutUsDetailVM>().ReverseMap();
+            CreateMap<AboutUs, AboutUsDetailVM>()
+    .ForMember(dest => dest.AboutUsItems, opt => opt.MapFrom(src => src.AboutUsItems))
+    .ForMember(dest => dest.OpeningHours, opt => opt.MapFrom(src => src.OpeningHours));
+
+
+
+            CreateMap<OpeningHour, OpeningHourVM>().ReverseMap();
+            CreateMap<OpeningHour, OpeningHourDetailVM>().ReverseMap();
+            CreateMap<OpeningHour, OpeningHourEditVM>().ReverseMap();
+            CreateMap<OpeningHour, OpeningHourCreateVM>().ReverseMap();
+            CreateMap<AboutUsItem, AboutUsItemVM>();
+            CreateMap<AboutUsItem, AboutUsItemDetailVM>()
+     .ForMember(dest => dest.IconPath, opt => opt.MapFrom(src => src.IconUrl));
+            CreateMap<AboutUsItem, AboutUsItemEditVM>().ReverseMap();
+            CreateMap<AboutUsItemCreateVM, AboutUsItem>();
+
+            CreateMap<AboutUsEditVM, AboutUs>()
+    .ForMember(dest => dest.ImageUrl, opt => opt.Ignore())
+    .ForMember(dest => dest.VideoUrl, opt => opt.Ignore());
+
+            CreateMap<AboutUs, AboutUsVM>()
+
+    .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrl));
+            CreateMap<AboutUs, AboutUsVM>();
+            CreateMap<OpeningHour, OpeningHourVM>();
+
+
         }
     }
 }
