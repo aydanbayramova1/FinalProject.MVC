@@ -1,0 +1,26 @@
+﻿@model FinalProjectMvc.ViewModels.Admin.OfferItem.OfferItemDetailVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border text-center">
+                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">
+                    ☕ Offer Item Details
+                </h2>
+
+                <div class="text-start px-3">
+                    <p class="mb-2"><strong>Title:</strong> @Model.Title</p>
+                    <p class="mb-0"><strong>Description:</strong> @Model.Description</p>
+                </div>
+
+                <a asp-action="Index"
+                   class="btn mt-4"
+                   style="color: #5c3d2e; border: 1px solid #5c3d2e; background-color: white;"
+                   onmouseover="this.style.backgroundColor='#5c3d2e'; this.style.color='white';"
+                   onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
+                    ⬅ Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

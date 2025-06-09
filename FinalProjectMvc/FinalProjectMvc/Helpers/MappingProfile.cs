@@ -16,7 +16,10 @@ using FinalProjectMvc.ViewModels.Admin.ContactUs;
 using FinalProjectMvc.ViewModels.Admin.FaqsBanner;
 using FinalProjectMvc.ViewModels.Admin.IntroCounter;
 using FinalProjectMvc.ViewModels.Admin.MenuBanner;
+using FinalProjectMvc.ViewModels.Admin.OfferImage;
+using FinalProjectMvc.ViewModels.Admin.OfferItem;
 using FinalProjectMvc.ViewModels.Admin.OpeningHour;
+using FinalProjectMvc.ViewModels.Admin.OurOffer;
 using FinalProjectMvc.ViewModels.Admin.OurStory;
 using FinalProjectMvc.ViewModels.Admin.ReservationBanner;
 using FinalProjectMvc.ViewModels.Admin.Scrolling;
@@ -257,6 +260,23 @@ namespace FinalProjectMvc.Helpers
     .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrl));
             CreateMap<AboutUs, AboutUsVM>();
             CreateMap<OpeningHour, OpeningHourVM>();
+
+
+
+            CreateMap<OurOffer, OurOfferVM>();
+            CreateMap<OurOffer, OurOfferDetailVM>();
+            CreateMap<OurOffer, OurOfferEditVM>().ReverseMap();
+            CreateMap<OurOfferCreateVM, OurOffer>();
+
+            CreateMap<OfferItem, OfferItemVM>();
+            CreateMap<OfferItemCreateVM, OfferItem>();
+            CreateMap<OfferItemEditVM, OfferItem>().ReverseMap();
+            CreateMap<OfferItem, OfferItemDetailVM>();
+
+            CreateMap<OfferImage, OfferImageVM>();
+            CreateMap<OfferImageCreateVM, OfferImage>();
+            CreateMap<OfferImageEditVM, OfferImage>().ReverseMap();
+            CreateMap<OfferImage, OfferImageDetailVM>();
 
 
         }

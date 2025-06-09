@@ -79,6 +79,9 @@ builder.Services.AddScoped<IIntroCounterService, IntroCounterService>();
 builder.Services.AddScoped<IAboutUsService, AboutUsService>();
 builder.Services.AddScoped<IAboutUsItemService, AboutUsItemService>();
 builder.Services.AddScoped<IOpeningHourService, OpeningHourService>();
+builder.Services.AddScoped<IOurOfferService, OurOfferService>();
+builder.Services.AddScoped<IOfferItemService, OfferItemService>();
+builder.Services.AddScoped<IOfferImageService, OfferImageService>();
 
 
 // AutoMapper

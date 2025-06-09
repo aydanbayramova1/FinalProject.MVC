@@ -1,111 +1,98 @@
-﻿<section id="our-offers">
-    <div class="our-offers">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <div class="our-offers-content">
-                        <div class="section-title">
-                            <h3 class="wow fadeInUp">What we offer ?</h3>
-                            <h2 class="text-anime-style-3" data-cursor="-opaque">Where Moments Brew</h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">
-                                It’s more than just coffee — it’s
-                                where smiles are shared, stories unfold, and memories are made.
-                            </p>
-                        </div>
+﻿@model FinalProjectMvc.ViewModels.Admin.OurOffer.OurOfferVM
 
-                        <div class="offers-accordion" id="offer-accordion">
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
-                                <h2 class="accordion-header" id="offersheading1">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#offerscollapse1" aria-expanded="true"
-                                            aria-controls="offerscollapse1">
-                                        A Cozy Nook to Get Lost in a Good Book
-                                    </button>
-                                </h2>
-                                <div id="offerscollapse1" class="accordion-collapse collapse show"
-                                     aria-labelledby="offersheading1" data-bs-parent="#offer-accordion">
-                                    <div style="margin-left: 50px;" class="accordion-body">
-                                        <p>
-                                            Need a little escape? Find your quiet corner, sip on your favorite
-                                            coffee, and dive into the pages of a good story. Our space is made
-                                            for calm moments and uninterrupted reads.
-                                        </p>
-                                    </div>
-                                </div>
+@{
+    var hasValidImages = Model.OfferImages != null && Model.OfferImages.Any(img =>
+        !string.IsNullOrWhiteSpace(img.MainImageUrl) ||
+        !string.IsNullOrWhiteSpace(img.LeftImageUrl) ||
+        !string.IsNullOrWhiteSpace(img.RightImageUrl));
+
+    var hasItems = Model.OfferItems != null && Model.OfferItems.Any();
+}
+
+@if (hasValidImages || hasItems)
+{
+    <section id="our-offers">
+        <div class="our-offers">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="our-offers-content">
+                            <div class="section-title">
+                                <h3 class="wow fadeInUp">@Model.Title</h3>
+                                <h2 class="text-anime-style-3" data-cursor="-opaque">@Model.Subtitle</h2>
+                                <p class="wow fadeInUp" data-wow-delay="0.2s">@Model.Description</p>
                             </div>
 
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
-                                <h2 class="accordion-header" id="offersheading2">
-                                    <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#offerscollapse2"
-                                            aria-expanded="true" aria-controls="offerscollapse2">
-                                        A Warm Space to Reconnect with Friends
-                                    </button>
-                                </h2>
-                                <div id="offerscollapse2" class="accordion-collapse collapse"
-                                     aria-labelledby="offersheading2" data-bs-parent="#offer-accordion">
-                                    <div style="margin-left: 50px;" class="accordion-body">
-                                        <p>
-                                            Laughter, long talks, and shared memories — enjoy meaningful
-                                            catch-ups with your favorite people in a friendly and relaxed
-                                            atmosphere.
-
-                                        </p>
-                                    </div>
+                            @if (hasItems)
+                            {
+                                <div class="offers-accordion" id="offer-accordion">
+                                    @foreach (var item in Model.OfferItems)
+                                    {
+                                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
+                                            <h2 class="accordion-header" id="offersheading@item.Id">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#offerscollapse@item.Id" aria-expanded="false"
+                                                        aria-controls="offerscollapse@item.Id">
+                                                    @item.Title
+                                                </button>
+                                            </h2>
+                                            <div id="offerscollapse@item.Id" class="accordion-collapse collapse"
+                                                 aria-labelledby="offersheading@item.Id" data-bs-parent="#offer-accordion">
+                                                <div class="accordion-body" style="margin-left: 50px;">
+                                                    <p>@item.Description</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
                                 </div>
-                            </div>
 
-                            <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
-                                <h2 class="accordion-header" id="offersheading3">
-                                    <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#offerscollapse3"
-                                            aria-expanded="true" aria-controls="offerscollapse3">
-                                        A Peaceful Pause from the Rush of the Day
-                                    </button>
-                                </h2>
-                                <div id="offerscollapse3" class="accordion-collapse collapse"
-                                     aria-labelledby="offersheading3" data-bs-parent="#offer-accordion">
-                                    <div style="margin-left: 50px;" class="accordion-body">
-                                        <p>
-                                            Sometimes all you need is a moment to breathe. Whether you're
-                                            journaling, daydreaming, or simply sipping in silence, we've saved a
-                                            seat just for you.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            }
 
-                        <div class="offer-button wow fadeInUp" data-wow-delay="1s">
-                            <a style="box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);" href="reservation.html"
-                               class="btn-default">Schedule your event</a>
+                            <div class="offer-button wow fadeInUp" data-wow-delay="1s">
+                                <a style="box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);" href="reservation.html"
+                                   class="btn-default">Schedule your event</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-7">
-                    <div class="our-offers-images">
-                        <div class="offer-image">
-                            <figure class="image-anime">
-                                <img src="~/assets/images/common/aaa.jpg" alt="">
-                            </figure>
-                        </div>
+                    @if (hasValidImages)
+                    {
+                        <div class="col-lg-7">
+                            @foreach (var item in Model.OfferImages)
+                            {
+                                <div class="our-offers-images">
+                                    @if (!string.IsNullOrWhiteSpace(item.MainImageUrl))
+                                    {
+                                        <div class="offer-image">
+                                            <figure class="image-anime">
+                                                <img src="~/uploads/offerimages/@item.MainImageUrl" alt="Main Image">
+                                            </figure>
+                                        </div>
+                                    }
 
-                        <div class="offer-circle-image-1">
-                            <figure class="image-anime">
-                                <img src="~/assets/images/common/rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.jpg"
-                                     alt="">
-                            </figure>
-                        </div>
+                                    @if (!string.IsNullOrWhiteSpace(item.LeftImageUrl))
+                                    {
+                                        <div class="offer-circle-image-1">
+                                            <figure class="image-anime">
+                                                <img src="~/uploads/offerimages/@item.LeftImageUrl" alt="Left Image">
+                                            </figure>
+                                        </div>
+                                    }
 
-                        <div class="offer-circle-image-2">
-                            <figure class="image-anime">
-                                <img src="~/assets/images/common/ddd.jpg" alt="">
-                            </figure>
+                                    @if (!string.IsNullOrWhiteSpace(item.RightImageUrl))
+                                    {
+                                        <div class="offer-circle-image-2">
+                                            <figure class="image-anime">
+                                                <img src="~/uploads/offerimages/@item.RightImageUrl" alt="Right Image">
+                                            </figure>
+                                        </div>
+                                    }
+                                </div>
+                            }
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+}

@@ -525,6 +525,55 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("ContactUses");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.FaqCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FaqCategories");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.FaqItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FaqCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FaqCategoryId");
+
+                    b.ToTable("FaqItems");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.FaqsBanner", b =>
                 {
                     b.Property<int>("Id")
@@ -641,6 +690,64 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("MenuBanners");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.OfferImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OurOfferId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OurOfferId");
+
+                    b.ToTable("OfferImages");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.OfferItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OurOfferId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OurOfferId");
+
+                    b.ToTable("OfferItems");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.OpeningHour", b =>
                 {
                     b.Property<int>("Id")
@@ -668,6 +775,34 @@ namespace FinalProjectMvc.Migrations
                     b.HasIndex("AboutUsId");
 
                     b.ToTable("OpeningHours");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.OurOffer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subtitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OurOffers");
                 });
 
             modelBuilder.Entity("FinalProjectMvc.Models.OurStory", b =>
@@ -1134,6 +1269,17 @@ namespace FinalProjectMvc.Migrations
                     b.Navigation("Approach");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.FaqItem", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.FaqCategory", "FaqCategory")
+                        .WithMany("FaqItems")
+                        .HasForeignKey("FaqCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FaqCategory");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.IntroCounter", b =>
                 {
                     b.HasOne("FinalProjectMvc.Models.IntroVideo", "IntroVideo")
@@ -1143,6 +1289,28 @@ namespace FinalProjectMvc.Migrations
                         .IsRequired();
 
                     b.Navigation("IntroVideo");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.OfferImage", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.OurOffer", "OurOffer")
+                        .WithMany("OfferImages")
+                        .HasForeignKey("OurOfferId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("OurOffer");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.OfferItem", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.OurOffer", "OurOffer")
+                        .WithMany("OfferItems")
+                        .HasForeignKey("OurOfferId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("OurOffer");
                 });
 
             modelBuilder.Entity("FinalProjectMvc.Models.OpeningHour", b =>
@@ -1241,9 +1409,21 @@ namespace FinalProjectMvc.Migrations
                     b.Navigation("Items");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.FaqCategory", b =>
+                {
+                    b.Navigation("FaqItems");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.IntroVideo", b =>
                 {
                     b.Navigation("Counters");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.OurOffer", b =>
+                {
+                    b.Navigation("OfferImages");
+
+                    b.Navigation("OfferItems");
                 });
 
             modelBuilder.Entity("FinalProjectMvc.Models.OurStory", b =>

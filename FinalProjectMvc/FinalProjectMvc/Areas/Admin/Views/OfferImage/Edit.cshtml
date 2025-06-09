@@ -1,0 +1,59 @@
+﻿@using FinalProjectMvc.ViewModels.Admin.OfferImage
+@model OfferImageEditVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕  Edit Offer Images</h2>
+
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="OurOfferId" />
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="form-label">Current Main Image</label><br />
+                            <img src="~/uploads/offerimages/@Model.MainImageUrl" alt="Main Image" class="img-thumbnail mb-2" style="max-height: 180px;" />
+                            <div class="mb-3">
+                                <label asp-for="MainImage" class="form-label">Change Main Image</label>
+                                <input asp-for="MainImage" type="file" class="form-control" />
+                                <span asp-validation-for="MainImage" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Current Left Image</label><br />
+                            <img src="~/uploads/offerimages/@Model.LeftImageUrl" alt="Left Image" class="img-thumbnail mb-2" style="max-height: 180px;" />
+                            <div class="mb-3">
+                                <label asp-for="LeftImage" class="form-label">Change Left Image</label>
+                                <input asp-for="LeftImage" type="file" class="form-control" />
+                                <span asp-validation-for="LeftImage" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Current Right Image</label><br />
+                            <img src="~/uploads/offerimages/@Model.RightImageUrl" alt="Right Image" class="img-thumbnail mb-2" style="max-height: 180px;" />
+                            <div class="mb-3">
+                                <label asp-for="RightImage" class="form-label">Change Right Image</label>
+                                <input asp-for="RightImage" type="file" class="form-control" />
+                                <span asp-validation-for="RightImage" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="submit"
+                                class="btn btn-outline-primary"
+                                style="color:brown; border: 1px solid brown; background-color: white;"
+                                onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+                            Save Changes
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

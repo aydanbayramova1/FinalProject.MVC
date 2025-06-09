@@ -1,0 +1,73 @@
+﻿@model IEnumerable<OfferImageVM>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="bg-light border rounded shadow-sm p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕  Offer Images</h2>
+
+                    @if (!Model.Any())
+                    {
+                        <a asp-action="Create" class="btn btn-outline-brown">
+                            <i class="fa fa-plus mr-1"></i> Add New Image Set
+                        </a>
+                    }
+                </div>
+
+                @if (Model.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center align-middle bg-white">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th style="background-color: #5c3d2e; color: #fff;">Main Image</th>
+                                    <th style="background-color: #5c3d2e; color: #fff;">Left Image</th>
+                                    <th style="background-color: #5c3d2e; color: #fff;">Right Image</th>
+                                    <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="~/uploads/offerimages/@item.MainImageUrl" alt="Main Image" class="img-thumbnail" style="max-width: 120px; border-radius: 8px;" />
+                                        </td>
+                                        <td>
+                                            <img src="~/uploads/offerimages/@item.LeftImageUrl" alt="Left Image" class="img-thumbnail" style="max-width: 120px; border-radius: 8px;" />
+                                        </td>
+                                        <td>
+                                            <img src="~/uploads/offerimages/@item.RightImageUrl" alt="Right Image" class="img-thumbnail" style="max-width: 120px; border-radius: 8px;" />
+                                        </td>
+                                        <td>
+                                            <div class="d-flex justify-content-center gap-2">
+                                                <a asp-action="Detail" class="btn btn-info btn-sm" title="View Details">
+                                                    <i class="fa-solid fa-circle-info"></i>
+                                                </a>
+                                                <a asp-action="Edit" class="btn btn-dark btn-sm" title="Edit">
+                                                    <i class="fa-solid fa-pencil"></i>
+                                                </a>
+                                                <form asp-action="Delete" method="post" onsubmit="return confirm('Are you sure you want to delete all offer images?');">
+                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete All">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-warning text-center mt-4" role="alert">
+                        No offer images have been added yet.
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+﻿@model FinalProjectMvc.ViewModels.Admin.OurOffer.OurOfferDetailVM
+
+@{
+    ViewData["Title"] = "Our Offer Details";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="bg-white p-5 rounded-4 shadow-lg border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #5c3d2e;">
+                    🎁 Our Offer Details
+                </h2>
+
+                <div class="mb-4 text-center">
+                    <h5 class="text-muted">Title</h5>
+                    <h4>@Model.Title</h4>
+
+                    <h5 class="text-muted mt-3">Subtitle</h5>
+                    <h5>@Model.Subtitle</h5>
+
+                    <h5 class="text-muted mt-3">Description</h5>
+                    <p>@Model.Description</p>
+                </div>
+
+          @*       <div class="mb-5">
+                    <h4 class="mb-3" style="color: #5c3d2e;">☕ Offer Images</h4>
+                    @if (Model.OfferImages != null && Model.OfferImages.Any())
+                    {
+                        <div class="row">
+                            @if (Model.OfferImages != null && Model.OfferImages.Any())
+                            {
+                                <div class="row">
+                                    @foreach (var imageSet in Model.OfferImages)
+                                    {
+                                        <div class="col-md-4 mb-3 text-center">
+                                            <img src="@Url.Content($"~/uploads/offerimages/{imageSet.MainImageUrl}")"
+                                                 alt="Main Image"
+                                                 class="img-fluid rounded shadow-sm"
+                                                 style="max-height: 250px;" />
+                                            <p class="mt-2 text-muted">Main Image</p>
+                                        </div>
+                                        <div class="col-md-4 mb-3 text-center">
+                                            <img src="@Url.Content($"~/uploads/offerimages/{imageSet.LeftImageUrl}")"
+                                                 alt="Left Image"
+                                                 class="img-fluid rounded shadow-sm"
+                                                 style="max-height: 200px; object-fit: contain;" />
+                                            <p class="mt-2 text-muted">Left Image</p>
+                                        </div>
+                                        <div class="col-md-4 mb-3 text-center">
+                                            <img src="@Url.Content($"~/uploads/offerimages/{imageSet.RightImageUrl}")"
+                                                 alt="Right Image"
+                                                 class="img-fluid rounded shadow-sm"
+                                                 style="max-height: 200px; object-fit: contain;" />
+                                            <p class="mt-2 text-muted">Right Image</p>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-warning text-center">
+                                    No offer images available.
+                                </div>
+                            }
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning text-center">
+                            No offer images available.
+                        </div>
+                    }
+                </div>
+ *@
+                <div class="mb-5">
+                    <h4 class="mb-3" style="color: #5c3d2e;"> ☕Offer Items</h4>
+                    @if (Model.OfferItems != null && Model.OfferItems.Any())
+                    {
+                        <div class="row">
+                            @foreach (var item in Model.OfferItems)
+                            {
+                                <div class="col-md-6 mb-4">
+                                    <div class="card shadow-sm h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">@item.Title</h5>
+                                            <p class="card-text">@item.Description</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning text-center">
+                            No offer items available.
+                        </div>
+                    }
+                </div>
+
+                <div class="text-center mt-4">
+                    <a asp-action="Index"
+                       class="btn"
+                       style="color: #5c3d2e; border: 1px solid #5c3d2e; background-color: white; padding: 8px 20px; border-radius: 8px;"
+                       onmouseover="this.style.backgroundColor='#5c3d2e'; this.style.color='white';"
+                       onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
+                        ← Back to List
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

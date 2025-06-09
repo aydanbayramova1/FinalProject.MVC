@@ -1,0 +1,43 @@
+﻿@model OfferImageDetailVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="bg-white p-4 rounded shadow-sm border text-center">
+                <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕  Offer Image Details</h2>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-3">
+                        <h5>Main Image</h5>
+                        <img src="~/uploads/offerimages/@Model.MainImageUrl" alt="Main Image"
+                             class="img-fluid rounded shadow-sm" style="max-height: 250px;" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <h5>Left Image</h5>
+                        <img src="~/uploads/offerimages/@Model.LeftImageUrl" alt="Left Image"
+                             class="img-fluid rounded shadow-sm" style="max-height: 250px;" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <h5>Right Image</h5>
+                        <img src="~/uploads/offerimages/@Model.RightImageUrl" alt="Right Image"
+                             class="img-fluid rounded shadow-sm" style="max-height: 250px;" />
+                    </div>
+                </div>
+
+                <div class="mt-4 text-start">
+                    <p><strong>OurOffer ID:</strong> @Model.OurOfferId</p>
+                </div>
+
+                <a asp-action="Index"
+                   class="btn mt-3"
+                   style="color: #5c3d2e; border: 1px solid #5c3d2e; background-color: white;"
+                   onmouseover="this.style.backgroundColor='#5c3d2e'; this.style.color='white';"
+                   onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
+                    ⬅ Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

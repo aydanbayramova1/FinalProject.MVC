@@ -36,6 +36,12 @@ namespace FinalProjectMvc.Data
         public DbSet<AboutUs> AboutUses { get; set; }
         public DbSet<AboutUsItem> AboutUsItems { get; set; }
         public DbSet<OpeningHour> OpeningHours { get; set; }
+        public DbSet<OurOffer> OurOffers { get; set; }
+        public DbSet<OfferItem> OfferItems { get; set; }
+        public DbSet<OfferImage> OfferImages { get; set; }
+        public DbSet<FaqCategory> FaqCategories { get; set; }
+        public DbSet<FaqItem> FaqItems { get; set; }
+
 
 
 
@@ -49,10 +55,10 @@ namespace FinalProjectMvc.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Approach>()
-            .HasMany(a => a.Items)
-            .WithOne(i => i.Approach)
-            .HasForeignKey(i => i.ApproachId)
-            .OnDelete(DeleteBehavior.Cascade);
+               .HasMany(a => a.Items)
+               .WithOne(i => i.Approach)
+               .HasForeignKey(i => i.ApproachId)
+               .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<OurStory>()
                 .HasMany(s => s.StoryItems)
@@ -61,19 +67,16 @@ namespace FinalProjectMvc.Data
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<IntroCounter>()
-           .HasOne(c => c.IntroVideo)
-           .WithMany(v => v.Counters)
-           .HasForeignKey(c => c.IntroVideoId)
-          .OnDelete(DeleteBehavior.Cascade);
-
-
-
+                .HasOne(c => c.IntroVideo)
+                .WithMany(v => v.Counters)
+                .HasForeignKey(c => c.IntroVideoId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<AboutUs>()
-           .HasMany(a => a.AboutUsItems)
-           .WithOne(i => i.AboutUs)
-           .HasForeignKey(i => i.AboutUsId)
-           .OnDelete(DeleteBehavior.Cascade);
+                .HasMany(a => a.AboutUsItems)
+                .WithOne(i => i.AboutUs)
+                .HasForeignKey(i => i.AboutUsId)
+               .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<AboutUs>()
                 .HasMany(a => a.OpeningHours)
@@ -83,10 +86,10 @@ namespace FinalProjectMvc.Data
 
 
             modelBuilder.Entity<OpeningHour>()
-       .HasOne(o => o.AboutUs)
-       .WithMany(a => a.OpeningHours)
-       .HasForeignKey(o => o.AboutUsId)
-       .OnDelete(DeleteBehavior.Cascade);
+                .HasOne(o => o.AboutUs)
+                .WithMany(a => a.OpeningHours)
+                .HasForeignKey(o => o.AboutUsId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

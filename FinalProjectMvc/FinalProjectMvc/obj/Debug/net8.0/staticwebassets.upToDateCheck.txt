@@ -270,6 +270,12 @@ wwwroot\uploads\intro\e5af73b6-886c-4d2e-9d5e-e05b90a66816.svg
 wwwroot\uploads\intro\e721240c-3a49-41d1-a226-ce2b225fadcd.svg
 wwwroot\uploads\intro\f91634e9-c4f7-4fab-b1e2-452b7d3f605e.jpg
 wwwroot\uploads\menubanner\d5bedaad-cb67-43e0-b48d-04d46098ab0a.jpg
+wwwroot\uploads\offerimages\28a88bda-b661-4890-9438-3f61fde2c89e.jpg
+wwwroot\uploads\offerimages\331867de-d7ee-43b4-a129-c3d35595ca10.jpg
+wwwroot\uploads\offerimages\54c0237b-ef7a-45e8-a8a1-b924c257f8a6.jpg
+wwwroot\uploads\offerimages\59132186-4749-4096-9b22-d79c8f16b885.jpg
+wwwroot\uploads\offerimages\85635f04-bdb8-45e0-a576-563cfc1333fe.jpg
+wwwroot\uploads\offerimages\d2e8c017-2109-487c-9538-a555f7cd0033.jpg
 wwwroot\uploads\reservationbanner\b31c9b34-ee97-46c3-848f-1b364970a1e8.jpg
 wwwroot\uploads\scrollings\0d2cb485-a685-4f12-bb5e-0e63cc4a0b95_asterisk-icon.svg
 wwwroot\uploads\scrollings\41c4dd1e-b25b-4c86-82fd-51f29fe94be6_asterisk-icon.svg
