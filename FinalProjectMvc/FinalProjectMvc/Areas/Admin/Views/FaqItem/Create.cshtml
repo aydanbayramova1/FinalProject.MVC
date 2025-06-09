@@ -1,0 +1,44 @@
+﻿@model FinalProjectMvc.ViewModels.Admin.FaqItem.FaqItemCreateVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">❓ Add New FAQ Item</h2>
+
+                <form asp-action="Create" method="post">
+                    <div class="form-group mb-3">
+                        <label asp-for="Question" class="form-label">Question</label>
+                        <input asp-for="Question" class="form-control" placeholder="Enter question" />
+                        <span class="text-danger" asp-validation-for="Question"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Answer" class="form-label">Answer</label>
+                        <textarea asp-for="Answer" class="form-control" rows="4" placeholder="Enter answer"></textarea>
+                        <span class="text-danger" asp-validation-for="Answer"></span>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label asp-for="FaqCategoryId" class="form-label">FAQ Category</label>
+                        <select asp-for="FaqCategoryId" class="form-control" asp-items="Model.Categories">
+                            <option disabled selected value="">-- Select a category --</option>
+                        </select>
+                        <span class="text-danger" asp-validation-for="FaqCategoryId"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="submit"
+                                class="btn btn-outline-primary"
+                                style="color:brown; border: 1px solid brown; background-color: white;"
+                                onmouseover="this.style.backgroundColor='brown'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='white'; this.style.color='brown';">
+                            Submit
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,8 +8,9 @@ namespace FinalProjectMvc.Services.Interfaces
         Task<bool> ExistsAsync();
         Task<SettingVM?> GetSettingAsync();
         Task CreateAsync(SettingCreateVM model);
-        Task UpdateAsync(SettingEditVM model);
         Task DeleteAllAsync();
+        Task<SettingEditVM?> GetEditModelAsync();
+        Task EditAsync(SettingEditVM model);
 
     }
 }

@@ -80,26 +80,7 @@ namespace FinalProjectMvc.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(SettingEditVM model)
-        {
-            var settings = await _context.Settings.ToListAsync();
-
-            if (settings == null || !settings.Any())throw new KeyNotFoundException("Settings not found.");
-
-            await UpdateOrAddSettingAsync(settings, "HeaderLogo", model.HeaderLogoFile);
-            await UpdateOrAddSettingAsync(settings, "FooterLogo", model.FooterLogoFile);
-            await UpdateOrAddSettingAsync(settings, "BackgroundImage", model.BackgroundImageFile);
-
-
-            UpdateSettingValue(settings, "Address", model.Address);
-            UpdateSettingValue(settings, "Email", model.Email);
-            UpdateSettingValue(settings, "Phone", model.Phone);
-            UpdateSettingValue(settings, "EverydayWorkingHours", model.EverydayWorkingHours);
-            UpdateSettingValue(settings, "KitchenCloseTime", model.KitchenCloseTime);
-
-            await _context.SaveChangesAsync();
-        }
-
+      
         public async Task DeleteAllAsync()
         {
             var allSettings = await _context.Settings.ToListAsync();
@@ -124,18 +105,7 @@ namespace FinalProjectMvc.Services
 
 
 
-        private void UpdateSettingValue(List<Models.Setting> settings, string key, string newValue)
-        {
-            var setting = settings.FirstOrDefault(s => s.Key == key);
-            if (setting != null)
-            {
-                setting.Value = newValue;
-            }
-            else
-            {
-                settings.Add(new Models.Setting { Key = key, Value = newValue });
-            }
-        }
+     
 
         private async Task<string> SaveFileAsync(IFormFile file)
         {
@@ -156,6 +126,69 @@ namespace FinalProjectMvc.Services
 
             return "/uploads/" + fileName; 
         }
+        public async Task<SettingEditVM?> GetEditModelAsync()
+        {
+            var settings = await _context.Settings.ToListAsync();
+            if (!settings.Any()) return null;
 
+            return new SettingEditVM
+            {
+                Id = settings.FirstOrDefault()?.Id ?? 0,
+                HeaderLogo = settings.FirstOrDefault(s => s.Key == "HeaderLogo")?.Value,
+                FooterLogo = settings.FirstOrDefault(s => s.Key == "FooterLogo")?.Value,
+                BackgroundImage = settings.FirstOrDefault(s => s.Key == "BackgroundImage")?.Value,
+                Address = settings.FirstOrDefault(s => s.Key == "Address")?.Value,
+                Email = settings.FirstOrDefault(s => s.Key == "Email")?.Value,
+                Phone = settings.FirstOrDefault(s => s.Key == "Phone")?.Value,
+                EverydayWorkingHours = settings.FirstOrDefault(s => s.Key == "EverydayWorkingHours")?.Value,
+                KitchenCloseTime = settings.FirstOrDefault(s => s.Key == "KitchenCloseTime")?.Value,
+            };
+        }
+
+        public async Task EditAsync(SettingEditVM model)
+        {
+            var settings = await _context.Settings.ToListAsync();
+
+            await UpdateOrAddSettingAsync(settings, "HeaderLogo", model.HeaderLogoFile, model.HeaderLogo);
+            await UpdateOrAddSettingAsync(settings, "FooterLogo", model.FooterLogoFile, model.FooterLogo);
+            await UpdateOrAddSettingAsync(settings, "BackgroundImage", model.BackgroundImageFile, model.BackgroundImage);
+
+            UpdateOrAddSetting(settings, "Address", model.Address);
+            UpdateOrAddSetting(settings, "Email", model.Email);
+            UpdateOrAddSetting(settings, "Phone", model.Phone);
+            UpdateOrAddSetting(settings, "EverydayWorkingHours", model.EverydayWorkingHours);
+            UpdateOrAddSetting(settings, "KitchenCloseTime", model.KitchenCloseTime);
+
+            _context.Settings.UpdateRange(settings);
+            await _context.SaveChangesAsync();
+        }
+
+        private async Task UpdateOrAddSettingAsync(List<Setting> settings, string key, IFormFile file, string existingValue)
+        {
+            var setting = settings.FirstOrDefault(s => s.Key == key);
+            if (file != null)
+            {
+                if (!string.IsNullOrWhiteSpace(existingValue))
+                {
+                    string oldPath = Path.Combine(_env.WebRootPath, existingValue.TrimStart('/'));
+                    if (File.Exists(oldPath)) File.Delete(oldPath);
+                }
+
+                var newPath = await SaveFileAsync(file);
+                if (setting != null)
+                    setting.Value = newPath;
+                else
+                    settings.Add(new Setting { Key = key, Value = newPath });
+            }
+        }
+
+        private void UpdateOrAddSetting(List<Setting> settings, string key, string value)
+        {
+            var setting = settings.FirstOrDefault(s => s.Key == key);
+            if (setting != null)
+                setting.Value = value;
+            else
+                settings.Add(new Setting { Key = key, Value = value });
+        }
     }
 }

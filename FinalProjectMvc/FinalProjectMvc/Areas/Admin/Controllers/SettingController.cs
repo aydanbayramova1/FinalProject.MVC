@@ -44,37 +44,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Edit()
-        {
-            var setting = await _settingService.GetSettingAsync();
-            if (setting == null)
-                return RedirectToAction(nameof(Create));
-
-            var editVm = new SettingEditVM
-            {
-                HeaderLogo = setting.HeaderLogo,
-                FooterLogo = setting.FooterLogo,
-                BackgroundImage = setting.BackgroundImage,
-                Address = setting.Address,
-                Email = setting.Email,
-                Phone = setting.Phone,
-                EverydayWorkingHours = setting.EverydayWorkingHours,
-                KitchenCloseTime = setting.KitchenCloseTime
-            };
-
-            return View(editVm);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Edit(SettingEditVM model)
-        {
-            if (!ModelState.IsValid)
-                return View(model); 
-
-            await _settingService.UpdateAsync(model);
-
-            return RedirectToAction(nameof(Index));  
-        }
+       
         public async Task<IActionResult> Detail()
         {
             var setting = await _settingService.GetSettingAsync();
@@ -83,12 +53,24 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
             return View(setting);
         }
+        public async Task<IActionResult> Edit()
+        {
+            var model = await _settingService.GetEditModelAsync();
+            if (model == null) return NotFound();
+
+            return View(model);
+        }
 
         [HttpPost]
-        public async Task<IActionResult> Delete()
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(SettingEditVM model)
         {
-            await _settingService.DeleteAllAsync();
+            if (!ModelState.IsValid)
+                return View(model);
+
+            await _settingService.EditAsync(model);
             return RedirectToAction(nameof(Index));
         }
+
     }
 }

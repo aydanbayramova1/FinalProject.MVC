@@ -82,12 +82,12 @@ builder.Services.AddScoped<IOpeningHourService, OpeningHourService>();
 builder.Services.AddScoped<IOurOfferService, OurOfferService>();
 builder.Services.AddScoped<IOfferItemService, OfferItemService>();
 builder.Services.AddScoped<IOfferImageService, OfferImageService>();
+builder.Services.AddScoped<IFaqCategoryService, FaqCategoryService>();
+builder.Services.AddScoped<IFaqItemService, FaqItemService>();
 
 
-// AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
 
-// Serilog
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .WriteTo.Console()

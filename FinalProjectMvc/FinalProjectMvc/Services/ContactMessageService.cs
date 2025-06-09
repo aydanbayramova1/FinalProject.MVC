@@ -24,7 +24,7 @@ namespace FinalProjectMvc.Services
             var entity = _mapper.Map<ContactMessage>(vm);
             entity.CreateDate = DateTime.Now;
 
-            Debug.WriteLine($"📩 New Message: {entity.FirstName} {entity.LastName}");
+            Debug.WriteLine($" New Message: {entity.FirstName} {entity.LastName}");
 
             await _context.ContactMessages.AddAsync(entity);
             await _context.SaveChangesAsync();

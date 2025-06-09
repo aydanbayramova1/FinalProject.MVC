@@ -13,6 +13,8 @@ using FinalProjectMvc.ViewModels.Admin.Catalog;
 using FinalProjectMvc.ViewModels.Admin.ContactBanner;
 using FinalProjectMvc.ViewModels.Admin.ContactMessage;
 using FinalProjectMvc.ViewModels.Admin.ContactUs;
+using FinalProjectMvc.ViewModels.Admin.FaqCategory;
+using FinalProjectMvc.ViewModels.Admin.FaqItem;
 using FinalProjectMvc.ViewModels.Admin.FaqsBanner;
 using FinalProjectMvc.ViewModels.Admin.IntroCounter;
 using FinalProjectMvc.ViewModels.Admin.MenuBanner;
@@ -236,8 +238,8 @@ namespace FinalProjectMvc.Helpers
             CreateMap<AboutUs, AboutUsEditVM>().ReverseMap();
             CreateMap<AboutUs, AboutUsDetailVM>().ReverseMap();
             CreateMap<AboutUs, AboutUsDetailVM>()
-    .ForMember(dest => dest.AboutUsItems, opt => opt.MapFrom(src => src.AboutUsItems))
-    .ForMember(dest => dest.OpeningHours, opt => opt.MapFrom(src => src.OpeningHours));
+           .ForMember(dest => dest.AboutUsItems, opt => opt.MapFrom(src => src.AboutUsItems))
+           .ForMember(dest => dest.OpeningHours, opt => opt.MapFrom(src => src.OpeningHours));
 
 
 
@@ -247,17 +249,17 @@ namespace FinalProjectMvc.Helpers
             CreateMap<OpeningHour, OpeningHourCreateVM>().ReverseMap();
             CreateMap<AboutUsItem, AboutUsItemVM>();
             CreateMap<AboutUsItem, AboutUsItemDetailVM>()
-     .ForMember(dest => dest.IconPath, opt => opt.MapFrom(src => src.IconUrl));
+           .ForMember(dest => dest.IconPath, opt => opt.MapFrom(src => src.IconUrl));
             CreateMap<AboutUsItem, AboutUsItemEditVM>().ReverseMap();
             CreateMap<AboutUsItemCreateVM, AboutUsItem>();
 
             CreateMap<AboutUsEditVM, AboutUs>()
-    .ForMember(dest => dest.ImageUrl, opt => opt.Ignore())
-    .ForMember(dest => dest.VideoUrl, opt => opt.Ignore());
+           .ForMember(dest => dest.ImageUrl, opt => opt.Ignore())
+           .ForMember(dest => dest.VideoUrl, opt => opt.Ignore());
 
             CreateMap<AboutUs, AboutUsVM>()
 
-    .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrl));
+            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src => src.ImageUrl));
             CreateMap<AboutUs, AboutUsVM>();
             CreateMap<OpeningHour, OpeningHourVM>();
 
@@ -277,6 +279,18 @@ namespace FinalProjectMvc.Helpers
             CreateMap<OfferImageCreateVM, OfferImage>();
             CreateMap<OfferImageEditVM, OfferImage>().ReverseMap();
             CreateMap<OfferImage, OfferImageDetailVM>();
+
+
+            CreateMap<FaqCategory, FaqCategoryVM>();
+            CreateMap<FaqCategory, FaqCategoryDetailVM>();
+            CreateMap<FaqCategory, FaqCategoryEditVM>().ReverseMap();
+            CreateMap<FaqCategoryCreateVM, FaqCategory>();
+
+
+            CreateMap<FaqItem, FaqItemVM>().ReverseMap();
+            CreateMap<FaqItem, FaqItemDetailVM>().ReverseMap();
+            CreateMap<FaqItemCreateVM, FaqItem>();
+            CreateMap<FaqItemEditVM, FaqItem>().ReverseMap();
 
 
         }

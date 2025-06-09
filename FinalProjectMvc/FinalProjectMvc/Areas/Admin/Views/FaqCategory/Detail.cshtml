@@ -1,0 +1,43 @@
+﻿@model FinalProjectMvc.ViewModels.Admin.FaqCategory.FaqCategoryDetailVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">📁 FAQ Category Details</h2>
+
+                <div class="mb-4">
+                    <h4 style="color: #5c3d2e;"><strong>Category Title:</strong> @Model.Title</h4>
+                </div>
+
+                <h5 style="color: #5c3d2e;">Questions & Answers</h5>
+                @if (Model.FaqItems != null && Model.FaqItems.Any())
+                {
+                    <ul class="list-group mt-3">
+                        @foreach (var item in Model.FaqItems)
+                        {
+                            <li class="list-group-item">
+                                <strong>Q:</strong> @item.Question <br />
+                                <strong>A:</strong> @item.Answer
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <div class="alert alert-warning mt-3">
+                        No FAQ items found for this category.
+                    </div>
+                }
+
+                <a asp-action="Index"
+                   class="btn mt-4"
+                   style="color: #5c3d2e; border: 1px solid #5c3d2e; background-color: white;"
+                   onmouseover="this.style.backgroundColor='#5c3d2e'; this.style.color='white';"
+                   onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
+                    Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

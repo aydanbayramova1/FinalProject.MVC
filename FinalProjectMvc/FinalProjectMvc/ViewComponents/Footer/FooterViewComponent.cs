@@ -17,7 +17,7 @@ namespace FinalProjectMvc.ViewComponents.Footer
         {
             var settings = await _layoutService.GetAllSettingsAsync();
 
-            // Set Default for Footer Background if not found
+
             if (!settings.ContainsKey("FooterBg") || string.IsNullOrEmpty(settings["FooterBg"]))
             {
                 settings["FooterBg"] = "/assets/images/common/footer-bg-image.jpg";

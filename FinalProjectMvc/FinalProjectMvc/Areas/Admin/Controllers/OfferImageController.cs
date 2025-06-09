@@ -14,14 +14,12 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _service = service;
         }
 
-        // Show list of OfferImages (usually 1)
         public async Task<IActionResult> Index()
         {
             var vms = await _service.GetAllAsync();
             return View(vms);
         }
 
-        // GET: Create OfferImage
         public async Task<IActionResult> Create()
         {
             var offer = await _service.GetOurOfferAsync();
@@ -35,7 +33,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
-        // POST: Create OfferImage
         [HttpPost]
         public async Task<IActionResult> Create(OfferImageCreateVM vm)
         {
@@ -51,7 +48,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Edit (Assumes only one OfferImage)
         public async Task<IActionResult> Edit()
         {
             var vm = await _service.GetEditAsync();
@@ -60,7 +56,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
-        // POST: Edit
         [HttpPost]
         public async Task<IActionResult> Edit(OfferImageEditVM vm)
         {
@@ -70,7 +65,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Detail (single instance)
         public async Task<IActionResult> Detail()
         {
             var vm = await _service.GetDetailAsync();
@@ -79,7 +73,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
-        // GET: Detail by ID (optional if multiple images)
         public async Task<IActionResult> DetailById(int id)
         {
             var vm = await _service.GetImageDetailByIdAsync(id);
@@ -88,7 +81,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View("Detail", vm);
         }
 
-        // POST: Delete OfferImage (only one assumed)
         [HttpPost]
         public async Task<IActionResult> Delete()
         {
