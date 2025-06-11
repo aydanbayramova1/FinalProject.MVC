@@ -18,10 +18,10 @@ namespace FinalProjectMvc.ViewComponents.Footer
             var settings = await _layoutService.GetAllSettingsAsync();
 
 
-            if (!settings.ContainsKey("FooterBg") || string.IsNullOrEmpty(settings["FooterBg"]))
-            {
-                settings["FooterBg"] = "/assets/images/common/footer-bg-image.jpg";
-            }
+            //if (!settings.ContainsKey("FooterBg") || string.IsNullOrEmpty(settings["FooterBg"]))
+            //{
+            //    settings["FooterBg"] = "/assets/images/common/footer-bg-image.jpg";
+            //}
 
             return View(settings);
         }

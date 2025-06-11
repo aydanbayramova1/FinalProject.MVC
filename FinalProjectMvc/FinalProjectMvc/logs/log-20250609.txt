@@ -9164,3 +9164,479 @@ FROM [Settings] AS [s]
 2025-06-09 12:57:17.152 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
 2025-06-09 12:57:17.156 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 9.7472ms
 2025-06-09 12:57:17.190 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.84ms
+2025-06-09 23:52:14.527 -08:00 [INF] Executed DbCommand (136ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-09 23:52:14.779 -08:00 [INF] Executed DbCommand (21ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-09 23:52:14.821 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-09 23:52:15.172 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-09 23:52:15.535 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-09 23:52:15.539 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-09 23:52:15.597 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-09 23:52:15.602 -08:00 [INF] Hosting environment: Development
+2025-06-09 23:52:15.608 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-09 23:52:16.267 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-09 23:52:16.519 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-09 23:52:16.541 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-09 23:52:16.562 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-09 23:52:16.912 -08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-09 23:52:16.983 -08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-09 23:52:17.110 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-09 23:52:17.182 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-09 23:52:17.241 -08:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-09 23:52:17.409 -08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-09 23:52:17.506 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-09 23:52:17.541 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-09 23:52:17.679 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-09 23:52:17.742 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-09 23:52:17.772 -08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-09 23:52:17.861 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-09 23:52:17.881 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-09 23:52:17.896 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-09 23:52:17.923 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-09 23:52:17.991 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-09 23:52:18.089 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-09 23:52:18.127 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-09 23:52:18.200 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-09 23:52:18.285 -08:00 [INF] Executed ViewResult - view Index executed in 1725.1875ms.
+2025-06-09 23:52:18.298 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 1749.823ms
+2025-06-09 23:52:18.305 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-09 23:52:18.318 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/css/home/home.css - null null
+2025-06-09 23:52:18.323 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 2060.9655ms
+2025-06-09 23:52:18.326 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg - null null
+2025-06-09 23:52:18.337 -08:00 [INF] The file /assets/css/home/home.css was not modified
+2025-06-09 23:52:18.353 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/js/home/home.js - null null
+2025-06-09 23:52:18.354 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-09 23:52:18.356 -08:00 [INF] The file /uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg was not modified
+2025-06-09 23:52:18.363 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/css/home/home.css - 304 null text/css 44.8129ms
+2025-06-09 23:52:18.364 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/icons/22776c08-aeaa-486d-9150-a9a77ce96746.svg - null null
+2025-06-09 23:52:18.364 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/icons/465ab206-4ab5-4c01-9d8b-3a9f4259e576.svg - null null
+2025-06-09 23:52:18.372 -08:00 [INF] The file /assets/js/home/home.js was not modified
+2025-06-09 23:52:18.374 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/images/9b999d31-b013-4a86-b507-8c25e6530bef.jpg - null null
+2025-06-09 23:52:18.387 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/intro/615ea50a-db6f-4595-a04f-5dbcd6e744bf.svg - null null
+2025-06-09 23:52:18.388 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/83a2be91-790f-42c7-90b5-167ec85af9e3.jpg - 304 null image/jpeg 61.6641ms
+2025-06-09 23:52:18.388 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/intro/35d8a377-505e-4dc0-a2e5-b1438eea13d6.svg - null null
+2025-06-09 23:52:18.388 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 34.409ms
+2025-06-09 23:52:18.395 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/intro/a8e0421c-2e03-41eb-9cba-c0d2a646319c.svg - null null
+2025-06-09 23:52:18.397 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/intro/e721240c-3a49-41d1-a226-ce2b225fadcd.svg - null null
+2025-06-09 23:52:18.413 -08:00 [INF] The file /uploads/icons/22776c08-aeaa-486d-9150-a9a77ce96746.svg was not modified
+2025-06-09 23:52:18.420 -08:00 [INF] The file /uploads/icons/465ab206-4ab5-4c01-9d8b-3a9f4259e576.svg was not modified
+2025-06-09 23:52:18.424 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/js/home/home.js - 304 null text/javascript 71.0689ms
+2025-06-09 23:52:18.435 -08:00 [INF] The file /uploads/images/9b999d31-b013-4a86-b507-8c25e6530bef.jpg was not modified
+2025-06-09 23:52:18.444 -08:00 [INF] The file /uploads/intro/615ea50a-db6f-4595-a04f-5dbcd6e744bf.svg was not modified
+2025-06-09 23:52:18.463 -08:00 [INF] The file /uploads/intro/35d8a377-505e-4dc0-a2e5-b1438eea13d6.svg was not modified
+2025-06-09 23:52:18.481 -08:00 [INF] The file /uploads/intro/a8e0421c-2e03-41eb-9cba-c0d2a646319c.svg was not modified
+2025-06-09 23:52:18.487 -08:00 [INF] The file /uploads/intro/e721240c-3a49-41d1-a226-ce2b225fadcd.svg was not modified
+2025-06-09 23:52:18.490 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/icons/22776c08-aeaa-486d-9150-a9a77ce96746.svg - 304 null image/svg+xml 126.0927ms
+2025-06-09 23:52:18.493 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/icons/465ab206-4ab5-4c01-9d8b-3a9f4259e576.svg - 304 null image/svg+xml 129.2085ms
+2025-06-09 23:52:18.506 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/images/9b999d31-b013-4a86-b507-8c25e6530bef.jpg - 304 null image/jpeg 131.5473ms
+2025-06-09 23:52:18.509 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/intro/615ea50a-db6f-4595-a04f-5dbcd6e744bf.svg - 304 null image/svg+xml 122.0554ms
+2025-06-09 23:52:18.514 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/intro/35d8a377-505e-4dc0-a2e5-b1438eea13d6.svg - 304 null image/svg+xml 125.8895ms
+2025-06-09 23:52:18.517 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/intro/a8e0421c-2e03-41eb-9cba-c0d2a646319c.svg - 304 null image/svg+xml 122.4191ms
+2025-06-09 23:52:18.520 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/intro/e721240c-3a49-41d1-a226-ce2b225fadcd.svg - 304 null image/svg+xml 123.5045ms
+2025-06-09 23:52:18.536 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/offerimages/59132186-4749-4096-9b22-d79c8f16b885.jpg - null null
+2025-06-09 23:52:18.536 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/offerimages/28a88bda-b661-4890-9438-3f61fde2c89e.jpg - null null
+2025-06-09 23:52:18.536 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/offerimages/85635f04-bdb8-45e0-a576-563cfc1333fe.jpg - null null
+2025-06-09 23:52:18.537 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/img/c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg - null null
+2025-06-09 23:52:18.540 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg - null null
+2025-06-09 23:52:18.541 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-09 23:52:18.550 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/images/a54d98ca-27d2-4704-ad7a-4b01a39852df.jpg - null null
+2025-06-09 23:52:18.607 -08:00 [INF] The file /uploads/offerimages/59132186-4749-4096-9b22-d79c8f16b885.jpg was not modified
+2025-06-09 23:52:18.616 -08:00 [INF] The file /uploads/offerimages/28a88bda-b661-4890-9438-3f61fde2c89e.jpg was not modified
+2025-06-09 23:52:18.622 -08:00 [INF] The file /uploads/offerimages/85635f04-bdb8-45e0-a576-563cfc1333fe.jpg was not modified
+2025-06-09 23:52:18.632 -08:00 [INF] The file /img/c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg was not modified
+2025-06-09 23:52:18.639 -08:00 [INF] The file /uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg was not modified
+2025-06-09 23:52:18.656 -08:00 [INF] The file /uploads/images/a54d98ca-27d2-4704-ad7a-4b01a39852df.jpg was not modified
+2025-06-09 23:52:18.660 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/offerimages/59132186-4749-4096-9b22-d79c8f16b885.jpg - 304 null image/jpeg 124.0027ms
+2025-06-09 23:52:18.665 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/offerimages/28a88bda-b661-4890-9438-3f61fde2c89e.jpg - 304 null image/jpeg 128.762ms
+2025-06-09 23:52:18.669 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/offerimages/85635f04-bdb8-45e0-a576-563cfc1333fe.jpg - 304 null image/jpeg 132.9522ms
+2025-06-09 23:52:18.673 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/img/c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg - 304 null image/jpeg 136.0065ms
+2025-06-09 23:52:18.677 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/8ad13502-1cc2-4347-a40a-015c830e956f.jpg - 304 null image/jpeg 136.3229ms
+2025-06-09 23:52:18.681 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/images/a54d98ca-27d2-4704-ad7a-4b01a39852df.jpg - 304 null image/jpeg 130.8263ms
+2025-06-09 23:52:18.749 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 207.7179ms
+2025-06-09 23:52:23.516 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/About - null null
+2025-06-09 23:52:23.552 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.AboutController.Index (FinalProjectMvc)'
+2025-06-09 23:52:23.567 -08:00 [INF] Route matched with {action = "Index", controller = "About", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.AboutController (FinalProjectMvc).
+2025-06-09 23:52:23.584 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-09 23:52:23.646 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[CreateDate], [a].[Img], [a].[Title]
+FROM [AboutBanners] AS [a]
+2025-06-09 23:52:23.730 -08:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-09 23:52:23.787 -08:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-09 23:52:23.820 -08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-09 23:52:23.858 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-09 23:52:23.901 -08:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Image], [t].[SubTitle], [t].[Title], [a0].[Id], [a0].[ApproachId], [a0].[CreateDate], [a0].[Description], [a0].[IconPath], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Image], [a].[SubTitle], [a].[Title]
+    FROM [Approaches] AS [a]
+) AS [t]
+LEFT JOIN [ApproachItems] AS [a0] ON [t].[Id] = [a0].[ApproachId]
+ORDER BY [t].[Id]
+2025-06-09 23:52:23.990 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-09 23:52:24.038 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[FullName], [t].[Img], [t].[Position]
+FROM [TeamMembers] AS [t]
+2025-06-09 23:52:24.096 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-09 23:52:24.140 -08:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Image], [t].[SectionDescription], [t].[SectionSubtitle], [t].[SectionTitle], [s].[Id], [s].[CreateDate], [s].[Description], [s].[IconImg], [s].[OurStoryId], [s].[Title]
+FROM (
+    SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Image], [o].[SectionDescription], [o].[SectionSubtitle], [o].[SectionTitle]
+    FROM [OurStories] AS [o]
+) AS [t]
+LEFT JOIN [StoryItems] AS [s] ON [t].[Id] = [s].[OurStoryId]
+ORDER BY [t].[Id]
+2025-06-09 23:52:24.196 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-09 23:52:24.220 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-09 23:52:24.235 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-09 23:52:24.259 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-09 23:52:24.283 -08:00 [INF] Executed ViewResult - view Index executed in 700.6858ms.
+2025-06-09 23:52:24.288 -08:00 [INF] Executed action FinalProjectMvc.Controllers.AboutController.Index (FinalProjectMvc) in 708.7386ms
+2025-06-09 23:52:24.295 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.AboutController.Index (FinalProjectMvc)'
+2025-06-09 23:52:24.300 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/About - 200 null text/html; charset=utf-8 784.6229ms
+2025-06-09 23:52:24.335 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/css/about/about.css - null null
+2025-06-09 23:52:24.346 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-09 23:52:24.347 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/js/about/about.js - null null
+2025-06-09 23:52:24.347 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/approachicons/862ae3f2-a43c-4020-a0a1-40e3ea6ca7d3.svg - null null
+2025-06-09 23:52:24.347 -08:00 [INF] The file /assets/css/about/about.css was not modified
+2025-06-09 23:52:24.347 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/approachicons/e0723add-ae3e-4d50-950d-cf348b6c3176.svg - null null
+2025-06-09 23:52:24.347 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/approachicons/59e15dbc-5867-4a5f-abde-01efaa2662af.svg - null null
+2025-06-09 23:52:24.362 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 15.5426ms
+2025-06-09 23:52:24.365 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/approach/0cbc3c47-b3e0-4556-a1d3-ec232074786c.jpg - null null
+2025-06-09 23:52:24.373 -08:00 [INF] The file /assets/js/about/about.js was not modified
+2025-06-09 23:52:24.389 -08:00 [INF] The file /uploads/approachicons/862ae3f2-a43c-4020-a0a1-40e3ea6ca7d3.svg was not modified
+2025-06-09 23:52:24.396 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/css/about/about.css - 304 null text/css 61.4747ms
+2025-06-09 23:52:24.407 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/team/6526cc8b-820c-46d2-b065-30c046d73623.jpg - null null
+2025-06-09 23:52:24.407 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/team/dd832474-9694-4164-99c5-42d07cc9cd30.jpg - null null
+2025-06-09 23:52:24.407 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/team/51c5619a-2a28-41fb-bd0d-f841ecd1e9dd.jpg - null null
+2025-06-09 23:52:24.411 -08:00 [INF] The file /uploads/approachicons/e0723add-ae3e-4d50-950d-cf348b6c3176.svg was not modified
+2025-06-09 23:52:24.427 -08:00 [INF] The file /uploads/approachicons/59e15dbc-5867-4a5f-abde-01efaa2662af.svg was not modified
+2025-06-09 23:52:24.457 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/aboutbanner/bdcafb61-5c6e-4b0b-bf03-d52885aa61dd.jpg - null null
+2025-06-09 23:52:24.467 -08:00 [INF] The file /uploads/approach/0cbc3c47-b3e0-4556-a1d3-ec232074786c.jpg was not modified
+2025-06-09 23:52:24.474 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/js/about/about.js - 304 null text/javascript 127.3747ms
+2025-06-09 23:52:24.478 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/approachicons/862ae3f2-a43c-4020-a0a1-40e3ea6ca7d3.svg - 304 null image/svg+xml 131.5385ms
+2025-06-09 23:52:24.507 -08:00 [INF] The file /uploads/team/6526cc8b-820c-46d2-b065-30c046d73623.jpg was not modified
+2025-06-09 23:52:24.520 -08:00 [INF] The file /uploads/team/dd832474-9694-4164-99c5-42d07cc9cd30.jpg was not modified
+2025-06-09 23:52:24.533 -08:00 [INF] The file /uploads/team/51c5619a-2a28-41fb-bd0d-f841ecd1e9dd.jpg was not modified
+2025-06-09 23:52:24.537 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/approachicons/e0723add-ae3e-4d50-950d-cf348b6c3176.svg - 304 null image/svg+xml 190.3323ms
+2025-06-09 23:52:24.544 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/approachicons/59e15dbc-5867-4a5f-abde-01efaa2662af.svg - 304 null image/svg+xml 196.3153ms
+2025-06-09 23:52:24.550 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/56004adf-578d-4086-8982-f707ebe18ebc.jpg - null null
+2025-06-09 23:52:24.555 -08:00 [INF] The file /uploads/aboutbanner/bdcafb61-5c6e-4b0b-bf03-d52885aa61dd.jpg was not modified
+2025-06-09 23:52:24.561 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/approach/0cbc3c47-b3e0-4556-a1d3-ec232074786c.jpg - 304 null image/jpeg 195.9016ms
+2025-06-09 23:52:24.571 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/storyicons/ecbf0b49-1f8d-452c-a472-732dfd66af62.svg - null null
+2025-06-09 23:52:24.592 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/team/6526cc8b-820c-46d2-b065-30c046d73623.jpg - 304 null image/jpeg 185.556ms
+2025-06-09 23:52:24.597 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/team/dd832474-9694-4164-99c5-42d07cc9cd30.jpg - 304 null image/jpeg 190.2998ms
+2025-06-09 23:52:24.602 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/team/51c5619a-2a28-41fb-bd0d-f841ecd1e9dd.jpg - 304 null image/jpeg 195.0358ms
+2025-06-09 23:52:24.604 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/storyicons/f303616b-653f-4001-a85a-71dbf8554598.svg - null null
+2025-06-09 23:52:24.604 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/storyicons/3021c966-f3b1-452f-b70f-00a050358c01.svg - null null
+2025-06-09 23:52:24.611 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-09 23:52:24.636 -08:00 [INF] The file /uploads/56004adf-578d-4086-8982-f707ebe18ebc.jpg was not modified
+2025-06-09 23:52:24.638 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/aboutbanner/bdcafb61-5c6e-4b0b-bf03-d52885aa61dd.jpg - 304 null image/jpeg 181.0649ms
+2025-06-09 23:52:24.663 -08:00 [INF] The file /uploads/storyicons/ecbf0b49-1f8d-452c-a472-732dfd66af62.svg was not modified
+2025-06-09 23:52:24.720 -08:00 [INF] The file /uploads/storyicons/f303616b-653f-4001-a85a-71dbf8554598.svg was not modified
+2025-06-09 23:52:24.731 -08:00 [INF] The file /uploads/storyicons/3021c966-f3b1-452f-b70f-00a050358c01.svg was not modified
+2025-06-09 23:52:24.745 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/56004adf-578d-4086-8982-f707ebe18ebc.jpg - 304 null image/jpeg 195.3397ms
+2025-06-09 23:52:24.752 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 140.9956ms
+2025-06-09 23:52:24.764 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/storyicons/ecbf0b49-1f8d-452c-a472-732dfd66af62.svg - 304 null image/svg+xml 192.6944ms
+2025-06-09 23:52:24.767 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/storyicons/f303616b-653f-4001-a85a-71dbf8554598.svg - 304 null image/svg+xml 162.8531ms
+2025-06-09 23:52:24.771 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/storyicons/3021c966-f3b1-452f-b70f-00a050358c01.svg - 304 null image/svg+xml 167.3299ms
+2025-06-09 23:52:26.777 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-09 23:52:26.799 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-09 23:52:26.802 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-09 23:52:26.811 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-09 23:52:26.828 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-09 23:52:26.843 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-09 23:52:26.865 -08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-09 23:52:26.885 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-09 23:52:26.908 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-09 23:52:26.926 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-09 23:52:26.946 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-09 23:52:26.967 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-09 23:52:26.981 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-09 23:52:27.002 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-09 23:52:27.028 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-09 23:52:27.048 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-09 23:52:27.065 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-09 23:52:27.080 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-09 23:52:27.096 -08:00 [INF] Executed ViewResult - view Index executed in 285.6665ms.
+2025-06-09 23:52:27.101 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 290.8109ms
+2025-06-09 23:52:27.106 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-09 23:52:27.111 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 334.7287ms
+2025-06-09 23:52:27.148 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-09 23:52:27.152 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-09 23:52:27.168 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.9268ms
+2025-06-09 23:52:27.169 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 17.2244ms
+2025-06-09 23:52:33.238 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-09 23:52:33.252 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 13.8742ms
+2025-06-09 23:52:33.267 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-09 23:52:37.455 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/home.html - null null
+2025-06-09 23:52:37.467 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/home.html - 404 0 null 11.9851ms
+2025-06-09 23:52:37.479 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/home.html, Response status code: 404
+2025-06-09 23:52:39.778 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-09 23:52:39.795 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 17.0471ms
+2025-06-09 23:52:39.806 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-09 23:52:39.830 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-09 23:52:39.840 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 9.8443ms
+2025-06-09 23:53:46.267 -08:00 [INF] Executed DbCommand (125ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-09 23:53:46.526 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-09 23:53:46.547 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-09 23:53:46.782 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-09 23:53:46.935 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-09 23:53:46.941 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-09 23:53:46.995 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-09 23:53:47.002 -08:00 [INF] Hosting environment: Development
+2025-06-09 23:53:47.009 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-09 23:53:47.449 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-09 23:53:47.608 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-09 23:53:47.619 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-09 23:53:47.632 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-09 23:53:47.944 -08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-09 23:53:48.019 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-09 23:53:48.211 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-09 23:53:48.277 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-09 23:53:48.315 -08:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-09 23:53:48.418 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-09 23:53:48.492 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-09 23:53:48.532 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-09 23:53:48.655 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-09 23:53:48.712 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-09 23:53:48.749 -08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-09 23:53:48.838 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-09 23:53:48.861 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-09 23:53:48.876 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-09 23:53:48.902 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-09 23:53:48.956 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-09 23:53:49.091 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-09 23:53:49.143 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-09 23:53:49.226 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-09 23:53:49.313 -08:00 [INF] Executed ViewResult - view Index executed in 1677.6021ms.
+2025-06-09 23:53:49.329 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 1704.1974ms
+2025-06-09 23:53:49.340 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-09 23:53:49.355 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-09 23:53:49.367 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 1918.9251ms
+2025-06-09 23:53:49.382 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 26.7006ms
+2025-06-09 23:53:49.421 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-09 23:53:49.746 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-09 23:53:49.761 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 14.7248ms
+2025-06-09 23:53:51.173 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-09 23:53:51.221 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.6288ms
+2025-06-09 23:57:14.765 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Menu - null null
+2025-06-09 23:57:14.816 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.MenuController.Index (FinalProjectMvc)'
+2025-06-09 23:57:14.828 -08:00 [INF] Route matched with {action = "Index", controller = "Menu", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.MenuController (FinalProjectMvc).
+2025-06-09 23:57:14.844 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-09 23:57:14.904 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[CreateDate], [m].[Img], [m].[Title]
+FROM [MenuBanners] AS [m]
+2025-06-09 23:57:14.943 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-09 23:57:15.008 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-09 23:57:15.032 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-09 23:57:15.055 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-09 23:57:15.081 -08:00 [INF] Executed ViewResult - view Index executed in 242.3793ms.
+2025-06-09 23:57:15.094 -08:00 [INF] Executed action FinalProjectMvc.Controllers.MenuController.Index (FinalProjectMvc) in 256.6064ms
+2025-06-09 23:57:15.105 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.MenuController.Index (FinalProjectMvc)'
+2025-06-09 23:57:15.114 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Menu - 200 null text/html; charset=utf-8 349.6651ms
+2025-06-09 23:57:15.158 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/css/menu/menu.css - null null
+2025-06-09 23:57:15.172 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-09 23:57:15.181 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/js/menu/menu.js - null null
+2025-06-09 23:57:15.184 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-09 23:57:15.185 -08:00 [INF] The file /assets/css/menu/menu.css was not modified
+2025-06-09 23:57:15.196 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 24.0977ms
+2025-06-09 23:57:15.207 -08:00 [INF] The file /assets/js/menu/menu.js was not modified
+2025-06-09 23:57:15.230 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/css/menu/menu.css - 304 null text/css 71.4141ms
+2025-06-09 23:57:15.252 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 68.2656ms
+2025-06-09 23:57:15.256 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/js/menu/menu.js - 304 null text/javascript 75.3395ms

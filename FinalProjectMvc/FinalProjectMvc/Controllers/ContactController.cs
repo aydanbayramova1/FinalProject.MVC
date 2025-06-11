@@ -28,7 +28,7 @@ namespace FinalProjectMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Submit(ContactPageVM model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 return View("Index", model);
             }
@@ -38,5 +38,6 @@ namespace FinalProjectMvc.Controllers
             TempData["Success"] = "Mesajınız uğurla göndərildi!";
             return RedirectToAction("Index");
         }
+
     }
 }

@@ -84,6 +84,10 @@ builder.Services.AddScoped<IOfferItemService, OfferItemService>();
 builder.Services.AddScoped<IOfferImageService, OfferImageService>();
 builder.Services.AddScoped<IFaqCategoryService, FaqCategoryService>();
 builder.Services.AddScoped<IFaqItemService, FaqItemService>();
+builder.Services.AddScoped<ICategoryTypeService, CategoryTypeService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ISizeService, SizeService>();
 
 
 builder.Services.AddAutoMapper(typeof(Program));

@@ -1,8 +1,8 @@
 ﻿@model Dictionary<string, string>
 
 @{
-    var footerBg = Model.ContainsKey("FooterBg") && !string.IsNullOrEmpty(Model["FooterBg"])
-        ? Model["FooterBg"]
+    var footerBg = Model.ContainsKey("BackgroundImage") && !string.IsNullOrEmpty(Model["BackgroundImage"])
+        ? Model["BackgroundImage"]
         : "/assets/images/common/footer-bg-image.jpg";
 
     var phone = Model.ContainsKey("Phone") && !string.IsNullOrEmpty(Model["Phone"])
@@ -34,7 +34,7 @@
 
 <footer>
     <section id="footer-section">
-        <div class="footer" style="background: url('@Url.Content(footerBg)') no-repeat; background-size: cover;">
+        <div class="footer" style="background: url('@Url.Content(@Model["BackgroundImage"])') no-repeat; background-size: cover;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

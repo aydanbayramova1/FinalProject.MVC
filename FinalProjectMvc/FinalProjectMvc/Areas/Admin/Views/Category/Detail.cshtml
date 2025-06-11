@@ -1,0 +1,53 @@
+﻿@model FinalProjectMvc.ViewModels.Admin.Category.CategoryDetailVM
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">📁 Category Details</h2>
+
+                <div class="mb-3">
+                    <h4 style="color: #5c3d2e;"><strong>Name:</strong> @Model.Name</h4>
+                </div>
+
+                <div class="mb-3">
+                    <h5 style="color: #5c3d2e;"><strong>Category Type:</strong> @Model.CategoryTypeName</h5>
+                </div>
+
+                <div class="mb-3">
+                    <h5 style="color: #5c3d2e;">
+                        <strong>Is Drink Category:</strong>
+                        @if (Model.IsDrinkCategory)
+                        {
+                            <span class="badge bg-success">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">No</span>
+                        }
+                    </h5>
+                </div>
+
+                <div class="mb-4">
+                    <h5 style="color: #5c3d2e;"><strong>Image:</strong></h5>
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <img src="~/uploads/category/@Model.Image" alt="@Model.Name" style="max-width: 200px;" class="rounded shadow-sm" />
+                    }
+                    else
+                    {
+                        <p class="text-muted">No image uploaded.</p>
+                    }
+                </div>
+
+                <a asp-action="Index"
+                   class="btn mt-4"
+                   style="color: #5c3d2e; border: 1px solid #5c3d2e; background-color: white;"
+                   onmouseover="this.style.backgroundColor='#5c3d2e'; this.style.color='white';"
+                   onmouseout="this.style.backgroundColor='white'; this.style.color='#5c3d2e';">
+                    Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

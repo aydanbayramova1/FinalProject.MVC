@@ -45,11 +45,9 @@
                                         </div>
                                     }
                                 </div>
-
                             }
-
                             <div class="offer-button wow fadeInUp" data-wow-delay="1s">
-                                <a style="box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);" href="reservation.html"
+                                <a style="box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);" asp-controller="Reservation" asp-action="Index"
                                    class="btn-default">Schedule your event</a>
                             </div>
                         </div>
@@ -69,7 +67,6 @@
                                             </figure>
                                         </div>
                                     }
-
                                     @if (!string.IsNullOrWhiteSpace(item.LeftImageUrl))
                                     {
                                         <div class="offer-circle-image-1">
@@ -78,7 +75,6 @@
                                             </figure>
                                         </div>
                                     }
-
                                     @if (!string.IsNullOrWhiteSpace(item.RightImageUrl))
                                     {
                                         <div class="offer-circle-image-2">

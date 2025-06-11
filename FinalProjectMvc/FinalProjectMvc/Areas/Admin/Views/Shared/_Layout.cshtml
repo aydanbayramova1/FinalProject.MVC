@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <link href="~/assets/css/dasboard/dasboard.css" rel="stylesheet" />
 </head>
-
 <body>
     <div class="" id="home">
         <div class="container">
@@ -24,17 +23,14 @@
                                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-
                         <div style="color: #4a1f15;" class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item"style="margin-right:5pc;">
                                     <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Caffe Luna<span class="sr-only">(current)</span></a>
                                 </li>
-
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="homeDropdown" role="button"
                                        onclick="toggleDropdown('homeDropdown', event)">Home</a>
-
                                     <div style="color: #4a1f15;" class="dropdown-menu" aria-labelledby="reportsDropdown">
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="Slider" asp-action="Index">Sliders</a>
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="Scrolling" asp-action="Index">Scrollings</a>
@@ -50,14 +46,15 @@
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="OurOffer" asp-action="Index">OurOffer</a>
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="OfferItem" asp-action="Index">OfferItem</a>
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="OfferImage" asp-action="Index">OfferImage</a>
-
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="CategoryType" asp-action="Index">CategoryType</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Size" asp-action="Index">Size</a>
                                     </div>
                                 </li>
-
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button"
                                        onclick="toggleDropdown('productsDropdown', event)">About</a>
-
                                     <div style="color: #4a1f15;" class="dropdown-menu" aria-labelledby="productsDropdown">
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="AboutBanner" asp-action="Index">About Banner</a>
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="Approach" asp-action="Index">Approach</a>
@@ -66,7 +63,6 @@
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="StoryItem" asp-action="Index">StoryItem</a>
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="IntroVideo" asp-action="Index">IntroVideo</a>
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="IntroCounter" asp-action="Index">IntroCounter</a>
-
                                         <a class="dropdown-item" href="#">Categories</a>
                                         <a class="dropdown-item" href="#">Inventory</a>
                                         <a class="dropdown-item" href="#">Product Analytics</a>
@@ -93,10 +89,7 @@
                                        onclick="toggleDropdown('analyticsDropdown', event)">Menu </a>
                                     <div style="color: #4a1f15;" class="dropdown-menu" aria-labelledby="analyticsDropdown">
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="MenuBanner" asp-action="Index">Menu Banner</a>
-                                        <a class="dropdown-item" href="#">User Analytics</a>
-                                        <a class="dropdown-item" href="#">Performance Metrics</a>
-                                        <a class="dropdown-item" href="#">Revenue Reports</a>
-                                        <a class="dropdown-item" href="#">Traffic Analysis</a>
+                                  
                                     </div>
                                 </li>
 

@@ -41,13 +41,11 @@ namespace FinalProjectMvc.Data
         public DbSet<OfferImage> OfferImages { get; set; }
         public DbSet<FaqCategory> FaqCategories { get; set; }
         public DbSet<FaqItem> FaqItems { get; set; }
-
-
-
-
-
-
-
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Size> Sizes { get; set; }
+        public DbSet<ProductSize> ProductSizes { get; set; }
+        public DbSet<CategoryType> CategoryTypes { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -90,6 +88,11 @@ namespace FinalProjectMvc.Data
                 .WithMany(a => a.OpeningHours)
                 .HasForeignKey(o => o.AboutUsId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Category>()
+            .HasOne(c => c.CategoryType)
+            .WithMany(ct => ct.Categories)
+            .HasForeignKey(c => c.CategoryTypeId);
         }
     }
 }

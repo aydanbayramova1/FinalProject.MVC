@@ -429,6 +429,54 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("Catalogs");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryTypeId");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.CategoryType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CategoryTypes");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.ContactBanner", b =>
                 {
                     b.Property<int>("Id")
@@ -837,6 +885,67 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("OurStories");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ingredients")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.ProductSize", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SizeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("SizeId");
+
+                    b.ToTable("ProductSizes");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.ReservationBanner", b =>
                 {
                     b.Property<int>("Id")
@@ -964,6 +1073,26 @@ namespace FinalProjectMvc.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Settings");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.Size", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sizes");
                 });
 
             modelBuilder.Entity("FinalProjectMvc.Models.Slider", b =>
@@ -1269,6 +1398,17 @@ namespace FinalProjectMvc.Migrations
                     b.Navigation("Approach");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.Category", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.CategoryType", "CategoryType")
+                        .WithMany("Categories")
+                        .HasForeignKey("CategoryTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CategoryType");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.FaqItem", b =>
                 {
                     b.HasOne("FinalProjectMvc.Models.FaqCategory", "FaqCategory")
@@ -1322,6 +1462,36 @@ namespace FinalProjectMvc.Migrations
                         .IsRequired();
 
                     b.Navigation("AboutUs");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.Product", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.ProductSize", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.Product", "Product")
+                        .WithMany("ProductSizes")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FinalProjectMvc.Models.Size", "Size")
+                        .WithMany("ProductSizes")
+                        .HasForeignKey("SizeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Size");
                 });
 
             modelBuilder.Entity("FinalProjectMvc.Models.ServiceItem", b =>
@@ -1409,6 +1579,16 @@ namespace FinalProjectMvc.Migrations
                     b.Navigation("Items");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.Category", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.CategoryType", b =>
+                {
+                    b.Navigation("Categories");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.FaqCategory", b =>
                 {
                     b.Navigation("FaqItems");
@@ -1431,9 +1611,19 @@ namespace FinalProjectMvc.Migrations
                     b.Navigation("StoryItems");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.Product", b =>
+                {
+                    b.Navigation("ProductSizes");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.Service", b =>
                 {
                     b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.Size", b =>
+                {
+                    b.Navigation("ProductSizes");
                 });
 #pragma warning restore 612, 618
         }

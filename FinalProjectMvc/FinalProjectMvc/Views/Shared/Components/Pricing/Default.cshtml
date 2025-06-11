@@ -1,4 +1,9 @@
-﻿<section id="our-pricing">
+﻿@using FinalProjectMvc.ViewModels.Admin.Pricing
+@model PricingVM
+
+
+
+<section id="our-pricing">
     <div class="container">
         <div class="row section-row">
             <div class="col-lg-12">
@@ -15,7 +20,6 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="our-pricing-box tab-content" id="pricingtab">
-
                     <div class="our-support-nav wow fadeInUp" data-wow-delay="0.2s">
                         <ul class="nav nav-tabs" id="mvTab" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -25,44 +29,20 @@
                                     All Menu
                                 </button>
                             </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="btn-default btn-highlighted" id="hot-coffes" data-bs-toggle="tab"
-                                        data-bs-target="#see-food" type="button" role="tab"
-                                        aria-selected="false">
-                                    Hot Coffees
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="btn-default btn-highlighted" id="desserts-tab"
-                                        data-bs-toggle="tab" data-bs-target="#desserts" type="button" role="tab"
-                                        aria-selected="false">
-                                    Desserts
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="btn-default btn-highlighted" id="drink-tab" data-bs-toggle="tab"
-                                        data-bs-target="#drink" type="button" role="tab" aria-selected="true">
-                                    Light
-                                    Bites
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="btn-default btn-highlighted" id="tea-more-tab"
-                                        data-bs-toggle="tab" data-bs-target="#tea-more" type="button" role="tab"
-                                        aria-selected="false">
-                                    Tea & More
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
 
-                                <button class="btn-default btn-highlighted" id="iced-coffee-tab"
-                                        data-bs-toggle="tab" data-bs-target="#iced-coffee" type="button" role="tab"
-                                        aria-selected="false">
-                                    Iced Coffees
-                                </button>
-                            </li>
-
+                            @foreach (var category in Model.Categories)
+                            {
+                                var tabId = category.Name.ToLower().Replace(" ", "-");
+                                <li class="nav-item" role="presentation">
+                                    <button class="btn-default btn-highlighted" id="@tabId-tab"
+                                            data-bs-toggle="tab" data-bs-target="#@tabId" type="button" role="tab"
+                                            aria-selected="false">
+                                        @category.Name
+                                    </button>
+                                </li>
+                            }
                         </ul>
+
                     </div>
                     <div style="border-bottom: 1px dashed #FFFFFF24;"
                          class="pricing-boxes tab-pane fade show active" id="all" role="tabpanel">
@@ -78,814 +58,96 @@
 
 
                             <div class="col-lg-6">
-                                <div class="our-menu-list">
-                                    <div class="menu-list-item">
+                               @foreach (var item in Model.Products)
+                                {
+
+                                    <div style="margin-top: 29px;" class="menu-list-item">
                                         <div class="menu-list-image">
                                             <figure>
-                                                <img src="~/assets/images/common/bruschetta.jpg"
-                                                     alt="Balsamic Bruschetta">
+                                                <img src="~/uploads/products/@item.Image" alt="">
                                             </figure>
                                         </div>
                                         <div class="menu-item-body">
+
                                             <div class="menu-item-title">
-                                                <h3>Balsamic Bruschetta</h3>
+                                                <h3>@item.Name </h3>
+
                                                 <hr>
-                                                <span>$26.00</span>
+                                                <span>$@item.Price</span>
                                             </div>
+                                            @foreach (var size in item.Sizes)
+                                            {
+                                                <span>@size</span>
+                                            }
+                                            
                                             <div class="menu-item-content">
                                                 <p style="opacity: 0.5;">
-                                                    A delightful harmony of toasted artisan
-                                                    bread, juicy ripe
-                                                    tomatoes, — all brought together with a drizzle of premium
-                                                    extra virgin olive oil.
+                                                   @item.Ingredients
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    
+                                }
 
 
-                                <div style="margin-top: 29px;" class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/americano.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-
-                                        <div class="menu-item-title">
-                                            <h3>Americano </h3>
-                                            <hr>
-                                            <span>$5.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Freshly ground coffee beans, rich espresso
-                                                shot, hot water.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/tiramisu.jpg" alt="">
-                                        </figure>
-                                    </div>
-
-                                    <div class="menu-item-body">
-
-                                        <div class="menu-item-title">
-                                            <h3>Tiramisu </h3>
-                                            <hr>
-                                            <span>$12.00</span>
-                                        </div>
-
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Ladyfinger biscuits, mascarpone cheese,
-                                                eggs, sugar, espresso
-                                                coffee, cocoa powder, heavy cream (optional), vanilla extract
-                                                (optional).
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/icead latte.jpg" alt="">
-                                        </figure>
-                                    </div>
-
-                                    <div class="menu-item-body">
-
-                                        <div class="menu-item-title">
-                                            <h3>Iced Latte </h3>
-                                            <hr>
-                                            <span>$6.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Freshly ground coffee beans, espresso shot,
-                                                cold milk, ice cubes.
-                                            </p>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="menu-list-item">
-
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/lemonad.jpg" alt="">
-                                        </figure>
-                                    </div>
-
-                                    <div class="menu-item-body">
-
-                                        <div class="menu-item-title">
-                                            <h3>Lemonade </h3>
-                                            <hr>
-                                            <span>$10.00</span>
-                                        </div>
-
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Freshly squeezed lemons, cold water, sugar,
-                                                ice cubes, mint
-                                                leaves (optional).
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pricing-boxes tab-pane fade" id="see-food" role="tabpanel">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div style="opacity: 0.5 !important ;margin-bottom: 235px;" class="pricing-image">
-                                <figure class="image-anime">
-                                    <img src="~/assets/images/common/hot coffee back.jpg" alt="">
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="our-menu-list">
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/espresso.jpg" alt="">
-                                        </figure>
-                                    </div>
-
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Espresso </h3>
-                                            <hr>
-                                            <span>$3.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Espresso contains only coffee and water.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/latte.jpg" alt="">
-                                        </figure>
-                                    </div>
-
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Latte </h3>
-                                            <hr>
-                                            <span>$5.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Freshly brewed espresso, steamed milk,
-                                                light milk foam, smooth
-                                                and creamy taste.
-                                            </p>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/d9d51af4fbf8f0e78bbca1a7fbb860f1.jpg"
-                                                 alt="">
-                                        </figure>
-                                    </div>
-
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Cappuccino </h3>
-                                            <hr>
-                                            <span>$6.00</span>
-                                        </div>
-
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Cappuccino is made with freshly brewed
-                                                espresso, steamed milk,
-                                                and a thick layer of milk foam, offering a bold yet balanced
-                                                flavor.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Macchiato.jpg" alt="">
-                                        </figure>
-                                    </div>
-
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Macchiato </h3>
-                                            <hr>
-                                            <span>$8.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Macchiato is a shot of freshly brewed
-                                                espresso topped with a
-                                                small amount of milk foam, delivering a strong and bold coffee
-                                                flavor.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Mocha.jpg" alt="">
-                                        </figure>
-                                    </div>
-
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Mocha </h3>
-                                            <hr>
-                                            <span>$8.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Mocha is made with espresso, steamed milk,
-                                                and chocolate syrup,
-                                                topped with whipped cream for a rich and sweet coffee
-                                                experience.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pricing-boxes tab-pane fade" id="desserts" role="tabpanel">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div style="opacity: 0.5 !important ;margin-bottom: -11px;" class="pricing-image">
-                                <figure class="image-anime">
-                                    <img src="~/assets/images/common/dessert.jpg" alt="">
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="our-menu-list">
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Gelato.jpg" alt="">
-                                        </figure>
-                                    </div>
-
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Gelato</h3>
-                                            <hr>
-                                            <span>$10.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Italian-style ice cream — rich, smooth, and
-                                                intensely flavorful.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Zabaglione.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Zabaglione </h3>
-                                            <hr>
-                                            <span>$13.00</span>
-                                        </div>
-
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                A light, airy custard made with egg yolks,
-                                                sugar, and Marsala
-                                                wine — served warm or chilled.
-                                            </p>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/ssss.jpg" alt="">
-                                        </figure>
-                                    </div>
-
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Decadent </h3>
-                                            <hr>
-                                            <span>$11.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Rich, flourless dark chocolate cake with a
-                                                silky ganache topping
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Waffle.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Waffle </h3>
-                                            <hr>
-                                            <span>$11.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Drizzled with warm Belgian chocolate,
-                                                topped with chocolate chips
-                                                and whipped cream.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Ricotta Cheesecake.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Ricotta Cheesecake </h3>
-                                            <hr>
-                                            <span>$15.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Lighter than traditional cheesecakes, made
-                                                with creamy ricotta
-                                                cheese for a delicate flavor.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                              
                             </div>
                         </div>
                     </div>
                 </div>
 
 
-                <div class="pricing-boxes tab-pane fade" id="drink" role="tabpanel">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div style="opacity: 0.5 !important  ;margin-bottom: 171px;" class="pricing-image">
-                                <figure class="image-anime">
-                                    <img src="~/assets/images/common/gf.jpg" alt="">
-                                </figure>
+
+                @foreach (var category in Model.Categories)
+                {
+                    var tabId = category.Name.ToLower().Replace(" ", "-");
+                    <div class="pricing-boxes tab-pane fade" id="@tabId" role="tabpanel">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div style="opacity: 0.5 !important;margin-bottom: 105px;" class="pricing-image">
+                                    <figure class="image-anime">
+                                        <img src="~/uploads/category/@category.Image" alt="@category.Name">
+                                    </figure>
+                                </div>
                             </div>
 
-                        </div>
+                            <div class="col-lg-6">
+                                @foreach (var product in Model.Products.Where(p => p.CategoryId == category.Id))
+                                {
+                                    <div class="our-menu-list">
+                                        <div class="menu-list-item">
+                                            <div class="menu-list-image">
+                                                <figure>
+                                                    <img src="~/uploads/products/@product.Image" alt="@product.Name">
+                                                </figure>
+                                            </div>
 
-                        <div class="col-lg-6">
-                            <div class="our-menu-list">
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Caprese Sandwich.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Caprese Sandwich</h3>
-                                            <hr>
-                                            <span>$24.00</span>
-                                        </div>
-
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Fresh mozzarella, juicy tomatoes & basil
-                                                leaves drizzled with
-                                                olive oil & balsamic glaze.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/frees.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Parmesan Truffle Fries</h3>
-                                            <hr>
-                                            <span>$12.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Hand-cut fries tossed with truffle oil,
-                                                grated Parmesan & herbs.
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/avacado.jpg" alt="">
-                                        </figure>
-                                    </div>
-
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Avocado Salad</h3>
-                                            <hr>
-                                            <span>$18.00</span>
-                                        </div>
-
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Avocado, cherry tomatoes, red onion, lemon
-                                                juice, olive oil, cucumber (optional), fresh herbs (parsley,
-                                                cilantro, or basil), salt & pepper, feta or mozzarella cheese
-                                                (optional)
-                                            </p>
+                                            <div class="menu-item-body">
+                                                <div class="menu-item-title">
+                                                    <h3>@product.Name</h3>
+                                                    <hr>
+                                                    <span>$@product.Price</span>
+                                                </div>
+                                                <div class="menu-item-content">
+                                                    <p style="opacity: 0.5;">
+                                                        @product.Ingredients
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Quiche.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Quiche </h3>
-                                            <hr>
-                                            <span>$22.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Light egg and cheese pie, available with
-                                                spinach or chicken
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/tomatoo.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Tomato Soup </h3>
-                                            <hr>
-                                            <span>$22.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                A warm, comforting classic made from ripe
-                                                tomatoes, fresh herbs, and a touch of cream — perfect for a cozy
-                                                coffee break.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/krivetka.jpg" alt="">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Shrimp Salad </h3>
-                                            <hr>
-                                            <span>$24.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Shrimp, Mayonnaise, Corn, Boiled Eggs,
-                                                Pickles, Salt, Black Pepper, Lettuce, Lemon Juice
-
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-
-
-
-
-
-
-
-                        </div>
-                    </div>
-                </div>
-                <div class="pricing-boxes tab-pane fade" id="tea-more" role="tabpanel">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div style="opacity: 0.5 !important ;margin-bottom: 204px;" class="pricing-image">
-                                <figure class="image-anime">
-                                    <img src="~/assets/images/common/SDRFTY.jpg" alt="Tea & More">
-                                </figure>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="our-menu-list">
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Tisane.jpg" alt="Green Tea">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Tisane</h3>
-                                            <hr>
-                                            <span>$6.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                A variety of herbal infusions made from
-                                                local herbs like chamomile, fennel, and lemon balm—perfect for a
-                                                soothing, caffeine-free option.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/milkshake.jpg" alt="Chai Tea">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Milkshake </h3>
-                                            <hr>
-                                            <span>$10.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Milk, Ice Cream, Sugar, Flavoring (e.g.
-                                                Strawberry, Chocolate, Banana), Whipped Cream (optional),
-                                                Toppings (optional)
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/blue.jpg" alt="Herbal Tea">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Blue Lemonade</h3>
-                                            <hr>
-                                            <span>$8.50</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Lemon Juice, Water, Sugar, Blue Curacao
-                                                Syrup (non-alcoholic), Ice, Lemon Slices (optional), Mint Leaves
-                                                (optional)
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/salamamamamama.jpg"
-                                                 alt="Matcha Latte">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Smoothie</h3>
-                                            <hr>
-                                            <span>$11.50</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Fruit (e.g. Banana, Strawberry, Mango),
-                                                Yogurt or Milk, Honey or Sugar (optional), Ice, Chia Seeds or
-                                                Oats (optional)
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/sssssss.jpg" alt="Fruit Tea">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Fruit Tea</h3>
-                                            <hr>
-                                            <span>$5.50</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Black tea base, fresh fruit pieces, natural
-                                                fruit extracts,
-                                                refreshing and fruity.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                }
                             </div>
                         </div>
                     </div>
-                </div>
+                }
 
-                <div class="pricing-boxes tab-pane fade" id="iced-coffee" role="tabpanel">
-                    <div class="row align-items-center">
-                        <div style="margin-bottom: 147px;" class="col-lg-6">
-                            <div class="pricing-image">
-                                <figure class="image-anime">
-                                    <img src="~/assets/images/common/j.jpg" alt="Iced Coffee">
-                                </figure>
-                            </div>
-                        </div>
+                
 
-                        <div class="col-lg-6">
-                            <div class="our-menu-list">
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Iced Americano.jpg"
-                                                 alt="Iced Americano">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Iced Americano</h3>
-                                            <hr>
-                                            <span>$7.50</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Espresso shots, cold water, ice cubes,
-                                                refreshing and bold
-                                                flavor.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+              
 
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/icead latte.jpg" alt="Iced Latte">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Iced Latte</h3>
-                                            <hr>
-                                            <span>$8.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Espresso, cold milk, ice cubes, smooth and
-                                                creamy texture.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Iced Mocha.jpg" alt="Iced Mocha">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Iced Mocha</h3>
-                                            <hr>
-                                            <span>$8.50</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Espresso, chocolate syrup, cold milk, ice
-                                                cubes, whipped cream
-                                                topping.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Cold Brew.jpg" alt="Cold Brew">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Cold Brew</h3>
-                                            <hr>
-                                            <span>$7.50</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Coarse ground coffee, cold water, steeped
-                                                for 12-24 hours, smooth
-                                                and less acidic.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="menu-list-item">
-                                    <div class="menu-list-image">
-                                        <figure>
-                                            <img src="~/assets/images/common/Iced Caramel Macchiato.jpg"
-                                                 alt="Iced Caramel Macchiato">
-                                        </figure>
-                                    </div>
-                                    <div class="menu-item-body">
-                                        <div class="menu-item-title">
-                                            <h3>Iced Caramel Macchiato</h3>
-                                            <hr>
-                                            <span>$9.00</span>
-                                        </div>
-                                        <div class="menu-item-content">
-                                            <p style="opacity: 0.5;">
-                                                Vanilla syrup, cold milk, ice, espresso
-                                                poured over, caramel
-                                                drizzle on top.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
 
                 <div class="section-footer-text wow fadeInUp" data-wow-delay="0.2s">
                     <p>craving the perfect brew? <a asp-controller="Reservation" asp-action="Index">visit us today!</a></p>
@@ -893,5 +155,5 @@
             </div>
         </div>
     </div>
-    </div>
+   </div>
 </section>

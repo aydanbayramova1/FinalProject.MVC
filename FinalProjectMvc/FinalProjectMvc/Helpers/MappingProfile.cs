@@ -10,6 +10,8 @@ using FinalProjectMvc.ViewModels.Admin.Blog;
 using FinalProjectMvc.ViewModels.Admin.BlogBanner;
 using FinalProjectMvc.ViewModels.Admin.BlogDetailBanner;
 using FinalProjectMvc.ViewModels.Admin.Catalog;
+using FinalProjectMvc.ViewModels.Admin.Category;
+using FinalProjectMvc.ViewModels.Admin.CategoryType;
 using FinalProjectMvc.ViewModels.Admin.ContactBanner;
 using FinalProjectMvc.ViewModels.Admin.ContactMessage;
 using FinalProjectMvc.ViewModels.Admin.ContactUs;
@@ -23,11 +25,13 @@ using FinalProjectMvc.ViewModels.Admin.OfferItem;
 using FinalProjectMvc.ViewModels.Admin.OpeningHour;
 using FinalProjectMvc.ViewModels.Admin.OurOffer;
 using FinalProjectMvc.ViewModels.Admin.OurStory;
+using FinalProjectMvc.ViewModels.Admin.Product;
 using FinalProjectMvc.ViewModels.Admin.ReservationBanner;
 using FinalProjectMvc.ViewModels.Admin.Scrolling;
 using FinalProjectMvc.ViewModels.Admin.Service;
 using FinalProjectMvc.ViewModels.Admin.ServiceItem;
 using FinalProjectMvc.ViewModels.Admin.Setting;
+using FinalProjectMvc.ViewModels.Admin.Size;
 using FinalProjectMvc.ViewModels.Admin.Slider;
 using FinalProjectMvc.ViewModels.Admin.StoryItem;
 using FinalProjectMvc.ViewModels.Admin.TeamBanner;
@@ -292,7 +296,103 @@ namespace FinalProjectMvc.Helpers
             CreateMap<FaqItemCreateVM, FaqItem>();
             CreateMap<FaqItemEditVM, FaqItem>().ReverseMap();
 
+            CreateMap<Category, CategoryCreateVM>().ReverseMap();
+            CreateMap<Category, CategoryEditVM>().ReverseMap();
+            CreateMap<Category, CategoryDetailVM>().ReverseMap();
+
+            CreateMap<CategoryType, CategoryTypeVM>().ReverseMap();
+            CreateMap<CategoryTypeCreateVM, CategoryType>();
+
+            CreateMap<Category, CategoryVM>()
+             .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src => src.CategoryType.Name))
+             .ForMember(dest => dest.ProductCount, opt => opt.MapFrom(src => src.Products.Count()));
+
+            CreateMap<Category, CategoryVM>()
+                .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src => src.CategoryType.Name))
+                .ForMember(dest => dest.ProductCount, opt => opt.MapFrom(src => src.Products.Count));
+
+            CreateMap<Category, CategoryDetailVM>()
+                .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src => src.CategoryType.Name));
+
+            CreateMap<CategoryCreateVM, Category>();
+            CreateMap<Category, CategoryEditVM>();
+            CreateMap<CategoryEditVM, Category>();
+
+            CreateMap<CategoryType, CategoryTypeVM>();
+            CreateMap<CategoryTypeCreateVM, CategoryType>();
+
+
+            CreateMap<Category, CategoryDetailVM>()
+    .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src => src.CategoryType.Name))
+    .ForMember(dest => dest.CategoryTypeId, opt => opt.MapFrom(src => src.CategoryTypeId));
+
+            CreateMap<Category, CategoryDetailVM>()
+    .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src => src.CategoryType.Name))
+    .ForMember(dest => dest.IsDrinkCategory, opt => opt.MapFrom(src => src.CategoryType.Name == "Drink"));
+
+            CreateMap<ProductCreateVM, Product>()
+            .ForMember(dest => dest.Image, opt => opt.Ignore());
+
+            CreateMap<Product, ProductEditVM>()
+                .ForMember(dest => dest.ExistingImage, opt => opt.MapFrom(src => src.Image));
+
+            CreateMap<ProductEditVM, Product>()
+                .ForMember(dest => dest.Image, opt => opt.Ignore());
+
+            CreateMap<Product, ProductDetailVM>()
+                .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))
+                .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src => src.Category.CategoryType.Name))
+                .ForMember(dest => dest.Sizes, opt => opt.MapFrom(src => src.ProductSizes.Select(ps => ps.Size.Name).ToList()));
+
+
+            CreateMap<SizeCreateVM, Size>();
+            CreateMap<Size, SizeVM>();
+            CreateMap<SizeVM, Size>();
+            CreateMap<Product, ProductVM>()
+     .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category.Name))
+     .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src => src.Category.CategoryType.Name))
+     .ForMember(dest => dest.Sizes, opt => opt.MapFrom(src =>
+         src.ProductSizes != null && src.ProductSizes.Any()
+             ? src.ProductSizes.Select(ps => ps.Size.Name).ToList()
+             : new List<string>()));
+
+            CreateMap<Product, ProductDetailVM>()
+                .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name))
+                .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src => src.Category.CategoryType.Name))
+                .ForMember(dest => dest.Sizes, opt => opt.MapFrom(src =>
+                    src.ProductSizes != null && src.ProductSizes.Any()
+                        ? src.ProductSizes.Select(ps => ps.Size.Name).ToList()
+                        : new List<string>()));
+
+            CreateMap<Product, ProductEditVM>()
+                .ForMember(dest => dest.ExistingImage, opt => opt.MapFrom(src => src.Image))
+                .ForMember(dest => dest.ImageFile, opt => opt.Ignore())
+                .ForMember(dest => dest.Categories, opt => opt.Ignore())
+                .ForMember(dest => dest.Sizes, opt => opt.Ignore())
+                .ForMember(dest => dest.SelectedSizeIds, opt => opt.Ignore());
+
+            CreateMap<ProductCreateVM, Product>()
+                .ForMember(dest => dest.Image, opt => opt.Ignore())
+                .ForMember(dest => dest.Category, opt => opt.Ignore())
+                .ForMember(dest => dest.ProductSizes, opt => opt.Ignore())
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
+
+
+            CreateMap<ProductEditVM, Product>()
+                .ForMember(dest => dest.Image, opt => opt.Ignore())
+                .ForMember(dest => dest.Category, opt => opt.Ignore())
+                .ForMember(dest => dest.ProductSizes, opt => opt.Ignore());
+            
+
+
+
+            CreateMap<Category, CategoryDetailVM>()
+  .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src => src.CategoryType.Name));
 
         }
+
+
+
     }
+    
 }
