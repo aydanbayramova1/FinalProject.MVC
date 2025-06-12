@@ -821,10 +821,6 @@
       "PackagePath": "staticwebassets\\uploads\\4c1598fe-b7bb-48dc-9009-e201ebf85b7b.jpg"
     },
     {
-      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\5499aad2-936b-45ca-9436-4d3789d13a8d.jpg",
-      "PackagePath": "staticwebassets\\uploads\\5499aad2-936b-45ca-9436-4d3789d13a8d.jpg"
-    },
-    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\56004adf-578d-4086-8982-f707ebe18ebc.jpg",
       "PackagePath": "staticwebassets\\uploads\\56004adf-578d-4086-8982-f707ebe18ebc.jpg"
     },
@@ -917,6 +913,10 @@
       "PackagePath": "staticwebassets\\uploads\\approachicons\\f9b371c4-ae24-41be-89b1-8ac8b3afa9ee.jpg"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\b204a557-bdb8-4f4c-bbb1-ef9f4f04ad3c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\b204a557-bdb8-4f4c-bbb1-ef9f4f04ad3c.jpg"
+    },
+    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\b66b91fa-d414-4397-a15d-d4a27d111995.jpg",
       "PackagePath": "staticwebassets\\uploads\\b66b91fa-d414-4397-a15d-d4a27d111995.jpg"
     },
@@ -989,20 +989,28 @@
       "PackagePath": "staticwebassets\\uploads\\catalogs\\a3819336-9791-4bfd-b357-6c9ea63e5ed3.jpg"
     },
     {
-      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\category\\746dd22f-9170-435f-9d20-f950abb4b061.jpg",
-      "PackagePath": "staticwebassets\\uploads\\category\\746dd22f-9170-435f-9d20-f950abb4b061.jpg"
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\category\\24959449-33f0-4999-a3d2-99ae78dfb10a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\category\\24959449-33f0-4999-a3d2-99ae78dfb10a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\category\\31c9d644-e992-498f-b9c0-ff7cd2e00722.jpg",
+      "PackagePath": "staticwebassets\\uploads\\category\\31c9d644-e992-498f-b9c0-ff7cd2e00722.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\category\\55142d41-c12c-4874-8896-2ed91b6cd8a7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\category\\55142d41-c12c-4874-8896-2ed91b6cd8a7.jpg"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\category\\9093f976-5413-46fe-ad61-096fd60a6211.jpg",
       "PackagePath": "staticwebassets\\uploads\\category\\9093f976-5413-46fe-ad61-096fd60a6211.jpg"
     },
     {
-      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\category\\91712b43-3f30-467d-b9e3-5bc4bb7c7a6c.jpg",
-      "PackagePath": "staticwebassets\\uploads\\category\\91712b43-3f30-467d-b9e3-5bc4bb7c7a6c.jpg"
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\category\\92a3459d-4591-4cb1-b9e2-370d31990200.jpg",
+      "PackagePath": "staticwebassets\\uploads\\category\\92a3459d-4591-4cb1-b9e2-370d31990200.jpg"
     },
     {
-      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\category\\9d005e71-c180-4633-b395-463193c30ab5.jpg",
-      "PackagePath": "staticwebassets\\uploads\\category\\9d005e71-c180-4633-b395-463193c30ab5.jpg"
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\category\\feb34a76-02ea-4022-ab4b-05c64fd536e6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\category\\feb34a76-02ea-4022-ab4b-05c64fd536e6.jpg"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\contactbanner\\6c5f6ab4-4f1b-4028-aa59-353063815489.jpg",
@@ -1137,12 +1145,92 @@
       "PackagePath": "staticwebassets\\uploads\\products\\075d0338-9152-43f4-aca1-82082ca4ce7b.png"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\09be7f76-af6d-47c6-83e7-7a39ba76fdf7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\09be7f76-af6d-47c6-83e7-7a39ba76fdf7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\0bb7cc11-43e3-4d41-b925-d16eb50a509c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\0bb7cc11-43e3-4d41-b925-d16eb50a509c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\0d229dc1-9461-4119-b3d9-a8a865b39657.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\0d229dc1-9461-4119-b3d9-a8a865b39657.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\10d47dd8-3cae-45a9-a0c7-e141b653cd4f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\10d47dd8-3cae-45a9-a0c7-e141b653cd4f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\12d4a3d7-d332-448a-9397-b5ac26610302.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\12d4a3d7-d332-448a-9397-b5ac26610302.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\2b73569c-0e6a-4049-9e7b-66b2a273db95.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\2b73569c-0e6a-4049-9e7b-66b2a273db95.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\37846cc1-0ddb-4625-9a71-8cc85ffd1a75.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\37846cc1-0ddb-4625-9a71-8cc85ffd1a75.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\37a62214-601d-4fff-98bb-cd37f2b55daf.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\37a62214-601d-4fff-98bb-cd37f2b55daf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\3aeaeda8-f509-4a6b-944f-6d5cf5ad259c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\3aeaeda8-f509-4a6b-944f-6d5cf5ad259c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\3d9d0d75-ca45-4cb7-9cea-52d05e66f89c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\3d9d0d75-ca45-4cb7-9cea-52d05e66f89c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\4066c47a-69f8-4573-9b24-b5b2b8fb2aca.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\4066c47a-69f8-4573-9b24-b5b2b8fb2aca.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\49e22769-4f17-4b94-8b9a-fd63b163c251.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\49e22769-4f17-4b94-8b9a-fd63b163c251.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\4b4fcfe8-4c81-4dbb-aa9a-8fdf3673030a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\4b4fcfe8-4c81-4dbb-aa9a-8fdf3673030a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\4c4e9846-3b0c-4258-b417-d5078a8fd947.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\4c4e9846-3b0c-4258-b417-d5078a8fd947.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\4e682c34-f0ad-4d85-8094-d2ad601172c9.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\4e682c34-f0ad-4d85-8094-d2ad601172c9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\4e8a82b2-abaf-4394-b736-a145c77006bb.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\4e8a82b2-abaf-4394-b736-a145c77006bb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\56c4de31-589c-4955-bf71-6e7be90b07f8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\56c4de31-589c-4955-bf71-6e7be90b07f8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\60d24454-d393-48bc-bc0d-5602078bea30.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\60d24454-d393-48bc-bc0d-5602078bea30.jpg"
+    },
+    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\650b79c1-29b7-4c18-a36b-fb40de1d750b.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\650b79c1-29b7-4c18-a36b-fb40de1d750b.jpg"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\664704cb-554b-4a9e-8733-b77daa6f3fd0.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\664704cb-554b-4a9e-8733-b77daa6f3fd0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\6f544273-fcc8-45fb-ac9f-b448a0e1da7c.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\6f544273-fcc8-45fb-ac9f-b448a0e1da7c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\703a4241-3462-4ca6-8702-44814a1fc47b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\703a4241-3462-4ca6-8702-44814a1fc47b.jpg"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\75480e5a-d8ab-4881-b797-2bf2ab132d81.jpg",
@@ -1157,6 +1245,26 @@
       "PackagePath": "staticwebassets\\uploads\\products\\884d9099-6ecd-4853-a0d1-8f249638fb1e.jpg"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\8de4b121-1f96-4ef9-8a26-fddefc54db2b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\8de4b121-1f96-4ef9-8a26-fddefc54db2b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\9a0f73fa-490c-4701-b188-33994032c61e.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\9a0f73fa-490c-4701-b188-33994032c61e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\9cc34e66-44fb-4422-bac4-cdfb0f6513dc.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\9cc34e66-44fb-4422-bac4-cdfb0f6513dc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\a7762e6c-b2bf-442c-b993-8342056a513f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\a7762e6c-b2bf-442c-b993-8342056a513f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\aadb1230-81b6-4c9c-afe8-01af2c2e3bb2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\aadb1230-81b6-4c9c-afe8-01af2c2e3bb2.jpg"
+    },
+    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\aea16655-d7e0-4069-a60c-bd5d535c74b3.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\aea16655-d7e0-4069-a60c-bd5d535c74b3.jpg"
     },
@@ -1165,8 +1273,20 @@
       "PackagePath": "staticwebassets\\uploads\\products\\b1c98cb2-2bd9-45f5-995e-9b653525bbfb.jpg"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\c4665628-adc4-4f71-bb4f-dd1088572f7f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\c4665628-adc4-4f71-bb4f-dd1088572f7f.jpg"
+    },
+    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\cc1aecba-c918-4051-bec6-6275bfb8398d.png",
       "PackagePath": "staticwebassets\\uploads\\products\\cc1aecba-c918-4051-bec6-6275bfb8398d.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\cc1ee19f-44ef-4c2f-8341-5066a38ffca4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\cc1ee19f-44ef-4c2f-8341-5066a38ffca4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\cd9db114-c4f1-4f06-a73a-e791bc96ef44.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\cd9db114-c4f1-4f06-a73a-e791bc96ef44.jpg"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\d17bdebb-2591-439e-b9a9-5ef6083f1523.jpg",
@@ -1177,8 +1297,24 @@
       "PackagePath": "staticwebassets\\uploads\\products\\d5ba1f87-7502-4b34-9b60-8827a462c3df.jpg"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\d97edf72-bd80-497b-8515-80555eacc521.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\d97edf72-bd80-497b-8515-80555eacc521.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\e1aec826-f16f-462e-b33d-3784d074219d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\e1aec826-f16f-462e-b33d-3784d074219d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\e413329d-d6a5-4159-8715-ca991cbacf54.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\e413329d-d6a5-4159-8715-ca991cbacf54.jpg"
+    },
+    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\f1b9b5e4-9a58-44ca-8216-fd9106eb72e9.png",
       "PackagePath": "staticwebassets\\uploads\\products\\f1b9b5e4-9a58-44ca-8216-fd9106eb72e9.png"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\f29d1732-4e7e-4406-be90-001fb8ac94ed.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\f29d1732-4e7e-4406-be90-001fb8ac94ed.jpg"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\reservationbanner\\b31c9b34-ee97-46c3-848f-1b364970a1e8.jpg",

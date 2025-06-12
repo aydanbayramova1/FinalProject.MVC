@@ -7,5 +7,6 @@ namespace FinalProjectMvc.Models
         [Required]
         public string Name { get; set; }
         public ICollection<ProductSize> ProductSizes { get; set; }
+        public ICollection<MenuProduct> MenuProducts { get; set; }
     }
 }

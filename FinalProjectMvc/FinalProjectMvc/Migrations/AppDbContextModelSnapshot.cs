@@ -738,6 +738,69 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("MenuBanners");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.MenuProduct", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Ingredients")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.Property<int?>("SizeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("SizeId");
+
+                    b.ToTable("MenuProducts");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.MenuProductSize", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("MenuProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SizeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MenuProductId");
+
+                    b.HasIndex("SizeId");
+
+                    b.ToTable("MenuProductSizes");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.OfferImage", b =>
                 {
                     b.Property<int>("Id")
@@ -931,6 +994,9 @@ namespace FinalProjectMvc.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("MenuProductId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -938,6 +1004,8 @@ namespace FinalProjectMvc.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MenuProductId");
 
                     b.HasIndex("ProductId");
 
@@ -1431,6 +1499,40 @@ namespace FinalProjectMvc.Migrations
                     b.Navigation("IntroVideo");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.MenuProduct", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FinalProjectMvc.Models.Size", null)
+                        .WithMany("MenuProducts")
+                        .HasForeignKey("SizeId");
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("FinalProjectMvc.Models.MenuProductSize", b =>
+                {
+                    b.HasOne("FinalProjectMvc.Models.MenuProduct", "MenuProduct")
+                        .WithMany()
+                        .HasForeignKey("MenuProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FinalProjectMvc.Models.Size", "Size")
+                        .WithMany()
+                        .HasForeignKey("SizeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MenuProduct");
+
+                    b.Navigation("Size");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.OfferImage", b =>
                 {
                     b.HasOne("FinalProjectMvc.Models.OurOffer", "OurOffer")
@@ -1477,6 +1579,10 @@ namespace FinalProjectMvc.Migrations
 
             modelBuilder.Entity("FinalProjectMvc.Models.ProductSize", b =>
                 {
+                    b.HasOne("FinalProjectMvc.Models.MenuProduct", null)
+                        .WithMany("ProductSizes")
+                        .HasForeignKey("MenuProductId");
+
                     b.HasOne("FinalProjectMvc.Models.Product", "Product")
                         .WithMany("ProductSizes")
                         .HasForeignKey("ProductId")
@@ -1599,6 +1705,11 @@ namespace FinalProjectMvc.Migrations
                     b.Navigation("Counters");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.MenuProduct", b =>
+                {
+                    b.Navigation("ProductSizes");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.OurOffer", b =>
                 {
                     b.Navigation("OfferImages");
@@ -1623,6 +1734,8 @@ namespace FinalProjectMvc.Migrations
 
             modelBuilder.Entity("FinalProjectMvc.Models.Size", b =>
                 {
+                    b.Navigation("MenuProducts");
+
                     b.Navigation("ProductSizes");
                 });
 #pragma warning restore 612, 618

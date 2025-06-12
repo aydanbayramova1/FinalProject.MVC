@@ -116,7 +116,6 @@ namespace FinalProjectMvc.Services
                 product.Image = await vm.ImageFile.SaveFileAsync(_env.WebRootPath, "uploads/products");
             }
 
-            // Mövcud size əlaqələrini sil
             _context.ProductSizes.RemoveRange(product.ProductSizes);
 
             var categoryType = await GetCategoryTypeAsync(vm.CategoryId);
@@ -150,10 +149,13 @@ namespace FinalProjectMvc.Services
 
         public async Task<List<ProductVM>> GetAllAsync()
         {
+
             var products = await _context.Products
-                .Include(p => p.Category).ThenInclude(c => c.CategoryType)
+                .Include(p => p.Category)
+                    .ThenInclude(c => c.CategoryType)
                 .Include(p => p.ProductSizes)
                     .ThenInclude(ps => ps.Size)
+                .OrderByDescending(p => p.Id) 
                 .ToListAsync();
 
             return _mapper.Map<List<ProductVM>>(products);
@@ -172,7 +174,6 @@ namespace FinalProjectMvc.Services
         {
             var categoryType = await GetCategoryTypeAsync(vm.CategoryId);
 
-            // Əgər Drink kateqoriyasıdırsa, 3 size seçilməlidir
             if (categoryType == "Drink" && (vm.SelectedSizeIds == null || vm.SelectedSizeIds.Count != 3))
             {
                 return false;
@@ -213,10 +214,6 @@ namespace FinalProjectMvc.Services
             }
         }
     }
-
-
-
-
 
 
 }

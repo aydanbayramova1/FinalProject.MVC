@@ -20,13 +20,23 @@ namespace FinalProjectMvc.ViewComponents.Home
             var categories = await _categoryService.GetAllAsync();
             var products = await _productService.GetAllAsync();
 
+            var filteredCategories = categories
+                .Where(c => products.Any(p => p.CategoryId == c.Id))
+                .ToList();
+
+            if (!filteredCategories.Any())
+            {
+                return Content(string.Empty);
+            }
+
             var vm = new PricingVM
             {
-                Categories = categories,
+                Categories = filteredCategories,
                 Products = products
             };
 
             return View(vm);
         }
+
     }
 }

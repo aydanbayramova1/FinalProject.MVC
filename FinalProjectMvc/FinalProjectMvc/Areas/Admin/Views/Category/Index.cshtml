@@ -18,8 +18,8 @@
                                 <th style="background-color: #5c3d2e; color: #fff;">Image</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Name</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Category Type</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Product Count</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
+@*                                 <th style="background-color: #5c3d2e; color: #fff;">Product Count</th>
+ *@                                <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,9 +39,9 @@
                                             }
                                         </td>
                                         <td>@item.Name</td>
-                                        <td>@item.CategoryTypeName</td>
-                                        <td>@item.ProductCount</td>
-                                        <td>
+                                       <td>@item.CategoryTypeName</td>
+@*                                          <td>@item.ProductCount</td>
+ *@                                        <td>
                                             <div class="d-flex justify-content-center gap-2">
                                                 <a asp-action="Detail" asp-route-id="@item.Id" title="View Details" class="btn btn-info btn-sm">
                                                     <i class="fa-solid fa-circle-info"></i>

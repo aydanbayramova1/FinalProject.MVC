@@ -1,8 +1,6 @@
 ﻿@using FinalProjectMvc.ViewModels.Admin.Pricing
 @model PricingVM
 
-
-
 <section id="our-pricing">
     <div class="container">
         <div class="row section-row">
@@ -10,8 +8,7 @@
                 <div class="section-title">
                     <h3 class="wow fadeInUp">Our pricing</h3>
                     <h2 class="text-anime-style-3" data-cursor="-opaque">
-                        Savor every moment, without the premium
-                        price
+                        Savor every moment, without the premium price
                     </h2>
                 </div>
             </div>
@@ -30,6 +27,8 @@
                                 </button>
                             </li>
 
+                      
+
                             @foreach (var category in Model.Categories)
                             {
                                 var tabId = category.Name.ToLower().Replace(" ", "-");
@@ -42,118 +41,105 @@
                                 </li>
                             }
                         </ul>
-
                     </div>
-                    <div style="border-bottom: 1px dashed #FFFFFF24;"
-                         class="pricing-boxes tab-pane fade show active" id="all" role="tabpanel">
+
+                    <div class="pricing-boxes tab-pane fade show active" id="all" role="tabpanel">
                         <div class="row align-items-center">
                             <div class="col-lg-6">
-                                <div style="opacity: 0.5 !important;margin-bottom: 105px;"
-                                     class="pricing-image">
+                                <div style="opacity: 0.5 !important;margin-bottom: 105px;" class="pricing-image">
                                     <figure class="image-anime">
                                         <img src="~/assets/images/home/all.jpg" alt="">
                                     </figure>
                                 </div>
                             </div>
-
-
                             <div class="col-lg-6">
-                               @foreach (var item in Model.Products)
+                                @foreach (var category in Model.Categories)
                                 {
+                                    var lastProduct = Model.Products
+                                    .Where(p => p.CategoryId == category.Id)
+                                    .OrderByDescending(p => p.Id)
+                                    .FirstOrDefault();
 
-                                    <div style="margin-top: 29px;" class="menu-list-item">
-                                        <div class="menu-list-image">
-                                            <figure>
-                                                <img src="~/uploads/products/@item.Image" alt="">
-                                            </figure>
-                                        </div>
-                                        <div class="menu-item-body">
-
-                                            <div class="menu-item-title">
-                                                <h3>@item.Name </h3>
-
-                                                <hr>
-                                                <span>$@item.Price</span>
-                                            </div>
-                                            @foreach (var size in item.Sizes)
-                                            {
-                                                <span>@size</span>
-                                            }
-                                            
-                                            <div class="menu-item-content">
-                                                <p style="opacity: 0.5;">
-                                                   @item.Ingredients
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                }
-
-
-                              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                @foreach (var category in Model.Categories)
-                {
-                    var tabId = category.Name.ToLower().Replace(" ", "-");
-                    <div class="pricing-boxes tab-pane fade" id="@tabId" role="tabpanel">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <div style="opacity: 0.5 !important;margin-bottom: 105px;" class="pricing-image">
-                                    <figure class="image-anime">
-                                        <img src="~/uploads/category/@category.Image" alt="@category.Name">
-                                    </figure>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                @foreach (var product in Model.Products.Where(p => p.CategoryId == category.Id))
-                                {
-                                    <div class="our-menu-list">
-                                        <div class="menu-list-item">
+                                    if (lastProduct != null)
+                                    {
+                                        <div style="margin-top: 29px;" class="menu-list-item">
                                             <div class="menu-list-image">
                                                 <figure>
-                                                    <img src="~/uploads/products/@product.Image" alt="@product.Name">
+                                                    <img src="~/uploads/products/@lastProduct.Image" alt="@lastProduct.Name">
                                                 </figure>
                                             </div>
-
                                             <div class="menu-item-body">
                                                 <div class="menu-item-title">
-                                                    <h3>@product.Name</h3>
+                                                    <h3>@lastProduct.Name</h3>
                                                     <hr>
-                                                    <span>$@product.Price</span>
+                                                    <span>$@lastProduct.Price</span>
                                                 </div>
+                                               
                                                 <div class="menu-item-content">
                                                     <p style="opacity: 0.5;">
-                                                        @product.Ingredients
+                                                        @lastProduct.Ingredients
                                                     </p>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    }
                                 }
                             </div>
                         </div>
                     </div>
-                }
 
-                
+                    @foreach (var category in Model.Categories)
+                    {
+                        var tabId = category.Name.ToLower().Replace(" ", "-");
+                        <div class="pricing-boxes tab-pane fade" id="@tabId" role="tabpanel">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6">
+                                    <div style="opacity: 0.5 !important;margin-bottom: 105px;" class="pricing-image">
+                                        <figure class="image-anime">
+                                            <img src="@Url.Content($"~/uploads/categories/{category.Image}")" alt="@category.Name">
+                                        </figure>
+                                    </div>
+                                </div>
 
-              
+                                <div class="col-lg-6">
+                                    @foreach (var product in Model.Products
+                                   .Where(p => p.CategoryId == category.Id)
+                                   .OrderByDescending(p => p.Id)
+                                   .Take(5))
+                                    {
+                                        <div class="our-menu-list">
+                                            <div class="menu-list-item">
+                                                <div class="menu-list-image">
+                                                    <figure>
+                                                        <img src="~/uploads/products/@product.Image" alt="@product.Name">
+                                                    </figure>
+                                                </div>
+                                                <div class="menu-item-body">
+                                                    <div class="menu-item-title">
+                                                        <h3>@product.Name</h3>
+                                                        <hr>
+                                                        <span>$@product.Price</span>
+                                                    </div>
+                                                  
+                                                    <div class="menu-item-content">
+                                                        <p style="opacity: 0.5;">
+                                                            @product.Ingredients
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
 
-               
-
-                <div class="section-footer-text wow fadeInUp" data-wow-delay="0.2s">
-                    <p>craving the perfect brew? <a asp-controller="Reservation" asp-action="Index">visit us today!</a></p>
+                    <div class="section-footer-text wow fadeInUp" data-wow-delay="0.2s">
+                        <p>craving the perfect brew? <a asp-controller="Menu" asp-action="Index">Check out our menu!</a></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-   </div>
 </section>

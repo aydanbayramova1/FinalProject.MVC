@@ -43,7 +43,6 @@
                         <span asp-validation-for="CategoryId" class="text-danger"></span>
                     </div>
 
-                    <!-- Sizes section - initially hidden -->
                     <div class="form-group mb-4" id="sizesSection" style="display: none;">
                         <label class="form-label">Sizes</label>
                         <div class="form-check">
@@ -87,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const sizesSection = document.getElementById('sizesSection');
     const sizeCheckboxes = document.querySelectorAll('input[name="SelectedSizeIds"]');
     
-    // Category types dictionary from server
     const categoryTypes = @Html.Raw(Json.Serialize(Model.CategoryTypesById ?? new Dictionary<int, string>()));
 
     categorySelect.addEventListener('change', function() {
@@ -98,20 +96,17 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (categoryType === 'Drink') {
                 sizesSection.style.display = 'block';
-                // Avtomatik olaraq bütün size-ları seç
                 sizeCheckboxes.forEach(checkbox => {
                     checkbox.checked = true;
                 });
             } else {
                 sizesSection.style.display = 'none';
-                // Clear all selected sizes when hiding
                 sizeCheckboxes.forEach(checkbox => {
                     checkbox.checked = false;
                 });
             }
         } else {
             sizesSection.style.display = 'none';
-            // Clear all selected sizes when no category is selected
             sizeCheckboxes.forEach(checkbox => {
                 checkbox.checked = false;
             });

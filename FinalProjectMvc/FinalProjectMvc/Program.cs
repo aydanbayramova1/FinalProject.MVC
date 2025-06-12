@@ -88,6 +88,7 @@ builder.Services.AddScoped<ICategoryTypeService, CategoryTypeService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ISizeService, SizeService>();
+builder.Services.AddScoped<IMenuProductService, MenuProductService>();
 
 
 builder.Services.AddAutoMapper(typeof(Program));
