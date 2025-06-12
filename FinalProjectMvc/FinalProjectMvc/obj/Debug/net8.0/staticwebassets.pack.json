@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\menu\\menu.css"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\pagination.css",
+      "PackagePath": "staticwebassets\\assets\\css\\pagination.css"
+    },
+    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\css\\reservation\\reservation.css",
       "PackagePath": "staticwebassets\\assets\\css\\reservation\\reservation.css"
     },
@@ -783,6 +787,10 @@
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\menu\\menu.js",
       "PackagePath": "staticwebassets\\assets\\js\\menu\\menu.js"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\pagination.js",
+      "PackagePath": "staticwebassets\\assets\\js\\pagination.js"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\assets\\js\\reservation\\reservation.js",

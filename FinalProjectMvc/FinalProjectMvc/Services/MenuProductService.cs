@@ -3,6 +3,7 @@ using FinalProjectMvc.Data;
 using FinalProjectMvc.Models;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.MenuProduct;
+using FinalProjectMvc.ViewModels.Admin.Product;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
@@ -42,13 +43,24 @@ namespace FinalProjectMvc.Services
                 await _context.SaveChangesAsync();
             }
         }
+        public async Task<IQueryable<MenuProductVM>> GetAllQueryAsync()
+        {
+            var products = await _context.MenuProducts
+                .Include(p => p.Category)
+                .Include(p => p.MenuProductSizes)
+                .ThenInclude(ps => ps.Size)
+                .ToListAsync();
 
+            var mapped = _mapper.Map<List<MenuProductVM>>(products);
+
+            return mapped.AsQueryable();
+        }
         public async Task<MenuProductCreateVM> GetCreateVMAsync()
         {
             return new MenuProductCreateVM
             {
                 Categories = await _context.Categories
-                    .Include(c => c.CategoryType) // CategoryType-ı include et
+                    .Include(c => c.CategoryType)
                     .Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name })
                     .ToListAsync(),
                 Sizes = await _context.Sizes
@@ -73,7 +85,7 @@ namespace FinalProjectMvc.Services
             var vm = _mapper.Map<MenuProductEditVM>(menuProduct);
 
             vm.Categories = await _context.Categories
-                .Include(c => c.CategoryType) // CategoryType-ı include et
+                .Include(c => c.CategoryType) 
                 .Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name })
                 .ToListAsync();
 
@@ -85,14 +97,13 @@ namespace FinalProjectMvc.Services
                 .Include(c => c.CategoryType)
                 .ToDictionaryAsync(c => c.Id, c => c.CategoryType.Name ?? "");
 
-            // Drink kategoriyası üçün size-ları set et
             if (menuProduct.Category?.CategoryType?.Name == "Drink")
             {
                 vm.SelectedSizeIds = menuProduct.MenuProductSizes?.Select(ps => ps.SizeId).ToList() ?? new List<int>();
             }
             else
             {
-                vm.SelectedSizeIds = new List<int>(); // Boş list ver
+                vm.SelectedSizeIds = new List<int>(); 
             }
 
             return vm;
@@ -108,12 +119,10 @@ namespace FinalProjectMvc.Services
 
             _mapper.Map(vm, menuProduct);
 
-            // Əvvəlki size-ları sil
             _context.MenuProductSizes.RemoveRange(menuProduct.MenuProductSizes);
 
             var categoryType = await GetCategoryTypeAsync(vm.CategoryId);
 
-            // Yalnız Drink kategoriyası üçün size-lar əlavə et
             if (categoryType == "Drink" && vm.SelectedSizeIds != null && vm.SelectedSizeIds.Any())
             {
                 foreach (var sizeId in vm.SelectedSizeIds)
@@ -146,11 +155,8 @@ namespace FinalProjectMvc.Services
         public async Task<List<MenuProductVM>> GetAllAsync()
         {
             var products = await _context.MenuProducts
-                .Include(p => p.Category)
-                    .ThenInclude(c => c.CategoryType)
-                .Include(p => p.MenuProductSizes)
-                    .ThenInclude(ps => ps.Size)
-                .OrderByDescending(p => p.Id)
+                .Include(p => p.Category).ThenInclude(c => c.CategoryType)
+                .Include(p => p.MenuProductSizes).ThenInclude(ps => ps.Size)
                 .ToListAsync();
 
             return _mapper.Map<List<MenuProductVM>>(products);
@@ -169,13 +175,11 @@ namespace FinalProjectMvc.Services
         {
             var categoryType = await GetCategoryTypeAsync(vm.CategoryId);
 
-            // Drink kategoriyası üçün həmişə 3 size seçilməlidir
             if (categoryType == "Drink")
             {
                 return vm.SelectedSizeIds != null && vm.SelectedSizeIds.Count == 3;
             }
 
-            // Digər kateqoriyalar üçün size seçimi məcburi deyil
             return true;
         }
 
@@ -183,13 +187,11 @@ namespace FinalProjectMvc.Services
         {
             var categoryType = await GetCategoryTypeAsync(vm.CategoryId);
 
-            // Drink kategoriyası üçün həmişə 3 size seçilməlidir
+           
             if (categoryType == "Drink")
             {
                 return vm.SelectedSizeIds != null && vm.SelectedSizeIds.Count == 3;
             }
-
-            // Digər kateqoriyalar üçün size seçimi məcburi deyil
             return true;
         }
 

@@ -1,4 +1,5 @@
-﻿using FinalProjectMvc.ViewModels.Admin.Product;
+﻿using FinalProjectMvc.Models;
+using FinalProjectMvc.ViewModels.Admin.Product;
 
 namespace FinalProjectMvc.Services.Interfaces
 {
@@ -14,6 +15,7 @@ namespace FinalProjectMvc.Services.Interfaces
         Task<bool> ValidateProductAsync(ProductCreateVM vm);
         Task<bool> ValidateProductAsync(ProductEditVM vm);
         Task<string> GetCategoryTypeAsync(int categoryId);
-
+        Task<IQueryable<ProductVM>> GetAllQueryAsync();
+        Task<List<Product>> SearchAsync(string query);
     }
 }

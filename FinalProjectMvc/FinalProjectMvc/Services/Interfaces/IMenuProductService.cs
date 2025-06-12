@@ -15,5 +15,7 @@ namespace FinalProjectMvc.Services.Interfaces
         Task<bool> ValidateMenuProductAsync(MenuProductCreateVM vm);
         Task<bool> ValidateMenuProductAsync(MenuProductEditVM vm);
         Task<string> GetCategoryTypeAsync(int categoryId);
+        Task<IQueryable<MenuProductVM>> GetAllQueryAsync();
+
     }
 }

@@ -13,6 +13,7 @@ wwwroot\assets\css\dasboard\dasboard.css
 wwwroot\assets\css\faqs\faqs.css
 wwwroot\assets\css\home\home.css
 wwwroot\assets\css\menu\menu.css
+wwwroot\assets\css\pagination.css
 wwwroot\assets\css\reservation\reservation.css
 wwwroot\assets\css\team\team.css
 wwwroot\assets\images\common\404.png
@@ -193,6 +194,7 @@ wwwroot\assets\js\customer.js
 wwwroot\assets\js\faqs\faq.js
 wwwroot\assets\js\home\home.js
 wwwroot\assets\js\menu\menu.js
+wwwroot\assets\js\pagination.js
 wwwroot\assets\js\reservation\reservation.js
 wwwroot\assets\js\team\team.js
 wwwroot\assets\videos\25df5c63-d092-4e37-929a-c42d880b4ca7.mp4

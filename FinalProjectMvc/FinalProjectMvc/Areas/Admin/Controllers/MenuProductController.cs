@@ -1,4 +1,5 @@
-﻿using FinalProjectMvc.Services;
+﻿using FinalProjectMvc.Helpers;
+using FinalProjectMvc.Services;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.MenuProduct;
 using FinalProjectMvc.ViewModels.Admin.Product;
@@ -23,11 +24,29 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _sizeService = sizeService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, string search = "")
         {
-            var products = await _menuProductService.GetAllAsync();
-            return View(products);
+            const int pageSize = 10;
+
+            var allProducts = await _menuProductService.GetAllAsync();
+
+            var query = await _menuProductService.GetAllQueryAsync();
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                query = query.Where(p => p.Name.Contains(search) || p.Ingredients.Contains(search));
+            }
+
+            query = query.OrderBy(p => p.Name);
+
+            var pagedResult = query.ToPagedResult(page, pageSize);
+
+            ViewBag.CurrentSearch = search;
+            ViewBag.AllProducts = allProducts; 
+
+            return View(pagedResult);
         }
+
 
         public async Task<IActionResult> Create()
         {

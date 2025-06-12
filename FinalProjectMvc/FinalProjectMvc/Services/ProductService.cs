@@ -68,7 +68,18 @@ namespace FinalProjectMvc.Services
 
             return vm;
         }
+        public async Task<IQueryable<ProductVM>> GetAllQueryAsync()
+        {
+            var products = await _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.ProductSizes)
+                .ThenInclude(ps => ps.Size)
+                .ToListAsync();
 
+            var mapped = _mapper.Map<List<ProductVM>>(products);
+
+            return mapped.AsQueryable(); 
+        }
         public async Task<ProductEditVM> GetEditVMAsync(int id)
         {
             var product = await _context.Products
@@ -100,7 +111,16 @@ namespace FinalProjectMvc.Services
 
             return vm;
         }
-
+        public async Task<List<Product>> SearchAsync(string query)
+        {
+            return await _context.Products
+                .Include(p => p.Category)
+                .Where(p =>
+                    p.Name.Contains(query) ||
+                    p.Category.Name.Contains(query) ||
+                    p.Price.ToString().Contains(query))
+                .ToListAsync();
+        }
         public async Task EditAsync(ProductEditVM vm)
         {
             var product = await _context.Products

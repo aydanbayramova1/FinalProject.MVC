@@ -1,0 +1,119 @@
+﻿
+.pagination {
+    --bs-pagination-color: #6b4f3b;
+    --bs-pagination-bg: #fff;
+    --bs-pagination-border-color: #dee2e6;
+    --bs-pagination-hover-color: #5c3d2e;
+    --bs-pagination-hover-bg: #f8f9fa;
+    --bs-pagination-active-color: #fff;
+    --bs-pagination-active-bg: #5c3d2e;
+    --bs-pagination-active-border-color: #5c3d2e;
+    --bs-pagination-disabled-color: #6c757d;
+    --bs-pagination-disabled-bg: #fff;
+    --bs-pagination-disabled-border-color: #dee2e6;
+}
+
+    .pagination .page-link {
+        transition: all 0.3s ease;
+        border-radius: 0.375rem;
+        margin: 0 2px;
+        border: 1px solid #dee2e6;
+    }
+
+        .pagination .page-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+    .pagination .page-item.active .page-link {
+        background-color: #5c3d2e;
+        border-color: #5c3d2e;
+        color: white;
+        font-weight: bold;
+    }
+
+    .pagination .page-item.disabled .page-link {
+        opacity: 0.5;
+    }
+
+
+.search-form .form-control:focus {
+    border-color: #5c3d2e;
+    box-shadow: 0 0 0 0.2rem rgba(92, 61, 46, 0.25);
+    height: 53px;
+}
+
+
+.btn-outline-brown {
+    color: #6b4f3b;
+    border-color: #6b4f3b;
+}
+
+    .btn-outline-brown:hover {
+        color: #fff;
+        background-color: #6b4f3b;
+        border-color: #6b4f3b;
+    }
+
+
+.table tbody tr:hover {
+    background-color: rgba(92, 61, 46, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+
+.page-size-selector {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+
+@media (max-width: 576px) {
+    .pagination {
+        font-size: 0.875rem;
+    }
+
+        .pagination .page-link {
+            padding: 0.375rem 0.5rem;
+            margin: 0 1px;
+        }
+
+    .search-form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+        .search-form input {
+            width: 100% !important;
+        }
+}
+
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+    .loading::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        margin: -10px 0 0 -10px;
+        border: 2px solid #5c3d2e;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 1s linear infinite;
+    }
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using FinalProjectMvc.Helpers;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Product;
 using Microsoft.AspNetCore.Mvc;
+using FinalProjectMvc.Helpers;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
 {
@@ -23,10 +25,24 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, string search = "")
         {
-            var products = await _productService.GetAllAsync();
-            return View(products);
+            const int pageSize = 10;
+
+            var query = await _productService.GetAllQueryAsync();
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                query = query.Where(p => p.Name.Contains(search) || p.Ingredients.Contains(search));
+            }
+
+            query = query.OrderBy(p => p.Name);
+
+            var pagedResult = query.ToPagedResult(page, pageSize);
+
+            ViewBag.CurrentSearch = search;
+
+            return View(pagedResult);
         }
 
 

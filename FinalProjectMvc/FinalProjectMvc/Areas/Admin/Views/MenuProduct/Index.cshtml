@@ -1,5 +1,7 @@
-﻿@model IEnumerable<FinalProjectMvc.ViewModels.Admin.MenuProduct.MenuProductVM>
+﻿    @using FinalProjectMvc.Helpers
+@model PagedResult<FinalProjectMvc.ViewModels.Admin.MenuProduct.MenuProductVM>
 
+<link rel="stylesheet" href="~/assets/css/pagination.css">
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-xl-12">
@@ -8,12 +10,31 @@
                     <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">
                         <i class="fas fa-box-open me-2"></i>Products Management
                     </h2>
-                    <a asp-action="Create" class="btn btn-outline-brown">
-                        <i class="fa fa-plus me-1"></i> Add New Product
-                    </a>
+                    <div class="d-flex gap-2">
+
+                        <form asp-action="Index" method="get" class="d-flex">
+                            <input type="text" name="search" value="@ViewBag.CurrentSearch"
+                                   class="form-control me-2" placeholder="Search products..." style="width: 200px;height: 53px;">
+                            <button type="submit" class="btn btn-outline-secondary">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                        <a asp-action="Create" class="btn btn-outline-brown">
+                            <i class="fa fa-plus me-1"></i> Add New Product
+                        </a>
+                    </div>
                 </div>
 
-                @if (Model.Any())
+
+                <div class="mb-3">
+                    <small class="text-muted">
+                        Showing @((Model.CurrentPage - 1) * Model.PageSize + 1) to
+                        @(Math.Min(Model.CurrentPage * Model.PageSize, Model.TotalItems))
+                        of @Model.TotalItems products
+                    </small>
+                </div>
+
+                @if (Model.Items.Any())
                 {
                     <div class="table-responsive">
                         <table class="table table-bordered text-center align-middle bg-white">
@@ -29,7 +50,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var item in Model)
+                                @foreach (var item in Model.Items)
                                 {
                                     <tr>
                                         <td class="fw-semibold">@item.Name</td>
@@ -42,7 +63,6 @@
                                         <td>
                                             <span class="badge bg-info text-dark">@item.Category</span>
                                         </td>
-
                                         <td>
                                             @if (!string.IsNullOrWhiteSpace(item.CategoryTypeName))
                                             {
@@ -68,7 +88,6 @@
                                                 <span class="text-muted">N/A</span>
                                             }
                                         </td>
-
                                         <td>
                                             @if (item.CategoryTypeName == "Drink" && item.Sizes != null && item.Sizes.Any())
                                             {
@@ -84,7 +103,6 @@
                                                 </span>
                                             }
                                         </td>
-
                                         <td>
                                             <div class="d-flex justify-content-center gap-2">
                                                 <a asp-action="Detail" asp-route-id="@item.Id" title="View Details" class="btn btn-info btn-sm">
@@ -105,15 +123,86 @@
                             </tbody>
                         </table>
                     </div>
+
+
+                    @if (Model.TotalPages > 1)
+                    {
+                        <nav aria-label="Products pagination" class="mt-4">
+                            <ul class="pagination justify-content-center">
+
+                                @if (Model.CurrentPage > 1)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" asp-action="Index" asp-route-page="1" asp-route-search="@ViewBag.CurrentSearch">
+                                            <i class="fas fa-angle-double-left"></i>
+                                        </a>
+                                    </li>
+                                }
+
+
+                                @if (Model.HasPreviousPage)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage - 1)" asp-route-search="@ViewBag.CurrentSearch">
+                                            <i class="fas fa-angle-left"></i>
+                                        </a>
+                                    </li>
+                                }
+
+
+                                @{
+                                    var startPage = Math.Max(1, Model.CurrentPage - 2);
+                                    var endPage = Math.Min(Model.TotalPages, Model.CurrentPage + 2);
+                                }
+
+                                @for (int i = startPage; i <= endPage; i++)
+                                {
+                                    <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                                        <a class="page-link" asp-action="Index" asp-route-page="@i" asp-route-search="@ViewBag.CurrentSearch">@i</a>
+                                    </li>
+                                }
+
+
+                                @if (Model.HasNextPage)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" asp-action="Index" asp-route-page="@(Model.CurrentPage + 1)" asp-route-search="@ViewBag.CurrentSearch">
+                                            <i class="fas fa-angle-right"></i>
+                                        </a>
+                                    </li>
+                                }
+
+                                @if (Model.CurrentPage < Model.TotalPages)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" asp-action="Index" asp-route-page="@Model.TotalPages" asp-route-search="@ViewBag.CurrentSearch">
+                                            <i class="fas fa-angle-double-right"></i>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </nav>
+                    }
                 }
                 else
                 {
                     <div class="text-center py-5">
                         <i class="fas fa-box-open fa-4x text-muted mb-3"></i>
-                        <h4 class="text-muted">No Products Found</h4>
-                        <p class="text-muted">Start by adding your first product to the system.</p>
+                        @if (!string.IsNullOrEmpty(ViewBag.CurrentSearch))
+                        {
+                            <h4 class="text-muted">No Products Found for "@ViewBag.CurrentSearch"</h4>
+                            <p class="text-muted">Try adjusting your search criteria.</p>
+                            <a asp-action="Index" class="btn btn-secondary me-2">
+                                <i class="fas fa-times me-1"></i> Clear Search
+                            </a>
+                        }
+                        else
+                        {
+                            <h4 class="text-muted">No Products Found</h4>
+                            <p class="text-muted">Start by adding your first product to the system.</p>
+                        }
                         <a asp-action="Create" class="btn btn-primary">
-                            <i class="fa fa-plus me-1"></i> Add First Product
+                            <i class="fa fa-plus me-1"></i> Add Product
                         </a>
                     </div>
                 }
@@ -122,6 +211,7 @@
     </div>
 </div>
 
+<script src="~/assets/js/pagination.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
