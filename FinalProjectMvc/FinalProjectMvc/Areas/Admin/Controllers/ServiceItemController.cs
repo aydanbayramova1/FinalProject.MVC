@@ -91,13 +91,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             try
             {
                 await _serviceItemService.DeleteAsync(id);
+                return Ok();
             }
             catch (Exception ex)
             {
-                TempData["Error"] = ex.Message;
+                return BadRequest(ex.Message);
             }
-
-            return RedirectToAction("Index");
         }
+
     }
 }

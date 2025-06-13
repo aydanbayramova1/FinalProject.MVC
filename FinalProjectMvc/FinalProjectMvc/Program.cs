@@ -10,8 +10,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http.Features;
 
 using Serilog;
+using FinalProjectMvc.Helpers;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailConfig"));
+
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -89,7 +97,9 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ISizeService, SizeService>();
 builder.Services.AddScoped<IMenuProductService, MenuProductService>();
-
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 
@@ -123,6 +133,16 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthentication();
+app.UseStatusCodePages(async context =>
+{
+    var response = context.HttpContext.Response;
+    if (response.StatusCode == 404)
+    {
+        response.Redirect("/NotFound/Index");
+    }
+
+    await Task.CompletedTask;
+});
 app.UseAuthorization();
 
 // Routes

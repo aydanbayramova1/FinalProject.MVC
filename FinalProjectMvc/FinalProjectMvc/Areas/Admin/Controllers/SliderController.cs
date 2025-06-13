@@ -81,8 +81,14 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var slider = await _sliderService.GetByIdAsync(id);
+            if (slider == null)
+            {
+                return NotFound();
+            }
+
             await _sliderService.DeleteAsync(slider);
-            return RedirectToAction(nameof(Index));
+            return Ok();
         }
+
     }
 }

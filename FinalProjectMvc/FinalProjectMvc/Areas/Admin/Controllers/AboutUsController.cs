@@ -64,16 +64,18 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             try
             {
                 await _aboutUsService.DeleteAsync(id);
-                return RedirectToAction("Index");
+                return Ok(); 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return NotFound(); 
+                return NotFound();
             }
         }
         public async Task<IActionResult> Detail(int id)

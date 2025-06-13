@@ -80,13 +80,14 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             await _aboutService.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            return Ok(); 
         }
+
 
         public async Task<IActionResult> Detail(int id)
         {

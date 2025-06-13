@@ -80,13 +80,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             try
             {
                 await _serviceService.DeleteAsync(id);
+                return Ok();
             }
             catch (Exception ex)
             {
                 return NotFound(ex.Message);
             }
-
-            return RedirectToAction("Index");
         }
+
     }
 }

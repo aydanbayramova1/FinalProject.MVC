@@ -1,9 +1,13 @@
 ﻿@model IEnumerable<ContactMessageVM>
 
+<form id="antiForgeryForm" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>
+
 <div class="container py-4">
     <h2 class="mb-4" style="color: #6b4f3b;">📥 Incoming Messages</h2>
 
-    <table class="table table-bordered table-hover text-center bg-white">
+    <table class="table table-bordered table-hover text-center bg-white" id="messagesTable">
         <thead class="table-dark">
             <tr>
                 <th>First Name</th>
@@ -18,21 +22,76 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
+                <tr data-id="@item.Id">
                     <td>@item.FirstName</td>
                     <td>@item.LastName</td>
                     <td>@item.Email</td>
                     <td>@item.Phone</td>
                     <td>@item.Message</td>
                     <td>@item.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
-
                     <td>
-                        <form asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Are you sure?');">
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                        </form>
+                        <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id">Delete</button>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+
+    <div id="noMessagesAlert" class="alert alert-warning text-center mt-4" role="alert" style="display:@(Model.Any() ? "none" : "block")">
+        No incoming messages.
+    </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteButtons = document.querySelectorAll(".delete-btn");
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        const noMessagesAlert = document.getElementById("noMessagesAlert");
+        const messagesTableBody = document.querySelector("#messagesTable tbody");
+
+        deleteButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const id = this.getAttribute("data-id");
+                const row = this.closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This message will be permanently deleted!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/Admin/ContactMessage/Delete/${id}`, {
+                            method: "POST",
+                            headers: {
+                                'RequestVerificationToken': token,
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: id })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                row.remove();
+                                Swal.fire("Deleted!", "The message has been deleted.", "success");
+
+                                if (messagesTableBody.children.length === 0) {
+                                    noMessagesAlert.style.display = "block";
+                                }
+                            } else {
+                                Swal.fire("Error!", "Something went wrong.", "error");
+                            }
+                        })
+                        .catch(() => {
+                            Swal.fire("Error!", "Unexpected error occurred.", "error");
+                        });
+                    }
+                });
+            });
+        });
+    });
+</script>

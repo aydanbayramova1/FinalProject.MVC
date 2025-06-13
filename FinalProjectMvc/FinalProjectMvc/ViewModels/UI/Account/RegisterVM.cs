@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FinalProjectMvc.ViewModels.UI
+namespace FinalProjectMvc.ViewModels.UI.Account
 {
     public class RegisterVM
     {
@@ -9,14 +9,13 @@ namespace FinalProjectMvc.ViewModels.UI
         [Required]
         public string UserName { get; set; }
         [Required]
-        [EmailAddress(ErrorMessage = "Email invalid")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         [Required]
-        [DataType(DataType.Password)]
-        [Compare("Password")]
+        [DataType(DataType.Password), Compare(nameof(Password))]
         public string ConfirmPassword { get; set; }
     }
 }

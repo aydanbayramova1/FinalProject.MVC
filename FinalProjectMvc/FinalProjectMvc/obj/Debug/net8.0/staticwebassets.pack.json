@@ -821,6 +821,14 @@
       "PackagePath": "staticwebassets\\img\\c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\sends\\register.html",
+      "PackagePath": "staticwebassets\\sends\\register.html"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\sends\\reset.html",
+      "PackagePath": "staticwebassets\\sends\\reset.html"
+    },
+    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\0a4ec5cf-77b9-462b-a9d0-590e5b70888d.jpg",
       "PackagePath": "staticwebassets\\uploads\\0a4ec5cf-77b9-462b-a9d0-590e5b70888d.jpg"
     },
@@ -841,8 +849,8 @@
       "PackagePath": "staticwebassets\\uploads\\8ad13502-1cc2-4347-a40a-015c830e956f.jpg"
     },
     {
-      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\aboutbanner\\bdcafb61-5c6e-4b0b-bf03-d52885aa61dd.jpg",
-      "PackagePath": "staticwebassets\\uploads\\aboutbanner\\bdcafb61-5c6e-4b0b-bf03-d52885aa61dd.jpg"
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\aboutbanner\\c3a59f12-ce0e-4efd-bde1-b98e2bcb7e70.jpg",
+      "PackagePath": "staticwebassets\\uploads\\aboutbanner\\c3a59f12-ce0e-4efd-bde1-b98e2bcb7e70.jpg"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\approach\\0cbc3c47-b3e0-4556-a1d3-ec232074786c.jpg",
@@ -929,8 +937,8 @@
       "PackagePath": "staticwebassets\\uploads\\b66b91fa-d414-4397-a15d-d4a27d111995.jpg"
     },
     {
-      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\blogbanner\\c5d35e69-89c1-41d0-87dd-5cb6a06b9c30.jpg",
-      "PackagePath": "staticwebassets\\uploads\\blogbanner\\c5d35e69-89c1-41d0-87dd-5cb6a06b9c30.jpg"
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\blogbanner\\ad099cd4-3bf2-4f16-b37b-43932b15a391.jpg",
+      "PackagePath": "staticwebassets\\uploads\\blogbanner\\ad099cd4-3bf2-4f16-b37b-43932b15a391.jpg"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\blogdetailbanner\\7b2c9276-e7a5-480b-af64-631199b977e8.jpg",

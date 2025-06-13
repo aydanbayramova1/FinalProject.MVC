@@ -1,18 +1,22 @@
 ﻿@model IEnumerable<FinalProjectMvc.ViewModels.Admin.OfferItem.OfferItemVM>
 
+<form id="antiForgeryForm" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>
+
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-xl-10">
             <div class="bg-light border rounded shadow-sm p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Offer Items</h2>
-                    <a asp-action="Create" class="btn btn-outline-brown">
+                    <a asp-action="Create" class="btn btn-outline-brown" id="addNewOfferItemLink" style="@(Model.Any() ? "display:none;" : "display:inline-block;")">
                         <i class="fa fa-plus mr-1"></i> Add New Offer Item
                     </a>
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered text-center align-middle bg-white">
+                    <table class="table table-bordered text-center align-middle bg-white" id="offerItemsTable">
                         <thead class="thead-dark">
                             <tr>
                                 <th style="background-color: #5c3d2e; color: #fff;">Title</th>
@@ -23,7 +27,7 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr>
+                                <tr data-id="@item.Id">
                                     <td>@item.Title</td>
                                     <td style="max-width: 400px; white-space: pre-line;">@item.Description</td>
                                     <td>
@@ -34,12 +38,9 @@
                                             <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-dark btn-sm" title="Edit">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>
-                                            <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="d-inline"
-                                                  onsubmit="return confirm('Are you sure you want to delete this offer item?');">
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
-                                            </form>
+                                            <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id" title="Delete">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>
@@ -48,13 +49,66 @@
                     </table>
                 </div>
 
-                @if (!Model.Any())
-                {
-                    <div class="alert alert-warning text-center mt-4" role="alert">
-                        No offer items have been added yet.
-                    </div>
-                }
+                <div id="noOfferItemsAlert" class="alert alert-warning text-center mt-4" role="alert" style="display:@(Model.Any() ? "none" : "block")">
+                    No offer items have been added yet.
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteButtons = document.querySelectorAll(".delete-btn");
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        const noOfferItemsAlert = document.getElementById("noOfferItemsAlert");
+        const addNewOfferItemLink = document.getElementById("addNewOfferItemLink");
+        const offerItemsTableBody = document.querySelector("#offerItemsTable tbody");
+
+        deleteButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const id = this.getAttribute("data-id");
+                const row = this.closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This offer item will be permanently deleted!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/Admin/OfferItem/Delete/${id}`, {
+                            method: "POST",
+                            headers: {
+                                'RequestVerificationToken': token,
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: id })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                row.remove();
+                                Swal.fire("Deleted!", "The offer item has been deleted.", "success");
+
+                                if (offerItemsTableBody.children.length === 0) {
+                                    noOfferItemsAlert.style.display = "block";
+                                    addNewOfferItemLink.style.display = "inline-block";
+                                }
+                            } else {
+                                Swal.fire("Error!", "Something went wrong.", "error");
+                            }
+                        })
+                        .catch(() => {
+                            Swal.fire("Error!", "Unexpected error occurred.", "error");
+                        });
+                    }
+                });
+            });
+        });
+    });
+</script>

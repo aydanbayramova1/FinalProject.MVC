@@ -9,6 +9,7 @@ namespace FinalProjectMvc.Services.Interfaces
         Task CreateAsync(BlogCreateVM vm);
         Task UpdateAsync(int id, BlogEditVM vm);
         Task DeleteAsync(int id);
-      
+        IEnumerable<BlogVM> GetAllBlogs();
+
     }
 }

@@ -1,6 +1,10 @@
-﻿<div style="width: 86px; margin-left: -31px;" class="col-auto d-none d-xl-block">
+﻿@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+}
+
+<div style="width: 86px; margin-left: -31px;" class="col-auto d-none d-xl-block">
     <div style="margin-left: 112px;" class="header2-search">
-        <form asp-controller="Home" asp-action="Search" method="get">
+        <form asp-controller="@currentController" asp-action="Search" method="get">
             <input type="text" name="query" placeholder="Search..." />
             <button class="btn"><i class="fas fa-search"></i></button>
         </form>

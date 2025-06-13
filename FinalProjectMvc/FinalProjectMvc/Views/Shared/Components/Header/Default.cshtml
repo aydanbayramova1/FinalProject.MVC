@@ -97,9 +97,12 @@
                                         <span class="dropdown-item" style="color: white; font-weight: 500;">Hello, @User.Identity.Name!</span>
 
 
-                                        <a asp-controller="Account" asp-action="Logout" class="dropdown-item">
-                                            <i class="fas fa-sign-out-alt"></i> Logout
-                                        </a>
+                                        <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="dropdown-item bg-transparent border-0">
+                                                <i class="fas fa-sign-out-alt"></i> Logout
+                                            </button>
+                                        </form>
                                     }
                                     else
                                     {

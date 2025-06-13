@@ -25,10 +25,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
-        public async Task<IActionResult> Index(int page = 1, string search = "")
+        public async Task<IActionResult> Index(int page = 1, string search = "", int pageSize = 10)
         {
-            const int pageSize = 10;
-
             var query = await _productService.GetAllQueryAsync();
 
             if (!string.IsNullOrWhiteSpace(search))
@@ -37,10 +35,14 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             }
 
             query = query.OrderBy(p => p.Name);
-
             var pagedResult = query.ToPagedResult(page, pageSize);
 
             ViewBag.CurrentSearch = search;
+
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_ProductTablePartial", pagedResult);
+            }
 
             return View(pagedResult);
         }
@@ -114,8 +116,9 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _productService.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            return Ok();
         }
+
 
         [HttpGet]
         public async Task<IActionResult> GetCategoryType(int categoryId)

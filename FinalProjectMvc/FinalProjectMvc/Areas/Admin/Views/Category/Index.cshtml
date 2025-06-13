@@ -1,25 +1,28 @@
 ﻿@model IEnumerable<FinalProjectMvc.ViewModels.Admin.Category.CategoryVM>
 
+<form id="antiForgeryForm" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>
+
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-xl-10">
             <div class="bg-light border rounded shadow-sm p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">📁 Categories</h2>
-                    <a asp-action="Create" class="btn btn-outline-brown">
+                    <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">Categories</h2>
+                    <a asp-action="Create" class="btn btn-outline-brown" id="addNewCategoryLink" style="@(Model.Any() ? "display:none;" : "display:inline-block;")">
                         <i class="fa fa-plus mr-1"></i> Add New Category
                     </a>
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered text-center align-middle bg-white">
+                    <table class="table table-bordered text-center align-middle bg-white" id="categoryTable">
                         <thead class="thead-dark">
                             <tr>
                                 <th style="background-color: #5c3d2e; color: #fff;">Image</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Name</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Category Type</th>
-@*                                 <th style="background-color: #5c3d2e; color: #fff;">Product Count</th>
- *@                                <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
+                                <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,7 +30,7 @@
                             {
                                 foreach (var item in Model)
                                 {
-                                    <tr>
+                                    <tr data-id="@item.Id">
                                         <td>
                                             @if (!string.IsNullOrEmpty(item.Image))
                                             {
@@ -39,9 +42,8 @@
                                             }
                                         </td>
                                         <td>@item.Name</td>
-                                       <td>@item.CategoryTypeName</td>
-@*                                          <td>@item.ProductCount</td>
- *@                                        <td>
+                                        <td>@item.CategoryTypeName</td>
+                                        <td>
                                             <div class="d-flex justify-content-center gap-2">
                                                 <a asp-action="Detail" asp-route-id="@item.Id" title="View Details" class="btn btn-info btn-sm">
                                                     <i class="fa-solid fa-circle-info"></i>
@@ -49,11 +51,9 @@
                                                 <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-dark btn-sm">
                                                     <i class="fa-solid fa-pencil"></i>
                                                 </a>
-                                                <form asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Are you sure you want to delete this category?');" class="d-inline">
-                                                    <button type="submit" class="btn btn-danger btn-sm">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </button>
-                                                </form>
+                                                <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id" title="Delete">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
                                             </div>
                                         </td>
                                     </tr>
@@ -62,7 +62,7 @@
                             else
                             {
                                 <tr>
-                                    <td colspan="5">
+                                    <td colspan="4">
                                         <div class="alert alert-warning m-0 text-center" role="alert">
                                             No categories have been added yet.
                                         </div>
@@ -77,3 +77,57 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteButtons = document.querySelectorAll(".delete-btn");
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        const addNewCategoryLink = document.getElementById("addNewCategoryLink");
+        const categoryTableBody = document.querySelector("#categoryTable tbody");
+
+        deleteButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const id = this.getAttribute("data-id");
+                const row = this.closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/Admin/Category/Delete/${id}`, {
+                            method: "POST",
+                            headers: {
+                                'RequestVerificationToken': token,
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: id })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                row.remove();
+                                Swal.fire("Deleted!", "The category has been deleted.", "success");
+
+                                if (categoryTableBody.children.length === 0) {
+                                    addNewCategoryLink.style.display = "inline-block";
+                                }
+                            } else {
+                                Swal.fire("Error!", "Something went wrong.", "error");
+                            }
+                        })
+                        .catch(() => {
+                            Swal.fire("Error!", "Unexpected error occurred.", "error");
+                        });
+                    }
+                });
+            });
+        });
+    });
+</script>

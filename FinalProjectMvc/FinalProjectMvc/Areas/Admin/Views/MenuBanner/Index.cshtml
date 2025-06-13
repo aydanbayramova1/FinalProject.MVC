@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<MenuBannerVM>
 
+<form id="antiForgeryForm" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>
+
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-xl-10">
@@ -7,17 +11,13 @@
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Menu Banner List</h2>
 
-
-                    @if (!Model.Any())
-                    {
-                        <a asp-action="Create" class="btn btn-outline-brown">
-                            <i class="fa fa-plus mr-1"></i> Add New Banner
-                        </a>
-                    }
+                    <a asp-action="Create" class="btn btn-outline-brown" id="addNewBannerLink" style="@(Model.Any() ? "display:none;" : "display:inline-block;")">
+                        <i class="fa fa-plus mr-1"></i> Add New Banner
+                    </a>
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered text-center align-middle bg-white">
+                    <table class="table table-bordered text-center align-middle bg-white" id="bannerTable">
                         <thead class="thead-dark">
                             <tr>
                                 <th style="background-color: #5c3d2e; color: #fff;">Image</th>
@@ -28,7 +28,7 @@
                         <tbody>
                             @foreach (var item in Model)
                             {
-                                <tr>
+                                <tr data-id="@item.Id">
                                     <td>
                                         <img src="~/uploads/menubanner/@item.Img" alt="about banner" class="img-thumbnail" style="max-width: 120px; border-radius: 8px;" />
                                     </td>
@@ -41,11 +41,9 @@
                                             <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-dark btn-sm">
                                                 <i class="fa-solid fa-pencil"></i>
                                             </a>
-                                            <form class="d-inline" asp-action="Delete" asp-route-id="@item.Id" method="post" onsubmit="return confirm('Are you sure you want to delete this banner?');">
-                                                <button type="submit" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
-                                            </form>
+                                            <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id" title="Delete">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
                                         </div>
                                     </td>
                                 </tr>
@@ -54,13 +52,66 @@
                     </table>
                 </div>
 
-                @if (!Model.Any())
-                {
-                    <div class="alert alert-warning text-center mt-4" role="alert">
-                        No menu banners have been added yet.
-                    </div>
-                }
+                <div id="noBannerAlert" class="alert alert-warning text-center mt-4" role="alert" style="display:@(Model.Any() ? "none" : "block")">
+                    No menu banners have been added yet.
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteButtons = document.querySelectorAll(".delete-btn");
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        const noBannerAlert = document.getElementById("noBannerAlert");
+        const addNewBannerLink = document.getElementById("addNewBannerLink");
+        const bannerTableBody = document.querySelector("#bannerTable tbody");
+
+        deleteButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const id = this.getAttribute("data-id");
+                const row = this.closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/Admin/MenuBanner/Delete/${id}`, {
+                            method: "POST",
+                            headers: {
+                                'RequestVerificationToken': token,
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: id })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                row.remove();
+                                Swal.fire("Deleted!", "The banner has been deleted.", "success");
+
+                                if (bannerTableBody.children.length === 0) {
+                                    noBannerAlert.style.display = "block";
+                                    addNewBannerLink.style.display = "inline-block";
+                                }
+                            } else {
+                                Swal.fire("Error!", "Something went wrong.", "error");
+                            }
+                        })
+                        .catch(() => {
+                            Swal.fire("Error!", "Unexpected error occurred.", "error");
+                        });
+                    }
+                });
+            });
+        });
+    });
+</script>

@@ -1,5 +1,8 @@
-﻿using FinalProjectMvc.Models;
+﻿using FinalProjectMvc.Helpers.Enums;
+using FinalProjectMvc.Models;
+using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.UI;
+using FinalProjectMvc.ViewModels.UI.Account;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,102 +10,153 @@ namespace YourProjectName.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<AppUser> _userManager;
-        private readonly SignInManager<AppUser> _signInManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IAccountService _accountService;
 
-        public AccountController(UserManager<AppUser> userManager,
-                                 SignInManager<AppUser> signInManager,
-                                 RoleManager<IdentityRole> roleManager)
+        public AccountController(IAccountService accountService)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
-            _roleManager = roleManager;
+            _accountService = accountService;
         }
 
-     
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterVM request)
         {
+
             if (!ModelState.IsValid) return View(request);
 
-            AppUser newUser = new AppUser
-            {
-                FullName = request.FullName,
-                UserName = request.UserName,
-                Email = request.Email
-            };
+            var result = await _accountService.RegisterAsync(request);
 
-            var result = await _userManager.CreateAsync(newUser, request.Password);
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                    ModelState.AddModelError(string.Empty, error.Description);
+
+                return View(request);
+            }
+
+            return RedirectToAction(nameof(VerifyEmail));
+        }
+
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            if (userId is null || token is null)
+                return RedirectToAction("Index", "Error");
+
+            try
+            {
+                await _accountService.ConfirmEmailAsync(userId, token);
+            }
+            catch
+            {
+                return RedirectToAction("Index", "Error");
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult VerifyEmail()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {                                           
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginVM request)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View(request);
+            }
+
+            var result = await _accountService.LoginAsync(request);
+
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError(string.Empty, "Login informations is wrong");
+                return View(request);
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordVM model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            bool sent = await _accountService.ForgotPasswordAsync(model);
+
+            if (!sent)
+            {
+                ModelState.AddModelError("Email", "User is not found.");
+                return View(model);
+            }
+
+            TempData["Email"] = model.Email;
+            return RedirectToAction(nameof(VerifyResetPassword));
+        }
+
+        [HttpGet]
+        public IActionResult VerifyResetPassword()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult ResetPassword(string userId, string token)
+        {
+            return View(new ResetPasswordVM { UserId = userId, Token = token });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordVM model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var result = await _accountService.ResetPasswordAsync(model);
 
             if (!result.Succeeded)
             {
                 foreach (var error in result.Errors)
                 {
-                    ModelState.AddModelError("", error.Description);
+                    ModelState.AddModelError(string.Empty, error.Description);
                 }
-                return View(request);
+                return View(model);
             }
 
-            if (!await _roleManager.RoleExistsAsync("Member"))
-            {
-                await _roleManager.CreateAsync(new IdentityRole("Member"));
-            }
-
-            await _userManager.AddToRoleAsync(newUser, "Member");
-
-            await _signInManager.SignInAsync(newUser, false);
-
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(nameof(Login));
         }
 
-
-        public IActionResult Login()
-        {
-            return View();
-        }
-
- 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginVM request)
-        {
-            if (!ModelState.IsValid) return View(request);
-
-            AppUser user = await _userManager.FindByNameAsync(request.UserNameOrEmail);
-            if (user == null)
-            {
-                user = await _userManager.FindByEmailAsync(request.UserNameOrEmail);
-                if (user == null)
-                {
-                    ModelState.AddModelError("", "İstifadəçi tapılmadı.");
-                    return View(request);
-                }
-            }
-
-            var result = await _signInManager.PasswordSignInAsync(user, request.Password, request.RememberMe, false);
-
-            if (!result.Succeeded)
-            {
-                ModelState.AddModelError("", "Email və ya şifrə yalnışdır.");
-                return View(request);
-            }
-
-            return RedirectToAction("Index", "Home");
-        }
-
-
         public async Task<IActionResult> Logout()
         {
-            await _signInManager.SignOutAsync();
+            await _accountService.LogoutAsync();
             return RedirectToAction("Index", "Home");
         }
+
     }
 }

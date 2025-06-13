@@ -1,21 +1,105 @@
 ﻿@model BlogDetailVM
-
 <section id="blog-details">
     <div class="blog-container">
         <h2 class="section-title">@Model.Title</h2>
-
         <img src="~/uploads/blogs/@Model.Img" alt="@Model.Title"
              style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px" />
-
         <p class="date" style="color: #E4CCB4;">@Model.Date.ToString("MMMM dd, yyyy")</p>
 
-        <p style="color: #ccc; margin-top: 20px; line-height: 1.6">
-            @Model.Description
-        </p>
+        <div class="blog-content" style="color: #ccc; margin-top: 20px; line-height: 1.8; font-size: 16px;">
+            @if (Model.Description.Length > 500)
+            {
+                <div id="shortDescription">
+                    @Html.Raw(Model.Description.Substring(0, 500).Replace("\n", "<br/>"))...
+                    <br />
+                    <button id="readMoreBtn" class="btn" style="background: #C9A581; color: white; border: none; padding: 8px 16px; margin-top: 10px; border-radius: 5px; cursor: pointer;">
+                        Read More
+                    </button>
+                </div>
+                <div id="fullDescription" style="display: none;">
+                    @Html.Raw(Model.Description.Replace("\n", "<br/>"))
+                    <br />
+                    <button id="readLessBtn" class="btn" style="background: #C9A581; color: white; border: none; padding: 8px 16px; margin-top: 10px; border-radius: 5px; cursor: pointer;">
+                        Read Less
+                    </button>
+                </div>
+            }
+            else
+            {
+                @Html.Raw(Model.Description.Replace("\n", "<br/>"))
+            }
+        </div>
 
         <a asp-controller="Blog" asp-action="Index"
-           style="display: inline-block; margin-top: 20px; color: #C9A581; text-decoration: none">
+           style="display: inline-block; margin-top: 30px; color: #C9A581; text-decoration: none; font-weight: bold;">
             &larr; Back to Stories
         </a>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const readMoreBtn = document.getElementById('readMoreBtn');
+        const readLessBtn = document.getElementById('readLessBtn');
+        const shortDescription = document.getElementById('shortDescription');
+        const fullDescription = document.getElementById('fullDescription');
+
+        if (readMoreBtn) {
+            readMoreBtn.addEventListener('click', function() {
+                shortDescription.style.display = 'none';
+                fullDescription.style.display = 'block';
+            });
+        }
+
+        if (readLessBtn) {
+            readLessBtn.addEventListener('click', function() {
+                fullDescription.style.display = 'none';
+                shortDescription.style.display = 'block';
+                // Scroll to top of content
+                document.getElementById('blog-details').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    });
+</script>
+
+<style>
+    .blog-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        color: #C9A581;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .blog-content {
+        text-align: justify;
+    }
+
+        .blog-content p {
+            margin-bottom: 15px;
+        }
+
+    .date {
+        text-align: center;
+        font-style: italic;
+        margin: 15px 0;
+    }
+
+    media (max-width: 768px) {
+        .section-title
+
+    {
+        font-size: 2rem;
+    }
+
+    .blog-container {
+        padding: 15px;
+    }
+
+    }
+</style>

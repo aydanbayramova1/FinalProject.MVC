@@ -72,12 +72,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             var scrolling = await _scrollingService.GetByIdAsync(id);
             if (scrolling == null)
             {
-                return NotFound(); 
+                return NotFound();
             }
 
             await _scrollingService.DeleteAsync(scrolling.Id);
-            return RedirectToAction(nameof(Index));
+            return Ok();
         }
+
 
     }
 }

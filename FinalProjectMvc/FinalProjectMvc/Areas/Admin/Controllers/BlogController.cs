@@ -69,11 +69,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             await _blogService.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            return Ok();
         }
+
         public async Task<IActionResult> LoadMoreTours(int skip)
         {
             var blogs = await _blogService.GetAllAsync();

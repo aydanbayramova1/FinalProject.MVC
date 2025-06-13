@@ -77,7 +77,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Detail Category
         public async Task<IActionResult> Detail(int id)
         {
             var category = await _categoryService.GetByIdAsync(id);
@@ -85,12 +84,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(category);
         }
 
-        // POST: Delete Category
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int id)
         {
             await _categoryService.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            return Ok();
         }
+
     }
 }

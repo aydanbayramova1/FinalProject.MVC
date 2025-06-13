@@ -108,5 +108,20 @@ namespace FinalProjectMvc.Services
             _context.Blogs.Remove(blog);
             await _context.SaveChangesAsync();
         }
+
+        public IEnumerable<BlogVM> GetAllBlogs()
+        {
+            return _context.Blogs
+                .OrderByDescending(b => b.Id) 
+                .Select(b => new BlogVM
+                {
+                    Id = b.Id,
+                    Title = b.Title,
+                    Description = b.Description,
+                    Img = b.Img,
+                    Date = b.CreateDate
+                })
+                .ToList();
+        }
     }
 }

@@ -1,29 +1,121 @@
 ﻿@model IEnumerable<BlogVM>
+@{
+    ViewData["Title"] = "Blog";
+}
 
 <section class="stories-section">
     <div class="blogs">
         <h2 class="text-center mt-10 section-title" style="font-size: 47px;">Latest Stories</h2>
-        <div class="grid">
+        <div class="grid" id="blogGrid">
+            @{
+                int count = 0;
+            }
             @foreach (var blog in Model)
             {
-                <div class="story-card">
-                    <img src="~/uploads/blogs/@blog.Img" alt="@blog.Title" />
-                    <div class="story-info">
-                        <p class="date">@blog.Date.ToString("MMMM dd, yyyy")</p>
-                        <h3>@blog.Title</h3>
-                        <p>
-                            @(blog.Description.Length > 100
-                                ? blog.Description.Substring(0, 100) + "..."
-                                : blog.Description)
-                        </p>
-                        <a asp-controller="BlogDetail" asp-action="Index" asp-route-id="@blog.Id">Read More</a>
+                if (count < 3) // İlk 3 bloqu göstər
+                {
+                    <div class="story-card">
+                        <img src="~/uploads/blogs/@blog.Img" alt="@blog.Title" />
+                        <div class="story-info">
+                            <p class="date">@blog.Date.ToString("MMMM dd, yyyy")</p>
+                            <h3>@blog.Title</h3>
+                            <p>
+                                @(blog.Description.Length > 100
+                                    ? blog.Description.Substring(0, 100) + "..."
+                                    : blog.Description)
+                            </p>
+                            <a asp-controller="BlogDetail" asp-action="Index" asp-route-id="@blog.Id">Read More</a>
+                        </div>
                     </div>
-                </div>
+                    count++;
+                }
             }
         </div>
     </div>
 </section>
 
-<div class="more-posts text-center">
-    <button id="loadMore" class="btn btn-outline-dark" data-skip="3">SHOW MORE</button>
-</div>
+@if (ViewBag.TotalBlogs > 3)
+{
+    <div class="more-posts text-center" id="loadMoreDiv">
+        <button id="loadMore" class="btn btn-outline-dark">SHOW MORE</button>
+    </div>
+}
+else
+{
+    <p>Total blogs: @ViewBag.TotalBlogs</p>
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        let currentSkip = 3;
+        const totalBlogs = @ViewBag.TotalBlogs;
+
+        console.log('Total blogs:', totalBlogs); // Debug üçün
+        console.log('Button exists:', $('#loadMore').length); // Debug üçün
+
+        $('#loadMore').click(function() {
+            console.log('Button clicked, current skip:', currentSkip); // Debug üçün
+
+            // Button-u disable et
+            $(this).prop('disabled', true).text('Loading...');
+
+            $.ajax({
+                url: '/Blog/LoadMoreBlogs', // Daha sadə URL
+                type: 'POST',
+                data: { skip: currentSkip },
+                success: function(response) {
+                    console.log('Response:', response); // Debug üçün
+
+                    if(response.success && response.blogs && response.blogs.length > 0) {
+                        // Yeni blogları əlavə et
+                        response.blogs.forEach(function(blog) {
+                            const description = blog.description && blog.description.length > 100
+                                ? blog.description.substring(0, 100) + '...'
+                                : blog.description || '';
+
+                            const blogDate = new Date(blog.date);
+                            const formattedDate = blogDate.toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: '2-digit'
+                            });
+
+                            const blogCard = `
+                                <div class="story-card">
+                                    <img src="/uploads/blogs/${blog.img}" alt="${blog.title}" />
+                                    <div class="story-info">
+                                        <p class="date">${formattedDate}</p>
+                                        <h3>${blog.title}</h3>
+                                        <p>${description}</p>
+                                        <a href="/BlogDetail/Index/${blog.id}">Read More</a>
+                                    </div>
+                                </div>
+                            `;
+                            $('#blogGrid').append(blogCard);
+                        });
+
+                        currentSkip += response.blogs.length;
+
+                        $('#loadMore').prop('disabled', false).text('SHOW MORE');
+
+                        if(!response.hasMore) {
+                            $('#loadMoreDiv').hide();
+                        }
+                    } else {
+                        console.log('No more blogs to load');
+                        $('#loadMoreDiv').hide();
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('AJAX Error:', error);
+                    console.log('Status:', status);
+                    console.log('Response:', xhr.responseText);
+                    alert('Xəta baş verdi: ' + error);
+
+                    $('#loadMore').prop('disabled', false).text('SHOW MORE');
+                }
+            });
+        });
+    });
+</script>

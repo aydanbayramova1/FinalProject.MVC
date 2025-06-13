@@ -6,6 +6,7 @@ namespace FinalProjectMvc.Controllers
     {
         public IActionResult Index()
         {
+            Response.StatusCode = 404;
             return View();
         }
     }

@@ -77,8 +77,7 @@ namespace FinalProjectMvc.Services
                 .ToListAsync();
 
             var mapped = _mapper.Map<List<ProductVM>>(products);
-
-            return mapped.AsQueryable(); 
+            return mapped.AsQueryable();
         }
         public async Task<ProductEditVM> GetEditVMAsync(int id)
         {

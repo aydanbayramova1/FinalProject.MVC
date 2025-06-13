@@ -70,7 +70,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _catalogService.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            return Ok(); 
         }
+
     }
 }

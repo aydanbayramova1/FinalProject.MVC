@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<FinalProjectMvc.ViewModels.Admin.OpeningHour.OpeningHourVM>
 
+<form id="antiForgeryForm" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>
+
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-xl-10">
@@ -8,12 +12,9 @@
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Opening Hour</h2>
 
-                    @if (!Model.Any())
-                    {
-                        <a asp-action="Create" class="btn btn-outline-brown">
-                            <i class="fa fa-plus mr-1"></i> Add Opening Hour
-                        </a>
-                    }
+                    <a asp-action="Create" class="btn btn-outline-brown" id="addOpeningHourLink" style="@(Model.Any() ? "display:none;" : "display:inline-block;")">
+                        <i class="fa fa-plus mr-1"></i> Add Opening Hour
+                    </a>
                 </div>
 
                 @if (TempData["AboutUsMissing"] != null)
@@ -25,14 +26,14 @@
 
                 @if (!Model.Any())
                 {
-                    <div class="alert alert-warning text-center mt-4" role="alert">
+                    <div class="alert alert-warning text-center mt-4" role="alert" id="noOpeningHourAlert" style="display:block;">
                         No Opening Hour has been added yet.
                     </div>
                 }
                 else
                 {
                     <div class="table-responsive">
-                        <table class="table table-bordered text-center align-middle bg-white">
+                        <table class="table table-bordered text-center align-middle bg-white" id="openingHourTable">
                             <thead class="thead-dark">
                                 <tr>
                                     <th style="background-color: #5c3d2e; color: #fff;">Day Range</th>
@@ -43,7 +44,7 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                    <tr>
+                                    <tr data-id="@item.Id">
                                         <td>@item.DayRange</td>
                                         <td>@item.TimeRange</td>
                                         <td>
@@ -54,11 +55,9 @@
                                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-dark btn-sm" title="Edit">
                                                     <i class="fa-solid fa-pencil"></i>
                                                 </a>
-                                                <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this opening hour?');">
-                                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </button>
-                                                </form>
+                                                <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id" title="Delete">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
                                             </div>
                                         </td>
                                     </tr>
@@ -71,3 +70,59 @@
         </div>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteButtons = document.querySelectorAll(".delete-btn");
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        const noOpeningHourAlert = document.getElementById("noOpeningHourAlert");
+        const addOpeningHourLink = document.getElementById("addOpeningHourLink");
+        const openingHourTableBody = document.querySelector("#openingHourTable tbody");
+
+        deleteButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const id = this.getAttribute("data-id");
+                const row = this.closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This opening hour will be permanently deleted!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/Admin/OpeningHour/Delete/${id}`, {
+                            method: "POST",
+                            headers: {
+                                'RequestVerificationToken': token,
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: id })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                row.remove();
+                                Swal.fire("Deleted!", "The opening hour has been deleted.", "success");
+
+                                if (openingHourTableBody.children.length === 0) {
+                                    noOpeningHourAlert.style.display = "block";
+                                    addOpeningHourLink.style.display = "inline-block";
+                                }
+                            } else {
+                                Swal.fire("Error!", "Something went wrong.", "error");
+                            }
+                        })
+                        .catch(() => {
+                            Swal.fire("Error!", "Unexpected error occurred.", "error");
+                        });
+                    }
+                });
+            });
+        });
+    });
+</script>

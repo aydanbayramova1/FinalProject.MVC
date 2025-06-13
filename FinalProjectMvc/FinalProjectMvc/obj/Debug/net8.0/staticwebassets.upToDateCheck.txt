@@ -202,12 +202,14 @@ wwwroot\assets\videos\778abbdd-b55e-4356-9d63-df8ad2a27cf2.mp4
 wwwroot\assets\videos\WhatsApp Video 2025-05-20 at 06.56.31.mp4
 wwwroot\assets\videos\WhatsApp Video 2025-05-21 at 06.26.16.mp4
 wwwroot\img\c0568f59-68c8-4fce-8bfd-d1d3b75ba03e.jpg
+wwwroot\sends\register.html
+wwwroot\sends\reset.html
 wwwroot\uploads\0a4ec5cf-77b9-462b-a9d0-590e5b70888d.jpg
 wwwroot\uploads\4c1598fe-b7bb-48dc-9009-e201ebf85b7b.jpg
 wwwroot\uploads\56004adf-578d-4086-8982-f707ebe18ebc.jpg
 wwwroot\uploads\83a2be91-790f-42c7-90b5-167ec85af9e3.jpg
 wwwroot\uploads\8ad13502-1cc2-4347-a40a-015c830e956f.jpg
-wwwroot\uploads\aboutbanner\bdcafb61-5c6e-4b0b-bf03-d52885aa61dd.jpg
+wwwroot\uploads\aboutbanner\c3a59f12-ce0e-4efd-bde1-b98e2bcb7e70.jpg
 wwwroot\uploads\approach\0cbc3c47-b3e0-4556-a1d3-ec232074786c.jpg
 wwwroot\uploads\approach\3f09a091-5f0f-4917-81a4-c5159c15bf55.jpg
 wwwroot\uploads\approach\53af0f89-5c8b-4f36-a8a8-5c3d4246f133.jpg
@@ -229,7 +231,7 @@ wwwroot\uploads\approachicons\eadfaa47-610d-436a-a7cc-81e10e795007.jpg
 wwwroot\uploads\approachicons\f9b371c4-ae24-41be-89b1-8ac8b3afa9ee.jpg
 wwwroot\uploads\b204a557-bdb8-4f4c-bbb1-ef9f4f04ad3c.jpg
 wwwroot\uploads\b66b91fa-d414-4397-a15d-d4a27d111995.jpg
-wwwroot\uploads\blogbanner\c5d35e69-89c1-41d0-87dd-5cb6a06b9c30.jpg
+wwwroot\uploads\blogbanner\ad099cd4-3bf2-4f16-b37b-43932b15a391.jpg
 wwwroot\uploads\blogdetailbanner\7b2c9276-e7a5-480b-af64-631199b977e8.jpg
 wwwroot\uploads\blogs\0c7eba94-6742-461d-90b6-06f6e3d6d7af.jpg
 wwwroot\uploads\blogs\34d1ae6b-eabc-4175-b631-32ece3358c5f.jpg
