@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Topbar;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var topbars = await _topbarService.GetAllAsync();
@@ -26,9 +29,11 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create() => View();
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(TopbarCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -37,6 +42,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var vm = await _topbarService.GetEditAsync(id);
@@ -44,6 +51,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(TopbarEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -52,6 +60,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var vm = await _topbarService.GetDetailAsync(id);
@@ -60,6 +70,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _topbarService.DeleteAsync(id);

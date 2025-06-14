@@ -1,5 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.AboutUsItem;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -16,18 +17,22 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _aboutUsService = aboutUsService;
         }
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var items = await _service.GetAllAsync();
             return View(items);
         }
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var vm = await _service.GetDetailAsync(id);
             return View(vm);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             var aboutUs = await _aboutUsService.GetAsync();
@@ -41,6 +46,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(AboutUsItemCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -49,6 +55,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var vm = await _service.GetEditAsync(id);
@@ -56,6 +64,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(AboutUsItemEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -66,6 +75,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _service.DeleteAsync(id);

@@ -10,9 +10,13 @@
             <div class="bg-light border rounded shadow-sm p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Scrolling List</h2>
-                    <a asp-action="Create" class="btn btn-outline-brown">
-                        <i class="fa fa-plus mr-1"></i> Add New Scrolling Item
-                    </a>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                    {
+                          <a asp-action="Create" class="btn btn-outline-brown">
+                            <i class="fa fa-plus mr-1"></i> Add New Scrolling Item
+                        </a>
+                    }
+                  
                 </div>
 
                 <div class="table-responsive">
@@ -34,15 +38,26 @@
                                     <td>@item.Name</td>
                                     <td>
                                         <div class="d-flex justify-content-center gap-2">
-                                            <a asp-action="Detail" asp-route-id="@item.Id" title="View Details" class="btn btn-info btn-sm">
-                                                <i class="fa-solid fa-circle-info"></i>
-                                            </a>
-                                            <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-dark btn-sm">
-                                                <i class="fa-solid fa-pencil"></i>
-                                            </a>
-                                            <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id" title="Delete">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </button>
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                                            {
+                                                <a asp-action="Detail" asp-route-id="@item.Id" title="View Details" class="btn btn-info btn-sm">
+                                                    <i class="fa-solid fa-circle-info"></i>
+                                                </a>
+                                            }
+
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                                            {
+                                                <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-dark btn-sm">
+                                                    <i class="fa-solid fa-pencil"></i>
+                                                </a>
+                                            }
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                                            {
+
+                                                <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id" title="Delete">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            } 
                                         </div>
                                     </td>
                                 </tr>

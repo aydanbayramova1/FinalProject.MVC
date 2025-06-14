@@ -1,5 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.AboutBanner;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -14,6 +15,9 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _aboutBannerService = aboutBannerService;
         }
 
+
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var vmList = await _aboutBannerService.GetAllAsync();
@@ -21,12 +25,15 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vmList);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(AboutBannerCreateVM model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -35,6 +42,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var banner = await _aboutBannerService.GetByIdAsync(id);
@@ -51,6 +60,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
+
         public async Task<IActionResult> Edit(AboutBannerEditVM model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -59,6 +70,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var banner = await _aboutBannerService.GetByIdAsync(id);
@@ -74,6 +87,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
+
         public async Task<IActionResult> Delete(int id)
         {
             await _aboutBannerService.DeleteAsync(id);

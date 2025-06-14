@@ -42,10 +42,13 @@
                 <p><strong>Kitchen Close Time:</strong> @Model.KitchenCloseTime</p>
             </div>
         </div>
-
-        <a asp-action="Edit" class="btn btn-dark">
-            <i class="fa fa-pencil-alt"></i> Edit Settings
-        </a>
+        @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+        {
+            <a asp-action="Edit" class="btn btn-dark">
+                <i class="fa fa-pencil-alt"></i> Edit Settings
+            </a>
+        }
+        
       
     </div>
 </div>

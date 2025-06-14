@@ -3,6 +3,7 @@ using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.AboutUs;
 using FinalProjectMvc.ViewModels.Admin.AboutUsItem;
 using FinalProjectMvc.ViewModels.Admin.OpeningHour;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var aboutUs = await _aboutUsService.GetAsync();
@@ -29,7 +31,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
-
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             if (await _aboutUsService.HasAnyAsync())
@@ -39,6 +41,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(AboutUsCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -47,6 +50,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var vm = await _aboutUsService.GetEditAsync(id);
@@ -56,6 +60,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(AboutUsEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -66,6 +71,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             try
@@ -78,6 +84,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
                 return NotFound();
             }
         }
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var aboutUs = await _aboutUsService.GetByIdAsync(id);

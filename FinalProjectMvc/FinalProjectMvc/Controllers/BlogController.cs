@@ -13,15 +13,13 @@ public class BlogController : Controller
         _blogService = blogService;
     }
 
-    // Ana səhifə - ilk 3 bloqu göstərir
     public IActionResult Index()
     {
-        var allBlogs = _blogService.GetAllBlogs(); // Bütün blogları gətir
-        ViewBag.TotalBlogs = allBlogs.Count(); // Toplam blog sayısı
+        var allBlogs = _blogService.GetAllBlogs(); 
+        ViewBag.TotalBlogs = allBlogs.Count();
         return View(allBlogs);
     }
 
-    // AJAX üçün - növbəti blogları yükləyir
     [HttpPost]
     public IActionResult LoadMoreBlogs(int skip)
     {

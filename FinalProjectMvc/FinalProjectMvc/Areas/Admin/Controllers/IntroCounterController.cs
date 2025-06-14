@@ -2,6 +2,7 @@
 using FinalProjectMvc.Models;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.IntroCounter;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -23,6 +24,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var counters = await _service.GetAllAsync();
@@ -30,6 +33,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vmList);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             var videos = await _videoService.GetAllAsync();
@@ -38,6 +43,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
+
         public async Task<IActionResult> Create(IntroCounterCreateVM vm)
         {
             if (!ModelState.IsValid)
@@ -63,6 +70,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var counter = await _service.GetByIdAsync(id);
@@ -77,6 +86,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(IntroCounterEditVM vm)
         {
             if (!ModelState.IsValid)
@@ -103,6 +113,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _service.DeleteAsync(id);
@@ -129,6 +140,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
             return Path.Combine("uploads", "intro", fileName);
         }
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var counter = await _service.GetByIdAsync(id);

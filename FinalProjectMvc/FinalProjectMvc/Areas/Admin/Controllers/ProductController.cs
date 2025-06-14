@@ -4,6 +4,7 @@ using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Product;
 using Microsoft.AspNetCore.Mvc;
 using FinalProjectMvc.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
 {
@@ -25,16 +26,17 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index(int page = 1, string search = "", int pageSize = 10)
         {
             var query = await _productService.GetAllQueryAsync();
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                query = query.Where(p => p.Name.Contains(search) || p.Ingredients.Contains(search));
+                query = query.Where(p => p.Name.Contains(search) );
             }
 
-            query = query.OrderBy(p => p.Name);
             var pagedResult = query.ToPagedResult(page, pageSize);
 
             ViewBag.CurrentSearch = search;
@@ -48,6 +50,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             var vm = await _productService.GetCreateVMAsync();
@@ -56,6 +59,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(ProductCreateVM vm)
         {
             if (ModelState.IsValid)
@@ -71,6 +75,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var vm = await _productService.GetEditVMAsync(id);
@@ -80,6 +86,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(ProductEditVM vm)
         {
             if (!await _productService.ValidateProductAsync(vm))
@@ -103,6 +110,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var vm = await _productService.GetDetailAsync(id);
@@ -113,6 +122,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _productService.DeleteAsync(id);

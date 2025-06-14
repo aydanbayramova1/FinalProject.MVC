@@ -2,6 +2,7 @@
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Service;
 using FinalProjectMvc.ViewModels.Admin.ServiceItem;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -18,6 +19,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var service = await _serviceService.GetAsync();
@@ -27,6 +30,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             var service = await _serviceService.GetAsync(); 
@@ -41,6 +46,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")] 
         public async Task<IActionResult> Create(ServiceCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -49,6 +55,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var service = await _serviceService.GetByIdAsync(id);
@@ -58,7 +66,9 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
+
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(ServiceEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -74,7 +84,10 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             var vm = _mapper.Map<ServiceDetailVM>(service);
             return View(vm);
         }
+
+
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             try

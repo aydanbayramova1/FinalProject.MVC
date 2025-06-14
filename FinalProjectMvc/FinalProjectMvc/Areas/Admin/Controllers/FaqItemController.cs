@@ -1,5 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.FaqItem;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -17,12 +18,15 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _faqCategoryService = faqCategoryService;
         }
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var items = await _faqItemService.GetAllAsync();
             return View(items);
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var item = await _faqItemService.GetByIdAsync(id);
@@ -30,6 +34,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(item);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             var categories = await _faqCategoryService.GetAllAsync();
@@ -48,6 +54,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(FaqItemCreateVM vm)
         {
             if (!ModelState.IsValid)
@@ -65,6 +72,10 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             await _faqItemService.CreateAsync(vm);
             return RedirectToAction(nameof(Index));
         }
+
+
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var item = await _faqItemService.GetByIdAsync(id);
@@ -89,6 +100,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(FaqItemEditVM vm)
         {
             if (!ModelState.IsValid)
@@ -109,6 +121,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _faqItemService.DeleteAsync(id);

@@ -1,6 +1,7 @@
 ﻿using FinalProjectMvc.Services;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.ContactUs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -15,6 +16,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _contactUsService = contactUsService;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var contacts = await _contactUsService.GetAllAsync();
@@ -22,18 +25,23 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(contacts);
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var detail = await _contactUsService.GetByIdAsync(id);
             return View(detail);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(ContactUsCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -42,6 +50,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var detail = await _contactUsService.GetByIdAsync(id);
@@ -58,6 +68,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(ContactUsEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -68,6 +79,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _contactUsService.DeleteAsync(id);

@@ -12,7 +12,7 @@
             }
             @foreach (var blog in Model)
             {
-                if (count < 3) // İlk 3 bloqu göstər
+                if (count < 3)
                 {
                     <div class="story-card">
                         <img src="~/uploads/blogs/@blog.Img" alt="@blog.Title" />
@@ -51,24 +51,22 @@ else
         let currentSkip = 3;
         const totalBlogs = @ViewBag.TotalBlogs;
 
-        console.log('Total blogs:', totalBlogs); // Debug üçün
-        console.log('Button exists:', $('#loadMore').length); // Debug üçün
+        console.log('Total blogs:', totalBlogs); 
+        console.log('Button exists:', $('#loadMore').length);
 
         $('#loadMore').click(function() {
-            console.log('Button clicked, current skip:', currentSkip); // Debug üçün
+            console.log('Button clicked, current skip:', currentSkip);
 
-            // Button-u disable et
             $(this).prop('disabled', true).text('Loading...');
 
             $.ajax({
-                url: '/Blog/LoadMoreBlogs', // Daha sadə URL
+                url: '/Blog/LoadMoreBlogs',
                 type: 'POST',
                 data: { skip: currentSkip },
                 success: function(response) {
-                    console.log('Response:', response); // Debug üçün
+                    console.log('Response:', response);
 
                     if(response.success && response.blogs && response.blogs.length > 0) {
-                        // Yeni blogları əlavə et
                         response.blogs.forEach(function(blog) {
                             const description = blog.description && blog.description.length > 100
                                 ? blog.description.substring(0, 100) + '...'

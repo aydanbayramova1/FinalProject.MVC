@@ -11,13 +11,15 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">📖 About Us</h2>
-
-                        @if (Model == null || Model.Id == 0)
-                        {
-                            <a asp-action="Create" class="btn btn-outline-brown">
-                                <i class="fa fa-plus mr-1"></i> Add About Us
-                            </a>
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin")){
+                            @if (Model == null || Model.Id == 0)
+                            {
+                                <a asp-action="Create" class="btn btn-outline-brown">
+                                    <i class="fa fa-plus mr-1"></i> Add About Us
+                                </a>
+                            }
                         }
+                      
                     </div>
 
                     @if (Model != null && Model.Id != 0)
@@ -44,15 +46,26 @@
                                     <td>@Model.OpeningTimeTitle</td>
                                     <td>
                                         <div class="d-flex justify-content-center gap-2">
-                                            <a asp-action="Detail" asp-route-id="@Model.Id" class="btn btn-info btn-sm" title="View Details">
-                                                <i class="fa-solid fa-circle-info"></i>
-                                            </a>
-                                            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-dark btn-sm" title="Edit">
-                                                <i class="fa-solid fa-pencil"></i>
-                                            </a>
-                                            <button type="button" class="btn btn-danger btn-sm" id="deleteBtn" data-id="@Model.Id" title="Delete">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </button>
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                                            {
+                                                <a asp-action="Detail" asp-route-id="@Model.Id" class="btn btn-info btn-sm" title="View Details">
+                                                    <i class="fa-solid fa-circle-info"></i>
+                                                </a>
+                                            }
+
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                                            {
+                                                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-dark btn-sm" title="Edit">
+                                                    <i class="fa-solid fa-pencil"></i>
+                                                </a>
+                                            }
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                                            {
+
+                                                <button type="button" class="btn btn-danger btn-sm" id="deleteBtn" data-id="@Model.Id" title="Delete">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            }                                          
                                         </div>
                                     </td>
                                 </tr>

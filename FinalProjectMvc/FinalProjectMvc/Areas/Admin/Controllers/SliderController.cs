@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Slider;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -17,6 +18,9 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
+
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var sliders = await _sliderService.GetAllAsync();
@@ -25,6 +29,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var slider = await _sliderService.GetByIdAsync(id);
@@ -33,6 +38,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             return View();
@@ -40,6 +46,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(SliderCreateVM model)
         {
             if (!ModelState.IsValid)return View(model);
@@ -48,6 +55,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,SuperAdmin")]
+
         public async Task<IActionResult> Edit(int id)
         {
             var slider = await _sliderService.GetByIdAsync(id);
@@ -64,6 +73,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id, SliderEditVM model)
         {
             if (id != model.Id)
@@ -78,6 +88,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             var slider = await _sliderService.GetByIdAsync(id);

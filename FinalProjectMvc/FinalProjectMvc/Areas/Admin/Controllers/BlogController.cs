@@ -1,5 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Blog;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -14,12 +15,16 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _blogService = blogService;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var blogs = await _blogService.GetAllAsync();
             return View(blogs);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             return View();
@@ -27,6 +32,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(BlogCreateVM model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -35,6 +41,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var blog = await _blogService.GetByIdAsync(id);
@@ -52,6 +60,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id, BlogEditVM model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -60,6 +69,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var blog = await _blogService.GetByIdAsync(id);
@@ -70,18 +81,11 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _blogService.DeleteAsync(id);
             return Ok();
-        }
-
-        public async Task<IActionResult> LoadMoreTours(int skip)
-        {
-            var blogs = await _blogService.GetAllAsync();
-            var nextBlogs = blogs.Skip(skip).Take(3).ToList();
-
-            return Json(nextBlogs);
         }
 
     }

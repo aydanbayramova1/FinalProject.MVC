@@ -1,5 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.TeamMember;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -15,6 +16,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var members = await _teamMemberService.GetAllAsync();
@@ -22,6 +24,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             return View();
@@ -30,6 +33,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(TeamMemberCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -39,6 +43,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var member = await _teamMemberService.GetByIdAsync(id);
@@ -58,6 +63,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id, TeamMemberEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -67,6 +73,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var member = await _teamMemberService.GetByIdAsync(id);
@@ -84,6 +91,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _teamMemberService.DeleteAsync(id);

@@ -1,6 +1,7 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.IntroCounter;
 using FinalProjectMvc.ViewModels.Admin.IntroVideo;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,9 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _introVideoService = introVideoService;
         }
 
+
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var video = await _introVideoService.GetAsync();
@@ -41,6 +45,9 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
+
+
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             var existing = await _introVideoService.GetAsync();
@@ -50,6 +57,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(IntroVideoCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -58,6 +66,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var vm = await _introVideoService.GetEditVMAsync(id);
@@ -66,6 +75,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(IntroVideoEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -76,13 +86,14 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _introVideoService.DeleteAsync(id);
             return Ok();
         }
 
-
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var video = await _introVideoService.GetAsync();

@@ -20,7 +20,6 @@ using FinalProjectMvc.ViewModels.Admin.FaqItem;
 using FinalProjectMvc.ViewModels.Admin.FaqsBanner;
 using FinalProjectMvc.ViewModels.Admin.IntroCounter;
 using FinalProjectMvc.ViewModels.Admin.MenuBanner;
-using FinalProjectMvc.ViewModels.Admin.MenuProduct;
 using FinalProjectMvc.ViewModels.Admin.OfferImage;
 using FinalProjectMvc.ViewModels.Admin.OfferItem;
 using FinalProjectMvc.ViewModels.Admin.OpeningHour;
@@ -391,33 +390,6 @@ namespace FinalProjectMvc.Helpers
                 .ForMember(dest => dest.IsDrinkCategory, opt => opt.MapFrom(src => src.CategoryType.Name.ToLower() == "drink"));
 
           
-
-            CreateMap<MenuProductCreateVM, MenuProduct>()
-                .ForMember(dest => dest.MenuProductSizes, opt => opt.Ignore());
-
-            CreateMap<MenuProductEditVM, MenuProduct>()
-                .ForMember(dest => dest.MenuProductSizes, opt => opt.Ignore());
-
-            CreateMap<MenuProduct, MenuProductEditVM>()
-                .ForMember(dest => dest.SelectedSizeIds, opt => opt.MapFrom(src =>
-                    src.MenuProductSizes != null ? src.MenuProductSizes.Select(mps => mps.SizeId).ToList() : new List<int>()))
-                .ForMember(dest => dest.Categories, opt => opt.Ignore())
-                .ForMember(dest => dest.Sizes, opt => opt.Ignore())
-                .ForMember(dest => dest.CategoryTypesById, opt => opt.Ignore());
-
-            CreateMap<MenuProduct, MenuProductDetailVM>()
-                .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category != null ? src.Category.Name : ""))
-                .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src =>
-                    src.Category != null && src.Category.CategoryType != null ? src.Category.CategoryType.Name : ""))
-                .ForMember(dest => dest.Sizes, opt => opt.MapFrom(src =>
-                    src.MenuProductSizes != null ? src.MenuProductSizes.Select(mps => mps.Size.Name).ToList() : new List<string>()));
-
-            CreateMap<MenuProduct, MenuProductVM>()
-                .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category != null ? src.Category.Name : ""))
-                .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src =>
-                    src.Category != null && src.Category.CategoryType != null ? src.Category.CategoryType.Name : ""))
-                .ForMember(dest => dest.Sizes, opt => opt.MapFrom(src =>
-                    src.MenuProductSizes != null ? src.MenuProductSizes.Select(mps => mps.Size.Name).ToList() : new List<string>()));
 
         }
 

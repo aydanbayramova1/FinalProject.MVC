@@ -1,5 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Setting;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -15,6 +16,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _settingService = settingService;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var setting = await _settingService.GetSettingAsync();
@@ -24,12 +27,15 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(setting);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(SettingCreateVM model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -44,7 +50,9 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-       
+
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail()
         {
             var setting = await _settingService.GetSettingAsync();
@@ -53,6 +61,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
             return View(setting);
         }
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit()
         {
             var model = await _settingService.GetEditModelAsync();
@@ -63,6 +73,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(SettingEditVM model)
         {
             if (!ModelState.IsValid)

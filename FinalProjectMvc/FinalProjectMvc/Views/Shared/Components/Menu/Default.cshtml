@@ -1,15 +1,14 @@
-﻿@using FinalProjectMvc.ViewModels.Admin.Menu
-@model MenuVM
-
+﻿@using FinalProjectMvc.ViewModels.Admin.Pricing
+@model PricingVM
 
 <section id="menu">
     <div class="menu-container">
         <div style="margin-top: 56px;" class="filter-controls">
             <select id="categoryFilter" class="category-filter">
                 <option value="all">ALL CATEGORIES</option>
-                @foreach (var category in Model.Categories)
+                @foreach (var item in Model.Categories)
                 {
-                    <option value="@category.Name">@category.Name.ToUpper()</option>
+                    <option value="@item.Name.ToLower().Replace(" ", "-")">@item.Name.ToUpper()</option>
                 }
             </select>
 
@@ -24,48 +23,49 @@
 
         @foreach (var category in Model.Categories)
         {
-            <section class="menu-section" data-category="hot-coffees">
+            var sectionId = category.Name.ToLower().Replace(" ", "-");
+
+            <section class="menu-section" data-category="@sectionId">
                 <div class="section-header">
-                    <div class="brand-script">CAFFE LUNA </div>
-                    <h2 class="section-title" style="font-family: 'Playfair Display', serif;">OUR @category.Name.ToUpper()</h2>
+                    <div class="brand-script">CAFFE LUNA</div>
+                    <h2 class="section-title" style="font-family: 'Playfair Display', serif;">
+                        OUR @category.Name.ToUpper()
+                    </h2>
                 </div>
+
                 <div class="menu-layout">
                     <div class="menu-image left" style="margin-top: -25px;">
-                        <img src="~/uploads/category/@category.Image" alt="Signature Coffee" style="width: 630px; height: 1140px; object-fit: cover;opacity: 0.5;transition: all 0.9s ease;">
+                        <img src="~/uploads/category/@category.Image" alt="@category.Name" style="width: 630px; height: 1140px; object-fit: cover; opacity: 0.5; transition: all 0.9s ease;" />
                     </div>
-                    @foreach (var product in Model.MenuProductVMs)
-                    {
-                        <div class="menu-items right">
-                            <div class="menu-item" data-base-price="4.50" data-name="signature espresso">
+
+                    <div class="menu-items right">
+                        @foreach (var product in Model.Products
+                       .Where(p => p.CategoryId == category.Id)
+                       .OrderByDescending(p => p.Id))
+                        {
+                            <div class="menu-item" data-base-price="@product.Price" data-name="@product.Name.ToLower()">
                                 <div class="item-info">
-                                    <h3 class="item-name">@product.Name</h3>
+                                    <h3 class="item-name">@product.Name.ToUpper()</h3>
                                     <p class="item-description">@product.Ingredients</p>
-                                    @foreach (var item in Model.SizeVMs)
+
+                                    @if (product.Sizes != null && product.Sizes.Any())
                                     {
                                         <div class="size-options">
-                                            <button class="size-btn active" data-price="4.50">@item.Name</button>
-                                            <button class="size-btn" data-price="5.50">@item.Name</button>
-                                            <button class="size-btn" data-price="6.50">@item.Name</button>
+                                            @{
+                                                var basePrice = product.Price;
+                                            }
+                                            <button class="size-btn active" data-price="@basePrice">S</button>
+                                            <button class="size-btn" data-price="@(basePrice + 2)">M</button>
+                                            <button class="size-btn" data-price="@(basePrice + 4)">L</button>
                                         </div>
                                     }
-                                   
                                 </div>
                                 <div class="item-price">$@product.Price</div>
                             </div>
-
-                        
-                        </div>
-                    }
-
-                  
+                        }
+                    </div>
                 </div>
             </section>
-
-            
         }
-      
-
-
-
     </div>
 </section>

@@ -2,6 +2,7 @@
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.ApproachItem;
 using FinalProjectMvc.ViewModels.Admin.StoryItem;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -17,6 +18,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _approachService = approachService;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var items = await _approachItemService.GetAllAsync();
@@ -24,6 +27,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             var approach = _approachService.GetFirstAsync();
@@ -43,6 +48,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(ApproachItemCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -51,6 +57,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var vm = await _approachItemService.GetEditAsync(id);
@@ -58,6 +66,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(ApproachItemEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -66,6 +75,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var item = await _approachItemService.GetDetailAsync(id);
@@ -82,6 +93,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _approachItemService.DeleteAsync(id);

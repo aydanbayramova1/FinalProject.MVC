@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.AboutRestaurant;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -17,6 +18,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var entities = await _aboutService.GetAllAsync();
@@ -24,10 +26,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(model);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create() => View();
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(AboutRestaurantCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -44,6 +49,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var entity = await _aboutService.GetByIdAsync(id);
@@ -55,6 +61,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(AboutRestaurantEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -71,6 +78,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             }
         }
 
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             var entity = await _aboutService.GetByIdAsync(id);
@@ -89,6 +97,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var entity = await _aboutService.GetByIdAsync(id);

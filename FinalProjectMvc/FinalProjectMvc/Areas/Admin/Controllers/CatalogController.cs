@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Catalog;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -17,6 +18,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var entities = await _catalogService.GetAllAsync();
@@ -25,6 +28,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var catalog = await _catalogService.GetByIdAsync(id);
@@ -34,10 +38,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create() => View();
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(CatalogCreateVM model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -46,6 +53,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var catalog = await _catalogService.GetByIdAsync(id);
@@ -57,6 +66,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(CatalogEditVM model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -67,6 +77,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _catalogService.DeleteAsync(id);

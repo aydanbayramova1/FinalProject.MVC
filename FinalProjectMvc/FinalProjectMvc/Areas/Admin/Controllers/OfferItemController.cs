@@ -1,5 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.OfferItem;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -14,12 +15,16 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _service = service;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var model = await _service.GetAllAsync();
             return View(model);
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             try
@@ -33,12 +38,15 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             }
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")] 
         public async Task<IActionResult> Create(OfferItemCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -47,6 +55,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var item = await _service.GetByIdAsync(id);
@@ -60,6 +70,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(OfferItemEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -70,6 +81,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _service.DeleteAsync(id);

@@ -2,6 +2,7 @@
 using FinalProjectMvc.Services;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.StoryItem;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +20,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var items = await _storyItemService.GetAllAsync();
@@ -26,6 +29,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
             var ourStory = _ourStoryService.GetFirstAsync(); 
@@ -45,6 +50,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(StoryItemCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -53,6 +59,9 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var vm = await _storyItemService.GetEditAsync(id);
@@ -60,6 +69,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(StoryItemEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -68,6 +78,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var item = await _storyItemService.GetDetailAsync(id);
@@ -75,6 +87,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _storyItemService.DeleteAsync(id);

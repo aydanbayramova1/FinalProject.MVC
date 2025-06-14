@@ -1,5 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.OpeningHour;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _service = service;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var model = await _service.GetAsync();
@@ -29,13 +32,15 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(list);
         }
 
-
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var model = await _service.GetDetailAsync(id);
             return View(model);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             var aboutUsExists = await _service.AnyAsync();
@@ -55,6 +60,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(OpeningHourCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -63,6 +69,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var model = await _service.GetEditAsync(id);
@@ -70,6 +78,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(OpeningHourEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -80,6 +89,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _service.DeleteAsync(id);

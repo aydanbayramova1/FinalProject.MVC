@@ -10,9 +10,13 @@
             <div class="bg-light border rounded shadow-sm p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Team Member List</h2>
-                    <a asp-action="Create" class="btn btn-outline-brown" id="addNewMemberLink" style="@(Model.Any() ? "display:none;" : "display:inline-block;")">
-                        <i class="fa fa-plus mr-1"></i> Add New Team Member
-                    </a>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                    {
+                        <a asp-action="Create" class="btn btn-outline-brown" id="addNewMemberLink" style="@(Model.Any() ? "display:none;" : "display:inline-block;")">
+                            <i class="fa fa-plus mr-1"></i> Add New Team Member
+                        </a>
+                    }
+                   
                 </div>
 
                 <div class="table-responsive">
@@ -40,15 +44,28 @@
                                     </td>
                                     <td>
                                         <div class="d-flex justify-content-center gap-2">
-                                            <a asp-action="Detail" asp-route-id="@member.Id" class="btn btn-info btn-sm" title="Details">
-                                                <i class="fa-solid fa-circle-info"></i>
-                                            </a>
-                                            <a asp-action="Edit" asp-route-id="@member.Id" class="btn btn-dark btn-sm" title="Edit">
-                                                <i class="fa-solid fa-pencil"></i>
-                                            </a>
-                                            <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@member.Id" title="Delete">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </button>
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                                            {
+                                                <a asp-action="Detail" asp-route-id="@member.Id" class="btn btn-info btn-sm" title="Details">
+                                                    <i class="fa-solid fa-circle-info"></i>
+                                                </a>
+                                            }
+
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                                            {
+                                                <a asp-action="Edit" asp-route-id="@member.Id" class="btn btn-dark btn-sm" title="Edit">
+                                                    <i class="fa-solid fa-pencil"></i>
+                                                </a>
+                                            }
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                                            {
+
+
+                                                <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@member.Id" title="Delete">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            }
+                                         
                                         </div>
                                     </td>
                                 </tr>

@@ -2,6 +2,7 @@
 using FinalProjectMvc.Models;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.OurStory;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -20,6 +21,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _env = env;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var entity = await _ourStoryService.GetAsync();
@@ -30,6 +33,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             if (await _ourStoryService.ExistsAsync())
@@ -39,6 +43,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(OurStoryCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -52,6 +57,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var entity = await _ourStoryService.GetByIdAsync(id);
@@ -62,6 +69,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(OurStoryEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -83,6 +91,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             await _ourStoryService.DeleteAsync(id);
@@ -90,6 +99,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var entity = await _ourStoryService.GetByIdAsync(id);

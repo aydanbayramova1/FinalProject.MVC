@@ -1433,6 +1433,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 
+    console.log(" Header user account functionality initialized!")
 })
 
 window.checkUserLogin = () => {

@@ -1,4 +1,4 @@
-﻿@using FinalProjectMvc.ViewModels.Admin.Pricing
+﻿﻿@using FinalProjectMvc.ViewModels.Admin.Pricing
 @model PricingVM
 
 <section id="our-pricing">
@@ -27,7 +27,7 @@
                                 </button>
                             </li>
 
-                      
+
 
                             @foreach (var category in Model.Categories)
                             {
@@ -62,7 +62,7 @@
 
                                     if (lastProduct != null)
                                     {
-                                        <div style="margin-top: 29px;" class="menu-list-item">
+                                        <div style="margin-top: 29px;" class="menu-list-item" data-has-size="@(lastProduct.Sizes != null && lastProduct.Sizes.Count > 0 ? "true" : "false")">
                                             <div class="menu-list-image">
                                                 <figure>
                                                     <img src="~/uploads/products/@lastProduct.Image" alt="@lastProduct.Name">
@@ -74,7 +74,7 @@
                                                     <hr>
                                                     <span>$@lastProduct.Price</span>
                                                 </div>
-                                               
+
                                                 <div class="menu-item-content">
                                                     <p style="opacity: 0.5;">
                                                         @lastProduct.Ingredients
@@ -96,7 +96,7 @@
                                 <div class="col-lg-6">
                                     <div style="opacity: 0.5 !important;margin-bottom: 105px;" class="pricing-image">
                                         <figure class="image-anime">
-                                            <img src="@Url.Content($"~/uploads/categories/{category.Image}")" alt="@category.Name">
+                                            <img src="~/uploads/category/@category.Image" alt="@category.Name">
                                         </figure>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
                                    .Take(5))
                                     {
                                         <div class="our-menu-list">
-                                            <div class="menu-list-item">
+                                            <div class="menu-list-item " data-has-size="@(product.Sizes != null && product.Sizes.Count > 0 ? "true" : "false")">
                                                 <div class="menu-list-image">
                                                     <figure>
                                                         <img src="~/uploads/products/@product.Image" alt="@product.Name">
@@ -120,7 +120,7 @@
                                                         <hr>
                                                         <span>$@product.Price</span>
                                                     </div>
-                                                  
+
                                                     <div class="menu-item-content">
                                                         <p style="opacity: 0.5;">
                                                             @product.Ingredients

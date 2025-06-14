@@ -15,13 +15,13 @@
                     <p><strong>Ingredients:</strong> @Model.Ingredients</p>
                     <p><strong>Price:</strong> $@Model.Price</p>
                     <p><strong>Category:</strong> @Model.CategoryName</p>
-@*                     <p><strong>Category Type:</strong> @Model.CategoryTypeName</p>
- *@@* 
+                    <p><strong>Category Type:</strong> @Model.CategoryTypeName</p>
+
                     @if (Model.Sizes != null && Model.Sizes.Any())
                     {
                         <p><strong>Sizes:</strong> @string.Join(", ", Model.Sizes)</p>
                     }
- *@
+
                     @if (!string.IsNullOrEmpty(Model.Image))
                     {
                         <div class="mt-4 text-center">

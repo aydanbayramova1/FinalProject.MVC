@@ -55,6 +55,10 @@ builder.Services.Configure<IdentityOptions>(options =>
     // User settings
     options.User.RequireUniqueEmail = true;
 });
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.AccessDeniedPath = "/Unauthorized/Index"; 
+});
 
 // Dependency Injection
 builder.Services.AddScoped<ISliderService, SliderService>();
@@ -96,7 +100,6 @@ builder.Services.AddScoped<ICategoryTypeService, CategoryTypeService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ISizeService, SizeService>();
-builder.Services.AddScoped<IMenuProductService, MenuProductService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
@@ -133,16 +136,24 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseAuthentication();
-app.UseStatusCodePages(async context =>
+app.UseStatusCodePages(context =>
 {
     var response = context.HttpContext.Response;
-    if (response.StatusCode == 404)
+    var path = response.StatusCode switch
     {
-        response.Redirect("/NotFound/Index");
+        401 => "/Unauthorized/Index",
+        404 => "/NotFound/Index",
+        _ => null
+    };
+
+    if (path != null)
+    {
+        response.Redirect(path);
     }
 
-    await Task.CompletedTask;
+    return Task.CompletedTask;
 });
+
 app.UseAuthorization();
 
 // Routes

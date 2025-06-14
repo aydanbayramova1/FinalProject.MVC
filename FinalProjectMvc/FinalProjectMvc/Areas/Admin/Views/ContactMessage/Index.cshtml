@@ -30,7 +30,11 @@
                     <td>@item.Message</td>
                     <td>@item.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
                     <td>
-                        <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id">Delete</button>
+                          @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                          {
+                            <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id">Delete</button>
+                           }
+                    
                     </td>
                 </tr>
             }

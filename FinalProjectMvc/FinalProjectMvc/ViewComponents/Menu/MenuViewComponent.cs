@@ -1,7 +1,6 @@
 ﻿using FinalProjectMvc.Models;
 using FinalProjectMvc.Services;
 using FinalProjectMvc.Services.Interfaces;
-using FinalProjectMvc.ViewModels.Admin.Menu;
 using FinalProjectMvc.ViewModels.Admin.Pricing;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,19 +9,17 @@ namespace FinalProjectMvc.ViewComponents.Menu
     public class MenuViewComponent : ViewComponent
     {
         private readonly ICategoryService _categoryService;
-        private readonly IMenuProductService _menuProductService;
+        private readonly IProductService _productService;
         private readonly ISizeService _sizeService;
-        public MenuViewComponent(ICategoryService categoryService, IMenuProductService menuProductService,ISizeService sizeService)
+        public MenuViewComponent(ICategoryService categoryService, IProductService productService,ISizeService sizeService)
         {
             _categoryService = categoryService;
-            _menuProductService = menuProductService;
-            _sizeService = sizeService;
+            _productService= productService;
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var categories = await _categoryService.GetAllAsync();
-            var products = await _menuProductService.GetAllAsync();
-            var sizeS = await _sizeService.GetAllAsync();    
+            var products = await _productService.GetAllAsync();
 
             var filteredCategories = categories
                 .Where(c => products.Any(p => p.CategoryId == c.Id))
@@ -33,11 +30,10 @@ namespace FinalProjectMvc.ViewComponents.Menu
                 return Content(string.Empty);
             }
 
-            var vm = new MenuVM
+            var vm = new PricingVM
             {
                 Categories = filteredCategories,
-                MenuProductVMs = products,
-                SizeVMs = sizeS,
+                Products = products
             };
 
             return View(vm);

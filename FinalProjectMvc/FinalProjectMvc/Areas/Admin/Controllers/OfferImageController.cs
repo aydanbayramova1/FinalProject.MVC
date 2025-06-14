@@ -1,5 +1,6 @@
 ﻿using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.OfferImage;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -14,12 +15,16 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _service = service;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var vms = await _service.GetAllAsync();
             return View(vms);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             var offer = await _service.GetOurOfferAsync();
@@ -34,6 +39,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(OfferImageCreateVM vm)
         {
             if (!ModelState.IsValid)
@@ -48,6 +54,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit()
         {
             var vm = await _service.GetEditAsync();
@@ -57,6 +65,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(OfferImageEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -65,6 +74,9 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail()
         {
             var vm = await _service.GetDetailAsync();
@@ -73,6 +85,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> DetailById(int id)
         {
             var vm = await _service.GetImageDetailByIdAsync(id);
@@ -83,6 +97,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete()
         {
             await _service.DeleteAsync();

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Scrolling;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -17,6 +18,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var scrollings = await _scrollingService.GetAllAsync();
@@ -24,6 +27,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vms);
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var scrolling = await _scrollingService.GetByIdAsync(id);
@@ -31,10 +36,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create() => View();
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(ScrollingCreateVM model)
         {
             if (!ModelState.IsValid) return View(model);
@@ -43,6 +51,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var scrolling = await _scrollingService.GetByIdAsync(id);
@@ -56,6 +66,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id, ScrollingEditVM model)
         {
             if (id != model.Id) return NotFound();
@@ -67,6 +78,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             var scrolling = await _scrollingService.GetByIdAsync(id);

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.ServiceItem;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
@@ -19,6 +20,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _mapper = mapper;
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var items = await _serviceItemService.GetAllAsync();
@@ -26,6 +29,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vms);
         }
 
+
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create()
         {
             var service = await _serviceService.GetAsync();
@@ -45,6 +50,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(ServiceItemCreateVM vm)
         {
             if (!ModelState.IsValid)
@@ -60,6 +66,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(int id)
         {
             var entity = await _serviceItemService.GetByIdAsync(id);
@@ -70,6 +78,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(ServiceItemEditVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -77,6 +86,8 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Detail(int id)
         {
             var entity = await _serviceItemService.GetByIdWithServiceAsync(id);
@@ -86,6 +97,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(vm);
         }
         [HttpPost]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {
             try
