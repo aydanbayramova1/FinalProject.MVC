@@ -49,8 +49,18 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
                 return View(vm);
             }
 
-            await _categoryService.CreateAsync(vm);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _categoryService.CreateAsync(vm);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+
+                vm.CategoryTypes = await _categoryTypeService.GetAllAsync();
+                return View(vm);
+            }
         }
 
 
@@ -84,8 +94,18 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
                 return View(vm);
             }
 
-            await _categoryService.UpdateAsync(vm);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _categoryService.UpdateAsync(vm);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+
+                vm.CategoryTypes = await _categoryTypeService.GetAllAsync();
+                return View(vm);
+            }
         }
 
 

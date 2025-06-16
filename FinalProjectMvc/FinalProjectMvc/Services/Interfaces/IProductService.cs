@@ -17,5 +17,6 @@ namespace FinalProjectMvc.Services.Interfaces
         Task<string> GetCategoryTypeAsync(int categoryId);
         Task<IQueryable<ProductVM>> GetAllQueryAsync();
         Task<List<Product>> SearchAsync(string query);
+        Task<Product> GetByNameAsync(string name);
     }
 }

@@ -4,47 +4,37 @@ using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.Services;
 using FinalProjectMvc.Services.Implementations;
 using FinalProjectMvc.Helpers.Seeders;
-
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http.Features;
-
 using Serilog;
 using FinalProjectMvc.Helpers;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using FinalProjectMvc.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailConfig"));
 
-
-
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// File upload limits (for IFormFile)
 builder.Services.Configure<FormOptions>(options =>
 {
-    options.MultipartBodyLengthLimit = 104857600; 
+    options.MultipartBodyLengthLimit = 104857600;
 });
 
-// Database connection
 var conString = builder.Configuration.GetConnectionString("Default") ??
     throw new InvalidOperationException("Connection string 'Default' not found.");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(conString));
 
-// Identity configuration
 builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
-    // Password settings
     options.Password.RequireDigit = true;
     options.Password.RequireLowercase = true;
     options.Password.RequireNonAlphanumeric = true;
@@ -52,15 +42,14 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredLength = 6;
     options.Password.RequiredUniqueChars = 1;
 
-    // User settings
     options.User.RequireUniqueEmail = true;
 });
+
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.AccessDeniedPath = "/Unauthorized/Index"; 
+    options.AccessDeniedPath = "/Unauthorized/Index";
 });
 
-// Dependency Injection
 builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IScrollingService, ScrollingService>();
 builder.Services.AddScoped<ICatalogService, CatalogService>();
@@ -110,7 +99,6 @@ Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .WriteTo.Console()
     .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
-    //.WriteTo.Seq("http://localhost:5341")
     .Enrich.FromLogContext()
     .CreateLogger();
 
@@ -118,14 +106,15 @@ builder.Host.UseSerilog();
 
 var app = builder.Build();
 
-// Role seeding
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     await RoleSeeder.SeedAsync(roleManager);
 }
 
-// Middleware
+//app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseHsts();
@@ -141,6 +130,7 @@ app.UseStatusCodePages(context =>
     var response = context.HttpContext.Response;
     var path = response.StatusCode switch
     {
+        400 => "/BadRequest/Index",
         401 => "/Unauthorized/Index",
         404 => "/NotFound/Index",
         _ => null
@@ -153,10 +143,8 @@ app.UseStatusCodePages(context =>
 
     return Task.CompletedTask;
 });
-
 app.UseAuthorization();
 
-// Routes
 app.MapControllerRoute(
    name: "areas",
    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");

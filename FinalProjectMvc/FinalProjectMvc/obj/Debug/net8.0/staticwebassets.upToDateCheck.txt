@@ -1,3 +1,4 @@
+wwwroot\assets\css\400\400.css
 wwwroot\assets\css\401\401.css
 wwwroot\assets\css\404\404.css
 wwwroot\assets\css\about\about.css
@@ -254,6 +255,7 @@ wwwroot\uploads\category\301a2995-f2e4-4ab3-a621-bec197ad100e.jpg
 wwwroot\uploads\category\7144b4e9-02ba-4735-9b7d-3219254eb795.jpg
 wwwroot\uploads\category\7ced33f8-81b1-4d44-8931-5cc59ded7411.jpg
 wwwroot\uploads\category\9093f976-5413-46fe-ad61-096fd60a6211.jpg
+wwwroot\uploads\category\e7044ed6-0dc7-4f55-af72-50cd92883564.jpg
 wwwroot\uploads\contactbanner\6c5f6ab4-4f1b-4028-aa59-353063815489.jpg
 wwwroot\uploads\e69faf72-8317-46bc-ab1d-09dbd0fd5b7a.jpg
 wwwroot\uploads\faqsbanner\f310b1f7-774b-49ec-a9ac-748929306aff.jpg
@@ -312,6 +314,7 @@ wwwroot\uploads\products\664704cb-554b-4a9e-8733-b77daa6f3fd0.jpg
 wwwroot\uploads\products\6f544273-fcc8-45fb-ac9f-b448a0e1da7c.jpg
 wwwroot\uploads\products\703a4241-3462-4ca6-8702-44814a1fc47b.jpg
 wwwroot\uploads\products\75480e5a-d8ab-4881-b797-2bf2ab132d81.jpg
+wwwroot\uploads\products\803bfc1e-5910-4438-b455-2863f2cf2dc4.jpg
 wwwroot\uploads\products\86a6c8c4-b618-47ea-a554-db25bf87a62c.jpg
 wwwroot\uploads\products\884d9099-6ecd-4853-a0d1-8f249638fb1e.jpg
 wwwroot\uploads\products\8de4b121-1f96-4ef9-8a26-fddefc54db2b.jpg
@@ -322,6 +325,7 @@ wwwroot\uploads\products\aadb1230-81b6-4c9c-afe8-01af2c2e3bb2.jpg
 wwwroot\uploads\products\aea16655-d7e0-4069-a60c-bd5d535c74b3.jpg
 wwwroot\uploads\products\b1c98cb2-2bd9-45f5-995e-9b653525bbfb.jpg
 wwwroot\uploads\products\c4665628-adc4-4f71-bb4f-dd1088572f7f.jpg
+wwwroot\uploads\products\c4892236-91f1-43df-98c7-2bbbefbed51c.jpg
 wwwroot\uploads\products\c8d6cf10-5662-4827-961d-2450115163f1.jpg
 wwwroot\uploads\products\cc1aecba-c918-4051-bec6-6275bfb8398d.png
 wwwroot\uploads\products\cc1ee19f-44ef-4c2f-8341-5066a38ffca4.jpg

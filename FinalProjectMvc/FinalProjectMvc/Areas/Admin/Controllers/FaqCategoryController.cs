@@ -39,9 +39,18 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid) return View(vm);
 
-            await _faqCategoryService.CreateAsync(vm);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _faqCategoryService.CreateAsync(vm);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (InvalidOperationException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                return View(vm);
+            }
         }
+
 
 
 
@@ -58,8 +67,16 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid) return View(vm);
 
-            await _faqCategoryService.UpdateAsync(vm);
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                await _faqCategoryService.UpdateAsync(vm);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (InvalidOperationException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                return View(vm);
+            }
         }
 
 

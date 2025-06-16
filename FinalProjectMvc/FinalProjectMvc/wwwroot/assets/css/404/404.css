@@ -2299,6 +2299,7 @@ header.main-header {
     .error-page-image img {
         width: 100%;
         max-width: 50%;
+        margin-left:18pc;
     }
 
 .error-page-content {
@@ -2306,6 +2307,7 @@ header.main-header {
     max-width: 650px;
     margin: 0 auto;
     text-align: center;
+    margin-left: 29pc;
 }
 
     .error-page-content .section-title {

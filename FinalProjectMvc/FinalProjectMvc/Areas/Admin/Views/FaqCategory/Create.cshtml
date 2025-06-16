@@ -4,7 +4,19 @@
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="bg-white p-4 rounded shadow-sm border">
-                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">📁 Add New FAQ Category</h2>
+                <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">Add New FAQ Category</h2>
+
+                @if (!ViewData.ModelState.IsValid && ViewData.ModelState[string.Empty] != null)
+                {
+                    <div class="alert alert-danger">
+                        @foreach (var error in ViewData.ModelState[string.Empty].Errors)
+                        {
+                            <span>@error.ErrorMessage</span>
+
+                            <br />
+                        }
+                    </div>
+                }
 
                 <form asp-action="Create" method="post">
                     <div class="form-group mb-3">

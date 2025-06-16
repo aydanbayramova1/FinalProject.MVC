@@ -64,15 +64,22 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                return BadRequest();
+                var existingProduct = await _productService.GetByNameAsync(vm.Name);
+                if (existingProduct != null)
+                {
+                   
+                    vm.Categories = await _categoryService.GetSelectListAsync();
+                    vm.Sizes = await _sizeService.GetSelectListAsync();
+                    vm.CategoryTypesById = await _categoryService.GetCategoryTypesWithIdAsync();
+                    return View(vm);
+                }
+
+                await _productService.CreateAsync(vm);
+                return RedirectToAction(nameof(Index));
             }
-            vm.Categories = await _categoryService.GetSelectListAsync();
-            vm.Sizes = await _sizeService.GetSelectListAsync();
-            vm.CategoryTypesById = await _categoryService.GetCategoryTypesWithIdAsync();
-            
-            await _productService.CreateAsync(vm);
-            return RedirectToAction(nameof(Index));
+            return View(vm);
         }
+
 
 
 
@@ -100,14 +107,28 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                return BadRequest();
+                var existingProduct = await _productService.GetByNameAsync(vm.Name);
+                if (existingProduct != null && existingProduct.Id != vm.Id)
+                {
+                    ViewData["Error"] = "A product with the same name already exists.";
+
+                    vm.Categories = await _categoryService.GetSelectListAsync();
+                    vm.Sizes = await _sizeService.GetSelectListAsync();
+                    vm.CategoryTypesById = await _categoryService.GetCategoryTypesWithIdAsync();
+                    return View(vm);
+                }
+
+                await _productService.EditAsync(vm);
+                return RedirectToAction(nameof(Index));
             }
+
             vm.Categories = await _categoryService.GetSelectListAsync();
             vm.Sizes = await _sizeService.GetSelectListAsync();
             vm.CategoryTypesById = await _categoryService.GetCategoryTypesWithIdAsync();
-            await _productService.EditAsync(vm);
-            return RedirectToAction(nameof(Index));
+            return View(vm);
         }
+
+
 
 
 
@@ -135,6 +156,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         {
             var categoryType = await _productService.GetCategoryTypeAsync(categoryId);
             return Json(new { categoryType = categoryType });
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CheckProductName(string name)
+        {
+            var product = await _productService.GetByNameAsync(name);
+            return Json(product != null);
         }
     }
 }

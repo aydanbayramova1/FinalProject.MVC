@@ -1,0 +1,409 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #121d23,#C9A581);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sparkle {
+    position: absolute;
+    color: #f9a8d4;
+    opacity: 0.6;
+    animation: sparkle 3s infinite;
+    font-size: 20px;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Ana container */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 48px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScale 1s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Kahve ikonu container */
+.coffee-icon-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 128px;
+    background: linear-gradient(135deg, #fce7f3, #fed7aa);
+    border-radius: 50%;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+    .coffee-icon-container::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(249, 168, 212, 0.5), rgba(251, 146, 60, 0.5));
+        animation: pulse 2s infinite;
+    }
+
+.coffee-icon {
+    font-size: 64px;
+    position: relative;
+    z-index: 10;
+    animation: bounce 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Kalpler */
+.heart {
+    position: absolute;
+    color: #f87171;
+    animation: heartBeat 2s infinite;
+}
+
+    .heart.top-right {
+        top: 8px;
+        right: 8px;
+        font-size: 24px;
+    }
+
+    .heart.bottom-left {
+        bottom: 8px;
+        left: 8px;
+        font-size: 16px;
+        animation-delay: 1s;
+    }
+
+@keyframes heartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Başlık */
+.title {
+    font-size: 72px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #db2777, #f43f5e, #ea580c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: #121d23
+    ;
+    margin-bottom: 16px;
+}
+
+.divider {
+    width: 96px;
+    height: 4px;
+    background: linear-gradient(135deg, #f472b6, #fb923c);
+    border-radius: 2px;
+    margin: 0 auto 32px;
+}
+
+/* Mesajlar */
+.subtitle {
+    font-size: 28px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 16px;
+}
+
+.description {
+    font-size: 18px;
+    color: #121d23;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* Hata detayları grid */
+.error-details {
+    background: linear-gradient(135deg, #fdf2f8, #fff7ed);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(249, 168, 212, 0.5);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+    .detail-item:hover {
+        transform: translateY(-2px);
+    }
+
+.detail-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 20px;
+}
+
+    .detail-icon.pink {
+        background: #fce7f3;
+    }
+
+    .detail-icon.orange {
+        background: #fed7aa;
+    }
+
+    .detail-icon.rose {
+        background: #fce7f3;
+    }
+
+    .detail-icon.yellow {
+        background: #fef3c7;
+    }
+
+.detail-text {
+    color: #121d23;
+    font-weight: 500;
+}
+
+/* İlham verici söz */
+.quote-section {
+    background: linear-gradient(135deg, #fce7f3, #fff7ed);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(249, 168, 212, 0.5);
+}
+
+.quote {
+    font-size: 20px;
+    font-weight: 500;
+    color: #121d23;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.hearts-row {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+    .hearts-row .heart {
+        position: static;
+        font-size: 16px;
+        color: #f87171;
+    }
+
+/* Butonlar */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+@media (min-width: 640px) {
+    .buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+    .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(249, 168, 212, 0.5);
+    color: #374151;
+}
+
+    .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.8);
+        color: #111827;
+    }
+
+.btn-primary {
+    background: linear-gradient(135deg, #ec4899, #ea580c);
+    color: white;
+}
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #db2777, #dc2626);
+    }
+
+/* Footer */
+.footer {
+    padding-top: 24px;
+    border-top: 1px solid rgba(249, 168, 212, 0.5);
+    color: #6b7280;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Yüzen kahve çekirdekleri */
+.floating-bean {
+    position: absolute;
+    background: #92400e;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+}
+
+.bean1 {
+    top: 80px;
+    left: 40px;
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+}
+
+.bean2 {
+    top: 160px;
+    right: 80px;
+    width: 16px;
+    height: 16px;
+    opacity: 0.4;
+    animation-delay: 0.5s;
+}
+
+.bean3 {
+    bottom: 128px;
+    left: 80px;
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    animation-delay: 1s;
+}
+
+.bean4 {
+    bottom: 80px;
+    right: 128px;
+    width: 12px;
+    height: 12px;
+    opacity: 0.6;
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 32px 24px;
+    }
+
+    .title {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+

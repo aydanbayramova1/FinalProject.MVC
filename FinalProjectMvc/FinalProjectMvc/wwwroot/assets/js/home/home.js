@@ -352,14 +352,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             document.querySelectorAll(".menu-size-options").forEach((el) => el.remove())
 
-            if (currentCategory === "see-food") {
+            if (currentCategory === "hot-coffees") {
                 addSizeOptionsToHotCoffees()
             }
         })
     })
 
     function addSizeOptionsToHotCoffees() {
-        const hotCoffeeItems = document.querySelector("#see-food").querySelectorAll(".menu-list-item")
+        const hotCoffeeItems = document.querySelector("#hot-coffees").querySelectorAll(".menu-list-item")
 
         hotCoffeeItems.forEach((menuItem) => {
             const priceElement = menuItem.querySelector(".menu-item-title span")
@@ -489,7 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `
     document.head.appendChild(style)
 
-    if (document.querySelector("#see-food.active")) {
+    if (document.querySelector("#hot-coffees.active")) {
         addSizeOptionsToHotCoffees()
     }
 })
@@ -613,8 +613,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll(".menu-size-options").forEach((el) => el.remove())
 
             setTimeout(() => {
-                if (currentCategory === "see-food") {
-                    addSizeOptionsToItems("#see-food")
+                if (currentCategory === "hot-coffees") {
+                    addSizeOptionsToItems("#hot-coffees")
                 } else if (currentCategory === "iced-coffee") {
                     addSizeOptionsToItems("#iced-coffee")
                 } else if (currentCategory === "tea-more") {
@@ -822,8 +822,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll(".menu-size-options").forEach((el) => el.remove())
 
             setTimeout(() => {
-                if (currentCategory === "see-food") {
-                    addSizeOptionsToItems("#see-food")
+                if (currentCategory === "hot-coffees") {
+                    addSizeOptionsToItems("#hot-coffees")
                 } else if (currentCategory === "iced-coffee") {
                     addSizeOptionsToItems("#iced-coffee")
                 } else if (currentCategory === "tea-more") {

@@ -223,7 +223,10 @@ namespace FinalProjectMvc.Services
 
             return true;
         }
-
+        public async Task<Product> GetByNameAsync(string name)
+        {
+            return await _context.Products.FirstOrDefaultAsync(p => p.Name == name);
+        }
 
 
         public async Task<string> GetCategoryTypeAsync(int categoryId)

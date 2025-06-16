@@ -36,7 +36,7 @@ namespace FinalProjectMvc.Controllers
 
             await _contactMessageService.CreateAsync(model.MessageForm);
 
-            TempData["Success"] = "Mesajınız uğurla göndərildi!";
+            TempData["Success"] = "Your message has been sent!";
             return RedirectToAction("Index");
         }
 

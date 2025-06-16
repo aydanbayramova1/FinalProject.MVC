@@ -6,6 +6,16 @@
             <div class="bg-white p-4 rounded shadow-sm border">
                 <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">✏️ Edit FAQ Category</h2>
 
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger">
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <div>@error.ErrorMessage</div>
+                        }
+                    </div>
+                }
+
                 <form asp-action="Edit" method="post">
                     <input type="hidden" asp-for="Id" />
 

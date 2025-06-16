@@ -1,0 +1,117 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee is Preparing - Error</title>
+ <link href="~/assets/css/400/400.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Sihirli parçacıklar -->
+    <div class="sparkles-container"></div>
+
+ 
+
+    <!-- Ana container -->
+    <div class="container">
+        <!-- Kahve ikonu -->
+        <div class="coffee-icon-container">
+            <div class="coffee-icon">☕</div>
+       
+        </div>
+
+        <!-- Başlık -->
+        <h1 class="title">Oops!</h1>
+        <div class="divider"></div>
+
+        <!-- Mesajlar -->
+        <h2 class="subtitle">Coffee is Preparing...</h2>
+        <p class="description">
+            There seems to be a small error with your order.<br>
+            But don't worry, we prepare the best coffees! ☕
+        </p>
+
+    
+
+        <!-- İlham verici söz -->
+        <div class="quote-section">
+            <p class="quote">
+                "The best moments of life are lived with a cup of coffee"
+            </p>
+           
+        </div>
+
+        <!-- Butonlar -->
+        <div class="buttons">
+            <button class="btn btn-outline" onclick="goBack()">
+             Go Back
+            </button>
+            <button class="btn btn-outline" onclick="refresh()">
+            
+                Try again
+            </button>
+           
+        </div>
+
+        <!-- Footer -->
+      
+    </div>
+
+    <script>
+     
+      
+
+      
+
+        // Buton fonksiyonları
+        function goBack() {
+            window.history.back();
+        }
+
+        function refresh() {
+            window.location.reload();
+        }
+
+        function goHome() {
+            window.location.href = '/';
+        }
+
+        // Sayfa yüklendiğinde
+        document.addEventListener('DOMContentLoaded', function() {
+            createSparkles();
+
+            // Kalp atışı efektini periyodik olarak çalıştır
+            setInterval(heartBeatEffect, 3000);
+
+            // Butonlara hover efekti ekle
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05) translateY(-2px)';
+                });
+
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) translateY(0)';
+                });
+            });
+        });
+
+        // Responsive kontrol
+        function handleResize() {
+            const container = document.querySelector('.container');
+            if (window.innerWidth < 768) {
+                container.style.padding = '32px 24px';
+            } else {
+                container.style.padding = '48px';
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // İlk yüklemede çalıştır
+    </script>
+</body>
+</html>

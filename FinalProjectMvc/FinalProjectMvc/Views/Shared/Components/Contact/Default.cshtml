@@ -9,11 +9,8 @@
                         <div class="section-title">
                             <h3 class="wow fadeInUp">contact us</h3>
                             <h2 class="text-anime-style-3" data-cursor="-opaque">@Model.ContactInfo.MessageTitle</h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">
-                                @Model.ContactInfo.MessageDescription
-                            </p>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">@Model.ContactInfo.MessageDescription</p>
                         </div>
-
                         <div class="contact-info-body">
                             <div class="contact-info-box-1 wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="contact-info-item">
@@ -25,7 +22,6 @@
                                         <p>T. <a href="https://wa.me/994@Model.ContactInfo.PhoneNumber" target="_blank">@Model.ContactInfo.PhoneNumber</a></p>
                                     </div>
                                 </div>
-
                                 <div class="contact-info-item">
                                     <div class="icon-box">
                                         <img src="~/assets/images/common/icon-mail-accent.svg" alt="">
@@ -36,7 +32,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="contact-info-box-2 wow fadeInUp" data-wow-delay="0.6s">
                                 <div class="contact-info-item">
                                     <div class="icon-box">
@@ -57,32 +52,40 @@
                         <div class="contact-form-content">
                             <h3 class="wow fadeInUp">send a message</h3>
                             <p class="wow fadeInUp" data-wow-delay="0.2s">
-                                Unlock your potential with expert
-                                guidance! Schedule a free consultation toward personal and business success.
+                                Unlock your potential with expert guidance! Schedule a free consultation toward personal and business success.
                             </p>
                         </div>
 
-                        <div class="contact-form">
-                            <form asp-controller="Contact" asp-action="Submit" method="post" class="wow fadeInUp" data-wow-delay="0.4s">
+                        <div id="contactFormArea">
+                            @if (TempData["Success"] != null)
+                            {
+                                <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+                                    @TempData["Success"]
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            }
+
+                            <form id="contactForm" asp-controller="Contact" asp-action="Submit" method="post" autocomplete="off">
+                                @Html.AntiForgeryToken()
                                 <div class="row">
                                     <div class="form-group col-md-6 mb-5">
-                                        <input asp-for="@Model.MessageForm.FirstName" class="form-control" placeholder="First Name" />
+                                        <input asp-for="MessageForm.FirstName" class="form-control" placeholder="First Name" />
                                         <span asp-validation-for="MessageForm.FirstName" class="text-danger"></span>
                                     </div>
                                     <div class="form-group col-md-6 mb-5">
-                                        <input asp-for="@Model.MessageForm.LastName" class="form-control" placeholder="Last Name" />
+                                        <input asp-for="MessageForm.LastName" class="form-control" placeholder="Last Name" />
                                         <span asp-validation-for="MessageForm.LastName" class="text-danger"></span>
                                     </div>
                                     <div class="form-group col-md-6 mb-5">
-                                        <input asp-for="@Model.MessageForm.Email" class="form-control" placeholder="E-mail Address" />
+                                        <input asp-for="MessageForm.Email" class="form-control" placeholder="E-mail Address" />
                                         <span asp-validation-for="MessageForm.Email" class="text-danger"></span>
                                     </div>
                                     <div class="form-group col-md-6 mb-5">
-                                        <input asp-for="@Model.MessageForm.Phone" class="form-control" placeholder="Phone Number" />
+                                        <input asp-for="MessageForm.Phone" class="form-control" placeholder="Phone Number" />
                                         <span asp-validation-for="MessageForm.Phone" class="text-danger"></span>
                                     </div>
                                     <div class="form-group col-md-12 mb-5">
-                                        <textarea asp-for="@Model.MessageForm.Message" class="form-control" placeholder="Message"></textarea>
+                                        <textarea asp-for="MessageForm.Message" class="form-control" placeholder="Message"></textarea>
                                         <span asp-validation-for="MessageForm.Message" class="text-danger"></span>
                                     </div>
                                     <div class="col-lg-12">
@@ -92,10 +95,43 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div> <!-- contactFormArea -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $(function () {
+            $(document).on('submit', '#contactForm', function (e) {
+                e.preventDefault();
+
+                var form = $(this);
+                var formData = form.serialize();
+
+                $.ajax({
+                    url: form.attr('action'),
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        // Serverdən gələn tam view-dan yalnız form və mesaj hissəsini yeniləyirik
+                        var newFormArea = $(response).find('#contactFormArea').html();
+                        $('#contactFormArea').html(newFormArea);
+
+                        // Validation-unobtrusive yenidən işə düşməsi üçün
+                        $.validator.unobtrusive.parse('#contactForm');
+                    },
+                    error: function () {
+                        alert('Xəta baş verdi!');
+                    }
+                });
+            });
+        });
+    </script>
+}

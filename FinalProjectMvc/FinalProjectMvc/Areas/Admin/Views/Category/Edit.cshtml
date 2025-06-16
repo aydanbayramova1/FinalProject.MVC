@@ -6,6 +6,19 @@
             <div class="bg-white p-4 rounded shadow-sm border">
                 <h2 class="mb-4 text-center" style="font-family: 'Georgia', serif; color: #6b4f3b;">✏️ Edit Category</h2>
 
+                @* Global xəta mesajı *@
+                @if (!ViewData.ModelState.IsValid && ViewData.ModelState[string.Empty] != null)
+                {
+                    <div class="alert alert-danger">
+                        @foreach (var error in ViewData.ModelState[string.Empty].Errors)
+                        {
+                            <span>@error.ErrorMessage</span>
+
+                            <br />
+                        }
+                    </div>
+                }
+
                 <form asp-action="Edit" method="post" enctype="multipart/form-data">
                     <input type="hidden" asp-for="Id" />
                     <input type="hidden" asp-for="ExistingImage" />
