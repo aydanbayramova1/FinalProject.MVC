@@ -1,7 +1,9 @@
-﻿﻿@using FinalProjectMvc.Helpers
-
+﻿@using FinalProjectMvc.Helpers
 @model PagedResult<FinalProjectMvc.ViewModels.Admin.Product.ProductVM>
 
+<form id="antiForgeryForm" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>
 
 <link rel="stylesheet" href="~/assets/css/pagination.css">
 
@@ -11,7 +13,7 @@
             <div class="bg-light border rounded shadow-sm p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">
-                        <i class="fas fa-box-open me-2"></i>Products Management
+                        <i class="fas fa-box-open me-2"></i> Products Management
                     </h2>
                     <div class="d-flex gap-2">
                         <form asp-action="Index" method="get" class="d-flex">
@@ -27,7 +29,6 @@
                                 <i class="fa fa-plus me-1"></i> Add New Product
                             </a>
                         }
-                       
                     </div>
                 </div>
 
@@ -42,7 +43,7 @@
                 @if (Model.Items.Any())
                 {
                     <div class="table-responsive">
-                        <table class="table table-bordered text-center align-middle bg-white">
+                        <table class="table table-bordered text-center align-middle bg-white" id="productsTable">
                             <thead>
                                 <tr style="background-color: #5c3d2e; color: white;">
                                     <th style="width: 15%;">Name</th>
@@ -56,7 +57,7 @@
                             <tbody>
                                 @foreach (var item in Model.Items)
                                 {
-                                    <tr>
+                                    <tr data-id="@item.Id">
                                         <td class="fw-semibold">@item.Name</td>
                                         <td>
                                             @if (!string.IsNullOrEmpty(item.Image))
@@ -85,14 +86,13 @@
                                         </td>
                                         <td>
                                             <div class="d-flex justify-content-center gap-2">
-                                                @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                                                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Admin")))
                                                 {
                                                     <a asp-action="Detail" asp-route-id="@item.Id" title="View Details" class="btn btn-info btn-sm">
                                                         <i class="fa-solid fa-circle-info"></i>
                                                     </a>
                                                 }
-
-                                                @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                                                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Admin")))
                                                 {
                                                     <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-dark btn-sm">
                                                         <i class="fa-solid fa-pencil"></i>
@@ -100,12 +100,10 @@
                                                 }
                                                 @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
                                                 {
-
-                                                    <button type="button" class="btn btn-danger btn-sm" id="deleteBtn" data-id="@item.Id" title="Delete">
+                                                    <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id" title="Delete">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 }
-                                           
                                             </div>
                                         </td>
                                     </tr>
@@ -114,6 +112,7 @@
                         </table>
                     </div>
 
+                    @* Pagination *@
                     @if (Model.TotalPages > 1)
                     {
                         <nav aria-label="Products pagination" class="mt-4">
@@ -126,7 +125,6 @@
                                         </a>
                                     </li>
                                 }
-
                                 @if (Model.HasPreviousPage)
                                 {
                                     <li class="page-item">
@@ -135,20 +133,16 @@
                                         </a>
                                     </li>
                                 }
-
                                 @{
                                     var startPage = Math.Max(1, Model.CurrentPage - 2);
                                     var endPage = Math.Min(Model.TotalPages, Model.CurrentPage + 2);
                                 }
-
                                 @for (int i = startPage; i <= endPage; i++)
                                 {
                                     <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
                                         <a class="page-link" asp-action="Index" asp-route-page="@i" asp-route-search="@ViewBag.CurrentSearch">@i</a>
                                     </li>
                                 }
-
-
                                 @if (Model.HasNextPage)
                                 {
                                     <li class="page-item">
@@ -157,8 +151,6 @@
                                         </a>
                                     </li>
                                 }
-
-
                                 @if (Model.CurrentPage < Model.TotalPages)
                                 {
                                     <li class="page-item">
@@ -169,8 +161,6 @@
                                 }
                             </ul>
                         </nav>
-
-
                         <div class="d-flex justify-content-center mt-3">
                             <form asp-action="Index" method="get" class="d-flex align-items-center">
                                 <input type="hidden" name="search" value="@ViewBag.CurrentSearch" />
@@ -203,9 +193,12 @@
                             <h4 class="text-muted">No Products Found</h4>
                             <p class="text-muted">Start by adding your first product to the system.</p>
                         }
-                        <a asp-action="Create" class="btn btn-primary">
-                            <i class="fa fa-plus me-1"></i> Add Product
-                        </a>
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                        {
+                            <a asp-action="Create" class="btn btn-primary">
+                                <i class="fa fa-plus me-1"></i> Add Product
+                            </a>
+                        }
                     </div>
                 }
             </div>
@@ -213,15 +206,56 @@
     </div>
 </div>
 
-
-<script src="~/assets/js/pagination.js"></script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteButtons = document.querySelectorAll(".delete-btn");
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        const productsTableBody = document.querySelector("#productsTable tbody");
+
+        deleteButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const id = this.getAttribute("data-id");
+                const row = this.closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This product will be permanently deleted!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/Admin/Product/Delete/${id}`, {
+                            method: "POST",
+                            headers: {
+                                'RequestVerificationToken': token,
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: id })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                row.remove();
+                                Swal.fire("Deleted!", "The product has been deleted.", "success");
+                                if (productsTableBody.children.length === 0) {
+                                    location.reload();
+                                }
+                            } else if (response.status === 404) {
+                                Swal.fire("Error!", "Product not found.", "error");
+                            } else {
+                                Swal.fire("Error!", "Something went wrong.", "error");
+                            }
+                        })
+                        .catch(() => {
+                            Swal.fire("Error!", "Unexpected error occurred.", "error");
+                        });
+                    }
+                });
+            });
+        });
     });
 </script>

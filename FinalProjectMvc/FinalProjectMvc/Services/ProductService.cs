@@ -24,6 +24,11 @@ namespace FinalProjectMvc.Services
 
         public async Task CreateAsync(ProductCreateVM vm)
         {
+            bool isDuplicate = await _context.Products
+                .AnyAsync(p => p.Name.ToLower() == vm.Name.ToLower());
+            if (isDuplicate)
+                throw new ArgumentException("A product with the same name already exists.");
+
             var product = _mapper.Map<Product>(vm);
 
             if (vm.ImageFile != null)
@@ -126,7 +131,12 @@ namespace FinalProjectMvc.Services
                 .Include(p => p.ProductSizes)
                 .FirstOrDefaultAsync(p => p.Id == vm.Id);
 
-            if (product == null) throw new Exception("Product not found");
+            if (product == null) throw new KeyNotFoundException("Product not found");
+
+            bool isDuplicate = await _context.Products
+                .AnyAsync(p => p.Id != vm.Id && p.Name.ToLower() == vm.Name.ToLower());
+            if (isDuplicate)
+                throw new ArgumentException("A product with the same name already exists.");
 
             _mapper.Map(vm, product);
 
@@ -153,6 +163,7 @@ namespace FinalProjectMvc.Services
 
             await _context.SaveChangesAsync();
         }
+
 
         public async Task<ProductDetailVM> GetDetailAsync(int id)
         {

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using FinalProjectMvc.Helpers;
 
 namespace FinalProjectMvc.ViewModels.Admin.MenuBanner
 {
@@ -7,11 +8,13 @@ namespace FinalProjectMvc.ViewModels.Admin.MenuBanner
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Title is required.")]
-        [RegularExpression("^[A-Za-z ]+$", ErrorMessage = "Title must contain only letters and spaces, no digits or symbols.")]
+        [StringLength(60, ErrorMessage = "Title must be at most 60 characters.")]
+        [RegularExpression(@"^(?!\s*$)[A-Za-z\s]+$", ErrorMessage = "Title must contain only letters and spaces. Digits, symbols, and negative numbers are not allowed.")]
         public string Title { get; set; }
-
         public string Img { get; set; }
 
+        [AllowedExtensions(new[] { ".jpg", ".jpeg", ".png", ".webp" })]
+        [MaxFileSize(2 * 1024 * 1024)]
         public IFormFile? Photo { get; set; }
     }
 }

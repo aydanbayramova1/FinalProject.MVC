@@ -16,7 +16,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
-        [Authorize(Roles = "Admin,SuperAdmin")]
+        //[Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var types = await _categoryTypeService.GetAllAsync();

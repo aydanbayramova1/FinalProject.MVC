@@ -39,12 +39,12 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
 
-        [Authorize(Roles = "SuperAdmin")]
+        //[Authorize(Roles = "SuperAdmin")]
         public IActionResult Create() => View();
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "SuperAdmin")]
+        //[Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(CatalogCreateVM model)
         {
             if (!ModelState.IsValid) return View(model);

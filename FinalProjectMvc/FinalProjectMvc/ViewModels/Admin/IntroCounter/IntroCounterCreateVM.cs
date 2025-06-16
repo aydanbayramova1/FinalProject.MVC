@@ -1,19 +1,23 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using FinalProjectMvc.Helpers;
 
 namespace FinalProjectMvc.ViewModels.Admin.IntroCounter
 {
     public class IntroCounterCreateVM
     {
-        [Required(ErrorMessage = "Icon seçilməlidir")]
+        [Required(ErrorMessage = "Icon must be selected")]
+        [MaxFileSize(3)] 
         public IFormFile IconFile { get; set; }
 
-        [Required(ErrorMessage = "Say göstərilməlidir")]
-        [Range(0, int.MaxValue, ErrorMessage = "Say 0 və ya daha böyük olmalıdır")]
+        [Required(ErrorMessage = "Count is required")]
+        [Range(0, 2000, ErrorMessage = "Count must be between 0 and 2000")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "Count must contain only digits")]
         public int Count { get; set; }
-
+        [PlusOnly]
         public string? Suffix { get; set; }
 
-        [Required(ErrorMessage = "Təsvir boş ola bilməz")]
+        [Required(ErrorMessage = "Description cannot be empty")]
+        [MaxLength(50, ErrorMessage = "Description can be at most 50 characters long")]
         public string Description { get; set; }
 
     }

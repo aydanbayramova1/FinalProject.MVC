@@ -54,6 +54,9 @@ namespace FinalProjectMvc.Services
 
         public async Task CreateAsync(FaqCategoryCreateVM vm)
         {
+            bool exists = await _context.FaqCategories.AnyAsync(c => c.Title.ToLower() == vm.Title.ToLower());
+            if (exists) throw new InvalidOperationException("A category with the same title already exists.");
+
             var entity = _mapper.Map<FaqCategory>(vm);
             await _context.FaqCategories.AddAsync(entity);
             await _context.SaveChangesAsync();
@@ -71,11 +74,15 @@ namespace FinalProjectMvc.Services
             var category = await _context.FaqCategories.FindAsync(vm.Id);
             if (category == null) throw new KeyNotFoundException("Category not found");
 
+            bool exists = await _context.FaqCategories
+                .AnyAsync(c => c.Id != vm.Id && c.Title.ToLower() == vm.Title.ToLower());
+            if (exists) throw new InvalidOperationException("A category with the same title already exists.");
+
             _mapper.Map(vm, category);
             _context.FaqCategories.Update(category);
             await _context.SaveChangesAsync();
         }
-
+    
         public async Task DeleteAsync(int id)
         {
             var category = await _context.FaqCategories.FindAsync(id);

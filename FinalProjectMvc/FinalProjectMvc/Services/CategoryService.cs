@@ -56,6 +56,10 @@ namespace FinalProjectMvc.Services
         }
         public async Task CreateAsync(CategoryCreateVM vm)
         {
+            bool exists = await _context.Categories.AnyAsync(c => c.Name.ToLower() == vm.Name.ToLower());
+            if (exists)
+                throw new Exception("A category with this name already exists.");
+
             var category = _mapper.Map<Models.Category>(vm);
 
             if (vm.ImageFile != null)
@@ -83,6 +87,9 @@ namespace FinalProjectMvc.Services
         {
             var category = await _context.Categories.FindAsync(vm.Id);
             if (category == null) return;
+
+            bool exists = await _context.Categories.AnyAsync(c => c.Name.ToLower() == vm.Name.ToLower() && c.Id != vm.Id);
+            if (exists)throw new Exception("Another category with this name already exists.");
 
             category.Name = vm.Name;
             category.CategoryTypeId = vm.CategoryTypeId;

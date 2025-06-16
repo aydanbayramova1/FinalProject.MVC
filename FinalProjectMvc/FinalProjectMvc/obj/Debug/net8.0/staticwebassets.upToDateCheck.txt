@@ -210,7 +210,7 @@ wwwroot\uploads\4c1598fe-b7bb-48dc-9009-e201ebf85b7b.jpg
 wwwroot\uploads\56004adf-578d-4086-8982-f707ebe18ebc.jpg
 wwwroot\uploads\83a2be91-790f-42c7-90b5-167ec85af9e3.jpg
 wwwroot\uploads\8ad13502-1cc2-4347-a40a-015c830e956f.jpg
-wwwroot\uploads\aboutbanner\c3a59f12-ce0e-4efd-bde1-b98e2bcb7e70.jpg
+wwwroot\uploads\aboutbanner\c5fee822-0b76-4c2f-82d9-eb539c6fe1f4.jpg
 wwwroot\uploads\approach\0cbc3c47-b3e0-4556-a1d3-ec232074786c.jpg
 wwwroot\uploads\approach\3f09a091-5f0f-4917-81a4-c5159c15bf55.jpg
 wwwroot\uploads\approach\53af0f89-5c8b-4f36-a8a8-5c3d4246f133.jpg
@@ -249,12 +249,11 @@ wwwroot\uploads\catalogs\21838310-1f1c-4cd3-88ba-93872e6eff03.jpg
 wwwroot\uploads\catalogs\3b0dfe5d-c604-456a-83bc-30ed52ceccd4.jpg
 wwwroot\uploads\catalogs\74eaeb4c-ecbc-428f-94da-4ec7c10706bb.jpg
 wwwroot\uploads\catalogs\a3819336-9791-4bfd-b357-6c9ea63e5ed3.jpg
-wwwroot\uploads\category\24959449-33f0-4999-a3d2-99ae78dfb10a.jpg
-wwwroot\uploads\category\31c9d644-e992-498f-b9c0-ff7cd2e00722.jpg
-wwwroot\uploads\category\55142d41-c12c-4874-8896-2ed91b6cd8a7.jpg
+wwwroot\uploads\category\11a370a4-f9d2-476b-845a-5a6cec2f1713.jpg
+wwwroot\uploads\category\301a2995-f2e4-4ab3-a621-bec197ad100e.jpg
+wwwroot\uploads\category\7144b4e9-02ba-4735-9b7d-3219254eb795.jpg
+wwwroot\uploads\category\7ced33f8-81b1-4d44-8931-5cc59ded7411.jpg
 wwwroot\uploads\category\9093f976-5413-46fe-ad61-096fd60a6211.jpg
-wwwroot\uploads\category\92a3459d-4591-4cb1-b9e2-370d31990200.jpg
-wwwroot\uploads\category\feb34a76-02ea-4022-ab4b-05c64fd536e6.jpg
 wwwroot\uploads\contactbanner\6c5f6ab4-4f1b-4028-aa59-353063815489.jpg
 wwwroot\uploads\e69faf72-8317-46bc-ab1d-09dbd0fd5b7a.jpg
 wwwroot\uploads\faqsbanner\f310b1f7-774b-49ec-a9ac-748929306aff.jpg
@@ -366,6 +365,7 @@ wwwroot\uploads\storyicons\f303616b-653f-4001-a85a-71dbf8554598.svg
 wwwroot\uploads\team\06f7f2d1-d89c-43bc-a21a-804a5739ae8a.jpg
 wwwroot\uploads\team\2b3c12c1-38c5-4656-9fed-f9ed9d6672ae.jpg
 wwwroot\uploads\team\51c5619a-2a28-41fb-bd0d-f841ecd1e9dd.jpg
+wwwroot\uploads\team\5c4f6436-f889-4ad4-a177-69cce627d724.jpg
 wwwroot\uploads\team\6526cc8b-820c-46d2-b065-30c046d73623.jpg
 wwwroot\uploads\team\8f4ae753-5419-477b-8868-85ed453aa88f.jpg
 wwwroot\uploads\team\dd832474-9694-4164-99c5-42d07cc9cd30.jpg

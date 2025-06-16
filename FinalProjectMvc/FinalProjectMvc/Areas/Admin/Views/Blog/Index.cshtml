@@ -13,7 +13,7 @@
 
                     @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
                     {
-                        <a asp-action="Create" class="btn btn-outline-brown" id="addNewBlogLink" style="@(Model.Any() ? "display:none;" : "display:inline-block;")">
+                        <a asp-action="Create" class="btn btn-outline-brown">
                             <i class="fa fa-plus mr-1"></i> Add New Blog
                         </a>
                     }
