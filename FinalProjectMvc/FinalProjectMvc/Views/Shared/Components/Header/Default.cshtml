@@ -82,8 +82,16 @@
 
                         <div class="header-button-box">
                             <div class="header-btn">
-                                <a asp-controller="Reservation" asp-action="Index" class="btn-default btn-highlighted">Book a table</a>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a asp-controller="Reservation" asp-action="Index" class="btn-default btn-highlighted">Book a table</a>
+                                }
+                                else
+                                {
+                                    <a asp-controller="Account" asp-action="Login" class="btn-default btn-highlighted">Book a table</a>
+                                }
                             </div>
+
 
                             <div class="user-account-dropdown">
                                 <a href="#" class="user-icon-btn" id="userAccountBtn">

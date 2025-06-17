@@ -62,7 +62,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(setting);
         }
 
-        [Authorize(Roles = "Admin,SuperAdmin")]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit()
         {
             var model = await _settingService.GetEditModelAsync();
@@ -73,7 +73,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin,SuperAdmin")]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Edit(SettingEditVM model)
         {
             if (!ModelState.IsValid)
