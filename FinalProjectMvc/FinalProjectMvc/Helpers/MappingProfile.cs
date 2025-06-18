@@ -26,6 +26,7 @@ using FinalProjectMvc.ViewModels.Admin.OpeningHour;
 using FinalProjectMvc.ViewModels.Admin.OurOffer;
 using FinalProjectMvc.ViewModels.Admin.OurStory;
 using FinalProjectMvc.ViewModels.Admin.Product;
+using FinalProjectMvc.ViewModels.Admin.Reservation;
 using FinalProjectMvc.ViewModels.Admin.ReservationBanner;
 using FinalProjectMvc.ViewModels.Admin.Scrolling;
 using FinalProjectMvc.ViewModels.Admin.Service;
@@ -34,6 +35,7 @@ using FinalProjectMvc.ViewModels.Admin.Setting;
 using FinalProjectMvc.ViewModels.Admin.Size;
 using FinalProjectMvc.ViewModels.Admin.Slider;
 using FinalProjectMvc.ViewModels.Admin.StoryItem;
+using FinalProjectMvc.ViewModels.Admin.Table;
 using FinalProjectMvc.ViewModels.Admin.TeamBanner;
 using FinalProjectMvc.ViewModels.Admin.TeamMember;
 using FinalProjectMvc.ViewModels.Admin.Topbar;
@@ -389,7 +391,14 @@ namespace FinalProjectMvc.Helpers
                 .ForMember(dest => dest.CategoryTypeName, opt => opt.MapFrom(src => src.CategoryType.Name))
                 .ForMember(dest => dest.IsDrinkCategory, opt => opt.MapFrom(src => src.CategoryType.Name.ToLower() == "drink"));
 
-          
+
+            CreateMap<Table, TableVM>().ReverseMap();
+            CreateMap<Table, TableCreateVM>().ReverseMap();
+            CreateMap<Table, TableDetailVM>()
+                .ForMember(dest => dest.Reservations,
+                           opt => opt.MapFrom(src => src.Reservations));
+
+            CreateMap<Reservation, ReservationVM>();
 
         }
 

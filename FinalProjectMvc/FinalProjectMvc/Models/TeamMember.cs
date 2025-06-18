@@ -7,15 +7,12 @@ namespace FinalProjectMvc.Models
         [Required]
         [MaxLength(100)]
         public string FullName { get; set; }
-
         [Required]
         [MaxLength(100)]
         public string Position { get; set; }
-
         [Required]
         [MaxLength(1000)]
         public string Description { get; set; }
-
         [Required]
         public string Img { get; set; }
     }

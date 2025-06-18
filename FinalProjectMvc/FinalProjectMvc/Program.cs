@@ -91,7 +91,9 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ISizeService, SizeService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<ITableService, TableService>();
 builder.Services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
 
 builder.Services.AddAutoMapper(typeof(Program));
 

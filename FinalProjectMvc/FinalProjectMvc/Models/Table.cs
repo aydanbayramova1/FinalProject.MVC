@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
 namespace FinalProjectMvc.Models
 {
     public class Table : BaseEntity

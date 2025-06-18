@@ -48,6 +48,11 @@ namespace FinalProjectMvc.Data
         public DbSet<CategoryType> CategoryTypes { get; set; }
         public DbSet<MenuProduct> MenuProducts { get; set; }
         public DbSet<MenuProductSize> MenuProductSizes { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Table> Tables { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

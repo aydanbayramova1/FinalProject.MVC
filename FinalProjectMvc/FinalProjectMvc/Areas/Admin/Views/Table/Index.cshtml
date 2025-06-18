@@ -1,0 +1,120 @@
+﻿@using FinalProjectMvc.ViewModels.Admin.Table
+@model IEnumerable<TableVM>
+
+<form id="antiForgeryForm" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="bg-light border rounded shadow-sm p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">🍽️ Table List</h2>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                    {
+                        <a asp-action="Create" class="btn btn-outline-brown">
+                            <i class="fa fa-plus mr-1"></i> Add New Table
+                        </a>
+                    }
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center align-middle bg-white" id="tableList">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th style="background-color: #5c3d2e; color: #fff;">Name</th>
+                                <th style="background-color: #5c3d2e; color: #fff;">Capacity</th>
+                                <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var table in Model)
+                            {
+                                <tr data-id="@table.Id">
+                                    <td>@table.Name</td>
+                                    <td>@table.Capacity</td>
+                                    <td>
+                                        <div class="d-flex justify-content-center gap-2">
+                                            @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Admin")))
+                                            {
+                                                <a asp-action="Detail" asp-route-id="@table.Id" class="btn btn-info btn-sm" title="View Details">
+                                                    <i class="fa-solid fa-circle-info"></i>
+                                                </a>
+                                              
+                                            }
+                                            @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                                            {
+                                                <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@table.Id" title="Delete">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="noTableAlert" class="alert alert-warning text-center mt-4" role="alert" style="display:@(Model.Any() ? "none" : "block")">
+                    No tables have been added yet.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteButtons = document.querySelectorAll(".delete-btn");
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        const tableBody = document.querySelector("#tableList tbody");
+        const noTableAlert = document.getElementById("noTableAlert");
+
+        deleteButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const id = this.getAttribute("data-id");
+                const row = this.closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This action cannot be undone!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/Admin/Table/Delete/${id}`, {
+                            method: "POST",
+                            headers: {
+                                'RequestVerificationToken': token,
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: id })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                row.remove();
+                                Swal.fire("Deleted!", "The table has been removed.", "success");
+
+                                if (tableBody.children.length === 0) {
+                                    noTableAlert.style.display = "block";
+                                }
+                            } else {
+                                Swal.fire("Error!", "Failed to delete the table.", "error");
+                            }
+                        })
+                        .catch(() => {
+                            Swal.fire("Error!", "Something went wrong.", "error");
+                        });
+                    }
+                });
+            });
+        });
+    });
+</script>

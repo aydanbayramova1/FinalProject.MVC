@@ -24,7 +24,6 @@ namespace FinalProjectMvc.Models
 
         public int TableId { get; set; }
         public Table Table { get; set; }
-
         public bool IsConfirmed { get; set; } = false;
         public bool IsRejected { get; set; } = false;
         public bool IsCanceled { get; set; } = false;
