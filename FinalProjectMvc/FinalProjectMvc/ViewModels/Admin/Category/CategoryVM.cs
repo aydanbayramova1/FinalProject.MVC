@@ -7,5 +7,6 @@
         public string? Image { get; set; }
         public string CategoryTypeName { get; set; }
         public int ProductCount { get; set; }
+        public int CategoryTypeId { get; set; }
     }
 }

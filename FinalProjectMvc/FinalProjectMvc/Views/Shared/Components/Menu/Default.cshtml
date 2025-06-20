@@ -35,7 +35,9 @@
 
                 <div class="menu-layout">
                     <div class="menu-image left" style="margin-top: -25px;">
-                        <img src="~/uploads/category/@category.Image" alt="@category.Name" style="width: 630px; height: 1140px; object-fit: cover; opacity: 0.5; transition: all 0.9s ease;" />
+                        <img src="~/uploads/category/@category.Image"
+                             alt="@category.Name"
+                             style="width: 630px; height: 1140px; object-fit: cover; opacity: 0.5; transition: all 0.9s ease;" />
                     </div>
 
                     <div class="menu-items right">
@@ -48,7 +50,7 @@
                                     <h3 class="item-name">@product.Name.ToUpper()</h3>
                                     <p class="item-description">@product.Ingredients</p>
 
-                                    @if (product.Sizes != null && product.Sizes.Any())
+                                    @if (product.Sizes != null && product.Sizes.Any() && category.CategoryTypeId == 1)
                                     {
                                         <div class="size-options">
                                             @{

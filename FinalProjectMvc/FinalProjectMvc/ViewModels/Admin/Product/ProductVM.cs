@@ -9,8 +9,18 @@
         public decimal Price { get; set; }
         public string Category { get; set; } 
         public string CategoryTypeName { get; set; }
+        public int CategoryTypeId { get; set; }
 
         public int CategoryId { get; set; }
         public List<string> Sizes { get; set; }
+        public string CategoryName { get; set; }
+
+        public string CategorySlug
+        {
+            get
+            {
+                return CategoryName?.ToLower().Replace(" ", "-");
+            }
+        }
     }
 }

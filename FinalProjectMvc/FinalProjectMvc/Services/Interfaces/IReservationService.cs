@@ -1,5 +1,9 @@
 ﻿using FinalProjectMvc.Models;
+using FinalProjectMvc.ViewModels.Admin.Category;
+using FinalProjectMvc.ViewModels.Admin.Product;
+using FinalProjectMvc.ViewModels.Admin.ProductSize;
 using FinalProjectMvc.ViewModels.Admin.Reservation;
+using FinalProjectMvc.ViewModels.Admin.Table;
 
 namespace FinalProjectMvc.Services.Interfaces
 {
@@ -11,5 +15,9 @@ namespace FinalProjectMvc.Services.Interfaces
         Task<bool> ApproveAsync(int id);
         Task<bool> RejectAsync(int id);
         Task CheckAndDeleteExpiredReservationsAsync();
+        Task<List<ProductWithSizeVM>> GetMenuProductsAsync();
+        Task<List<TableVM>> GetAllTablesAsync();
+        Task<List<CategoryVM>> GetAllCategoriesAsync();
+        Task<List<ProductWithSizeVM>> GetLastProductsPerCategoryAsync();
     }
 }

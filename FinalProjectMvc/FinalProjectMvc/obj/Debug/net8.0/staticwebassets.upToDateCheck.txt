@@ -255,6 +255,7 @@ wwwroot\uploads\category\301a2995-f2e4-4ab3-a621-bec197ad100e.jpg
 wwwroot\uploads\category\7144b4e9-02ba-4735-9b7d-3219254eb795.jpg
 wwwroot\uploads\category\7ced33f8-81b1-4d44-8931-5cc59ded7411.jpg
 wwwroot\uploads\category\9093f976-5413-46fe-ad61-096fd60a6211.jpg
+wwwroot\uploads\category\ad0be720-cbd1-42f0-ac6b-4358b0128035.jpg
 wwwroot\uploads\category\e7044ed6-0dc7-4f55-af72-50cd92883564.jpg
 wwwroot\uploads\contactbanner\6c5f6ab4-4f1b-4028-aa59-353063815489.jpg
 wwwroot\uploads\e69faf72-8317-46bc-ab1d-09dbd0fd5b7a.jpg
@@ -297,6 +298,7 @@ wwwroot\uploads\products\12d4a3d7-d332-448a-9397-b5ac26610302.jpg
 wwwroot\uploads\products\2b73569c-0e6a-4049-9e7b-66b2a273db95.jpg
 wwwroot\uploads\products\37846cc1-0ddb-4625-9a71-8cc85ffd1a75.jpg
 wwwroot\uploads\products\37a62214-601d-4fff-98bb-cd37f2b55daf.jpg
+wwwroot\uploads\products\3964f8a7-b020-499c-83fe-55896b263649.jpg
 wwwroot\uploads\products\3aeaeda8-f509-4a6b-944f-6d5cf5ad259c.jpg
 wwwroot\uploads\products\3d9d0d75-ca45-4cb7-9cea-52d05e66f89c.jpg
 wwwroot\uploads\products\4066c47a-69f8-4573-9b24-b5b2b8fb2aca.jpg

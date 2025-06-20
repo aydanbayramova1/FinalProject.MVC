@@ -1,7 +1,12 @@
 ﻿using FinalProjectMvc.Data;
 using FinalProjectMvc.Models;
 using FinalProjectMvc.Services.Interfaces;
+using FinalProjectMvc.ViewModels.Admin.Category;
+using FinalProjectMvc.ViewModels.Admin.Product;
+using FinalProjectMvc.ViewModels.Admin.ProductSize;
 using FinalProjectMvc.ViewModels.Admin.Reservation;
+using FinalProjectMvc.ViewModels.Admin.Size;
+using FinalProjectMvc.ViewModels.Admin.Table;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinalProjectMvc.Services
@@ -42,21 +47,32 @@ namespace FinalProjectMvc.Services
 
         public async Task<Reservation> GetByIdAsync(int id)
         {
-            return await _context.Reservations.Include(r => r.Table)
-                                              .Include(r => r.Order)
-                                              .ThenInclude(o => o.Items)
-                                              .ThenInclude(i => i.Product)
-                                              .FirstOrDefaultAsync(r => r.Id == id);
+            return await _context.Reservations
+                .Include(r => r.Table)
+                .Include(r => r.Order)
+                    .ThenInclude(o => o.Items)
+                        .ThenInclude(i => i.Product)
+                .FirstOrDefaultAsync(r => r.Id == id);
         }
 
         public async Task<bool> CreateAsync(ReservationCreateVM vm)
         {
             var table = await _context.Tables
                 .Include(t => t.Reservations)
-                .FirstOrDefaultAsync(t => t.Capacity == vm.GuestCount &&
-                    !t.Reservations.Any(r => r.Date == vm.Date && r.Time == vm.Time && !r.IsCanceled));
+                .FirstOrDefaultAsync(t =>
+                    t.Capacity == vm.GuestCount &&
+                    !t.Reservations.Any(r => r.Date == vm.Date && r.Time == vm.Time && !r.IsCanceled)
+                );
 
             if (table == null) return false;
+
+            var orderItems = vm.CartItems.Select(i => new OrderItem
+            {
+                ProductId = i.ProductId,
+                SizeId = i.SizeId,
+                Quantity = i.Quantity,
+                UnitPrice = GetPrice(i.ProductId, i.SizeId)
+            }).ToList();
 
             var reservation = new Reservation
             {
@@ -69,28 +85,87 @@ namespace FinalProjectMvc.Services
                 TableId = table.Id,
                 Order = new Order
                 {
-                    Items = vm.CartItems.Select(i => new OrderItem
-                    {
-                        ProductId = i.ProductId,
-                        SizeId = i.SizeId,
-                        Quantity = i.Quantity,
-                        //UnitPrice = GetPrice(i.ProductId, i.SizeId)
-                    }).ToList()
+                    Items = orderItems,
+                    TotalAmount = orderItems.Sum(i => i.UnitPrice * i.Quantity)
                 }
             };
 
-            reservation.Order.TotalAmount = reservation.Order.Items.Sum(i => i.UnitPrice * i.Quantity);
-
             await _context.Reservations.AddAsync(reservation);
             await _context.SaveChangesAsync();
-
             return true;
         }
 
+        private decimal GetPrice(int productId, int sizeId)
+        {
+            var product = _context.Products.FirstOrDefault(p => p.Id == productId);
+            return product?.Price ?? 0; 
+        }
 
+        public async Task<List<ProductWithSizeVM>> GetMenuProductsAsync()
+        {
+            var products = await _context.Products
+                .Include(p => p.Category).ThenInclude(c => c.CategoryType)
+                .Include(p => p.ProductSizes).ThenInclude(ps => ps.Size)
+                .OrderByDescending(p => p.CreateDate)
+                .ToListAsync();
+
+            var grouped = products
+                .GroupBy(p => p.CategoryId)
+                .Select(g => g.Take(10))
+                .SelectMany(p => p)
+                .ToList();
+
+            var result = grouped.Select(p => new ProductWithSizeVM
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Ingredients = p.Ingredients,
+                Price = p.Price,
+                CategorySlug = p.Category.Name.ToLower().Replace(" ", "-"),
+                CategoryName = p.Category.Name,
+                CategoryTypeId = p.Category.CategoryTypeId,
+                Sizes = p.Category.CategoryType.Name == "Drink"
+                    ? p.ProductSizes.Select(ps => new SizeVM
+                    {
+                        Id = ps.SizeId,
+                        Name = ps.Size.Name,
+                    }).ToList()
+                    : null
+            }).ToList();
+
+            return result;
+        }
+
+
+        public async Task<List<CategoryVM>> GetAllCategoriesAsync()
+        {
+            var categories = await _context.Categories.ToListAsync();
+
+            var categoryVMs = categories.Select(c => new CategoryVM
+            {
+                Id = c.Id,
+                Name = c.Name
+            }).ToList();
+
+            return categoryVMs;
+        }
+        public async Task<List<TableVM>> GetAllTablesAsync()
+        {
+            return await _context.Tables
+                .Select(t => new TableVM
+                {
+                    Id = t.Id,
+                    Number = t.Number,
+                    Capacity = t.Capacity,
+                    Location = t.Location
+                }).ToListAsync();
+        }
         public async Task<bool> ApproveAsync(int id)
         {
-            var reservation = await _context.Reservations.Include(r => r.Order).FirstOrDefaultAsync(r => r.Id == id);
+            var reservation = await _context.Reservations
+                .Include(r => r.Order)
+                .FirstOrDefaultAsync(r => r.Id == id);
+
             if (reservation == null) return false;
 
             reservation.IsConfirmed = true;
@@ -101,8 +176,10 @@ namespace FinalProjectMvc.Services
             string link = $"https://yoursite.com/Payment/Index?reservationId={reservation.Id}";
             await _emailService.SendAsync(reservation.Email, "Rezervasiyanız təsdiqləndi",
                 $"<p>Rezervasiyanız təsdiqləndi. <a href='{link}'>Ödənişə keç</a></p>");
+
             return true;
         }
+
         public async Task<bool> RejectAsync(int id)
         {
             var reservation = await _context.Reservations.FirstOrDefaultAsync(r => r.Id == id);
@@ -144,5 +221,75 @@ namespace FinalProjectMvc.Services
                     $"Dear {reservation.FullName},<br/>Your reservation is scheduled for {reservation.Date:dd MMM yyyy} at {reservation.Time:hh\\:mm}.<br/>If you can’t attend, please cancel in advance.");
             }
         }
+
+        public async Task<List<ProductWithSizeVM>> GetLast10ProductsPerCategoryAsync()
+        {
+            var products = await _context.Products
+                .Include(p => p.Category).ThenInclude(c => c.CategoryType)
+                .Include(p => p.ProductSizes).ThenInclude(ps => ps.Size)
+                .OrderByDescending(p => p.CreateDate)
+                .ToListAsync();
+
+            var grouped = products
+                .GroupBy(p => p.CategoryId)
+                .Select(g => g.Take(10))
+                .SelectMany(p => p)
+                .ToList();
+
+            var result = grouped.Select(p => new ProductWithSizeVM
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Ingredients = p.Ingredients,
+                Price = p.Price,
+                CategorySlug = p.Category.Name.ToLower().Replace(" ", "-"),
+                CategoryName = p.Category.Name,
+                CategoryTypeId = p.Category.CategoryTypeId,
+                Sizes = p.Category.CategoryType.Name == "Drink"
+                    ? p.ProductSizes.Select((ps, index) => new SizeVM
+                    {
+                        Id = ps.SizeId,
+                        Name = ps.Size.Name,
+                        Price = p.Price + (index * 2)
+                    }).ToList()
+                    : null
+            }).ToList();
+
+            return result;
+        }
+        public async Task<List<ProductWithSizeVM>> GetLastProductsPerCategoryAsync()
+        {
+            var products = await _context.Products
+                .Include(p => p.Category).ThenInclude(c => c.CategoryType)
+                .Include(p => p.ProductSizes).ThenInclude(ps => ps.Size)
+                .OrderByDescending(p => p.CreateDate)
+                .ToListAsync();
+
+            var grouped = products
+                .GroupBy(p => p.CategoryId)
+                .Select(g => g.First()) 
+                .ToList();
+
+            var result = grouped.Select(p => new ProductWithSizeVM
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Ingredients = p.Ingredients,
+                Price = p.Price,
+                CategorySlug = p.Category.Name.ToLower().Replace(" ", "-"),
+                CategoryName = p.Category.Name,
+                CategoryTypeId = p.Category.CategoryTypeId,
+                Sizes = p.Category.CategoryType.Name == "Drink"
+                    ? p.ProductSizes.Select(ps => new SizeVM
+                    {
+                        Id = ps.SizeId,
+                        Name = ps.Size.Name,
+                    }).ToList()
+                    : null
+            }).ToList();
+
+            return result;
+        }
+
     }
 }
