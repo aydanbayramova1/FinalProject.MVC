@@ -14,12 +14,24 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         {
             _tableService = tableService;
         }
+
         [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var tables = await _tableService.GetAllAsync();
             return View(tables);
         }
+
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
+        public async Task<IActionResult> Detail(int id)
+        {
+            var table = await _tableService.GetByIdAsync(id);
+            if (table == null) return NotFound();
+
+            return View(table);
+        }
+
         [Authorize(Roles = "SuperAdmin")]
         public IActionResult Create()
         {
@@ -28,7 +40,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-         [Authorize(Roles = "SuperAdmin")]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Create(TableCreateVM vm)
         {
             if (!ModelState.IsValid) return View(vm);
@@ -36,14 +48,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             await _tableService.CreateAsync(vm);
             return RedirectToAction(nameof(Index));
         }
-        [Authorize(Roles = "Admin,SuperAdmin")]
-        public async Task<IActionResult> Details(int id)
-        {
-            var table = await _tableService.GetByIdAsync(id);
-            if (table == null) return NotFound();
 
-            return View(table);
-        }
         [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete(int id)
         {

@@ -61,7 +61,7 @@ namespace FinalProjectMvc.Services
                                    .Replace("{{link}}", url)
                                    .Replace("{{fullName}}", user.FullName);
 
-            _emailService.Send(user.Email, subject, emailHtml);
+            _emailService.SendAsync(user.Email, subject, emailHtml);
 
             return result;
         }
@@ -117,7 +117,7 @@ namespace FinalProjectMvc.Services
             html = html.Replace("{{fullName}}", existUser.FullName)
                        .Replace("{{link}}", link);
 
-            _emailService.Send(existUser.Email, subject, html);
+            _emailService.SendAsync(existUser.Email, subject, html);
 
             return true;
         }

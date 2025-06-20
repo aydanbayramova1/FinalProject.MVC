@@ -2309,3 +2309,1588 @@ FROM [Tables] AS [t]
 2025-06-18 03:21:42.989 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
 2025-06-18 03:21:42.994 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 5.7303ms
 2025-06-18 03:21:42.995 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.2259ms
+2025-06-18 04:37:08.425 -08:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-18 04:37:08.528 -08:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-18 04:37:08.532 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-18 04:37:08.534 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-18 04:37:08.571 -08:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-18 04:37:08.596 -08:00 [INF] Applying migration '20250618123644_UpdateTableModel'.
+2025-06-18 04:37:09.248 -08:00 [INF] Executed DbCommand (488ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_rename N'[Tables].[Name]', N'Location', N'COLUMN';
+2025-06-18 04:37:09.271 -08:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Tables] ADD [Number] int NOT NULL DEFAULT 0;
+2025-06-18 04:37:09.275 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250618123644_UpdateTableModel', N'8.0.16');
+2025-06-18 04:44:44.427 -08:00 [INF] Executed DbCommand (56ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 04:44:44.556 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 04:44:44.560 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 04:44:44.780 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-18 04:44:45.040 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-18 04:44:45.044 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-18 04:44:45.089 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 04:44:45.093 -08:00 [INF] Hosting environment: Development
+2025-06-18 04:44:45.098 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-18 04:44:45.928 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-18 04:44:46.377 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-06-18 04:44:46.502 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-06-18 04:44:46.556 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-18 04:44:46.576 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 04:44:46.606 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-06-18 04:44:46.640 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 04:44:46.669 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-18 04:44:46.699 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 04:44:47.077 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 04:44:47.150 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 04:44:47.220 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-18 04:44:47.280 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-18 04:44:47.313 -08:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-18 04:44:47.489 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-18 04:44:47.559 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-18 04:44:47.595 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-18 04:44:47.707 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name]
+FROM [Categories] AS [c]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+2025-06-18 04:44:47.805 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-18 04:44:47.854 -08:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDate], [p].[Image], [p].[Ingredients], [p].[Name], [p].[Price], [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name], [t].[Id], [t].[CreateDate], [t].[ProductId], [t].[SizeId], [t].[Id0], [t].[CreateDate0], [t].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreateDate], [p0].[ProductId], [p0].[SizeId], [s].[Id] AS [Id0], [s].[CreateDate] AS [CreateDate0], [s].[Name]
+    FROM [ProductSizes] AS [p0]
+    INNER JOIN [Sizes] AS [s] ON [p0].[SizeId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id] DESC, [c].[Id], [c0].[Id], [t].[Id]
+2025-06-18 04:44:47.875 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-06-18 04:44:47.889 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-06-18 04:44:47.906 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-18 04:44:47.927 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 04:44:47.942 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-06-18 04:44:47.953 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 04:44:47.960 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-18 04:44:47.966 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 04:44:47.978 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 04:44:47.995 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 04:44:48.012 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-18 04:44:48.029 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-18 04:44:48.032 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-18 04:44:48.044 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-18 04:44:48.053 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name]
+FROM [Categories] AS [c]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+2025-06-18 04:44:48.066 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDate], [p].[Image], [p].[Ingredients], [p].[Name], [p].[Price], [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name], [t].[Id], [t].[CreateDate], [t].[ProductId], [t].[SizeId], [t].[Id0], [t].[CreateDate0], [t].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreateDate], [p0].[ProductId], [p0].[SizeId], [s].[Id] AS [Id0], [s].[CreateDate] AS [CreateDate0], [s].[Name]
+    FROM [ProductSizes] AS [p0]
+    INNER JOIN [Sizes] AS [s] ON [p0].[SizeId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id] DESC, [c].[Id], [c0].[Id], [t].[Id]
+2025-06-18 04:44:48.094 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-18 04:44:48.113 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-18 04:44:48.141 -08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-18 04:44:48.141 -08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-18 04:44:48.205 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-18 04:44:48.207 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-18 04:44:48.229 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-18 04:44:48.247 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-18 04:44:48.249 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-18 04:44:48.280 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-18 04:44:48.281 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-18 04:44:48.324 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-18 04:44:48.324 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-18 04:44:48.412 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-18 04:44:48.412 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-18 04:44:48.472 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 04:44:48.472 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 04:44:48.543 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 04:44:48.543 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 04:44:48.608 -08:00 [INF] Executed ViewResult - view Index executed in 1914.2603ms.
+2025-06-18 04:44:48.618 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 1933.1572ms
+2025-06-18 04:44:48.618 -08:00 [INF] Executed ViewResult - view Index executed in 652.638ms.
+2025-06-18 04:44:48.624 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 04:44:48.627 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 662.1369ms
+2025-06-18 04:44:48.637 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 04:44:48.647 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 2727.9952ms
+2025-06-18 04:44:48.647 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 841.2281ms
+2025-06-18 04:44:48.713 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 04:44:48.732 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 18.6232ms
+2025-06-18 04:44:48.797 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 04:44:48.890 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 92.3772ms
+2025-06-18 04:44:52.099 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Dashboard - null null
+2025-06-18 04:44:52.182 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-18 04:44:52.193 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-18 04:44:52.212 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 04:44:52.298 -08:00 [INF] Executed ViewResult - view Index executed in 93.8373ms.
+2025-06-18 04:44:52.304 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 100.6432ms
+2025-06-18 04:44:52.308 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-18 04:44:52.312 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Dashboard - 200 null text/html; charset=utf-8 213.0612ms
+2025-06-18 04:44:52.380 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 04:44:52.386 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 04:44:52.391 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 11.2932ms
+2025-06-18 04:44:52.410 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.4105ms
+2025-06-18 04:44:56.438 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 04:44:56.470 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 04:44:56.483 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 04:44:56.538 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 04:44:56.554 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 04:44:56.572 -08:00 [INF] Executed ViewResult - view Index executed in 20.2577ms.
+2025-06-18 04:44:56.577 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 86.9615ms
+2025-06-18 04:44:56.583 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 04:44:56.588 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 150.0498ms
+2025-06-18 04:44:56.627 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 04:44:56.627 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 04:44:56.640 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 12.5121ms
+2025-06-18 04:44:56.656 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.6424ms
+2025-06-18 04:45:02.807 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/Table/Delete/2 - application/json 10
+2025-06-18 04:45:02.827 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.DeleteConfirmed (FinalProjectMvc)'
+2025-06-18 04:45:02.877 -08:00 [INF] Route matched with {area = "Admin", action = "Delete", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteConfirmed(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 04:45:02.956 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Capacity], [t].[CreateDate], [t].[Location], [t].[Number]
+FROM [Tables] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-06-18 04:45:03.134 -08:00 [INF] Executed DbCommand (30ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Tables]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-06-18 04:45:03.178 -08:00 [INF] Executing RedirectResult, redirecting to /Admin/Table.
+2025-06-18 04:45:03.184 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.DeleteConfirmed (FinalProjectMvc) in 288.5127ms
+2025-06-18 04:45:03.192 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.DeleteConfirmed (FinalProjectMvc)'
+2025-06-18 04:45:03.198 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/Table/Delete/2 - 302 0 null 390.5783ms
+2025-06-18 04:45:03.205 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 04:45:03.222 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 04:45:03.224 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 04:45:03.243 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 04:45:03.258 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 04:45:03.268 -08:00 [INF] Executed ViewResult - view Index executed in 10.3243ms.
+2025-06-18 04:45:03.277 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 49.1033ms
+2025-06-18 04:45:03.288 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 04:45:03.296 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 90.9976ms
+2025-06-18 04:45:06.756 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/Table/Delete/3 - application/json 10
+2025-06-18 04:45:06.776 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.DeleteConfirmed (FinalProjectMvc)'
+2025-06-18 04:45:06.787 -08:00 [INF] Route matched with {area = "Admin", action = "Delete", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteConfirmed(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 04:45:06.826 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Capacity], [t].[CreateDate], [t].[Location], [t].[Number]
+FROM [Tables] AS [t]
+WHERE [t].[Id] = @__p_0
+2025-06-18 04:45:06.889 -08:00 [INF] Executed DbCommand (32ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Tables]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-06-18 04:45:06.904 -08:00 [INF] Executing RedirectResult, redirecting to /Admin/Table.
+2025-06-18 04:45:06.911 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.DeleteConfirmed (FinalProjectMvc) in 108.0161ms
+2025-06-18 04:45:06.919 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.DeleteConfirmed (FinalProjectMvc)'
+2025-06-18 04:45:06.924 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/Table/Delete/3 - 302 0 null 167.4382ms
+2025-06-18 04:45:06.929 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 04:45:06.949 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 04:45:06.953 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 04:45:06.965 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 04:45:06.972 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 04:45:06.978 -08:00 [INF] Executed ViewResult - view Index executed in 6.3741ms.
+2025-06-18 04:45:06.984 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 25.92ms
+2025-06-18 04:45:06.991 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 04:45:06.994 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 64.6691ms
+2025-06-18 04:45:09.226 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table/Create - null null
+2025-06-18 04:45:09.258 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Create (FinalProjectMvc)'
+2025-06-18 04:45:09.289 -08:00 [INF] Route matched with {area = "Admin", action = "Create", controller = "Table"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 04:45:09.313 -08:00 [INF] Executing ViewResult, running view Create.
+2025-06-18 04:45:09.368 -08:00 [INF] Executed ViewResult - view Create executed in 57.0511ms.
+2025-06-18 04:45:09.372 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Create (FinalProjectMvc) in 61.2973ms
+2025-06-18 04:45:09.376 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Create (FinalProjectMvc)'
+2025-06-18 04:45:09.388 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table/Create - 200 null text/html; charset=utf-8 161.4705ms
+2025-06-18 04:45:09.417 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 04:45:09.424 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 04:45:09.437 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.4493ms
+2025-06-18 04:45:09.440 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 16.0696ms
+2025-06-18 04:45:34.795 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/Table/Create - application/x-www-form-urlencoded 301
+2025-06-18 04:45:34.814 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Create (FinalProjectMvc)'
+2025-06-18 04:45:34.838 -08:00 [INF] Route matched with {area = "Admin", action = "Create", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(FinalProjectMvc.ViewModels.Admin.Table.TableCreateVM) on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 04:45:34.946 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Tables] ([Capacity], [CreateDate], [Location], [Number])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2025-06-18 04:45:34.978 -08:00 [INF] Executing RedirectResult, redirecting to /Admin/Table.
+2025-06-18 04:45:34.984 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Create (FinalProjectMvc) in 127.8616ms
+2025-06-18 04:45:34.990 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Create (FinalProjectMvc)'
+2025-06-18 04:45:34.997 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/Table/Create - 302 0 null 202.6561ms
+2025-06-18 04:45:35.004 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 04:45:35.076 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 04:45:35.088 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 04:45:35.108 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 04:45:35.111 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 04:45:35.114 -08:00 [INF] Executed ViewResult - view Index executed in 3.1619ms.
+2025-06-18 04:45:35.129 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 27.2743ms
+2025-06-18 04:45:35.135 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 04:45:35.142 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 137.9427ms
+2025-06-18 04:45:35.174 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 04:45:35.182 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 04:45:35.203 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.3844ms
+2025-06-18 04:45:35.206 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 23.6487ms
+2025-06-18 04:45:36.745 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - null null
+2025-06-18 04:45:36.775 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc)'
+2025-06-18 04:45:36.797 -08:00 [INF] Route matched with {area = "Admin", action = "Details", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 04:45:36.866 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Capacity], [t0].[CreateDate], [t0].[Location], [t0].[Number], [r].[Id], [r].[CreateDate], [r].[Date], [r].[Email], [r].[FullName], [r].[GuestCount], [r].[IsCanceled], [r].[IsConfirmed], [r].[IsPaid], [r].[IsRejected], [r].[PhoneNumber], [r].[TableId], [r].[Time]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[Capacity], [t].[CreateDate], [t].[Location], [t].[Number]
+    FROM [Tables] AS [t]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN [Reservations] AS [r] ON [t0].[Id] = [r].[TableId]
+ORDER BY [t0].[Id]
+2025-06-18 04:45:36.903 -08:00 [INF] Executing ViewResult, running view Details.
+2025-06-18 04:45:36.920 -08:00 [ERR] The view 'Details' was not found. Searched locations: ["/Areas/Admin/Views/Table/Details.cshtml","/Areas/Admin/Views/Shared/Details.cshtml","/Views/Shared/Details.cshtml"]
+2025-06-18 04:45:36.945 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc) in 129.0903ms
+2025-06-18 04:45:36.953 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc)'
+2025-06-18 04:45:36.960 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Details' was not found. The following locations were searched:
+/Areas/Admin/Views/Table/Details.cshtml
+/Areas/Admin/Views/Shared/Details.cshtml
+/Views/Shared/Details.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-18 04:45:37.060 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - 500 null text/html; charset=utf-8 314.6696ms
+2025-06-18 04:45:37.105 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 04:45:37.113 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 04:45:37.125 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.7343ms
+2025-06-18 04:45:37.129 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 16.052ms
+2025-06-18 04:49:26.485 -08:00 [INF] Executed DbCommand (150ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 04:49:26.712 -08:00 [INF] Executed DbCommand (48ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 04:49:26.737 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 04:49:26.993 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-18 04:49:27.166 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-18 04:49:27.170 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-18 04:49:27.204 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 04:49:27.209 -08:00 [INF] Hosting environment: Development
+2025-06-18 04:49:27.213 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-18 04:49:27.298 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - null null
+2025-06-18 04:49:27.444 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc)'
+2025-06-18 04:49:27.472 -08:00 [INF] Route matched with {area = "Admin", action = "Details", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 04:49:27.865 -08:00 [INF] Executed DbCommand (23ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Capacity], [t0].[CreateDate], [t0].[Location], [t0].[Number], [r].[Id], [r].[CreateDate], [r].[Date], [r].[Email], [r].[FullName], [r].[GuestCount], [r].[IsCanceled], [r].[IsConfirmed], [r].[IsPaid], [r].[IsRejected], [r].[PhoneNumber], [r].[TableId], [r].[Time]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[Capacity], [t].[CreateDate], [t].[Location], [t].[Number]
+    FROM [Tables] AS [t]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN [Reservations] AS [r] ON [t0].[Id] = [r].[TableId]
+ORDER BY [t0].[Id]
+2025-06-18 04:49:27.927 -08:00 [INF] Executing ViewResult, running view Details.
+2025-06-18 04:49:27.939 -08:00 [ERR] The view 'Details' was not found. Searched locations: ["/Areas/Admin/Views/Table/Details.cshtml","/Areas/Admin/Views/Shared/Details.cshtml","/Views/Shared/Details.cshtml"]
+2025-06-18 04:49:27.967 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc) in 480.5906ms
+2025-06-18 04:49:27.976 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc)'
+2025-06-18 04:49:27.985 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Details' was not found. The following locations were searched:
+/Areas/Admin/Views/Table/Details.cshtml
+/Areas/Admin/Views/Shared/Details.cshtml
+/Views/Shared/Details.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-18 04:49:28.067 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - 500 null text/html; charset=utf-8 769.6441ms
+2025-06-18 04:49:28.114 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 04:49:28.114 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 04:49:28.136 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 21.4155ms
+2025-06-18 04:49:28.189 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 75.252ms
+2025-06-18 04:50:54.032 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - null null
+2025-06-18 04:50:54.078 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc)'
+2025-06-18 04:50:54.086 -08:00 [INF] Route matched with {area = "Admin", action = "Details", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 04:50:54.128 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Capacity], [t0].[CreateDate], [t0].[Location], [t0].[Number], [r].[Id], [r].[CreateDate], [r].[Date], [r].[Email], [r].[FullName], [r].[GuestCount], [r].[IsCanceled], [r].[IsConfirmed], [r].[IsPaid], [r].[IsRejected], [r].[PhoneNumber], [r].[TableId], [r].[Time]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[Capacity], [t].[CreateDate], [t].[Location], [t].[Number]
+    FROM [Tables] AS [t]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN [Reservations] AS [r] ON [t0].[Id] = [r].[TableId]
+ORDER BY [t0].[Id]
+2025-06-18 04:50:54.147 -08:00 [INF] Executing ViewResult, running view Details.
+2025-06-18 04:50:54.156 -08:00 [ERR] The view 'Details' was not found. Searched locations: ["/Areas/Admin/Views/Table/Details.cshtml","/Areas/Admin/Views/Shared/Details.cshtml","/Views/Shared/Details.cshtml"]
+2025-06-18 04:50:54.183 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc) in 85.3802ms
+2025-06-18 04:50:54.199 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc)'
+2025-06-18 04:50:54.213 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Details' was not found. The following locations were searched:
+/Areas/Admin/Views/Table/Details.cshtml
+/Areas/Admin/Views/Shared/Details.cshtml
+/Views/Shared/Details.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-18 04:50:54.276 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - 500 null text/html; charset=utf-8 243.504ms
+2025-06-18 04:50:54.336 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 04:50:54.338 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 04:50:54.379 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 41.3773ms
+2025-06-18 04:50:54.390 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.6417ms
+2025-06-18 04:50:54.577 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/favicon.ico - null null
+2025-06-18 04:50:54.651 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/favicon.ico - 302 0 null 74.0392ms
+2025-06-18 04:50:54.661 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/NotFound/Index - null null
+2025-06-18 04:50:54.675 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/favicon.ico, Response status code: 302
+2025-06-18 04:50:54.686 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 04:50:54.701 -08:00 [INF] Route matched with {action = "Index", controller = "NotFound", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.NotFoundController (FinalProjectMvc).
+2025-06-18 04:50:54.725 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 04:50:54.820 -08:00 [INF] Executed ViewResult - view Index executed in 108.8634ms.
+2025-06-18 04:50:54.826 -08:00 [INF] Executed action FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc) in 117.4925ms
+2025-06-18 04:50:54.830 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 04:50:54.839 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/NotFound/Index - 404 null text/html; charset=utf-8 177.9343ms
+2025-06-18 05:23:22.091 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-18 05:23:22.409 -08:00 [INF] Executed DbCommand (40ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-06-18 05:23:22.813 -08:00 [INF] Executed DbCommand (23ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-06-18 05:23:22.902 -08:00 [INF] Executed DbCommand (20ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-18 05:23:22.928 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:23:22.965 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-06-18 05:23:22.982 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 05:23:22.993 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-18 05:23:23.005 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:23:23.086 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 05:23:23.177 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 05:23:23.234 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-18 05:23:23.295 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-18 05:23:23.342 -08:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-18 05:23:23.642 -08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-18 05:23:23.797 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-18 05:23:23.859 -08:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-18 05:23:24.013 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name]
+FROM [Categories] AS [c]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+2025-06-18 05:23:24.214 -08:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDate], [p].[Image], [p].[Ingredients], [p].[Name], [p].[Price], [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name], [t].[Id], [t].[CreateDate], [t].[ProductId], [t].[SizeId], [t].[Id0], [t].[CreateDate0], [t].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreateDate], [p0].[ProductId], [p0].[SizeId], [s].[Id] AS [Id0], [s].[CreateDate] AS [CreateDate0], [s].[Name]
+    FROM [ProductSizes] AS [p0]
+    INNER JOIN [Sizes] AS [s] ON [p0].[SizeId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id] DESC, [c].[Id], [c0].[Id], [t].[Id]
+2025-06-18 05:23:24.486 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-18 05:23:24.628 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-18 05:23:24.676 -08:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-18 05:23:24.837 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-18 05:23:24.872 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-18 05:23:24.893 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-18 05:23:24.928 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-18 05:23:25.017 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-18 05:23:25.146 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-18 05:23:25.208 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:23:25.323 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:23:25.372 -08:00 [INF] Executed ViewResult - view Index executed in 2372.4468ms.
+2025-06-18 05:23:25.381 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 2383.3891ms
+2025-06-18 05:23:25.391 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 05:23:25.395 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 3303.696ms
+2025-06-18 05:23:25.495 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:23:25.529 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 33.3932ms
+2025-06-18 05:23:25.601 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:23:25.634 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.3221ms
+2025-06-18 05:23:26.299 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-18 05:23:26.325 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 05:23:26.331 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-18 05:23:26.337 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:23:26.346 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 05:23:26.358 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 05:23:26.370 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-18 05:23:26.381 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-18 05:23:26.394 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-18 05:23:26.405 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name]
+FROM [Categories] AS [c]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+2025-06-18 05:23:26.413 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDate], [p].[Image], [p].[Ingredients], [p].[Name], [p].[Price], [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name], [t].[Id], [t].[CreateDate], [t].[ProductId], [t].[SizeId], [t].[Id0], [t].[CreateDate0], [t].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreateDate], [p0].[ProductId], [p0].[SizeId], [s].[Id] AS [Id0], [s].[CreateDate] AS [CreateDate0], [s].[Name]
+    FROM [ProductSizes] AS [p0]
+    INNER JOIN [Sizes] AS [s] ON [p0].[SizeId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id] DESC, [c].[Id], [c0].[Id], [t].[Id]
+2025-06-18 05:23:26.428 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-18 05:23:26.444 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-18 05:23:26.465 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-18 05:23:26.475 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-18 05:23:26.486 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-18 05:23:26.500 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-18 05:23:26.513 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-18 05:23:26.526 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:23:26.544 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:23:26.557 -08:00 [INF] Executed ViewResult - view Index executed in 219.9346ms.
+2025-06-18 05:23:26.562 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 225.1744ms
+2025-06-18 05:23:26.571 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 05:23:26.576 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 277.0687ms
+2025-06-18 05:23:26.657 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:23:26.670 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 13.1882ms
+2025-06-18 05:23:26.742 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:23:26.760 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.481ms
+2025-06-18 05:23:31.250 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Dashboard - null null
+2025-06-18 05:23:31.280 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-18 05:23:31.299 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-18 05:23:31.323 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:23:31.452 -08:00 [INF] Executed ViewResult - view Index executed in 137.6138ms.
+2025-06-18 05:23:31.459 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 146.4303ms
+2025-06-18 05:23:31.466 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-18 05:23:31.473 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Dashboard - 200 null text/html; charset=utf-8 223.4991ms
+2025-06-18 05:23:31.574 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:23:31.585 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:23:31.594 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 19.4956ms
+2025-06-18 05:23:31.629 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.3953ms
+2025-06-18 05:23:35.767 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 05:23:35.783 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:23:35.802 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:23:35.919 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 05:23:35.934 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:23:35.967 -08:00 [INF] Executed ViewResult - view Index executed in 36.0718ms.
+2025-06-18 05:23:35.972 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 157.4866ms
+2025-06-18 05:23:35.988 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:23:35.992 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 225.4971ms
+2025-06-18 05:23:36.035 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:23:36.035 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:23:36.065 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.8053ms
+2025-06-18 05:23:36.069 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 33.923ms
+2025-06-18 05:23:37.728 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - null null
+2025-06-18 05:23:37.749 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc)'
+2025-06-18 05:23:37.753 -08:00 [INF] Route matched with {area = "Admin", action = "Details", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:23:37.792 -08:00 [INF] Executed DbCommand (19ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Capacity], [t0].[CreateDate], [t0].[Location], [t0].[Number], [r].[Id], [r].[CreateDate], [r].[Date], [r].[Email], [r].[FullName], [r].[GuestCount], [r].[IsCanceled], [r].[IsConfirmed], [r].[IsPaid], [r].[IsRejected], [r].[PhoneNumber], [r].[TableId], [r].[Time]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[Capacity], [t].[CreateDate], [t].[Location], [t].[Number]
+    FROM [Tables] AS [t]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN [Reservations] AS [r] ON [t0].[Id] = [r].[TableId]
+ORDER BY [t0].[Id]
+2025-06-18 05:23:37.804 -08:00 [INF] Executing ViewResult, running view Details.
+2025-06-18 05:23:37.808 -08:00 [ERR] The view 'Details' was not found. Searched locations: ["/Areas/Admin/Views/Table/Details.cshtml","/Areas/Admin/Views/Shared/Details.cshtml","/Views/Shared/Details.cshtml"]
+2025-06-18 05:23:37.818 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc) in 51.13ms
+2025-06-18 05:23:37.824 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Details (FinalProjectMvc)'
+2025-06-18 05:23:37.833 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Details' was not found. The following locations were searched:
+/Areas/Admin/Views/Table/Details.cshtml
+/Areas/Admin/Views/Shared/Details.cshtml
+/Views/Shared/Details.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-18 05:23:37.873 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - 500 null text/html; charset=utf-8 144.0824ms
+2025-06-18 05:23:37.934 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:23:37.936 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:23:37.951 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 14.9361ms
+2025-06-18 05:23:37.952 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.5048ms
+2025-06-18 05:26:17.776 -08:00 [INF] Executed DbCommand (67ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:26:17.956 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:26:17.971 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:26:18.206 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-18 05:26:18.358 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-18 05:26:18.362 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-18 05:26:18.414 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 05:26:18.418 -08:00 [INF] Hosting environment: Development
+2025-06-18 05:26:18.422 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-18 05:26:18.621 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - null null
+2025-06-18 05:26:18.770 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - 302 0 null 150.2407ms
+2025-06-18 05:26:18.795 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/NotFound/Index - null null
+2025-06-18 05:26:18.832 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/Admin/Table/Details/4, Response status code: 302
+2025-06-18 05:26:18.877 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:26:18.910 -08:00 [INF] Route matched with {action = "Index", controller = "NotFound", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.NotFoundController (FinalProjectMvc).
+2025-06-18 05:26:18.934 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:26:18.990 -08:00 [INF] Executed ViewResult - view Index executed in 55.9061ms.
+2025-06-18 05:26:19.030 -08:00 [INF] Executed action FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc) in 107.0926ms
+2025-06-18 05:26:19.043 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:26:19.062 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/NotFound/Index - 404 null text/html; charset=utf-8 266.3081ms
+2025-06-18 05:26:25.458 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Dashboard - null null
+2025-06-18 05:26:25.559 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-18 05:26:25.572 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-18 05:26:25.589 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:26:25.811 -08:00 [INF] Executed ViewResult - view Index executed in 227.0942ms.
+2025-06-18 05:26:25.824 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 241.6793ms
+2025-06-18 05:26:25.832 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-18 05:26:25.842 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Dashboard - 200 null text/html; charset=utf-8 383.7375ms
+2025-06-18 05:26:25.876 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:26:25.877 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:26:25.897 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 20.2152ms
+2025-06-18 05:26:25.968 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 91.1483ms
+2025-06-18 05:26:29.251 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 05:26:29.278 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:26:29.298 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:26:30.440 -08:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 05:26:30.470 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:26:30.526 -08:00 [INF] Executed ViewResult - view Index executed in 58.7631ms.
+2025-06-18 05:26:30.534 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 1223.1559ms
+2025-06-18 05:26:30.540 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:26:30.552 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 1301.2773ms
+2025-06-18 05:26:30.578 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:26:30.578 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:26:30.600 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 22.1059ms
+2025-06-18 05:26:30.619 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.4682ms
+2025-06-18 05:26:31.578 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - null null
+2025-06-18 05:26:31.607 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - 302 0 null 28.7537ms
+2025-06-18 05:26:31.618 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/NotFound/Index - null null
+2025-06-18 05:26:31.630 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/Admin/Table/Details/4, Response status code: 302
+2025-06-18 05:26:31.658 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:26:31.671 -08:00 [INF] Route matched with {action = "Index", controller = "NotFound", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.NotFoundController (FinalProjectMvc).
+2025-06-18 05:26:31.685 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:26:31.695 -08:00 [INF] Executed ViewResult - view Index executed in 11.4321ms.
+2025-06-18 05:26:31.705 -08:00 [INF] Executed action FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc) in 21.4973ms
+2025-06-18 05:26:31.716 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:26:31.727 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/NotFound/Index - 404 null text/html; charset=utf-8 108.8242ms
+2025-06-18 05:27:04.703 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 05:27:04.731 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:27:04.737 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:27:04.772 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 05:27:04.793 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:27:04.807 -08:00 [INF] Executed ViewResult - view Index executed in 14.2911ms.
+2025-06-18 05:27:04.818 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 75.2953ms
+2025-06-18 05:27:04.827 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:27:04.836 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 132.571ms
+2025-06-18 05:27:04.859 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:27:04.874 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 15.4997ms
+2025-06-18 05:27:06.289 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - null null
+2025-06-18 05:27:06.313 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - 302 0 null 23.857ms
+2025-06-18 05:27:06.330 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/NotFound/Index - null null
+2025-06-18 05:27:06.341 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/Admin/Table/Details/4, Response status code: 302
+2025-06-18 05:27:06.374 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:27:06.388 -08:00 [INF] Route matched with {action = "Index", controller = "NotFound", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.NotFoundController (FinalProjectMvc).
+2025-06-18 05:27:06.406 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:27:06.416 -08:00 [INF] Executed ViewResult - view Index executed in 10.531ms.
+2025-06-18 05:27:06.427 -08:00 [INF] Executed action FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc) in 21.8518ms
+2025-06-18 05:27:06.438 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:27:06.447 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/NotFound/Index - 404 null text/html; charset=utf-8 117.3306ms
+2025-06-18 05:27:10.199 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 05:27:10.212 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:27:10.217 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:27:10.241 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 05:27:10.252 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:27:10.263 -08:00 [INF] Executed ViewResult - view Index executed in 10.6472ms.
+2025-06-18 05:27:10.272 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 50.0735ms
+2025-06-18 05:27:10.281 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:27:10.287 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 88.2562ms
+2025-06-18 05:27:10.315 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:27:10.328 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 13.4441ms
+2025-06-18 05:27:13.846 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-18 05:27:13.862 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - 302 0 null 15.6787ms
+2025-06-18 05:27:13.870 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/NotFound/Index - null null
+2025-06-18 05:27:13.875 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json, Response status code: 302
+2025-06-18 05:27:13.890 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:27:13.900 -08:00 [INF] Route matched with {action = "Index", controller = "NotFound", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.NotFoundController (FinalProjectMvc).
+2025-06-18 05:27:13.908 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:27:13.912 -08:00 [INF] Executed ViewResult - view Index executed in 4.7901ms.
+2025-06-18 05:27:13.917 -08:00 [INF] Executed action FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc) in 9.562ms
+2025-06-18 05:27:13.921 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:27:13.934 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/NotFound/Index - 404 null text/html; charset=utf-8 64.3953ms
+2025-06-18 05:28:28.952 -08:00 [INF] Executed DbCommand (132ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:28:29.087 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:28:29.096 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:28:29.342 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-18 05:28:29.520 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-18 05:28:29.523 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-18 05:28:29.580 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 05:28:29.585 -08:00 [INF] Hosting environment: Development
+2025-06-18 05:28:29.590 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-18 05:28:29.643 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 05:28:29.828 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:28:29.857 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:28:30.099 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - null null
+2025-06-18 05:28:30.146 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table/Details/4 - 302 0 null 44.8637ms
+2025-06-18 05:28:30.154 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/NotFound/Index - null null
+2025-06-18 05:28:30.169 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/Admin/Table/Details/4, Response status code: 302
+2025-06-18 05:28:30.213 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:28:30.223 -08:00 [INF] Route matched with {action = "Index", controller = "NotFound", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.NotFoundController (FinalProjectMvc).
+2025-06-18 05:28:30.239 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:28:30.296 -08:00 [INF] Executed ViewResult - view Index executed in 55.2932ms.
+2025-06-18 05:28:30.304 -08:00 [INF] Executed action FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc) in 73.2681ms
+2025-06-18 05:28:30.313 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:28:30.322 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/NotFound/Index - 404 null text/html; charset=utf-8 167.8411ms
+2025-06-18 05:28:30.412 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 05:28:30.429 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:28:30.503 -08:00 [INF] Executed ViewResult - view Index executed in 76.717ms.
+2025-06-18 05:28:30.515 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 643.2621ms
+2025-06-18 05:28:30.539 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:28:30.557 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 916.9831ms
+2025-06-18 05:28:31.190 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 05:28:31.207 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:28:31.211 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:28:31.238 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 05:28:31.250 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:28:31.285 -08:00 [INF] Executed ViewResult - view Index executed in 35.1059ms.
+2025-06-18 05:28:31.297 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 82.6885ms
+2025-06-18 05:28:31.302 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:28:31.309 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 119.1605ms
+2025-06-18 05:28:31.322 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:28:31.352 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 29.591ms
+2025-06-18 05:28:56.644 -08:00 [INF] Executed DbCommand (74ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:28:56.804 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:28:56.820 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:28:57.039 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-18 05:28:57.192 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-18 05:28:57.199 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-18 05:28:57.237 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 05:28:57.244 -08:00 [INF] Hosting environment: Development
+2025-06-18 05:28:57.247 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-18 05:28:57.477 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 05:28:57.619 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:28:57.635 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:28:58.049 -08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 05:28:58.077 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:28:58.223 -08:00 [INF] Executed ViewResult - view Index executed in 144.8212ms.
+2025-06-18 05:28:58.239 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 590.8154ms
+2025-06-18 05:28:58.246 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:28:58.274 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:28:58.274 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:28:58.276 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 800.5276ms
+2025-06-18 05:28:58.333 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 58.6995ms
+2025-06-18 05:28:58.375 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 101.5983ms
+2025-06-18 05:31:21.619 -08:00 [INF] Executed DbCommand (66ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:31:21.740 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:31:21.745 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-18 05:31:21.958 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-18 05:31:22.090 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-18 05:31:22.094 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-18 05:31:22.139 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 05:31:22.143 -08:00 [INF] Hosting environment: Development
+2025-06-18 05:31:22.145 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-18 05:31:22.361 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-18 05:31:22.525 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 05:31:22.544 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-18 05:31:22.573 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:31:22.932 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 05:31:22.986 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 05:31:23.153 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-18 05:31:23.195 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-18 05:31:23.222 -08:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-18 05:31:23.376 -08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-18 05:31:23.447 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-18 05:31:23.474 -08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-18 05:31:23.561 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name]
+FROM [Categories] AS [c]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+2025-06-18 05:31:23.680 -08:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDate], [p].[Image], [p].[Ingredients], [p].[Name], [p].[Price], [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name], [t].[Id], [t].[CreateDate], [t].[ProductId], [t].[SizeId], [t].[Id0], [t].[CreateDate0], [t].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreateDate], [p0].[ProductId], [p0].[SizeId], [s].[Id] AS [Id0], [s].[CreateDate] AS [CreateDate0], [s].[Name]
+    FROM [ProductSizes] AS [p0]
+    INNER JOIN [Sizes] AS [s] ON [p0].[SizeId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id] DESC, [c].[Id], [c0].[Id], [t].[Id]
+2025-06-18 05:31:23.792 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-18 05:31:23.850 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-18 05:31:23.879 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-18 05:31:23.987 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-18 05:31:24.002 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-18 05:31:24.009 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-18 05:31:24.029 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-18 05:31:24.087 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-18 05:31:24.191 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-18 05:31:24.229 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:31:24.309 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:31:24.378 -08:00 [INF] Executed ViewResult - view Index executed in 1810.6241ms.
+2025-06-18 05:31:24.407 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 1849.2775ms
+2025-06-18 05:31:24.417 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 05:31:24.441 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 2081.0818ms
+2025-06-18 05:31:24.496 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:31:24.518 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:31:24.523 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 26.9889ms
+2025-06-18 05:31:24.635 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 117.0673ms
+2025-06-18 05:31:33.766 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Dashboard - null null
+2025-06-18 05:31:33.843 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-18 05:31:33.863 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-18 05:31:33.891 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:31:34.031 -08:00 [INF] Executed ViewResult - view Index executed in 146.7178ms.
+2025-06-18 05:31:34.039 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 157.6985ms
+2025-06-18 05:31:34.048 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-18 05:31:34.056 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Dashboard - 200 null text/html; charset=utf-8 290.4881ms
+2025-06-18 05:31:34.105 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:31:34.105 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:31:34.122 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 17.5996ms
+2025-06-18 05:31:34.169 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 63.6067ms
+2025-06-18 05:31:39.541 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 05:31:39.632 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:31:39.649 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:31:39.805 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 05:31:39.830 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:31:39.871 -08:00 [INF] Executed ViewResult - view Index executed in 45.884ms.
+2025-06-18 05:31:39.878 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 219.3361ms
+2025-06-18 05:31:39.891 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:31:39.899 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 358.6102ms
+2025-06-18 05:31:39.942 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:31:39.942 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:31:39.954 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 11.659ms
+2025-06-18 05:31:39.977 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.9524ms
+2025-06-18 05:31:41.501 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table/Detail/4 - null null
+2025-06-18 05:31:41.526 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Detail (FinalProjectMvc)'
+2025-06-18 05:31:41.567 -08:00 [INF] Route matched with {area = "Admin", action = "Detail", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Detail(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:31:41.663 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t0].[Id], [t0].[Capacity], [t0].[CreateDate], [t0].[Location], [t0].[Number], [r].[Id], [r].[CreateDate], [r].[Date], [r].[Email], [r].[FullName], [r].[GuestCount], [r].[IsCanceled], [r].[IsConfirmed], [r].[IsPaid], [r].[IsRejected], [r].[PhoneNumber], [r].[TableId], [r].[Time]
+FROM (
+    SELECT TOP(1) [t].[Id], [t].[Capacity], [t].[CreateDate], [t].[Location], [t].[Number]
+    FROM [Tables] AS [t]
+    WHERE [t].[Id] = @__id_0
+) AS [t0]
+LEFT JOIN [Reservations] AS [r] ON [t0].[Id] = [r].[TableId]
+ORDER BY [t0].[Id]
+2025-06-18 05:31:41.728 -08:00 [INF] Executing ViewResult, running view Detail.
+2025-06-18 05:31:41.756 -08:00 [INF] Executed ViewResult - view Detail executed in 30.0905ms.
+2025-06-18 05:31:41.767 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Detail (FinalProjectMvc) in 190.2404ms
+2025-06-18 05:31:41.780 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Detail (FinalProjectMvc)'
+2025-06-18 05:31:41.789 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table/Detail/4 - 200 null text/html; charset=utf-8 287.8166ms
+2025-06-18 05:31:41.834 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:31:41.851 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:31:41.862 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.411ms
+2025-06-18 05:31:41.869 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 17.6702ms
+2025-06-18 05:33:53.647 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 05:33:53.669 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:33:53.674 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:33:53.728 -08:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 05:33:53.736 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:33:53.744 -08:00 [INF] Executed ViewResult - view Index executed in 8.374ms.
+2025-06-18 05:33:53.750 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 68.5003ms
+2025-06-18 05:33:53.760 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:33:53.767 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 119.9022ms
+2025-06-18 05:33:53.814 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:33:53.814 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:33:53.838 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.2726ms
+2025-06-18 05:33:53.839 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 24.1565ms
+2025-06-18 05:35:48.335 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table/Create - null null
+2025-06-18 05:35:48.368 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Create (FinalProjectMvc)'
+2025-06-18 05:35:48.377 -08:00 [INF] Route matched with {area = "Admin", action = "Create", controller = "Table"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:35:48.387 -08:00 [INF] Executing ViewResult, running view Create.
+2025-06-18 05:35:48.491 -08:00 [INF] Executed ViewResult - view Create executed in 106.6808ms.
+2025-06-18 05:35:48.499 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Create (FinalProjectMvc) in 114.5514ms
+2025-06-18 05:35:48.505 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Create (FinalProjectMvc)'
+2025-06-18 05:35:48.511 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table/Create - 200 null text/html; charset=utf-8 175.8113ms
+2025-06-18 05:35:48.555 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:35:48.555 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:35:48.576 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.0978ms
+2025-06-18 05:35:48.576 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 21.7234ms
+2025-06-18 05:35:52.827 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/Table - null null
+2025-06-18 05:35:52.835 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:35:52.841 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Table"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.TableController (FinalProjectMvc).
+2025-06-18 05:35:52.886 -08:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Number], [t].[Location], [t].[Capacity]
+FROM [Tables] AS [t]
+2025-06-18 05:35:52.894 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:35:52.906 -08:00 [INF] Executed ViewResult - view Index executed in 12.0457ms.
+2025-06-18 05:35:52.923 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc) in 76.0121ms
+2025-06-18 05:35:52.928 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.TableController.Index (FinalProjectMvc)'
+2025-06-18 05:35:52.932 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/Table - 200 null text/html; charset=utf-8 105.5028ms
+2025-06-18 05:35:52.956 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:35:52.961 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:35:52.978 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.3267ms
+2025-06-18 05:35:52.978 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 16.7862ms
+2025-06-18 05:40:16.187 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-18 05:40:16.220 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 05:40:16.228 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-18 05:40:16.244 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:40:16.287 -08:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 05:40:16.313 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 05:40:16.349 -08:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-18 05:40:16.383 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-18 05:40:16.405 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-18 05:40:16.422 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name]
+FROM [Categories] AS [c]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+2025-06-18 05:40:16.445 -08:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDate], [p].[Image], [p].[Ingredients], [p].[Name], [p].[Price], [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name], [t].[Id], [t].[CreateDate], [t].[ProductId], [t].[SizeId], [t].[Id0], [t].[CreateDate0], [t].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreateDate], [p0].[ProductId], [p0].[SizeId], [s].[Id] AS [Id0], [s].[CreateDate] AS [CreateDate0], [s].[Name]
+    FROM [ProductSizes] AS [p0]
+    INNER JOIN [Sizes] AS [s] ON [p0].[SizeId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id] DESC, [c].[Id], [c0].[Id], [t].[Id]
+2025-06-18 05:40:16.460 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-18 05:40:16.471 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-18 05:40:16.491 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-18 05:40:16.512 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-18 05:40:16.533 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-18 05:40:16.564 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-18 05:40:16.587 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-18 05:40:16.600 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:40:16.620 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:40:16.639 -08:00 [INF] Executed ViewResult - view Index executed in 394.3344ms.
+2025-06-18 05:40:16.651 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 407.8838ms
+2025-06-18 05:40:16.659 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 05:40:16.664 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 477.0921ms
+2025-06-18 05:40:16.756 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:40:16.772 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 15.9494ms
+2025-06-18 05:40:16.855 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:40:16.884 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.0716ms
+2025-06-18 05:40:22.075 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Account/Logout - application/x-www-form-urlencoded 225
+2025-06-18 05:40:22.111 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Logout (FinalProjectMvc)'
+2025-06-18 05:40:22.132 -08:00 [INF] Route matched with {action = "Logout", controller = "Account", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-18 05:40:22.183 -08:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2025-06-18 05:40:22.193 -08:00 [INF] AuthenticationScheme: Identity.External signed out.
+2025-06-18 05:40:22.200 -08:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2025-06-18 05:40:22.209 -08:00 [INF] Executing RedirectResult, redirecting to /.
+2025-06-18 05:40:22.217 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Logout (FinalProjectMvc) in 73.1653ms
+2025-06-18 05:40:22.226 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Logout (FinalProjectMvc)'
+2025-06-18 05:40:22.233 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Account/Logout - 302 0 null 158.4381ms
+2025-06-18 05:40:22.243 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-18 05:40:22.277 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 05:40:22.287 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-18 05:40:22.302 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:40:22.313 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 05:40:22.332 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-18 05:40:22.352 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-18 05:40:22.377 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-18 05:40:22.399 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-18 05:40:22.427 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name]
+FROM [Categories] AS [c]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+2025-06-18 05:40:22.447 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDate], [p].[Image], [p].[Ingredients], [p].[Name], [p].[Price], [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name], [t].[Id], [t].[CreateDate], [t].[ProductId], [t].[SizeId], [t].[Id0], [t].[CreateDate0], [t].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreateDate], [p0].[ProductId], [p0].[SizeId], [s].[Id] AS [Id0], [s].[CreateDate] AS [CreateDate0], [s].[Name]
+    FROM [ProductSizes] AS [p0]
+    INNER JOIN [Sizes] AS [s] ON [p0].[SizeId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id] DESC, [c].[Id], [c0].[Id], [t].[Id]
+2025-06-18 05:40:22.488 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-18 05:40:22.512 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-18 05:40:22.529 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-18 05:40:22.544 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-18 05:40:22.557 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-18 05:40:22.568 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-18 05:40:22.579 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-18 05:40:22.591 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:40:22.612 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:40:22.635 -08:00 [INF] Executed ViewResult - view Index executed in 332.7255ms.
+2025-06-18 05:40:22.640 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 338.9628ms
+2025-06-18 05:40:22.649 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-18 05:40:22.656 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 412.6753ms
+2025-06-18 05:40:22.686 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:40:22.686 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:40:22.701 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 14.9431ms
+2025-06-18 05:40:22.722 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.4231ms
+2025-06-18 05:40:25.966 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Login - null null
+2025-06-18 05:40:25.994 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:40:26.006 -08:00 [INF] Route matched with {action = "Login", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-18 05:40:26.025 -08:00 [INF] Executing ViewResult, running view Login.
+2025-06-18 05:40:26.060 -08:00 [INF] Executed ViewResult - view Login executed in 36.9022ms.
+2025-06-18 05:40:26.070 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Login (FinalProjectMvc) in 48.4395ms
+2025-06-18 05:40:26.078 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:40:26.087 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Login - 200 null text/html; charset=utf-8 120.442ms
+2025-06-18 05:40:26.133 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/coffeshop.jpg - null null
+2025-06-18 05:40:26.157 -08:00 [INF] The file /assets/images/common/coffeshop.jpg was not modified
+2025-06-18 05:40:26.161 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:40:26.162 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/coffeshop.jpg - 304 null image/jpeg 29.5435ms
+2025-06-18 05:40:26.173 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 12.2809ms
+2025-06-18 05:40:26.180 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:40:26.231 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.5948ms
+2025-06-18 05:40:26.530 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/assets/images/common/coffeshop1234.jpg - null null
+2025-06-18 05:40:26.540 -08:00 [INF] The file /assets/images/common/coffeshop1234.jpg was not modified
+2025-06-18 05:40:26.542 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/assets/images/common/coffeshop1234.jpg - 304 null image/jpeg 11.3933ms
+2025-06-18 05:40:31.120 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/ForgotPassword - null null
+2025-06-18 05:40:31.133 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.ForgotPassword (FinalProjectMvc)'
+2025-06-18 05:40:31.140 -08:00 [INF] Route matched with {action = "ForgotPassword", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ForgotPassword() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-18 05:40:31.154 -08:00 [INF] Executing ViewResult, running view ForgotPassword.
+2025-06-18 05:40:31.187 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-18 05:40:31.202 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:40:31.214 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:40:31.232 -08:00 [INF] Executed ViewResult - view ForgotPassword executed in 80.2533ms.
+2025-06-18 05:40:31.241 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.ForgotPassword (FinalProjectMvc) in 97.7406ms
+2025-06-18 05:40:31.251 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.ForgotPassword (FinalProjectMvc)'
+2025-06-18 05:40:31.257 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/ForgotPassword - 200 null text/html; charset=utf-8 137.1958ms
+2025-06-18 05:40:31.291 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:40:31.292 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:40:31.305 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/placeholder.svg?height=800&width=1200 - null null
+2025-06-18 05:40:31.318 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.1232ms
+2025-06-18 05:40:31.324 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 32.2938ms
+2025-06-18 05:40:31.352 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/placeholder.svg?height=800&width=1200 - 302 0 null 46.3735ms
+2025-06-18 05:40:31.366 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/NotFound/Index - null null
+2025-06-18 05:40:31.415 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/placeholder.svg, Response status code: 302
+2025-06-18 05:40:31.429 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:40:31.444 -08:00 [INF] Route matched with {action = "Index", controller = "NotFound", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.NotFoundController (FinalProjectMvc).
+2025-06-18 05:40:31.457 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:40:31.480 -08:00 [INF] Executed ViewResult - view Index executed in 25.3886ms.
+2025-06-18 05:40:31.485 -08:00 [INF] Executed action FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc) in 32.4089ms
+2025-06-18 05:40:31.491 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:40:31.496 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/NotFound/Index - 404 null text/html; charset=utf-8 129.8335ms
+2025-06-18 05:40:39.498 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Login - null null
+2025-06-18 05:40:39.511 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:40:39.515 -08:00 [INF] Route matched with {action = "Login", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-18 05:40:39.519 -08:00 [INF] Executing ViewResult, running view Login.
+2025-06-18 05:40:39.528 -08:00 [INF] Executed ViewResult - view Login executed in 9.31ms.
+2025-06-18 05:40:39.537 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Login (FinalProjectMvc) in 18.4123ms
+2025-06-18 05:40:39.547 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:40:39.556 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Login - 200 null text/html; charset=utf-8 57.8008ms
+2025-06-18 05:40:39.597 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:40:39.597 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:40:39.614 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 16.8231ms
+2025-06-18 05:40:39.641 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.0179ms
+2025-06-18 05:41:15.652 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-18 05:41:15.663 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - 302 0 null 11.295ms
+2025-06-18 05:41:15.667 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/NotFound/Index - null null
+2025-06-18 05:41:15.675 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json, Response status code: 302
+2025-06-18 05:41:15.686 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:41:15.698 -08:00 [INF] Route matched with {action = "Index", controller = "NotFound", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.NotFoundController (FinalProjectMvc).
+2025-06-18 05:41:15.705 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:41:15.710 -08:00 [INF] Executed ViewResult - view Index executed in 4.9817ms.
+2025-06-18 05:41:15.715 -08:00 [INF] Executed action FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc) in 9.6806ms
+2025-06-18 05:41:15.721 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:41:15.727 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/NotFound/Index - 404 null text/html; charset=utf-8 60.4595ms
+2025-06-18 05:41:50.078 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Login - null null
+2025-06-18 05:41:50.099 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:41:50.105 -08:00 [INF] Route matched with {action = "Login", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-18 05:41:50.118 -08:00 [INF] Executing ViewResult, running view Login.
+2025-06-18 05:41:50.132 -08:00 [INF] Executed ViewResult - view Login executed in 13.8052ms.
+2025-06-18 05:41:50.142 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Login (FinalProjectMvc) in 25.0796ms
+2025-06-18 05:41:50.152 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:41:50.160 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Login - 200 null text/html; charset=utf-8 82.0019ms
+2025-06-18 05:41:50.240 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:41:50.254 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:41:50.256 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.0219ms
+2025-06-18 05:41:50.264 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 10.0914ms
+2025-06-18 05:41:50.268 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-18 05:41:50.292 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json - 302 0 null 24.301ms
+2025-06-18 05:41:50.295 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/NotFound/Index - null null
+2025-06-18 05:41:50.302 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117/.well-known/appspecific/com.chrome.devtools.json, Response status code: 302
+2025-06-18 05:41:50.309 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:41:50.316 -08:00 [INF] Route matched with {action = "Index", controller = "NotFound", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.NotFoundController (FinalProjectMvc).
+2025-06-18 05:41:50.322 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:41:50.331 -08:00 [INF] Executed ViewResult - view Index executed in 8.5759ms.
+2025-06-18 05:41:50.335 -08:00 [INF] Executed action FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc) in 12.8639ms
+2025-06-18 05:41:50.338 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:41:50.341 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/NotFound/Index - 404 null text/html; charset=utf-8 45.5368ms
+2025-06-18 05:41:57.033 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-18 05:41:57.054 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-18 05:41:57.065 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-18 05:41:57.083 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-18 05:41:57.131 -08:00 [INF] Executed ViewResult - view Register executed in 49.8311ms.
+2025-06-18 05:41:57.138 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 57.987ms
+2025-06-18 05:41:57.149 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-18 05:41:57.155 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 122.4232ms
+2025-06-18 05:41:57.212 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:41:57.216 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:41:57.228 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 15.6265ms
+2025-06-18 05:41:57.250 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.9129ms
+2025-06-18 05:42:09.927 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Login - null null
+2025-06-18 05:42:09.936 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:42:09.944 -08:00 [INF] Route matched with {action = "Login", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-18 05:42:09.949 -08:00 [INF] Executing ViewResult, running view Login.
+2025-06-18 05:42:09.956 -08:00 [INF] Executed ViewResult - view Login executed in 6.7289ms.
+2025-06-18 05:42:09.965 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Login (FinalProjectMvc) in 16.2499ms
+2025-06-18 05:42:09.980 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:42:09.989 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Login - 200 null text/html; charset=utf-8 62.58ms
+2025-06-18 05:42:10.019 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-18 05:42:10.030 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:42:10.041 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.937ms
+2025-06-18 05:42:10.048 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 18.0854ms
+2025-06-18 05:42:21.401 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Register - null null
+2025-06-18 05:42:21.419 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-18 05:42:21.428 -08:00 [INF] Route matched with {action = "Register", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-18 05:42:21.441 -08:00 [INF] Executing ViewResult, running view Register.
+2025-06-18 05:42:21.453 -08:00 [INF] Executed ViewResult - view Register executed in 11.6181ms.
+2025-06-18 05:42:21.465 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Register (FinalProjectMvc) in 24.5707ms
+2025-06-18 05:42:21.475 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Register (FinalProjectMvc)'
+2025-06-18 05:42:21.481 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Register - 200 null text/html; charset=utf-8 80.582ms
+2025-06-18 05:42:21.494 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:42:21.510 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 16.0066ms
+2025-06-18 05:42:22.865 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Login - null null
+2025-06-18 05:42:22.871 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:42:22.874 -08:00 [INF] Route matched with {action = "Login", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-18 05:42:22.883 -08:00 [INF] Executing ViewResult, running view Login.
+2025-06-18 05:42:22.887 -08:00 [INF] Executed ViewResult - view Login executed in 3.8603ms.
+2025-06-18 05:42:22.899 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Login (FinalProjectMvc) in 17.38ms
+2025-06-18 05:42:22.913 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:42:22.922 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Login - 200 null text/html; charset=utf-8 56.6555ms
+2025-06-18 05:42:22.950 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:42:22.965 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 15.2787ms
+2025-06-18 05:42:28.884 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/ForgotPassword - null null
+2025-06-18 05:42:28.896 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.ForgotPassword (FinalProjectMvc)'
+2025-06-18 05:42:28.898 -08:00 [INF] Route matched with {action = "ForgotPassword", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ForgotPassword() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-18 05:42:28.901 -08:00 [INF] Executing ViewResult, running view ForgotPassword.
+2025-06-18 05:42:28.929 -08:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-18 05:42:28.945 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:42:28.956 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-18 05:42:28.966 -08:00 [INF] Executed ViewResult - view ForgotPassword executed in 64.7375ms.
+2025-06-18 05:42:28.972 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.ForgotPassword (FinalProjectMvc) in 72.0419ms
+2025-06-18 05:42:28.981 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.ForgotPassword (FinalProjectMvc)'
+2025-06-18 05:42:28.985 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/ForgotPassword - 200 null text/html; charset=utf-8 100.9347ms
+2025-06-18 05:42:29.011 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Account/Login - null null
+2025-06-18 05:42:29.024 -08:00 [INF] Executing endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:42:29.028 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:42:29.030 -08:00 [INF] Route matched with {action = "Login", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller YourProjectName.Controllers.AccountController (FinalProjectMvc).
+2025-06-18 05:42:29.046 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 18.0022ms
+2025-06-18 05:42:29.059 -08:00 [INF] Executing ViewResult, running view Login.
+2025-06-18 05:42:29.059 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/NotFound/Index - null null
+2025-06-18 05:42:29.090 -08:00 [INF] Executed ViewResult - view Login executed in 31.0857ms.
+2025-06-18 05:42:29.110 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:42:29.122 -08:00 [INF] Executed action YourProjectName.Controllers.AccountController.Login (FinalProjectMvc) in 63.1419ms
+2025-06-18 05:42:29.130 -08:00 [INF] Route matched with {action = "Index", controller = "NotFound", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.NotFoundController (FinalProjectMvc).
+2025-06-18 05:42:29.141 -08:00 [INF] Executed endpoint 'YourProjectName.Controllers.AccountController.Login (FinalProjectMvc)'
+2025-06-18 05:42:29.155 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-18 05:42:29.160 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Account/Login - 200 null text/html; charset=utf-8 149.6921ms
+2025-06-18 05:42:29.169 -08:00 [INF] Executed ViewResult - view Index executed in 13.9799ms.
+2025-06-18 05:42:29.189 -08:00 [INF] Executed action FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc) in 35.1928ms
+2025-06-18 05:42:29.191 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:42:29.196 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-18 05:42:29.207 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 15.5505ms
+2025-06-18 05:42:29.211 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/NotFound/Index - 404 null text/html; charset=utf-8 151.7523ms
+2025-06-18 05:42:29.313 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-18 05:42:29.320 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 7.2281ms

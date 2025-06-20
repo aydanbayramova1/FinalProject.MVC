@@ -17,7 +17,23 @@ namespace FinalProjectMvc.Services
             _emailSettings = options.Value;
         }
 
-        public void Send(string to, string subject, string html, string from = null)
+        //public void Send(string to, string subject, string html, string from = null)
+        //{
+        //    var email = new MimeMessage();
+        //    email.From.Add(MailboxAddress.Parse(from ?? _emailSettings.From));
+        //    email.To.Add(MailboxAddress.Parse(to));
+        //    email.Subject = subject;
+        //    email.Body = new TextPart(TextFormat.Html) { Text = html };
+
+        //    // send email
+        //    using var smtp = new SmtpClient();
+        //    smtp.Connect(_emailSettings.Server, _emailSettings.Port, SecureSocketOptions.StartTls);
+        //    smtp.Authenticate(from ?? _emailSettings.From, _emailSettings.Password);
+        //    smtp.Send(email);
+        //    smtp.Disconnect(true);
+        //}
+
+        public async Task SendAsync(string to, string subject, string html, string from = null)
         {
             var email = new MimeMessage();
             email.From.Add(MailboxAddress.Parse(from ?? _emailSettings.From));
@@ -25,12 +41,19 @@ namespace FinalProjectMvc.Services
             email.Subject = subject;
             email.Body = new TextPart(TextFormat.Html) { Text = html };
 
-            // send email
             using var smtp = new SmtpClient();
-            smtp.Connect(_emailSettings.Server, _emailSettings.Port, SecureSocketOptions.StartTls);
-            smtp.Authenticate(from ?? _emailSettings.From, _emailSettings.Password);
-            smtp.Send(email);
-            smtp.Disconnect(true);
+
+            try
+            {
+                await smtp.ConnectAsync(_emailSettings.Server, _emailSettings.Port, SecureSocketOptions.StartTls);
+                await smtp.AuthenticateAsync(_emailSettings.From, _emailSettings.Password);
+                await smtp.SendAsync(email);
+                await smtp.DisconnectAsync(true);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("Email göndərilərkən xəta baş verdi.", ex);
+            }
         }
     }
 }

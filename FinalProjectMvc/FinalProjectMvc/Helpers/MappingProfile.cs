@@ -392,11 +392,9 @@ namespace FinalProjectMvc.Helpers
                 .ForMember(dest => dest.IsDrinkCategory, opt => opt.MapFrom(src => src.CategoryType.Name.ToLower() == "drink"));
 
 
-            CreateMap<Table, TableVM>().ReverseMap();
-            CreateMap<Table, TableCreateVM>().ReverseMap();
-            CreateMap<Table, TableDetailVM>()
-                .ForMember(dest => dest.Reservations,
-                           opt => opt.MapFrom(src => src.Reservations));
+            CreateMap<Table, TableVM>();
+            CreateMap<Table, TableDetailVM>();
+            CreateMap<TableCreateVM, Table>();
 
             CreateMap<Reservation, ReservationVM>();
 

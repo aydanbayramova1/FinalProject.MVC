@@ -39,8 +39,8 @@ namespace FinalProjectMvc.Services
 
         public async Task CreateAsync(TableCreateVM vm)
         {
-            var table = _mapper.Map<Table>(vm);
-            await _context.Tables.AddAsync(table);
+            var entity = _mapper.Map<Table>(vm);
+            await _context.Tables.AddAsync(entity);
             await _context.SaveChangesAsync();
         }
 

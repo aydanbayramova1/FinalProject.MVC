@@ -23,7 +23,8 @@
                     <table class="table table-bordered text-center align-middle bg-white" id="tableList">
                         <thead class="thead-dark">
                             <tr>
-                                <th style="background-color: #5c3d2e; color: #fff;">Name</th>
+                                <th style="background-color: #5c3d2e; color: #fff;">Number</th>
+                                <th style="background-color: #5c3d2e; color: #fff;">Location</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Capacity</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
                             </tr>
@@ -32,7 +33,8 @@
                             @foreach (var table in Model)
                             {
                                 <tr data-id="@table.Id">
-                                    <td>@table.Name</td>
+                                    <td>@table.Number</td>
+                                    <td>@table.Location</td>
                                     <td>@table.Capacity</td>
                                     <td>
                                         <div class="d-flex justify-content-center gap-2">
@@ -41,7 +43,6 @@
                                                 <a asp-action="Detail" asp-route-id="@table.Id" class="btn btn-info btn-sm" title="View Details">
                                                     <i class="fa-solid fa-circle-info"></i>
                                                 </a>
-                                              
                                             }
                                             @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
                                             {

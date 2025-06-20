@@ -1,0 +1,580 @@
+﻿@using FinalProjectMvc.ViewModels.Admin.Reservation
+@model ReservationCreateVM
+
+
+
+<div class="main-content">
+    <div class="form-section">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Reservation Form</h2>
+            </div>
+
+            <form asp-action="Create" method="post" id="reservationForm">
+                <div class="form-group">
+                    <label asp-for="FullName" class="label"></label>
+                    <input asp-for="FullName" class="input" placeholder="Enter your name" />
+                    <span asp-validation-for="FullName" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="label"></label>
+                    <input asp-for="Email" class="input" placeholder="Enter your email" />
+                    <span asp-validation-for="Email" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="label"></label>
+                    <input asp-for="PhoneNumber" class="input" placeholder="+994 XX XXX XX XX" />
+                    <span asp-validation-for="PhoneNumber" class="error-msg"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label asp-for="Date" class="label"></label>
+                        <input asp-for="Date" type="date" class="input" />
+                        <span asp-validation-for="Date" class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Time" class="label"></label>
+                        <input asp-for="Time" type="time" class="input" />
+                        <span asp-validation-for="Time" class="error-msg"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="GuestCount" class="label"></label>
+                    <input asp-for="GuestCount" type="number" class="input" min="1" max="15" />
+                    <span asp-validation-for="GuestCount" class="error-msg"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="label">Select Table *</label>
+                    <select asp-for="TableId" class="input">
+                        <option value="">Select table...</option>
+                        @* fill this dynamically via AJAX or controller ViewBag *@
+                    </select>
+                    <span asp-validation-for="TableId" class="error-msg"></span>
+                </div>
+
+                @* --- Add to Cart Button --- *@
+                <button type="button" id="toggleMenu" class="btn btn-primary" disabled>
+                    Select Menu Items
+                </button>
+
+                @* Cart will be dynamically inserted using JS *@
+                <div id="cartDisplay" style="display:none">
+                    <div id="cartItems"></div>
+                    <input type="hidden" name="CartItems" />
+                </div>
+
+                <button type="submit" class="btn btn-success" id="submitBtn" disabled>
+                    Complete Reservation
+                </button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="menu-section" id="menuSection">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Menu</h2>
+                <div class="category-filters">
+                    <button class="filter-btn active" onclick="filterCategory('all')">
+                        All
+                        Categories
+                    </button>
+                    <button class="filter-btn" onclick="filterCategory('hot-coffees')">
+                        Hot
+                        Coffees
+                    </button>
+                    <button class="filter-btn" onclick="filterCategory('iced-coffee')">
+                        Iced
+                        Coffees
+                    </button>
+                    <button class="filter-btn" onclick="filterCategory('tea-more')">Tea & More</button>
+                    <button class="filter-btn" onclick="filterCategory('light-bites')">
+                        Light
+                        Bites
+                    </button>
+                    <button class="filter-btn" onclick="filterCategory('desserts')">Desserts</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="menu-items">
+
+                    <div class="menu-item" data-category="hot-coffees">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">SIGNATURE ESPRESSO</h3>
+                            <span class="menu-item-price">$4.50</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Rich, bold espresso with notes of dark
+                            chocolate and caramel, expertly extracted from premium arabica beans
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active"
+                                    onclick="selectSize(this, 'espresso', 4.50)">
+                                S - $4.50
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'espresso', 5.50)">
+                                M -
+                                $5.50
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'espresso', 6.50)">
+                                L -
+                                $6.50
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('SIGNATURE ESPRESSO', 4.50, 'espresso')">
+                            + Add to
+                            Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="hot-coffees">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">VANILLA LATTE</h3>
+                            <span class="menu-item-price">$5.25</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Smooth espresso with steamed milk and premium
+                            vanilla syrup, topped with delicate microfoam art
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active"
+                                    onclick="selectSize(this, 'vanilla-latte', 5.25)">
+                                S - $5.25
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'vanilla-latte', 7.25)">
+                                M
+                                - $7.25
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'vanilla-latte', 9.25)">
+                                L
+                                - $9.25
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('VANILLA LATTE', 5.25, 'vanilla-latte')">
+                            + Add to
+                            Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="hot-coffees">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">CAPPUCCINO</h3>
+                            <span class="menu-item-price">$4.75</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Perfect balance of espresso, steamed milk, and
+                            velvety foam, dusted with cocoa powder
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active"
+                                    onclick="selectSize(this, 'cappuccino', 4.75)">
+                                S - $4.75
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'cappuccino', 6.75)">
+                                M -
+                                $6.75
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'cappuccino', 8.75)">
+                                L -
+                                $8.75
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('CAPPUCCINO', 4.75, 'cappuccino')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="hot-coffees">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">CARAMEL MACCHIATO</h3>
+                            <span class="menu-item-price">$5.75</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Espresso marked with steamed milk and vanilla,
+                            finished with rich caramel drizzle
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active"
+                                    onclick="selectSize(this, 'caramel-macchiato', 5.75)">
+                                S - $5.75
+                            </button>
+                            <button class="size-btn"
+                                    onclick="selectSize(this, 'caramel-macchiato', 7.75)">
+                                M - $7.75
+                            </button>
+                            <button class="size-btn"
+                                    onclick="selectSize(this, 'caramel-macchiato', 9.75)">
+                                L - $9.75
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('CARAMEL MACCHIATO', 5.75, 'caramel-macchiato')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="hot-coffees">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">MOCHA</h3>
+                            <span class="menu-item-price">$5.50</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Rich espresso blended with premium chocolate
+                            syrup and steamed milk, topped with whipped cream
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active" onclick="selectSize(this, 'mocha', 5.50)">
+                                S
+                                - $5.50
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'mocha', 8.00)">
+                                M -
+                                $8.00
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'mocha', 9.50)">
+                                L -
+                                $9.50
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn" onclick="addToCart('MOCHA', 5.50, 'mocha')">+ Add to Cart</button>
+                    </div>
+
+                    <div class="menu-item" data-category="hot-coffees">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">FLAT WHITE</h3>
+                            <span class="menu-item-price">$4.95</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Double shot espresso with microfoam steamed
+                            milk, creating a strong yet smooth coffee experience
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active"
+                                    onclick="selectSize(this, 'flat-white', 4.95)">
+                                S - $4.95
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'flat-white', 6.95)">
+                                M -
+                                $6.95
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'flat-white', 8.95)">
+                                L -
+                                $8.95
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('FLAT WHITE', 4.95, 'flat-white')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+
+                    <div class="menu-item" data-category="iced-coffee">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">COLD BREW</h3>
+                            <span class="menu-item-price">$4.25</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Smooth, slow-steeped coffee served over ice,
+                            delivering a naturally sweet and less acidic flavor
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active"
+                                    onclick="selectSize(this, 'cold-brew', 4.25)">
+                                S - $4.25
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'cold-brew', 5.25)">
+                                M -
+                                $5.25
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'cold-brew', 6.25)">
+                                L -
+                                $6.25
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('COLD BREW', 4.25, 'cold-brew')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="iced-coffee">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">NITRO COLD BREW</h3>
+                            <span class="menu-item-price">$5.50</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Nitrogen-infused cold brew with a creamy
+                            texture and cascading effect, served on tap
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active"
+                                    onclick="selectSize(this, 'nitro-cold-brew', 5.50)">
+                                S - $5.50
+                            </button>
+                            <button class="size-btn"
+                                    onclick="selectSize(this, 'nitro-cold-brew', 6.50)">
+                                M - $6.50
+                            </button>
+                            <button class="size-btn"
+                                    onclick="selectSize(this, 'nitro-cold-brew', 7.50)">
+                                L - $7.50
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('NITRO COLD BREW', 5.50, 'nitro-cold-brew')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="iced-coffee">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">ICED LATTE</h3>
+                            <span class="menu-item-price">$4.75</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Espresso shots poured over ice with cold milk,
+                            creating a refreshing and smooth coffee drink
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active"
+                                    onclick="selectSize(this, 'iced-latte', 4.75)">
+                                S - $4.75
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'iced-latte', 5.75)">
+                                M -
+                                $5.75
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'iced-latte', 6.75)">
+                                L -
+                                $6.75
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('ICED LATTE', 4.75, 'iced-latte')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="tea-more">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">CHAI LATTE</h3>
+                            <span class="menu-item-price">$4.50</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Spiced tea blend with cinnamon, cardamom, and
+                            ginger, mixed with steamed milk and honey
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active"
+                                    onclick="selectSize(this, 'chai-latte', 4.50)">
+                                S - $4.50
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'chai-latte', 5.50)">
+                                M -
+                                $5.50
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'chai-latte', 6.50)">
+                                L -
+                                $6.50
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('CHAI LATTE', 4.50, 'chai-latte')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="tea-more">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">GREEN TEA LATTE</h3>
+                            <span class="menu-item-price">$4.75</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Premium matcha powder whisked with steamed
+                            milk, creating a creamy and earthy flavor
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active"
+                                    onclick="selectSize(this, 'green-tea-latte', 4.75)">
+                                S - $4.75
+                            </button>
+                            <button class="size-btn"
+                                    onclick="selectSize(this, 'green-tea-latte', 5.75)">
+                                M - $5.75
+                            </button>
+                            <button class="size-btn"
+                                    onclick="selectSize(this, 'green-tea-latte', 6.75)">
+                                L - $6.75
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('GREEN TEA LATTE', 4.75, 'green-tea-latte')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="tea-more">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">HOT CHOCOLATE</h3>
+                            <span class="menu-item-price">$4.25</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Rich Belgian chocolate melted with steamed
+                            milk, topped with whipped cream and cocoa dust
+                        </p>
+                        <div class="size-options">
+                            <button class="size-btn active"
+                                    onclick="selectSize(this, 'hot-chocolate', 4.25)">
+                                S - $4.25
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'hot-chocolate', 6.25)">
+                                M
+                                - $6.25
+                            </button>
+                            <button class="size-btn" onclick="selectSize(this, 'hot-chocolate', 8.25)">
+                                L
+                                - $8.25
+                            </button>
+                        </div>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('HOT CHOCOLATE', 4.25, 'hot-chocolate')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+
+                    <div class="menu-item" data-category="light-bites">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">AVOCADO TOAST</h3>
+                            <span class="menu-item-price">$10.50</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Multigrain bread topped with smashed avocado,
+                            cherry tomatoes, feta cheese, and everything seasoning
+                        </p>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('AVOCADO TOAST', 10.50, 'avocado-toast')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="light-bites">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">GRILLED PANINI</h3>
+                            <span class="menu-item-price">$9.75</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Turkey, swiss cheese, pesto, and sun-dried
+                            tomatoes on artisan bread, grilled to perfection
+                        </p>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('GRILLED PANINI', 9.75, 'grilled-panini')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="light-bites">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">CAESAR SALAD</h3>
+                            <span class="menu-item-price">$9.25</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Crisp romaine lettuce, parmesan cheese,
+                            croutons, and house-made caesar dressing
+                        </p>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('CAESAR SALAD', 9.25, 'caesar-salad')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="light-bites">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">QUINOA BOWL</h3>
+                            <span class="menu-item-price">$10.25</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Quinoa with roasted vegetables, chickpeas,
+                            avocado, and tahini dressing
+                        </p>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('QUINOA BOWL', 10.25, 'quinoa-bowl')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="desserts">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">TIRAMISU</h3>
+                            <span class="menu-item-price">$8.50</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Classic Italian dessert with coffee-soaked
+                            ladyfingers, mascarpone, and cocoa powder
+                        </p>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('TIRAMISU', 8.50, 'tiramisu')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="desserts">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">CHEESECAKE</h3>
+                            <span class="menu-item-price">$9.95</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Creamy New York style cheesecake with graham
+                            cracker crust and berry compote
+                        </p>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('CHEESECAKE', 9.95, 'cheesecake')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="desserts">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">CHOCOLATE CAKE</h3>
+                            <span class="menu-item-price">$7.25</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Rich, moist chocolate cake with chocolate
+                            ganache and fresh berries
+                        </p>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('CHOCOLATE CAKE', 7.25, 'chocolate-cake')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="menu-item" data-category="desserts">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">BROWNIE</h3>
+                            <span class="menu-item-price">$9.95</span>
+                        </div>
+                        <p class="menu-item-description">
+                            Fudgy chocolate brownie with walnuts, served
+                            warm with vanilla ice cream
+                        </p>
+                        <button class="add-to-cart-btn"
+                                onclick="addToCart('BROWNIE', 9.95, 'brownie')">
+                            + Add to Cart
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
