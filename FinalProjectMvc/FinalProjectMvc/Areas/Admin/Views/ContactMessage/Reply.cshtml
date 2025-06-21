@@ -1,0 +1,50 @@
+﻿@model ContactMessageReplyVM
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">📧 Reply to Contact Message</h4>
+                </div>
+                <div class="card-body">
+                    <div class="bg-light p-3 rounded mb-4">
+                        <h6 class="text-muted mb-2">Original Message:</h6>
+                        <div class="border-start border-primary border-3 ps-3">
+                            <p class="mb-1"><strong>From:</strong> @Model.FirstName @Model.LastName (@Model.Email)</p>
+                            <p class="mb-0"><strong>Message:</strong> @Model.Message</p>
+                        </div>
+                    </div>
+
+                    <form asp-action="Reply" method="post">
+                        @Html.AntiForgeryToken()
+                        <input asp-for="Id" type="hidden" />
+                        <input asp-for="FirstName" type="hidden" />
+                        <input asp-for="LastName" type="hidden" />
+                        <input asp-for="Email" type="hidden" />
+                        <input asp-for="Message" type="hidden" />
+
+                        <div class="mb-4">
+                            <label asp-for="Reply" class="form-label fw-bold">Your Reply:</label>
+                            <textarea asp-for="Reply" class="form-control" rows="6"
+                                      placeholder="Write your reply here..." required></textarea>
+                            <span asp-validation-for="Reply" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-paper-plane"></i> Send Reply
+                            </button>
+                            <a href="@Url.Action("Index")" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Back to Messages
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js"></script>

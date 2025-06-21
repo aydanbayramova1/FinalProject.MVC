@@ -7,5 +7,8 @@
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Message { get; set; }
+        public string? Reply { get; set; }
+        public DateTime? ReplyDate { get; set; } 
+        public bool IsReplied { get; set; } = false; 
     }
 }

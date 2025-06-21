@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ContactMessageVM>
+﻿<!-- Views/Admin/ContactMessage/Index.cshtml - Yenilənmiş versiya -->
+@model IEnumerable<ContactMessageVM>
 
 <form id="antiForgeryForm" style="display:none;">
     @Html.AntiForgeryToken()
@@ -6,6 +7,22 @@
 
 <div class="container py-4">
     <h2 class="mb-4" style="color: #6b4f3b;">📥 Incoming Messages</h2>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
 
     <table class="table table-bordered table-hover text-center bg-white" id="messagesTable">
         <thead class="table-dark">
@@ -16,25 +33,53 @@
                 <th>Phone</th>
                 <th>Message</th>
                 <th>Date</th>
-                <th>Action</th>
+                <th>Status</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr data-id="@item.Id">
+                <tr data-id="@item.Id" class="@(item.IsReplied ? "table-success" : "")">
                     <td>@item.FirstName</td>
                     <td>@item.LastName</td>
                     <td>@item.Email</td>
                     <td>@item.Phone</td>
-                    <td>@item.Message</td>
+                    <td>
+                        <div class="message-text" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">
+                            @item.Message
+                        </div>
+                        @if (!string.IsNullOrEmpty(item.Reply))
+                        {
+                            <div class="reply-text mt-2 p-2 bg-light border-start border-primary border-3">
+                                <small class="text-muted">Reply:</small><br>
+                                <small>@item.Reply</small>
+                            </div>
+                        }
+                    </td>
                     <td>@item.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
                     <td>
-                          @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
-                          {
+                        @if (item.IsReplied)
+                        {
+                            <span class="badge bg-success">Replied</span>
+                            <br><small class="text-muted">@item.ReplyDate?.ToString("dd.MM.yyyy HH:mm")</small>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning">Pending</span>
+                        }
+                    </td>
+                    <td>
+                        @if (User.Identity.IsAuthenticated && (User.IsInRole("Admin") || User.IsInRole("SuperAdmin")))
+                        {
+                            <a href="@Url.Action("Reply", new { id = item.Id })" class="btn btn-primary btn-sm mb-1">
+                                @(item.IsReplied ? "Edit Reply" : "Reply")
+                            </a>
+                        }
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                        {
                             <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id">Delete</button>
-                           }
-                    
+                        }
                     </td>
                 </tr>
             }

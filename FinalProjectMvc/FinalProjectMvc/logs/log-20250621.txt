@@ -14136,3 +14136,1176 @@ WHERE [a].[NormalizedName] = @__normalizedName_0
 2025-06-21 08:04:28.487 -08:00 [INF] Application started. Press Ctrl+C to shut down.
 2025-06-21 08:04:28.497 -08:00 [INF] Hosting environment: Development
 2025-06-21 08:04:28.505 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-21 08:59:13.240 -08:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-21 08:59:13.314 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-21 08:59:13.318 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-21 08:59:13.319 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-06-21 08:59:13.351 -08:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-06-21 08:59:13.372 -08:00 [INF] Applying migration '20250621165846_UpdateContactMessageTable'.
+2025-06-21 08:59:13.541 -08:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [ContactMessages] ADD [IsReplied] bit NOT NULL DEFAULT CAST(0 AS bit);
+2025-06-21 08:59:13.546 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [ContactMessages] ADD [Reply] nvarchar(max) NULL;
+2025-06-21 08:59:13.547 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [ContactMessages] ADD [ReplyDate] datetime2 NULL;
+2025-06-21 08:59:13.553 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250621165846_UpdateContactMessageTable', N'8.0.16');
+2025-06-21 08:59:53.827 -08:00 [INF] Executed DbCommand (131ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 08:59:54.009 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 08:59:54.018 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 08:59:54.402 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-21 08:59:54.831 -08:00 [INF] Executed DbCommand (34ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 08:59:54.849 -08:00 [INF] Contact message cleanup completed at: "2025-06-21T08:59:54.8451247-08:00"
+2025-06-21 08:59:55.006 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-21 08:59:55.010 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-21 08:59:55.056 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-21 08:59:55.060 -08:00 [INF] Hosting environment: Development
+2025-06-21 08:59:55.064 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-21 08:59:55.803 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-21 08:59:56.125 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-06-21 08:59:56.255 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-06-21 08:59:56.301 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-06-21 08:59:56.320 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 08:59:56.357 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-06-21 08:59:56.390 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-21 08:59:56.420 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-21 08:59:56.451 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 08:59:56.553 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 08:59:56.679 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 08:59:56.742 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-21 08:59:56.806 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-21 08:59:56.837 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-21 08:59:56.971 -08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-21 08:59:57.045 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-21 08:59:57.079 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-21 08:59:57.158 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name]
+FROM [Categories] AS [c]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+2025-06-21 08:59:57.257 -08:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDate], [p].[Image], [p].[Ingredients], [p].[Name], [p].[Price], [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name], [t].[Id], [t].[CreateDate], [t].[ProductId], [t].[SizeId], [t].[Id0], [t].[CreateDate0], [t].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreateDate], [p0].[ProductId], [p0].[SizeId], [s].[Id] AS [Id0], [s].[CreateDate] AS [CreateDate0], [s].[Name]
+    FROM [ProductSizes] AS [p0]
+    INNER JOIN [Sizes] AS [s] ON [p0].[SizeId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id] DESC, [c].[Id], [c0].[Id], [t].[Id]
+2025-06-21 08:59:57.363 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-21 08:59:57.426 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-21 08:59:57.450 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-21 08:59:57.551 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-21 08:59:57.566 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-21 08:59:57.575 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-21 08:59:57.600 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-21 08:59:57.657 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-21 08:59:57.747 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-21 08:59:57.790 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 08:59:57.876 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 08:59:57.963 -08:00 [INF] Executed ViewResult - view Index executed in 1516.431ms.
+2025-06-21 08:59:58.000 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 1565.7827ms
+2025-06-21 08:59:58.020 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-21 08:59:58.042 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 2241.207ms
+2025-06-21 08:59:58.090 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 08:59:58.120 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 30.1579ms
+2025-06-21 08:59:58.152 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/products/ebc3eb35-74a4-4749-93ae-766a57a86d7f.jpg - null null
+2025-06-21 08:59:58.153 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/products/ca6cba70-da01-4d6b-9589-88baf6252603.jpg - null null
+2025-06-21 08:59:58.153 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/products/f2edc7c9-e869-43d6-bae7-42ad7a9c6061.jpg - null null
+2025-06-21 08:59:58.153 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/offerimages/59132186-4749-4096-9b22-d79c8f16b885.jpg - null null
+2025-06-21 08:59:58.153 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/products/9cea0b2e-2b98-4555-86fb-6531bb0e9e34.jpg - null null
+2025-06-21 08:59:58.154 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/offerimages/28a88bda-b661-4890-9438-3f61fde2c89e.jpg - null null
+2025-06-21 08:59:58.171 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/uploads/offerimages/85635f04-bdb8-45e0-a576-563cfc1333fe.jpg - null null
+2025-06-21 08:59:58.171 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 08:59:58.186 -08:00 [INF] The file /uploads/products/ebc3eb35-74a4-4749-93ae-766a57a86d7f.jpg was not modified
+2025-06-21 08:59:58.195 -08:00 [INF] The file /uploads/products/ca6cba70-da01-4d6b-9589-88baf6252603.jpg was not modified
+2025-06-21 08:59:58.209 -08:00 [INF] The file /uploads/products/f2edc7c9-e869-43d6-bae7-42ad7a9c6061.jpg was not modified
+2025-06-21 08:59:58.226 -08:00 [INF] The file /uploads/offerimages/59132186-4749-4096-9b22-d79c8f16b885.jpg was not modified
+2025-06-21 08:59:58.239 -08:00 [INF] The file /uploads/products/9cea0b2e-2b98-4555-86fb-6531bb0e9e34.jpg was not modified
+2025-06-21 08:59:58.254 -08:00 [INF] The file /uploads/offerimages/28a88bda-b661-4890-9438-3f61fde2c89e.jpg was not modified
+2025-06-21 08:59:58.262 -08:00 [INF] The file /uploads/offerimages/85635f04-bdb8-45e0-a576-563cfc1333fe.jpg was not modified
+2025-06-21 08:59:58.274 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/products/ebc3eb35-74a4-4749-93ae-766a57a86d7f.jpg - 304 null image/jpeg 121.4365ms
+2025-06-21 08:59:58.279 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/products/ca6cba70-da01-4d6b-9589-88baf6252603.jpg - 304 null image/jpeg 126.7791ms
+2025-06-21 08:59:58.282 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/products/f2edc7c9-e869-43d6-bae7-42ad7a9c6061.jpg - 304 null image/jpeg 129.5572ms
+2025-06-21 08:59:58.287 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/offerimages/59132186-4749-4096-9b22-d79c8f16b885.jpg - 304 null image/jpeg 134.1395ms
+2025-06-21 08:59:58.292 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/products/9cea0b2e-2b98-4555-86fb-6531bb0e9e34.jpg - 304 null image/jpeg 139.0762ms
+2025-06-21 08:59:58.298 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/offerimages/28a88bda-b661-4890-9438-3f61fde2c89e.jpg - 304 null image/jpeg 143.6903ms
+2025-06-21 08:59:58.304 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/uploads/offerimages/85635f04-bdb8-45e0-a576-563cfc1333fe.jpg - 304 null image/jpeg 132.6995ms
+2025-06-21 08:59:58.333 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 162.1137ms
+2025-06-21 09:00:03.900 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/admin - null null
+2025-06-21 09:00:03.966 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-21 09:00:03.986 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-21 09:00:04.005 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:00:04.155 -08:00 [INF] Executed ViewResult - view Index executed in 157.2279ms.
+2025-06-21 09:00:04.162 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 166.1948ms
+2025-06-21 09:00:04.171 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-21 09:00:04.178 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/admin - 200 null text/html; charset=utf-8 277.825ms
+2025-06-21 09:00:04.242 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:00:04.246 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:00:04.255 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 13.6555ms
+2025-06-21 09:00:04.286 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.4195ms
+2025-06-21 09:00:06.633 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage - null null
+2025-06-21 09:00:06.717 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:00:06.735 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:00:06.779 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:00:06.822 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+ORDER BY [c].[CreateDate] DESC
+2025-06-21 09:00:06.945 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:00:07.006 -08:00 [INF] Executed ViewResult - view Index executed in 67.3232ms.
+2025-06-21 09:00:07.014 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc) in 263.3539ms
+2025-06-21 09:00:07.023 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:00:07.029 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage - 200 null text/html; charset=utf-8 396.2458ms
+2025-06-21 09:00:07.069 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:00:07.069 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:00:07.081 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 11.8903ms
+2025-06-21 09:00:07.099 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.838ms
+2025-06-21 09:00:10.284 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/19 - null null
+2025-06-21 09:00:10.328 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:00:10.363 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:00:10.445 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:00:10.477 -08:00 [INF] Executing ViewResult, running view Reply.
+2025-06-21 09:00:10.594 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 220.3251ms
+2025-06-21 09:00:10.601 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:00:10.612 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The following sections have been defined but have not been rendered by the page at '/Areas/Admin/Views/Shared/_Layout.cshtml': 'Scripts'. To ignore an unrendered section call IgnoreSection("sectionName").
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPage.EnsureRenderedBodyOrSections()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-21 09:00:10.765 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/19 - 500 null text/html; charset=utf-8 480.3903ms
+2025-06-21 09:00:10.798 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:00:10.805 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:00:10.820 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.1899ms
+2025-06-21 09:00:10.825 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 20.1238ms
+2025-06-21 09:00:51.943 -08:00 [INF] Executed DbCommand (121ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:00:52.176 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:00:52.187 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:00:52.487 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-21 09:00:53.039 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:00:53.055 -08:00 [INF] Contact message cleanup completed at: "2025-06-21T09:00:53.0507791-08:00"
+2025-06-21 09:00:53.204 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-21 09:00:53.208 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-21 09:00:53.262 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-21 09:00:53.266 -08:00 [INF] Hosting environment: Development
+2025-06-21 09:00:53.270 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-21 09:00:53.346 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/19 - null null
+2025-06-21 09:00:53.541 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:00:53.575 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:00:53.680 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:00:53.776 -08:00 [INF] Executing ViewResult, running view Reply.
+2025-06-21 09:00:54.038 -08:00 [INF] Executed ViewResult - view Reply executed in 263.5418ms.
+2025-06-21 09:00:54.049 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 463.372ms
+2025-06-21 09:00:54.057 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:00:54.074 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/19 - 200 null text/html; charset=utf-8 730.0722ms
+2025-06-21 09:01:03.514 -08:00 [INF] Executed DbCommand (63ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:01:03.678 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:01:03.704 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:01:03.929 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-21 09:01:04.283 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:01:04.300 -08:00 [INF] Contact message cleanup completed at: "2025-06-21T09:01:04.2980434-08:00"
+2025-06-21 09:01:04.390 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-21 09:01:04.395 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-21 09:01:04.437 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-21 09:01:04.442 -08:00 [INF] Hosting environment: Development
+2025-06-21 09:01:04.447 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-21 09:01:04.821 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-21 09:01:05.008 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-21 09:01:05.025 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-21 09:01:05.050 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:01:05.212 -08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 09:01:05.301 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 09:01:05.417 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-21 09:01:05.488 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-21 09:01:05.522 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-21 09:01:05.728 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-21 09:01:05.822 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-21 09:01:05.852 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-21 09:01:05.931 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name]
+FROM [Categories] AS [c]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+2025-06-21 09:01:06.098 -08:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDate], [p].[Image], [p].[Ingredients], [p].[Name], [p].[Price], [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name], [t].[Id], [t].[CreateDate], [t].[ProductId], [t].[SizeId], [t].[Id0], [t].[CreateDate0], [t].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreateDate], [p0].[ProductId], [p0].[SizeId], [s].[Id] AS [Id0], [s].[CreateDate] AS [CreateDate0], [s].[Name]
+    FROM [ProductSizes] AS [p0]
+    INNER JOIN [Sizes] AS [s] ON [p0].[SizeId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id] DESC, [c].[Id], [c0].[Id], [t].[Id]
+2025-06-21 09:01:06.267 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-21 09:01:06.349 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-21 09:01:06.382 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-21 09:01:06.499 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-21 09:01:06.520 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-21 09:01:06.537 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-21 09:01:06.565 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-21 09:01:06.615 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-21 09:01:06.783 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-21 09:01:06.840 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:01:06.909 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:01:06.987 -08:00 [INF] Executed ViewResult - view Index executed in 1939.8288ms.
+2025-06-21 09:01:07.004 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 1967.6658ms
+2025-06-21 09:01:07.014 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-21 09:01:07.041 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 2221.4383ms
+2025-06-21 09:01:07.052 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:01:07.060 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:01:07.077 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 24.9922ms
+2025-06-21 09:01:07.143 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 83.1271ms
+2025-06-21 09:01:12.400 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/admin - null null
+2025-06-21 09:01:12.478 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-21 09:01:12.500 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-21 09:01:12.516 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:01:12.576 -08:00 [INF] Executed ViewResult - view Index executed in 68.1405ms.
+2025-06-21 09:01:12.581 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 74.0806ms
+2025-06-21 09:01:12.585 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-21 09:01:12.590 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/admin - 200 null text/html; charset=utf-8 189.4669ms
+2025-06-21 09:01:12.650 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:01:12.656 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:01:12.663 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 13.5749ms
+2025-06-21 09:01:12.695 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.9331ms
+2025-06-21 09:01:15.482 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage - null null
+2025-06-21 09:01:15.534 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:01:15.546 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:15.569 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:01:15.589 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+ORDER BY [c].[CreateDate] DESC
+2025-06-21 09:01:15.635 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:01:15.659 -08:00 [INF] Executed ViewResult - view Index executed in 24.428ms.
+2025-06-21 09:01:15.665 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc) in 111.6623ms
+2025-06-21 09:01:15.670 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:01:15.675 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage - 200 null text/html; charset=utf-8 192.9013ms
+2025-06-21 09:01:15.703 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:01:15.704 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:01:15.715 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 11.6121ms
+2025-06-21 09:01:15.732 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.0517ms
+2025-06-21 09:01:18.281 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/19 - null null
+2025-06-21 09:01:18.322 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:18.347 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:18.405 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:01:18.421 -08:00 [INF] Executing ViewResult, running view Reply.
+2025-06-21 09:01:18.470 -08:00 [INF] Executed ViewResult - view Reply executed in 50.6657ms.
+2025-06-21 09:01:18.476 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 119.8456ms
+2025-06-21 09:01:18.484 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:18.492 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/19 - 200 null text/html; charset=utf-8 210.242ms
+2025-06-21 09:01:18.534 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:01:18.534 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:01:18.554 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 19.6462ms
+2025-06-21 09:01:18.586 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.24ms
+2025-06-21 09:01:27.564 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - application/x-www-form-urlencoded 311
+2025-06-21 09:01:27.592 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:27.614 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(FinalProjectMvc.ViewModels.Admin.ContactMessage.ContactMessageReplyVM) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:27.677 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:01:27.807 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [ContactMessages] SET [IsReplied] = @p0, [Reply] = @p1, [ReplyDate] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2025-06-21 09:01:32.506 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - application/x-www-form-urlencoded 311
+2025-06-21 09:01:32.528 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:32.537 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(FinalProjectMvc.ViewModels.Admin.ContactMessage.ContactMessageReplyVM) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:32.561 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:01:32.592 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [ContactMessages] SET [ReplyDate] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2025-06-21 09:01:32.884 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - application/x-www-form-urlencoded 311
+2025-06-21 09:01:32.905 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:32.914 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(FinalProjectMvc.ViewModels.Admin.ContactMessage.ContactMessageReplyVM) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:32.930 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:01:32.949 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [ContactMessages] SET [ReplyDate] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2025-06-21 09:01:33.127 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - application/x-www-form-urlencoded 311
+2025-06-21 09:01:33.151 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:33.160 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(FinalProjectMvc.ViewModels.Admin.ContactMessage.ContactMessageReplyVM) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:33.176 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:01:33.191 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [ContactMessages] SET [ReplyDate] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2025-06-21 09:01:33.319 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - application/x-www-form-urlencoded 311
+2025-06-21 09:01:33.338 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:33.345 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(FinalProjectMvc.ViewModels.Admin.ContactMessage.ContactMessageReplyVM) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:33.361 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:01:33.377 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [ContactMessages] SET [ReplyDate] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2025-06-21 09:01:35.201 -08:00 [INF] Executing RedirectResult, redirecting to /Admin/ContactMessage.
+2025-06-21 09:01:35.210 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 2040.0526ms
+2025-06-21 09:01:35.219 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:35.225 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - 499 null null 2098.5344ms
+2025-06-21 09:01:35.276 -08:00 [INF] Executing RedirectResult, redirecting to /Admin/ContactMessage.
+2025-06-21 09:01:35.287 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 1929.9252ms
+2025-06-21 09:01:35.295 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:35.305 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - 302 0 null 1985.8043ms
+2025-06-21 09:01:35.318 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage - null null
+2025-06-21 09:01:35.351 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:01:35.360 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:35.386 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage - null null
+2025-06-21 09:01:35.387 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:01:35.411 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:01:35.425 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+ORDER BY [c].[CreateDate] DESC
+2025-06-21 09:01:35.426 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:35.442 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:01:35.454 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:01:35.460 -08:00 [INF] Executed ViewResult - view Index executed in 18.7754ms.
+2025-06-21 09:01:35.470 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+ORDER BY [c].[CreateDate] DESC
+2025-06-21 09:01:35.474 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc) in 100.7039ms
+2025-06-21 09:01:35.485 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:01:35.489 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:01:35.499 -08:00 [INF] Executed ViewResult - view Index executed in 13.7377ms.
+2025-06-21 09:01:35.500 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage - 200 null text/html; charset=utf-8 182.1169ms
+2025-06-21 09:01:35.507 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc) in 60.4153ms
+2025-06-21 09:01:35.533 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:01:35.538 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage - 200 null text/html; charset=utf-8 152.0956ms
+2025-06-21 09:01:35.557 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:01:35.562 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:01:35.574 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 12.1538ms
+2025-06-21 09:01:35.574 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.8673ms
+2025-06-21 09:01:41.472 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/19 - null null
+2025-06-21 09:01:41.491 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:41.497 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:41.511 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:01:41.527 -08:00 [INF] Executing ViewResult, running view Reply.
+2025-06-21 09:01:41.541 -08:00 [INF] Executed ViewResult - view Reply executed in 13.7259ms.
+2025-06-21 09:01:41.550 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 42.8711ms
+2025-06-21 09:01:41.560 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:41.569 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/19 - 200 null text/html; charset=utf-8 96.9517ms
+2025-06-21 09:01:41.594 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:01:41.607 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:01:41.624 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.8426ms
+2025-06-21 09:01:41.629 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 21.7976ms
+2025-06-21 09:01:45.922 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - application/x-www-form-urlencoded 310
+2025-06-21 09:01:45.947 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:45.955 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(FinalProjectMvc.ViewModels.Admin.ContactMessage.ContactMessageReplyVM) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:45.974 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:01:46.003 -08:00 [INF] Executed DbCommand (11ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [ContactMessages] SET [Reply] = @p0, [ReplyDate] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+2025-06-21 09:01:47.237 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage - null null
+2025-06-21 09:01:47.262 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:01:47.272 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:47.290 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:01:47.309 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+ORDER BY [c].[CreateDate] DESC
+2025-06-21 09:01:47.321 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:01:47.327 -08:00 [INF] Executed ViewResult - view Index executed in 5.8447ms.
+2025-06-21 09:01:47.337 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc) in 51.1772ms
+2025-06-21 09:01:47.347 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:01:47.356 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage - 200 null text/html; charset=utf-8 119.3616ms
+2025-06-21 09:01:47.389 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:01:47.401 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:01:47.422 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.9001ms
+2025-06-21 09:01:47.425 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 23.3009ms
+2025-06-21 09:01:47.830 -08:00 [INF] Executing RedirectResult, redirecting to /Admin/ContactMessage.
+2025-06-21 09:01:47.845 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 1876.0445ms
+2025-06-21 09:01:47.856 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:47.866 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - 499 null null 1943.1377ms
+2025-06-21 09:01:48.974 -08:00 [INF] Executing ViewResult, running view Reply.
+2025-06-21 09:01:48.992 -08:00 [INF] Executed ViewResult - view Reply executed in 17.9254ms.
+2025-06-21 09:01:49.007 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 21384.9656ms
+2025-06-21 09:01:49.021 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:49.030 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - 200 null text/html; charset=utf-8 21465.6121ms
+2025-06-21 09:01:50.399 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/19 - null null
+2025-06-21 09:01:50.419 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:50.429 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:50.449 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:01:50.466 -08:00 [INF] Executing ViewResult, running view Reply.
+2025-06-21 09:01:50.479 -08:00 [INF] Executed ViewResult - view Reply executed in 13.8419ms.
+2025-06-21 09:01:50.489 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 45.7302ms
+2025-06-21 09:01:50.500 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:50.508 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/19 - 200 null text/html; charset=utf-8 109.7769ms
+2025-06-21 09:01:50.539 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:01:50.552 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:01:50.571 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.8366ms
+2025-06-21 09:01:50.580 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 27.6184ms
+2025-06-21 09:01:52.695 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage - null null
+2025-06-21 09:01:52.716 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:01:52.728 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:52.747 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:01:52.766 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+ORDER BY [c].[CreateDate] DESC
+2025-06-21 09:01:52.782 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:01:52.796 -08:00 [INF] Executed ViewResult - view Index executed in 13.4284ms.
+2025-06-21 09:01:52.804 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc) in 61.7522ms
+2025-06-21 09:01:52.815 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:01:52.823 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage - 200 null text/html; charset=utf-8 127.7659ms
+2025-06-21 09:01:52.852 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:01:52.863 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:01:52.882 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.7443ms
+2025-06-21 09:01:52.890 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 27.2285ms
+2025-06-21 09:01:53.614 -08:00 [INF] Executing ViewResult, running view Reply.
+2025-06-21 09:01:53.632 -08:00 [INF] Executed ViewResult - view Reply executed in 17.9072ms.
+2025-06-21 09:01:53.644 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 21092.9633ms
+2025-06-21 09:01:53.658 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:53.665 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - 200 null text/html; charset=utf-8 21158.6267ms
+2025-06-21 09:01:53.970 -08:00 [INF] Executing ViewResult, running view Reply.
+2025-06-21 09:01:53.984 -08:00 [INF] Executed ViewResult - view Reply executed in 14.5354ms.
+2025-06-21 09:01:53.994 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 21068.2399ms
+2025-06-21 09:01:54.002 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:01:54.010 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/19 - 200 null text/html; charset=utf-8 21125.9908ms
+2025-06-21 09:01:55.462 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Delete/19 - application/json 11
+2025-06-21 09:01:55.487 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Delete (FinalProjectMvc)'
+2025-06-21 09:01:55.504 -08:00 [INF] Route matched with {area = "Admin", action = "Delete", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:01:55.531 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:01:55.611 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [ContactMessages]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-06-21 09:01:55.633 -08:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-06-21 09:01:55.637 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Delete (FinalProjectMvc) in 116.7048ms
+2025-06-21 09:01:55.642 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Delete (FinalProjectMvc)'
+2025-06-21 09:01:55.646 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Delete/19 - 200 0 null 184.5168ms
+2025-06-21 09:01:57.603 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-21 09:01:57.617 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-21 09:01:57.624 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-21 09:01:57.635 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:01:57.653 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 09:01:57.677 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 09:01:57.708 -08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-21 09:01:57.763 -08:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-21 09:01:57.803 -08:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-21 09:01:57.830 -08:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name]
+FROM [Categories] AS [c]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+2025-06-21 09:01:57.869 -08:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDate], [p].[Image], [p].[Ingredients], [p].[Name], [p].[Price], [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name], [t].[Id], [t].[CreateDate], [t].[ProductId], [t].[SizeId], [t].[Id0], [t].[CreateDate0], [t].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreateDate], [p0].[ProductId], [p0].[SizeId], [s].[Id] AS [Id0], [s].[CreateDate] AS [CreateDate0], [s].[Name]
+    FROM [ProductSizes] AS [p0]
+    INNER JOIN [Sizes] AS [s] ON [p0].[SizeId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id] DESC, [c].[Id], [c0].[Id], [t].[Id]
+2025-06-21 09:01:57.886 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-21 09:01:57.902 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-21 09:01:57.913 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-21 09:01:57.925 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-21 09:01:57.937 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-21 09:01:57.950 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-21 09:01:57.965 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-21 09:01:57.979 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:01:57.994 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:01:58.009 -08:00 [INF] Executed ViewResult - view Index executed in 374.1743ms.
+2025-06-21 09:01:58.014 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 379.5336ms
+2025-06-21 09:01:58.019 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-21 09:01:58.024 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 421.2766ms
+2025-06-21 09:01:58.084 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:01:58.092 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 7.8289ms
+2025-06-21 09:01:58.141 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:01:58.158 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.3969ms
+2025-06-21 09:02:02.939 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Contact - null null
+2025-06-21 09:02:02.964 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.ContactController.Index (FinalProjectMvc)'
+2025-06-21 09:02:02.980 -08:00 [INF] Route matched with {action = "Index", controller = "Contact", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.ContactController (FinalProjectMvc).
+2025-06-21 09:02:02.999 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:02:03.065 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Img], [c].[Title]
+FROM [ContactBanners] AS [c]
+2025-06-21 09:02:03.148 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 09:02:03.211 -08:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[CreateDate], [c].[Email], [c].[MessageDescription], [c].[MessageTitle], [c].[PhoneNumber]
+FROM [ContactUses] AS [c]
+2025-06-21 09:02:03.437 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-21 09:02:03.470 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:02:03.497 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:02:03.530 -08:00 [INF] Executed ViewResult - view Index executed in 532.1919ms.
+2025-06-21 09:02:03.540 -08:00 [INF] Executed action FinalProjectMvc.Controllers.ContactController.Index (FinalProjectMvc) in 544.7807ms
+2025-06-21 09:02:03.548 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.ContactController.Index (FinalProjectMvc)'
+2025-06-21 09:02:03.557 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Contact - 200 null text/html; charset=utf-8 617.1774ms
+2025-06-21 09:02:03.617 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:02:03.621 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:02:03.626 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 9.4716ms
+2025-06-21 09:02:03.649 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.0621ms
+2025-06-21 09:03:42.962 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Contact/Submit - application/x-www-form-urlencoded 493
+2025-06-21 09:03:42.991 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.ContactController.Submit (FinalProjectMvc)'
+2025-06-21 09:03:43.014 -08:00 [INF] Route matched with {action = "Submit", controller = "Contact", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Submit(FinalProjectMvc.ViewModels.Admin.ContactMessage.ContactPageVM) on controller FinalProjectMvc.Controllers.ContactController (FinalProjectMvc).
+2025-06-21 09:03:43.035 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:03:43.050 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Img], [c].[Title]
+FROM [ContactBanners] AS [c]
+2025-06-21 09:03:43.068 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 09:03:43.085 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[CreateDate], [c].[Email], [c].[MessageDescription], [c].[MessageTitle], [c].[PhoneNumber]
+FROM [ContactUses] AS [c]
+2025-06-21 09:03:43.113 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-21 09:03:43.133 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:03:43.151 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:03:43.170 -08:00 [INF] Executed ViewResult - view Index executed in 135.8707ms.
+2025-06-21 09:03:43.179 -08:00 [INF] Executed action FinalProjectMvc.Controllers.ContactController.Submit (FinalProjectMvc) in 151.9271ms
+2025-06-21 09:03:43.186 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.ContactController.Submit (FinalProjectMvc)'
+2025-06-21 09:03:43.194 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Contact/Submit - 200 null text/html; charset=utf-8 231.3244ms
+2025-06-21 09:03:43.252 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:03:43.252 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:03:43.270 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 18.31ms
+2025-06-21 09:03:43.299 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.8186ms
+2025-06-21 09:03:50.581 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Contact/Submit - application/x-www-form-urlencoded 493
+2025-06-21 09:03:50.603 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.ContactController.Submit (FinalProjectMvc)'
+2025-06-21 09:03:50.610 -08:00 [INF] Route matched with {action = "Submit", controller = "Contact", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Submit(FinalProjectMvc.ViewModels.Admin.ContactMessage.ContactPageVM) on controller FinalProjectMvc.Controllers.ContactController (FinalProjectMvc).
+2025-06-21 09:03:50.628 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:03:50.643 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Img], [c].[Title]
+FROM [ContactBanners] AS [c]
+2025-06-21 09:03:50.651 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 09:03:50.665 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[CreateDate], [c].[Email], [c].[MessageDescription], [c].[MessageTitle], [c].[PhoneNumber]
+FROM [ContactUses] AS [c]
+2025-06-21 09:03:50.678 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-21 09:03:50.687 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:03:50.699 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:03:50.710 -08:00 [INF] Executed ViewResult - view Index executed in 82.492ms.
+2025-06-21 09:03:50.721 -08:00 [INF] Executed action FinalProjectMvc.Controllers.ContactController.Submit (FinalProjectMvc) in 96.0137ms
+2025-06-21 09:03:50.731 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.ContactController.Submit (FinalProjectMvc)'
+2025-06-21 09:03:50.740 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Contact/Submit - 200 null text/html; charset=utf-8 159.1112ms
+2025-06-21 09:03:50.787 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:03:50.799 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:03:50.816 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.8761ms
+2025-06-21 09:03:50.826 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 26.7812ms
+2025-06-21 09:04:28.234 -08:00 [INF] Executed DbCommand (78ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:04:28.417 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:04:28.443 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:04:28.868 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-21 09:04:29.255 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:04:29.274 -08:00 [INF] Contact message cleanup completed at: "2025-06-21T09:04:29.2721619-08:00"
+2025-06-21 09:04:29.369 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-21 09:04:29.375 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-21 09:04:29.429 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-21 09:04:29.434 -08:00 [INF] Hosting environment: Development
+2025-06-21 09:04:29.439 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-21 09:04:46.954 -08:00 [INF] Executed DbCommand (73ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:04:47.119 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:04:47.134 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-21 09:04:47.379 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-21 09:04:47.754 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:04:47.770 -08:00 [INF] Contact message cleanup completed at: "2025-06-21T09:04:47.7666276-08:00"
+2025-06-21 09:04:47.876 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-21 09:04:47.882 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-21 09:04:47.921 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-21 09:04:47.926 -08:00 [INF] Hosting environment: Development
+2025-06-21 09:04:47.930 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc
+2025-06-21 09:04:48.431 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/ - null null
+2025-06-21 09:04:48.611 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-21 09:04:48.626 -08:00 [INF] Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.HomeController (FinalProjectMvc).
+2025-06-21 09:04:48.647 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:04:48.724 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Description], [s].[Img], [s].[Subtitle], [s].[Title]
+FROM [Sliders] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 09:04:48.782 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 09:04:48.900 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-21 09:04:48.958 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-21 09:04:48.992 -08:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Description], [t].[ImageUrl], [t].[OpeningTimeTitle], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [o].[Id], [o].[AboutUsId], [o].[CreateDate], [o].[DayRange], [o].[TimeRange], [a0].[Id], [a0].[AboutUsId], [a0].[CreateDate], [a0].[Description], [a0].[IconUrl], [a0].[Title]
+FROM (
+    SELECT TOP(1) [a].[Id], [a].[CreateDate], [a].[Description], [a].[ImageUrl], [a].[OpeningTimeTitle], [a].[Subtitle], [a].[Title], [a].[VideoUrl]
+    FROM [AboutUses] AS [a]
+) AS [t]
+LEFT JOIN [OpeningHours] AS [o] ON [t].[Id] = [o].[AboutUsId]
+LEFT JOIN [AboutUsItems] AS [a0] ON [t].[Id] = [a0].[AboutUsId]
+ORDER BY [t].[Id], [o].[Id]
+2025-06-21 09:04:49.211 -08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[ServiceId], [s].[Subtitle], [s].[Title], [s0].[Id], [s0].[CreateDate], [s0].[Subtitle], [s0].[Title]
+FROM [ServiceItems] AS [s]
+INNER JOIN [Services] AS [s0] ON [s].[ServiceId] = [s0].[Id]
+2025-06-21 09:04:49.302 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-21 09:04:49.349 -08:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateDate], [t].[Img], [t].[Subtitle], [t].[Title], [t].[VideoUrl], [i0].[Id], [i0].[Count], [i0].[CreateDate], [i0].[Description], [i0].[IconPath], [i0].[IntroVideoId], [i0].[Suffix]
+FROM (
+    SELECT TOP(1) [i].[Id], [i].[CreateDate], [i].[Img], [i].[Subtitle], [i].[Title], [i].[VideoUrl]
+    FROM [IntroVideos] AS [i]
+) AS [t]
+LEFT JOIN [IntroCounters] AS [i0] ON [t].[Id] = [i0].[IntroVideoId]
+ORDER BY [t].[Id]
+2025-06-21 09:04:49.461 -08:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name]
+FROM [Categories] AS [c]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+2025-06-21 09:04:49.628 -08:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CategoryId], [p].[CreateDate], [p].[Image], [p].[Ingredients], [p].[Name], [p].[Price], [c].[Id], [c].[CategoryTypeId], [c].[CreateDate], [c].[Image], [c].[Name], [c0].[Id], [c0].[CreateDate], [c0].[Name], [t].[Id], [t].[CreateDate], [t].[ProductId], [t].[SizeId], [t].[Id0], [t].[CreateDate0], [t].[Name]
+FROM [Products] AS [p]
+INNER JOIN [Categories] AS [c] ON [p].[CategoryId] = [c].[Id]
+INNER JOIN [CategoryTypes] AS [c0] ON [c].[CategoryTypeId] = [c0].[Id]
+LEFT JOIN (
+    SELECT [p0].[Id], [p0].[CreateDate], [p0].[ProductId], [p0].[SizeId], [s].[Id] AS [Id0], [s].[CreateDate] AS [CreateDate0], [s].[Name]
+    FROM [ProductSizes] AS [p0]
+    INNER JOIN [Sizes] AS [s] ON [p0].[SizeId] = [s].[Id]
+) AS [t] ON [p].[Id] = [t].[ProductId]
+ORDER BY [p].[Id] DESC, [c].[Id], [c0].[Id], [t].[Id]
+2025-06-21 09:04:49.783 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Description], [c].[Img], [c].[Title]
+FROM [Catalogs] AS [c]
+2025-06-21 09:04:49.856 -08:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2025-06-21 09:04:49.886 -08:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title], [o0].[Id], [o0].[CreateDate], [o0].[Description], [o0].[OurOfferId], [o0].[Title], [o1].[Id], [o1].[CreateDate], [o1].[ImageType], [o1].[ImageUrl], [o1].[OurOfferId]
+FROM [OurOffers] AS [o]
+LEFT JOIN [OfferItems] AS [o0] ON [o].[Id] = [o0].[OurOfferId]
+LEFT JOIN [OfferImages] AS [o1] ON [o].[Id] = [o1].[OurOfferId]
+ORDER BY [o].[Id], [o0].[Id]
+2025-06-21 09:04:49.993 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [o].[Id], [o].[CreateDate], [o].[Description], [o].[OurOfferId], [o].[Title]
+FROM [OfferItems] AS [o]
+ORDER BY [o].[Id] DESC
+2025-06-21 09:04:50.015 -08:00 [WRN] The query uses the 'First'/'FirstOrDefault' operator without 'OrderBy' and filter operators. This may lead to unpredictable results.
+2025-06-21 09:04:50.032 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[CreateDate], [o].[Description], [o].[Subtitle], [o].[Title]
+FROM [OurOffers] AS [o]
+2025-06-21 09:04:50.060 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__offer_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[CreateDate], [o].[ImageType], [o].[ImageUrl], [o].[OurOfferId]
+FROM [OfferImages] AS [o]
+WHERE [o].[OurOfferId] = @__offer_Id_0
+2025-06-21 09:04:50.122 -08:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AtmosphereNote], [a].[CreateDate], [a].[ExperienceDescription], [a].[HappyHour], [a].[HeadBaristaName], [a].[HolidayNote], [a].[HolidayStatus], [a].[Image], [a].[QualityMessage], [a].[SubTitle], [a].[TimingDescription], [a].[TimingSubtitle], [a].[TimingTitle], [a].[Title], [a].[WeekdayTime], [a].[WeekendTime]
+FROM [AboutRestaurants] AS [a]
+2025-06-21 09:04:50.263 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-21 09:04:50.299 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:04:50.399 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:04:50.511 -08:00 [INF] Executed ViewResult - view Index executed in 1862.6024ms.
+2025-06-21 09:04:50.525 -08:00 [INF] Executed action FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc) in 1888.1704ms
+2025-06-21 09:04:50.536 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.HomeController.Index (FinalProjectMvc)'
+2025-06-21 09:04:50.566 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/ - 200 null text/html; charset=utf-8 2137.2234ms
+2025-06-21 09:04:50.654 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:04:50.685 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 30.177ms
+2025-06-21 09:04:50.697 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:04:50.811 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 114.1241ms
+2025-06-21 09:04:54.060 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Contact - null null
+2025-06-21 09:04:54.086 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.ContactController.Index (FinalProjectMvc)'
+2025-06-21 09:04:54.097 -08:00 [INF] Route matched with {action = "Index", controller = "Contact", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.ContactController (FinalProjectMvc).
+2025-06-21 09:04:54.106 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:04:54.143 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Img], [c].[Title]
+FROM [ContactBanners] AS [c]
+2025-06-21 09:04:54.182 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 09:04:54.212 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[CreateDate], [c].[Email], [c].[MessageDescription], [c].[MessageTitle], [c].[PhoneNumber]
+FROM [ContactUses] AS [c]
+2025-06-21 09:04:54.332 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-21 09:04:54.342 -08:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:04:54.367 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:04:54.393 -08:00 [INF] Executed ViewResult - view Index executed in 288.7914ms.
+2025-06-21 09:04:54.405 -08:00 [INF] Executed action FinalProjectMvc.Controllers.ContactController.Index (FinalProjectMvc) in 302.5475ms
+2025-06-21 09:04:54.419 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.ContactController.Index (FinalProjectMvc)'
+2025-06-21 09:04:54.433 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Contact - 200 null text/html; charset=utf-8 373.6532ms
+2025-06-21 09:04:54.497 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:04:54.501 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:04:54.515 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 17.8858ms
+2025-06-21 09:04:54.561 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.9407ms
+2025-06-21 09:05:31.232 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Contact/Submit - application/x-www-form-urlencoded 493
+2025-06-21 09:05:31.286 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.ContactController.Submit (FinalProjectMvc)'
+2025-06-21 09:05:31.316 -08:00 [INF] Route matched with {action = "Submit", controller = "Contact", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Submit(FinalProjectMvc.ViewModels.Admin.ContactMessage.ContactPageVM) on controller FinalProjectMvc.Controllers.ContactController (FinalProjectMvc).
+2025-06-21 09:05:31.540 -08:00 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ContactMessages] ([CreateDate], [Email], [FirstName], [IsReplied], [LastName], [Message], [Phone], [Reply], [ReplyDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2025-06-21 09:05:31.602 -08:00 [INF] Executing RedirectResult, redirecting to /Contact.
+2025-06-21 09:05:31.612 -08:00 [INF] Executed action FinalProjectMvc.Controllers.ContactController.Submit (FinalProjectMvc) in 283.7824ms
+2025-06-21 09:05:31.624 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.ContactController.Submit (FinalProjectMvc)'
+2025-06-21 09:05:31.635 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Contact/Submit - 302 0 null 402.3679ms
+2025-06-21 09:05:31.645 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Contact - null null
+2025-06-21 09:05:31.691 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.ContactController.Index (FinalProjectMvc)'
+2025-06-21 09:05:31.701 -08:00 [INF] Route matched with {action = "Index", controller = "Contact", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.ContactController (FinalProjectMvc).
+2025-06-21 09:05:31.716 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:05:31.738 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Img], [c].[Title]
+FROM [ContactBanners] AS [c]
+2025-06-21 09:05:31.770 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Img], [s].[Name]
+FROM [Scrollings] AS [s]
+ORDER BY [s].[Id] DESC
+2025-06-21 09:05:31.799 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[CreateDate], [c].[Email], [c].[MessageDescription], [c].[MessageTitle], [c].[PhoneNumber]
+FROM [ContactUses] AS [c]
+2025-06-21 09:05:31.831 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CreateDate], [t].[Email]
+FROM [Topbars] AS [t]
+2025-06-21 09:05:31.859 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:05:31.882 -08:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[CreateDate], [s].[Key], [s].[Value]
+FROM [Settings] AS [s]
+2025-06-21 09:05:31.902 -08:00 [INF] Executed ViewResult - view Index executed in 186.4265ms.
+2025-06-21 09:05:31.911 -08:00 [INF] Executed action FinalProjectMvc.Controllers.ContactController.Index (FinalProjectMvc) in 195.6646ms
+2025-06-21 09:05:31.921 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.ContactController.Index (FinalProjectMvc)'
+2025-06-21 09:05:31.929 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Contact - 200 null text/html; charset=utf-8 283.6828ms
+2025-06-21 09:05:31.984 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:05:31.984 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:05:32.003 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 18.0149ms
+2025-06-21 09:05:32.029 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.1423ms
+2025-06-21 09:05:37.743 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117// - null null
+2025-06-21 09:05:37.767 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117// - 302 0 null 23.6207ms
+2025-06-21 09:05:37.779 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/NotFound/Index - null null
+2025-06-21 09:05:37.792 -08:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7117//, Response status code: 302
+2025-06-21 09:05:37.815 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-21 09:05:37.835 -08:00 [INF] Route matched with {action = "Index", controller = "NotFound", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Controllers.NotFoundController (FinalProjectMvc).
+2025-06-21 09:05:37.852 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:05:37.875 -08:00 [INF] Executed ViewResult - view Index executed in 23.9298ms.
+2025-06-21 09:05:37.886 -08:00 [INF] Executed action FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc) in 36.2976ms
+2025-06-21 09:05:37.898 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Controllers.NotFoundController.Index (FinalProjectMvc)'
+2025-06-21 09:05:37.906 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/NotFound/Index - 404 null text/html; charset=utf-8 126.6756ms
+2025-06-21 09:05:41.162 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/admin - null null
+2025-06-21 09:05:41.198 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-21 09:05:41.210 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FinalProjectMvc.Areas.Admin.Controllers.DashboardController (FinalProjectMvc).
+2025-06-21 09:05:41.230 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:05:41.284 -08:00 [INF] Executed ViewResult - view Index executed in 56.2382ms.
+2025-06-21 09:05:41.291 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc) in 64.5512ms
+2025-06-21 09:05:41.296 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.DashboardController.Index (FinalProjectMvc)'
+2025-06-21 09:05:41.301 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/admin - 200 null text/html; charset=utf-8 139.0033ms
+2025-06-21 09:05:41.338 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:05:41.338 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:05:41.361 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 22.5754ms
+2025-06-21 09:05:41.381 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 42.6561ms
+2025-06-21 09:05:46.879 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage - null null
+2025-06-21 09:05:46.913 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:05:46.928 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:05:46.958 -08:00 [INF] Executed DbCommand (8ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:05:46.988 -08:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+ORDER BY [c].[CreateDate] DESC
+2025-06-21 09:05:47.014 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:05:47.041 -08:00 [INF] Executed ViewResult - view Index executed in 27.1061ms.
+2025-06-21 09:05:47.050 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc) in 105.6745ms
+2025-06-21 09:05:47.060 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:05:47.068 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage - 200 null text/html; charset=utf-8 188.712ms
+2025-06-21 09:05:47.114 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:05:47.114 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:05:47.134 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 19.5333ms
+2025-06-21 09:05:47.160 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.0704ms
+2025-06-21 09:05:59.525 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/20 - null null
+2025-06-21 09:05:59.567 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:05:59.590 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(Int32) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:05:59.653 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:05:59.676 -08:00 [INF] Executing ViewResult, running view Reply.
+2025-06-21 09:05:59.715 -08:00 [INF] Executed ViewResult - view Reply executed in 40.5992ms.
+2025-06-21 09:05:59.723 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 118.5299ms
+2025-06-21 09:05:59.732 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:05:59.740 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage/Reply/20 - 200 null text/html; charset=utf-8 215.3538ms
+2025-06-21 09:05:59.780 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:05:59.783 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:05:59.801 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 20.2747ms
+2025-06-21 09:05:59.833 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.7216ms
+2025-06-21 09:06:27.623 -08:00 [INF] Request starting HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/20 - application/x-www-form-urlencoded 507
+2025-06-21 09:06:27.643 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:06:27.662 -08:00 [INF] Route matched with {area = "Admin", action = "Reply", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Reply(FinalProjectMvc.ViewModels.Admin.ContactMessage.ContactMessageReplyVM) on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:06:27.724 -08:00 [INF] Executed DbCommand (32ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[Id] = @__p_0
+2025-06-21 09:06:27.774 -08:00 [INF] Executed DbCommand (15ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [ContactMessages] SET [IsReplied] = @p0, [Reply] = @p1, [ReplyDate] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2025-06-21 09:06:29.955 -08:00 [INF] Executing RedirectResult, redirecting to /Admin/ContactMessage.
+2025-06-21 09:06:29.967 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc) in 2289.6068ms
+2025-06-21 09:06:29.979 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Reply (FinalProjectMvc)'
+2025-06-21 09:06:29.987 -08:00 [INF] Request finished HTTP/2 POST https://localhost:7117/Admin/ContactMessage/Reply/20 - 302 0 null 2363.7567ms
+2025-06-21 09:06:29.993 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/Admin/ContactMessage - null null
+2025-06-21 09:06:30.033 -08:00 [INF] Executing endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:06:30.041 -08:00 [INF] Route matched with {area = "Admin", action = "Index", controller = "ContactMessage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController (FinalProjectMvc).
+2025-06-21 09:06:30.069 -08:00 [INF] Executed DbCommand (9ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-21 09:06:30.091 -08:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+ORDER BY [c].[CreateDate] DESC
+2025-06-21 09:06:30.106 -08:00 [INF] Executing ViewResult, running view Index.
+2025-06-21 09:06:30.120 -08:00 [INF] Executed ViewResult - view Index executed in 13.5278ms.
+2025-06-21 09:06:30.131 -08:00 [INF] Executed action FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc) in 73.7619ms
+2025-06-21 09:06:30.139 -08:00 [INF] Executed endpoint 'FinalProjectMvc.Areas.Admin.Controllers.ContactMessageController.Index (FinalProjectMvc)'
+2025-06-21 09:06:30.147 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/Admin/ContactMessage - 200 null text/html; charset=utf-8 153.5772ms
+2025-06-21 09:06:30.191 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_vs/browserLink - null null
+2025-06-21 09:06:30.210 -08:00 [INF] Request starting HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-21 09:06:30.225 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.8964ms
+2025-06-21 09:06:30.238 -08:00 [INF] Request finished HTTP/2 GET https://localhost:7117/_framework/aspnetcore-browser-refresh.js - 200 16101 application/javascript; charset=utf-8 28.2813ms

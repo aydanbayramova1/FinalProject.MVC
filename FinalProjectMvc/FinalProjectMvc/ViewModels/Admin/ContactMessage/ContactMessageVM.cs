@@ -9,5 +9,8 @@
         public string Phone { get; set; }
         public string Message { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public string? Reply { get; set; }
+        public DateTime? ReplyDate { get; set; }
+        public bool IsReplied { get; set; }
     }
 }

@@ -520,6 +520,9 @@ namespace FinalProjectMvc.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsReplied")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -531,6 +534,12 @@ namespace FinalProjectMvc.Migrations
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Reply")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ReplyDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

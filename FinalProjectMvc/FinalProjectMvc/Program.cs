@@ -73,6 +73,7 @@ builder.Services.AddScoped<IApproachItemService, ApproachItemService>();
 builder.Services.AddScoped<ISettingService, SettingService>();
 builder.Services.AddScoped<IContactUsService, ContactUsService>();
 builder.Services.AddScoped<IContactMessageService, ContactMessageService>();
+builder.Services.AddHostedService<ContactMessageCleanupService>();
 builder.Services.AddScoped<IOurStoryService, OurStoryService>();
 builder.Services.AddScoped<IStoryItemService, StoryItemService>();
 builder.Services.AddScoped<IIntroVideoService, IntroVideoService>();
