@@ -1,0 +1,109 @@
+﻿@using FinalProjectMvc.ViewModels.Admin.Subscribe
+@model SubscribeListVM
+
+@{
+    ViewData["Title"] = "Subscribers";
+    int count = 1;
+}
+
+<form id="antiForgeryForm" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-10">
+            <div class="bg-light border rounded shadow-sm p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Newsletter Subscribers</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center align-middle bg-white" id="subscribeTable">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th style="background-color: #5c3d2e; color: #fff;">Email</th>
+                                <th style="background-color: #5c3d2e; color: #fff;">Subscribed At</th>
+                                <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Items)
+                            {
+                                <tr data-id="@item.Id">
+                                  
+                                    <td>@item.Email</td>
+                                    <td>@item.CreateDate.ToString("dd.MM.yyyy HH:mm")</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm delete-btn" data-id="@item.Id">
+                                            <i class="fas fa-trash-alt"></i> Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                count++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="noSubscribeAlert" class="alert alert-warning text-center mt-4" role="alert" style="display:@(Model.Items.Any() ? "none" : "block")">
+                    No one has subscribed to the newsletter yet.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const deleteButtons = document.querySelectorAll(".delete-btn");
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        const tableBody = document.querySelector("#subscribeTable tbody");
+        const alertBox = document.getElementById("noSubscribeAlert");
+
+        deleteButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const id = this.getAttribute("data-id");
+                const row = this.closest("tr");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This email will be unsubscribed.",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/Admin/Subscribe/Delete/${id}`, {
+                            method: "POST",
+                            headers: {
+                                'RequestVerificationToken': token,
+                                'X-Requested-With': 'XMLHttpRequest',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ id: id })
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                row.remove();
+                                Swal.fire("Deleted!", "The subscriber has been removed.", "success");
+
+                                if (tableBody.children.length === 0) {
+                                    alertBox.style.display = "block";
+                                }
+                            } else {
+                                Swal.fire("Error!", "Failed to delete subscriber.", "error");
+                            }
+                        })
+                        .catch(() => {
+                            Swal.fire("Error!", "Unexpected error occurred.", "error");
+                        });
+                    }
+                });
+            });
+        });
+    });
+</script>

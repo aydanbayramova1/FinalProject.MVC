@@ -19,5 +19,6 @@ namespace FinalProjectMvc.Services.Interfaces
         Task<List<TableVM>> GetAllTablesAsync();
         Task<List<CategoryVM>> GetAllCategoriesAsync();
         Task<List<ProductWithSizeVM>> GetLastProductsPerCategoryAsync();
+       Task<Table?> GetAvailableTableAsync(int guestCount, DateTime date, TimeSpan time);
     }
 }

@@ -14,15 +14,21 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
         private readonly ISizeService _sizeService;
+        private readonly IEmailService _emailService;
+        private readonly ISubscribeService _subscribeService;
 
         public ProductController(
             IProductService productService,
             ICategoryService categoryService,
-            ISizeService sizeService)
+            ISizeService sizeService,
+            IEmailService emailService,
+            ISubscribeService subscribeService)
         {
             _productService = productService;
             _categoryService = categoryService;
             _sizeService = sizeService;
+            _emailService = emailService;
+            _subscribeService = subscribeService;
         }
 
 
@@ -34,7 +40,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                query = query.Where(p => p.Name.Contains(search) );
+                query = query.Where(p => p.Name.Contains(search));
             }
 
             var pagedResult = query.ToPagedResult(page, pageSize);
@@ -60,6 +66,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         [HttpPost]
         [Authorize(Roles = "SuperAdmin")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProductCreateVM vm)
         {
             if (ModelState.IsValid)
@@ -67,16 +74,64 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
                 var existingProduct = await _productService.GetByNameAsync(vm.Name);
                 if (existingProduct != null)
                 {
-                   
                     vm.Categories = await _categoryService.GetSelectListAsync();
                     vm.Sizes = await _sizeService.GetSelectListAsync();
                     vm.CategoryTypesById = await _categoryService.GetCategoryTypesWithIdAsync();
                     return View(vm);
                 }
 
-                await _productService.CreateAsync(vm);
+                var createdProduct = await _productService.CreateAsync(vm);
+
+                var subscribers = await _subscribeService.GetAllAsync();
+
+
+
+                string subject = "A New Flavor Has Arrived at Caffe Luna!";
+
+                string html = $@"
+                  <div style='font-family: Arial, sans-serif;background-color: rgba(228, 204, 180, 0.2);color: #3e2723;padding: 30px;border-radius: 10px;max-width: 600px;margin: auto;box-shadow: 0 4px 12px rgba(0,0,0,0.1);'>
+
+                        <h2 style='color: #6d4c41;'>☕ A Delicious New Arrival!</h2>
+                       <p style='font-size: 18px;'>We’ve just added a brand new delight to the Caffe Luna menu: <strong>{createdProduct.Name}</strong> </p>
+                      <p style='font-size: 16px; line-height: 1.6;'>
+                             <em>{createdProduct.Ingredients}</em>
+                     </p>
+
+                    <div style='text-align: center; margin-top: 25px;'>
+                     <a href='https://wa.me/994513153684?text=Hello!%20Welcome%20to%20our%20Coffee%20Shop%20%E2%98%95%20How%20can%20we%20help%20you%3F' style='
+                        background-color: #25D366;
+                          color: white;
+                          padding: 12px 25px;
+                          text-decoration: none;
+                          border-radius: 25px;
+                          font-size: 16px;
+                          font-weight: bold;
+                                   '>
+                           Contact us on WhatsApp </a>
+                          </div>
+
+                              <p style='margin-top: 30px; font-size: 14px; color: #8d6e63;'>
+                               Come and discover your new favorite flavor at Caffe Luna 💫
+                              </p>
+
+                           <p style='margin-top: 40px; font-size: 16px;'>
+                           Best regards,<br />
+                             <strong>Aydan Bayramova</strong><br />
+                            <em>Owner, Caffe Luna</em>
+                            </p>
+                 </div>";
+
+                foreach (var subscriber in subscribers)
+                {
+                    await _emailService.SendAsync(subscriber.Email, subject, html);
+                }
+
                 return RedirectToAction(nameof(Index));
             }
+
+            vm.Categories = await _categoryService.GetSelectListAsync();
+            vm.Sizes = await _sizeService.GetSelectListAsync();
+            vm.CategoryTypesById = await _categoryService.GetCategoryTypesWithIdAsync();
             return View(vm);
         }
 

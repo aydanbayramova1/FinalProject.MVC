@@ -1,0 +1,20 @@
+﻿@model FinalProjectMvc.Models.Reservation
+
+@{
+    ViewData["Title"] = "Ödəniş Uğurludur";
+}
+
+<div class="alert alert-success">
+    <h3>Ödəniş uğurla tamamlandı 🎉</h3>
+    <p>Hörmətli <strong>@Model.FullName</strong>,</p>
+    <p>Rezervasiyanız və sifarişiniz uğurla ödənildi.</p>
+
+    <hr />
+    <h4>Rezervasiya Detalları:</h4>
+    <ul>
+        <li><strong>Tarix:</strong> @Model.Date.ToString("dd MMMM yyyy")</li>
+        <li><strong>Saat:</strong> @Model.Time.ToString(@"hh\:mm")</li>
+        <li><strong>Masa №:</strong> @Model.Table.Number (@Model.Table.Location)</li>
+    </ul>
+    <p>Əgər gəlməyəcəksinizsə, zəhmət olmasa 2 saat əvvəldən bildirin.</p>
+</div>

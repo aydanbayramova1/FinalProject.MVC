@@ -30,7 +30,7 @@ namespace FinalProjectMvc.Controllers
             var vm = new ReservationCreateVM
             {
                 Products = products,
-                Tables = tables 
+                Tables = tables
             };
 
             return View(vm);
@@ -59,7 +59,6 @@ namespace FinalProjectMvc.Controllers
 
             return RedirectToAction(nameof(Success));
         }
-
 
         [AllowAnonymous]
         public IActionResult Success()

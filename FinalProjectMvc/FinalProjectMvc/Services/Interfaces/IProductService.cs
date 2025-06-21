@@ -5,7 +5,7 @@ namespace FinalProjectMvc.Services.Interfaces
 {
     public interface IProductService
     {
-        Task CreateAsync(ProductCreateVM vm);
+        Task<Product> CreateAsync(ProductCreateVM vm);
         Task<ProductCreateVM> GetCreateVMAsync();
         Task<ProductEditVM> GetEditVMAsync(int id);
         Task EditAsync(ProductEditVM vm);

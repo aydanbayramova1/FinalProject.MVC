@@ -1342,6 +1342,26 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("StoryItems");
                 });
 
+            modelBuilder.Entity("FinalProjectMvc.Models.Subscribe", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Subscribes");
+                });
+
             modelBuilder.Entity("FinalProjectMvc.Models.Table", b =>
                 {
                     b.Property<int>("Id")

@@ -1,0 +1,53 @@
+﻿@model FinalProjectMvc.Models.Reservation
+
+@{
+    ViewData["Title"] = "Ödəniş";
+}
+
+<h2>Ödəniş Səhifəsi</h2>
+
+<div>
+    <h4>Rezervasiya Məlumatları</h4>
+    <p><strong>Ad:</strong> @Model.FullName</p>
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Tarix:</strong> @Model.Date.ToString("dd MMMM yyyy")</p>
+    <p><strong>Saat:</strong> @Model.Time.ToString(@"hh\:mm")</p>
+    <p><strong>Masa:</strong> @Model.Table.Number - @Model.Table.Location</p>
+</div>
+
+@if (Model.Order != null && Model.Order.Items.Any())
+{
+    <hr />
+    <h4>Sifariş Məlumatları</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Məhsul</th>
+                <th>Say</th>
+                <th>Qiymət</th>
+                <th>Cəmi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Order.Items)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.UnitPrice.ToString("0.00") ₼</td>
+                    <td>@(item.Quantity * item.UnitPrice).ToString("0.00") ₼</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p><strong>Toplam məbləğ:</strong> @Model.Order.TotalAmount.ToString("0.00") ₼</p>
+
+    <form asp-action="Pay" asp-controller="Payment" method="post">
+        <input type="hidden" name="reservationId" value="@Model.Id" />
+        <button type="submit" class="btn btn-success">Ödənişi Tamamla</button>
+    </form>
+}
+else
+{
+    <p>Sifariş tapılmadı.</p>
+}

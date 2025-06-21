@@ -22,7 +22,7 @@ namespace FinalProjectMvc.Services
             _env = env;
         }
 
-        public async Task CreateAsync(ProductCreateVM vm)
+        public async Task<Product> CreateAsync(ProductCreateVM vm)
         {
             bool isDuplicate = await _context.Products
                 .AnyAsync(p => p.Name.ToLower() == vm.Name.ToLower());
@@ -37,7 +37,7 @@ namespace FinalProjectMvc.Services
             }
 
             await _context.Products.AddAsync(product);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(); // product.Id burada artıq var
 
             var categoryType = await GetCategoryTypeAsync(product.CategoryId);
 
@@ -54,7 +54,10 @@ namespace FinalProjectMvc.Services
 
                 await _context.SaveChangesAsync();
             }
+
+            return product; // ✅ yeni məhsulu geri qaytar
         }
+
 
         public async Task<ProductCreateVM> GetCreateVMAsync()
         {

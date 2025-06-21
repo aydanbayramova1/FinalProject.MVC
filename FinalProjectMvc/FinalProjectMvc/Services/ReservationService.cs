@@ -61,18 +61,27 @@ namespace FinalProjectMvc.Services
                 .Include(t => t.Reservations)
                 .FirstOrDefaultAsync(t =>
                     t.Capacity == vm.GuestCount &&
-                    !t.Reservations.Any(r => r.Date == vm.Date && r.Time == vm.Time && !r.IsCanceled)
+                    !t.Reservations.Any(r =>
+                        r.Date == vm.Date &&
+                        r.Time == vm.Time &&
+                        !r.IsCanceled &&
+                        !r.IsRejected
+                    )
                 );
 
             if (table == null) return false;
 
-            var orderItems = vm.CartItems.Select(i => new OrderItem
+            List<OrderItem> orderItems = new();
+            if (vm.CartItems != null && vm.CartItems.Any())
             {
-                ProductId = i.ProductId,
-                SizeId = i.SizeId,
-                Quantity = i.Quantity,
-                UnitPrice = GetPrice(i.ProductId, i.SizeId)
-            }).ToList();
+                orderItems = vm.CartItems.Select(i => new OrderItem
+                {
+                    ProductId = i.ProductId,
+                    SizeId = i.SizeId,
+                    Quantity = i.Quantity,
+                    UnitPrice = GetPrice(i.ProductId, i.SizeId)
+                }).ToList();
+            }
 
             var reservation = new Reservation
             {
@@ -83,11 +92,13 @@ namespace FinalProjectMvc.Services
                 Time = vm.Time,
                 GuestCount = vm.GuestCount,
                 TableId = table.Id,
-                Order = new Order
-                {
-                    Items = orderItems,
-                    TotalAmount = orderItems.Sum(i => i.UnitPrice * i.Quantity)
-                }
+                Order = (vm.CartItems != null && vm.CartItems.Any())
+                    ? new Order
+                    {
+                        Items = orderItems,
+                        TotalAmount = orderItems.Sum(i => i.UnitPrice * i.Quantity)
+                    }
+                    : null
             };
 
             await _context.Reservations.AddAsync(reservation);
@@ -164,6 +175,7 @@ namespace FinalProjectMvc.Services
         {
             var reservation = await _context.Reservations
                 .Include(r => r.Order)
+                .ThenInclude(o => o.Items)
                 .FirstOrDefaultAsync(r => r.Id == id);
 
             if (reservation == null) return false;
@@ -173,9 +185,21 @@ namespace FinalProjectMvc.Services
 
             await _context.SaveChangesAsync();
 
-            string link = $"https://yoursite.com/Payment/Index?reservationId={reservation.Id}";
-            await _emailService.SendAsync(reservation.Email, "Rezervasiyanız təsdiqləndi",
-                $"<p>Rezervasiyanız təsdiqləndi. <a href='{link}'>Ödənişə keç</a></p>");
+            if (reservation.Order == null || reservation.Order.Items == null || !reservation.Order.Items.Any())
+            {
+                await _emailService.SendAsync(
+                    reservation.Email,
+                    "Rezervasiyanız təsdiqləndi",
+                    "<p>Rezervasiyanız təsdiqləndi. Sizi gözləyirik!</p>");
+            }
+            else
+            {
+                string link = $"https://yoursite.com/Payment/Index?reservationId={reservation.Id}";
+                await _emailService.SendAsync(
+                    reservation.Email,
+                    "Rezervasiyanız təsdiqləndi",
+                    $"<p>Rezervasiyanız təsdiqləndi. <a href='{link}'>Ödənişə keç</a></p>");
+            }
 
             return true;
         }
@@ -290,6 +314,24 @@ namespace FinalProjectMvc.Services
 
             return result;
         }
+        public async Task<Table?> GetAvailableTableAsync(int guestCount, DateTime date, TimeSpan time)
+        {
+            return await _context.Tables
+                .Include(t => t.Reservations)
+                .FirstOrDefaultAsync(t =>
+                    t.Capacity == guestCount && 
+                    !t.Reservations.Any(r =>  
+                        r.Date == date &&      
+                        r.Time == time &&  
+                        !r.IsCanceled &&     
+                        !r.IsRejected      
+                    )
+                );
+        }
+
+
+
+
 
     }
 }
