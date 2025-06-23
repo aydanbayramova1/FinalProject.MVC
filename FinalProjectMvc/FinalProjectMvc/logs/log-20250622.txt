@@ -1,0 +1,23 @@
+2025-06-22 21:45:41.677 -08:00 [INF] Executed DbCommand (87ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-22 21:45:41.879 -08:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-22 21:45:41.895 -08:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-06-22 21:45:42.188 -08:00 [INF] User profile is available. Using 'C:\Users\ACER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-22 21:45:42.596 -08:00 [INF] Executed DbCommand (7ms) [Parameters=[@__twoHoursAgo_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreateDate], [c].[Email], [c].[FirstName], [c].[IsReplied], [c].[LastName], [c].[Message], [c].[Phone], [c].[Reply], [c].[ReplyDate]
+FROM [ContactMessages] AS [c]
+WHERE [c].[IsReplied] = CAST(1 AS bit) AND [c].[ReplyDate] IS NOT NULL AND [c].[ReplyDate] <= @__twoHoursAgo_0
+2025-06-22 21:45:42.613 -08:00 [INF] Contact message cleanup completed at: "2025-06-22T21:45:42.6112876-08:00"
+2025-06-22 21:45:42.813 -08:00 [INF] Now listening on: https://localhost:7117
+2025-06-22 21:45:42.818 -08:00 [INF] Now listening on: http://localhost:5005
+2025-06-22 21:45:42.873 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-22 21:45:42.877 -08:00 [INF] Hosting environment: Development
+2025-06-22 21:45:42.880 -08:00 [INF] Content root path: C:\Users\ACER\Desktop\FinalProjectMvc\FinalProjectMvc\FinalProjectMvc

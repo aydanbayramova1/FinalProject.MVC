@@ -37,9 +37,8 @@ namespace FinalProjectMvc.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public async Task<IActionResult> Create(ReservationCreateVM vm)
+        public async Task<IActionResult> Create([FromBody] ReservationCreateVM vm)
         {
             if (!ModelState.IsValid)
             {
@@ -57,7 +56,7 @@ namespace FinalProjectMvc.Controllers
                 return View(vm);
             }
 
-            return RedirectToAction(nameof(Success));
+            return Ok();
         }
 
         [AllowAnonymous]

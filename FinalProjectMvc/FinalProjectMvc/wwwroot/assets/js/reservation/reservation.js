@@ -752,7 +752,6 @@ tabButtons.forEach(btn => {
 
 
 
-// Fallback QR Code libraries
 if (typeof QRCode === 'undefined') {
     console.log('Primary QRCode library failed, trying alternative...')
     const script1 = document.createElement('script')
@@ -898,76 +897,76 @@ window.updateQuantity = function (cartItemId, change) {
     updateCartDisplay()
 }
 
-window.submitForm = function (event) {
-    event.preventDefault()
+//window.submitForm = function (event) {
+//    event.preventDefault()
 
-    if (!validateForm()) {
-        return
-    }
+//    if (!validateForm()) {
+//        return
+//    }
 
-    document.getElementById("loadingModal").style.display = "flex"
+//    document.getElementById("loadingModal").style.display = "flex"
 
-    const selectedTable = tables.find((table) => table.id == document.getElementById("tableSelect").value)
-    const paymentMethod = document.querySelector('input[name="payment"]:checked').value
-    const selectedDate = document.getElementById("date").value
-    const selectedTime = document.getElementById("time").value
+//    const selectedTable = tables.find((table) => table.id == document.getElementById("tableSelect").value)
+//    const paymentMethod = document.querySelector('input[name="payment"]:checked').value
+//    const selectedDate = document.getElementById("date").value
+//    const selectedTime = document.getElementById("time").value
 
-    const conflictingReservation = existingReservations.find(res =>
-        res.date === selectedDate &&
-        res.time === selectedTime &&
-        res.tableId === selectedTable.id
-    )
+//    const conflictingReservation = existingReservations.find(res =>
+//        res.date === selectedDate &&
+//        res.time === selectedTime &&
+//        res.tableId === selectedTable.id
+//    )
 
-    if (conflictingReservation) {
-        document.getElementById("loadingModal").style.display = "none"
-        alert(`Sorry! Table ${selectedTable.name} has just been reserved for ${selectedTime} on ${selectedDate}. Please select a different table or time.`)
-        updateTableOptions()
-        return
-    }
+//    if (conflictingReservation) {
+//        document.getElementById("loadingModal").style.display = "none"
+//        alert(`Sorry! Table ${selectedTable.name} has just been reserved for ${selectedTime} on ${selectedDate}. Please select a different table or time.`)
+//        updateTableOptions()
+//        return
+//    }
 
-    const reservationData = {
-        id: generateReservationId(),
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        date: selectedDate,
-        time: selectedTime,
-        guests: document.getElementById("guests").value,
-        table: selectedTable,
-        notes: document.getElementById("notes").value,
-        paymentMethod: paymentMethod,
-        cart: cart,
-        total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
-        createdAt: new Date().toISOString(),
-    }
+//    const reservationData = {
+//        id: generateReservationId(),
+//        name: document.getElementById("name").value,
+//        email: document.getElementById("email").value,
+//        phone: document.getElementById("phone").value,
+//        date: selectedDate,
+//        time: selectedTime,
+//        guests: document.getElementById("guests").value,
+//        table: selectedTable,
+//        notes: document.getElementById("notes").value,
+//        paymentMethod: paymentMethod,
+//        cart: cart,
+//        total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+//        createdAt: new Date().toISOString(),
+//    }
 
-    setTimeout(() => {
-        existingReservations.push({
-            date: reservationData.date,
-            time: reservationData.time,
-            tableId: selectedTable.id,
-            reservationId: reservationData.id,
-            customerName: reservationData.name,
-            customerEmail: reservationData.email,
-            customerPhone: reservationData.phone,
-            createdAt: reservationData.createdAt
-        })
+//    setTimeout(() => {
+//        existingReservations.push({
+//            date: reservationData.date,
+//            time: reservationData.time,
+//            tableId: selectedTable.id,
+//            reservationId: reservationData.id,
+//            customerName: reservationData.name,
+//            customerEmail: reservationData.email,
+//            customerPhone: reservationData.phone,
+//            createdAt: reservationData.createdAt
+//        })
 
-        console.log("New reservation added:", reservationData.id)
-        console.log("Updated reservations:", existingReservations)
+//        console.log("New reservation added:", reservationData.id)
+//        console.log("Updated reservations:", existingReservations)
 
-        sendConfirmationEmail(reservationData)
-        sendConfirmationSMS(reservationData)
+//        sendConfirmationEmail(reservationData)
+//        sendConfirmationSMS(reservationData)
 
-        currentReservation = reservationData
+//        currentReservation = reservationData
 
-        document.getElementById("loadingModal").style.display = "none"
+//        document.getElementById("loadingModal").style.display = "none"
 
-        showSuccessModal(reservationData)
+//        showSuccessModal(reservationData)
 
-        resetForm()
-    }, 2000)
-}
+//        resetForm()
+//    }, 2000)
+//}
 
 window.closeModal = function () {
     document.getElementById("successModal").style.display = "none"
@@ -1087,76 +1086,76 @@ function updateCartDisplay() {
     totalPrice.textContent = `$${total.toFixed(2)}`
 }
 
-function checkFormCompletion() {
-    const name = document.getElementById("name")?.value.trim() || ""
-    const email = document.getElementById("email")?.value.trim() || ""
-    const phone = document.getElementById("phone")?.value.trim() || ""
-    const date = document.getElementById("date")?.value || ""
-    const time = document.getElementById("time")?.value || ""
-    const guests = document.getElementById("guests")?.value || ""
-    const table = document.getElementById("tableSelect")?.value || ""
+//function checkFormCompletion() {
+//    const name = document.getElementById("name")?.value.trim() || ""
+//    const email = document.getElementById("email")?.value.trim() || ""
+//    const phone = document.getElementById("phone")?.value.trim() || ""
+//    const date = document.getElementById("date")?.value || ""
+//    const time = document.getElementById("time")?.value || ""
+//    const guests = document.getElementById("guests")?.value || ""
+//    const table = document.getElementById("tableSelect")?.value || ""
 
-    const isFormComplete = name && email && phone && date && time && guests && table
+//    const isFormComplete = name && email && phone && date && time && guests && table
 
-    const toggleBtn = document.getElementById("toggleMenu")
-    const submitBtn = document.getElementById("submitBtn")
+//    const toggleBtn = document.getElementById("toggleMenu")
+//    const submitBtn = document.getElementById("submitBtn")
 
-    if (!toggleBtn || !submitBtn) return
+//    if (!toggleBtn || !submitBtn) return
 
-    console.log("Form completion check:", {
-        name: !!name,
-        email: !!email,
-        phone: !!phone,
-        date: !!date,
-        time: !!time,
-        guests: !!guests,
-        table: !!table,
-        isComplete: isFormComplete,
-    })
+//    console.log("Form completion check:", {
+//        name: !!name,
+//        email: !!email,
+//        phone: !!phone,
+//        date: !!date,
+//        time: !!time,
+//        guests: !!guests,
+//        table: !!table,
+//        isComplete: isFormComplete,
+//    })
 
-    if (isFormComplete) {
-        toggleBtn.disabled = false
-        toggleBtn.textContent = " Select Menu Items"
-        toggleBtn.style.opacity = "1"
-        toggleBtn.style.cursor = "pointer"
-        toggleBtn.style.backgroundColor = "#e4ccb4"
-        toggleBtn.style.color = "#121d23"
-        submitBtn.disabled = false
+//    if (isFormComplete) {
+//        toggleBtn.disabled = false
+//        toggleBtn.textContent = " Select Menu Items"
+//        toggleBtn.style.opacity = "1"
+//        toggleBtn.style.cursor = "pointer"
+//        toggleBtn.style.backgroundColor = "#e4ccb4"
+//        toggleBtn.style.color = "#121d23"
+//        submitBtn.disabled = false
 
-        console.log(" Form complete! Menu button enabled")
-    } else {
-        toggleBtn.disabled = true
-        toggleBtn.textContent = " Complete form first"
-        toggleBtn.style.opacity = "0.5"
-        toggleBtn.style.cursor = "not-allowed"
-        toggleBtn.style.backgroundColor = "#666"
-        toggleBtn.style.color = "#999"
-        submitBtn.disabled = true
+//        console.log(" Form complete! Menu button enabled")
+//    } else {
+//        toggleBtn.disabled = true
+//        toggleBtn.textContent = " Complete form first"
+//        toggleBtn.style.opacity = "0.5"
+//        toggleBtn.style.cursor = "not-allowed"
+//        toggleBtn.style.backgroundColor = "#666"
+//        toggleBtn.style.color = "#999"
+//        submitBtn.disabled = true
 
-        console.log("Form incomplete! Please fill all fields")
+//        console.log("Form incomplete! Please fill all fields")
 
-        if (menuVisible) {
-            const menuSection = document.getElementById("menuSection")
-            if (menuSection) {
-                menuSection.style.opacity = "0.5"
-                menuSection.style.pointerEvents = "none"
-                menuSection.classList.remove("active")
-                menuVisible = false
-            }
-        }
-    }
+//        if (menuVisible) {
+//            const menuSection = document.getElementById("menuSection")
+//            if (menuSection) {
+//                menuSection.style.opacity = "0.5"
+//                menuSection.style.pointerEvents = "none"
+//                menuSection.classList.remove("active")
+//                menuVisible = false
+//            }
+//        }
+//    }
 
-    const paymentMethod = document.querySelector('input[name="payment"]:checked')?.value || "online"
-    const paymentSection = document.getElementById("paymentSection")
+//    const paymentMethod = document.querySelector('input[name="payment"]:checked')?.value || "online"
+//    const paymentSection = document.getElementById("paymentSection")
 
-    if (paymentSection) {
-        if (paymentMethod === "online" && isFormComplete) {
-            paymentSection.style.display = "block"
-        } else {
-            paymentSection.style.display = "none"
-        }
-    }
-}
+//    if (paymentSection) {
+//        if (paymentMethod === "online" && isFormComplete) {
+//            paymentSection.style.display = "block"
+//        } else {
+//            paymentSection.style.display = "none"
+//        }
+//    }
+//}
 
 function validateDate() {
     const dateInput = document.getElementById("date")
@@ -1171,7 +1170,7 @@ function validateDate() {
     } else {
         updateTimeOptions()
         updateTableOptions()
-        checkFormCompletion()
+        //checkFormCompletion()
         return true
     }
 }
@@ -1180,7 +1179,6 @@ function updateTimeOptions() {
     const dateInput = document.getElementById("date")
     const timeInput = document.getElementById("time")
 
-    if (!dateInput || !timeInput || !dateInput.value) return
 
     const selectedDate = new Date(dateInput.value)
     const today = new Date()
@@ -1701,7 +1699,7 @@ function resetForm() {
     cart = []
     selectedPrices = {}
     updateCartDisplay()
-    checkFormCompletion()
+    //checkFormCompletion()
 
     menuVisible = false
     const menuSection = document.getElementById("menuSection")
@@ -1739,11 +1737,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (dateInput) dateInput.addEventListener("change", validateDate)
     if (timeInput) timeInput.addEventListener("change", () => {
         updateTableOptions()
-        checkFormCompletion()
+        //checkFormCompletion()
     })
     if (guestsInput) guestsInput.addEventListener("input", () => {
         updateTableOptions()
-        checkFormCompletion()
+        //checkFormCompletion()
     })
     if (tableSelect) tableSelect.addEventListener("change", checkFormCompletion)
     if (nameInput) nameInput.addEventListener("input", checkFormCompletion)
@@ -1766,7 +1764,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     updateTimeOptions()
-    checkFormCompletion()
+    //checkFormCompletion()
 
     console.log("JavaScript initialized successfully!")
     console.log("toggleMenu function available:", typeof window.toggleMenu)
