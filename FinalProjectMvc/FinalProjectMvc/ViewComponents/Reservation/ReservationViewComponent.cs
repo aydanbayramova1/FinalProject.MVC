@@ -34,10 +34,12 @@ namespace FinalProjectMvc.ViewComponents.Reservation
             {
                 Tables = await _reservationService.GetAllTablesAsync(),
                 Products = await _reservationService.GetMenuProductsAsync(),
-                Categories = categoryVMs
+                Categories = categoryVMs,
+                OpeningHours = await _reservationService.GetOpeningHoursAsync() 
             };
 
             return View(vm);
         }
+
     }
 }

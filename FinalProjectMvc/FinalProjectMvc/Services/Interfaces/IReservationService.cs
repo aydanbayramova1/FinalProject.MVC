@@ -1,5 +1,6 @@
 ﻿using FinalProjectMvc.Models;
 using FinalProjectMvc.ViewModels.Admin.Category;
+using FinalProjectMvc.ViewModels.Admin.OpeningHour;
 using FinalProjectMvc.ViewModels.Admin.Product;
 using FinalProjectMvc.ViewModels.Admin.ProductSize;
 using FinalProjectMvc.ViewModels.Admin.Reservation;
@@ -20,5 +21,6 @@ namespace FinalProjectMvc.Services.Interfaces
         Task<List<CategoryVM>> GetAllCategoriesAsync();
         Task<List<ProductWithSizeVM>> GetLastProductsPerCategoryAsync();
        Task<Table?> GetAvailableTableAsync(int guestCount, DateTime date, TimeSpan time);
+        Task<List<OpeningHourVM>> GetOpeningHoursAsync();
     }
 }

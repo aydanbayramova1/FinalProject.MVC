@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProjectMvc.Controllers
 {
+    [AllowAnonymous]
     [Authorize]
     public class ReservationController : Controller
     {
@@ -20,46 +21,39 @@ namespace FinalProjectMvc.Controllers
         {
             return View();
         }
-
-        [AllowAnonymous]
-        public async Task<IActionResult> Create()
-        {
-            var products = await _reservationService.GetMenuProductsAsync();
-            var tables = await _reservationService.GetAllTablesAsync();
-
-            var vm = new ReservationCreateVM
-            {
-                Products = products,
-                Tables = tables
-            };
-
-            return View(vm);
-        }
+ 
 
         [HttpPost]
-        [AllowAnonymous]
-        public async Task<IActionResult> Create([FromBody] ReservationCreateVM vm)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(ReservationCreateVM vm)
         {
             if (!ModelState.IsValid)
             {
                 vm.Products = await _reservationService.GetMenuProductsAsync();
                 vm.Tables = await _reservationService.GetAllTablesAsync();
+                vm.Categories = await _reservationService.GetAllCategoriesAsync();
+                vm.OpeningHours = await _reservationService.GetOpeningHoursAsync(); 
                 return View(vm);
             }
 
             var success = await _reservationService.CreateAsync(vm);
             if (!success)
             {
-                ModelState.AddModelError("", "Seçilmiş tarix və saat üçün uyğun boş masa yoxdur.");
+                ModelState.AddModelError("", "Uyğun masa tapılmadı.");
                 vm.Products = await _reservationService.GetMenuProductsAsync();
                 vm.Tables = await _reservationService.GetAllTablesAsync();
+                vm.Categories = await _reservationService.GetAllCategoriesAsync();
+                vm.OpeningHours = await _reservationService.GetOpeningHoursAsync();
                 return View(vm);
             }
 
-            return Ok();
+            return RedirectToAction("Success");
         }
 
-        [AllowAnonymous]
+
+
+
+
         public IActionResult Success()
         {
             return View();

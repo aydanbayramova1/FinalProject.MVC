@@ -1,4 +1,4 @@
-﻿@using FinalProjectMvc.ViewModels.Admin.Reservation
+﻿﻿@using FinalProjectMvc.ViewModels.Admin.Reservation
 @model ReservationCreateVM
 
 <section id="reservation-section">
@@ -7,9 +7,21 @@
             <h1 class="main-title">CAFFE LUNA</h1>
             <p class="subtitle">Make Your Reservation</p>
             <div class="schedule-info">
-                <p><strong>Opening Hours:</strong></p>
-                <p>Monday - Friday: 09:00 - 22:00</p>
-                <p>Weekend: 09:00 - 23:30</p>
+                @if (Model.OpeningHours != null && Model.OpeningHours.Any())
+                {
+                    foreach (var item in Model.OpeningHours)
+                    {
+                        <p><strong>Opening Hours:</strong></p>
+                        <p>Monday - Friday: @item.DayRange</p>
+                        <p>Weekend: @item.TimeRange</p>
+                    }
+                }
+                else
+                {
+                    <p>No opening hours available.</p>
+                }
+
+              
             </div>
         </div>
 
@@ -21,69 +33,50 @@
                     </div>
                     <div class="card-content">
                         <form id="reservationForm" method="post" asp-controller="Reservation" asp-action="Create">
+                            @Html.AntiForgeryToken()
                             <div class="form-group">
                                 <label for="name" class="label">Full Name *</label>
-                                <input type="text" id="name" name="Name" class="input" placeholder="Enter your name" required minlength="2">
-
-                                <span class="error-msg" id="nameError"></span>
+                                <input type="text" id="name" name="FullName" class="input" placeholder="Enter your name" required />
                             </div>
 
                             <div class="form-group">
                                 <label for="email" class="label">Email Address *</label>
-                                <input type="email" id="email" class="input" placeholder="Enter your email"
-                                       required>
-                                <span class="error-msg" id="emailError"></span>
+                                <input type="email" id="email" name="Email" class="input" placeholder="Enter your email" required />
                             </div>
 
                             <div class="form-group">
-                                <label for="phone" class="label"> Phone Number * (for SMS notifications)</label>
-                                <input type="tel" id="phone" class="input" placeholder="+994 XX XXX XX XX"
-                                       required>
-                                <span class="error-msg" id="phoneError"></span>
+                                <label for="phone" class="label">Phone Number *</label>
+                                <input type="tel" id="phone" name="PhoneNumber" class="input" placeholder="+994 XX XXX XX XX" required />
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="date" class="label"> Date *</label>
-                                    <input type="date" id="date" class="input" required>
-                                    <span class="error-msg" id="dateError"></span>
+                                    <label for="date" class="label">Date *</label>
+                                    <input type="date" id="date" name="Date" class="input" required />
                                 </div>
                                 <div class="form-group">
-                                    <label for="time" class="label"> Time *</label>
-                                    <input type="time" id="time" class="input" required>
-                                    <span class="error-msg" id="timeError"></span>
+                                    <label for="time" class="label">Time *</label>
+                                    <input type="time" id="time" name="Time" class="input" required />
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="guests" class="label">Number of Guests * (Max 15)</label>
-                                <input type="number" id="guests" class="input" min="1" max="15"
-                                       placeholder="How many people?" required onchange="filterTablesByGuestCount()">
-                                <span class="error-msg" id="guestsError"></span>
+                                <label for="guests" class="label">Number of Guests *</label>
+                                <input type="number" id="guests" name="GuestCount" class="input" min="1" max="15" placeholder="How many people?" required />
                             </div>
 
                             <div class="form-group">
                                 <label for="tableSelect" class="label">Select Table *</label>
-                                <select id="tableSelect" class="input" required>
-                                    <option value="">Select date, time and guests first</option>
-                                    @if (Model.Tables != null)
+                                <select id="tableSelect" name="TableId" class="input" required>
+                                    <option value="">Choose Table</option>
+                                    @foreach (var table in Model.Tables)
                                     {
-                                        foreach (var table in Model.Tables)
-                                        {
-                                            <option value="@table.Id" data-capacity="@table.Capacity">
-                                                Table @table.Number - (@table.Location) Capacity @table.Capacity
-                                            </option>
-                                        }
+                                        <option value="@table.Id" data-capacity="@table.Capacity">
+                                            Table @table.Number - (@table.Location), Capacity: @table.Capacity
+                                        </option>
                                     }
                                 </select>
-                                <span class="error-msg" id="tableError"></span>
                             </div>
-                            <div class="form-group">
-                                <label for="notes" class="label">Additional Notes</label>
-                                <textarea id="notes" class="textarea"
-                                          placeholder="Any special requests..."></textarea>
-                            </div>
-
                             <button type="button" id="toggleMenu" class="btn btn-primary btn-full" disabled>
                                 Select Menu Items (Complete form first)
                             </button>
@@ -149,7 +142,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" id="submitBtn" class="btn btn-primary btn-full" disabled>
+                            <button type="submit" id="submitBtn" class="btn btn-primary btn-full">
                                 Complete Reservation
                             </button>
                         </form>
@@ -275,26 +268,3 @@
 
 
 
-<script>
-    function filterTablesByGuestCount() {
-        var guestCount = parseInt(document.getElementById("guests").value);
-        var tableSelect = document.getElementById("tableSelect");
-        var options = tableSelect.options;
-
-        for (var i = 0; i < options.length; i++) {
-            var option = options[i];
-            var capacity = parseInt(option.getAttribute("data-capacity"));
-
-        
-            if (!capacity) continue;
-
-            if (capacity === guestCount) {
-                option.style.display = "block";
-            } else {
-                option.style.display = "none";
-            }
-        }
-
-        tableSelect.value = "";
-    }
-</script>

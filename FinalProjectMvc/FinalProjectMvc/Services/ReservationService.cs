@@ -2,6 +2,7 @@
 using FinalProjectMvc.Models;
 using FinalProjectMvc.Services.Interfaces;
 using FinalProjectMvc.ViewModels.Admin.Category;
+using FinalProjectMvc.ViewModels.Admin.OpeningHour;
 using FinalProjectMvc.ViewModels.Admin.Product;
 using FinalProjectMvc.ViewModels.Admin.ProductSize;
 using FinalProjectMvc.ViewModels.Admin.Reservation;
@@ -159,6 +160,15 @@ namespace FinalProjectMvc.Services
             }).ToList();
 
             return categoryVMs;
+        }
+        public async Task<List<OpeningHourVM>> GetOpeningHoursAsync()
+        {
+            return await _context.OpeningHours
+                .Select(x => new OpeningHourVM
+                {
+                    DayRange = x.DayRange,
+                    TimeRange = x.TimeRange
+                }).ToListAsync();
         }
         public async Task<List<TableVM>> GetAllTablesAsync()
         {

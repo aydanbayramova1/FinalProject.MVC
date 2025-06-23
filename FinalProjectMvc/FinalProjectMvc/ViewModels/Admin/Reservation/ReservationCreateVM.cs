@@ -1,10 +1,12 @@
 ﻿using FinalProjectMvc.Models;
 using FinalProjectMvc.ViewModels.Admin.Category;
 using FinalProjectMvc.ViewModels.Admin.OfferItem;
+using FinalProjectMvc.ViewModels.Admin.OpeningHour;
 using FinalProjectMvc.ViewModels.Admin.OrderItem;
 using FinalProjectMvc.ViewModels.Admin.Product;
 using FinalProjectMvc.ViewModels.Admin.ProductSize;
 using FinalProjectMvc.ViewModels.Admin.Table;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.ComponentModel.DataAnnotations;
 
 namespace FinalProjectMvc.ViewModels.Admin.Reservation
@@ -34,9 +36,14 @@ namespace FinalProjectMvc.ViewModels.Admin.Reservation
         public int TableId { get; set; }
 
         public string Notes { get; set; }
+        [BindNever]
         public List<TableVM> Tables { get; set; }
+        [BindNever]
         public List<ProductWithSizeVM> Products { get; set; }
+        [BindNever]
         public List<CategoryVM> Categories { get; set; }
         public List<OrderItemVM> CartItems { get; set; } = new();
+        public List<OpeningHourVM> OpeningHours { get; set; } = new();
+
     }
 }
