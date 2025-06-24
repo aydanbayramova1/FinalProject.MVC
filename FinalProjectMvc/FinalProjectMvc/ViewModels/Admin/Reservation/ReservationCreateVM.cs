@@ -14,36 +14,37 @@ namespace FinalProjectMvc.ViewModels.Admin.Reservation
     public class ReservationCreateVM
     {
         [Required]
-        public string FullName { get; set; }
+        [StringLength(100)]
+        public string Fullname { get; set; }
 
-        [Required, EmailAddress]
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
-        public string PhoneNumber { get; set; }
+        [Phone]
+        public string Phone { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
         [Required]
-        public TimeSpan Time { get; set; }
+        [DataType(DataType.Time)]
+        public TimeSpan TimeFrom { get; set; }
 
         [Required]
-        [Range(1, 15)]
-        public int GuestCount { get; set; }
+        [DataType(DataType.Time)]
+        public TimeSpan TimeTo { get; set; }
 
         [Required]
+        [Range(1, 100)]
+        public int Guests { get; set; }
+
+        [Required(ErrorMessage = "Please select a table.")]
         public int TableId { get; set; }
-
-        public string Notes { get; set; }
-        [BindNever]
-        public List<TableVM> Tables { get; set; }
-        [BindNever]
-        public List<ProductWithSizeVM> Products { get; set; }
-        [BindNever]
-        public List<CategoryVM> Categories { get; set; }
-        public List<OrderItemVM> CartItems { get; set; } = new();
-        public List<OpeningHourVM> OpeningHours { get; set; } = new();
+        public List<OpeningHourVM> OpeningHours { get; set; } = [];
+        public List<TableVM> Tables { get; set; } = [];
 
     }
 }

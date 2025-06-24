@@ -283,34 +283,43 @@
 
         <div class="reservation-form">
             <form id="reservationForm">
+                @Html.AntiForgeryToken()
+
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="fullname">Full Name *</label>
-                        <input type="text" id="fullname" name="fullname" required>
+                        <label asp-for="Fullname">Full Name *</label>
+                        <input asp-for="Fullname" class="form-control" required />
+                        <span asp-validation-for="Fullname" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
+                        <label asp-for="Email">Email Address *</label>
+                        <input asp-for="Email" type="email" class="form-control" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <label asp-for="Phone">Phone Number *</label>
+                        <input asp-for="Phone" class="form-control" required />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="date">Reservation Date *</label>
-                        <input type="date" id="date" name="date" required>
+                        <label asp-for="Date">Reservation Date *</label>
+                        <input asp-for="Date" type="date" class="form-control" required />
+                        <span asp-validation-for="Date" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label>Time Range *</label>
-                        <div class="time-range">
-                            <input type="time" id="timeFrom" name="timeFrom" required>
-                            <span class="time-separator">to</span>
-                            <input type="time" id="timeTo" name="timeTo" required>
+                        <div class="time-range d-flex">
+                            <input asp-for="TimeFrom" type="time" class="form-control" required />
+                            <span class="mx-2">to</span>
+                            <input asp-for="TimeTo" type="time" class="form-control" required />
                         </div>
+                        <span asp-validation-for="TimeFrom" class="text-danger"></span>
+                        <span asp-validation-for="TimeTo" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="guests">Number of Guests *</label>
-                        <input type="number" id="guests" name="guests" min="1" max="100" required placeholder="Enter guest count">
+                        <label asp-for="Guests">Number of Guests *</label>
+                        <input asp-for="Guests" type="number" min="1" max="100" class="form-control" required />
+                        <span asp-validation-for="Guests" class="text-danger"></span>
                     </div>
                 </div>
 
@@ -320,21 +329,22 @@
                         @foreach (var table in Model.Tables)
                         {
                             var inputId = $"table{table.Id}";
-                            <div class="table-option">
-                                <input type="radio" id="@inputId" name="tableId" value="@table.Id" required>
-                                <label for="@inputId" class="table-card">
+                            <div class="table-option mb-2">
+                                <input type="radio" id="@inputId" name="TableId" value="@table.Id" required />
+                                <label for="@inputId" class="table-card d-block p-2 border rounded">
                                     <div class="table-name">Table @table.Number</div>
                                     <div class="table-capacity">@table.Capacity people — @table.Location</div>
                                 </label>
                             </div>
                         }
+                        <span asp-validation-for="TableId" class="text-danger"></span>
                     </div>
                 </div>
 
-
-                <button type="submit" class="submit-button">Complete Reservation</button>
+                <button type="submit" class="btn btn-primary mt-3">Complete Reservation</button>
             </form>
         </div>
+
     </div>
 </section>
 
@@ -347,59 +357,35 @@
 
 
 
-
 <script>
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('date').setAttribute('min', today);
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('reservationForm');
 
-    document.getElementById('reservationForm').addEventListener('submit', function(e) {
-        e.preventDefault();
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault(); // saytı refresh etmə!
 
-        const formData = new FormData(this);
-        const data = {
-            fullname: formData.get('fullname'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            date: formData.get('date'),
-            timeFrom: formData.get('timeFrom'),
-            timeTo: formData.get('timeTo'),
-            guests: formData.get('guests'),
-            table: formData.get('table'),
-        };
+            const formData = new FormData(form);
 
-       
-        const reservationDate = new Date(data.date).toLocaleDateString('en-US', {
-            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+            const response = await fetch('/Reservation/CreateReservation', {
+                method: 'POST',
+                headers: {
+                    'RequestVerificationToken': token
+                },
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert("Uğurla göndərildi!");
+                form.reset();
+            } else {
+                alert(result.message || "Xəta baş verdi.");
+                console.error(result.errors);
+            }
         });
-        const tf = new Date(`2000-01-01T${data.timeFrom}`).toLocaleTimeString('en-US', {
-            hour: 'numeric', minute: '2-digit', hour12: true
-        });
-        const tt = new Date(`2000-01-01T${data.timeTo}`).toLocaleTimeString('en-US', {
-            hour: 'numeric', minute: '2-digit', hour12: true
-        });
-
-        const details = `
-            <strong>Reservation Details:</strong><br><br>
-            <strong>Name:</strong> ${data.fullname}<br>
-            <strong>Email:</strong> ${data.email}<br>
-            <strong>Phone:</strong> ${data.phone}<br>
-            <strong>Date:</strong> ${reservationDate}<br>
-            <strong>Time:</strong> ${tf} - ${tt}<br>
-            <strong>Guests:</strong> ${data.guests}<br>
-            <strong>Table:</strong> ${data.table}<br><br>
-            We will send you a confirmation email shortly. Thank you for choosing Caffe Luna!
-        `;
-
-        document.getElementById('reservationDetails').innerHTML = details;
-        document.getElementById('overlay').style.display = 'block';
-        document.getElementById('alertBox').style.display = 'block';
     });
-
-    function closeAlert() {
-        document.getElementById('overlay').style.display = 'none';
-        document.getElementById('alertBox').style.display = 'none';
-        document.getElementById('reservationForm').reset();
-    }
-
-    document.getElementById('overlay').addEventListener('click', closeAlert);
 </script>
+

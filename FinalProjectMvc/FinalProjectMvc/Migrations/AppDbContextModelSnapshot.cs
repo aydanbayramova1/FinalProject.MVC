@@ -897,71 +897,6 @@ namespace FinalProjectMvc.Migrations
                     b.ToTable("OpeningHours");
                 });
 
-            modelBuilder.Entity("FinalProjectMvc.Models.Order", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsPaid")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("ReservationId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("TotalAmount")
-                        .HasColumnType("decimal(8,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ReservationId")
-                        .IsUnique();
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("FinalProjectMvc.Models.OrderItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SizeId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("decimal(8,2)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("SizeId");
-
-                    b.ToTable("OrderItems");
-                });
-
             modelBuilder.Entity("FinalProjectMvc.Models.OurOffer", b =>
                 {
                     b.Property<int>("Id")
@@ -1101,33 +1036,28 @@ namespace FinalProjectMvc.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("Fullname")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("GuestCount")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsCanceled")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsPaid")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsRejected")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("PhoneNumber")
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<int>("TableId")
                         .HasColumnType("int");
 
-                    b.Property<TimeSpan>("Time")
+                    b.Property<TimeSpan>("TimeFrom")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("TimeTo")
                         .HasColumnType("time");
 
                     b.HasKey("Id");
@@ -1735,44 +1665,6 @@ namespace FinalProjectMvc.Migrations
                     b.Navigation("AboutUs");
                 });
 
-            modelBuilder.Entity("FinalProjectMvc.Models.Order", b =>
-                {
-                    b.HasOne("FinalProjectMvc.Models.Reservation", "Reservation")
-                        .WithOne("Order")
-                        .HasForeignKey("FinalProjectMvc.Models.Order", "ReservationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Reservation");
-                });
-
-            modelBuilder.Entity("FinalProjectMvc.Models.OrderItem", b =>
-                {
-                    b.HasOne("FinalProjectMvc.Models.Order", "Order")
-                        .WithMany("Items")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FinalProjectMvc.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FinalProjectMvc.Models.Size", "Size")
-                        .WithMany()
-                        .HasForeignKey("SizeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Order");
-
-                    b.Navigation("Product");
-
-                    b.Navigation("Size");
-                });
-
             modelBuilder.Entity("FinalProjectMvc.Models.Product", b =>
                 {
                     b.HasOne("FinalProjectMvc.Models.Category", "Category")
@@ -1808,7 +1700,7 @@ namespace FinalProjectMvc.Migrations
                     b.HasOne("FinalProjectMvc.Models.Table", "Table")
                         .WithMany("Reservations")
                         .HasForeignKey("TableId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Table");
@@ -1924,11 +1816,6 @@ namespace FinalProjectMvc.Migrations
                     b.Navigation("MenuProductSizes");
                 });
 
-            modelBuilder.Entity("FinalProjectMvc.Models.Order", b =>
-                {
-                    b.Navigation("Items");
-                });
-
             modelBuilder.Entity("FinalProjectMvc.Models.OurOffer", b =>
                 {
                     b.Navigation("OfferImages");
@@ -1944,11 +1831,6 @@ namespace FinalProjectMvc.Migrations
             modelBuilder.Entity("FinalProjectMvc.Models.Product", b =>
                 {
                     b.Navigation("ProductSizes");
-                });
-
-            modelBuilder.Entity("FinalProjectMvc.Models.Reservation", b =>
-                {
-                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("FinalProjectMvc.Models.Service", b =>

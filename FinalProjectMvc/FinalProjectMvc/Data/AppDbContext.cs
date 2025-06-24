@@ -50,8 +50,6 @@ namespace FinalProjectMvc.Data
         public DbSet<MenuProductSize> MenuProductSizes { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Table> Tables { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
 
 
@@ -101,6 +99,13 @@ namespace FinalProjectMvc.Data
             .HasOne(c => c.CategoryType)
             .WithMany(ct => ct.Categories)
             .HasForeignKey(c => c.CategoryTypeId);
+
+
+            modelBuilder.Entity<Reservation>()
+      .HasOne(r => r.Table)
+      .WithMany(t => t.Reservations)
+      .HasForeignKey(r => r.TableId)
+      .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

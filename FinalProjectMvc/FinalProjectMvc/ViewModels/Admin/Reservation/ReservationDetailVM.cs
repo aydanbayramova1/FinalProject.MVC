@@ -1,4 +1,5 @@
-﻿using FinalProjectMvc.Models;
+﻿using FinalProjectMvc.Helpers.Enums;
+using FinalProjectMvc.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace FinalProjectMvc.ViewModels.Admin.Reservation
@@ -6,23 +7,18 @@ namespace FinalProjectMvc.ViewModels.Admin.Reservation
     public class ReservationDetailVM
     {
         public int Id { get; set; }
-        public string FullName { get; set; }
+        public string Fullname { get; set; }
         public string Email { get; set; }
-        public string PhoneNumber { get; set; }
-
+        public string Phone { get; set; }
         public DateTime Date { get; set; }
-        public TimeSpan Time { get; set; }
-
+        public TimeSpan TimeFrom { get; set; }
+        public TimeSpan TimeTo { get; set; }
         public int GuestCount { get; set; }
+        public int TableId { get; set; }
+        public string TableNumber { get; set; }
+        public int TableCapacity { get; set; }
         public string TableLocation { get; set; }
-        public int TableNumber { get; set; }
-
-        public bool IsConfirmed { get; set; }
-        public bool IsRejected { get; set; }
-        public bool IsCanceled { get; set; }
-        public bool IsPaid { get; set; }
-
-        public decimal TotalAmount { get; set; }
-        public List<ReservationOrderItemVM> OrderItems { get; set; }
+        public ReservationStatus Status { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

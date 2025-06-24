@@ -1,33 +1,30 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using FinalProjectMvc.Helpers.Enums;
 
 namespace FinalProjectMvc.Models
 {
     public class Reservation : BaseEntity
     {
         [Required]
-        public string FullName { get; set; }
-
-        [Required, EmailAddress]
-        public string Email { get; set; }
-
+        [MaxLength(100)]
+        public string Fullname { get; set; }
         [Required]
-        public string PhoneNumber { get; set; }
-
+        [EmailAddress]
+        public string Email { get; set; }
+        [Required]
+        [Phone]
+        public string Phone { get; set; }
         [Required]
         public DateTime Date { get; set; }
-
         [Required]
-        public TimeSpan Time { get; set; }
-
+        public TimeSpan TimeFrom { get; set; }
         [Required]
+        public TimeSpan TimeTo { get; set; }
+        [Required]
+        [Range(1, 100)]
         public int GuestCount { get; set; }
-
         public int TableId { get; set; }
         public Table Table { get; set; }
-        public bool IsConfirmed { get; set; } = false;
-        public bool IsRejected { get; set; } = false;
-        public bool IsCanceled { get; set; } = false;
-        public bool IsPaid { get; set; } = false;
-        public Order? Order { get; set; }
+        public ReservationStatus Status { get; set; } = ReservationStatus.Pending;
     }
 }

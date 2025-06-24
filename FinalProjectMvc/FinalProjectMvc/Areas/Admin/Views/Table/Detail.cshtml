@@ -21,7 +21,7 @@
                             @foreach (var reservation in Model.Reservations)
                             {
                                 <li class="list-group-item">
-                                    <strong>@reservation.FullName</strong> - @reservation.Date.ToString("dd MMM yyyy, HH:mm")
+                                    <strong>@reservation.Fullname</strong> - @reservation.Date.ToString("dd MMM yyyy, HH:mm")
                                 </li>
                             }
                         </ul>

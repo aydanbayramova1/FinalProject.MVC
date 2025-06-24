@@ -21,7 +21,7 @@
                                 <th style="background-color: #5c3d2e; color: #fff;">Date</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Time</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Guests</th>
-                                <th style="background-color: #5c3d2e; color: #fff;">Location</th>
+                                <th style="background-color: #5c3d2e; color: #fff;">Table Info</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Status</th>
                                 <th style="background-color: #5c3d2e; color: #fff;">Actions</th>
                             </tr>
@@ -30,11 +30,11 @@
                             @foreach (var item in Model)
                             {
                                 <tr data-id="@item.Id">
-                                    <td>@item.FullName</td>
+                                    <td>@item.Fullname</td>
                                     <td>@item.Date.ToString("dd MMM yyyy")</td>
-                                    <td>@item.Time.ToString(@"hh\:mm")</td>
+                                    <td>@item.TimeFrom.ToString(@"hh\:mm") - @item.TimeTo.ToString(@"hh\:mm")</td>
                                     <td>@item.GuestCount</td>
-                                    <td>@item.TableLocation</td>
+                                    <td>@item.TableInfo</td>
                                     <td>
                                         @if (item.IsRejected)
                                         {

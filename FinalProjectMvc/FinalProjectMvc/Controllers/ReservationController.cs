@@ -11,52 +11,67 @@ namespace FinalProjectMvc.Controllers
     public class ReservationController : Controller
     {
         private readonly IReservationService _reservationService;
+        private readonly ITableService _tableService;
+        private readonly IOpeningHourService _openingHourService;
 
-        public ReservationController(IReservationService reservationService)
+        public ReservationController(IReservationService reservationService, ITableService tableService, IOpeningHourService openingHourService)
         {
             _reservationService = reservationService;
+            _tableService = tableService;
+            _openingHourService = openingHourService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var model = new ReservationCreateVM
+            {
+                //OpeningHours = await _openingHourService.GetAsync(),
+                Tables = await _tableService.GetAllAsync() 
+            };
+            return View(model);
         }
- 
+
+        [HttpPost]
+        public async Task<JsonResult> GetAvailableTables(DateTime date, string timeFrom, string timeTo, int guests)
+        {
+            if (TimeSpan.TryParse(timeFrom, out var fromTime) && TimeSpan.TryParse(timeTo, out var toTime))
+            {
+                var tables = await _reservationService.GetAvailableTablesAsync(date, fromTime, toTime, guests);
+                return Json(tables.Select(t => new
+                {
+                    id = t.Id,
+                    number = t.Number,
+                    capacity = t.Capacity,
+                    location = t.Location
+                }));
+            }
+            return Json(new List<object>());
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ReservationCreateVM vm)
+        public async Task<JsonResult> CreateReservation(ReservationCreateVM model)
         {
             if (!ModelState.IsValid)
             {
-                vm.Products = await _reservationService.GetMenuProductsAsync();
-                vm.Tables = await _reservationService.GetAllTablesAsync();
-                vm.Categories = await _reservationService.GetAllCategoriesAsync();
-                vm.OpeningHours = await _reservationService.GetOpeningHoursAsync(); 
-                return View(vm);
+                var errors = ModelState.Values.SelectMany(v => v.Errors)
+                                              .Select(e => e.ErrorMessage)
+                                              .ToList();
+                return Json(new { success = false, message = "Validation failed", errors });
             }
 
-            var success = await _reservationService.CreateAsync(vm);
-            if (!success)
+            var result = await _reservationService.CreateReservationAsync(model);
+
+            if (result)
             {
-                ModelState.AddModelError("", "Uyğun masa tapılmadı.");
-                vm.Products = await _reservationService.GetMenuProductsAsync();
-                vm.Tables = await _reservationService.GetAllTablesAsync();
-                vm.Categories = await _reservationService.GetAllCategoriesAsync();
-                vm.OpeningHours = await _reservationService.GetOpeningHoursAsync();
-                return View(vm);
+                return Json(new { success = true });
             }
-
-            return RedirectToAction("Success");
+            else
+            {
+                return Json(new { success = false, message = "Masa uyğun deyil və ya məşğuldur." });
+            }
         }
 
 
-
-
-
-        public IActionResult Success()
-        {
-            return View();
-        }
     }
 }

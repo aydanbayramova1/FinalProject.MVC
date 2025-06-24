@@ -1,12 +1,9 @@
 ﻿using FinalProjectMvc.Data;
+using FinalProjectMvc.Helpers.Enums;
 using FinalProjectMvc.Models;
 using FinalProjectMvc.Services.Interfaces;
-using FinalProjectMvc.ViewModels.Admin.Category;
 using FinalProjectMvc.ViewModels.Admin.OpeningHour;
-using FinalProjectMvc.ViewModels.Admin.Product;
-using FinalProjectMvc.ViewModels.Admin.ProductSize;
 using FinalProjectMvc.ViewModels.Admin.Reservation;
-using FinalProjectMvc.ViewModels.Admin.Size;
 using FinalProjectMvc.ViewModels.Admin.Table;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,152 +20,155 @@ namespace FinalProjectMvc.Services
             _emailService = emailService;
         }
 
-        public async Task<List<ReservationVM>> GetAllAsync()
-        {
-            var reservations = await _context.Reservations
-                .Include(r => r.Table)
-                .Include(r => r.Order)
-                .ToListAsync();
-
-            return reservations.Select(r => new ReservationVM
-            {
-                Id = r.Id,
-                FullName = r.FullName,
-                Email = r.Email,
-                PhoneNumber = r.PhoneNumber,
-                Date = r.Date,
-                Time = r.Time,
-                GuestCount = r.GuestCount,
-                TableNumber = r.Table.Number.ToString(),
-                IsConfirmed = r.IsConfirmed,
-                IsRejected = r.IsRejected,
-                IsPaid = r.IsPaid
-            }).ToList();
-        }
-
-        public async Task<Reservation> GetByIdAsync(int id)
+        public async Task<List<ReservationVM>> GetAllReservationsAsync()
         {
             return await _context.Reservations
                 .Include(r => r.Table)
-                .Include(r => r.Order)
-                    .ThenInclude(o => o.Items)
-                        .ThenInclude(i => i.Product)
-                .FirstOrDefaultAsync(r => r.Id == id);
-        }
-
-        public async Task<bool> CreateAsync(ReservationCreateVM vm)
-        {
-            var table = await _context.Tables
-                .Include(t => t.Reservations)
-                .FirstOrDefaultAsync(t =>
-                    t.Capacity == vm.GuestCount &&
-                    !t.Reservations.Any(r =>
-                        r.Date == vm.Date &&
-                        r.Time == vm.Time &&
-                        !r.IsCanceled &&
-                        !r.IsRejected
-                    )
-                );
-
-            if (table == null) return false;
-
-            List<OrderItem> orderItems = new();
-            if (vm.CartItems != null && vm.CartItems.Any())
-            {
-                orderItems = vm.CartItems.Select(i => new OrderItem
+                .Select(r => new ReservationVM
                 {
-                    ProductId = i.ProductId,
-                    SizeId = i.SizeId,
-                    Quantity = i.Quantity,
-                    UnitPrice = GetPrice(i.ProductId, i.SizeId)
-                }).ToList();
-            }
+                    Id = r.Id,
+                    Fullname = r.Fullname,
+                    Email = r.Email,
+                    Phone = r.Phone,
+                    Date = r.Date,
+                    TimeFrom = r.TimeFrom,
+                    TimeTo = r.TimeTo,
+                    GuestCount = r.GuestCount,
+                    TableInfo = $"Table {r.Table.Number} ({r.Table.Location}) - {r.Table.Capacity} seats",
+                    Status = r.Status
+                })
+                .OrderByDescending(r => r.Date)
+                .ToListAsync();
+        }
 
-            var reservation = new Reservation
+        public async Task<ReservationDetailVM> GetReservationByIdAsync(int id)
+        {
+            var reservation = await _context.Reservations
+                .Include(r => r.Table)
+                .FirstOrDefaultAsync(r => r.Id == id);
+
+            if (reservation == null) return null;
+
+            return new ReservationDetailVM
             {
-                FullName = vm.FullName,
-                Email = vm.Email,
-                PhoneNumber = vm.PhoneNumber,
-                Date = vm.Date,
-                Time = vm.Time,
-                GuestCount = vm.GuestCount,
-                TableId = table.Id,
-                Order = (vm.CartItems != null && vm.CartItems.Any())
-                    ? new Order
-                    {
-                        Items = orderItems,
-                        TotalAmount = orderItems.Sum(i => i.UnitPrice * i.Quantity)
-                    }
-                    : null
+                Id = reservation.Id,
+                Fullname = reservation.Fullname,
+                Email = reservation.Email,
+                Phone = reservation.Phone,
+                Date = reservation.Date,
+                TimeFrom = reservation.TimeFrom,
+                TimeTo = reservation.TimeTo,
+                GuestCount = reservation.GuestCount,
+                TableId = reservation.TableId,
+                TableNumber = reservation.Table.Number.ToString(),
+                TableCapacity = reservation.Table.Capacity,
+                TableLocation = reservation.Table.Location,
+                Status = reservation.Status,
+                CreatedAt = reservation.CreateDate
             };
-
-            await _context.Reservations.AddAsync(reservation);
-            await _context.SaveChangesAsync();
-            return true;
         }
 
-        private decimal GetPrice(int productId, int sizeId)
+        public async Task<bool> CreateReservationAsync(ReservationCreateVM model)
         {
-            var product = _context.Products.FirstOrDefault(p => p.Id == productId);
-            return product?.Price ?? 0; 
+            try
+            {
+                if (!await IsTableAvailableAsync(model.TableId, model.Date, model.TimeFrom, model.TimeTo))
+                    return false;
+
+                var table = await _context.Tables.FirstOrDefaultAsync(t => t.Id == model.TableId);
+                if (table == null || table.Capacity < model.Guests)
+                    return false;
+
+                var reservation = new Reservation
+                {
+                    Fullname = model.Fullname,
+                    Email = model.Email,
+                    Phone = model.Phone,
+                    Date = model.Date,
+                    TimeFrom = model.TimeFrom,
+                    TimeTo = model.TimeTo,
+                    GuestCount = model.Guests,
+                    TableId = model.TableId,
+                    Status = ReservationStatus.Pending,
+                    CreateDate = DateTime.UtcNow
+                };
+
+                _context.Reservations.Add(reservation);
+                await _context.SaveChangesAsync();
+
+                await SendReservationConfirmationEmailAsync(reservation);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public async Task<List<ProductWithSizeVM>> GetMenuProductsAsync()
+        public async Task<bool> UpdateReservationStatusAsync(int id, ReservationStatus status)
         {
-            var products = await _context.Products
-                .Include(p => p.Category).ThenInclude(c => c.CategoryType)
-                .Include(p => p.ProductSizes).ThenInclude(ps => ps.Size)
-                .OrderByDescending(p => p.CreateDate)
+            try
+            {
+                var reservation = await _context.Reservations.Include(r => r.Table).FirstOrDefaultAsync(r => r.Id == id);
+                if (reservation == null) return false;
+
+                var oldStatus = reservation.Status;
+                reservation.Status = status;
+
+                await _context.SaveChangesAsync();
+
+                if (oldStatus != status)
+                    await SendStatusChangeEmailAsync(reservation, status);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> DeleteReservationAsync(int id)
+        {
+            try
+            {
+                var reservation = await _context.Reservations.FindAsync(id);
+                if (reservation == null) return false;
+
+                _context.Reservations.Remove(reservation);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<List<Table>> GetAvailableTablesAsync(DateTime date, TimeSpan timeFrom, TimeSpan timeTo, int guestCount)
+        {
+            var unavailableTableIds = await _context.Reservations
+                .Where(r => r.Date == date &&
+                            r.Status != ReservationStatus.Rejected &&
+                            (r.TimeFrom < timeTo && r.TimeTo > timeFrom))
+                .Select(r => r.TableId)
                 .ToListAsync();
 
-            var grouped = products
-                .GroupBy(p => p.CategoryId)
-                .Select(g => g.Take(10))
-                .SelectMany(p => p)
-                .ToList();
-
-            var result = grouped.Select(p => new ProductWithSizeVM
-            {
-                Id = p.Id,
-                Name = p.Name,
-                Ingredients = p.Ingredients,
-                Price = p.Price,
-                CategorySlug = p.Category.Name.ToLower().Replace(" ", "-"),
-                CategoryName = p.Category.Name,
-                CategoryTypeId = p.Category.CategoryTypeId,
-                Sizes = p.Category.CategoryType.Name == "Drink"
-                    ? p.ProductSizes.Select(ps => new SizeVM
-                    {
-                        Id = ps.SizeId,
-                        Name = ps.Size.Name,
-                    }).ToList()
-                    : null
-            }).ToList();
-
-            return result;
+            return await _context.Tables
+                .Where(t => !unavailableTableIds.Contains(t.Id) && t.Capacity >= guestCount)
+                .ToListAsync();
         }
 
-
-        public async Task<List<CategoryVM>> GetAllCategoriesAsync()
+        public async Task<bool> IsTableAvailableAsync(int tableId, DateTime date, TimeSpan timeFrom, TimeSpan timeTo, int? excludeReservationId = null)
         {
-            var categories = await _context.Categories.ToListAsync();
-
-            var categoryVMs = categories.Select(c => new CategoryVM
-            {
-                Id = c.Id,
-                Name = c.Name
-            }).ToList();
-
-            return categoryVMs;
-        }
-        public async Task<List<OpeningHourVM>> GetOpeningHoursAsync()
-        {
-            return await _context.OpeningHours
-                .Select(x => new OpeningHourVM
-                {
-                    DayRange = x.DayRange,
-                    TimeRange = x.TimeRange
-                }).ToListAsync();
+            return !await _context.Reservations
+                .AnyAsync(r =>
+                    r.TableId == tableId &&
+                    r.Date == date &&
+                    r.Status != ReservationStatus.Rejected &&
+                    (excludeReservationId == null || r.Id != excludeReservationId) &&
+                    r.TimeFrom < timeTo && r.TimeTo > timeFrom);
         }
         public async Task<List<TableVM>> GetAllTablesAsync()
         {
@@ -181,167 +181,59 @@ namespace FinalProjectMvc.Services
                     Location = t.Location
                 }).ToListAsync();
         }
-        public async Task<bool> ApproveAsync(int id)
+        public async Task<List<OpeningHourVM>> GetOpeningHoursAsync()
         {
-            var reservation = await _context.Reservations
-                .Include(r => r.Order)
-                .ThenInclude(o => o.Items)
-                .FirstOrDefaultAsync(r => r.Id == id);
+            return await _context.OpeningHours
+                .Select(x => new OpeningHourVM
+                {
+                    DayRange = x.DayRange,
+                    TimeRange = x.TimeRange
+                })
+                .ToListAsync();
+        }
 
-            if (reservation == null) return false;
+        private async Task SendReservationConfirmationEmailAsync(Reservation reservation)
+        {
+            var table = await _context.Tables.FirstOrDefaultAsync(t => t.Id == reservation.TableId);
+            string subject = "Rezervasiya Qəbul Edildi - Caffe Luna";
+            string body = $@"
+                <h3>Hörmətli {reservation.Fullname},</h3>
+                <p>Rezervasiyanız qəbul olundu və admin tərəfindən təsdiqlənməsini gözləyir.</p>
+                <p><b>Tarix:</b> {reservation.Date:yyyy-MM-dd}</p>
+                <p><b>Saat:</b> {reservation.TimeFrom} - {reservation.TimeTo}</p>
+                <p><b>Masa:</b> {table?.Number} ({table?.Location})</p>
+                <p>Tezliklə sizinlə əlaqə saxlanılacaq.</p>";
+            await _emailService.SendAsync(reservation.Email, subject, body);
+        }
 
-            reservation.IsConfirmed = true;
-            reservation.IsRejected = false;
+        private async Task SendStatusChangeEmailAsync(Reservation reservation, ReservationStatus status)
+        {
+            var table = await _context.Tables.FirstOrDefaultAsync(t => t.Id == reservation.TableId);
+            string subject = "";
+            string message = "";
 
-            await _context.SaveChangesAsync();
-
-            if (reservation.Order == null || reservation.Order.Items == null || !reservation.Order.Items.Any())
+            if (status == ReservationStatus.Approved)
             {
-                await _emailService.SendAsync(
-                    reservation.Email,
-                    "Rezervasiyanız təsdiqləndi",
-                    "<p>Rezervasiyanız təsdiqləndi. Sizi gözləyirik!</p>");
+                subject = "Rezervasiyanız Təsdiqləndi!";
+                message = $@"
+                    <h3>Hörmətli {reservation.Fullname},</h3>
+                    <p>Rezervasiyanız təsdiqləndi!</p>
+                    <p><b>Tarix:</b> {reservation.Date:yyyy-MM-dd}</p>
+                    <p><b>Saat:</b> {reservation.TimeFrom} - {reservation.TimeTo}</p>
+                    <p><b>Masa:</b> {table?.Number} ({table?.Location})</p>
+                    <p>Caffe Luna sizi gözləyir!</p>";
             }
-            else
+            else if (status == ReservationStatus.Rejected)
             {
-                string link = $"https://yoursite.com/Payment/Index?reservationId={reservation.Id}";
-                await _emailService.SendAsync(
-                    reservation.Email,
-                    "Rezervasiyanız təsdiqləndi",
-                    $"<p>Rezervasiyanız təsdiqləndi. <a href='{link}'>Ödənişə keç</a></p>");
+                subject = "Rezervasiyanız Rədd Edildi";
+                message = $@"
+                    <h3>Hörmətli {reservation.Fullname},</h3>
+                    <p>Təəssüf ki, rezervasiyanız rədd edildi.</p>
+                    <p>Lütfən, başqa tarix və saat seçərək yenidən cəhd edin.</p>";
             }
 
-            return true;
+            if (!string.IsNullOrWhiteSpace(subject))
+                await _emailService.SendAsync(reservation.Email, subject, message);
         }
-
-        public async Task<bool> RejectAsync(int id)
-        {
-            var reservation = await _context.Reservations.FirstOrDefaultAsync(r => r.Id == id);
-            if (reservation == null) return false;
-
-            reservation.IsRejected = true;
-            reservation.IsConfirmed = false;
-
-            await _context.SaveChangesAsync();
-
-            await _emailService.SendAsync(reservation.Email, "Rezervasiya rədd edildi",
-                "<p>Üzr istəyirik, rezervasiyanız rədd edildi.</p>");
-            return true;
-        }
-
-        public async Task CheckAndDeleteExpiredReservationsAsync()
-        {
-            var now = DateTime.Now;
-            var expired = await _context.Reservations
-                .Where(r => !r.IsConfirmed && r.Date.AddHours(-2) <= now)
-                .ToListAsync();
-
-            _context.Reservations.RemoveRange(expired);
-            await _context.SaveChangesAsync();
-        }
-
-        public async Task SendReminderEmailsAsync()
-        {
-            var targetTime = DateTime.Now.AddHours(2);
-            var upcoming = await _context.Reservations
-                .Where(r => r.IsConfirmed && !r.IsPaid && r.Date.Date == targetTime.Date && r.Time.Hours == targetTime.Hour)
-                .ToListAsync();
-
-            foreach (var reservation in upcoming)
-            {
-                await _emailService.SendAsync(
-                    reservation.Email,
-                    "Reminder: Your Reservation is in 2 Hours",
-                    $"Dear {reservation.FullName},<br/>Your reservation is scheduled for {reservation.Date:dd MMM yyyy} at {reservation.Time:hh\\:mm}.<br/>If you can’t attend, please cancel in advance.");
-            }
-        }
-
-        public async Task<List<ProductWithSizeVM>> GetLast10ProductsPerCategoryAsync()
-        {
-            var products = await _context.Products
-                .Include(p => p.Category).ThenInclude(c => c.CategoryType)
-                .Include(p => p.ProductSizes).ThenInclude(ps => ps.Size)
-                .OrderByDescending(p => p.CreateDate)
-                .ToListAsync();
-
-            var grouped = products
-                .GroupBy(p => p.CategoryId)
-                .Select(g => g.Take(10))
-                .SelectMany(p => p)
-                .ToList();
-
-            var result = grouped.Select(p => new ProductWithSizeVM
-            {
-                Id = p.Id,
-                Name = p.Name,
-                Ingredients = p.Ingredients,
-                Price = p.Price,
-                CategorySlug = p.Category.Name.ToLower().Replace(" ", "-"),
-                CategoryName = p.Category.Name,
-                CategoryTypeId = p.Category.CategoryTypeId,
-                Sizes = p.Category.CategoryType.Name == "Drink"
-                    ? p.ProductSizes.Select((ps, index) => new SizeVM
-                    {
-                        Id = ps.SizeId,
-                        Name = ps.Size.Name,
-                        Price = p.Price + (index * 2)
-                    }).ToList()
-                    : null
-            }).ToList();
-
-            return result;
-        }
-        public async Task<List<ProductWithSizeVM>> GetLastProductsPerCategoryAsync()
-        {
-            var products = await _context.Products
-                .Include(p => p.Category).ThenInclude(c => c.CategoryType)
-                .Include(p => p.ProductSizes).ThenInclude(ps => ps.Size)
-                .OrderByDescending(p => p.CreateDate)
-                .ToListAsync();
-
-            var grouped = products
-                .GroupBy(p => p.CategoryId)
-                .Select(g => g.First()) 
-                .ToList();
-
-            var result = grouped.Select(p => new ProductWithSizeVM
-            {
-                Id = p.Id,
-                Name = p.Name,
-                Ingredients = p.Ingredients,
-                Price = p.Price,
-                CategorySlug = p.Category.Name.ToLower().Replace(" ", "-"),
-                CategoryName = p.Category.Name,
-                CategoryTypeId = p.Category.CategoryTypeId,
-                Sizes = p.Category.CategoryType.Name == "Drink"
-                    ? p.ProductSizes.Select(ps => new SizeVM
-                    {
-                        Id = ps.SizeId,
-                        Name = ps.Size.Name,
-                    }).ToList()
-                    : null
-            }).ToList();
-
-            return result;
-        }
-        public async Task<Table?> GetAvailableTableAsync(int guestCount, DateTime date, TimeSpan time)
-        {
-            return await _context.Tables
-                .Include(t => t.Reservations)
-                .FirstOrDefaultAsync(t =>
-                    t.Capacity == guestCount && 
-                    !t.Reservations.Any(r =>  
-                        r.Date == date &&      
-                        r.Time == time &&  
-                        !r.IsCanceled &&     
-                        !r.IsRejected      
-                    )
-                );
-        }
-
-
-
-
-
     }
 }

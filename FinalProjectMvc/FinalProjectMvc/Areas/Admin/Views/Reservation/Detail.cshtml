@@ -1,5 +1,4 @@
-﻿@using FinalProjectMvc.ViewModels.Admin.Reservation
-@model ReservationDetailVM
+﻿@model FinalProjectMvc.ViewModels.Admin.Reservation.ReservationDetailVM
 
 <div class="container py-5">
     <div class="row justify-content-center">
@@ -8,69 +7,35 @@
                 <h2 class="mb-4" style="font-family: 'Georgia', serif; color: #6b4f3b;">📋 Reservation Details</h2>
 
                 <div class="text-start mb-3">
-                    <p><strong>👤 Full Name:</strong> @Model.FullName</p>
+                    <p><strong>👤 Full Name:</strong> @Model.Fullname</p>
                     <p><strong>📧 Email:</strong> @Model.Email</p>
-                    <p><strong>📞 Phone:</strong> @Model.PhoneNumber</p>
+                    <p><strong>📞 Phone:</strong> @Model.Phone</p>
                     <p><strong>📅 Date:</strong> @Model.Date.ToString("dd MMM yyyy")</p>
-                    <p><strong>⏰ Time:</strong> @Model.Time.ToString(@"hh\:mm")</p>
+                    <p><strong>⏰ Time:</strong> @Model.TimeFrom.ToString(@"hh\:mm") - @Model.TimeTo.ToString(@"hh\:mm")</p>
                     <p><strong>👥 Guest Count:</strong> @Model.GuestCount</p>
-                    <p><strong>📍 Table Location:</strong> @Model.TableLocation</p>
                     <p><strong>🪑 Table Number:</strong> @Model.TableNumber</p>
+                    <p><strong>📍 Table Location:</strong> @Model.TableLocation</p>
+                    <p><strong>💺 Table Capacity:</strong> @Model.TableCapacity</p>
+                    <p><strong>📅 Created At:</strong> @Model.CreatedAt.ToString("dd MMM yyyy HH:mm")</p>
                 </div>
 
                 <div class="text-start mb-3">
                     <p>
                         <strong>Status:</strong>
-                        @if (Model.IsRejected)
-                        {
-                            <span class="badge bg-danger">Rejected</span>
-                        }
-                        else if (Model.IsConfirmed)
+                        @if (Model.Status == FinalProjectMvc.Helpers.Enums.ReservationStatus.Confirmed)
                         {
                             <span class="badge bg-success">Confirmed</span>
+                        }
+                        else if (Model.Status == FinalProjectMvc.Helpers.Enums.ReservationStatus.Cancelled)
+                        {
+                            <span class="badge bg-danger">Cancelled</span>
                         }
                         else
                         {
                             <span class="badge bg-warning text-dark">Pending</span>
                         }
                     </p>
-                    <p>
-                        <strong>Payment:</strong>
-                        @if (Model.IsPaid)
-                        {
-                            <span class="badge bg-success">Paid</span>
-                        }
-                        else
-                        {
-                            <span class="badge bg-secondary">Not Paid</span>
-                        }
-                    </p>
-                    <p><strong>Total Amount:</strong> $@Model.TotalAmount.ToString("F2")</p>
                 </div>
-
-                @if (Model.OrderItems != null && Model.OrderItems.Any())
-                {
-                    <div class="text-start mt-4">
-                        <h5 style="color: #5c3d2e;">🍽️ Ordered Items:</h5>
-                        <ul class="list-group">
-                            @foreach (var item in Model.OrderItems)
-                            {
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span>
-                                        <strong>@item.ProductName</strong> (@item.SizeName) x @item.Quantity
-                                    </span>
-                                    <span>$@item.UnitPrice.ToString("F2")</span>
-                                </li>
-                            }
-                        </ul>
-                    </div>
-                }
-                else
-                {
-                    <div class="alert alert-info mt-3 text-start">
-                        No items have been ordered.
-                    </div>
-                }
 
                 <a asp-action="Index"
                    class="btn mt-4"
