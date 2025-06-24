@@ -1,4 +1,4 @@
-﻿﻿@using FinalProjectMvc.ViewModels.Admin.Pricing
+﻿@using FinalProjectMvc.ViewModels.Admin.Pricing
 @model PricingVM
 
 <section id="our-pricing">
@@ -26,8 +26,6 @@
                                     All Menu
                                 </button>
                             </li>
-
-
 
                             @foreach (var category in Model.Categories)
                             {
@@ -62,7 +60,8 @@
 
                                     if (lastProduct != null)
                                     {
-                                        <div style="margin-top: 29px;" class="menu-list-item" data-has-size="@(lastProduct.Sizes != null && lastProduct.Sizes.Count > 0 ? "true" : "false")">
+                                        var showSizes = lastProduct.Sizes != null && lastProduct.Sizes.Count > 0 && lastProduct.CategoryTypeId == 1;
+                                        <div style="margin-top: 29px;" class="menu-list-item" data-has-size="@(showSizes ? "true" : "false")">
                                             <div class="menu-list-image">
                                                 <figure>
                                                     <img src="~/uploads/products/@lastProduct.Image" alt="@lastProduct.Name">
@@ -76,9 +75,20 @@
                                                 </div>
 
                                                 <div class="menu-item-content">
-                                                    <p style="opacity: 0.5;">
-                                                        @lastProduct.Ingredients
-                                                    </p>
+                                                    <p style="opacity: 0.5;">@lastProduct.Ingredients</p>
+
+                                                    @if (showSizes)
+                                                    {
+                                                        <div class="product-sizes mt-2">
+                                                            <strong>Available Sizes:</strong>
+                                                            <ul style="list-style:none; padding-left:0; margin:0;">
+                                                                @foreach (var size in lastProduct.Sizes)
+                                                                {
+                                                                    <li style="display:inline-block; margin-right:10px;">@size</li>
+                                                                }
+                                                            </ul>
+                                                        </div>
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -107,8 +117,9 @@
                                    .OrderByDescending(p => p.Id)
                                    .Take(5))
                                     {
+                                        var showSizes = product.Sizes != null && product.Sizes.Count > 0 && product.CategoryTypeId == 1;
                                         <div class="our-menu-list">
-                                            <div class="menu-list-item " data-has-size="@(product.Sizes != null && product.Sizes.Count > 0 ? "true" : "false")">
+                                            <div class="menu-list-item" data-has-size="@(showSizes ? "true" : "false")">
                                                 <div class="menu-list-image">
                                                     <figure>
                                                         <img src="~/uploads/products/@product.Image" alt="@product.Name">
@@ -122,9 +133,20 @@
                                                     </div>
 
                                                     <div class="menu-item-content">
-                                                        <p style="opacity: 0.5;">
-                                                            @product.Ingredients
-                                                        </p>
+                                                        <p style="opacity: 0.5;">@product.Ingredients</p>
+
+                                                        @if (showSizes)
+                                                        {
+                                                            <div class="product-sizes mt-2">
+                                                                <strong>Available Sizes:</strong>
+                                                                <ul style="list-style:none; padding-left:0; margin:0;">
+                                                                    @foreach (var size in product.Sizes)
+                                                                    {
+                                                                        <li style="display:inline-block; margin-right:10px;">@size</li>
+                                                                    }
+                                                                </ul>
+                                                            </div>
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>

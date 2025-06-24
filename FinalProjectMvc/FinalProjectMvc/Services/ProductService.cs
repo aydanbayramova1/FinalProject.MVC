@@ -37,7 +37,7 @@ namespace FinalProjectMvc.Services
             }
 
             await _context.Products.AddAsync(product);
-            await _context.SaveChangesAsync(); // product.Id burada artıq var
+            await _context.SaveChangesAsync();
 
             var categoryType = await GetCategoryTypeAsync(product.CategoryId);
 
@@ -55,7 +55,7 @@ namespace FinalProjectMvc.Services
                 await _context.SaveChangesAsync();
             }
 
-            return product; // ✅ yeni məhsulu geri qaytar
+            return product; 
         }
 
 
