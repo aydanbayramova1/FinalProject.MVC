@@ -72,11 +72,22 @@ namespace FinalProjectMvc.Services
         {
             try
             {
+                var now = DateTime.Now;
+
+                if (model.Date.Date < now.Date ||
+                    (model.Date.Date == now.Date && model.TimeFrom <= now.TimeOfDay))
+                {
+                    return false;
+                }
+
                 if (!await IsTableAvailableAsync(model.TableId, model.Date, model.TimeFrom, model.TimeTo))
                     return false;
 
                 var table = await _context.Tables.FirstOrDefaultAsync(t => t.Id == model.TableId);
-                if (table == null || table.Capacity < model.Guests)
+                if (table == null)
+                    return false;
+
+                if (model.Guests != table.Capacity && model.Guests != table.Capacity - 1)
                     return false;
 
                 var reservation = new Reservation
@@ -195,14 +206,20 @@ namespace FinalProjectMvc.Services
         private async Task SendReservationConfirmationEmailAsync(Reservation reservation)
         {
             var table = await _context.Tables.FirstOrDefaultAsync(t => t.Id == reservation.TableId);
-            string subject = "Rezervasiya Qəbul Edildi - Caffe Luna";
+            string subject = "Reservation Confirmed – Caffe Luna";
             string body = $@"
-                <h3>Hörmətli {reservation.Fullname},</h3>
-                <p>Rezervasiyanız qəbul olundu və admin tərəfindən təsdiqlənməsini gözləyir.</p>
-                <p><b>Tarix:</b> {reservation.Date:yyyy-MM-dd}</p>
-                <p><b>Saat:</b> {reservation.TimeFrom} - {reservation.TimeTo}</p>
-                <p><b>Masa:</b> {table?.Number} ({table?.Location})</p>
-                <p>Tezliklə sizinlə əlaqə saxlanılacaq.</p>";
+    <div style='font-family:Arial, sans-serif; color:#333; line-height:1.6;'>
+        <h2 style='color:#2c3e50;'>Dear {reservation.Fullname},</h2>
+        <p>We are pleased to inform you that your reservation has been successfully received and is currently awaiting approval by our team.</p>
+        <p>
+            <strong>Date:</strong> {reservation.Date:yyyy-MM-dd}<br />
+            <strong>Time:</strong> {reservation.TimeFrom} - {reservation.TimeTo}<br />
+            <strong>Table:</strong> {table?.Number} ({table?.Location})
+        </p>
+        <p>We’ll be in touch with you shortly to confirm the final details.</p>
+        <p>Thank you for choosing <strong>Caffe Luna</strong>!</p>
+    </div>";
+
             await _emailService.SendAsync(reservation.Email, subject, body);
         }
 
@@ -214,24 +231,23 @@ namespace FinalProjectMvc.Services
 
             if (status == ReservationStatus.Approved)
             {
-                subject = "Rezervasiyanız Təsdiqləndi!";
+                subject = "Your Reservation Has Been Approved!";
                 message = $@"
-                    <h3>Hörmətli {reservation.Fullname},</h3>
-                    <p>Rezervasiyanız təsdiqləndi!</p>
-                    <p><b>Tarix:</b> {reservation.Date:yyyy-MM-dd}</p>
-                    <p><b>Saat:</b> {reservation.TimeFrom} - {reservation.TimeTo}</p>
-                    <p><b>Masa:</b> {table?.Number} ({table?.Location})</p>
-                    <p>Caffe Luna sizi gözləyir!</p>";
+<h3>Dear {reservation.Fullname},</h3>
+<p>Your reservation has been approved!</p>
+<p><b>Date:</b> {reservation.Date:yyyy-MM-dd}</p>
+<p><b>Time:</b> {reservation.TimeFrom} - {reservation.TimeTo}</p>
+<p><b>Table:</b> {table?.Number} ({table?.Location})</p>
+<p>Caffe Luna is waiting for you!</p>";
             }
             else if (status == ReservationStatus.Rejected)
             {
-                subject = "Rezervasiyanız Rədd Edildi";
+                subject = "Your Reservation Has Been Rejected";
                 message = $@"
-                    <h3>Hörmətli {reservation.Fullname},</h3>
-                    <p>Təəssüf ki, rezervasiyanız rədd edildi.</p>
-                    <p>Lütfən, başqa tarix və saat seçərək yenidən cəhd edin.</p>";
+<h3>Dear {reservation.Fullname},</h3>
+<p>Unfortunately, your reservation has been declined.</p>
+<p>Please try again at a different date and time.</p>";
             }
-
             if (!string.IsNullOrWhiteSpace(subject))
                 await _emailService.SendAsync(reservation.Email, subject, message);
         }

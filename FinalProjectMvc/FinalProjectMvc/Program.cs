@@ -95,6 +95,7 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<ITableService, TableService>();
 builder.Services.AddScoped<IReservationService, ReservationService>();
 builder.Services.AddScoped<ISubscribeService, SubscribeService>();
+builder.Services.AddHostedService<ReservationCleanupService>();
 builder.Services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
 

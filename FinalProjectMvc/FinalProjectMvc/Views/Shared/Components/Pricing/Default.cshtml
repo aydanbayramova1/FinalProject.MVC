@@ -119,7 +119,7 @@
                                     {
                                         var showSizes = product.Sizes != null && product.Sizes.Count > 0 && product.CategoryTypeId == 1;
                                         <div class="our-menu-list">
-                                            <div class="menu-list-item" data-has-size="@(showSizes ? "true" : "false")">
+                                            <div class="menu-list-item" style="margin-top:40px;" data-has-size="@(showSizes ? "true" : "false")">
                                                 <div class="menu-list-image">
                                                     <figure>
                                                         <img src="~/uploads/products/@product.Image" alt="@product.Name">

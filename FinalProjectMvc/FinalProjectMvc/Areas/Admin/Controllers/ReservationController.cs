@@ -20,12 +20,12 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             return View(reservations);
         }
 
-        public async Task<IActionResult> Details(int id)
+        public async Task<IActionResult> Detail(int id)
         {
             var reservation = await _reservationService.GetReservationByIdAsync(id);
             if (reservation == null)
             {
-                TempData["Error"] = "Rezervasiya tapılmadı.";
+                TempData["Error"] = "Reservation not found.";
                 return RedirectToAction(nameof(Index));
             }
             return View(reservation);
@@ -39,15 +39,17 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             if (result)
             {
                 TempData["Success"] = status == ReservationStatus.Confirmed ?
-              "Rezervasiya təsdiqləndi və müştəriyə email göndərildi." :
-            "Rezervasiya ləğv edildi və müştəriyə email göndərildi.";
+             "Reservation has been confirmed and an email has been sent to the customer." :
+             "Reservation has been cancelled and an email has been sent to the customer.";
             }
             else
             {
-                TempData["Error"] = "Status yenilənmədi. Xəta baş verdi.";
+                TempData["Error"] = "Status was not updated. An error occurred.";
+
+
             }
 
-            return RedirectToAction(nameof(Details), new { id });
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]
@@ -57,11 +59,11 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
             if (result)
             {
-                TempData["Success"] = "Rezervasiya silindi.";
+                TempData["Success"] = "Reservation deleted.";
             }
             else
             {
-                TempData["Error"] = "Rezervasiya silinmədi. Xəta baş verdi.";
+                TempData["Error"] = "The reservation was not deleted. An error occurred.";
             }
 
             return RedirectToAction(nameof(Index));
@@ -79,14 +81,14 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
                     return Json(new
                     {
                         available = false,
-                        message = $"Bu masa {date:dd.MM.yyyy} tarixində {fromTime:hh\\:mm} - {toTime:hh\\:mm} saatları arasında məşğuldur."
+                        message = $"This table is busy from {fromTime:hh\\:mm} to {toTime:hh\\:mm} on {date:dd.MM.yyyy}."
                     });
                 }
 
                 return Json(new { available = true });
             }
 
-            return Json(new { available = false, message = "Yanlış saat formatı." });
+            return Json(new { available = false, message = "Invalid time format." });
         }
     }
 }

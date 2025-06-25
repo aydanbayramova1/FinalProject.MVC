@@ -1021,10 +1021,6 @@
       "PackagePath": "staticwebassets\\uploads\\category\\301a2995-f2e4-4ab3-a621-bec197ad100e.jpg"
     },
     {
-      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\category\\375d6203-b430-4131-95ce-68b99f5da624.jpg",
-      "PackagePath": "staticwebassets\\uploads\\category\\375d6203-b430-4131-95ce-68b99f5da624.jpg"
-    },
-    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\category\\7144b4e9-02ba-4735-9b7d-3219254eb795.jpg",
       "PackagePath": "staticwebassets\\uploads\\category\\7144b4e9-02ba-4735-9b7d-3219254eb795.jpg"
     },
@@ -1293,6 +1289,10 @@
       "PackagePath": "staticwebassets\\uploads\\products\\803bfc1e-5910-4438-b455-2863f2cf2dc4.jpg"
     },
     {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\84b22c94-df16-4379-9ace-3c042d17f153.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\84b22c94-df16-4379-9ace-3c042d17f153.jpg"
+    },
+    {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\86a6c8c4-b618-47ea-a554-db25bf87a62c.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\86a6c8c4-b618-47ea-a554-db25bf87a62c.jpg"
     },
@@ -1303,6 +1303,10 @@
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\8de4b121-1f96-4ef9-8a26-fddefc54db2b.jpg",
       "PackagePath": "staticwebassets\\uploads\\products\\8de4b121-1f96-4ef9-8a26-fddefc54db2b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\95cef6a4-8b72-471e-8b21-0e35b5fd0087.jpg",
+      "PackagePath": "staticwebassets\\uploads\\products\\95cef6a4-8b72-471e-8b21-0e35b5fd0087.jpg"
     },
     {
       "Id": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\9a0f73fa-490c-4701-b188-33994032c61e.jpg",

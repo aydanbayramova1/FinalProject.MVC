@@ -40,8 +40,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                query = query.Where(p => p.Name.Contains(search));
+                string normalizedSearch = search.Trim().ToLower();
+                query = query.Where(p =>
+                    p.Name.ToLower().Contains(normalizedSearch) ||
+                    p.Ingredients.ToLower().Contains(normalizedSearch));
             }
+
+            query = query.OrderByDescending(p => p.CreateDate); 
 
             var pagedResult = query.ToPagedResult(page, pageSize);
 
@@ -54,6 +59,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
             return View(pagedResult);
         }
+
 
 
         [Authorize(Roles = "SuperAdmin")]

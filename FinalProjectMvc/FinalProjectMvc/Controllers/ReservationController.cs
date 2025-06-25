@@ -26,7 +26,7 @@ namespace FinalProjectMvc.Controllers
             var model = new ReservationCreateVM
             {
                 //OpeningHours = await _openingHourService.GetAsync(),
-                Tables = await _tableService.GetAllAsync() 
+                Tables = await _tableService.GetAllAsync()
             };
             return View(model);
         }
@@ -52,13 +52,13 @@ namespace FinalProjectMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<JsonResult> CreateReservation(ReservationCreateVM model)
         {
-            if (!ModelState.IsValid)
-            {
-                var errors = ModelState.Values.SelectMany(v => v.Errors)
-                                              .Select(e => e.ErrorMessage)
-                                              .ToList();
-                return Json(new { success = false, message = "Validation failed", errors });
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    var errors = ModelState.Values.SelectMany(v => v.Errors)
+            //                                  .Select(e => e.ErrorMessage)
+            //                                  .ToList();
+            //    return Json(new { success = false, message = "Validation failed", errors });
+            //}
 
             var result = await _reservationService.CreateReservationAsync(model);
 
@@ -68,10 +68,11 @@ namespace FinalProjectMvc.Controllers
             }
             else
             {
-                return Json(new { success = false, message = "Masa uyğun deyil və ya məşğuldur." });
+                return Json(new { success = false, message = "The table is not available or is busy." });
             }
+
+
+
         }
-
-
     }
 }

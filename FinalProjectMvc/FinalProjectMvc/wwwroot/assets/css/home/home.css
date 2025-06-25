@@ -3333,8 +3333,8 @@ header.main-header {
 	flex-wrap: wrap;
 	align-items: center;
 	border-bottom: 1px dashed#FFFFFF24;
-	margin-bottom: 30px;
-	padding-bottom: 30px;
+
+	margin-top:48px !important;
 }
 
 	#our-pricing .menu-list-item:last-child {

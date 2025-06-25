@@ -8,10 +8,10 @@
 <div class="container py-4">
     <h2 class="mb-4" style="color: #6b4f3b;">📥 Incoming Messages</h2>
 
-    @if (TempData["Success"] != null)
+    @if (TempData["SuccessMessage"] != null)
     {
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            @TempData["Success"]
+            @TempData["SuccessMessage"]
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
     }

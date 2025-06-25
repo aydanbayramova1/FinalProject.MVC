@@ -22,17 +22,24 @@
                 <div class="text-start mb-3">
                     <p>
                         <strong>Status:</strong>
-                        @if (Model.Status == FinalProjectMvc.Helpers.Enums.ReservationStatus.Confirmed)
+                        @switch (Model.Status)
                         {
-                            <span class="badge bg-success">Confirmed</span>
-                        }
-                        else if (Model.Status == FinalProjectMvc.Helpers.Enums.ReservationStatus.Cancelled)
-                        {
-                            <span class="badge bg-danger">Cancelled</span>
-                        }
-                        else
-                        {
-                            <span class="badge bg-warning text-dark">Pending</span>
+                            case FinalProjectMvc.Helpers.Enums.ReservationStatus.Confirmed:
+                                <span class="badge bg-success">Confirmed</span>
+                                ;
+                                break;
+                            case FinalProjectMvc.Helpers.Enums.ReservationStatus.Cancelled:
+                                <span class="badge bg-danger">Cancelled</span>
+                                ;
+                                break;
+                            case FinalProjectMvc.Helpers.Enums.ReservationStatus.Rejected:
+                                <span class="badge bg-danger">Rejected</span>
+                                ;
+                                break;
+                            default:
+                                <span class="badge bg-warning text-dark">Pending</span>
+                                ;
+                                break;
                         }
                     </p>
                 </div>

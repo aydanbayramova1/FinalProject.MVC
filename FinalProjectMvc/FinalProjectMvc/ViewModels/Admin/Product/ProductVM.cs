@@ -22,5 +22,7 @@
                 return CategoryName?.ToLower().Replace(" ", "-");
             }
         }
+
+        public DateTime CreateDate { get; set; } = DateTime.Now;
     }
 }

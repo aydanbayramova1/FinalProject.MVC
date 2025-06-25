@@ -1,5 +1,6 @@
-﻿﻿@using FinalProjectMvc.ViewModels.Admin.Reservation
+﻿@using FinalProjectMvc.ViewModels.Admin.Reservation
 @model ReservationCreateVM
+
 <style>
     * {
         margin: 0;
@@ -138,6 +139,7 @@
         .table-option input[type="radio"] {
             position: absolute;
             opacity: 0;
+            cursor: pointer;
         }
 
     .table-card {
@@ -152,7 +154,6 @@
         flex-direction: column;
         justify-content: center;
     }
-
 
     .table-option input[type="radio"]:checked + .table-card {
         border-color: #2c3e50;
@@ -263,8 +264,97 @@
         z-index: 999;
         display: none;
     }
-</style>
 
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1000;
+        display: none;
+    }
+
+    .alert {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fdfdfd;
+        color: #333;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        z-index: 1001;
+        width: 90%;
+        max-width: 400px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: none;
+        animation: fadeIn 0.3s ease-in-out;
+        border: 1px dashed #ccc;
+        background-image: linear-gradient(to bottom, #fff 0%, #f5f5f5 100%);
+    }
+
+        .alert h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #121D23;
+        }
+
+        .alert p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .alert button {
+            background-color: #121D23 color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .alert button:hover {
+                background-color: #121D23;
+            }
+
+    keyframes fadeIn {
+        from
+
+    {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    }
+
+    .text-danger {
+        color: #e74c3c;
+        font-size: 0.9rem;
+        margin-top: 4px;
+        display: block;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .time-range input {
+        width: 100%;
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+</style>
 <section id="reservation-section">
     <div class="reservation-container">
         <div class="header">
@@ -277,95 +367,199 @@
                     <p>Weekdays: @item.DayRange</p>
                     <p>Weekend:  @item.TimeRange</p>
                 }
-             
             </div>
         </div>
 
-        <div class="reservation-form">
-            <form id="reservationForm">
-                @Html.AntiForgeryToken()
 
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label asp-for="Fullname">Full Name *</label>
-                        <input asp-for="Fullname" class="form-control" required />
-                        <span asp-validation-for="Fullname" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Email">Email Address *</label>
-                        <input asp-for="Email" type="email" class="form-control" required />
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Phone">Phone Number *</label>
-                        <input asp-for="Phone" class="form-control" required />
-                        <span asp-validation-for="Phone" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Date">Reservation Date *</label>
-                        <input asp-for="Date" type="date" class="form-control" required />
-                        <span asp-validation-for="Date" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label>Time Range *</label>
-                        <div class="time-range d-flex">
-                            <input asp-for="TimeFrom" type="time" class="form-control" required />
-                            <span class="mx-2">to</span>
-                            <input asp-for="TimeTo" type="time" class="form-control" required />
-                        </div>
-                        <span asp-validation-for="TimeFrom" class="text-danger"></span>
-                        <span asp-validation-for="TimeTo" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Guests">Number of Guests *</label>
-                        <input asp-for="Guests" type="number" min="1" max="100" class="form-control" required />
-                        <span asp-validation-for="Guests" class="text-danger"></span>
-                    </div>
+
+<div class="reservation-form">
+    <form id="reservationForm" method="post">
+        @Html.AntiForgeryToken()
+
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label asp-for="Fullname">Full Name *</label>
+                <input asp-for="Fullname" class="form-control" required />
+                <span asp-validation-for="Fullname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email">Email Address *</label>
+                <input asp-for="Email" type="email" class="form-control" required />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone">Phone Number *</label>
+                <input asp-for="Phone" class="form-control" required />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date">Reservation Date *</label>
+                <input asp-for="Date" type="date" class="form-control" required min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Time Range *</label>
+                <div class="time-range d-flex gap-2">
+                    <input asp-for="TimeFrom" type="time" class="form-control" required />
+                    <span class="align-self-center">to</span>
+                    <input asp-for="TimeTo" type="time" class="form-control" required />
                 </div>
-
-                <div class="form-group full-width">
-                    <label>Select Table *</label>
-                    <div class="table-selection">
-                        @foreach (var table in Model.Tables)
-                        {
-                            var inputId = $"table{table.Id}";
-                            <div class="table-option mb-2">
-                                <input type="radio" id="@inputId" name="TableId" value="@table.Id" required />
-                                <label for="@inputId" class="table-card d-block p-2 border rounded">
-                                    <div class="table-name">Table @table.Number</div>
-                                    <div class="table-capacity">@table.Capacity people — @table.Location</div>
-                                </label>
-                            </div>
-                        }
-                        <span asp-validation-for="TableId" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn btn-primary mt-3">Complete Reservation</button>
-            </form>
+                <span asp-validation-for="TimeFrom" class="text-danger"></span>
+                <span asp-validation-for="TimeTo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Guests">Number of Guests *</label>
+                <input asp-for="Guests" type="number" min="1" max="100" class="form-control" required />
+                <span asp-validation-for="Guests" class="text-danger"></span>
+            </div>
         </div>
 
-    </div>
-</section>
+        <div class="form-group full-width mt-3">
+            <label>Select Table *</label>
+            <div class="table-selection">
+                @foreach (var table in Model.Tables)
+                {
+                    var inputId = $"table{table.Id}";
+                    <div class="table-option mb-2">
+                        <input type="radio" id="@inputId" name="TableId" value="@table.Id" required />
+                        <label for="@inputId" class="table-card d-block p-2 border rounded cursor-pointer">
+                            <div class="table-name">Table @table.Number</div>
+                            <div class="table-capacity">@table.Capacity people — @table.Location</div>
+                        </label>
+                    </div>
+                }
+                <span asp-validation-for="TableId" class="text-danger"></span>
+            </div>
+        </div>
 
-<div class="overlay" id="overlay"></div>
-<div class="alert" id="alertBox">
-    <h3>Reservation Confirmed!</h3>
-    <p id="reservationDetails"></p>
-    <button onclick="closeAlert()">OK</button>
+        <button type="submit" class="submit-button btn btn-primary mt-3">Complete Reservation</button>
+                <span id="reservationError" style="color: red; font-weight: 600; display: none; margin-top: 10px;"></span>
+    </form>
 </div>
 
 
 
+
+
+
+    </div>
+</section>
+
+
+
+
+<div class="overlay" id="overlay"></div>
+<div class="alert" id="alertBox">
+    <h3>✅ Reservation Confirmed!</h3>
+    <p id="reservationDetails">Your reservation details have been successfully registered.</p>
+    <button onclick="closeAlert()" style="color:black">Close</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.2.12/dist/jquery.validate.unobtrusive.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
 <script>
+
+
     document.addEventListener('DOMContentLoaded', function () {
         const form = document.getElementById('reservationForm');
+        const dateInput = form.querySelector('input[name="Date"]');
+        const timeFromInput = form.querySelector('input[name="TimeFrom"]');
+        const timeToInput = form.querySelector('input[name="TimeTo"]');
+        const guestsInput = form.querySelector('input[name="Guests"]');
+        const tableOptions = document.querySelectorAll('.table-option');
+
+        const overlay = document.getElementById('overlay');
+        const alertBox = document.getElementById('alertBox');
+        const reservationDetails = document.getElementById('reservationDetails');
+
+        const today = new Date();
+        const todayStr = today.toISOString().split('T')[0];
+        dateInput.setAttribute('min', todayStr);
+
+        function setTimeLimits() {
+            if (!dateInput.value) return;
+
+            const selectedDate = new Date(dateInput.value);
+            const now = new Date();
+            const day = selectedDate.getDay();
+
+            let minTime = "09:00";
+            let maxTime = (day === 0 || day === 6) ? "22:30" : "21:00";
+
+            if (selectedDate.toDateString() === now.toDateString()) {
+                let minHour = now.getHours() + 1;
+                let minMinute = 0;
+
+                minTime = `${minHour.toString().padStart(2, '0')}:${minMinute.toString().padStart(2, '0')}`;
+
+                if (minTime > maxTime) {
+                    timeFromInput.value = "";
+                    timeToInput.value = "";
+                    timeFromInput.disabled = true;
+                    timeToInput.disabled = true;
+                    alert("Bu gün üçün rezervasiya mümkün deyil.");
+                    return;
+                } else {
+                    timeFromInput.disabled = false;
+                    timeToInput.disabled = false;
+                }
+            } else {
+                timeFromInput.disabled = false;
+                timeToInput.disabled = false;
+            }
+
+            timeFromInput.min = minTime;
+            timeFromInput.max = maxTime;
+            timeToInput.min = minTime;
+            timeToInput.max = maxTime;
+
+            if (timeFromInput.value < minTime) timeFromInput.value = minTime;
+            if (timeToInput.value < minTime) timeToInput.value = minTime;
+        }
+
+        function filterTables() {
+            const guestsCount = parseInt(guestsInput.value, 10);
+            if (isNaN(guestsCount) || guestsCount < 1) {
+                tableOptions.forEach(option => {
+                    option.style.display = 'block';
+                    option.querySelector('input[type=radio]').disabled = false;
+                });
+                return;
+            }
+
+            tableOptions.forEach(option => {
+                const capacityText = option.querySelector('.table-capacity').innerText;
+                const match = capacityText.match(/^(\d+)/);
+                let capacity = match ? parseInt(match[1], 10) : null;
+
+                if (capacity !== null && (guestsCount === capacity || guestsCount === capacity - 1)) {
+                    option.style.display = 'block';
+                    option.querySelector('input[type=radio]').disabled = false;
+                } else {
+                    option.style.display = 'none';
+                    option.querySelector('input[type=radio]').disabled = true;
+
+                    if (option.querySelector('input[type=radio]').checked) {
+                        option.querySelector('input[type=radio]').checked = false;
+                    }
+                }
+            });
+        }
+
+        dateInput.addEventListener('change', setTimeLimits);
+        guestsInput.addEventListener('input', filterTables);
+        setTimeLimits();
+        filterTables();
 
         form.addEventListener('submit', async function (e) {
-            e.preventDefault(); // saytı refresh etmə!
+            e.preventDefault();
 
             const formData = new FormData(form);
-
             const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
 
             const response = await fetch('/Reservation/CreateReservation', {
@@ -379,13 +573,96 @@
             const result = await response.json();
 
             if (result.success) {
-                alert("Uğurla göndərildi!");
+                overlay.style.display = 'block';
+                alertBox.style.display = 'block';
+
+                reservationDetails.innerHTML = `
+                    <strong>Name:</strong> ${formData.get("Fullname")}<br>
+                    <strong>Date:</strong> ${formData.get("Date")}<br>
+                    <strong>Time:</strong> ${formData.get("TimeFrom")} to ${formData.get("TimeTo")}<br>
+                    <strong>Guests:</strong> ${formData.get("Guests")}`;
+
                 form.reset();
+                setTimeLimits();
+                filterTables();
             } else {
                 alert(result.message || "Xəta baş verdi.");
                 console.error(result.errors);
             }
         });
+    });
+
+    function closeAlert() {
+        document.getElementById('alertBox').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+
+        fetch('/YourController/YourAction', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+        },
+        body: JSON.stringify(yourData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (!data.success) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: data.message
+            });
+        } else {
+        }
+    })
+    .catch(error => console.error('Error:', error));
+
+
+        document.getElementById('reservationForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const errorSpan = document.getElementById('reservationError');
+        errorSpan.style.display = 'none';  // əvvəlcə gizlət
+
+        const form = e.target;
+        const formData = new FormData(form);
+        const token = form.querySelector('input[name="__RequestVerificationToken"]').value;
+
+        // Convert FormData to JSON object
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        try {
+            const response = await fetch(form.action || window.location.href, {
+                method: form.method,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': token
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (!result.success) {
+                // Mesajı göstər
+                errorSpan.textContent = result.message || 'Something went wrong.';
+                errorSpan.style.display = 'inline-block';
+            } else {
+                // Məsələn, redirect et, ya da başqa mesaj göstər
+                errorSpan.style.display = 'none';
+                alert('Reservation completed successfully!');
+                // və ya səhifəni yenilə
+                // window.location.reload();
+            }
+        } catch (error) {
+            errorSpan.textContent = 'Server error occurred.';
+            errorSpan.style.display = 'inline-block';
+        }
     });
 </script>
 
