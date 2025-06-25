@@ -13,12 +13,11 @@ namespace FinalProjectMvc.ViewModels.Admin.Reservation
         public TimeSpan TimeFrom { get; set; }
         public TimeSpan TimeTo { get; set; }
         public int GuestCount { get; set; }
-
         public string TableInfo { get; set; }   
         public string TableLocation { get; set; }
         public ReservationStatus Status { get; set; }
-
         public bool IsConfirmed => Status == ReservationStatus.Approved;
         public bool IsRejected => Status == ReservationStatus.Rejected;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

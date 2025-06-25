@@ -6,7 +6,7 @@ namespace FinalProjectMvc.ViewModels.Admin.Slider
     public class SliderCreateVM
     {
         [Required(ErrorMessage = "Title is required.")]
-        [RegularExpression("^[A-Za-z ]+$", ErrorMessage = "Title must contain only letters and spaces, no digits or symbols.")]
+        [RegularExpression("^[A-Za-zƏəĞğİıÖöŞşÜüÇç ]+$", ErrorMessage = "Title  no digits or symbols.")]
         [MaxLength(60, ErrorMessage = "Title can be at most 60 characters long.")]
         public string Title { get; set; }
 

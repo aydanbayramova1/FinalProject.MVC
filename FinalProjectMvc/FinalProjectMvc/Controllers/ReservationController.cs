@@ -52,27 +52,23 @@ namespace FinalProjectMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<JsonResult> CreateReservation(ReservationCreateVM model)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    var errors = ModelState.Values.SelectMany(v => v.Errors)
-            //                                  .Select(e => e.ErrorMessage)
-            //                                  .ToList();
-            //    return Json(new { success = false, message = "Validation failed", errors });
-            //}
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors)
+                                              .Select(e => e.ErrorMessage)
+                                              .ToList();
+                return Json(new { success = false, message = "A validation error occurred.", errors });
+            }
 
             var result = await _reservationService.CreateReservationAsync(model);
-
             if (result)
             {
-                return Json(new { success = true });
+                return Json(new { success = true, message = "Rezervasiya uğurla yaradıldı!" });
             }
             else
             {
-                return Json(new { success = false, message = "The table is not available or is busy." });
+                return Json(new { success = false, message = "Yer doldudur! Bu tarix və vaxt üçün masa artıq rezerv edilib." });
             }
-
-
-
         }
     }
 }

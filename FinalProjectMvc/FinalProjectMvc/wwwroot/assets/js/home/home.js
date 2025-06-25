@@ -339,160 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 })
-document.addEventListener("DOMContentLoaded", () => {
-    const menuItems = document.querySelectorAll(".menu-list-item")
 
-    const categoryButtons = document.querySelectorAll(".nav-item button")
-    let currentCategory = "all"
-
-    categoryButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-            const targetId = this.getAttribute("data-bs-target").replace("#", "")
-            currentCategory = targetId
-
-            document.querySelectorAll(".menu-size-options").forEach((el) => el.remove())
-
-            if (currentCategory === "hot-coffees") {
-                addSizeOptionsToHotCoffees()
-            }
-        })
-    })
-
-    function addSizeOptionsToHotCoffees() {
-        const hotCoffeeItems = document.querySelector("#hot-coffees").querySelectorAll(".menu-list-item")
-
-        hotCoffeeItems.forEach((menuItem) => {
-            const priceElement = menuItem.querySelector(".menu-item-title span")
-            if (!priceElement) return
-
-            const basePrice = Number.parseFloat(priceElement.textContent.replace("$", ""))
-            if (isNaN(basePrice)) return
-
-            if (menuItem.querySelector(".menu-size-options")) return
-
-            const sizeOptionsHTML = `
-          <div class="menu-size-options">
-            <div class="menu-size-label">Size:</div>
-            <div class="size-options">
-              <div class="size-option active" data-size="s" data-price-modifier="0">S</div>
-              <div class="size-option" data-size="m" data-price-modifier="2">M</div>
-              <div class="size-option" data-size="l" data-price-modifier="4">L</div>
-            </div>
-          </div>
-        `
-
-            const menuItemContent = menuItem.querySelector(".menu-item-content")
-            if (menuItemContent) {
-                menuItemContent.insertAdjacentHTML("beforebegin", sizeOptionsHTML)
-            }
-
-            const sizeOptions = menuItem.querySelectorAll(".size-option")
-            sizeOptions.forEach((option) => {
-                option.addEventListener("click", function () {
-                    sizeOptions.forEach((opt) => opt.classList.remove("active"))
-
-                    this.classList.add("active")
-
-                    const priceModifier = Number.parseFloat(this.getAttribute("data-price-modifier"))
-
-                    const newPrice = (basePrice + priceModifier).toFixed(2)
-
-                    priceElement.classList.add("price-change")
-
-                    setTimeout(() => {
-                        priceElement.textContent = `$${newPrice}`
-
-                        setTimeout(() => {
-                            priceElement.classList.remove("price-change")
-                        }, 500)
-                    }, 250)
-                })
-            })
-        })
-    }
-
-    const interactiveElement = document.querySelector(".interactive")
-
-    if (interactiveElement && interactiveElement.classList.contains("interactive-process-layout")) {
-        const items = interactiveElement.querySelectorAll(".interactive-inner-process")
-
-        if (items.length) {
-            items.forEach((item) => {
-                item.addEventListener("mouseenter", function () {
-                    const index = this.dataset.index
-                    const targetImg = interactiveElement.querySelector(`.interactive-process-image.img-${index}`)
-
-                    if (this.classList.contains("activate")) return
-
-                    items.forEach((el) => {
-                        el.classList.remove("activate")
-                    })
-
-                    this.classList.add("activate")
-
-                    const allImages = interactiveElement.querySelectorAll(".interactive-process-image")
-                    allImages.forEach((img) => {
-                        img.classList.remove("show")
-                    })
-
-                    if (targetImg) {
-                        targetImg.classList.add("show")
-                    }
-                })
-            })
-        }
-    }
-
-    const style = document.createElement("style")
-    style.textContent = `
-      .price-change {
-        animation: priceChange 0.75s ease;
-      }
-      
-      @keyframes priceChange {
-        0% { opacity: 1; }
-        50% { opacity: 0; }
-        100% { opacity: 1; }
-      }
-      
-      .menu-size-options {
-        margin: 10px 0;
-      }
-      
-      .menu-size-label {
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-      
-      .size-options {
-        display: flex;
-        gap: 10px;
-      }
-      
-      .size-option {
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #ccc;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-      
-      .size-option.active {
-        background-color: #8B5A2B;
-        color: white;
-        border-color: #8B5A2B;
-      }
-    `
-    document.head.appendChild(style)
-
-    if (document.querySelector("#hot-coffees.active")) {
-        addSizeOptionsToHotCoffees()
-    }
-})
 
 
 
@@ -603,295 +450,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let currentCategory = "all"
 
-    tabButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-            const targetId = this.getAttribute("data-bs-target")
-            if (targetId) {
-                currentCategory = targetId.replace("#", "")
-            }
 
-            document.querySelectorAll(".menu-size-options").forEach((el) => el.remove())
-
-            setTimeout(() => {
-                if (currentCategory === "hot-coffees") {
-                    addSizeOptionsToItems("#hot-coffees")
-                } else if (currentCategory === "iced-coffee") {
-                    addSizeOptionsToItems("#iced-coffee")
-                } else if (currentCategory === "tea-more") {
-                    addSizeOptionsToItems("#tea-more")
-                } else if (currentCategory === "all") {
-                    addSizeOptionsToAllMenuItems()
-                }
-            }, 100)
-        })
-    })
-
-    function addSizeOptionsToItems(categorySelector) {
-        const categoryItems = document.querySelector(categorySelector).querySelectorAll(".menu-list-item")
-
-        categoryItems.forEach((menuItem) => {
-            addSizeOptionsToItem(menuItem)
-        })
-    }
-
-    function addSizeOptionsToAllMenuItems() {
-        const allMenuItems = document.querySelector("#all").querySelectorAll(".menu-list-item")
-
-        allMenuItems.forEach((menuItem) => {
-            const titleElement = menuItem.querySelector(".menu-item-title h3")
-            if (!titleElement) return
-
-            const itemTitle = titleElement.textContent.trim().toLowerCase()
-
-            const coffeeTeaKeywords = [
-                "coffee",
-                "espresso",
-                "latte",
-                "cappuccino",
-                "americano",
-                "mocha",
-                "macchiato",
-                "tea",
-                "chai",
-                "matcha",
-                "iced",
-            ]
-
-            const isCoffeeOrTea = coffeeTeaKeywords.some((keyword) => itemTitle.includes(keyword))
-
-            if (isCoffeeOrTea) {
-                addSizeOptionsToItem(menuItem)
-            }
-        })
-    }
-
-    function addSizeOptionsToItem(menuItem) {
-        const priceElement = menuItem.querySelector(".menu-item-title span")
-        if (!priceElement) return
-
-        const basePrice = Number.parseFloat(priceElement.textContent.replace("$", ""))
-        if (isNaN(basePrice)) return
-
-        if (menuItem.querySelector(".menu-size-options")) return
-
-        const sizeOptionsHTML = `
-      <div class="menu-size-options">
-        <div class="menu-size-label">Size:</div>
-        <div class="size-options">
-          <div class="size-option active" data-size="s" data-price-modifier="0">S</div>
-          <div class="size-option" data-size="m" data-price-modifier="2">M</div>
-          <div class="size-option" data-size="l" data-price-modifier="4">L</div>
-        </div>
-      </div>
-    `
-
-        const menuItemContent = menuItem.querySelector(".menu-item-content")
-        if (menuItemContent) {
-            menuItemContent.insertAdjacentHTML("beforebegin", sizeOptionsHTML)
-        }
-
-        const sizeOptions = menuItem.querySelectorAll(".size-option")
-        sizeOptions.forEach((option) => {
-            option.addEventListener("click", function () {
-                sizeOptions.forEach((opt) => opt.classList.remove("active"))
-
-                this.classList.add("active")
-
-                const priceModifier = Number.parseFloat(this.getAttribute("data-price-modifier"))
-
-                const newPrice = (basePrice + priceModifier).toFixed(2)
-
-                priceElement.classList.add("price-change")
-
-                setTimeout(() => {
-                    priceElement.textContent = `$${newPrice}`
-
-                    setTimeout(() => {
-                        priceElement.classList.remove("price-change")
-                    }, 500)
-                }, 250)
-            })
-        })
-    }
-
-    const style = document.createElement("style")
-    style.textContent = `
-    .price-change {
-      animation: priceChange 0.75s ease;
-    }
-    
-    @keyframes priceChange {
-      0% { opacity: 1; }
-      50% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    
-    .menu-size-options {
-      margin: 10px 0;
-    }
-    
-    .menu-size-label {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    
-    .size-options {
-      display: flex;
-      gap: 10px;
-    }
-    
-    .size-option {
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #ccc;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .size-option.active {
-      background-color: #8B5A2B;
-      color: white;
-      border-color: #8B5A2B;
-    }
-  `
-    document.head.appendChild(style)
-
-    const activeButton = document.querySelector(".nav-item button.active")
-    if (activeButton) {
-        activeButton.click()
-    } else {
-        const firstButton = document.querySelector(".nav-item button")
-        if (firstButton) {
-            firstButton.click()
-        }
-    }
-
-    tabButtons.forEach((button) => {
-        button.addEventListener("click", function (e) {
-            const targetId = this.getAttribute("data-bs-target")
-            if (!targetId) return
-
-            const targetPane = document.querySelector(targetId)
-            if (!targetPane) return
-
-            tabButtons.forEach((btn) => {
-                btn.classList.remove("active")
-                btn.setAttribute("aria-selected", "false")
-            })
-
-            this.classList.add("active")
-            this.setAttribute("aria-selected", "true")
-
-            document.querySelectorAll(".pricing-boxes").forEach((pane) => {
-                pane.classList.remove("show", "active")
-            })
-
-            targetPane.classList.add("show", "active")
-        })
-    })
-})
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const teaMoreButton = document.querySelector("#tea-more")
-    const icedCoffeeButton = document.querySelector("#iced-coffee")
-
-    if (teaMoreButton) {
-        teaMoreButton.setAttribute("data-bs-target", "#tea-more")
-    }
-
-    if (icedCoffeeButton) {
-        icedCoffeeButton.setAttribute("data-bs-target", "#iced-coffee")
-    }
-
-    const tabButtons = document.querySelectorAll(".nav-item button")
-
-    let currentCategory = "all"
-
-    tabButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-            const targetId = this.getAttribute("data-bs-target")
-            if (targetId) {
-                currentCategory = targetId.replace("#", "")
-            }
-
-            document.querySelectorAll(".menu-size-options").forEach((el) => el.remove())
-
-            setTimeout(() => {
-                if (currentCategory === "hot-coffees") {
-                    addSizeOptionsToItems("#hot-coffees")
-                } else if (currentCategory === "iced-coffee") {
-                    addSizeOptionsToItems("#iced-coffee")
-                } else if (currentCategory === "tea-more") {
-                    addSizeOptionsToItems("#tea-more")
-                } else if (currentCategory === "all") {
-                    addSizeOptionsToAllMenuItems()
-                }
-            }, 100)
-        })
-    })
-
-    function addSizeOptionsToItems(categorySelector) {
-        const categoryItems = document.querySelector(categorySelector).querySelectorAll(".menu-list-item")
-
-        categoryItems.forEach((menuItem) => {
-            addSizeOptionsToItem(menuItem)
-        })
-    }
-
-    function addSizeOptionsToAllMenuItems() {
-        const allMenuItems = document.querySelector("#all").querySelectorAll(".menu-list-item")
-
-        allMenuItems.forEach((menuItem) => {
-            const titleElement = menuItem.querySelector(".menu-item-title h3")
-            if (!titleElement) return
-
-            const itemTitle = titleElement.textContent.trim().toLowerCase()
-
-            const beverageKeywords = [
-                "coffee",
-                "espresso",
-                "latte",
-                "cappuccino",
-                "americano",
-                "mocha",
-                "macchiato",
-                "tea",
-                "chai",
-                "matcha",
-                "iced",
-                "lemonade",
-                "juice",
-                "smoothie",
-                "soda",
-                "water",
-                "drink",
-                "frappe",
-                "brew",
-                "hot chocolate",
-                "cocoa",
-            ]
-
-            const descriptionElement = menuItem.querySelector(".menu-item-content p")
-            let descriptionText = ""
-            if (descriptionElement) {
-                descriptionText = descriptionElement.textContent.trim().toLowerCase()
-            }
-
-            const isBeverage = beverageKeywords.some((keyword) => itemTitle.includes(keyword))
-
-            const descriptionKeywords = ["drink", "beverage", "sip", "cup", "glass", "ice", "hot", "cold", "water"]
-            const descriptionSuggestsBeverage = descriptionKeywords.some((keyword) => descriptionText.includes(keyword))
-
-            if (isBeverage || descriptionSuggestsBeverage || itemTitle.includes("lemonade")) {
-                addSizeOptionsToItem(menuItem)
-            }
-        })
-    }
 
     function addSizeOptionsToItem(menuItem) {
         const priceElement = menuItem.querySelector(".menu-item-title span")
@@ -1483,3 +1042,34 @@ document.addEventListener('click', function (e) {
     }
 });
 
+const interactiveElement = document.querySelector(".interactive")
+
+if (interactiveElement && interactiveElement.classList.contains("interactive-process-layout")) {
+    const items = interactiveElement.querySelectorAll(".interactive-inner-process")
+
+    if (items.length) {
+        items.forEach((item) => {
+            item.addEventListener("mouseenter", function () {
+                const index = this.dataset.index
+                const targetImg = interactiveElement.querySelector(`.interactive-process-image.img-${index}`)
+
+                if (this.classList.contains("activate")) return
+
+                items.forEach((el) => {
+                    el.classList.remove("activate")
+                })
+
+                this.classList.add("activate")
+
+                const allImages = interactiveElement.querySelectorAll(".interactive-process-image")
+                allImages.forEach((img) => {
+                    img.classList.remove("show")
+                })
+
+                if (targetImg) {
+                    targetImg.classList.add("show")
+                }
+            })
+        })
+    }
+}

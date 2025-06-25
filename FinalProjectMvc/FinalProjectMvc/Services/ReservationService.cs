@@ -80,6 +80,19 @@ namespace FinalProjectMvc.Services
                     return false;
                 }
 
+                var existingReservation = await _context.Reservations
+       .Where(r => r.TableId == model.TableId &&
+                  r.Date.Date == model.Date.Date &&
+                  ((model.TimeFrom >= r.TimeFrom && model.TimeFrom < r.TimeTo) ||
+                   (model.TimeTo > r.TimeFrom && model.TimeTo <= r.TimeTo) ||
+                   (model.TimeFrom <= r.TimeFrom && model.TimeTo >= r.TimeTo)))
+       .FirstOrDefaultAsync();
+
+                if (existingReservation != null)
+                {
+                    return false; // Masa artıq rezerv edilib
+                }
+
                 if (!await IsTableAvailableAsync(model.TableId, model.Date, model.TimeFrom, model.TimeTo))
                     return false;
 

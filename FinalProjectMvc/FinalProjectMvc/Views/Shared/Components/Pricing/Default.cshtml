@@ -1,6 +1,48 @@
 ﻿@using FinalProjectMvc.ViewModels.Admin.Pricing
 @model PricingVM
 
+<style>
+    .size-options {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+        .size-options span {
+            font-weight: 600;
+            color: #d1a374;
+            font-size: 14px;
+            margin-right: 6px;
+        }
+
+    .size-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+        border-radius: 50%;
+        border: 1.5px solid #d1a374;
+        background-color: transparent;
+        color: #d1a374;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .size-btn.active {
+            background-color: #f0dab2;
+            color: #222;
+            border-color: #f0dab2;
+        }
+
+        .size-btn:hover {
+            background-color: #d1a37433;
+        }
+</style>
+
 <section id="our-pricing">
     <div class="container">
         <div class="row section-row">
@@ -41,6 +83,7 @@
                         </ul>
                     </div>
 
+                    <!-- ALL TAB -->
                     <div class="pricing-boxes tab-pane fade show active" id="all" role="tabpanel">
                         <div class="row align-items-center">
                             <div class="col-lg-6">
@@ -60,8 +103,7 @@
 
                                     if (lastProduct != null)
                                     {
-                                        var showSizes = lastProduct.Sizes != null && lastProduct.Sizes.Count > 0 && lastProduct.CategoryTypeId == 1;
-                                        <div style="margin-top: 29px;" class="menu-list-item" data-has-size="@(showSizes ? "true" : "false")">
+                                        <div style="margin-top: 29px;" class="menu-list-item">
                                             <div class="menu-list-image">
                                                 <figure>
                                                     <img src="~/uploads/products/@lastProduct.Image" alt="@lastProduct.Name">
@@ -71,24 +113,21 @@
                                                 <div class="menu-item-title">
                                                     <h3>@lastProduct.Name</h3>
                                                     <hr>
-                                                    <span>$@lastProduct.Price</span>
+                                                    <span class="product-price" data-base="@lastProduct.Price">$@lastProduct.Price</span>
                                                 </div>
+
+                                                @if (lastProduct.Sizes != null && lastProduct.Sizes.Any() && category.CategoryTypeId == 1)
+                                                {
+                                                    <div class="size-options">
+                                                        <span>Size:</span>
+                                                        <button class="size-btn active" data-price="@lastProduct.Price">S</button>
+                                                        <button class="size-btn" data-price="@(lastProduct.Price + 2)">M</button>
+                                                        <button class="size-btn" data-price="@(lastProduct.Price + 4)">L</button>
+                                                    </div>
+                                                }
 
                                                 <div class="menu-item-content">
                                                     <p style="opacity: 0.5;">@lastProduct.Ingredients</p>
-
-                                                    @if (showSizes)
-                                                    {
-                                                        <div class="product-sizes mt-2">
-                                                            <strong>Available Sizes:</strong>
-                                                            <ul style="list-style:none; padding-left:0; margin:0;">
-                                                                @foreach (var size in lastProduct.Sizes)
-                                                                {
-                                                                    <li style="display:inline-block; margin-right:10px;">@size</li>
-                                                                }
-                                                            </ul>
-                                                        </div>
-                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -98,6 +137,7 @@
                         </div>
                     </div>
 
+                    <!-- CATEGORY TABS -->
                     @foreach (var category in Model.Categories)
                     {
                         var tabId = category.Name.ToLower().Replace(" ", "-");
@@ -110,16 +150,14 @@
                                         </figure>
                                     </div>
                                 </div>
-
                                 <div class="col-lg-6">
                                     @foreach (var product in Model.Products
                                    .Where(p => p.CategoryId == category.Id)
                                    .OrderByDescending(p => p.Id)
                                    .Take(5))
                                     {
-                                        var showSizes = product.Sizes != null && product.Sizes.Count > 0 && product.CategoryTypeId == 1;
                                         <div class="our-menu-list">
-                                            <div class="menu-list-item" style="margin-top:40px;" data-has-size="@(showSizes ? "true" : "false")">
+                                            <div class="menu-list-item" style="margin-top:40px;">
                                                 <div class="menu-list-image">
                                                     <figure>
                                                         <img src="~/uploads/products/@product.Image" alt="@product.Name">
@@ -129,24 +167,21 @@
                                                     <div class="menu-item-title">
                                                         <h3>@product.Name</h3>
                                                         <hr>
-                                                        <span>$@product.Price</span>
+                                                        <span class="product-price" data-base="@product.Price">$@product.Price</span>
                                                     </div>
+
+                                                    @if (product.Sizes != null && product.Sizes.Any() && category.CategoryTypeId == 1)
+                                                    {
+                                                        <div class="size-options">
+                                                            <span>Size:</span>
+                                                            <button class="size-btn active" data-price="@product.Price">S</button>
+                                                            <button class="size-btn" data-price="@(product.Price + 2)">M</button>
+                                                            <button class="size-btn" data-price="@(product.Price + 4)">L</button>
+                                                        </div>
+                                                    }
 
                                                     <div class="menu-item-content">
                                                         <p style="opacity: 0.5;">@product.Ingredients</p>
-
-                                                        @if (showSizes)
-                                                        {
-                                                            <div class="product-sizes mt-2">
-                                                                <strong>Available Sizes:</strong>
-                                                                <ul style="list-style:none; padding-left:0; margin:0;">
-                                                                    @foreach (var size in product.Sizes)
-                                                                    {
-                                                                        <li style="display:inline-block; margin-right:10px;">@size</li>
-                                                                    }
-                                                                </ul>
-                                                            </div>
-                                                        }
                                                     </div>
                                                 </div>
                                             </div>
@@ -165,3 +200,26 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('.size-options').forEach(group => {
+            const buttons = group.querySelectorAll('.size-btn');
+            const priceSpan = group.closest('.menu-item-body')?.querySelector('.product-price');
+
+            if (!priceSpan) return;
+
+            const basePrice = parseFloat(priceSpan.dataset.base);
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const newPrice = parseFloat(btn.getAttribute('data-price'));
+                    priceSpan.textContent = `$${newPrice.toFixed(2)}`;
+                });
+            });
+        });
+    });
+</script>

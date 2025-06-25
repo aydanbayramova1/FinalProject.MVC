@@ -3657,11 +3657,7 @@ header.main-header {
 		}
 }
 
-.menu-size-options {
-	display: flex;
-	margin-top: 15px;
-	margin-bottom: 10px;
-}
+
 
 .menu-size-label {
 	font-size: 14px;
@@ -3735,11 +3731,7 @@ header.main-header {
 }
 
 @media (max-width: 767px) {
-	.menu-size-options {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 10px;
-	}
+
 
 	.size-options {
 		margin-left: 0;
