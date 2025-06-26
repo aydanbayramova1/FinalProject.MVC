@@ -24,10 +24,9 @@
                         <textarea asp-for="Subtitle" class="form-control" rows="3" placeholder="Enter subtitle"></textarea>
                         <span asp-validation-for="Subtitle" class="text-danger"></span>
                     </div>
-
                     <div class="form-group mb-3">
-                        <label asp-for="Photo" class="form-label">Upload Image</label>
-                        <input asp-for="Photo" type="file" class="form-control" style="padding: 9px 18px;" />
+                        <label asp-for="Photo" class="form-label">Upload Icon</label>
+                        <input asp-for="Photo" type="file" class="form-control" accept=".ico,.svg,.png" style="padding: 9px 18px;" />
                         <span asp-validation-for="Photo" class="text-danger"></span>
                     </div>
 

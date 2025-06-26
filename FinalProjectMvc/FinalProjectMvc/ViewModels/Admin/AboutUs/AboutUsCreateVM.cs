@@ -20,7 +20,7 @@ namespace FinalProjectMvc.ViewModels.Admin.AboutUs
         public string Description { get; set; }
 
         [Required(ErrorMessage = "Please upload a video file.")]
-        [MaxFileSize(5 * 1024 * 1024)] 
+        [MaxFileSize(7 * 1024 * 1024)] 
         public IFormFile VideoFile { get; set; }
 
         [Required(ErrorMessage = "Please upload an image file.")]

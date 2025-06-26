@@ -21,9 +21,10 @@
 
                     <div class="form-group mb-3">
                         <label asp-for="IconFile" class="form-label">Icon Image</label>
-                        <input asp-for="IconFile" type="file" class="form-control" style="padding: 9px 18px;" />
+                        <input asp-for="IconFile" type="file" accept="image/*" class="form-control" style="padding: 9px 18px;" />
                         <span class="text-danger" asp-validation-for="IconFile"></span>
                     </div>
+
 
                     <input asp-for="ApproachId" type="hidden" />
 

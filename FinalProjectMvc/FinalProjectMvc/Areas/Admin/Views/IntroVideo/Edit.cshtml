@@ -31,7 +31,7 @@
 
                     <div class="form-group mb-3">
                         <label asp-for="NewImgFile" class="form-label">Change Background Image</label>
-                        <input asp-for="NewImgFile" class="form-control" type="file" />
+                        <input asp-for="NewImgFile" class="form-control" type="file" accept="image/*" />
                         <span class="text-danger" asp-validation-for="NewImgFile"></span>
                     </div>
 
@@ -48,7 +48,7 @@
 
                     <div class="form-group mb-3">
                         <label asp-for="NewVideoFile" class="form-label">Change Video</label>
-                        <input asp-for="NewVideoFile" class="form-control" type="file" />
+                        <input asp-for="NewVideoFile" class="form-control" type="file" accept="video/*" />
                         <span class="text-danger" asp-validation-for="NewVideoFile"></span>
                     </div>
 

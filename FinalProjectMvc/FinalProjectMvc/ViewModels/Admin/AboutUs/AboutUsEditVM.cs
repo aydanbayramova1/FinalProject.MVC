@@ -21,7 +21,7 @@ namespace FinalProjectMvc.ViewModels.Admin.AboutUs
         [Required(ErrorMessage = "Description is required.")]
         public string Description { get; set; }
 
-        [MaxFileSize(5 * 1024 * 1024)]
+        [MaxFileSize(7 * 1024 * 1024)]
         public IFormFile? VideoFile { get; set; }
 
         public string? VideoUrl { get; set; }

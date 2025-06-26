@@ -11,7 +11,7 @@ namespace FinalProjectMvc.ViewModels.Admin.OfferItem
         public string Title { get; set; }
 
         [Required(ErrorMessage = "Description is required.")]
-        [MaxLength(90, ErrorMessage = "Description cannot exceed 90 characters.")]
+        [MaxLength(200, ErrorMessage = "Description cannot exceed 200 characters.")]
         public string Description { get; set; }
     }
 }

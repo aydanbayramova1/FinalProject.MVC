@@ -15,8 +15,8 @@ namespace FinalProjectMvc.ViewModels.Admin.Catalog
 
         [Required(ErrorMessage = "Description is required.")]
         [MaxLength(90, ErrorMessage = "Description cannot exceed 90 characters.")]
-        [RegularExpression("^[A-Za-z ]+$", ErrorMessage = "Description must contain only letters and spaces.")]
         public string Description { get; set; }
+
 
         public string? Img { get; set; }
 

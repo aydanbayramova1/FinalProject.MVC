@@ -19,12 +19,12 @@ namespace FinalProjectMvc.ViewModels.Admin.IntroVideo
 
         public string? ExistingImgPath { get; set; }
 
-        [MaxFileSize(3)] 
+        [MaxFileSize(3 * 1024 * 1024, ErrorMessage = "Image must be at most 3MB.")]
         public IFormFile? NewImgFile { get; set; }
 
         public string? ExistingVideoUrl { get; set; }
 
-        [MaxFileSize(50)] 
+        [MaxFileSize(10 * 1024 * 1024, ErrorMessage = "Video must be at most 1MB.")]
         public IFormFile? NewVideoFile { get; set; }
     }
 }

@@ -14,21 +14,26 @@ using FinalProjectMvc.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Email config
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailConfig"));
 
+// MVC
 builder.Services.AddControllersWithViews();
 
+// ? Multipart (upload) limit - 100MB
 builder.Services.Configure<FormOptions>(options =>
 {
-    options.MultipartBodyLengthLimit = 104857600;
+    options.MultipartBodyLengthLimit = 104857600; // 100MB
 });
 
-var conString = builder.Configuration.GetConnectionString("Default") ??
-    throw new InvalidOperationException("Connection string 'Default' not found.");
+// DB connection
+var conString = builder.Configuration.GetConnectionString("Default")
+    ?? throw new InvalidOperationException("Connection string 'Default' not found.");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(conString));
 
+// Identity config
 builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
@@ -41,7 +46,6 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireUppercase = true;
     options.Password.RequiredLength = 6;
     options.Password.RequiredUniqueChars = 1;
-
     options.User.RequireUniqueEmail = true;
 });
 
@@ -50,6 +54,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Unauthorized/Index";
 });
 
+// ?? DI Services
 builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IScrollingService, ScrollingService>();
 builder.Services.AddScoped<ICatalogService, CatalogService>();
@@ -98,9 +103,10 @@ builder.Services.AddScoped<ISubscribeService, SubscribeService>();
 builder.Services.AddHostedService<ReservationCleanupService>();
 builder.Services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
-
+// AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
 
+// Serilog
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .WriteTo.Console()
@@ -112,14 +118,15 @@ builder.Host.UseSerilog();
 
 var app = builder.Build();
 
+// Role seeding
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     await RoleSeeder.SeedAsync(roleManager);
 }
 
-//app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
-
+// Middleware
+// app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 
 if (!app.Environment.IsDevelopment())
 {
@@ -130,7 +137,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
 app.UseAuthentication();
+
+// Custom error redirection
 app.UseStatusCodePages(context =>
 {
     var response = context.HttpContext.Response;
@@ -149,12 +159,15 @@ app.UseStatusCodePages(context =>
 
     return Task.CompletedTask;
 });
+
 app.UseAuthorization();
 
+// Area routing
 app.MapControllerRoute(
    name: "areas",
    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
 
+// Default routing
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

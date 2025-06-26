@@ -1,5 +1,4 @@
-﻿@using FinalProjectMvc.ViewModels.Admin.AboutUs
-@model AboutUsEditVM
+﻿@model AboutUsEditVM
 
 <div class="container py-5">
     <div class="row justify-content-center">
@@ -38,7 +37,7 @@
 
                     <div class="form-group mb-3">
                         <label asp-for="ImageFile" class="form-label">Change Image</label>
-                        <input asp-for="ImageFile" type="file" class="form-control" />
+                        <input asp-for="ImageFile" type="file" class="form-control" accept="image/*" />
                         <span asp-validation-for="ImageFile" class="text-danger"></span>
                     </div>
 
@@ -55,7 +54,7 @@
 
                     <div class="form-group mb-3">
                         <label asp-for="VideoFile" class="form-label">Change Video</label>
-                        <input asp-for="VideoFile" type="file" class="form-control" />
+                        <input asp-for="VideoFile" type="file" class="form-control" accept="video/*" />
                         <span asp-validation-for="VideoFile" class="text-danger"></span>
                     </div>
 

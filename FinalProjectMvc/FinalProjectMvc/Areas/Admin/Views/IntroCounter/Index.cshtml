@@ -12,9 +12,11 @@
                     <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Intro Counters</h2>
                       @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
                       {
-                        <a asp-action="Create" class="btn btn-outline-brown" id="addNewCounterLink" style="@(Model.Any() ? "display:none;" : "display:inline-block;")">
+
+                        <a asp-action="Create" class="btn btn-outline-brown">
                             <i class="fa fa-plus mr-1"></i> Add New Counter
                         </a>
+                       
                       }
                   
                 </div>

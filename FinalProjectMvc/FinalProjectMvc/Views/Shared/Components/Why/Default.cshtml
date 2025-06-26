@@ -1,42 +1,45 @@
 ﻿@model IEnumerable<FinalProjectMvc.Models.ServiceItem>
 
-<section id="why-section">
-    <div class="why-choose-us light-bg-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="why-choose-content">
-                        <div class="section-title">
-                            <h3 class="wow fadeInUp">Why choose us</h3>
-                            <h2 class="text-anime-style-3" data-cursor="-opaque">
-                                Where flavor meets comfort and services
-                            </h2>
-                        </div>
-                        <div class="why-choose-btn wow fadeInUp" data-wow-delay="0.2s">
-                            <a asp-controller="Contact" asp-action="Index" class="btn-default">
-                                Contact us
-                            </a>
+@if (Model != null && Model.Any())
+{
+    <section id="why-section">
+        <div class="why-choose-us light-bg-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="why-choose-content">
+                            <div class="section-title">
+                                <h3 class="wow fadeInUp">Why choose us</h3>
+                                <h2 class="text-anime-style-3" data-cursor="-opaque">
+                                    Where flavor meets comfort and services
+                                </h2>
+                            </div>
+                            <div class="why-choose-btn wow fadeInUp" data-wow-delay="0.2s">
+                                <a asp-controller="Contact" asp-action="Index" class="btn-default">
+                                    Contact us
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-6">
-                    <div class="why-choose-list wow fadeInUp" data-wow-delay="0.2s">
-                        @foreach (var item in Model)
-                        {
-                            <div class="why-choose-item">
-                                <div class="icon-box">
-                                    <img src="~/uploads/services/@item.Img" alt="">
+                    <div class="col-lg-6">
+                        <div class="why-choose-list wow fadeInUp" data-wow-delay="0.2s">
+                            @foreach (var item in Model)
+                            {
+                                <div class="why-choose-item">
+                                    <div class="icon-box">
+                                        <img src="~/uploads/services/@item.Img" alt="">
+                                    </div>
+                                    <div class="why-choose-item-content">
+                                        <h3>@item.Title</h3>
+                                        <p>@item.Subtitle</p>
+                                    </div>
                                 </div>
-                                <div class="why-choose-item-content">
-                                    <h3>@item.Title</h3>
-                                    <p>@item.Subtitle</p>
-                                </div>
-                            </div>
-                        }
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+}

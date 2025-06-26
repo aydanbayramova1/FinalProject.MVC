@@ -10,12 +10,12 @@
             <div class="bg-light border rounded shadow-sm p-4">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="mb-0" style="font-family: 'Georgia', serif; color: #6b4f3b;">☕ Offer Images</h2>
-                    @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin")){
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
+                    {
                         <a asp-action="Create" class="btn btn-outline-brown" id="addNewImageSetLink" style="@(Model.Any() ? "display:none;" : "display:inline-block;")">
                             <i class="fa fa-plus mr-1"></i> Add New Image Set
                         </a>
                     }
-                 
                 </div>
 
                 @if (Model.Any())
@@ -45,21 +45,15 @@
                                         </td>
                                         <td>
                                             <div class="d-flex justify-content-center gap-2">
-                                                @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
+                                                @if (User.Identity.IsAuthenticated && (User.IsInRole("SuperAdmin") || User.IsInRole("Admin")))
                                                 {
                                                     <a asp-action="Detail" class="btn btn-info btn-sm" title="View Details">
                                                         <i class="fa-solid fa-circle-info"></i>
                                                     </a>
-                                                }
-
-                                                @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin") || User.IsInRole("Admin"))
-                                                {
                                                     <a asp-action="Edit" class="btn btn-dark btn-sm" title="Edit">
                                                         <i class="fa-solid fa-pencil"></i>
                                                     </a>
                                                 }
-                                               
-                                            
                                             </div>
                                         </td>
                                     </tr>
@@ -74,8 +68,6 @@
                                     <i class="fas fa-trash-alt"></i> Delete All
                                 </button>
                             }
-
-                          
                         </div>
                     </div>
                 }
@@ -113,13 +105,12 @@
             }).then(async (result) => {
                 if (result.isConfirmed) {
                     try {
-                        const response = await fetch(`/Admin/OfferImages/Delete`, {
+                        const formData = new FormData();
+                        formData.append("__RequestVerificationToken", token);
+
+                        const response = await fetch("/Admin/OfferImage/Delete", {
                             method: "POST",
-                            headers: {
-                                'RequestVerificationToken': token,
-                                'X-Requested-With': 'XMLHttpRequest',
-                                'Content-Type': 'application/json'
-                            }
+                            body: formData
                         });
 
                         if (response.ok) {
@@ -129,7 +120,8 @@
 
                             Swal.fire("Deleted!", "All offer images have been deleted.", "success");
                         } else {
-                            Swal.fire("Error!", "Failed to delete offer images.", "error");
+                            const errorText = await response.text();
+                            Swal.fire("Error!", errorText || "Failed to delete offer images.", "error");
                         }
                     } catch (error) {
                         Swal.fire("Error!", "Unexpected error occurred.", "error");

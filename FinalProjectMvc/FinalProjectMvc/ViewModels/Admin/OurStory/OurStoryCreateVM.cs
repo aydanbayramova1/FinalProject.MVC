@@ -16,7 +16,7 @@ namespace FinalProjectMvc.ViewModels.Admin.OurStory
         public string SectionSubtitle { get; set; }
 
         [Required(ErrorMessage = "Section description is required.")]
-        [MaxLength(90, ErrorMessage = "Section description cannot exceed 90 characters.")]
+        [MaxLength(160, ErrorMessage = "Section description cannot exceed 160 characters.")]
         public string SectionDescription { get; set; }
 
         [Required(ErrorMessage = "Image is required.")]

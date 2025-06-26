@@ -16,11 +16,11 @@ namespace FinalProjectMvc.ViewModels.Admin.IntroVideo
         public string Subtitle { get; set; }
 
         [Required(ErrorMessage = "Please upload a background image.")]
-        [MaxFileSize(3)] 
+        [MaxFileSize(3 * 1024 * 1024, ErrorMessage = "Image must be at most 3MB.")]
         public IFormFile ImgFile { get; set; }
 
         [Required(ErrorMessage = "Please upload a video file.")]
-        [MaxFileSize(50)] 
+        [MaxFileSize(10 * 1024 * 1024, ErrorMessage = "Video must be at most 10MB.")]
         public IFormFile VideoFile { get; set; }
     }
 }

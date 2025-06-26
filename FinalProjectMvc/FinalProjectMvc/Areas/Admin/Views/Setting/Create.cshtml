@@ -14,19 +14,19 @@
                     <form asp-action="Create" method="post" enctype="multipart/form-data">
                         <div class="form-group mb-3">
                             <label asp-for="HeaderLogo" class="form-label">Header Logo</label>
-                            <input asp-for="HeaderLogo" type="file" class="form-control" />
+                            <input asp-for="HeaderLogo" type="file" accept="image/*" class="form-control" />
                             <span asp-validation-for="HeaderLogo" class="text-danger"></span>
                         </div>
 
                         <div class="form-group mb-3">
                             <label asp-for="FooterLogo" class="form-label">Footer Logo</label>
-                            <input asp-for="FooterLogo" type="file" class="form-control" />
+                            <input asp-for="FooterLogo" type="file" accept="image/*" class="form-control" />
                             <span asp-validation-for="FooterLogo" class="text-danger"></span>
                         </div>
 
                         <div class="form-group mb-3">
                             <label asp-for="BackgroundImage" class="form-label">Background Image</label>
-                            <input asp-for="BackgroundImage" type="file" class="form-control" />
+                            <input asp-for="BackgroundImage" type="file" accept="image/*" class="form-control" />
                             <span asp-validation-for="BackgroundImage" class="text-danger"></span>
                         </div>
 

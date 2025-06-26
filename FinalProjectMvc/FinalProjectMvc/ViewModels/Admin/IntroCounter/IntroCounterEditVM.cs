@@ -9,7 +9,8 @@ namespace FinalProjectMvc.ViewModels.Admin.IntroCounter
 
         public string? ExistingIconPath { get; set; }
 
-        [MaxFileSize(3)] 
+        [Required(ErrorMessage = "Icon must be selected")]
+        [MaxFileSize(3 * 1024 * 1024, ErrorMessage = "Maximum allowed file size is 3MB.")]
         public IFormFile? NewIconFile { get; set; }
 
         [Required(ErrorMessage = "Count is required")]

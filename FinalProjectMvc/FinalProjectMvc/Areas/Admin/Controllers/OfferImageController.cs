@@ -96,7 +96,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> Delete()
         {

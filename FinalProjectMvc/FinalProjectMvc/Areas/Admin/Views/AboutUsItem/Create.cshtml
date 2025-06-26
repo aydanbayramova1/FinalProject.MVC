@@ -9,8 +9,8 @@
                 <form asp-action="Create" method="post" enctype="multipart/form-data">
                     <div class="form-group mb-3">
                         <label asp-for="IconFile" class="form-label">Icon</label>
-                        <input asp-for="IconFile" type="file" class="form-control" style="padding: 9px 18px;" />
-                        <span class="text-danger" asp-validation-for="IconFile"></span>
+                        <input asp-for="IconFile" type="file" class="form-control" accept=".ico,.svg,.png" />
+                        <span asp-validation-for="IconFile" class="text-danger"></span>
                     </div>
 
                     <div class="form-group mb-3">

@@ -70,7 +70,6 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             var vm = _mapper.Map<ApproachEditVM>(entity);
             return View(vm);
         }
-
         [HttpPost]
         [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Edit(ApproachEditVM vm)
@@ -80,15 +79,15 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             var entity = await _approachService.GetByIdAsync(vm.Id);
             if (entity == null) return NotFound();
 
+            _mapper.Map(vm, entity);
+
             if (vm.ImageFile != null)
             {
                 string newFile = await SaveFileAsync(vm.ImageFile);
-                entity.Image = newFile;
+                entity.Image = newFile; 
             }
 
-            _mapper.Map(vm, entity);
             await _approachService.UpdateAsync(entity);
-
             return RedirectToAction("Index");
         }
 

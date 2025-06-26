@@ -21,9 +21,10 @@
 
                     <div class="form-group mb-4">
                         <label asp-for="ImageFile" class="form-label">Image</label>
-                        <input asp-for="ImageFile" type="file" class="form-control" style="padding: 9px 18px;" />
+                        <input asp-for="ImageFile" type="file" accept="image/*" class="form-control" style="padding: 9px 18px;" />
                         <span class="text-danger" asp-validation-for="ImageFile"></span>
                     </div>
+
 
                     <div class="d-flex justify-content-between">
                         <button type="submit"

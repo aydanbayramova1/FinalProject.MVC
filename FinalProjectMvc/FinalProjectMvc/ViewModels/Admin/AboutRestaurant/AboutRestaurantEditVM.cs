@@ -50,10 +50,15 @@ namespace FinalProjectMvc.ViewModels.Admin.AboutRestaurant
 
         [Required(ErrorMessage = "Happy Hour is required.")]
         public string HappyHour { get; set; }
-
+        private string _holidayStatus;
         [Required(ErrorMessage = "Holiday Status is required.")]
-        [RegularExpression(@"^\d+$", ErrorMessage = "Holiday Status must be a positive number or zero.")]
-        public string HolidayStatus { get; set; }
+        [RegularExpression("^(open!|closed!)$", ErrorMessage = "Holiday Status must be either 'open!' or 'closed!'")]
+        public string HolidayStatus
+        {
+            get => _holidayStatus;
+            set => _holidayStatus = value?.ToLower();
+        }
+
 
         [Required(ErrorMessage = "Holiday Note is required.")]
         public string HolidayNote { get; set; }

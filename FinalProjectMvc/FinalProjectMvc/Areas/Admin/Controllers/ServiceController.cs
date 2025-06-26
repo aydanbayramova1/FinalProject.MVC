@@ -32,19 +32,11 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
 
         [Authorize(Roles = "SuperAdmin")]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
-            var service = await _serviceService.GetAsync(); 
-            if (service == null) return NotFound();
-
-            var vm = new ServiceItemCreateVM
-            {
-                ServiceId = service.Id
-            };
-
+            var vm = new ServiceCreateVM(); 
             return View(vm);
         }
-
         [HttpPost]
         [Authorize(Roles = "SuperAdmin")] 
         public async Task<IActionResult> Create(ServiceCreateVM vm)

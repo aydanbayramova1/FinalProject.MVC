@@ -16,7 +16,6 @@
                     <input type="hidden" asp-for="FooterLogo" />
                     <input type="hidden" asp-for="BackgroundImage" />
 
-      
                     <div class="form-group mb-3">
                         <label class="form-label">Current Header Logo</label><br />
                         @if (!string.IsNullOrEmpty(Model.HeaderLogo))
@@ -28,11 +27,10 @@
                             <p class="text-muted">No Header Logo uploaded.</p>
                         }
                         <label asp-for="HeaderLogoFile" class="form-label">New Header Logo (optional)</label>
-                        <input asp-for="HeaderLogoFile" type="file" class="form-control" />
+                        <input asp-for="HeaderLogoFile" type="file" accept="image/*" class="form-control" />
                         <span asp-validation-for="HeaderLogoFile" class="text-danger"></span>
                     </div>
 
-           
                     <div class="form-group mb-3">
                         <label class="form-label">Current Footer Logo</label><br />
                         @if (!string.IsNullOrEmpty(Model.FooterLogo))
@@ -44,7 +42,7 @@
                             <p class="text-muted">No Footer Logo uploaded.</p>
                         }
                         <label asp-for="FooterLogoFile" class="form-label">New Footer Logo (optional)</label>
-                        <input asp-for="FooterLogoFile" type="file" class="form-control" />
+                        <input asp-for="FooterLogoFile" type="file" accept="image/*" class="form-control" />
                         <span asp-validation-for="FooterLogoFile" class="text-danger"></span>
                     </div>
 
@@ -59,7 +57,7 @@
                             <p class="text-muted">No Background Image uploaded.</p>
                         }
                         <label asp-for="BackgroundImageFile" class="form-label">New Background Image (optional)</label>
-                        <input asp-for="BackgroundImageFile" type="file" class="form-control" />
+                        <input asp-for="BackgroundImageFile" type="file" accept="image/*" class="form-control" />
                         <span asp-validation-for="BackgroundImageFile" class="text-danger"></span>
                     </div>
 
