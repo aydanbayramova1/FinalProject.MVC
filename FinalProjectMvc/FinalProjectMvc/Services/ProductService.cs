@@ -58,6 +58,18 @@ namespace FinalProjectMvc.Services
             return product; 
         }
 
+        public async Task<bool> ValidateSizeCountForCategoryType1Async(int categoryId, List<int> selectedSizeIds)
+        {
+            var category = await _context.Categories.FindAsync(categoryId);
+
+            if (category != null && category.CategoryTypeId == 1)
+            {
+                return selectedSizeIds != null && selectedSizeIds.Count == 3;
+            }
+
+            return true;
+        }
+
 
         public async Task<ProductCreateVM> GetCreateVMAsync()
         {

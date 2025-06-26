@@ -21,7 +21,7 @@ namespace FinalProjectMvc.ViewModels.Admin.Product
         public IFormFile? ImageFile { get; set; }
 
         [Required(ErrorMessage = "Ingredients are required.")]
-        [MaxLength(100, ErrorMessage = "Ingredients cannot exceed 100 characters.")]
+        [MaxLength(200, ErrorMessage = "Ingredients cannot exceed 200 characters.")]
         public string Ingredients { get; set; }
 
         [Required(ErrorMessage = "Price is required.")]

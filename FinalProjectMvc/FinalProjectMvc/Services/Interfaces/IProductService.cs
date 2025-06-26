@@ -18,5 +18,6 @@ namespace FinalProjectMvc.Services.Interfaces
         Task<IQueryable<ProductVM>> GetAllQueryAsync();
         Task<List<Product>> SearchAsync(string query);
         Task<Product> GetByNameAsync(string name);
+        Task<bool> ValidateSizeCountForCategoryType1Async(int categoryId, List<int> selectedSizeIds);
     }
 }

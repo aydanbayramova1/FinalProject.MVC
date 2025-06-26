@@ -75,6 +75,12 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProductCreateVM vm)
         {
+
+            if (!await _productService.ValidateSizeCountForCategoryType1Async(vm.CategoryId, vm.SelectedSizeIds))
+            {
+                ModelState.AddModelError("SelectedSizeIds", "Bu kateqoriya üçün 3 ölçü (Small, Medium, Large) seçilməlidir.");
+            }
+
             if (ModelState.IsValid)
             {
                 var existingProduct = await _productService.GetByNameAsync(vm.Name);

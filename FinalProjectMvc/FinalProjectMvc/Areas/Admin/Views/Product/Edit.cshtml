@@ -12,9 +12,7 @@
 
                 @if (ViewData["Error"] != null)
                 {
-                    <div class="alert alert-danger">
-                        @ViewData["Error"]
-                    </div>
+                    <div class="alert alert-danger">@ViewData["Error"]</div>
                 }
 
                 <form asp-action="Edit" method="post" enctype="multipart/form-data">
@@ -23,6 +21,7 @@
                     <div class="form-group mb-3">
                         <label asp-for="Name" class="form-label">Product Name</label>
                         <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
 
                     <div class="form-group mb-3">
@@ -32,10 +31,11 @@
                     </div>
 
                     <div class="form-group mb-3">
-                        <label asp-for="Price" class="form-label">Price</label>
-                        <input asp-for="Price" class="form-control" />
+                        <label asp-for="Price" class="form-label">Price ($)</label>
+                        <input asp-for="Price" class="form-control" type="number" min="1" step="1" placeholder="Enter price" />
                         <span asp-validation-for="Price" class="text-danger"></span>
                     </div>
+
 
                     <div class="form-group mb-3">
                         <label asp-for="CategoryId" class="form-label">Category</label>
@@ -45,7 +45,7 @@
                         <span asp-validation-for="CategoryId" class="text-danger"></span>
                     </div>
 
-                    <div class="form-group mb-3" id="editSizesSection" style="display:none;">
+                    <div class="form-group mb-3" id="editSizesSection" style="display: none;">
                         <label class="form-label">Sizes</label>
                         @if (Model.Sizes != null)
                         {
@@ -64,11 +64,15 @@
                         <span asp-validation-for="SelectedSizeIds" class="text-danger"></span>
                     </div>
 
+                    <div id="editSizeValidationAlert" class="alert alert-warning mt-2" style="display: none;">
+                        Please select at least 3 sizes for drink products.
+                    </div>
+
                     <div class="form-group mb-3">
                         <label class="form-label">Current Image</label>
                         @if (!string.IsNullOrEmpty(Model.ExistingImage))
                         {
-                            <div><img src="~/uploads/products/@Model.ExistingImage" style="max-height: 200px;" alt="Product Image" /></div>
+                            <div><img src="~/uploads/products/@Model.ExistingImage" style="max-height: 200px;" /></div>
                         }
                         else
                         {
@@ -78,9 +82,10 @@
 
                     <div class="form-group mb-4">
                         <label asp-for="ImageFile" class="form-label">Upload New Image (Optional)</label>
-                        <input asp-for="ImageFile" class="form-control" type="file" />
+                        <input asp-for="ImageFile" class="form-control" type="file" accept="image/*" />
                         <span asp-validation-for="ImageFile" class="text-danger"></span>
                     </div>
+
 
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-outline-primary">Save Changes</button>
@@ -96,22 +101,49 @@
     document.addEventListener('DOMContentLoaded', function () {
         const categorySelect = document.getElementById('editCategorySelect');
         const sizesSection = document.getElementById('editSizesSection');
+        const sizeValidationAlert = document.getElementById('editSizeValidationAlert');
+        const sizeCheckboxes = document.querySelectorAll('input[name="SelectedSizeIds"]');
+        const form = document.querySelector('form');
+
         const categoryTypes = @Html.Raw(Json.Serialize(Model.CategoryTypesById ?? new Dictionary<int, string>()));
 
         function toggleSizes(categoryId) {
-            if (categoryTypes[categoryId] === "Drink") {
+            const type = categoryTypes[categoryId];
+            if (type === "Drink") {
                 sizesSection.style.display = 'block';
+                checkSizeValidation();
             } else {
                 sizesSection.style.display = 'none';
+                sizeValidationAlert.style.display = 'none';
             }
         }
 
+        function checkSizeValidation() {
+            const selected = Array.from(sizeCheckboxes).filter(cb => cb.checked);
+            const isDrink = categoryTypes[categorySelect.value] === "Drink";
+
+            if (isDrink) {
+                if (selected.length < 3) {
+                    sizeValidationAlert.style.display = 'block';
+                    sizeValidationAlert.innerHTML = `<strong>Warning:</strong> Select at least 3 sizes. Currently: ${selected.length}`;
+                    return false;
+                } else {
+                    sizeValidationAlert.style.display = 'none';
+                }
+            }
+            return true;
+        }
+
+        form.addEventListener('submit', function (e) {
+            if (!checkSizeValidation()) {
+                e.preventDefault();
+            }
+        });
+
+        if (categorySelect.value) toggleSizes(categorySelect.value);
         categorySelect.addEventListener('change', function () {
             toggleSizes(this.value);
         });
-
-        if (categorySelect.value) {
-            toggleSizes(categorySelect.value);
-        }
+        sizeCheckboxes.forEach(cb => cb.addEventListener('change', checkSizeValidation));
     });
 </script>
