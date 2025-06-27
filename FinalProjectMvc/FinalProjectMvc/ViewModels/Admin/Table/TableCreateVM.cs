@@ -8,6 +8,7 @@ namespace FinalProjectMvc.ViewModels.Admin.Table
         public int Number { get; set; }
 
         [Required(ErrorMessage = "Location is required.")]
+        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Location must only contain letters and spaces.")]
         public string Location { get; set; }
 
         [Required(ErrorMessage = "Capacity is required.")]

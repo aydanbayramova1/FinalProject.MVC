@@ -14,8 +14,9 @@ namespace FinalProjectMvc.ViewModels.Admin.FaqItem
         public string Answer { get; set; }
 
         [Required(ErrorMessage = "Category selection is required")]
+        [Range(1, int.MaxValue, ErrorMessage = "Please select a valid category")]
         [Display(Name = "FAQ Category")]
-        public int FaqCategoryId { get; set; }  
+        public int FaqCategoryId { get; set; }
 
         public List<SelectListItem>? Categories { get; set; }
     }

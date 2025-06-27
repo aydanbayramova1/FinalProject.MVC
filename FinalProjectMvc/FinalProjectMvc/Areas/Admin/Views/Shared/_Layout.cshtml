@@ -118,6 +118,7 @@
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="ContactUs" asp-action="Index">ContactUs</a>
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="ContactMessage" asp-action="Index">ContactMessage</a>
                                         <a class="dropdown-item" asp-area="Admin" asp-controller="Subscribe" asp-action="Index">Subscribes</a>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="Message" asp-action="Index">Messages</a>
                                         @if (User.Identity.IsAuthenticated && User.IsInRole("SuperAdmin"))
                                         {
                                             <a class="dropdown-item" asp-area="Admin" asp-controller="User" asp-action="Index">User Add Role</a>
@@ -223,4 +224,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

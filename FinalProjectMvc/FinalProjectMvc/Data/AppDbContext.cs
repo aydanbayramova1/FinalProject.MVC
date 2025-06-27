@@ -51,6 +51,7 @@ namespace FinalProjectMvc.Data
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Table> Tables { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
+        //public DbSet<Message> Messages { get; set; }
 
 
 
@@ -106,6 +107,25 @@ namespace FinalProjectMvc.Data
       .WithMany(t => t.Reservations)
       .HasForeignKey(r => r.TableId)
       .OnDelete(DeleteBehavior.Restrict);
+
+
+            //modelBuilder.Entity<Message>()
+            // .HasOne(m => m.Sender)
+            // .WithMany()
+            // .HasForeignKey(m => m.SenderId)
+            // .OnDelete(DeleteBehavior.Restrict);
+
+
+            //modelBuilder.Entity<Message>()
+            //.HasOne(m => m.Receiver)
+            //.WithMany()
+            //.HasForeignKey(m => m.ReceiverId)
+            //.OnDelete(DeleteBehavior.Cascade);
         }
+
+
+
     }
+
+
 }
