@@ -140,5 +140,14 @@ namespace FinalProjectMvc.Services
                 .Include(c => c.CategoryType)
                 .ToDictionaryAsync(c => c.Id, c => c.CategoryType.Name);
         }
+
+      public async Task<int> GetCategoryTypeIdAsync(int categoryId)
+{
+    var category = await _context.Categories
+        .Include(c => c.CategoryType)
+        .FirstOrDefaultAsync(c => c.Id == categoryId);
+
+    return category?.CategoryTypeId ?? 0;
+}
     }
 }

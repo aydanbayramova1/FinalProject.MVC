@@ -75,10 +75,17 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProductCreateVM vm)
         {
+            int categoryTypeId = await _categoryService.GetCategoryTypeIdAsync(vm.CategoryId);
 
-            if (!await _productService.ValidateSizeCountForCategoryType1Async(vm.CategoryId, vm.SelectedSizeIds))
+            if (categoryTypeId == 1) // Drink kateqoriyasıdırsa
             {
-                ModelState.AddModelError("SelectedSizeIds", "Bu kateqoriya üçün 3 ölçü (Small, Medium, Large) seçilməlidir.");
+                var allSizes = await _sizeService.GetAllAsync();
+                var requiredSizes = allSizes
+                    .Where(s => s.Name == "Small" || s.Name == "Medium" || s.Name == "Large")
+                    .Select(s => s.Id)
+                    .ToList();
+
+                vm.SelectedSizeIds = requiredSizes;
             }
 
             if (ModelState.IsValid)
@@ -86,6 +93,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
                 var existingProduct = await _productService.GetByNameAsync(vm.Name);
                 if (existingProduct != null)
                 {
+                    ModelState.AddModelError("Name", "Bu adda məhsul artıq mövcuddur.");
                     vm.Categories = await _categoryService.GetSelectListAsync();
                     vm.Sizes = await _sizeService.GetSelectListAsync();
                     vm.CategoryTypesById = await _categoryService.GetCategoryTypesWithIdAsync();
@@ -95,45 +103,19 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
                 var createdProduct = await _productService.CreateAsync(vm);
 
                 var subscribers = await _subscribeService.GetAllAsync();
-
-
-
                 string subject = "A New Flavor Has Arrived at Caffe Luna!";
-
-                string menuLink = "https://localhost:7117/Menu"; 
-
+                string menuLink = "https://localhost:7117/Menu";
                 string html = $@"
-  <div style='font-family: Arial, sans-serif;background-color: rgba(228, 204, 180, 0.2);color: #3e2723;padding: 30px;border-radius: 10px;max-width: 600px;margin: auto;box-shadow: 0 4px 12px rgba(0,0,0,0.1);'>
-    <h2 style='color: #6d4c41;'>☕ A Delicious New Arrival!</h2>
-    <p style='font-size: 18px;'>We’ve just added a brand new delight to the Caffe Luna menu: <strong>{createdProduct.Name}</strong></p>
-    <p style='font-size: 16px; line-height: 1.6;'>
-      <em>{createdProduct.Ingredients}</em>
-    </p>
-
-    <div style='text-align: center; margin-top: 25px;'>
-      <a href='{menuLink}' style='
-        background-color: #8d6e63;
-        color: white;
-        padding: 12px 25px;
-        text-decoration: none;
-        border-radius: 25px;
-        font-size: 16px;
-        font-weight: bold;
-      '>
-        View Our Menu
-      </a>
-    </div>
-
-    <p style='margin-top: 30px; font-size: 14px; color: #8d6e63;'>
-      Come and discover your new favorite flavor at Caffe Luna 💫
-    </p>
-
-    <p style='margin-top: 40px; font-size: 16px;'>
-      Best regards,<br />
-      <strong>Aydan Bayramova</strong><br />
-      <em>Owner, Caffe Luna</em>
-    </p>
-  </div>";
+<div style='font-family: Arial, sans-serif;background-color: rgba(228, 204, 180, 0.2);color: #3e2723;padding: 30px;border-radius: 10px;max-width: 600px;margin: auto;box-shadow: 0 4px 12px rgba(0,0,0,0.1);'>
+  <h2 style='color: #6d4c41;'>☕ A Delicious New Arrival!</h2>
+  <p style='font-size: 18px;'>We’ve just added a brand new delight to the Caffe Luna menu: <strong>{createdProduct.Name}</strong></p>
+  <p style='font-size: 16px; line-height: 1.6;'><em>{createdProduct.Ingredients}</em></p>
+  <div style='text-align: center; margin-top: 25px;'>
+    <a href='{menuLink}' style='background-color: #8d6e63; color: white; padding: 12px 25px; text-decoration: none; border-radius: 25px; font-size: 16px; font-weight: bold;'>View Our Menu</a>
+  </div>
+  <p style='margin-top: 30px; font-size: 14px; color: #8d6e63;'>Come and discover your new favorite flavor at Caffe Luna 💫</p>
+  <p style='margin-top: 40px; font-size: 16px;'>Best regards,<br /><strong>Aydan Bayramova</strong><br /><em>Owner, Caffe Luna</em></p>
+</div>";
 
                 foreach (var subscriber in subscribers)
                 {
@@ -142,13 +124,13 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-
-            vm.Categories = await _categoryService.GetSelectListAsync();
-            vm.Sizes = await _sizeService.GetSelectListAsync();
-            vm.CategoryTypesById = await _categoryService.GetCategoryTypesWithIdAsync();
-            return View(vm);
+            var vmm = await _productService.GetCreateVMAsync();
+            return View(vmm);
+            //vm.Categories = await _categoryService.GetSelectListAsync();
+            //vm.Sizes = await _sizeService.GetSelectListAsync();
+            //vm.CategoryTypesById = await _categoryService.GetCategoryTypesWithIdAsync();
+            //return View(vm);
         }
-
 
 
 

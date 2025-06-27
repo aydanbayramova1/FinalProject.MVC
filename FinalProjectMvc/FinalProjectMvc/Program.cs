@@ -20,20 +20,17 @@ builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Emai
 // MVC
 builder.Services.AddControllersWithViews();
 
-// ? Multipart (upload) limit - 100MB
 builder.Services.Configure<FormOptions>(options =>
 {
-    options.MultipartBodyLengthLimit = 104857600; // 100MB
+    options.MultipartBodyLengthLimit = 104857600;
 });
 
-// DB connection
 var conString = builder.Configuration.GetConnectionString("Default")
     ?? throw new InvalidOperationException("Connection string 'Default' not found.");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(conString));
 
-// Identity config
 builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
@@ -54,7 +51,6 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Unauthorized/Index";
 });
 
-// ?? DI Services
 builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<IScrollingService, ScrollingService>();
 builder.Services.AddScoped<ICatalogService, CatalogService>();
@@ -101,12 +97,12 @@ builder.Services.AddScoped<ITableService, TableService>();
 builder.Services.AddScoped<IReservationService, ReservationService>();
 builder.Services.AddScoped<ISubscribeService, SubscribeService>();
 builder.Services.AddHostedService<ReservationCleanupService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
-// AutoMapper
 builder.Services.AddAutoMapper(typeof(Program));
 
-// Serilog
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .WriteTo.Console()
@@ -118,7 +114,6 @@ builder.Host.UseSerilog();
 
 var app = builder.Build();
 
-// Role seeding
 using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -140,7 +135,6 @@ app.UseRouting();
 
 app.UseAuthentication();
 
-// Custom error redirection
 app.UseStatusCodePages(context =>
 {
     var response = context.HttpContext.Response;
@@ -162,12 +156,10 @@ app.UseStatusCodePages(context =>
 
 app.UseAuthorization();
 
-// Area routing
 app.MapControllerRoute(
    name: "areas",
    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
 
-// Default routing
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

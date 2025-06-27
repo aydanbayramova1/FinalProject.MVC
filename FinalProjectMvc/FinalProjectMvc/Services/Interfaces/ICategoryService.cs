@@ -14,5 +14,7 @@ namespace FinalProjectMvc.Services.Interfaces
         Task<List<SelectListItem>> GetSelectListAsync();
         Task DeleteAsync(int id);
         Task<Dictionary<int, string>> GetCategoryTypesWithIdAsync();
+        Task<int> GetCategoryTypeIdAsync(int categoryId);
+
     }
 }

@@ -2,11 +2,9 @@
 
 @{
     ViewData["Title"] = "Add New Product";
-
-    // CategoryId və CategoryTypesById yoxlanaraq sizes bölməsi görünəcəkmi müəyyən edilir
     var showSizesSection = Model.CategoryTypesById != null
         && Model.CategoryTypesById.ContainsKey(Model.CategoryId)
-        && Model.CategoryTypesById[Model.CategoryId] == "Drink";
+        && (Model.CategoryTypesById[Model.CategoryId] == "Drink" || Model.CategoryTypesById[Model.CategoryId] == "1");
 }
 
 <div class="container py-5">
@@ -50,6 +48,12 @@
 
                     <div class="form-group mb-4" id="sizesSection" style="@(showSizesSection ? "" : "display: none;")">
                         <label class="form-label">Sizes</label>
+
+                        <!-- CategoryType 1 üçün avtomatik seçim mesajı -->
+                        <div id="autoSizeMessage" class="alert alert-info mb-3" style="display: none;">
+                            <strong>Info:</strong> Bu kateqoriya üçün Small, Medium və Large ölçüləri avtomatik seçilir.
+                        </div>
+
                         <div>
                             @if (Model.Sizes != null && Model.Sizes.Any())
                             {
@@ -70,8 +74,8 @@
                         <span asp-validation-for="SelectedSizeIds" class="text-danger"></span>
                     </div>
 
-                    <!-- Gizli validation mesajı - yalnız Drink kateqoriyası seçildikdə göstərilir -->
-                    <div id="sizeValidationAlert" class="alert alert-warning" style="display: none;">
+                    <!-- Drink kateqoriyası üçün validation mesajı -->
+                    <div id="drinkSizeValidationAlert" class="alert alert-warning" style="display: none;">
                         <strong>Note:</strong> Please select at least 3 sizes for drink products.
                     </div>
 
@@ -96,47 +100,90 @@
         const categorySelect = document.getElementById('categorySelect');
         const sizesSection = document.getElementById('sizesSection');
         const sizeCheckboxes = document.querySelectorAll('input[name="SelectedSizeIds"]');
-        const sizeValidationAlert = document.getElementById('sizeValidationAlert');
+        const drinkSizeValidationAlert = document.getElementById('drinkSizeValidationAlert');
+        const autoSizeMessage = document.getElementById('autoSizeMessage');
         const sizeValidationSpan = document.querySelector('span[data-valmsg-for="SelectedSizeIds"]');
 
         const categoryTypes = @Html.Raw(Json.Serialize(Model.CategoryTypesById ?? new Dictionary<int, string>()));
 
+        const sizeNames = ['Small', 'Medium', 'Large'];
+        const requiredSizeIds = [];
+
+        sizeCheckboxes.forEach(checkbox => {
+            const label = document.querySelector(`label[for="${checkbox.id}"]`);
+            if (label && sizeNames.includes(label.textContent.trim())) {
+                requiredSizeIds.push(parseInt(checkbox.value));
+            }
+        });
+
         function updateSizeSection(categoryId) {
             const categoryType = categoryTypes[categoryId];
+
             if (categoryType === 'Drink') {
                 sizesSection.style.display = 'block';
-                // Əgər validation error varsa və sizes section göstərilirsə, alert də göstər
+                autoSizeMessage.style.display = 'none';
+
+                sizeCheckboxes.forEach(cb => {
+                    cb.disabled = false;
+                });
+
                 if (sizeValidationSpan && sizeValidationSpan.textContent.trim() !== '') {
-                    sizeValidationAlert.style.display = 'block';
+                    drinkSizeValidationAlert.style.display = 'block';
+                }
+            } else if (categoryType === '1') {
+                sizesSection.style.display = 'block';
+                autoSizeMessage.style.display = 'block';
+                drinkSizeValidationAlert.style.display = 'none';
+
+                sizeCheckboxes.forEach(cb => {
+                    cb.checked = false;
+                    cb.disabled = true;
+                });
+
+           
+                requiredSizeIds.forEach(sizeId => {
+                    const checkbox = document.querySelector(`input[name="SelectedSizeIds"][value="${sizeId}"]`);
+                    if (checkbox) {
+                        checkbox.checked = true;
+                        checkbox.disabled = false;
+                    }
+                });
+
+                if (sizeValidationSpan) {
+                    sizeValidationSpan.textContent = '';
                 }
             } else {
                 sizesSection.style.display = 'none';
-                sizeValidationAlert.style.display = 'none';
-                // Size checkbox-ları təmizlə
-                sizeCheckboxes.forEach(cb => cb.checked = false);
-                // Validation error-u gizlət
+                autoSizeMessage.style.display = 'none';
+                drinkSizeValidationAlert.style.display = 'none';
+
+                sizeCheckboxes.forEach(cb => {
+                    cb.checked = false;
+                    cb.disabled = false;
+                });
+
                 if (sizeValidationSpan) {
                     sizeValidationSpan.textContent = '';
                 }
             }
         }
 
-        function checkSizeValidation() {
+        function checkDrinkSizeValidation() {
             const categoryId = parseInt(categorySelect.value);
             const categoryType = categoryTypes[categoryId];
 
             if (categoryType === 'Drink') {
                 const checkedSizes = document.querySelectorAll('input[name="SelectedSizeIds"]:checked');
                 if (checkedSizes.length > 0 && checkedSizes.length < 3) {
-                    sizeValidationAlert.style.display = 'block';
-                    sizeValidationAlert.innerHTML = '<strong>Warning:</strong> Please select at least 3 sizes for drink products. Currently selected: ' + checkedSizes.length;
-                    sizeValidationAlert.className = 'alert alert-warning';
+                    drinkSizeValidationAlert.style.display = 'block';
+                    drinkSizeValidationAlert.innerHTML = '<strong>Warning:</strong> Please select at least 3 sizes for drink products. Currently selected: ' + checkedSizes.length;
+                    drinkSizeValidationAlert.className = 'alert alert-warning';
                 } else if (checkedSizes.length >= 3) {
-                    sizeValidationAlert.style.display = 'none';
+                    drinkSizeValidationAlert.style.display = 'none';
                 } else if (checkedSizes.length === 0) {
-                    sizeValidationAlert.style.display = 'block';
-                    sizeValidationAlert.innerHTML = '<strong>Note:</strong> Please select at least 3 sizes for drink products.';
-                    sizeValidationAlert.className = 'alert alert-info';
+                    drinkSizeValidationAlert.style.display = 'block';
+                    drinkSizeValidationAlert.innerHTML = '<strong>Note:</strong> Please select at least 3 sizes for drink products.';
+                    drinkSizeValidationAlert.className = 'alert alert-info';
                 }
             }
         }
@@ -148,25 +195,39 @@
             }
         });
 
-        // Size checkbox-lara event listener əlavə et
         sizeCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', checkSizeValidation);
+            checkbox.addEventListener('change', function() {
+                const categoryId = parseInt(categorySelect.value);
+                const categoryType = categoryTypes[categoryId];
+
+                if (categoryType === '1') {
+                    if (requiredSizeIds.includes(parseInt(this.value))) {
+                        this.checked = true; 
+                        return;
+                    }
+                }
+
+              
+                if (categoryType === 'Drink') {
+                    checkDrinkSizeValidation();
+                }
+            });
         });
 
-        // İlkin yükləmədə yoxla
+        
         const initialCategoryId = parseInt(categorySelect.value);
         if (!isNaN(initialCategoryId)) {
             updateSizeSection(initialCategoryId);
-            checkSizeValidation();
+            checkDrinkSizeValidation();
         }
 
         if (sizeValidationSpan && sizeValidationSpan.textContent.trim() !== '') {
             const categoryId = parseInt(categorySelect.value);
             const categoryType = categoryTypes[categoryId];
             if (categoryType === 'Drink') {
-                sizeValidationAlert.style.display = 'block';
-                sizeValidationAlert.innerHTML = '<strong>Error:</strong> ' + sizeValidationSpan.textContent;
-                sizeValidationAlert.className = 'alert alert-danger';
+                drinkSizeValidationAlert.style.display = 'block';
+                drinkSizeValidationAlert.innerHTML = '<strong>Error:</strong> ' + sizeValidationSpan.textContent;
+                drinkSizeValidationAlert.className = 'alert alert-danger';
             }
         }
     });

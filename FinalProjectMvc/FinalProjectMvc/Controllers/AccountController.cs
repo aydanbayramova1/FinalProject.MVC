@@ -73,20 +73,17 @@ namespace YourProjectName.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginVM request)
+        public async Task<IActionResult> Login(LoginVM model)
         {
-
             if (!ModelState.IsValid)
-            {
-                return View(request);
-            }
+                return View(model);
 
-            var result = await _accountService.LoginAsync(request);
+            var result = await _accountService.LoginAsync(model);
 
             if (!result.Succeeded)
             {
-                ModelState.AddModelError(string.Empty, "Login informations is wrong");
-                return View(request);
+                ModelState.AddModelError(string.Empty, "Incorrect username or password.");
+                return View(model);
             }
 
             return RedirectToAction("Index", "Home");
