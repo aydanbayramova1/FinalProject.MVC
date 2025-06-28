@@ -11,6 +11,7 @@ namespace YourProjectName.Controllers
     public class AccountController : Controller
     {
         private readonly IAccountService _accountService;
+        private readonly UserManager<AppUser> _userManager;
 
         public AccountController(IAccountService accountService)
         {

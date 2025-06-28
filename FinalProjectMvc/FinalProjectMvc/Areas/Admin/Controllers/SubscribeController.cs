@@ -15,6 +15,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
             _subscribeService = subscribeService;
         }
 
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Index()
         {
             var newsletters = await _subscribeService.GetAllAsync();

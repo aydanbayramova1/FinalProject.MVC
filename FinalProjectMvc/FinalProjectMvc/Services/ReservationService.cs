@@ -41,6 +41,7 @@ namespace FinalProjectMvc.Services
                 .ToListAsync();
         }
 
+
         public async Task<ReservationDetailVM> GetReservationByIdAsync(int id)
         {
             var reservation = await _context.Reservations
@@ -68,7 +69,7 @@ namespace FinalProjectMvc.Services
             };
         }
 
-        public async Task<bool> CreateReservationAsync(ReservationCreateVM model)
+        public async Task<ReservationResultVM> CreateReservationAsync(ReservationCreateVM model)
         {
             try
             {
@@ -77,31 +78,57 @@ namespace FinalProjectMvc.Services
                 if (model.Date.Date < now.Date ||
                     (model.Date.Date == now.Date && model.TimeFrom <= now.TimeOfDay))
                 {
-                    return false;
+                    return new ReservationResultVM
+                    {
+                        Success = false,
+                        Message = "Reservations cannot be made for past dates and times!"
+                    };
                 }
 
                 var existingReservation = await _context.Reservations
-       .Where(r => r.TableId == model.TableId &&
-                  r.Date.Date == model.Date.Date &&
-                  ((model.TimeFrom >= r.TimeFrom && model.TimeFrom < r.TimeTo) ||
-                   (model.TimeTo > r.TimeFrom && model.TimeTo <= r.TimeTo) ||
-                   (model.TimeFrom <= r.TimeFrom && model.TimeTo >= r.TimeTo)))
-       .FirstOrDefaultAsync();
+                    .Where(r => r.TableId == model.TableId &&
+                                r.Date.Date == model.Date.Date &&
+                                ((model.TimeFrom >= r.TimeFrom && model.TimeFrom < r.TimeTo) ||
+                                 (model.TimeTo > r.TimeFrom && model.TimeTo <= r.TimeTo) ||
+                                 (model.TimeFrom <= r.TimeFrom && model.TimeTo >= r.TimeTo)))
+                    .FirstOrDefaultAsync();
 
                 if (existingReservation != null)
                 {
-                    return false; // Masa artıq rezerv edilib
+                    return new ReservationResultVM
+                    {
+                        Success = false,
+                        Message = "The table for this date and time is already reserved!"
+                    };
                 }
 
                 if (!await IsTableAvailableAsync(model.TableId, model.Date, model.TimeFrom, model.TimeTo))
-                    return false;
+                {
+                    return new ReservationResultVM
+                    {
+                        Success = false,
+                        Message = "This table is not available at the selected time."
+                    };
+                }
 
                 var table = await _context.Tables.FirstOrDefaultAsync(t => t.Id == model.TableId);
                 if (table == null)
-                    return false;
+                {
+                    return new ReservationResultVM
+                    {
+                        Success = false,
+                        Message = "Table not found!"
+                    };
+                }
 
                 if (model.Guests != table.Capacity && model.Guests != table.Capacity - 1)
-                    return false;
+                {
+                    return new ReservationResultVM
+                    {
+                        Success = false,
+                        Message = $"The number of guests does not match the table capacity.. ({table.Capacity} single table)"
+                    };
+                }
 
                 var reservation = new Reservation
                 {
@@ -122,13 +149,22 @@ namespace FinalProjectMvc.Services
 
                 await SendReservationConfirmationEmailAsync(reservation);
 
-                return true;
+                return new ReservationResultVM
+                {
+                    Success = true,
+                    Message = "Reservation successfully created!"
+                };
             }
             catch
             {
-                return false;
+                return new ReservationResultVM
+                {
+                    Success = false,
+                    Message = "An error occurred. Please try again later.."
+                };
             }
         }
+
 
         public async Task<bool> UpdateReservationStatusAsync(int id, ReservationStatus status)
         {

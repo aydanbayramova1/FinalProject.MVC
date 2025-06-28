@@ -13,7 +13,7 @@ namespace FinalProjectMvc.Services.Interfaces
     {
         Task<List<ReservationVM>> GetAllReservationsAsync();
         Task<ReservationDetailVM> GetReservationByIdAsync(int id);
-        Task<bool> CreateReservationAsync(ReservationCreateVM model);
+        Task<ReservationResultVM> CreateReservationAsync(ReservationCreateVM model);
         Task<bool> UpdateReservationStatusAsync(int id, ReservationStatus status);
         Task<bool> DeleteReservationAsync(int id);
         Task<List<Table>> GetAvailableTablesAsync(DateTime date, TimeSpan timeFrom, TimeSpan timeTo, int guestCount);

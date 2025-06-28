@@ -1,6 +1,9 @@
-﻿using FinalProjectMvc.Helpers.Enums;
+﻿using FinalProjectMvc.Data;
+using FinalProjectMvc.Helpers.Enums;
 using FinalProjectMvc.Services.Interfaces;
+using FinalProjectMvc.ViewModels.Admin.Reservation;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalProjectMvc.Areas.Admin.Controllers
 {
@@ -8,10 +11,12 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
     public class ReservationController : Controller
     {
         private readonly IReservationService _reservationService;
+        private readonly AppDbContext _context;
 
-        public ReservationController(IReservationService reservationService)
+        public ReservationController(IReservationService reservationService, AppDbContext context)
         {
             _reservationService = reservationService;
+            _context = context;
         }
 
         public async Task<IActionResult> Index()
@@ -22,14 +27,19 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
         public async Task<IActionResult> Detail(int id)
         {
-            var reservation = await _reservationService.GetReservationByIdAsync(id);
-            if (reservation == null)
+            var vm = await _reservationService.GetReservationByIdAsync(id);
+
+            if (vm == null)
             {
                 TempData["Error"] = "Reservation not found.";
                 return RedirectToAction(nameof(Index));
             }
-            return View(reservation);
+
+            return View(vm);
         }
+
+
+
 
         [HttpPost]
         public async Task<IActionResult> UpdateStatus(int id, ReservationStatus status)
@@ -48,7 +58,7 @@ namespace FinalProjectMvc.Areas.Admin.Controllers
 
 
             }
-
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

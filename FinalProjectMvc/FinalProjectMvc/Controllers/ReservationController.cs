@@ -57,18 +57,23 @@ namespace FinalProjectMvc.Controllers
                 var errors = ModelState.Values.SelectMany(v => v.Errors)
                                               .Select(e => e.ErrorMessage)
                                               .ToList();
-                return Json(new { success = false, message = "A validation error occurred.", errors });
+
+                return Json(new
+                {
+                    success = false,
+                    message = "Formda validasiya xətası var.",
+                    errors
+                });
             }
 
             var result = await _reservationService.CreateReservationAsync(model);
-            if (result)
+
+            return Json(new
             {
-                return Json(new { success = true, message = "Rezervasiya uğurla yaradıldı!" });
-            }
-            else
-            {
-                return Json(new { success = false, message = "Yer doldudur! Bu tarix və vaxt üçün masa artıq rezerv edilib." });
-            }
+                success = result.Success,
+                message = result.Message
+            });
         }
+
     }
 }
