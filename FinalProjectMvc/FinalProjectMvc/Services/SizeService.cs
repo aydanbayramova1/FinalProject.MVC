@@ -33,7 +33,7 @@ namespace FinalProjectMvc.Services
         }
         public async Task<List<SelectListItem>> GetSelectListAsync()
         {
-            return await _context.Categories
+            return await _context.Sizes
               .Select(c => new SelectListItem
               {
                   Value = c.Id.ToString(),
