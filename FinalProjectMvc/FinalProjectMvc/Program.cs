@@ -13,11 +13,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using FinalProjectMvc.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Email config
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailConfig"));
-
-// MVC
 builder.Services.AddControllersWithViews();
 
 builder.Services.Configure<FormOptions>(options =>
@@ -120,9 +116,7 @@ using (var scope = app.Services.CreateScope())
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     await RoleSeeder.SeedAsync(roleManager);
 }
-
-// Middleware
-// app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 
 if (!app.Environment.IsDevelopment())
 {
@@ -146,7 +140,6 @@ app.UseStatusCodePages(context =>
         404 => "/NotFound/Index",
         _ => null
     };
-
     if (path != null)
     {
         response.Redirect(path);

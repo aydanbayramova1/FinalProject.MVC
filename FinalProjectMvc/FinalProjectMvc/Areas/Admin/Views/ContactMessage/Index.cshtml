@@ -1,12 +1,11 @@
-﻿<!-- Views/Admin/ContactMessage/Index.cshtml - Yenilənmiş versiya -->
-@model IEnumerable<ContactMessageVM>
+﻿@model IEnumerable<ContactMessageVM>
 
 <form id="antiForgeryForm" style="display:none;">
     @Html.AntiForgeryToken()
 </form>
 
 <div class="container py-4">
-    <h2 class="mb-4" style="color: #6b4f3b;">📥 Incoming Messages</h2>
+    <h2 class="mb-4" style="color: #6b4f3b;">☕ Incoming Messages</h2>
 
     @if (TempData["SuccessMessage"] != null)
     {

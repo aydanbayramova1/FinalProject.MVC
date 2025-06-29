@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g8cNnHXHQ+6WozOGy3oz6wl/Pcl1J25E6iD5GVVSpsY=",
+  "Hash": "pboyVTEqfVSn2LnQVOnTgm8A2I/F/NhSiU9vZY1WMy8=",
   "Source": "FinalProjectMvc",
   "BasePath": "_content/FinalProjectMvc",
   "Mode": "Default",
@@ -8520,6 +8520,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\products\\9cea0b2e-2b98-4555-86fb-6531bb0e9e34.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\9fdb0cce-66f3-4bb7-a843-dbf700a8eca0.jpg",
+      "SourceId": "FinalProjectMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\",
+      "BasePath": "_content/FinalProjectMvc",
+      "RelativePath": "uploads/products/9fdb0cce-66f3-4bb7-a843-dbf700a8eca0#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mc6w5mqd53",
+      "Integrity": "JgWzrnKu9Y4ED+8HY/oDqrEtd9LHg3XaHALY3T071E0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\products\\9fdb0cce-66f3-4bb7-a843-dbf700a8eca0.jpg"
     },
     {
       "Identity": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\a4b06506-6c05-414b-8b36-c65661851a6a.jpg",
@@ -43935,6 +43956,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-5mIzftS3cFmoyJDaiQ/EerPVXHz6bTnrlDkwZcXLEu4="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/products/9fdb0cce-66f3-4bb7-a843-dbf700a8eca0.jpg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\9fdb0cce-66f3-4bb7-a843-dbf700a8eca0.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43518"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JgWzrnKu9Y4ED+8HY/oDqrEtd9LHg3XaHALY3T071E0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Jun 2025 16:07:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JgWzrnKu9Y4ED+8HY/oDqrEtd9LHg3XaHALY3T071E0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/products/9fdb0cce-66f3-4bb7-a843-dbf700a8eca0.mc6w5mqd53.jpg",
+      "AssetFile": "C:\\Users\\ACER\\Desktop\\FinalProjectMvc\\FinalProjectMvc\\FinalProjectMvc\\wwwroot\\uploads\\products\\9fdb0cce-66f3-4bb7-a843-dbf700a8eca0.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43518"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JgWzrnKu9Y4ED+8HY/oDqrEtd9LHg3XaHALY3T071E0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 29 Jun 2025 16:07:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mc6w5mqd53"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/products/9fdb0cce-66f3-4bb7-a843-dbf700a8eca0.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JgWzrnKu9Y4ED+8HY/oDqrEtd9LHg3XaHALY3T071E0="
         }
       ]
     },

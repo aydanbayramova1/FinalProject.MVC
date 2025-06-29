@@ -1,7 +1,7 @@
-﻿@using FinalProjectMvc.ViewModels.Admin.Table
-@model IEnumerable<TableVM>
+﻿@model IEnumerable<TableVM>
 
-<form id="antiForgeryForm" style="display:none;">
+<!-- Anti-forgery token form -->
+<form id="deleteForm" style="display:none;">
     @Html.AntiForgeryToken()
 </form>
 
@@ -70,7 +70,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const deleteButtons = document.querySelectorAll(".delete-btn");
-        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+        const token = document.querySelector('#deleteForm input[name="__RequestVerificationToken"]').value;
         const tableBody = document.querySelector("#tableList tbody");
         const noTableAlert = document.getElementById("noTableAlert");
 
@@ -89,28 +89,29 @@
                     confirmButtonText: "Yes, delete it!"
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        fetch(`/Admin/Table/Delete/${id}`, {
+                        const formData = new FormData();
+                        formData.append("id", id);
+                        formData.append("__RequestVerificationToken", token);
+
+                        fetch("/Admin/Table/DeleteAjax", {
                             method: "POST",
-                            headers: {
-                                'RequestVerificationToken': token,
-                                'X-Requested-With': 'XMLHttpRequest',
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ id: id })
+                            body: formData
                         })
-                        .then(response => {
-                            if (response.ok) {
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.success) {
                                 row.remove();
-                                Swal.fire("Deleted!", "The table has been removed.", "success");
+                                Swal.fire("Deleted!", data.message, "success");
 
                                 if (tableBody.children.length === 0) {
                                     noTableAlert.style.display = "block";
                                 }
                             } else {
-                                Swal.fire("Error!", "Failed to delete the table.", "error");
+                                Swal.fire("Error!", data.message, "error");
                             }
                         })
-                        .catch(() => {
+                        .catch(err => {
+                            console.error(err);
                             Swal.fire("Error!", "Something went wrong.", "error");
                         });
                     }
